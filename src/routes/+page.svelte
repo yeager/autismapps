@@ -44,6 +44,7 @@
       class="hero-image"
       draggable="false"
     />
+    <div class="hero-brand" aria-hidden="true">{$t('app.title.brand')}</div>
     {#if !activeCategory}
       <div class="hero-overlay" transition:fade={{ duration: 300 }}>
         <div class="hero-cta">
@@ -106,7 +107,7 @@
           </svg>
         </button>
       </div>
-      <div class="app-grid">
+      <div class="app-grid" style="--card-min: {filtered.length <= 3 ? '240px' : filtered.length <= 6 ? '200px' : '160px'}; --card-min-mobile: {filtered.length <= 3 ? '180px' : filtered.length <= 6 ? '150px' : '130px'}; --card-min-h: {filtered.length <= 3 ? '220px' : filtered.length <= 6 ? '190px' : '170px'}">
         {#each filtered as app, i (app.id)}
           <button
             class="app-card"
@@ -163,6 +164,22 @@
     display: block;
     user-select: none;
     -webkit-user-drag: none;
+  }
+
+  .hero-brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.18);
+    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
   }
 
   .hero-overlay {
@@ -345,16 +362,16 @@
     color: var(--text);
   }
 
-  /* App grid */
+  /* App grid — adaptive: fewer apps = bigger cards */
   .app-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min, 160px), 1fr));
     gap: 14px;
   }
 
   @media (max-width: 600px) {
     .app-grid {
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(var(--card-min-mobile, 130px), 1fr));
       gap: 10px;
     }
   }
@@ -371,7 +388,7 @@
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 170px;
+    min-height: var(--card-min-h, 170px);
     gap: 8px;
     animation: cardIn 0.4s ease both;
     animation-delay: var(--delay);

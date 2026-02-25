@@ -1,1 +1,0 @@
-export { default as component } from "../../../../src/routes/apps/chooser/+page.svelte";

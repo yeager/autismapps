@@ -1,8 +1,15 @@
+# Autismapps translation template
+# Translators:
+# Daniel Nylander <po@danielnylander.se>, 2026
+# 
 msgid ""
 msgstr ""
+"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
+"Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/305369/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. app.all
 msgctxt "app.all"
@@ -152,7 +159,7 @@ msgstr "Räkning"
 #. app.counting.desc
 msgctxt "app.counting.desc"
 msgid "Visual counting with concrete objects"
-msgstr ""
+msgstr "Visuell räkning med konkreta föremål"
 
 #. app.day_planner
 msgctxt "app.day_planner"
@@ -292,7 +299,7 @@ msgstr "Bildordbok"
 #. app.picture_dictionary.desc
 msgctxt "app.picture_dictionary.desc"
 msgid "Browse, learn, and quiz yourself on everyday words"
-msgstr ""
+msgstr "Bläddra, lär dig och testa dina kunskaper om vardagliga ord"
 
 #. app.picture_schedule
 msgctxt "app.picture_schedule"
@@ -477,7 +484,7 @@ msgstr "Bildstöd"
 #. app.visual_support.desc
 msgctxt "app.visual_support.desc"
 msgid "Visual schedules with step-by-step routines"
-msgstr ""
+msgstr "Visuella scheman med steg-för-steg-rutiner"
 
 #. app.visual_timer
 msgctxt "app.visual_timer"
@@ -597,12 +604,12 @@ msgstr "Brädbyggaren"
 #. break.back_to_menu
 msgctxt "break.back_to_menu"
 msgid "Back to exercises"
-msgstr ""
+msgstr "Tillbaka till övningarna"
 
 #. break.credit
 msgctxt "break.credit"
 msgid "Guided break exercises based on sensory regulation techniques"
-msgstr ""
+msgstr "Guidade pausövningar baserade på sensoriska regleringstekniker"
 
 #. break.ex.body_scan
 msgctxt "break.ex.body_scan"
@@ -617,12 +624,12 @@ msgstr "Andning"
 #. break.ex.counting
 msgctxt "break.ex.counting"
 msgid "5-4-3-2-1"
-msgstr ""
+msgstr "5-4-3-2-1"
 
 #. break.ex.grounding
 msgctxt "break.ex.grounding"
 msgid "Grounding"
-msgstr ""
+msgstr "Jordning"
 
 #. break.ex.stretching
 msgctxt "break.ex.stretching"
@@ -632,27 +639,27 @@ msgstr "Sträck ut"
 #. break.feeling_better
 msgctxt "break.feeling_better"
 msgid "Do you feel calmer now?"
-msgstr ""
+msgstr "Känner du dig lugnare nu?"
 
 #. break.pick
 msgctxt "break.pick"
 msgid "Choose a calming exercise"
-msgstr ""
+msgstr "Välj en lugnande övning"
 
 #. break.step.breathe_in
 msgctxt "break.step.breathe_in"
 msgid "Breathe in slowly…"
-msgstr ""
+msgstr "Andas in långsamt…"
 
 #. break.step.breathe_out
 msgctxt "break.step.breathe_out"
 msgid "Breathe out slowly…"
-msgstr ""
+msgstr "Andas ut långsamt…"
 
 #. break.step.close_eyes
 msgctxt "break.step.close_eyes"
 msgid "Close your eyes gently"
-msgstr ""
+msgstr "Stäng ögonen försiktigt"
 
 #. break.step.deep_breath
 msgctxt "break.step.deep_breath"
@@ -662,92 +669,92 @@ msgstr "Ta ett djupt andetag"
 #. break.step.feel_feet
 msgctxt "break.step.feel_feet"
 msgid "Feel your feet on the ground"
-msgstr ""
+msgstr "Känn dina fötter på marken"
 
 #. break.step.feel_hands
 msgctxt "break.step.feel_hands"
 msgid "Notice your hands — open them wide"
-msgstr ""
+msgstr "Lägg märke till dina händer – öppna dem helt"
 
 #. break.step.feel_head
 msgctxt "break.step.feel_head"
 msgid "Relax your face and forehead"
-msgstr ""
+msgstr "Slappna av i ansiktet och pannan"
 
 #. break.step.feel_legs
 msgctxt "break.step.feel_legs"
 msgid "Notice your legs — are they tense?"
-msgstr ""
+msgstr "Lägg märke till dina ben – är de spända?"
 
 #. break.step.feel_shoulders
 msgctxt "break.step.feel_shoulders"
 msgid "Drop your shoulders down"
-msgstr ""
+msgstr "Sänk axlarna"
 
 #. break.step.feel_stomach
 msgctxt "break.step.feel_stomach"
 msgid "Feel your stomach — let it relax"
-msgstr ""
+msgstr "Känn på magen – låt den slappna av"
 
 #. break.step.feet_on_floor
 msgctxt "break.step.feet_on_floor"
 msgid "Press your feet firmly on the floor"
-msgstr ""
+msgstr "Tryck fötterna stadigt mot golvet"
 
 #. break.step.hear_3
 msgctxt "break.step.hear_3"
 msgid "Listen — name 3 things you can HEAR"
-msgstr ""
+msgstr "Lyssna — nämn tre saker du kan HÖRA"
 
 #. break.step.hold
 msgctxt "break.step.hold"
 msgid "Hold your breath…"
-msgstr ""
+msgstr "Håll andan…"
 
 #. break.step.look_5_see
 msgctxt "break.step.look_5_see"
 msgid "Look around — name 5 things you can SEE"
-msgstr ""
+msgstr "Se dig omkring — nämn 5 saker du kan SE"
 
 #. break.step.name_room
 msgctxt "break.step.name_room"
 msgid "Name everything you see in the room"
-msgstr ""
+msgstr "Namnge allt du ser i rummet"
 
 #. break.step.neck_circles
 msgctxt "break.step.neck_circles"
 msgid "Gentle neck circles — slow and easy"
-msgstr ""
+msgstr "Milda cirkelrörelser med nacken — långsamt och lugnt"
 
 #. break.step.open_eyes
 msgctxt "break.step.open_eyes"
 msgid "Slowly open your eyes"
-msgstr ""
+msgstr "Öppna ögonen långsamt"
 
 #. break.step.press_hands
 msgctxt "break.step.press_hands"
 msgid "Press your hands together hard"
-msgstr ""
+msgstr "Pressa ihop händerna hårt"
 
 #. break.step.reach_up
 msgctxt "break.step.reach_up"
 msgid "Reach up high — stretch tall!"
-msgstr ""
+msgstr "Sträck dig högt upp – sträck dig lång!"
 
 #. break.step.say_safe
 msgctxt "break.step.say_safe"
 msgid "Say: I am safe. I am here."
-msgstr ""
+msgstr "Säg: Jag är trygg. Jag är här."
 
 #. break.step.shake_out
 msgctxt "break.step.shake_out"
 msgid "Shake your whole body!"
-msgstr ""
+msgstr "Skaka hela kroppen!"
 
 #. break.step.shoulder_rolls
 msgctxt "break.step.shoulder_rolls"
 msgid "Roll your shoulders — big circles"
-msgstr ""
+msgstr "Rulla axlarna — stora cirklar"
 
 #. break.step.smell_2
 msgctxt "break.step.smell_2"
@@ -762,37 +769,40 @@ msgstr "Nämn en sak som du kan SMAKA"
 #. break.step.touch_4
 msgctxt "break.step.touch_4"
 msgid "Touch 4 different things"
-msgstr ""
+msgstr "Rör vid 4 olika saker"
 
 #. break.step.touch_toes
 msgctxt "break.step.touch_toes"
 msgid "Bend down and touch your toes"
-msgstr ""
+msgstr "Böj dig ner och rör vid tårna"
 
 #. break.step.twist_left
 msgctxt "break.step.twist_left"
 msgid "Twist gently to the left"
-msgstr ""
+msgstr "Vrid försiktigt åt vänster"
 
 #. break.step.twist_right
 msgctxt "break.step.twist_right"
 msgid "Twist gently to the right"
-msgstr ""
+msgstr "Vrid försiktigt åt höger"
 
 #. break.title
 msgctxt "break.title"
 msgid "Break Check"
-msgstr ""
+msgstr "Pauskontroll"
 
 #. break.well_done
 msgctxt "break.well_done"
 msgid "Well done! You took a great break!"
-msgstr ""
+msgstr "Bra gjort! Du tog en skön paus!"
 
 #. calm.advice_critical
 msgctxt "calm.advice_critical"
-msgid "Very high stress. Press the emergency button or go to breathing. You are safe. 💙"
-msgstr "Mycket hög stress. Tryck på nödknappen eller gå till andning. Du är trygg. 💙"
+msgid ""
+"Very high stress. Press the emergency button or go to breathing. You are "
+"safe. 💙"
+msgstr ""
+"Mycket hög stress. Tryck på nödknappen eller gå till andning. Du är trygg. 💙"
 
 #. calm.advice_high
 msgctxt "calm.advice_high"
@@ -836,7 +846,8 @@ msgstr "Färgflöde"
 
 #. calm.emergency_msg
 msgctxt "calm.emergency_msg"
-msgid "Take 5 deep breaths. Count each one. You are safe. Everything will be okay."
+msgid ""
+"Take 5 deep breaths. Count each one. You are safe. Everything will be okay."
 msgstr "Ta 5 djupa andetag. Räkna varje. Du är trygg. Allt kommer bli bra."
 
 #. calm.exhale
@@ -1052,42 +1063,43 @@ msgstr "Du är trygg"
 #. chooser.add_option
 msgctxt "chooser.add_option"
 msgid "Add option"
-msgstr ""
+msgstr "Lägg till alternativ"
 
 #. chooser.choose
 msgctxt "chooser.choose"
 msgid "Choose for me!"
-msgstr ""
+msgstr "Välj åt mig!"
 
 #. chooser.credit
 msgctxt "chooser.credit"
 msgid "Visual decision helper — great when choices feel overwhelming"
 msgstr ""
+"Visuell beslutsstöd – perfekt när valmöjligheterna känns överväldigande"
 
 #. chooser.instruction
 msgctxt "chooser.instruction"
 msgid "Type your options and let me choose!"
-msgstr ""
+msgstr "Skriv in dina alternativ och låt mig välja!"
 
 #. chooser.new_choice
 msgctxt "chooser.new_choice"
 msgid "New choice"
-msgstr ""
+msgstr "Nytt val"
 
 #. chooser.option
 msgctxt "chooser.option"
 msgid "Option"
-msgstr ""
+msgstr "Alternativ"
 
 #. chooser.title
 msgctxt "chooser.title"
 msgid "Chooser"
-msgstr ""
+msgstr "Väljare"
 
 #. clock.check
 msgctxt "clock.check"
 msgid "Check"
-msgstr ""
+msgstr "Kontrollera"
 
 #. clock.correct
 msgctxt "clock.correct"
@@ -1097,22 +1109,22 @@ msgstr "Rätt!"
 #. clock.credit
 msgctxt "clock.credit"
 msgid "Learn to read analog clocks with interactive practice"
-msgstr ""
+msgstr "Lär dig läsa analoga klockor med interaktiva övningar"
 
 #. clock.hours
 msgctxt "clock.hours"
 msgid "Hours"
-msgstr ""
+msgstr "Öppettider"
 
 #. clock.learn
 msgctxt "clock.learn"
 msgid "Learn"
-msgstr ""
+msgstr "Lär dig"
 
 #. clock.minutes
 msgctxt "clock.minutes"
 msgid "Minutes"
-msgstr ""
+msgstr "Protokoll"
 
 #. clock.next
 msgctxt "clock.next"
@@ -1122,12 +1134,12 @@ msgstr "Nästa"
 #. clock.quiz
 msgctxt "clock.quiz"
 msgid "Quiz"
-msgstr ""
+msgstr "Quiz"
 
 #. clock.score
 msgctxt "clock.score"
 msgid "Score"
-msgstr ""
+msgstr "Poäng"
 
 #. clock.title
 msgctxt "clock.title"
@@ -1142,22 +1154,22 @@ msgstr "Vad är klockan?"
 #. clock.wrong
 msgctxt "clock.wrong"
 msgid "Not quite — it was"
-msgstr ""
+msgstr "Inte riktigt — det var"
 
 #. clothes.boots
 msgctxt "clothes.boots"
 msgid "Winter boots"
-msgstr ""
+msgstr "Vinterstövlar"
 
 #. clothes.cap
 msgctxt "clothes.cap"
 msgid "Cap"
-msgstr ""
+msgstr "Keps"
 
 #. clothes.credit
 msgctxt "clothes.credit"
 msgid "Weather-based clothing picker for daily independence"
-msgstr ""
+msgstr "Väderbaserad klädväljare för daglig självständighet"
 
 #. clothes.jacket
 msgctxt "clothes.jacket"
@@ -1167,17 +1179,17 @@ msgstr "Jacka"
 #. clothes.light_gloves
 msgctxt "clothes.light_gloves"
 msgid "Light gloves"
-msgstr ""
+msgstr "Lätta handskar"
 
 #. clothes.mittens
 msgctxt "clothes.mittens"
 msgid "Mittens"
-msgstr ""
+msgstr "Vantar"
 
 #. clothes.nothing_yet
 msgctxt "clothes.nothing_yet"
 msgid "No clothes picked yet"
-msgstr ""
+msgstr "Inga kläder valda ännu"
 
 #. clothes.pants
 msgctxt "clothes.pants"
@@ -1187,7 +1199,7 @@ msgstr "Byxor"
 #. clothes.pick_clothes
 msgctxt "clothes.pick_clothes"
 msgid "Tap to choose your outfit!"
-msgstr ""
+msgstr "Tryck för att välja din outfit!"
 
 #. clothes.scarf
 msgctxt "clothes.scarf"
@@ -1197,7 +1209,7 @@ msgstr "Halsduk"
 #. clothes.shorts
 msgctxt "clothes.shorts"
 msgid "Shorts"
-msgstr ""
+msgstr "Shorts"
 
 #. clothes.sneakers
 msgctxt "clothes.sneakers"
@@ -1207,17 +1219,17 @@ msgstr "Gympaskor"
 #. clothes.sunglasses
 msgctxt "clothes.sunglasses"
 msgid "Sunglasses"
-msgstr ""
+msgstr "Solglasögon"
 
 #. clothes.title
 msgctxt "clothes.title"
 msgid "Clothes Chooser"
-msgstr ""
+msgstr "Klädval"
 
 #. clothes.tshirt
 msgctxt "clothes.tshirt"
 msgid "T-shirt"
-msgstr ""
+msgstr "T-shirt"
 
 #. clothes.umbrella
 msgctxt "clothes.umbrella"
@@ -1237,27 +1249,27 @@ msgstr "Regnigt"
 #. clothes.weather.snowy
 msgctxt "clothes.weather.snowy"
 msgid "Snowy & cold"
-msgstr ""
+msgstr "Snöigt och kallt"
 
 #. clothes.weather.sunny
 msgctxt "clothes.weather.sunny"
 msgid "Sunny & warm"
-msgstr ""
+msgstr "Soligt och varmt"
 
 #. clothes.weather.windy
 msgctxt "clothes.weather.windy"
 msgid "Windy & cool"
-msgstr ""
+msgstr "Blåsigt och svalt"
 
 #. clothes.whats_weather
 msgctxt "clothes.whats_weather"
 msgid "What's the weather like today?"
-msgstr ""
+msgstr "Hur är vädret idag?"
 
 #. clothes.winter_hat
 msgctxt "clothes.winter_hat"
 msgid "Winter hat"
-msgstr ""
+msgstr "Vintermössa"
 
 #. clothes.winter_jacket
 msgctxt "clothes.winter_jacket"
@@ -1368,26 +1380,27 @@ msgstr "Du valde"
 msgctxt "cook.credit"
 msgid "Visual step-by-step recipes (TEACCH-inspired structured cooking)"
 msgstr ""
+"Visuella steg-för-steg-recept (TEACCH-inspirerad strukturerad matlagning)"
 
 #. cook.done
 msgctxt "cook.done"
 msgid "Delicious! You did it!"
-msgstr ""
+msgstr "Jättegott! Du klarade det!"
 
 #. cook.oatmeal
 msgctxt "cook.oatmeal"
 msgid "Oatmeal"
-msgstr ""
+msgstr "Havregryn"
 
 #. cook.pasta
 msgctxt "cook.pasta"
 msgid "Pasta"
-msgstr ""
+msgstr "Pasta"
 
 #. cook.pick
 msgctxt "cook.pick"
 msgid "What do you want to make?"
-msgstr ""
+msgstr "Vad vill du göra?"
 
 #. cook.sandwich
 msgctxt "cook.sandwich"
@@ -1397,37 +1410,37 @@ msgstr "Macka"
 #. cook.smoothie
 msgctxt "cook.smoothie"
 msgid "Smoothie"
-msgstr ""
+msgstr "Smoothie"
 
 #. cook.step.add_fruit
 msgctxt "cook.step.add_fruit"
 msgid "Add your favorite fruit"
-msgstr ""
+msgstr "Lägg till din favoritfrukt"
 
 #. cook.step.add_honey
 msgctxt "cook.step.add_honey"
 msgid "Add honey"
-msgstr ""
+msgstr "Tillsätt honung"
 
 #. cook.step.add_milk_oats
 msgctxt "cook.step.add_milk_oats"
 msgid "Add milk to the oats"
-msgstr ""
+msgstr "Tillsätt mjölk till havregrynen"
 
 #. cook.step.add_pasta
 msgctxt "cook.step.add_pasta"
 msgid "Add pasta to the boiling water"
-msgstr ""
+msgstr "Tillsätt pasta i det kokande vattnet"
 
 #. cook.step.add_sauce
 msgctxt "cook.step.add_sauce"
 msgid "Add butter or sauce"
-msgstr ""
+msgstr "Tillsätt smör eller sås"
 
 #. cook.step.banana
 msgctxt "cook.step.banana"
 msgid "Peel a banana and break it in pieces"
-msgstr ""
+msgstr "Skala en banan och bryt den i bitar"
 
 #. cook.step.berries
 msgctxt "cook.step.berries"
@@ -1437,22 +1450,22 @@ msgstr "Tillsätt bär"
 #. cook.step.blend
 msgctxt "cook.step.blend"
 msgid "Blend until smooth"
-msgstr ""
+msgstr "Blanda tills det blir slätt."
 
 #. cook.step.boil_water
 msgctxt "cook.step.boil_water"
 msgid "Boil water in a pot"
-msgstr ""
+msgstr "Koka vatten i en kastrull"
 
 #. cook.step.bread
 msgctxt "cook.step.bread"
 msgid "Take two slices of bread"
-msgstr ""
+msgstr "Ta två skivor bröd"
 
 #. cook.step.butter
 msgctxt "cook.step.butter"
 msgid "Spread butter on the bread"
-msgstr ""
+msgstr "Smörj brödet med smör"
 
 #. cook.step.cheese
 msgctxt "cook.step.cheese"
@@ -1462,62 +1475,62 @@ msgstr "Tillsätt ost"
 #. cook.step.cut_half
 msgctxt "cook.step.cut_half"
 msgid "Cut in half — done!"
-msgstr ""
+msgstr "Skär i två delar – klart!"
 
 #. cook.step.drain
 msgctxt "cook.step.drain"
 msgid "Drain the water carefully"
-msgstr ""
+msgstr "Töm vattnet försiktigt"
 
 #. cook.step.microwave_2
 msgctxt "cook.step.microwave_2"
 msgid "Microwave for 2 minutes"
-msgstr ""
+msgstr "Värm i mikrovågsugn i 2 minuter"
 
 #. cook.step.milk
 msgctxt "cook.step.milk"
 msgid "Pour in milk"
-msgstr ""
+msgstr "Häll i mjölk"
 
 #. cook.step.oats_bowl
 msgctxt "cook.step.oats_bowl"
 msgid "Put oats in a bowl"
-msgstr ""
+msgstr "Lägg havregryn i en skål"
 
 #. cook.step.pour_glass
 msgctxt "cook.step.pour_glass"
 msgid "Pour into a glass"
-msgstr ""
+msgstr "Häll upp i ett glas"
 
 #. cook.step.sprinkle_cheese
 msgctxt "cook.step.sprinkle_cheese"
 msgid "Sprinkle cheese on top"
-msgstr ""
+msgstr "Strö ost över"
 
 #. cook.step.top_bread
 msgctxt "cook.step.top_bread"
 msgid "Put the other bread on top"
-msgstr ""
+msgstr "Lägg det andra brödet ovanpå"
 
 #. cook.step.veggies
 msgctxt "cook.step.veggies"
 msgid "Add cucumber or tomato"
-msgstr ""
+msgstr "Tillsätt gurka eller tomat"
 
 #. cook.step.wait_10
 msgctxt "cook.step.wait_10"
 msgid "Wait 10 minutes — stir sometimes"
-msgstr ""
+msgstr "Vänta 10 minuter — rör om ibland"
 
 #. cook.title
 msgctxt "cook.title"
 msgid "Cooking Helper"
-msgstr ""
+msgstr "Matlagningshjälp"
 
 #. counting.credit
 msgctxt "counting.credit"
 msgid "Visual counting tool with concrete objects"
-msgstr ""
+msgstr "Visuellt räkneverktyg med konkreta föremål"
 
 #. counting.title
 msgctxt "counting.title"
@@ -1527,17 +1540,17 @@ msgstr "Räkning"
 #. diary.credit
 msgctxt "diary.credit"
 msgid "Simple mood diary with emoji-based emotional tracking"
-msgstr ""
+msgstr "Enkel humördagbok med emoji-baserad känslouppföljning"
 
 #. diary.empty
 msgctxt "diary.empty"
 msgid "No entries yet — tap + to write one!"
-msgstr ""
+msgstr "Inga inlägg ännu — tryck på + för att skriva ett!"
 
 #. diary.how_today
 msgctxt "diary.how_today"
 msgid "How are you today?"
-msgstr ""
+msgstr "Hur mår du idag?"
 
 #. diary.mood.angry
 msgctxt "diary.mood.angry"
@@ -1557,7 +1570,7 @@ msgstr "Glad"
 #. diary.mood.okay
 msgctxt "diary.mood.okay"
 msgid "Okay"
-msgstr ""
+msgstr "Okej"
 
 #. diary.mood.sad
 msgctxt "diary.mood.sad"
@@ -1567,7 +1580,7 @@ msgstr "Ledsen"
 #. diary.mood.sick
 msgctxt "diary.mood.sick"
 msgid "Sick"
-msgstr ""
+msgstr "Sjuk"
 
 #. diary.mood.tired
 msgctxt "diary.mood.tired"
@@ -1592,7 +1605,7 @@ msgstr "Spara"
 #. diary.saved
 msgctxt "diary.saved"
 msgid "Diary entry saved!"
-msgstr ""
+msgstr "Dagboksanteckning sparad!"
 
 #. diary.title
 msgctxt "diary.title"
@@ -1602,7 +1615,7 @@ msgstr "Min dagbok"
 #. diary.what_happened
 msgctxt "diary.what_happened"
 msgid "What happened today? (optional)"
-msgstr ""
+msgstr "Vad hände idag? (valfritt)"
 
 #. dict.cat.animals
 msgctxt "dict.cat.animals"
@@ -1637,12 +1650,12 @@ msgstr "Skola"
 #. dict.correct_was
 msgctxt "dict.correct_was"
 msgid "It was"
-msgstr ""
+msgstr "Det var"
 
 #. dict.credit
 msgctxt "dict.credit"
 msgid "Emoji-based picture dictionary for vocabulary building"
-msgstr ""
+msgstr "Emoji-baserad bildordbok för att bygga upp ordförrådet"
 
 #. dict.fantastic
 msgctxt "dict.fantastic"
@@ -1652,7 +1665,7 @@ msgstr "Fantastiskt! 🌟"
 #. dict.flashcards_all
 msgctxt "dict.flashcards_all"
 msgid "Flashcards — All"
-msgstr ""
+msgstr "Flashkort — Alla"
 
 #. dict.great
 msgctxt "dict.great"
@@ -1662,7 +1675,7 @@ msgstr "Bra jobbat! ⭐"
 #. dict.hear_again
 msgctxt "dict.hear_again"
 msgid "Hear again"
-msgstr ""
+msgstr "Hör igen"
 
 #. dict.next
 msgctxt "dict.next"
@@ -1672,17 +1685,17 @@ msgstr "Nästa"
 #. dict.pick_category
 msgctxt "dict.pick_category"
 msgid "Pick a category to explore words!"
-msgstr ""
+msgstr "Välj en kategori för att utforska ord!"
 
 #. dict.quiz_all
 msgctxt "dict.quiz_all"
 msgid "Quiz — All"
-msgstr ""
+msgstr "Quiz — Alla"
 
 #. dict.score
 msgctxt "dict.score"
 msgid "Score"
-msgstr ""
+msgstr "Poäng"
 
 #. dict.star
 msgctxt "dict.star"
@@ -1692,7 +1705,7 @@ msgstr "Du är bäst! ✨"
 #. dict.tap_to_reveal
 msgctxt "dict.tap_to_reveal"
 msgid "Tap to reveal"
-msgstr ""
+msgstr "Tryck för att visa"
 
 #. dict.title
 msgctxt "dict.title"
@@ -1707,7 +1720,7 @@ msgstr "Bra jobbat! 👏"
 #. dict.which_is
 msgctxt "dict.which_is"
 msgid "Which one is"
-msgstr ""
+msgstr "Vilken är"
 
 #. dict.words
 msgctxt "dict.words"
@@ -2027,67 +2040,77 @@ msgstr "Gul zon — Tappar kontrollen"
 #. energy.credit
 msgctxt "energy.credit"
 msgid "Energy self-assessment with regulation strategies"
-msgstr ""
+msgstr "Energisjälvbedömning med regleringsstrategier"
 
 #. energy.how_feeling
 msgctxt "energy.how_feeling"
 msgid "How's your energy right now?"
-msgstr ""
+msgstr "Hur är din energi just nu?"
 
 #. energy.level.1
 msgctxt "energy.level.1"
 msgid "Very low energy"
-msgstr ""
+msgstr "Mycket låg energiförbrukning"
 
 #. energy.level.2
 msgctxt "energy.level.2"
 msgid "Calm and okay"
-msgstr ""
+msgstr "Lugn och okej"
 
 #. energy.level.3
 msgctxt "energy.level.3"
 msgid "Good energy!"
-msgstr ""
+msgstr "Bra energi!"
 
 #. energy.level.4
 msgctxt "energy.level.4"
 msgid "Getting too high"
-msgstr ""
+msgstr "Att bli för hög"
 
 #. energy.level.5
 msgctxt "energy.level.5"
 msgid "Way too much!"
-msgstr ""
+msgstr "Alldeles för mycket!"
 
 #. energy.strat.1
 msgctxt "energy.strat.1"
 msgid "Rest, cozy blanket, quiet music, drink water, ask for a hug"
-msgstr ""
+msgstr "Vila, mysig filt, lugn musik, drick vatten, be om en kram"
 
 #. energy.strat.2
 msgctxt "energy.strat.2"
 msgid "You're in a great zone! Keep doing what you're doing."
-msgstr ""
+msgstr "Du är i en fantastisk zon! Fortsätt så."
 
 #. energy.strat.3
 msgctxt "energy.strat.3"
-msgid "Perfect energy for learning and playing! Channel it into something fun."
+msgid ""
+"Perfect energy for learning and playing! Channel it into something fun."
 msgstr ""
+"Perfekt energi för att lära sig och leka! Kanalisera den till något roligt."
 
 #. energy.strat.4
 msgctxt "energy.strat.4"
-msgid "Time to slow down. Try deep breaths, squeeze a stress ball, or take a short walk."
+msgid ""
+"Time to slow down. Try deep breaths, squeeze a stress ball, or take a short "
+"walk."
 msgstr ""
+"Dags att ta det lugnt. Försök att andas djupt, krama en stressboll eller ta "
+"en kort promenad."
 
 #. energy.strat.5
 msgctxt "energy.strat.5"
-msgid "Stop and breathe. Find a quiet space. Count to 10. Ask an adult for help if needed."
+msgid ""
+"Stop and breathe. Find a quiet space. Count to 10. Ask an adult for help if "
+"needed."
 msgstr ""
+"Stanna upp och andas. Hitta en lugn plats. Räkna till 10. Be en vuxen om "
+"hjälp om det behövs."
 
 #. energy.strategies
 msgctxt "energy.strategies"
 msgid "What can help:"
-msgstr ""
+msgstr "Vad kan hjälpa:"
 
 #. energy.title
 msgctxt "energy.title"
@@ -2097,67 +2120,70 @@ msgstr "Energimätare"
 #. energy.today
 msgctxt "energy.today"
 msgid "Today's energy"
-msgstr ""
+msgstr "Dagens energi"
 
 #. focus.add_task
 msgctxt "focus.add_task"
 msgid "Add a task…"
-msgstr ""
+msgstr "Lägg till en uppgift…"
 
 #. focus.add_thought
 msgctxt "focus.add_thought"
 msgid "Park a thought…"
-msgstr ""
+msgstr "Parkera en tanke…"
 
 #. focus.break_done
 msgctxt "focus.break_done"
 msgid "Break's over! Ready to focus again?"
-msgstr ""
+msgstr "Pausen är över! Är du redo att fokusera igen?"
 
 #. focus.break_start
 msgctxt "focus.break_start"
 msgid "Break time! Rest your brain."
-msgstr ""
+msgstr "Paus! Vila hjärnan."
 
 #. focus.break_time
 msgctxt "focus.break_time"
 msgid "Break time"
-msgstr ""
+msgstr "Rast"
 
 #. focus.credit
 msgctxt "focus.credit"
-msgid "Pomodoro-based focus timer with parked thoughts for managing distractions"
+msgid ""
+"Pomodoro-based focus timer with parked thoughts for managing distractions"
 msgstr ""
+"Pomodoro-baserad fokus-timer med parkerade tankar för att hantera "
+"distraktioner"
 
 #. focus.focus_time
 msgctxt "focus.focus_time"
 msgid "Focus time"
-msgstr ""
+msgstr "Fokuseringstid"
 
 #. focus.long_break
 msgctxt "focus.long_break"
 msgid "Long break! You earned it!"
-msgstr ""
+msgstr "Lång semester! Du har förtjänat det!"
 
 #. focus.long_break_time
 msgctxt "focus.long_break_time"
 msgid "Long break"
-msgstr ""
+msgstr "Lång paus"
 
 #. focus.no_parked
 msgctxt "focus.no_parked"
 msgid "No parked thoughts — clear mind!"
-msgstr ""
+msgstr "Inga fastnade tankar — klart sinne!"
 
 #. focus.no_tasks
 msgctxt "focus.no_tasks"
 msgid "No task selected"
-msgstr ""
+msgstr "Ingen uppgift vald"
 
 #. focus.no_tasks_yet
 msgctxt "focus.no_tasks_yet"
 msgid "No tasks yet — add one above!"
-msgstr ""
+msgstr "Inga uppgifter ännu — lägg till en ovan!"
 
 #. focus.parked
 msgctxt "focus.parked"
@@ -2167,12 +2193,12 @@ msgstr "Parkerad"
 #. focus.parked_desc
 msgctxt "focus.parked_desc"
 msgid "Got distracted? Park the thought here and come back to it later."
-msgstr ""
+msgstr "Blev du distraherad? Parkera tanken här och återkom till den senare."
 
 #. focus.quick_thought
 msgctxt "focus.quick_thought"
 msgid "Quick thought to park…"
-msgstr ""
+msgstr "Snabb tanke att parkera…"
 
 #. focus.ready
 msgctxt "focus.ready"
@@ -2187,7 +2213,7 @@ msgstr "Ta en paus"
 #. focus.start_work
 msgctxt "focus.start_work"
 msgid "Start Focus"
-msgstr ""
+msgstr "Starta fokus"
 
 #. focus.stop
 msgctxt "focus.stop"
@@ -2202,32 +2228,32 @@ msgstr "Uppgifter"
 #. focus.thought_parked
 msgctxt "focus.thought_parked"
 msgid "Thought parked! Back to focus."
-msgstr ""
+msgstr "Tanken parkerad! Tillbaka till fokus."
 
 #. focus.timer
 msgctxt "focus.timer"
 msgid "Timer"
-msgstr ""
+msgstr "Timer"
 
 #. focus.title
 msgctxt "focus.title"
 msgid "Focus Buddy"
-msgstr ""
+msgstr "Fokuskompis"
 
 #. focus.work_done
 msgctxt "focus.work_done"
 msgid "Great focus session! Time for a break."
-msgstr ""
+msgstr "Bra fokusering! Dags för en paus."
 
 #. focus.work_start
 msgctxt "focus.work_start"
 msgid "Focus time! Let's do this!"
-msgstr ""
+msgstr "Fokusera! Nu kör vi!"
 
 #. focus.working_on
 msgctxt "focus.working_on"
 msgid "Working on"
-msgstr ""
+msgstr "Arbeta med"
 
 #. guide.all_done
 msgctxt "guide.all_done"
@@ -2243,6 +2269,7 @@ msgstr "Borsta tänderna"
 msgctxt "guide.credit"
 msgid "Visual step-by-step task guides (TEACCH-inspired structured teaching)"
 msgstr ""
+"Visuella steg-för-steg-guider (TEACCH-inspirerad strukturerad undervisning)"
 
 #. guide.get_dressed
 msgctxt "guide.get_dressed"
@@ -2257,122 +2284,122 @@ msgstr "Packa skolväskan"
 #. guide.pick
 msgctxt "guide.pick"
 msgid "Choose a task to learn step by step!"
-msgstr ""
+msgstr "Välj en uppgift för att lära dig steg för steg!"
 
 #. guide.step.back_teeth
 msgctxt "guide.step.back_teeth"
 msgid "Brush your back teeth — circles"
-msgstr ""
+msgstr "Borsta bakre tänderna — cirklar"
 
 #. guide.step.books
 msgctxt "guide.step.books"
 msgid "Put your books in the bag"
-msgstr ""
+msgstr "Lägg dina böcker i väskan"
 
 #. guide.step.close_bag
 msgctxt "guide.step.close_bag"
 msgid "Close your bag — ready!"
-msgstr ""
+msgstr "Stäng väskan – klart!"
 
 #. guide.step.dry
 msgctxt "guide.step.dry"
 msgid "Dry your hands with a towel"
-msgstr ""
+msgstr "Torka händerna med en handduk"
 
 #. guide.step.front_teeth
 msgctxt "guide.step.front_teeth"
 msgid "Brush your front teeth — up and down"
-msgstr ""
+msgstr "Borsta framtänderna – uppåt och nedåt"
 
 #. guide.step.pants
 msgctxt "guide.step.pants"
 msgid "Put on pants"
-msgstr ""
+msgstr "Ta på dig byxor"
 
 #. guide.step.paste
 msgctxt "guide.step.paste"
 msgid "Put toothpaste on the brush"
-msgstr ""
+msgstr "Sätt tandkräm på borsten"
 
 #. guide.step.pencil_case
 msgctxt "guide.step.pencil_case"
 msgid "Add your pencil case"
-msgstr ""
+msgstr "Lägg till ditt pennfodral"
 
 #. guide.step.rinse
 msgctxt "guide.step.rinse"
 msgid "Rinse off all the soap"
-msgstr ""
+msgstr "Skölj bort all tvål"
 
 #. guide.step.rinse_mouth
 msgctxt "guide.step.rinse_mouth"
 msgid "Rinse your mouth with water"
-msgstr ""
+msgstr "Skölj munnen med vatten"
 
 #. guide.step.rub_20
 msgctxt "guide.step.rub_20"
 msgid "Rub your hands together — count to 20"
-msgstr ""
+msgstr "Gnugga händerna mot varandra — räkna till 20"
 
 #. guide.step.shirt
 msgctxt "guide.step.shirt"
 msgid "Put on a shirt"
-msgstr ""
+msgstr "Ta på dig en skjorta"
 
 #. guide.step.shoes
 msgctxt "guide.step.shoes"
 msgid "Put on shoes"
-msgstr ""
+msgstr "Ta på dig skor"
 
 #. guide.step.snack
 msgctxt "guide.step.snack"
 msgid "Pack a snack"
-msgstr ""
+msgstr "Packa ett mellanmål"
 
 #. guide.step.soap
 msgctxt "guide.step.soap"
 msgid "Put soap on your hands"
-msgstr ""
+msgstr "Lägg tvål på händerna"
 
 #. guide.step.socks
 msgctxt "guide.step.socks"
 msgid "Put on socks"
-msgstr ""
+msgstr "Ta på dig strumpor"
 
 #. guide.step.sweater
 msgctxt "guide.step.sweater"
 msgid "Put on a sweater if cold"
-msgstr ""
+msgstr "Ta på dig en tröja om du fryser"
 
 #. guide.step.tongue
 msgctxt "guide.step.tongue"
 msgid "Brush your tongue gently"
-msgstr ""
+msgstr "Borsta tungan försiktigt"
 
 #. guide.step.turn_on_water
 msgctxt "guide.step.turn_on_water"
 msgid "Turn on the water"
-msgstr ""
+msgstr "Sätt på vattnet"
 
 #. guide.step.underwear
 msgctxt "guide.step.underwear"
 msgid "Put on underwear"
-msgstr ""
+msgstr "Ta på dig underkläder"
 
 #. guide.step.water_bottle
 msgctxt "guide.step.water_bottle"
 msgid "Don't forget your water bottle"
-msgstr ""
+msgstr "Glöm inte din vattenflaska"
 
 #. guide.step.wet_brush
 msgctxt "guide.step.wet_brush"
 msgid "Wet your toothbrush"
-msgstr ""
+msgstr "Blöt din tandborste"
 
 #. guide.steps
 msgctxt "guide.steps"
 msgid "steps"
-msgstr "Steg"
+msgstr "steg"
 
 #. guide.title
 msgctxt "guide.title"
@@ -2382,12 +2409,12 @@ msgstr "Stegvisaren"
 #. guide.wash_hands
 msgctxt "guide.wash_hands"
 msgid "Wash Hands"
-msgstr ""
+msgstr "Tvätta händerna"
 
 #. letter.again
 msgctxt "letter.again"
 msgid "Again"
-msgstr ""
+msgstr "Återigen"
 
 #. letter.almost
 msgctxt "letter.almost"
@@ -2407,7 +2434,7 @@ msgstr "Välj ditt äventyr! 🗺️"
 #. letter.coartic_instruction
 msgctxt "letter.coartic_instruction"
 msgid "🗣️ Tap each combo to practice smooth sound transitions!"
-msgstr ""
+msgstr "🗣️ Tryck på varje kombination för att öva på smidiga ljudövergångar!"
 
 #. letter.consonant
 msgctxt "letter.consonant"
@@ -2421,13 +2448,17 @@ msgstr "Rätt!"
 
 #. letter.credit
 msgctxt "letter.credit"
-msgid "Based on DTTC principles (Strand, 2020) for childhood apraxia of speech. Not a substitute for speech therapy."
-msgstr "Baserad på DTTC-principer (Strand, 2020) för verbal dyspraxi. Ersätter inte logopedbehandling."
+msgid ""
+"Based on DTTC principles (Strand, 2020) for childhood apraxia of speech. Not"
+" a substitute for speech therapy."
+msgstr ""
+"Baserad på DTTC-principer (Strand, 2020) för verbal dyspraxi. Ersätter inte "
+"logopedbehandling."
 
 #. letter.cv
 msgctxt "letter.cv"
 msgid "Consonant + Vowel"
-msgstr ""
+msgstr "Konsonant + Vokal"
 
 #. letter.dont_give_up
 msgctxt "letter.dont_give_up"
@@ -2482,12 +2513,16 @@ msgstr "Nivå"
 #. letter.mode.coarticulation
 msgctxt "letter.mode.coarticulation"
 msgid "Sound Combos"
-msgstr ""
+msgstr "Ljudkombinationer"
 
 #. letter.mode.coarticulation_desc
 msgctxt "letter.mode.coarticulation_desc"
-msgid "Practice smooth transitions between consonants and vowels — core motor planning"
+msgid ""
+"Practice smooth transitions between consonants and vowels — core motor "
+"planning"
 msgstr ""
+"Öva på smidiga övergångar mellan konsonanter och vokaler — grundläggande "
+"motorisk planering"
 
 #. letter.mode.explore
 msgctxt "letter.mode.explore"
@@ -2677,7 +2712,7 @@ msgstr "Spela ljudet igen"
 #. letter.repeat_same
 msgctxt "letter.repeat_same"
 msgid "Repeat"
-msgstr ""
+msgstr "Upprepa"
 
 #. letter.so_close
 msgctxt "letter.so_close"
@@ -2722,7 +2757,7 @@ msgstr "Bokstavsresan"
 #. letter.vc
 msgctxt "letter.vc"
 msgid "Vowel + Consonant"
-msgstr ""
+msgstr "Vokal + konsonant"
 
 #. letter.vowel
 msgctxt "letter.vowel"
@@ -2747,7 +2782,7 @@ msgstr "äpple"
 #. letter.word.arm
 msgctxt "letter.word.arm"
 msgid "arm"
-msgstr ""
+msgstr "arm"
 
 #. letter.word.ball
 msgctxt "letter.word.ball"
@@ -2967,7 +3002,7 @@ msgstr "Skolan"
 #. money.bills
 msgctxt "money.bills"
 msgid "Bills"
-msgstr ""
+msgstr "Räkningar"
 
 #. money.clear
 msgctxt "money.clear"
@@ -2977,32 +3012,32 @@ msgstr "Töm"
 #. money.coins
 msgctxt "money.coins"
 msgid "Coins"
-msgstr ""
+msgstr "Mynt"
 
 #. money.credit
 msgctxt "money.credit"
 msgid "Learn Swedish money — count coins and bills"
-msgstr ""
+msgstr "Lär dig svenska pengar — räkna mynt och sedlar"
 
 #. money.kr
 msgctxt "money.kr"
 msgid "kr"
-msgstr ""
+msgstr "kr"
 
 #. money.tap_to_add
 msgctxt "money.tap_to_add"
 msgid "Tap coins and bills to count"
-msgstr ""
+msgstr "Tryck på mynt och sedlar för att räkna"
 
 #. money.title
 msgctxt "money.title"
 msgid "Money Check"
-msgstr ""
+msgstr "Pengakontroll"
 
 #. money.total
 msgctxt "money.total"
 msgid "Total:"
-msgstr ""
+msgstr "Totalt:"
 
 #. money.undo
 msgctxt "money.undo"
@@ -3207,12 +3242,12 @@ msgstr "Pekprat"
 #. practice.add_tasks
 msgctxt "practice.add_tasks"
 msgid "Add tasks"
-msgstr ""
+msgstr "Lägg till uppgifter"
 
 #. practice.all_done
 msgctxt "practice.all_done"
 msgid "All tasks done! Amazing!"
-msgstr ""
+msgstr "Alla uppgifter klara! Fantastiskt!"
 
 #. practice.brush_teeth
 msgctxt "practice.brush_teeth"
@@ -3222,37 +3257,37 @@ msgstr "Borsta tänder"
 #. practice.clean_up
 msgctxt "practice.clean_up"
 msgid "Clean up toys"
-msgstr ""
+msgstr "Städa upp leksaker"
 
 #. practice.credit
 msgctxt "practice.credit"
 msgid "Repetition-based practice board for building daily skills"
-msgstr ""
+msgstr "Repetitionsbaserad övningstavla för att bygga upp dagliga färdigheter"
 
 #. practice.custom_task
 msgctxt "practice.custom_task"
 msgid "Custom task…"
-msgstr ""
+msgstr "Anpassad uppgift…"
 
 #. practice.say_hello
 msgctxt "practice.say_hello"
 msgid "Say hello"
-msgstr ""
+msgstr "Säg hej"
 
 #. practice.say_please
 msgctxt "practice.say_please"
 msgid "Say please and thank you"
-msgstr ""
+msgstr "Säg tack och snälla"
 
 #. practice.set_table
 msgctxt "practice.set_table"
 msgid "Set the table"
-msgstr ""
+msgstr "Duka bordet"
 
 #. practice.tie_shoes
 msgctxt "practice.tie_shoes"
 msgid "Tie shoes"
-msgstr ""
+msgstr "Skosnören"
 
 #. practice.title
 msgctxt "practice.title"
@@ -3262,17 +3297,17 @@ msgstr "Övningstavlan"
 #. practice.well_done
 msgctxt "practice.well_done"
 msgid "Well done! Task complete!"
-msgstr ""
+msgstr "Bra gjort! Uppgiften är klar!"
 
 #. practice.write_name
 msgctxt "practice.write_name"
 msgid "Write my name"
-msgstr ""
+msgstr "Skriv mitt namn"
 
 #. practice.zip_jacket
 msgctxt "practice.zip_jacket"
 msgid "Zip my jacket"
-msgstr ""
+msgstr "Knäppa min jacka"
 
 #. practiceBoard.intro
 msgctxt "practiceBoard.intro"
@@ -3707,7 +3742,7 @@ msgstr "Enkel"
 #. settings.test_voice
 msgctxt "settings.test_voice"
 msgid "Test voice"
-msgstr ""
+msgstr "Teströst"
 
 #. settings.text_size
 msgctxt "settings.text_size"
@@ -3727,7 +3762,7 @@ msgstr "Stor"
 #. settings.text_size.normal
 msgctxt "settings.text_size.normal"
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #. settings.theme
 msgctxt "settings.theme"
@@ -3757,7 +3792,7 @@ msgstr "Inställningar"
 #. settings.tts_engine
 msgctxt "settings.tts_engine"
 msgid "TTS engine"
-msgstr ""
+msgstr "TTS-motor"
 
 #. settings.tts_speed
 msgctxt "settings.tts_speed"
@@ -3772,7 +3807,7 @@ msgstr "Snabb"
 #. settings.tts_speed.normal
 msgctxt "settings.tts_speed.normal"
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #. settings.tts_speed.slow
 msgctxt "settings.tts_speed.slow"
@@ -3912,192 +3947,196 @@ msgstr "Situationskort"
 #. situation.transport
 msgctxt "situation.transport"
 msgid "Transport"
-msgstr ""
+msgstr "Transport"
 
 #. takk.description
 msgctxt "takk.description"
-msgid "Signs as Alternative and Augmentative Communication (TAKK) — sign the key words while speaking"
+msgid ""
+"Signs as Alternative and Augmentative Communication (TAKK) — sign the key "
+"words while speaking"
 msgstr ""
+"Tecken som alternativ och kompletterande kommunikation (TAKK) — teckna "
+"nyckelorden medan du talar"
 
 #. takk.how_to_sign
 msgctxt "takk.how_to_sign"
 msgid "How to sign"
-msgstr ""
+msgstr "Hur man skriver under"
 
 #. takk.see_video
 msgctxt "takk.see_video"
 msgid "See sign video"
-msgstr ""
+msgstr "Se skyltvideo"
 
 #. takk.sign.arg
 msgctxt "takk.sign.arg"
 msgid "Claw hand in front of face, tense expression"
-msgstr ""
+msgstr "Klohand framför ansiktet, spänd min"
 
 #. takk.sign.ata
 msgctxt "takk.sign.ata"
 msgid "Pinch fingers to thumb, move to mouth"
-msgstr ""
+msgstr "Nyp fingrarna mot tummen, förflytta till munnen"
 
 #. takk.sign.dricka
 msgctxt "takk.sign.dricka"
 msgid "C-hand shape, tip to mouth (like drinking)"
-msgstr ""
+msgstr "C-handform, spetsen mot munnen (som när man dricker)"
 
 #. takk.sign.du
 msgctxt "takk.sign.du"
 msgid "Point forward with index finger"
-msgstr ""
+msgstr "Peka framåt med pekfingret"
 
 #. takk.sign.ga
 msgctxt "takk.sign.ga"
 msgid "Two fingers 'walk' on other palm"
-msgstr ""
+msgstr "Två fingrar \"går\" på den andra handflatan"
 
 #. takk.sign.glad
 msgctxt "takk.sign.glad"
 msgid "Hands circle upward on chest (happy feeling)"
-msgstr ""
+msgstr "Händerna cirklar uppåt på bröstet (glad känsla)"
 
 #. takk.sign.hem
 msgctxt "takk.sign.hem"
 msgid "Fingertips together forming roof shape"
-msgstr ""
+msgstr "Fingertopparna ihop så att de bildar ett tak"
 
 #. takk.sign.hjalp
 msgctxt "takk.sign.hjalp"
 msgid "Fist on open palm, lift upward"
-msgstr ""
+msgstr "Knyt näven på öppen handflata, lyft uppåt"
 
 #. takk.sign.hund
 msgctxt "takk.sign.hund"
 msgid "Pat thigh twice (calling a dog)"
-msgstr ""
+msgstr "Klappa låret två gånger (kalla på en hund)"
 
 #. takk.sign.inte
 msgctxt "takk.sign.inte"
 msgid "Flat hand, sweep sideways away from body"
-msgstr ""
+msgstr "Platt hand, svep sidledes bort från kroppen"
 
 #. takk.sign.ja
 msgctxt "takk.sign.ja"
 msgid "Nod fist up and down (like knocking)"
-msgstr ""
+msgstr "Nicka med näven upp och ner (som om du knackar)"
 
 #. takk.sign.jag
 msgctxt "takk.sign.jag"
 msgid "Point to yourself with index finger"
-msgstr ""
+msgstr "Peka på dig själv med pekfingret"
 
 #. takk.sign.katt
 msgctxt "takk.sign.katt"
 msgid "Pinch and pull whiskers from cheeks"
-msgstr ""
+msgstr "Nyp och dra i morrhåren från kinderna"
 
 #. takk.sign.kompis
 msgctxt "takk.sign.kompis"
 msgid "Hook index fingers together"
-msgstr ""
+msgstr "Haka fast pekfingrarna i varandra"
 
 #. takk.sign.lasa
 msgctxt "takk.sign.lasa"
 msgid "Flat hands open like a book"
-msgstr ""
+msgstr "Platta händer öppna som en bok"
 
 #. takk.sign.ledsen
 msgctxt "takk.sign.ledsen"
 msgid "Finger traces tear down cheek"
-msgstr ""
+msgstr "Fingrarna drar ner tårar längs kinden"
 
 #. takk.sign.leka
 msgctxt "takk.sign.leka"
 msgid "Y-hands (thumbs and pinkies out), shake"
-msgstr ""
+msgstr "Y-händer (tummar och lillfingrar ut), skaka"
 
 #. takk.sign.mamma
 msgctxt "takk.sign.mamma"
 msgid "Tap chin with thumb (from M-hand)"
-msgstr ""
+msgstr "Knacka hakan med tummen (från M-handen)"
 
 #. takk.sign.mat
 msgctxt "takk.sign.mat"
 msgid "Pinch to mouth (like eating)"
-msgstr ""
+msgstr "Nyp till munnen (som när man äter)"
 
 #. takk.sign.mer
 msgctxt "takk.sign.mer"
 msgid "Pinch fingers together, tap twice"
-msgstr ""
+msgstr "Nyp ihop fingrarna, tryck två gånger"
 
 #. takk.sign.nej
 msgctxt "takk.sign.nej"
 msgid "Shake flat hand side to side"
-msgstr ""
+msgstr "Skaka med handen platt från sida till sida"
 
 #. takk.sign.pappa
 msgctxt "takk.sign.pappa"
 msgid "Tap forehead with thumb (from P-hand)"
-msgstr ""
+msgstr "Knacka pannan med tummen (från P-handen)"
 
 #. takk.sign.radd
 msgctxt "takk.sign.radd"
 msgid "Fists shake near chest (trembling)"
-msgstr ""
+msgstr "Knäppar händerna nära bröstet (skakar)"
 
 #. takk.sign.skola
 msgctxt "takk.sign.skola"
 msgid "Clap hands twice (like getting attention)"
-msgstr ""
+msgstr "Klappa händerna två gånger (som för att få uppmärksamhet)"
 
 #. takk.sign.slut
 msgctxt "takk.sign.slut"
 msgid "Both hands open, push away from body"
-msgstr ""
+msgstr "Båda händerna öppna, tryck bort från kroppen"
 
 #. takk.sign.sova
 msgctxt "takk.sign.sova"
 msgid "Palm against cheek, tilt head"
-msgstr ""
+msgstr "Handflatan mot kinden, luta huvudet"
 
 #. takk.sign.titta
 msgctxt "takk.sign.titta"
 msgid "V-fingers point from eyes outward"
-msgstr ""
+msgstr "V-fingrarna pekar utåt från ögonen"
 
 #. takk.sign.toalett
 msgctxt "takk.sign.toalett"
 msgid "T-hand shape, shake slightly"
-msgstr ""
+msgstr "T-handform, skaka lätt"
 
 #. takk.sign.trott
 msgctxt "takk.sign.trott"
 msgid "Both hands on chest, drop downward"
-msgstr ""
+msgstr "Båda händerna på bröstet, falla nedåt"
 
 #. takk.sign.vad
 msgctxt "takk.sign.vad"
 msgid "Palms up, shake hands slightly"
-msgstr ""
+msgstr "Handflatorna uppåt, skaka handen lätt"
 
 #. takk.sign.var
 msgctxt "takk.sign.var"
 msgid "Palms up, shrug shoulders"
-msgstr ""
+msgstr "Handflatorna uppåt, ryck på axlarna"
 
 #. takk.sign.vatten
 msgctxt "takk.sign.vatten"
 msgid "W-hand shape at chin"
-msgstr ""
+msgstr "W-handform vid hakan"
 
 #. takk.sign.vill
 msgctxt "takk.sign.vill"
 msgid "Point forward with index finger, pull toward chest"
-msgstr ""
+msgstr "Peka framåt med pekfingret, dra mot bröstet"
 
 #. takk.title
 msgctxt "takk.title"
 msgid "TAKK Signs"
-msgstr ""
+msgstr "TAKK-skyltar"
 
 #. talk.clear
 msgctxt "talk.clear"
@@ -4107,7 +4146,7 @@ msgstr "Rensa"
 #. talk.finished
 msgctxt "talk.finished"
 msgid "Finished"
-msgstr ""
+msgstr "Färdig"
 
 #. talk.fullscreen
 msgctxt "talk.fullscreen"
@@ -4122,7 +4161,7 @@ msgstr "Hjälp"
 #. talk.i_want
 msgctxt "talk.i_want"
 msgid "I want"
-msgstr ""
+msgstr "Jag vill"
 
 #. talk.load_board
 msgctxt "talk.load_board"
@@ -4187,7 +4226,7 @@ msgstr "Först-sedan-tavla"
 #. timer.min
 msgctxt "timer.min"
 msgid "min"
-msgstr ""
+msgstr "min"
 
 #. timer.minutes
 msgctxt "timer.minutes"
@@ -4227,12 +4266,12 @@ msgstr "Visuell timer"
 #. vs.add_step
 msgctxt "vs.add_step"
 msgid "Add a step…"
-msgstr ""
+msgstr "Lägg till ett steg…"
 
 #. vs.credit
 msgctxt "vs.credit"
 msgid "Visual schedule and step-by-step support tool"
-msgstr ""
+msgstr "Visuellt schema och steg-för-steg-stödverktyg"
 
 #. vs.done
 msgctxt "vs.done"
@@ -4242,17 +4281,17 @@ msgstr "Klar"
 #. vs.done_editing
 msgctxt "vs.done_editing"
 msgid "Done editing"
-msgstr ""
+msgstr "Redigeringen är klar"
 
 #. vs.edit
 msgctxt "vs.edit"
 msgid "Edit"
-msgstr ""
+msgstr "Redigera"
 
 #. vs.my_schedules
 msgctxt "vs.my_schedules"
 msgid "My Schedules"
-msgstr ""
+msgstr "Mina scheman"
 
 #. vs.reset
 msgctxt "vs.reset"
@@ -4262,27 +4301,27 @@ msgstr "Nollställ"
 #. vs.step.arrive
 msgctxt "vs.step.arrive"
 msgid "Arrive at school"
-msgstr ""
+msgstr "Anlända till skolan"
 
 #. vs.step.bath
 msgctxt "vs.step.bath"
 msgid "Take a bath"
-msgstr ""
+msgstr "Ta ett bad"
 
 #. vs.step.bed
 msgctxt "vs.step.bed"
 msgid "Go to bed"
-msgstr ""
+msgstr "Gå och lägg dig"
 
 #. vs.step.break_time
 msgctxt "vs.step.break_time"
 msgid "Break time"
-msgstr ""
+msgstr "Rast"
 
 #. vs.step.breakfast
 msgctxt "vs.step.breakfast"
 msgid "Eat breakfast"
-msgstr ""
+msgstr "Ät frukost"
 
 #. vs.step.brush_teeth
 msgctxt "vs.step.brush_teeth"
@@ -4297,7 +4336,7 @@ msgstr "Komma hem"
 #. vs.step.dinner
 msgctxt "vs.step.dinner"
 msgid "Eat dinner"
-msgstr ""
+msgstr "Äta middag"
 
 #. vs.step.get_dressed
 msgctxt "vs.step.get_dressed"
@@ -4307,27 +4346,27 @@ msgstr "Klä på sig"
 #. vs.step.go
 msgctxt "vs.step.go"
 msgid "Time to go!"
-msgstr ""
+msgstr "Dags att gå!"
 
 #. vs.step.go_home
 msgctxt "vs.step.go_home"
 msgid "Go home"
-msgstr ""
+msgstr "Gå hem"
 
 #. vs.step.lesson
 msgctxt "vs.step.lesson"
 msgid "Lesson time"
-msgstr ""
+msgstr "Lektionstid"
 
 #. vs.step.lunch
 msgctxt "vs.step.lunch"
 msgid "Lunch"
-msgstr ""
+msgstr "Lunch"
 
 #. vs.step.pack_bag
 msgctxt "vs.step.pack_bag"
 msgid "Pack your bag"
-msgstr ""
+msgstr "Packa din väska"
 
 #. vs.step.read
 msgctxt "vs.step.read"
@@ -4337,7 +4376,7 @@ msgstr "Läsa en bok"
 #. vs.step.shower
 msgctxt "vs.step.shower"
 msgid "Take a shower"
-msgstr ""
+msgstr "Ta en dusch"
 
 #. vs.step.wake_up
 msgctxt "vs.step.wake_up"
@@ -4347,7 +4386,7 @@ msgstr "Vakna"
 #. vs.steps
 msgctxt "vs.steps"
 msgid "steps"
-msgstr "Steg"
+msgstr "steg"
 
 #. vs.template.evening
 msgctxt "vs.template.evening"
@@ -4367,10 +4406,9 @@ msgstr "Skoldag"
 #. vs.templates
 msgctxt "vs.templates"
 msgid "Create from template"
-msgstr ""
+msgstr "Skapa från mall"
 
 #. vs.title
 msgctxt "vs.title"
 msgid "Visual Support"
 msgstr "Bildstöd"
-

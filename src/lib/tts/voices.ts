@@ -14,7 +14,7 @@ export interface VoiceOption {
 }
 
 export const VOICES_SV: VoiceOption[] = [
-	{ id: 'sv_SE-nst-medium', name: 'NST', lang: 'sv', gender: 'female', quality: 'medium', sizeMb: 18 },
+	{ id: 'sv_SE-nst-medium', name: 'Alma', lang: 'sv', gender: 'female', quality: 'medium', sizeMb: 18 },
 	{ id: 'sv_SE-lisa-medium', name: 'Lisa', lang: 'sv', gender: 'female', quality: 'medium', sizeMb: 18 },
 ];
 

@@ -3,6 +3,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
+  import { translateKeywords } from '$lib/arasaac/sv-lookup';
   import { locale } from '$lib/i18n';
   import { get } from 'svelte/store';
 
@@ -64,11 +65,15 @@
   async function loadWords() {
     loading = true;
     const lang = get(locale);
+    const allEnWords = CORE_VOCAB.map(v => v.word);
+    const translated = lang === 'sv' ? await translateKeywords(allEnWords) : null;
+
     const results = await Promise.all(
-      CORE_VOCAB.map(async ({ word, category }) => {
-        const res = await searchPictograms(word, lang);
+      CORE_VOCAB.map(async ({ word, category }, i) => {
+        const res = await searchPictograms(word, 'en');
+        const displayWord = translated ? translated[i].sv : word;
         return {
-          word, category, color: CATEGORY_COLORS[category] || '#999',
+          word: displayWord, category, color: CATEGORY_COLORS[category] || '#999',
           id: res[0]?.id || 0, url: res[0]?.url || ''
         };
       })

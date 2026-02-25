@@ -3,6 +3,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms, getPictogramUrl } from '$lib/arasaac';
+  import { translateKeywords } from '$lib/arasaac/sv-lookup';
   import { locale } from '$lib/i18n';
   import { get } from 'svelte/store';
 
@@ -11,7 +12,7 @@
     label: string;
     emoji: string;
     color: string;
-    words: string[];
+    words: string[];  // English keys for ARASAAC lookup
   }
 
   const THEMES: ThemeBoard[] = [
@@ -37,18 +38,25 @@
     loading = true;
     speak($t(theme.label));
     const lang = get(locale);
+
+    // Get translated labels for display
+    const translated = lang === 'sv' ? await translateKeywords(theme.words) : null;
+
     const results = await Promise.all(
-      theme.words.map(async (w) => {
-        const res = await searchPictograms(w, lang);
-        return res[0] ? { word: w, id: res[0].id, url: res[0].url } : { word: w, id: 0, url: '' };
+      theme.words.map(async (w, i) => {
+        const res = await searchPictograms(w, 'en'); // always search in English for reliability
+        const displayWord = translated ? translated[i].sv : w;
+        return res[0] ? { word: displayWord, id: res[0].id, url: res[0].url } : { word: displayWord, id: 0, url: '' };
       })
     );
     boardPictograms = results;
     if (corePictograms.length === 0) {
+      const coreTranslated = lang === 'sv' ? await translateKeywords(CORE_WORDS) : null;
       corePictograms = await Promise.all(
-        CORE_WORDS.map(async (w) => {
-          const res = await searchPictograms(w, lang);
-          return res[0] ? { word: w, id: res[0].id, url: res[0].url } : { word: w, id: 0, url: '' };
+        CORE_WORDS.map(async (w, i) => {
+          const res = await searchPictograms(w, 'en');
+          const displayWord = coreTranslated ? coreTranslated[i].sv : w;
+          return res[0] ? { word: displayWord, id: res[0].id, url: res[0].url } : { word: displayWord, id: 0, url: '' };
         })
       );
     }

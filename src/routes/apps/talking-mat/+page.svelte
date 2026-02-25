@@ -3,6 +3,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
+  import { translateKeywords } from '$lib/arasaac/sv-lookup';
   import { locale } from '$lib/i18n';
   import { get } from 'svelte/store';
 
@@ -26,10 +27,12 @@
     loading = true;
     speak($t(topic.label));
     const lang = get(locale);
+    const translated = lang === 'sv' ? await translateKeywords(topic.words) : null;
     const results = await Promise.all(
-      topic.words.map(async (w) => {
-        const res = await searchPictograms(w, lang);
-        return { word: w, id: res[0]?.id || 0, url: res[0]?.url || '', zone: 'unplaced' as const };
+      topic.words.map(async (w, i) => {
+        const res = await searchPictograms(w, 'en');
+        const displayWord = translated ? translated[i].sv : w;
+        return { word: displayWord, id: res[0]?.id || 0, url: res[0]?.url || '', zone: 'unplaced' as const };
       })
     );
     items = results;

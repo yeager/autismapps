@@ -1,3 +1,5 @@
+import { loadSvLookup } from './sv-lookup';
+
 const API_BASE = 'https://api.arasaac.org/v1';
 const CACHE_NAME = 'arasaac-pictograms';
 
@@ -20,17 +22,45 @@ export async function searchPictograms(
   query: string,
   lang: string = 'en'
 ): Promise<PictogramSearchResult[]> {
-  const locale = lang === 'sv' ? 'sv' : 'en';
+  // For Swedish: try local lookup first (Danne's arasaac-sv.po)
+  if (lang === 'sv') {
+    const lookup = await loadSvLookup();
+    // Search query might be in Swedish — find matching English key
+    const queryLower = query.toLowerCase();
+    // First: exact match on Swedish value
+    for (const [en, entry] of Object.entries(lookup)) {
+      if (entry.sv.toLowerCase() === queryLower && entry.id) {
+        return [{ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) }];
+      }
+    }
+    // Second: partial match on Swedish value
+    const partialSv: PictogramSearchResult[] = [];
+    for (const [en, entry] of Object.entries(lookup)) {
+      if (entry.sv.toLowerCase().includes(queryLower) && entry.id) {
+        partialSv.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
+        if (partialSv.length >= 50) break;
+      }
+    }
+    if (partialSv.length > 0) return partialSv;
+  }
+
+  // Fallback: ARASAAC API (English search works, Swedish not yet official)
   try {
-    const res = await fetch(`${API_BASE}/pictograms/${locale}/search/${encodeURIComponent(query)}`);
+    const res = await fetch(`${API_BASE}/pictograms/en/search/${encodeURIComponent(query)}`);
     if (!res.ok) return [];
     const data: Pictogram[] = await res.json();
-    return data.slice(0, 50).map((p) => ({
-      id: p._id,
-      keyword: p.keywords[0]?.keyword || query,
-      url: getPictogramUrl(p._id, false),
-      urlBW: getPictogramUrl(p._id, true)
-    }));
+    // If Swedish, enrich keywords from local lookup
+    const lookup = lang === 'sv' ? await loadSvLookup() : null;
+    return data.slice(0, 50).map((p) => {
+      const enKeyword = p.keywords[0]?.keyword || query;
+      const keyword = lookup ? (lookup[enKeyword.toLowerCase()]?.sv || enKeyword) : enKeyword;
+      return {
+        id: p._id,
+        keyword,
+        url: getPictogramUrl(p._id, false),
+        urlBW: getPictogramUrl(p._id, true)
+      };
+    });
   } catch {
     return [];
   }

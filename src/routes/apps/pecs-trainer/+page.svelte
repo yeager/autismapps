@@ -3,6 +3,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
+  import { translateKeywords } from '$lib/arasaac/sv-lookup';
   import { locale } from '$lib/i18n';
   import { get } from 'svelte/store';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -58,10 +59,13 @@
     loading = true;
     const lang = get(locale);
     const words = phase === 6 ? COMMENT_WORDS : ITEM_WORDS;
+    const sliced = words.slice(0, phase <= 2 ? 4 : phase <= 4 ? 8 : 12);
+    const translated = lang === 'sv' ? await translateKeywords(sliced) : null;
     const results = await Promise.all(
-      words.slice(0, phase <= 2 ? 4 : phase <= 4 ? 8 : 12).map(async (w) => {
-        const res = await searchPictograms(w, lang);
-        return res[0] ? { id: res[0].id, url: res[0].url, word: w } : null;
+      sliced.map(async (w, i) => {
+        const res = await searchPictograms(w, 'en');
+        const displayWord = translated ? translated[i].sv : w;
+        return res[0] ? { id: res[0].id, url: res[0].url, word: displayWord } : null;
       })
     );
     items = results.filter(Boolean) as PictoItem[];

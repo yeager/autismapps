@@ -13,9 +13,19 @@
 
   let advanced = $state(false);
 
-  const LANGUAGES = [
-    { code: 'en', label: 'English' },
-    { code: 'sv', label: 'Svenska' }
+  const LANGUAGES: { code: string; label: string; flag: string; ready: boolean }[] = [
+    { code: 'sv', label: 'Svenska', flag: '🇸🇪', ready: true },
+    { code: 'en', label: 'English', flag: '🇬🇧', ready: true },
+    { code: 'da', label: 'Dansk', flag: '🇩🇰', ready: false },
+    { code: 'de', label: 'Deutsch', flag: '🇩🇪', ready: false },
+    { code: 'es', label: 'Español', flag: '🇪🇸', ready: false },
+    { code: 'fi', label: 'Suomi', flag: '🇫🇮', ready: false },
+    { code: 'fr', label: 'Français', flag: '🇫🇷', ready: false },
+    { code: 'it', label: 'Italiano', flag: '🇮🇹', ready: false },
+    { code: 'nb', label: 'Norsk bokmål', flag: '🇳🇴', ready: false },
+    { code: 'nl', label: 'Nederlands', flag: '🇳🇱', ready: false },
+    { code: 'pl', label: 'Polski', flag: '🇵🇱', ready: false },
+    { code: 'pt_BR', label: 'Português (BR)', flag: '🇧🇷', ready: false },
   ];
 
   const TEXT_SIZES: { value: TextSize; key: string }[] = [
@@ -165,10 +175,17 @@
       <div class="setting-options">
         {#each LANGUAGES as lang}
           <button
-            class="option-btn"
+            class="lang-btn"
             class:active={$locale === lang.code}
+            class:disabled={!lang.ready}
+            disabled={!lang.ready}
             onclick={() => changeLang(lang.code)}
-          >{lang.label}</button>
+            title={lang.ready ? lang.label : `${lang.label} — coming soon`}
+          >
+            <span class="lang-flag">{lang.flag}</span>
+            <span class="lang-name">{lang.label}</span>
+            {#if !lang.ready}<span class="lang-soon">⏳</span>{/if}
+          </button>
         {/each}
       </div>
     </div>
@@ -583,4 +600,26 @@
   .voice-check { position: absolute; top: 4px; right: 6px; color: #27AE60; font-size: 0.85em; }
   .voice-dl { position: absolute; top: 4px; left: 6px; }
   .setting-hint { font-size: 0.8em; color: var(--text-muted); margin: 0; }
+
+  /* Language buttons */
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.85em;
+    transition: all var(--transition);
+    min-height: 40px;
+    white-space: nowrap;
+    background: var(--bg-card);
+  }
+  .lang-btn:hover:not(:disabled) { background: var(--bg-hover); border-color: var(--accent); }
+  .lang-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .lang-btn.disabled { opacity: 0.45; cursor: not-allowed; }
+  .lang-flag { font-size: 1.2em; }
+  .lang-name { font-size: 0.9em; }
+  .lang-soon { font-size: 0.75em; }
 </style>

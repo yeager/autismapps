@@ -146,7 +146,8 @@ export async function preloadVoice(lang?: string): Promise<void> {
 	const voiceId = getVoiceId(l);
 
 	try {
-		const stored = await piper.stored();
+		let stored: string[] = [];
+		try { stored = await piper.stored(); } catch { stored = []; }
 		if (!stored.includes(voiceId)) {
 			console.log(`[TTS] Downloading voice: ${voiceId}...`);
 			await piper.download(voiceId, (progress) => {
@@ -166,7 +167,22 @@ export async function preloadVoice(lang?: string): Promise<void> {
 export async function getStoredVoices(): Promise<string[]> {
 	const piper = await initPiper();
 	if (!piper) return [];
-	try { return await piper.stored(); } catch { return []; }
+	try {
+		return await piper.stored();
+	} catch (e) {
+		console.warn('[TTS] stored() failed (corrupt IndexedDB?), clearing cache:', e);
+		// Try to recover by clearing the piper IDB store
+		try {
+			const dbs = await indexedDB.databases();
+			for (const dbInfo of dbs) {
+				if (dbInfo.name && (dbInfo.name.includes('piper') || dbInfo.name.includes('onnx'))) {
+					indexedDB.deleteDatabase(dbInfo.name);
+					console.log(`[TTS] Deleted corrupt DB: ${dbInfo.name}`);
+				}
+			}
+		} catch { /* ignore */ }
+		return [];
+	}
 }
 
 /** Remove a cached voice */

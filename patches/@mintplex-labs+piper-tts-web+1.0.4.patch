@@ -1,0 +1,22 @@
+diff --git a/node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js b/node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js
+index 32767f4..fa4f21e 100644
+--- a/node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js
++++ b/node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js
+@@ -10,7 +10,7 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
+ var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
+ var _createPiperPhonemize, _modelConfig, _ort, _ortSession, _progressCallback, _wasmPaths, _logger;
+ const HF_BASE = "https://huggingface.co/diffusionstudio/piper-voices/resolve/main";
+-const ONNX_BASE = "https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.18.0/";
++const ONNX_BASE = "/";
+ const WASM_BASE = "https://cdn.jsdelivr.net/npm/@diffusionstudio/piper-wasm@1.0.0/build/piper_phonemize";
+ const PATH_MAP = {
+   "ar_JO-kareem-low": "ar/ar_JO/kareem/low/ar_JO-kareem-low.onnx",
+@@ -282,7 +282,7 @@ const _TtsSession = class _TtsSession {
+     __privateSet(this, _createPiperPhonemize, createPiperPhonemize);
+     __privateSet(this, _ort, await import("onnxruntime-web"));
+     __privateGet(this, _ort).env.allowLocalModels = false;
+-    __privateGet(this, _ort).env.wasm.numThreads = navigator.hardwareConcurrency;
++    __privateGet(this, _ort).env.wasm.numThreads = typeof SharedArrayBuffer !== "undefined" ? navigator.hardwareConcurrency : 1;
+     __privateGet(this, _ort).env.wasm.wasmPaths = __privateGet(this, _wasmPaths).onnxWasm;
+     const path = PATH_MAP[this.voiceId];
+     const modelConfigBlob = await getBlob(`${HF_BASE}/${path}.json`);

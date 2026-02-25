@@ -69,12 +69,14 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 		piperInitPromise = (async () => {
 			try {
 				console.log('[TTS] Loading Piper WASM...');
-				// Pre-configure onnxruntime-web: use single thread if no SharedArrayBuffer
+				// Pre-configure onnxruntime-web: single thread + local WASM files
 				try {
 					const ort = await import('onnxruntime-web');
 					const hasShared = typeof SharedArrayBuffer !== 'undefined';
 					ort.env.wasm.numThreads = hasShared ? navigator.hardwareConcurrency : 1;
-					console.log(`[TTS] ONNX threads: ${ort.env.wasm.numThreads} (SharedArrayBuffer: ${hasShared})`);
+					// Serve WASM from same origin to avoid CORS/COEP issues
+					ort.env.wasm.wasmPaths = '/';
+					console.log(`[TTS] ONNX: threads=${ort.env.wasm.numThreads}, SAB=${hasShared}, wasmPaths=/`);
 				} catch (e) {
 					console.warn('[TTS] Could not pre-configure onnxruntime:', e);
 				}

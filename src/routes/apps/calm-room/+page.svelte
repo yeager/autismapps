@@ -3,7 +3,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
 
-  type Activity = 'breathing' | 'pressure' | 'sounds' | 'colors' | 'grounding' | 'relaxation' | null;
+  type Activity = 'breathing' | 'pressure' | 'sounds' | 'colors' | 'grounding' | 'relaxation' | 'stress' | null;
 
   let activeActivity = $state<Activity>(null);
 
@@ -22,6 +22,11 @@
   let activeSound = $state<string | null>(null);
   let audioCtx: AudioContext | null = null;
   let soundNodes: { osc?: OscillatorNode; gain?: GainNode; noise?: AudioBufferSourceNode }[] = [];
+
+  // Stress level (from GTK4 lugnarummet)
+  let stressLevel = $state(3);
+  let showEmergency = $state(false);
+  const STRESS_EMOJIS: Record<number, string> = { 1: '😊', 2: '🙂', 3: '😐', 4: '😕', 5: '😟', 6: '😰', 7: '😫', 8: '🤯', 9: '😭', 10: '💥' };
 
   // Colors
   let colorHue = $state(200);
@@ -48,7 +53,8 @@
     { id: 'sounds' as const, emoji: '🎵', label: 'calm.sounds', color: '#98D8C8' },
     { id: 'colors' as const, emoji: '🌈', label: 'calm.colors', color: '#FFD1DC' },
     { id: 'grounding' as const, emoji: '🌍', label: 'calm.grounding_title', color: '#C3B1E1' },
-    { id: 'relaxation' as const, emoji: '🧘', label: 'calm.relaxation', color: '#FFDAB9' }
+    { id: 'relaxation' as const, emoji: '🧘', label: 'calm.relaxation', color: '#FFDAB9' },
+    { id: 'stress' as const, emoji: '📊', label: 'calm.stress_check', color: '#B0C4DE' }
   ];
 
   function selectActivity(a: Activity) {
@@ -344,6 +350,51 @@
       </button>
       <button class="link-btn" onclick={resetRelax}>{$t('calm.restart')}</button>
     </div>
+  {:else if activeActivity === 'stress'}
+    <div class="stress-area">
+      <h2>{$t('calm.how_stressed')}</h2>
+      <div class="stress-emoji">{STRESS_EMOJIS[stressLevel] || '😐'}</div>
+      <input type="range" min="1" max="10" step="1" bind:value={stressLevel} class="stress-slider" />
+      <div class="stress-labels">
+        <span>{$t('calm.stress_calm')}</span>
+        <span>{$t('calm.stress_medium')}</span>
+        <span>{$t('calm.stress_overload')}</span>
+      </div>
+      <p class="stress-advice">
+        {#if stressLevel <= 3}
+          {$t('calm.advice_low')}
+        {:else if stressLevel <= 5}
+          {$t('calm.advice_medium')}
+        {:else if stressLevel <= 7}
+          {$t('calm.advice_high')}
+        {:else}
+          {$t('calm.advice_critical')}
+        {/if}
+      </p>
+      {#if stressLevel >= 7}
+        <button class="emergency-btn" onclick={() => { showEmergency = true; speak($t('calm.you_are_safe')); }}>
+          🆘 {$t('calm.need_help_now')}
+        </button>
+      {/if}
+    </div>
+  {/if}
+
+  <!-- Emergency overlay -->
+  {#if showEmergency}
+    <div class="emergency-overlay" onclick={() => { showEmergency = false; }}>
+      <div class="emergency-card" onclick={(e) => e.stopPropagation()}>
+        <h2>💙 {$t('calm.you_are_safe')}</h2>
+        <p>{$t('calm.emergency_msg')}</p>
+        <div class="emergency-actions">
+          <button class="calm-btn" onclick={() => { showEmergency = false; selectActivity('breathing'); }}>
+            🫁 {$t('calm.breathing')}
+          </button>
+          <button class="calm-btn" style="background: var(--border)" onclick={() => { showEmergency = false; }}>
+            {$t('calm.im_ok')}
+          </button>
+        </div>
+      </div>
+    </div>
   {/if}
 
   <footer class="credit">
@@ -432,6 +483,30 @@
   .calm-btn:active { transform: scale(0.95); }
   .calm-btn:disabled { opacity: 0.4; }
   .link-btn { background: none; border: none; color: var(--text-muted); font-size: 0.9em; text-decoration: underline; }
+
+  /* Stress check */
+  .stress-area { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 20px; }
+  .stress-emoji { font-size: 4em; transition: all 0.3s; }
+  .stress-slider { width: 80%; max-width: 300px; height: 8px; accent-color: #3498DB; }
+  .stress-labels { display: flex; justify-content: space-between; width: 80%; max-width: 300px; font-size: 0.75em; color: var(--text-muted); }
+  .stress-advice { text-align: center; max-width: 300px; color: var(--text-muted); font-size: 0.95em; line-height: 1.5; }
+  .emergency-btn {
+    padding: 16px 32px; background: #E74C3C; color: white; border-radius: 100px;
+    font-size: 1.2em; font-weight: 700; border: none; animation: emergencyPulse 2s infinite;
+  }
+  @keyframes emergencyPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(231,76,60,0.4); } 50% { box-shadow: 0 0 0 12px rgba(231,76,60,0); } }
+
+  .emergency-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 100;
+    display: flex; align-items: center; justify-content: center; padding: 20px;
+  }
+  .emergency-card {
+    background: var(--bg); border-radius: 20px; padding: 32px; max-width: 380px; text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .emergency-card h2 { font-size: 1.5em; margin-bottom: 12px; }
+  .emergency-card p { color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+  .emergency-actions { display: flex; gap: 10px; justify-content: center; }
 
   .credit { text-align: center; padding: 12px; font-size: 0.75em; color: var(--text-muted); }
   .credit a { color: inherit; text-decoration: underline; }

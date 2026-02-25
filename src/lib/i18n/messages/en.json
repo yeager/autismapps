@@ -356,5 +356,21 @@
   "profile.enter_pin": "Enter PIN",
   "profile.wrong_pin": "Wrong PIN",
   "profile.create": "Create",
-  "profile.welcome": "Welcome"
+  "profile.welcome": "Welcome",
+
+  "emotion.quiz_what": "What emotion is this?",
+
+  "calm.stress_check": "Stress Check",
+  "calm.how_stressed": "How stressed are you right now?",
+  "calm.stress_calm": "Calm",
+  "calm.stress_medium": "Medium",
+  "calm.stress_overload": "Overload",
+  "calm.advice_low": "You seem calm. Great! Keep doing what you're doing. 😊",
+  "calm.advice_medium": "Getting a bit tense. Try a short breathing exercise.",
+  "calm.advice_high": "High stress. Take a break now. Try breathing or one of the strategies.",
+  "calm.advice_critical": "Very high stress. Press the emergency button or go to breathing. You are safe. 💙",
+  "calm.need_help_now": "I need help NOW",
+  "calm.you_are_safe": "You are safe",
+  "calm.emergency_msg": "Take 5 deep breaths. Count each one. You are safe. Everything will be okay.",
+  "calm.im_ok": "I'm OK"
 }

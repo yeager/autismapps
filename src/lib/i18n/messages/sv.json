@@ -356,5 +356,21 @@
   "profile.enter_pin": "Ange pinkod",
   "profile.wrong_pin": "Fel pinkod",
   "profile.create": "Skapa",
-  "profile.welcome": "Välkommen"
+  "profile.welcome": "Välkommen",
+
+  "emotion.quiz_what": "Vilken känsla är detta?",
+
+  "calm.stress_check": "Stresskoll",
+  "calm.how_stressed": "Hur stressad är du just nu?",
+  "calm.stress_calm": "Lugn",
+  "calm.stress_medium": "Lagom",
+  "calm.stress_overload": "Överbelastning",
+  "calm.advice_low": "Du verkar lugn. Bra! Fortsätt med det du gör. 😊",
+  "calm.advice_medium": "Lite spänd. Prova en kort andningsövning.",
+  "calm.advice_high": "Hög stress. Ta en paus nu. Prova andning eller en strategi.",
+  "calm.advice_critical": "Mycket hög stress. Tryck på nödknappen eller gå till andning. Du är trygg. 💙",
+  "calm.need_help_now": "Jag behöver hjälp NU",
+  "calm.you_are_safe": "Du är trygg",
+  "calm.emergency_msg": "Ta 5 djupa andetag. Räkna varje. Du är trygg. Allt kommer bli bra.",
+  "calm.im_ok": "Jag mår bra"
 }

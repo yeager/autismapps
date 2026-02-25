@@ -43,6 +43,15 @@
   let showDiary = $state(false);
   let diaryNote = $state('');
 
+  // Quiz mode (from GTK4 kanslokartan)
+  let quizMode = $state(false);
+  let quizEmotion = $state<Emotion | null>(null);
+  let quizChoices = $state<Emotion[]>([]);
+  let quizScore = $state(0);
+  let quizTotal = $state(0);
+  let quizFeedback = $state('');
+  let quizAnswered = $state(false);
+
   $effect(() => { loadDiary(); });
 
   async function loadDiary() {
@@ -75,6 +84,42 @@
   function getZoneEmotions(zone: string) {
     return EMOTIONS.filter(e => e.zone === zone);
   }
+
+  // Quiz functions
+  function startQuiz() {
+    quizMode = true;
+    quizScore = 0;
+    quizTotal = 0;
+    nextQuizQuestion();
+  }
+
+  function nextQuizQuestion() {
+    quizAnswered = false;
+    quizFeedback = '';
+    const target = EMOTIONS[Math.floor(Math.random() * EMOTIONS.length)];
+    quizEmotion = target;
+    const wrong = EMOTIONS.filter(e => e.id !== target.id);
+    const picks = wrong.sort(() => Math.random() - 0.5).slice(0, 3);
+    quizChoices = [...picks, target].sort(() => Math.random() - 0.5);
+  }
+
+  function answerQuiz(chosen: Emotion) {
+    if (quizAnswered) return;
+    quizAnswered = true;
+    quizTotal++;
+    if (chosen.id === quizEmotion!.id) {
+      quizScore++;
+      quizFeedback = '✅ ' + $t('pecs.great');
+      speak($t('pecs.great'));
+    } else {
+      quizFeedback = '❌ ' + $t(quizEmotion!.label);
+      speak($t('pecs.try_again') + ' ' + $t(quizEmotion!.label));
+    }
+  }
+
+  function stopQuiz() {
+    quizMode = false;
+  }
 </script>
 
 <div class="emotion-page">
@@ -83,10 +128,32 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <h1>{$t('emotion.title')}</h1>
+    <button class="icon-btn" onclick={() => quizMode ? stopQuiz() : startQuiz()} aria-label="Quiz">{quizMode ? '🗺️' : '🎯'}</button>
     <button class="icon-btn" onclick={() => { showDiary = !showDiary; }}>📓</button>
   </header>
 
-  {#if showDiary}
+  {#if quizMode}
+    <div class="quiz-area" transition:fade>
+      <div class="quiz-score">{$t('pecs.correct')}: {quizScore} / {quizTotal}</div>
+      {#if quizEmotion}
+        <div class="quiz-emoji">{quizEmotion.emoji}</div>
+        <p class="quiz-prompt">{$t('emotion.quiz_what')}</p>
+        <div class="quiz-choices">
+          {#each quizChoices as choice}
+            <button class="quiz-btn" class:correct={quizAnswered && choice.id === quizEmotion.id}
+              class:wrong={quizAnswered && choice.id !== quizEmotion.id}
+              onclick={() => answerQuiz(choice)} disabled={quizAnswered}>
+              {$t(choice.label)}
+            </button>
+          {/each}
+        </div>
+        {#if quizFeedback}<p class="quiz-feedback">{quizFeedback}</p>{/if}
+        {#if quizAnswered}
+          <button class="calm-btn" onclick={nextQuizQuestion} style="margin-top: 16px">{$t('calm.next')}</button>
+        {/if}
+      {/if}
+    </div>
+  {:else if showDiary}
     <div class="diary-panel" transition:fly={{ x: 300 }}>
       <h2>📓 {$t('emotion.diary')}</h2>
       {#each diaryEntries as entry}
@@ -241,6 +308,25 @@
   .diary-time { display: block; font-size: 0.75em; color: var(--text-muted); }
   .diary-note { font-size: 0.85em; margin-top: 4px; }
   .empty { color: var(--text-muted); text-align: center; padding: 40px; }
+
+  /* Quiz */
+  .quiz-area { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 20px; }
+  .quiz-score { font-weight: 600; color: var(--text-muted); }
+  .quiz-emoji { font-size: 6em; }
+  .quiz-prompt { font-size: 1.2em; font-weight: 600; }
+  .quiz-choices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 360px; width: 100%; }
+  .quiz-btn {
+    padding: 14px; border-radius: var(--radius); border: 2px solid var(--border);
+    font-weight: 600; font-size: 1em; transition: all 0.2s; background: var(--bg-card);
+  }
+  .quiz-btn:hover:not(:disabled) { border-color: #3498DB; }
+  .quiz-btn.correct { background: rgba(39,174,96,0.2); border-color: #27AE60; }
+  .quiz-btn.wrong:not(.correct) { opacity: 0.5; }
+  .quiz-feedback { font-size: 1.1em; font-weight: 600; }
+  .calm-btn {
+    padding: 12px 32px; border-radius: 100px; background: #3498DB; color: white;
+    font-weight: 600; border: none;
+  }
 
   .credit { text-align: center; padding: 12px; font-size: 0.7em; color: var(--text-muted); line-height: 1.4; }
   .credit a { color: inherit; text-decoration: underline; }

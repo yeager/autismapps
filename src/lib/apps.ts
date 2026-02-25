@@ -61,7 +61,7 @@ export const ALL_APPS: AppDef[] = [
   // Learning
   { id: 'word-builder', name: 'app.word_builder', description: 'app.word_builder.desc', category: 'learning', icon: '/icons/word-builder.svg', route: '/apps/word-builder', ready: false },
   { id: 'sentence-builder', name: 'app.sentence_builder', description: 'app.sentence_builder.desc', category: 'learning', icon: '/icons/sentence-builder.svg', route: '/apps/sentence-builder', ready: false },
-  { id: 'letter-journey', name: 'app.letter_journey', description: 'app.letter_journey.desc', category: 'learning', icon: '/icons/letter-journey.svg', route: '/apps/letter-journey', ready: false },
+  { id: 'letter-journey', name: 'app.letter_journey', description: 'app.letter_journey.desc', category: 'learning', icon: '/icons/letter-journey.svg', route: '/apps/letter-journey', ready: true },
   { id: 'math-aid', name: 'app.math_aid', description: 'app.math_aid.desc', category: 'learning', icon: '/icons/math-aid.svg', route: '/apps/math-aid', ready: false },
   { id: 'money-check', name: 'app.money_check', description: 'app.money_check.desc', category: 'learning', icon: '/icons/money-check.svg', route: '/apps/money-check', ready: false },
 

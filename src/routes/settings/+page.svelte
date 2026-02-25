@@ -1,6 +1,8 @@
 <script lang="ts">
+  import { get } from 'svelte/store';
   import { t, locale, setLocale } from '$lib/i18n';
-  import { speak } from '$lib/tts';
+  import { speak, preloadVoice, getStoredVoices, getEngine, selectedVoiceSv, selectedVoiceEn } from '$lib/tts';
+  import { voicesForLang, type VoiceOption } from '$lib/tts/voices';
   import {
     theme, textSize, ttsSpeed, phoneticEmphasis,
     screenReaderEnabled, reducedMotion, simpleMode, arasaacBW,
@@ -34,8 +36,43 @@
     speak($t(`settings.language`));
   }
 
+  let storedVoices = $state<string[]>([]);
+  let ttsEngine = $state('');
+  let downloadingVoice = $state('');
+
+  $effect(() => {
+    if (browser) {
+      getStoredVoices().then(v => storedVoices = v);
+      ttsEngine = getEngine();
+    }
+  });
+
   function testVoice() {
     speak($t('app.title') + '. ' + $t('app.subtitle'));
+  }
+
+  function currentVoices(): VoiceOption[] {
+    return voicesForLang($locale);
+  }
+
+  function selectedVoiceForLang(): string {
+    return $locale === 'sv' ? $selectedVoiceSv : $selectedVoiceEn;
+  }
+
+  async function selectVoice(v: VoiceOption) {
+    if (v.lang === 'sv') $selectedVoiceSv = v.id;
+    else $selectedVoiceEn = v.id;
+
+    // Download if not cached
+    if (!storedVoices.includes(v.id)) {
+      downloadingVoice = v.id;
+      await preloadVoice(v.lang);
+      storedVoices = await getStoredVoices();
+      downloadingVoice = '';
+    }
+
+    // Test the voice
+    speak(v.lang === 'sv' ? 'Hej, jag heter ' + v.name : 'Hello, my name is ' + v.name);
   }
 
   function handleSpeedChange(e: Event) {
@@ -136,12 +173,35 @@
       </div>
     </div>
 
-    <!-- Voice / Test -->
-    <div class="setting">
+    <!-- Voice selection -->
+    <div class="setting setting-column">
       <label class="setting-label">{$t('settings.voice')}</label>
-      <div class="setting-options">
-        <button class="option-btn active" onclick={testVoice}>🔊 Test</button>
+      <p class="setting-hint">
+        {$t('settings.tts_engine')}: <strong>{ttsEngine === 'piper' ? 'Piper WASM' : ttsEngine === 'webspeech' ? 'Web Speech API' : '—'}</strong>
+      </p>
+      <div class="voice-grid">
+        {#each currentVoices() as v}
+          {@const isSelected = selectedVoiceForLang() === v.id}
+          {@const isCached = storedVoices.includes(v.id)}
+          {@const isDownloading = downloadingVoice === v.id}
+          <button
+            class="voice-card"
+            class:active={isSelected}
+            class:downloading={isDownloading}
+            onclick={() => selectVoice(v)}
+          >
+            <span class="voice-name">{v.name}</span>
+            <span class="voice-meta">
+              {v.gender === 'female' ? '♀' : v.gender === 'male' ? '♂' : '⚬'}
+              {v.quality}
+              {#if !isCached}· ⬇️ {v.sizeMb}MB{/if}
+            </span>
+            {#if isSelected}<span class="voice-check">✓</span>{/if}
+            {#if isDownloading}<span class="voice-dl">⏳</span>{/if}
+          </button>
+        {/each}
       </div>
+      <button class="option-btn" onclick={testVoice} style="margin-top: 8px">🔊 {$t('settings.test_voice')}</button>
     </div>
 
     <!-- Text Size -->
@@ -435,4 +495,33 @@
       justify-content: flex-start;
     }
   }
+
+  /* Voice selection */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+  .voice-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 14px 10px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    position: relative;
+    min-height: 48px;
+    transition: all 0.15s;
+  }
+  .voice-card:hover { border-color: #3498DB; }
+  .voice-card.active { border-color: #27AE60; background: rgba(39,174,96,0.08); }
+  .voice-card.downloading { opacity: 0.7; }
+  .voice-name { font-weight: 700; font-size: 1em; }
+  .voice-meta { font-size: 0.75em; color: var(--text-muted); }
+  .voice-check { position: absolute; top: 4px; right: 6px; color: #27AE60; font-size: 0.85em; }
+  .voice-dl { position: absolute; top: 4px; left: 6px; }
+  .setting-hint { font-size: 0.8em; color: var(--text-muted); margin: 0; }
 </style>

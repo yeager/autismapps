@@ -2,6 +2,7 @@
   import { t } from '$lib/i18n';
   import { speak, stop } from '$lib/tts';
   import { getBoards, type Board, type BoardCell } from '$lib/storage';
+  import { getTakkSign, openSignVideo } from '$lib/takk';
 
   let boards = $state<Board[]>([]);
   let currentBoard = $state<Board | null>(null);
@@ -9,13 +10,41 @@
   let showBoardList = $state(true);
   let isFullscreen = $state(false);
 
+  // Core vocabulary quick buttons — LAMP principle: NEVER change positions
+  // Fitzgerald Key colors: yellow=people, green=verbs, orange=objects, blue=descriptions
   const QUICK_BUTTONS = [
     { key: 'yes', emoji: '✅', color: '#27AE60' },
     { key: 'no', emoji: '❌', color: '#E74C3C' },
     { key: 'help', emoji: '🆘', color: '#3498DB' },
-    { key: 'toilet', emoji: '🚻', color: '#9B59B6' },
     { key: 'more', emoji: '➕', color: '#F1C40F' },
-    { key: 'stop', emoji: '🛑', color: '#E74C3C' }
+    { key: 'stop', emoji: '🛑', color: '#E74C3C' },
+    { key: 'toilet', emoji: '🚻', color: '#9B59B6' },
+    { key: 'i_want', emoji: '🙋', color: '#F39C12' },
+    { key: 'finished', emoji: '✋', color: '#27AE60' },
+  ];
+
+  // Built-in core vocabulary board (always available, LAMP: fixed positions)
+  const CORE_VOCAB: BoardCell[] = [
+    { index: 0, label: 'I', isEmpty: false, color: '#F1C40F', pictogramId: undefined },
+    { index: 1, label: 'you', isEmpty: false, color: '#F1C40F', pictogramId: undefined },
+    { index: 2, label: 'want', isEmpty: false, color: '#27AE60', pictogramId: undefined },
+    { index: 3, label: 'not', isEmpty: false, color: '#E74C3C', pictogramId: undefined },
+    { index: 4, label: 'go', isEmpty: false, color: '#27AE60', pictogramId: undefined },
+    { index: 5, label: 'eat', isEmpty: false, color: '#27AE60', pictogramId: undefined },
+    { index: 6, label: 'drink', isEmpty: false, color: '#27AE60', pictogramId: undefined },
+    { index: 7, label: 'play', isEmpty: false, color: '#27AE60', pictogramId: undefined },
+    { index: 8, label: 'like', isEmpty: false, color: '#27AE60', pictogramId: undefined },
+    { index: 9, label: 'big', isEmpty: false, color: '#3498DB', pictogramId: undefined },
+    { index: 10, label: 'little', isEmpty: false, color: '#3498DB', pictogramId: undefined },
+    { index: 11, label: 'happy', isEmpty: false, color: '#3498DB', pictogramId: undefined },
+    { index: 12, label: 'sad', isEmpty: false, color: '#3498DB', pictogramId: undefined },
+    { index: 13, label: 'good', isEmpty: false, color: '#3498DB', pictogramId: undefined },
+    { index: 14, label: 'bad', isEmpty: false, color: '#3498DB', pictogramId: undefined },
+    { index: 15, label: 'here', isEmpty: false, color: '#E67E22', pictogramId: undefined },
+    { index: 16, label: 'there', isEmpty: false, color: '#E67E22', pictogramId: undefined },
+    { index: 17, label: 'what', isEmpty: false, color: '#9B59B6', pictogramId: undefined },
+    { index: 18, label: 'where', isEmpty: false, color: '#9B59B6', pictogramId: undefined },
+    { index: 19, label: 'who', isEmpty: false, color: '#9B59B6', pictogramId: undefined },
   ];
 
   async function loadBoards() {

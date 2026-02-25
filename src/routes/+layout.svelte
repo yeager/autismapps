@@ -4,7 +4,7 @@
   import { goto } from '$app/navigation';
   import { t, locale, setLocale } from '$lib/i18n';
   import { theme, textSize, reducedMotion, themeClass, textSizeClass } from '$lib/a11y';
-  import { speak } from '$lib/tts';
+  import { speak, preloadVoice } from '$lib/tts';
   import { browser } from '$app/environment';
 
   let { children } = $props();
@@ -24,10 +24,12 @@
     goto('/settings');
   }
 
-  // Initialize locale
+  // Initialize locale + preload Piper TTS voice
   if (browser) {
     const saved = localStorage.getItem('locale');
     if (saved) setLocale(saved);
+    // Preload Piper WASM voice on first load
+    preloadVoice();
   }
 </script>
 

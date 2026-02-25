@@ -6,22 +6,21 @@
   import { get } from 'svelte/store';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
   import { activeProfileId } from '$lib/stores/profile';
-  import { fade, fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
 
   // === VERBAL DYSPRAXIA-ADAPTED DESIGN ===
-  // Based on DTTC (Dynamic Temporal and Tactile Cueing) principles:
+  // Based on DTTC (Dynamic Temporal and Tactile Cueing), NDP-3, ReST:
   // 1. Movement sequences, not isolated sounds
   // 2. Slow tempo → gradual speed increase
-  // 3. Massive repetition (motor learning)
-  // 4. Dynamic cueing (support when needed, fade when ready)
-  // 5. Functional, meaningful words
-  // 6. Prosody (rhythm/stress) from the start
-  // 7. Multisensory: visual + auditory + mouth position cues
-  // 8. Vowels equally important as consonants
+  // 3. Massive repetition (motor learning requires 100+ reps)
+  // 4. Coarticulation practice (CV, VC, CVC combos)
+  // 5. Prosody (rhythm/stress) from the start
+  // 6. Multisensory: visual + auditory + mouth position cues
+  // 7. Vowels equally important as consonants
+  // 8. Immediate corrective model (never leave child lost)
 
-  type Mode = 'menu' | 'explore' | 'find' | 'soundout' | 'syllable' | 'prosody';
+  type Mode = 'menu' | 'explore' | 'find' | 'soundout' | 'syllable' | 'coarticulation';
 
-  // Swedish letter names (how you say the letter)
   const LETTER_NAMES: Record<string, string> = {
     A: 'ah', B: 'beh', C: 'seh', D: 'deh', E: 'eh',
     F: 'eff', G: 'geh', H: 'hå', I: 'ih', J: 'jih',
@@ -31,7 +30,6 @@
     Z: 'seta', Å: 'å', Ä: 'äh', Ö: 'öh'
   };
 
-  // Phonetic sounds (how the letter sounds IN a word) - elongated for dyspraxia clarity
   const LETTER_SOUNDS: Record<string, string> = {
     A: 'aaa', B: 'b', C: 'sss', D: 'd', E: 'eee',
     F: 'fff', G: 'g', H: 'hhh', I: 'iii', J: 'jjj',
@@ -41,7 +39,6 @@
     Z: 'sss', Å: 'ååå', Ä: 'äää', Ö: 'ööö'
   };
 
-  // Mouth position cues (visual articulatory support)
   const MOUTH_CUES: Record<string, string> = {
     A: '😮', B: '👄', C: '😬', D: '👅', E: '😊',
     F: '🦷', G: '😶', H: '😯', I: '😁', J: '😊',
@@ -51,7 +48,6 @@
     Z: '😬', Å: '😮', Ä: '😊', Ö: '😗'
   };
 
-  // Mouth position descriptions (for speech therapy guidance)
   const MOUTH_DESC: Record<string, string> = {
     A: 'letter.mouth.a', B: 'letter.mouth.b', C: 'letter.mouth.c',
     D: 'letter.mouth.d', E: 'letter.mouth.e', F: 'letter.mouth.f',
@@ -63,35 +59,31 @@
     Ä: 'letter.mouth.ae', Ö: 'letter.mouth.oe'
   };
 
-  // Vowels are critical in CAS - highlighted differently
   const VOWELS = new Set(['A', 'E', 'I', 'O', 'U', 'Y', 'Å', 'Ä', 'Ö']);
+  const CONSONANTS_FOR_CV = ['B', 'D', 'F', 'G', 'H', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'V'];
+  const VOWELS_FOR_CV = ['A', 'E', 'I', 'O', 'U', 'Å', 'Ä', 'Ö'];
 
-  // Letter colors - vowels red, consonants blue (visual distinction aids motor planning)
   function letterColor(ch: string): string {
     return VOWELS.has(ch) ? '#E74C3C' : '#3498DB';
   }
 
-  // Words grouped by difficulty - based on Swedish phonotactics
-  // Level 1: CV and CVC (simple onset, no clusters)
-  // Level 2: CVCC, CCVC (consonant clusters)
-  // Level 3: Multisyllabic with stress patterns
   interface WordEntry {
     word: string;
-    hint: string;  // i18n key for translation
-    syllables: string[]; // syllable breakdown
-    stress: number; // which syllable gets stress (0-indexed)
+    hint: string;
+    syllables: string[];
+    stress: number;
   }
 
   const WORDS_L1: WordEntry[] = [
     { word: 'SOL', hint: 'letter.word.sun', syllables: ['SOL'], stress: 0 },
-    { word: 'KAT', hint: 'letter.word.cat', syllables: ['KAT'], stress: 0 },
+    { word: 'KATT', hint: 'letter.word.cat', syllables: ['KATT'], stress: 0 },
     { word: 'HUS', hint: 'letter.word.house', syllables: ['HUS'], stress: 0 },
     { word: 'BIL', hint: 'letter.word.car', syllables: ['BIL'], stress: 0 },
     { word: 'MUS', hint: 'letter.word.mouse', syllables: ['MUS'], stress: 0 },
     { word: 'BÅT', hint: 'letter.word.boat', syllables: ['BÅT'], stress: 0 },
     { word: 'ARM', hint: 'letter.word.arm', syllables: ['ARM'], stress: 0 },
     { word: 'BEN', hint: 'letter.word.leg', syllables: ['BEN'], stress: 0 },
-    { word: 'NÄS', hint: 'letter.word.nose', syllables: ['NÄS'], stress: 0 },
+    { word: 'NÄSA', hint: 'letter.word.nose', syllables: ['NÄ', 'SA'], stress: 0 },
     { word: 'LÅS', hint: 'letter.word.lock', syllables: ['LÅS'], stress: 0 },
     { word: 'ÖGA', hint: 'letter.word.eye', syllables: ['Ö', 'GA'], stress: 0 },
     { word: 'ÖRA', hint: 'letter.word.ear', syllables: ['Ö', 'RA'], stress: 0 },
@@ -101,7 +93,7 @@
     { word: 'BOLL', hint: 'letter.word.ball', syllables: ['BOLL'], stress: 0 },
     { word: 'FISK', hint: 'letter.word.fish', syllables: ['FISK'], stress: 0 },
     { word: 'HUND', hint: 'letter.word.dog', syllables: ['HUND'], stress: 0 },
-    { word: 'KATT', hint: 'letter.word.cat2', syllables: ['KATT'], stress: 0 },
+    { word: 'DÖRR', hint: 'letter.word.door', syllables: ['DÖRR'], stress: 0 },
     { word: 'STOL', hint: 'letter.word.chair', syllables: ['STOL'], stress: 0 },
     { word: 'BLAD', hint: 'letter.word.leaf', syllables: ['BLAD'], stress: 0 },
     { word: 'GLAD', hint: 'letter.word.happy', syllables: ['GLAD'], stress: 0 },
@@ -142,20 +134,29 @@
   let findChoices = $state<string[]>([]);
   let findFeedback = $state('');
   let findAnswered = $state(false);
+  let findRepeatCount = $state(0); // DTTC: track repeats
 
   // Sound-out mode
   let currentWord = $state<WordEntry | null>(null);
   let wordIdx = $state(0);
   let soundFeedback = $state('');
   let wordComplete = $state(false);
+  let wordRepeatCount = $state(0);
 
-  // Syllable mode (new! for CAS prosody practice)
+  // Syllable mode
   let syllableWord = $state<WordEntry | null>(null);
   let syllableIdx = $state(0);
   let syllableFeedback = $state('');
 
+  // Coarticulation mode (CV/VC practice — core CAS technique)
+  let cvConsonant = $state('B');
+  let cvPairs = $state<string[]>([]);
+  let cvIdx = $state(0);
+  let cvFeedback = $state('');
+  let cvDirection = $state<'cv' | 'vc'>('cv'); // consonant-vowel or vowel-consonant
+
   // Speed control (DTTC: start slow, increase gradually)
-  let speechRate = $state(0.6); // 0.6x = very slow for dyspraxia
+  let speechRate = $state(0.4); // Very slow default for dyspraxia
 
   // Celebration
   let showCelebration = $state(false);
@@ -185,7 +186,7 @@
     totalCorrect++;
     streak++;
     stars++;
-    if (streak % 5 === 0) stars += 2; // bonus
+    if (streak % 5 === 0) stars += 2;
     if (letter && !lettersLearned.includes(letter)) lettersLearned = [...lettersLearned, letter];
     if (totalCorrect % 20 === 0) level = Math.min(level + 1, 3);
     saveProgress();
@@ -201,27 +202,31 @@
     setTimeout(() => { showCelebration = false; }, 1200);
   }
 
-  // === EXPLORE MODE ===
+  function speakSlow(text: string) {
+    speak(text, { rate: speechRate });
+  }
+
+  function randomItem<T>(arr: T[]): T {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  // === EXPLORE ===
   function exploreLetter(letter: string) {
     selectedLetter = letter;
     showMouthCue = true;
-    // DTTC: speak the full movement sequence (name → sound → in-word example)
-    const name = LETTER_NAMES[letter];
-    const sound = LETTER_SOUNDS[letter];
-    // Speak slowly: letter name, then sound, then a simple word
-    speakSlow(`${letter}. ${name}. ${sound}.`);
+    speakSlow(`${letter}. ${LETTER_NAMES[letter]}. ${LETTER_SOUNDS[letter]}.`);
     recordCorrect(letter);
   }
 
-  // === FIND THE LETTER MODE ===
+  // === FIND ===
   function startFindRound() {
     findAnswered = false;
     findFeedback = '';
+    findRepeatCount = 0;
     const target = LETTERS[Math.floor(Math.random() * LETTERS.length)];
     targetLetter = target;
     const others = LETTERS.filter(l => l !== target).sort(() => Math.random() - 0.5).slice(0, 5);
     findChoices = [...others, target].sort(() => Math.random() - 0.5);
-    // Speak the target sound after a moment
     setTimeout(() => speakSlow(LETTER_SOUNDS[target]), 400);
   }
 
@@ -229,30 +234,48 @@
     if (findAnswered) return;
     findAnswered = true;
     if (letter === targetLetter) {
-      findFeedback = $t(ENCOURAGEMENTS[Math.floor(Math.random() * ENCOURAGEMENTS.length)]);
+      findFeedback = $t(randomItem(ENCOURAGEMENTS));
       recordCorrect(letter);
       celebrate();
       speakSlow($t('letter.correct'));
     } else {
-      findFeedback = $t(TRY_AGAIN_MSGS[Math.floor(Math.random() * TRY_AGAIN_MSGS.length)]);
+      findFeedback = $t(randomItem(TRY_AGAIN_MSGS));
       recordWrong();
-      // DTTC: immediately model the correct answer (don't leave child lost)
-      setTimeout(() => speakSlow(targetLetter + '. ' + LETTER_SOUNDS[targetLetter!]), 800);
+      setTimeout(() => {
+        if (targetLetter) speakSlow(targetLetter + '. ' + LETTER_SOUNDS[targetLetter]);
+      }, 800);
     }
   }
 
-  function replayFind() {
-    if (targetLetter) speakSlow(LETTER_SOUNDS[targetLetter]);
+  function repeatFind() {
+    // DTTC: repeat same target for motor learning consolidation
+    if (!targetLetter) return;
+    findAnswered = false;
+    findFeedback = '';
+    findRepeatCount++;
+    const others = LETTERS.filter(l => l !== targetLetter).sort(() => Math.random() - 0.5).slice(0, 5);
+    findChoices = [...others, targetLetter].sort(() => Math.random() - 0.5);
+    setTimeout(() => speakSlow(LETTER_SOUNDS[targetLetter!]), 400);
   }
 
-  // === SOUND OUT MODE ===
+  // === SOUND OUT ===
   function startSoundOut() {
     wordComplete = false;
     wordIdx = 0;
     soundFeedback = '';
+    wordRepeatCount = 0;
     const words = level <= 1 ? WORDS_L1 : level <= 2 ? [...WORDS_L1, ...WORDS_L2] : [...WORDS_L1, ...WORDS_L2, ...WORDS_L3];
-    currentWord = words[Math.floor(Math.random() * words.length)];
-    // DTTC: speak the whole word first (gestalt → parts)
+    currentWord = randomItem(words);
+    setTimeout(() => speakSlow(currentWord!.word), 300);
+  }
+
+  function repeatSoundOut() {
+    // DTTC: repeat same word
+    if (!currentWord) return;
+    wordComplete = false;
+    wordIdx = 0;
+    soundFeedback = '';
+    wordRepeatCount++;
     setTimeout(() => speakSlow(currentWord!.word), 300);
   }
 
@@ -272,9 +295,8 @@
       wordIdx++;
       if (wordIdx >= currentWord.word.length) {
         wordComplete = true;
-        soundFeedback = $t(ENCOURAGEMENTS[Math.floor(Math.random() * ENCOURAGEMENTS.length)]);
+        soundFeedback = $t(randomItem(ENCOURAGEMENTS));
         celebrate();
-        // DTTC: speak the whole word again after breaking it down (parts → gestalt)
         setTimeout(() => speakSlow(currentWord!.word), 300);
       } else {
         const nextLetter = currentWord.word[wordIdx];
@@ -284,40 +306,59 @@
     }
   }
 
-  // === SYLLABLE MODE (prosody practice) ===
+  // === SYLLABLE ===
   function startSyllable() {
     syllableIdx = 0;
     syllableFeedback = '';
-    const words = level <= 1 ? WORDS_L1.filter(w => w.syllables.length > 1) : [...WORDS_L2, ...WORDS_L3].filter(w => w.syllables.length > 1);
-    if (words.length === 0) {
-      syllableWord = WORDS_L3[0]; // fallback
-    } else {
-      syllableWord = words[Math.floor(Math.random() * words.length)];
-    }
-    // Speak whole word first
+    const words = level <= 1
+      ? WORDS_L1.filter(w => w.syllables.length > 1)
+      : [...WORDS_L2, ...WORDS_L3].filter(w => w.syllables.length > 1);
+    syllableWord = words.length > 0 ? randomItem(words) : WORDS_L3[0];
     setTimeout(() => speakSlow(syllableWord!.word), 300);
   }
 
   function tapSyllable(idx: number) {
     if (!syllableWord || idx !== syllableIdx) return;
-    const syl = syllableWord.syllables[idx];
-    speakSlow(syl);
+    speakSlow(syllableWord.syllables[idx]);
     syllableIdx++;
     if (syllableIdx >= syllableWord.syllables.length) {
-      syllableFeedback = $t(ENCOURAGEMENTS[Math.floor(Math.random() * ENCOURAGEMENTS.length)]);
+      syllableFeedback = $t(randomItem(ENCOURAGEMENTS));
       recordCorrect();
       celebrate();
-      // Speak whole word after syllables
       setTimeout(() => speakSlow(syllableWord!.word), 600);
     }
   }
 
-  // === PROSODY MODE (stress/rhythm) ===
-  // Shows word with stress marks, child taps to practice rhythm
+  // === COARTICULATION (new CAS mode) ===
+  // Practice smooth transitions between consonant + vowel (or vowel + consonant)
+  // This is the CORE of CAS therapy: motor planning for transitions, not isolated sounds
+  function startCoarticulation() {
+    cvIdx = 0;
+    cvFeedback = '';
+    // Generate CV or VC pairs for current consonant
+    if (cvDirection === 'cv') {
+      cvPairs = VOWELS_FOR_CV.map(v => cvConsonant + v);
+    } else {
+      cvPairs = VOWELS_FOR_CV.map(v => v + cvConsonant);
+    }
+    setTimeout(() => speakSlow(cvPairs[0]), 400);
+  }
 
-  // TTS with adjustable rate
-  function speakSlow(text: string) {
-    speak(text); // Web Speech API rate is controlled elsewhere; for now normal speak
+  function tapCvPair(idx: number) {
+    if (idx !== cvIdx) return;
+    speakSlow(cvPairs[idx]);
+    cvIdx++;
+    if (cvIdx >= cvPairs.length) {
+      cvFeedback = $t(randomItem(ENCOURAGEMENTS));
+      recordCorrect(cvConsonant);
+      celebrate();
+    } else {
+      setTimeout(() => speakSlow(cvPairs[cvIdx]), 400);
+    }
+  }
+
+  function replayCv() {
+    if (cvIdx < cvPairs.length) speakSlow(cvPairs[cvIdx]);
   }
 
   function setMode(m: Mode) {
@@ -325,6 +366,7 @@
     if (m === 'find') startFindRound();
     else if (m === 'soundout') startSoundOut();
     else if (m === 'syllable') startSyllable();
+    else if (m === 'coarticulation') startCoarticulation();
   }
 </script>
 
@@ -369,15 +411,20 @@
           <h3>{$t('letter.mode.syllable')}</h3>
           <p>{$t('letter.mode.syllable_desc')}</p>
         </button>
+        <button class="mode-card coartic" onclick={() => setMode('coarticulation')}>
+          <span class="mode-emoji">🗣️</span>
+          <h3>{$t('letter.mode.coarticulation')}</h3>
+          <p>{$t('letter.mode.coarticulation_desc')}</p>
+        </button>
       </div>
 
-      <!-- Speed control (DTTC principle: tempo adaptation) -->
       <div class="speed-control">
         <label>{$t('letter.speech_speed')}</label>
         <div class="speed-options">
           <button class="speed-btn" class:active={speechRate === 0.4} onclick={() => { speechRate = 0.4; }}>🐢</button>
           <button class="speed-btn" class:active={speechRate === 0.6} onclick={() => { speechRate = 0.6; }}>🚶</button>
           <button class="speed-btn" class:active={speechRate === 0.8} onclick={() => { speechRate = 0.8; }}>🏃</button>
+          <button class="speed-btn" class:active={speechRate === 1.0} onclick={() => { speechRate = 1.0; }}>🚀</button>
         </div>
         <p class="speed-hint">{$t('letter.speed_hint')}</p>
       </div>
@@ -409,14 +456,14 @@
               {VOWELS.has(selectedLetter) ? $t('letter.vowel') : $t('letter.consonant')}
             </span>
           </div>
-          <button class="replay-btn" onclick={() => speakSlow(`${selectedLetter}. ${LETTER_NAMES[selectedLetter]}. ${LETTER_SOUNDS[selectedLetter]}.`)}>
+          <button class="replay-btn" onclick={() => speakSlow(`${selectedLetter}. ${LETTER_NAMES[selectedLetter!]}. ${LETTER_SOUNDS[selectedLetter!]}.`)}>
             🔊 {$t('letter.hear_again')}
           </button>
         </div>
       {/if}
 
       <div class="letter-grid">
-        {#each LETTERS as letter, i}
+        {#each LETTERS as letter}
           <button class="letter-btn" style="--lc: {letterColor(letter)}"
             class:learned={lettersLearned.includes(letter)}
             onclick={() => exploreLetter(letter)}>
@@ -432,7 +479,7 @@
       {#if targetLetter}
         <p class="find-prompt">{$t('letter.which_says')} "{LETTER_SOUNDS[targetLetter]}"?</p>
       {/if}
-      <button class="replay-btn" onclick={replayFind}>🔊 {$t('letter.play_again')}</button>
+      <button class="replay-btn" onclick={() => { if (targetLetter) speakSlow(LETTER_SOUNDS[targetLetter]); }}>🔊 {$t('letter.play_again')}</button>
 
       {#if findFeedback}<p class="feedback">{findFeedback}</p>{/if}
 
@@ -449,7 +496,10 @@
       </div>
 
       {#if findAnswered}
-        <button class="next-btn" onclick={startFindRound}>{$t('letter.next')} ➡️</button>
+        <div class="round-actions">
+          <button class="repeat-btn" onclick={repeatFind}>🔄 {$t('letter.repeat_same')}{findRepeatCount > 0 ? ` (${findRepeatCount})` : ''}</button>
+          <button class="next-btn" onclick={startFindRound}>{$t('letter.next')} ➡️</button>
+        </div>
       {/if}
     </div>
 
@@ -477,16 +527,17 @@
             <button class="action-btn" onclick={soundCurrentLetter}>🔊 {$t('letter.hear_sound')}</button>
             <button class="action-btn primary" onclick={nextSoundLetter}>➡️ {$t('letter.next_sound')}</button>
           </div>
+          {#if currentWord.word[wordIdx]}
+            {@const ch = currentWord.word[wordIdx]}
+            <div class="mouth-cue-inline">
+              <span class="mouth-emoji">{MOUTH_CUES[ch] || '👄'}</span>
+              <span>{$t(MOUTH_DESC[ch] || 'letter.mouth.default')}</span>
+            </div>
+          {/if}
         {:else}
-          <button class="next-btn" onclick={startSoundOut}>{$t('letter.new_word')} 🔄</button>
-        {/if}
-
-        <!-- Mouth cue for current letter -->
-        {#if !wordComplete && currentWord.word[wordIdx]}
-          {@const ch = currentWord.word[wordIdx]}
-          <div class="mouth-cue-inline">
-            <span class="mouth-emoji">{MOUTH_CUES[ch] || '👄'}</span>
-            <span>{$t(MOUTH_DESC[ch] || 'letter.mouth.default')}</span>
+          <div class="round-actions">
+            <button class="repeat-btn" onclick={repeatSoundOut}>🔄 {$t('letter.repeat_same')}{wordRepeatCount > 0 ? ` (${wordRepeatCount})` : ''}</button>
+            <button class="next-btn" onclick={startSoundOut}>{$t('letter.new_word')} 🔄</button>
           </div>
         {/if}
       {/if}
@@ -516,16 +567,62 @@
 
         {#if syllableFeedback}<p class="feedback">{syllableFeedback}</p>{/if}
 
-        <button class="replay-btn" onclick={() => speakSlow(syllableWord!.word)}>🔊 {$t('letter.hear_word')}</button>
+        <button class="replay-btn" onclick={() => { if (syllableWord) speakSlow(syllableWord.word); }}>🔊 {$t('letter.hear_word')}</button>
 
         {#if syllableIdx >= syllableWord.syllables.length}
           <button class="next-btn" onclick={startSyllable}>{$t('letter.new_word')} 🔄</button>
         {/if}
       {/if}
     </div>
+
+  {:else if mode === 'coarticulation'}
+    <div class="coartic-page" transition:fade>
+      <p class="instruction">{$t('letter.coartic_instruction')}</p>
+
+      <!-- Pick consonant and direction -->
+      <div class="cv-controls">
+        <div class="cv-direction">
+          <button class="dir-btn" class:active={cvDirection === 'cv'} onclick={() => { cvDirection = 'cv'; startCoarticulation(); }}>
+            {$t('letter.cv')} (BA, BE…)
+          </button>
+          <button class="dir-btn" class:active={cvDirection === 'vc'} onclick={() => { cvDirection = 'vc'; startCoarticulation(); }}>
+            {$t('letter.vc')} (AB, EB…)
+          </button>
+        </div>
+        <div class="consonant-picker">
+          {#each CONSONANTS_FOR_CV as c}
+            <button class="cons-btn" class:active={cvConsonant === c}
+              onclick={() => { cvConsonant = c; startCoarticulation(); }}>
+              {c}
+            </button>
+          {/each}
+        </div>
+      </div>
+
+      <!-- CV pair sequence -->
+      <div class="cv-sequence">
+        {#each cvPairs as pair, i}
+          <button class="cv-btn"
+            class:done={i < cvIdx}
+            class:active={i === cvIdx}
+            onclick={() => tapCvPair(i)}
+            disabled={i !== cvIdx}>
+            {pair}
+          </button>
+        {/each}
+      </div>
+
+      {#if cvFeedback}<p class="feedback">{cvFeedback}</p>{/if}
+
+      <div class="cv-actions">
+        <button class="replay-btn" onclick={replayCv}>🔊 {$t('letter.hear_again')}</button>
+        {#if cvIdx >= cvPairs.length}
+          <button class="next-btn" onclick={startCoarticulation}>{$t('letter.again')} 🔄</button>
+        {/if}
+      </div>
+    </div>
   {/if}
 
-  <!-- Celebration overlay -->
   {#if showCelebration}
     <div class="celebration" transition:fade>
       <span class="celeb-emoji">🎉</span>
@@ -550,20 +647,21 @@
   .stat { font-weight: 600; font-size: 1em; }
   .fire { color: #E74C3C; }
 
-  /* Menu */
   .menu-page { flex: 1; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
   .menu-hero { text-align: center; }
   .menu-hero h2 { font-size: 1.8em; font-weight: 800; }
   .menu-subtitle { color: var(--text-muted); }
   .level-badge { display: inline-block; background: #3498DB; color: white; padding: 4px 16px; border-radius: 100px; font-weight: 600; font-size: 0.85em; }
 
-  .mode-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; width: 100%; max-width: 600px; }
+  .mode-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; width: 100%; max-width: 700px; }
   .mode-card {
     display: flex; flex-direction: column; align-items: center; gap: 6px;
     padding: 20px 16px; border: 2px solid var(--border); border-radius: var(--radius);
     background: var(--bg-card); transition: all 0.2s; text-align: center;
   }
   .mode-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: #3498DB; }
+  .mode-card.coartic { border-color: #E67E22; }
+  .mode-card.coartic:hover { border-color: #D35400; }
   .mode-emoji { font-size: 2em; }
   .mode-card h3 { font-size: 1em; font-weight: 700; }
   .mode-card p { font-size: 0.8em; color: var(--text-muted); }
@@ -578,7 +676,6 @@
   .speed-btn.active { border-color: #3498DB; background: rgba(52,152,219,0.1); }
   .speed-hint { font-size: 0.75em; color: var(--text-muted); }
 
-  /* Common */
   .instruction { text-align: center; padding: 12px; font-weight: 600; color: var(--text-muted); }
   .feedback { text-align: center; font-size: 1.1em; font-weight: 700; color: #27AE60; padding: 8px; }
   .replay-btn {
@@ -586,16 +683,20 @@
     border: 1px solid var(--border); border-radius: 100px; font-weight: 600;
   }
   .next-btn {
-    display: block; margin: 16px auto; padding: 14px 32px; background: #3498DB;
+    padding: 14px 32px; background: #3498DB;
     color: white; border-radius: 100px; font-weight: 700; font-size: 1.05em; border: none;
   }
+  .repeat-btn {
+    padding: 14px 32px; background: var(--bg-card);
+    border: 2px solid #E67E22; color: #E67E22; border-radius: 100px; font-weight: 700; font-size: 1.05em;
+  }
+  .round-actions { display: flex; gap: 12px; justify-content: center; margin: 16px 0; flex-wrap: wrap; }
   .action-btn {
     padding: 12px 24px; border-radius: 100px; border: 2px solid var(--border);
-    font-weight: 600; background: var(--bg-card);
+    font-weight: 600; background: var(--bg-card); min-height: 48px;
   }
   .action-btn.primary { background: #27AE60; color: white; border-color: #27AE60; }
 
-  /* Letter grid */
   .letter-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
     gap: 8px; padding: 12px;
@@ -604,7 +705,7 @@
     width: 100%; aspect-ratio: 1; font-size: 1.5em; font-weight: 800;
     border-radius: 14px; border: 3px solid var(--lc);
     background: color-mix(in srgb, var(--lc) 10%, transparent);
-    color: var(--lc); transition: all 0.15s; position: relative;
+    color: var(--lc); transition: all 0.15s; position: relative; min-height: 48px;
   }
   .letter-btn:hover { transform: scale(1.1); box-shadow: 0 4px 12px color-mix(in srgb, var(--lc) 30%, transparent); }
   .letter-btn:active { transform: scale(0.95); }
@@ -615,7 +716,6 @@
   .letter-btn.correct { background: rgba(39,174,96,0.3); border-color: #27AE60; }
   .letter-btn.wrong { opacity: 0.4; }
 
-  /* Letter detail (explore) */
   .letter-detail {
     display: flex; flex-direction: column; align-items: center; gap: 12px;
     padding: 16px; background: var(--bg-card); border-radius: var(--radius);
@@ -644,12 +744,10 @@
     border-radius: var(--radius); font-size: 0.85em;
   }
 
-  /* Find page */
   .find-page { flex: 1; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
   .find-prompt { font-size: 1.3em; font-weight: 700; }
   .find-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 320px; }
 
-  /* Sound out */
   .soundout-page { flex: 1; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
   .word-display { display: flex; gap: 6px; justify-content: center; padding: 16px; }
   .word-letter {
@@ -661,12 +759,11 @@
   .word-hint { text-align: center; color: var(--text-muted); font-style: italic; }
   .sound-actions { display: flex; gap: 10px; }
 
-  /* Syllable page */
   .syllable-page { flex: 1; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
   .syllable-display { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; }
   .syllable-btn {
     padding: 16px 24px; font-size: 1.8em; font-weight: 800; border-radius: 16px;
-    border: 3px solid var(--border); background: var(--bg-card); transition: all 0.2s;
+    border: 3px solid var(--border); background: var(--bg-card); transition: all 0.2s; min-height: 48px;
   }
   .syllable-btn.active { border-color: #E67E22; background: rgba(230,126,34,0.1); transform: scale(1.05); }
   .syllable-btn.done { border-color: #27AE60; background: rgba(39,174,96,0.1); color: #27AE60; }
@@ -674,7 +771,35 @@
   .syllable-btn:disabled:not(.active) { opacity: 0.4; }
   .syllable-dot { font-size: 1.5em; color: var(--text-muted); }
 
-  /* Celebration */
+  /* Coarticulation mode */
+  .coartic-page { flex: 1; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .cv-controls { display: flex; flex-direction: column; gap: 12px; align-items: center; width: 100%; max-width: 500px; }
+  .cv-direction { display: flex; gap: 8px; }
+  .dir-btn {
+    padding: 10px 20px; border-radius: 100px; border: 2px solid var(--border);
+    font-weight: 600; background: var(--bg-card); min-height: 48px;
+  }
+  .dir-btn.active { border-color: #E67E22; background: rgba(230,126,34,0.1); color: #E67E22; }
+  .consonant-picker {
+    display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  }
+  .cons-btn {
+    width: 48px; height: 48px; border-radius: 12px; font-size: 1.2em; font-weight: 800;
+    border: 2px solid var(--border); background: var(--bg-card); color: #3498DB;
+  }
+  .cons-btn.active { border-color: #3498DB; background: rgba(52,152,219,0.15); }
+  .cv-sequence {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; padding: 16px;
+  }
+  .cv-btn {
+    padding: 16px 24px; font-size: 1.6em; font-weight: 800; border-radius: 16px;
+    border: 3px solid var(--border); background: var(--bg-card); transition: all 0.2s; min-height: 48px;
+  }
+  .cv-btn.active { border-color: #E67E22; background: rgba(230,126,34,0.1); transform: scale(1.08); }
+  .cv-btn.done { border-color: #27AE60; background: rgba(39,174,96,0.1); color: #27AE60; }
+  .cv-btn:disabled:not(.active) { opacity: 0.4; }
+  .cv-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
   .celebration {
     position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
     background: rgba(0,0,0,0.2); z-index: 100; pointer-events: none;
@@ -683,9 +808,10 @@
   @keyframes celebBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.4); } }
 
   .credit { text-align: center; padding: 12px; font-size: 0.7em; color: var(--text-muted); line-height: 1.4; }
+  .explore-page { flex: 1; padding: 0; }
 
   @media (prefers-reduced-motion: reduce) {
     .celeb-emoji { animation: none; }
-    .word-letter, .letter-btn, .syllable-btn { transition: none; }
+    .word-letter, .letter-btn, .syllable-btn, .cv-btn { transition: none; }
   }
 </style>

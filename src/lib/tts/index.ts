@@ -91,18 +91,20 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 
 			try {
 				console.log('[TTS] Loading Piper WASM...');
-				// Pre-configure onnxruntime-web: single thread + local WASM files
-				try {
-					const ort = await import('onnxruntime-web');
-					// Force single-thread — avoids COOP/COEP header requirement for SharedArrayBuffer
-					ort.env.wasm.numThreads = 1;
-					// Serve WASM from same origin — use base path for GH Pages
-					const wasmBase = (base || '') + '/';
-					ort.env.wasm.wasmPaths = wasmBase;
-					console.log(`[TTS] ONNX: threads=1 (forced), wasmPaths=${wasmBase}`);
-				} catch (e) {
-					console.warn('[TTS] Could not pre-configure onnxruntime:', e);
-				}
+
+				// CRITICAL: Configure onnxruntime-web BEFORE importing piper-tts-web.
+				// Must set numThreads=1 and wasmPaths so it finds our static WASM files.
+				// onnxruntime-web 1.24.2 only ships threaded variants — numThreads=1
+				// makes it work without SharedArrayBuffer (no COOP/COEP headers needed).
+				const ort = await import('onnxruntime-web');
+				ort.env.wasm.numThreads = 1;
+				// Proxy=none prevents Worker creation which can fail on GH Pages
+				ort.env.wasm.proxy = false;
+				// Serve WASM from same origin — use base path for GH Pages
+				const wasmBase = (base || '') + '/';
+				ort.env.wasm.wasmPaths = wasmBase;
+				console.log(`[TTS] ONNX: threads=1, proxy=false, wasmPaths=${wasmBase}`);
+
 				const mod = await import('@mintplex-labs/piper-tts-web');
 				piperModule = mod;
 				piperReady = true;

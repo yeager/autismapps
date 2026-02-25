@@ -1,8 +1,92 @@
-# Autismapps translation template
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. angerManager.doingGreat
+msgctxt "angerManager.doingGreat"
+msgid "You are doing great!"
+msgstr ""
+
+#. angerManager.howAngry
+msgctxt "angerManager.howAngry"
+msgid "How angry do you feel?"
+msgstr ""
+
+#. angerManager.level.angry
+msgctxt "angerManager.level.angry"
+msgid "Angry"
+msgstr ""
+
+#. angerManager.level.annoyed
+msgctxt "angerManager.level.annoyed"
+msgid "Annoyed"
+msgstr ""
+
+#. angerManager.level.calm
+msgctxt "angerManager.level.calm"
+msgid "Calm"
+msgstr ""
+
+#. angerManager.level.furious
+msgctxt "angerManager.level.furious"
+msgid "Furious"
+msgstr ""
+
+#. angerManager.level.ok
+msgctxt "angerManager.level.ok"
+msgid "OK"
+msgstr ""
+
+#. angerManager.strat.breathe
+msgctxt "angerManager.strat.breathe"
+msgid "Breathe deeply"
+msgstr ""
+
+#. angerManager.strat.count
+msgctxt "angerManager.strat.count"
+msgid "Count to 10"
+msgstr ""
+
+#. angerManager.strat.draw
+msgctxt "angerManager.strat.draw"
+msgid "Draw your feelings"
+msgstr ""
+
+#. angerManager.strat.music
+msgctxt "angerManager.strat.music"
+msgid "Listen to music"
+msgstr ""
+
+#. angerManager.strat.squeeze
+msgctxt "angerManager.strat.squeeze"
+msgid "Squeeze something"
+msgstr ""
+
+#. angerManager.strat.talk
+msgctxt "angerManager.strat.talk"
+msgid "Talk to someone"
+msgstr ""
+
+#. angerManager.strat.walk
+msgctxt "angerManager.strat.walk"
+msgid "Take a walk"
+msgstr ""
+
+#. angerManager.strat.water
+msgctxt "angerManager.strat.water"
+msgid "Drink water"
+msgstr ""
+
+#. angerManager.title
+msgctxt "angerManager.title"
+msgid "Anger Thermometer"
+msgstr ""
+
+#. angerManager.tryThis
+msgctxt "angerManager.tryThis"
+msgid "Try one of these:"
+msgstr ""
 
 #. app.all
 msgctxt "app.all"
@@ -16,7 +100,7 @@ msgstr ""
 
 #. app.anger_manager.desc
 msgctxt "app.anger_manager.desc"
-msgid "Tools and strategies for managing anger"
+msgid "Anger thermometer with calming strategies"
 msgstr ""
 
 #. app.back
@@ -131,7 +215,7 @@ msgstr ""
 
 #. app.conversation_aid.desc
 msgctxt "app.conversation_aid.desc"
-msgid "Support for conversations and social interaction"
+msgid "Ready-made phrases for conversations"
 msgstr ""
 
 #. app.cooking_helper
@@ -161,7 +245,7 @@ msgstr ""
 
 #. app.day_planner.desc
 msgctxt "app.day_planner.desc"
-msgid "Visual daily planner with two-way communication"
+msgid "Plan your day with visual timeline"
 msgstr ""
 
 #. app.diary
@@ -221,7 +305,7 @@ msgstr ""
 
 #. app.math_aid.desc
 msgctxt "app.math_aid.desc"
-msgid "Visual math with concrete examples"
+msgid "Visual math with counting objects"
 msgstr ""
 
 #. app.memory_game
@@ -231,7 +315,7 @@ msgstr ""
 
 #. app.memory_game.desc
 msgctxt "app.memory_game.desc"
-msgid "Match pairs with pictures and sounds"
+msgid "Match pairs to train memory"
 msgstr ""
 
 #. app.money_check
@@ -251,7 +335,7 @@ msgstr ""
 
 #. app.my_schedule.desc
 msgctxt "app.my_schedule.desc"
-msgid "Personal weekly schedule overview"
+msgid "Create your own visual schedule"
 msgstr ""
 
 #. app.pecs_board
@@ -261,7 +345,7 @@ msgstr ""
 
 #. app.pecs_board.desc
 msgctxt "app.pecs_board.desc"
-msgid "Picture Exchange Communication System board"
+msgid "Picture exchange communication boards"
 msgstr ""
 
 #. app.pecs_trainer
@@ -331,7 +415,7 @@ msgstr ""
 
 #. app.reward_chart.desc
 msgctxt "app.reward_chart.desc"
-msgid "Visual reward and motivation system"
+msgid "Earn stars for good habits"
 msgstr ""
 
 #. app.routine_buddy
@@ -341,7 +425,7 @@ msgstr ""
 
 #. app.routine_buddy.desc
 msgctxt "app.routine_buddy.desc"
-msgid "Step-by-step routine guidance"
+msgid "Step-by-step daily routines"
 msgstr ""
 
 #. app.school_day
@@ -351,7 +435,7 @@ msgstr ""
 
 #. app.school_day.desc
 msgctxt "app.school_day.desc"
-msgid "Visual school day schedule and overview"
+msgid "Follow your school day schedule"
 msgstr ""
 
 #. app.search
@@ -366,7 +450,7 @@ msgstr ""
 
 #. app.sentence_builder.desc
 msgctxt "app.sentence_builder.desc"
-msgid "Construct sentences with visual support"
+msgid "Build sentences with color-coded words"
 msgstr ""
 
 #. app.settings
@@ -401,7 +485,7 @@ msgstr ""
 
 #. app.social_stories.desc
 msgctxt "app.social_stories.desc"
-msgid "Visual stories about social situations"
+msgid "Visual stories for everyday situations"
 msgstr ""
 
 #. app.sound_library
@@ -411,7 +495,7 @@ msgstr ""
 
 #. app.sound_library.desc
 msgctxt "app.sound_library.desc"
-msgid "Explore and learn from everyday sounds"
+msgid "Explore fun sounds by category"
 msgstr ""
 
 #. app.step_guide
@@ -456,7 +540,7 @@ msgstr ""
 
 #. app.time_tracker.desc
 msgctxt "app.time_tracker.desc"
-msgid "Track and visualize time for activities"
+msgid "Visual timer for activities"
 msgstr ""
 
 #. app.title
@@ -496,7 +580,7 @@ msgstr ""
 
 #. app.word_builder.desc
 msgctxt "app.word_builder.desc"
-msgid "Build words from sounds and letters"
+msgid "Build words letter by letter"
 msgstr ""
 
 #. board.board_name
@@ -1364,6 +1448,136 @@ msgctxt "clothesChooser.youChose"
 msgid "You chose"
 msgstr ""
 
+#. conversationAid.again
+msgctxt "conversationAid.again"
+msgid "Again"
+msgstr ""
+
+#. conversationAid.bye
+msgctxt "conversationAid.bye"
+msgid "Bye bye!"
+msgstr ""
+
+#. conversationAid.canIHave
+msgctxt "conversationAid.canIHave"
+msgid "Can I have...?"
+msgstr ""
+
+#. conversationAid.cat.feelings
+msgctxt "conversationAid.cat.feelings"
+msgid "Feelings"
+msgstr ""
+
+#. conversationAid.cat.greetings
+msgctxt "conversationAid.cat.greetings"
+msgid "Greetings"
+msgstr ""
+
+#. conversationAid.cat.needs
+msgctxt "conversationAid.cat.needs"
+msgid "Needs"
+msgstr ""
+
+#. conversationAid.cat.questions
+msgctxt "conversationAid.cat.questions"
+msgid "Questions"
+msgstr ""
+
+#. conversationAid.fine
+msgctxt "conversationAid.fine"
+msgid "I am fine"
+msgstr ""
+
+#. conversationAid.hi
+msgctxt "conversationAid.hi"
+msgid "Hi!"
+msgstr ""
+
+#. conversationAid.howAreYou
+msgctxt "conversationAid.howAreYou"
+msgid "How are you?"
+msgstr ""
+
+#. conversationAid.iAmAngry
+msgctxt "conversationAid.iAmAngry"
+msgid "I am angry"
+msgstr ""
+
+#. conversationAid.iAmHappy
+msgctxt "conversationAid.iAmHappy"
+msgid "I am happy"
+msgstr ""
+
+#. conversationAid.iAmSad
+msgctxt "conversationAid.iAmSad"
+msgid "I am sad"
+msgstr ""
+
+#. conversationAid.iAmScared
+msgctxt "conversationAid.iAmScared"
+msgid "I am scared"
+msgstr ""
+
+#. conversationAid.iAmTired
+msgctxt "conversationAid.iAmTired"
+msgid "I am tired"
+msgstr ""
+
+#. conversationAid.iDontFeelWell
+msgctxt "conversationAid.iDontFeelWell"
+msgid "I don't feel well"
+msgstr ""
+
+#. conversationAid.iDontUnderstand
+msgctxt "conversationAid.iDontUnderstand"
+msgid "I don't understand"
+msgstr ""
+
+#. conversationAid.please
+msgctxt "conversationAid.please"
+msgid "Please"
+msgstr ""
+
+#. conversationAid.sayAgain
+msgctxt "conversationAid.sayAgain"
+msgid "Say that again"
+msgstr ""
+
+#. conversationAid.stop
+msgctxt "conversationAid.stop"
+msgid "Stop"
+msgstr ""
+
+#. conversationAid.thanks
+msgctxt "conversationAid.thanks"
+msgid "Thank you"
+msgstr ""
+
+#. conversationAid.title
+msgctxt "conversationAid.title"
+msgid "Conversation Aid"
+msgstr ""
+
+#. conversationAid.wait
+msgctxt "conversationAid.wait"
+msgid "Wait"
+msgstr ""
+
+#. conversationAid.whatIsThis
+msgctxt "conversationAid.whatIsThis"
+msgid "What is this?"
+msgstr ""
+
+#. conversationAid.when
+msgctxt "conversationAid.when"
+msgid "When?"
+msgstr ""
+
+#. conversationAid.whereIs
+msgctxt "conversationAid.whereIs"
+msgid "Where is...?"
+msgstr ""
+
 #. cook.credit
 msgctxt "cook.credit"
 msgid "Visual step-by-step recipes (TEACCH-inspired structured cooking)"
@@ -1522,6 +1736,61 @@ msgstr ""
 #. counting.title
 msgctxt "counting.title"
 msgid "Counting"
+msgstr ""
+
+#. dayPlanner.slot.bedtime
+msgctxt "dayPlanner.slot.bedtime"
+msgid "Bedtime"
+msgstr ""
+
+#. dayPlanner.slot.breakfast
+msgctxt "dayPlanner.slot.breakfast"
+msgid "Breakfast"
+msgstr ""
+
+#. dayPlanner.slot.dinner
+msgctxt "dayPlanner.slot.dinner"
+msgid "Dinner"
+msgstr ""
+
+#. dayPlanner.slot.evening
+msgctxt "dayPlanner.slot.evening"
+msgid "Evening routine"
+msgstr ""
+
+#. dayPlanner.slot.lunch
+msgctxt "dayPlanner.slot.lunch"
+msgid "Lunch"
+msgstr ""
+
+#. dayPlanner.slot.morning
+msgctxt "dayPlanner.slot.morning"
+msgid "Wake up"
+msgstr ""
+
+#. dayPlanner.slot.play
+msgctxt "dayPlanner.slot.play"
+msgid "Free time"
+msgstr ""
+
+#. dayPlanner.slot.school_end
+msgctxt "dayPlanner.slot.school_end"
+msgid "School ends"
+msgstr ""
+
+#. dayPlanner.slot.school_start
+msgctxt "dayPlanner.slot.school_start"
+msgid "School starts"
+msgstr ""
+
+#. dayPlanner.slot.snack
+msgctxt "dayPlanner.slot.snack"
+msgid "Snack"
+msgstr ""
+
+#. dayPlanner.title
+msgctxt "dayPlanner.title"
+msgid "Day Planner"
 msgstr ""
 
 #. diary.credit
@@ -2964,6 +3233,91 @@ msgctxt "mat.topic.school"
 msgid "School"
 msgstr ""
 
+#. mathAid.addition
+msgctxt "mathAid.addition"
+msgid "Addition"
+msgstr ""
+
+#. mathAid.correct
+msgctxt "mathAid.correct"
+msgid "Correct!"
+msgstr ""
+
+#. mathAid.maxNumber
+msgctxt "mathAid.maxNumber"
+msgid "Max number"
+msgstr ""
+
+#. mathAid.subtraction
+msgctxt "mathAid.subtraction"
+msgid "Subtraction"
+msgstr ""
+
+#. mathAid.title
+msgctxt "mathAid.title"
+msgid "Math Aid"
+msgstr ""
+
+#. mathAid.wrong
+msgctxt "mathAid.wrong"
+msgid "Not quite"
+msgstr ""
+
+#. memoryGame.moves
+msgctxt "memoryGame.moves"
+msgid "moves"
+msgstr ""
+
+#. memoryGame.newTheme
+msgctxt "memoryGame.newTheme"
+msgid "New theme"
+msgstr ""
+
+#. memoryGame.pairs
+msgctxt "memoryGame.pairs"
+msgid "pairs"
+msgstr ""
+
+#. memoryGame.pickTheme
+msgctxt "memoryGame.pickTheme"
+msgid "Choose a theme"
+msgstr ""
+
+#. memoryGame.playAgain
+msgctxt "memoryGame.playAgain"
+msgid "Play again"
+msgstr ""
+
+#. memoryGame.theme.animals
+msgctxt "memoryGame.theme.animals"
+msgid "Animals"
+msgstr ""
+
+#. memoryGame.theme.food
+msgctxt "memoryGame.theme.food"
+msgid "Food"
+msgstr ""
+
+#. memoryGame.theme.nature
+msgctxt "memoryGame.theme.nature"
+msgid "Nature"
+msgstr ""
+
+#. memoryGame.theme.transport
+msgctxt "memoryGame.theme.transport"
+msgid "Transport"
+msgstr ""
+
+#. memoryGame.title
+msgctxt "memoryGame.title"
+msgid "Memory Game"
+msgstr ""
+
+#. memoryGame.youWon
+msgctxt "memoryGame.youWon"
+msgid "You won!"
+msgstr ""
+
 #. money.bills
 msgctxt "money.bills"
 msgid "Bills"
@@ -3007,6 +3361,26 @@ msgstr ""
 #. money.undo
 msgctxt "money.undo"
 msgid "Undo"
+msgstr ""
+
+#. mySchedule.add
+msgctxt "mySchedule.add"
+msgid "Add"
+msgstr ""
+
+#. mySchedule.empty
+msgctxt "mySchedule.empty"
+msgid "No activities yet. Tap ➕ to add!"
+msgstr ""
+
+#. mySchedule.title
+msgctxt "mySchedule.title"
+msgid "My Schedule"
+msgstr ""
+
+#. mySchedule.whatToDo
+msgctxt "mySchedule.whatToDo"
+msgid "What to do?"
 msgstr ""
 
 #. pecs.bring_to_partner
@@ -3112,6 +3486,116 @@ msgstr ""
 #. pecs.what_want
 msgctxt "pecs.what_want"
 msgid "What do you want?"
+msgstr ""
+
+#. pecsBoard.angry
+msgctxt "pecsBoard.angry"
+msgid "Angry"
+msgstr ""
+
+#. pecsBoard.board.activities
+msgctxt "pecsBoard.board.activities"
+msgid "I want to"
+msgstr ""
+
+#. pecsBoard.board.feelings
+msgctxt "pecsBoard.board.feelings"
+msgid "I feel"
+msgstr ""
+
+#. pecsBoard.board.needs
+msgctxt "pecsBoard.board.needs"
+msgid "I need"
+msgstr ""
+
+#. pecsBoard.draw
+msgctxt "pecsBoard.draw"
+msgid "Draw"
+msgstr ""
+
+#. pecsBoard.drink
+msgctxt "pecsBoard.drink"
+msgid "Drink"
+msgstr ""
+
+#. pecsBoard.eat
+msgctxt "pecsBoard.eat"
+msgid "Eat"
+msgstr ""
+
+#. pecsBoard.happy
+msgctxt "pecsBoard.happy"
+msgid "Happy"
+msgstr ""
+
+#. pecsBoard.help
+msgctxt "pecsBoard.help"
+msgid "Help"
+msgstr ""
+
+#. pecsBoard.hug
+msgctxt "pecsBoard.hug"
+msgid "Hug"
+msgstr ""
+
+#. pecsBoard.music
+msgctxt "pecsBoard.music"
+msgid "Music"
+msgstr ""
+
+#. pecsBoard.play
+msgctxt "pecsBoard.play"
+msgid "Play"
+msgstr ""
+
+#. pecsBoard.read
+msgctxt "pecsBoard.read"
+msgid "Read"
+msgstr ""
+
+#. pecsBoard.sad
+msgctxt "pecsBoard.sad"
+msgid "Sad"
+msgstr ""
+
+#. pecsBoard.sick
+msgctxt "pecsBoard.sick"
+msgid "Sick"
+msgstr ""
+
+#. pecsBoard.sleep
+msgctxt "pecsBoard.sleep"
+msgid "Sleep"
+msgstr ""
+
+#. pecsBoard.tired
+msgctxt "pecsBoard.tired"
+msgid "Tired"
+msgstr ""
+
+#. pecsBoard.title
+msgctxt "pecsBoard.title"
+msgid "PECS Board"
+msgstr ""
+
+#. pecsBoard.toilet
+msgctxt "pecsBoard.toilet"
+msgid "Toilet"
+msgstr ""
+
+#. pecsBoard.walk
+msgctxt "pecsBoard.walk"
+msgid "Walk"
+msgstr ""
+
+#. pecsBoard.watch
+msgctxt "pecsBoard.watch"
+msgid "Watch"
+msgstr ""
+
+#. pecsBoard.worried
+msgctxt "pecsBoard.worried"
+msgid "Worried"
 msgstr ""
 
 #. phrase.does
@@ -3584,6 +4068,186 @@ msgctxt "profile.wrong_pin"
 msgid "Wrong PIN"
 msgstr ""
 
+#. rewardChart.earnStar
+msgctxt "rewardChart.earnStar"
+msgid "Earn a star!"
+msgstr ""
+
+#. rewardChart.goal.brush
+msgctxt "rewardChart.goal.brush"
+msgid "Brushed teeth"
+msgstr ""
+
+#. rewardChart.goal.dress
+msgctxt "rewardChart.goal.dress"
+msgid "Got dressed"
+msgstr ""
+
+#. rewardChart.goal.eat
+msgctxt "rewardChart.goal.eat"
+msgid "Ate well"
+msgstr ""
+
+#. rewardChart.goal.homework
+msgctxt "rewardChart.goal.homework"
+msgid "Did homework"
+msgstr ""
+
+#. rewardChart.goal.kind
+msgctxt "rewardChart.goal.kind"
+msgid "Was kind"
+msgstr ""
+
+#. rewardChart.goal.tidy
+msgctxt "rewardChart.goal.tidy"
+msgid "Tidied up"
+msgstr ""
+
+#. rewardChart.goalReached
+msgctxt "rewardChart.goalReached"
+msgid "Goal reached!"
+msgstr ""
+
+#. rewardChart.newChart
+msgctxt "rewardChart.newChart"
+msgid "New chart"
+msgstr ""
+
+#. rewardChart.title
+msgctxt "rewardChart.title"
+msgid "Reward Chart"
+msgstr ""
+
+#. routineBuddy.allDone
+msgctxt "routineBuddy.allDone"
+msgid "All done!"
+msgstr ""
+
+#. routineBuddy.arrive
+msgctxt "routineBuddy.arrive"
+msgid "Arrive at school"
+msgstr ""
+
+#. routineBuddy.bath
+msgctxt "routineBuddy.bath"
+msgid "Take a bath"
+msgstr ""
+
+#. routineBuddy.breakfast
+msgctxt "routineBuddy.breakfast"
+msgid "Eat breakfast"
+msgstr ""
+
+#. routineBuddy.brush
+msgctxt "routineBuddy.brush"
+msgid "Brush teeth"
+msgstr ""
+
+#. routineBuddy.brushEvening
+msgctxt "routineBuddy.brushEvening"
+msgid "Brush teeth"
+msgstr ""
+
+#. routineBuddy.dinner
+msgctxt "routineBuddy.dinner"
+msgid "Eat dinner"
+msgstr ""
+
+#. routineBuddy.dress
+msgctxt "routineBuddy.dress"
+msgid "Get dressed"
+msgstr ""
+
+#. routineBuddy.goHome
+msgctxt "routineBuddy.goHome"
+msgid "Time to go home!"
+msgstr ""
+
+#. routineBuddy.leave
+msgctxt "routineBuddy.leave"
+msgid "Time to go!"
+msgstr ""
+
+#. routineBuddy.lesson
+msgctxt "routineBuddy.lesson"
+msgid "First lesson"
+msgstr ""
+
+#. routineBuddy.lesson2
+msgctxt "routineBuddy.lesson2"
+msgid "Afternoon lesson"
+msgstr ""
+
+#. routineBuddy.lunch
+msgctxt "routineBuddy.lunch"
+msgid "Lunch"
+msgstr ""
+
+#. routineBuddy.pack
+msgctxt "routineBuddy.pack"
+msgid "Pack your bag"
+msgstr ""
+
+#. routineBuddy.pyjamas
+msgctxt "routineBuddy.pyjamas"
+msgid "Put on pyjamas"
+msgstr ""
+
+#. routineBuddy.recess
+msgctxt "routineBuddy.recess"
+msgid "Break time!"
+msgstr ""
+
+#. routineBuddy.routine.evening
+msgctxt "routineBuddy.routine.evening"
+msgid "Evening routine"
+msgstr ""
+
+#. routineBuddy.routine.morning
+msgctxt "routineBuddy.routine.morning"
+msgid "Morning routine"
+msgstr ""
+
+#. routineBuddy.routine.school
+msgctxt "routineBuddy.routine.school"
+msgid "School day"
+msgstr ""
+
+#. routineBuddy.sleep
+msgctxt "routineBuddy.sleep"
+msgid "Lights out, good night!"
+msgstr ""
+
+#. routineBuddy.story
+msgctxt "routineBuddy.story"
+msgid "Read a story"
+msgstr ""
+
+#. routineBuddy.title
+msgctxt "routineBuddy.title"
+msgid "Routine Buddy"
+msgstr ""
+
+#. routineBuddy.toilet
+msgctxt "routineBuddy.toilet"
+msgid "Go to the toilet"
+msgstr ""
+
+#. routineBuddy.unpack
+msgctxt "routineBuddy.unpack"
+msgid "Unpack your bag"
+msgstr ""
+
+#. routineBuddy.wake
+msgctxt "routineBuddy.wake"
+msgid "Wake up"
+msgstr ""
+
+#. routineBuddy.wash
+msgctxt "routineBuddy.wash"
+msgid "Wash face and hands"
+msgstr ""
+
 #. schedule.add_activity
 msgctxt "schedule.add_activity"
 msgid "Add Activity"
@@ -3642,6 +4306,116 @@ msgstr ""
 #. schedule.today
 msgctxt "schedule.today"
 msgid "Today"
+msgstr ""
+
+#. schoolDay.period.art
+msgctxt "schoolDay.period.art"
+msgid "Art"
+msgstr ""
+
+#. schoolDay.period.assembly
+msgctxt "schoolDay.period.assembly"
+msgid "Assembly"
+msgstr ""
+
+#. schoolDay.period.break1
+msgctxt "schoolDay.period.break1"
+msgid "Break"
+msgstr ""
+
+#. schoolDay.period.break2
+msgctxt "schoolDay.period.break2"
+msgid "Break"
+msgstr ""
+
+#. schoolDay.period.english
+msgctxt "schoolDay.period.english"
+msgid "English"
+msgstr ""
+
+#. schoolDay.period.home
+msgctxt "schoolDay.period.home"
+msgid "Go home"
+msgstr ""
+
+#. schoolDay.period.lunch
+msgctxt "schoolDay.period.lunch"
+msgid "Lunch"
+msgstr ""
+
+#. schoolDay.period.math
+msgctxt "schoolDay.period.math"
+msgid "Math"
+msgstr ""
+
+#. schoolDay.period.pe
+msgctxt "schoolDay.period.pe"
+msgid "P.E."
+msgstr ""
+
+#. schoolDay.period.science
+msgctxt "schoolDay.period.science"
+msgid "Science"
+msgstr ""
+
+#. schoolDay.period.swedish
+msgctxt "schoolDay.period.swedish"
+msgid "Swedish"
+msgstr ""
+
+#. schoolDay.title
+msgctxt "schoolDay.title"
+msgid "School Day"
+msgstr ""
+
+#. sentenceBuilder.buildHere
+msgctxt "sentenceBuilder.buildHere"
+msgid "Build your sentence here..."
+msgstr ""
+
+#. sentenceBuilder.cat.feeling
+msgctxt "sentenceBuilder.cat.feeling"
+msgid "Feeling"
+msgstr ""
+
+#. sentenceBuilder.cat.object
+msgctxt "sentenceBuilder.cat.object"
+msgid "Thing"
+msgstr ""
+
+#. sentenceBuilder.cat.other
+msgctxt "sentenceBuilder.cat.other"
+msgid "Other"
+msgstr ""
+
+#. sentenceBuilder.cat.person
+msgctxt "sentenceBuilder.cat.person"
+msgid "Person"
+msgstr ""
+
+#. sentenceBuilder.cat.verb
+msgctxt "sentenceBuilder.cat.verb"
+msgid "Action"
+msgstr ""
+
+#. sentenceBuilder.correct
+msgctxt "sentenceBuilder.correct"
+msgid "Correct"
+msgstr ""
+
+#. sentenceBuilder.next
+msgctxt "sentenceBuilder.next"
+msgid "Next"
+msgstr ""
+
+#. sentenceBuilder.title
+msgctxt "sentenceBuilder.title"
+msgid "Sentence Builder"
+msgstr ""
+
+#. sentenceBuilder.tryAgain
+msgctxt "sentenceBuilder.tryAgain"
+msgid "Try again!"
 msgstr ""
 
 #. settings.advanced
@@ -3914,6 +4688,291 @@ msgctxt "situation.transport"
 msgid "Transport"
 msgstr ""
 
+#. socialStories.doctor.1
+msgctxt "socialStories.doctor.1"
+msgid "Today I am going to the doctor."
+msgstr ""
+
+#. socialStories.doctor.2
+msgctxt "socialStories.doctor.2"
+msgid "We arrive at the clinic."
+msgstr ""
+
+#. socialStories.doctor.3
+msgctxt "socialStories.doctor.3"
+msgid "I wait in the waiting room. I can read a book."
+msgstr ""
+
+#. socialStories.doctor.4
+msgctxt "socialStories.doctor.4"
+msgid "The doctor is nice. They check that I am healthy."
+msgstr ""
+
+#. socialStories.doctor.5
+msgctxt "socialStories.doctor.5"
+msgid "All done! I did great!"
+msgstr ""
+
+#. socialStories.friend.1
+msgctxt "socialStories.friend.1"
+msgid "My friend is coming to play!"
+msgstr ""
+
+#. socialStories.friend.2
+msgctxt "socialStories.friend.2"
+msgid "The doorbell rings."
+msgstr ""
+
+#. socialStories.friend.3
+msgctxt "socialStories.friend.3"
+msgid "I say hello and we decide what to play."
+msgstr ""
+
+#. socialStories.friend.4
+msgctxt "socialStories.friend.4"
+msgid "We take turns and share. That is kind."
+msgstr ""
+
+#. socialStories.friend.5
+msgctxt "socialStories.friend.5"
+msgid "We say goodbye. It was fun!"
+msgstr ""
+
+#. socialStories.haircut.1
+msgctxt "socialStories.haircut.1"
+msgid "Today I am getting a haircut."
+msgstr ""
+
+#. socialStories.haircut.2
+msgctxt "socialStories.haircut.2"
+msgid "I sit in the chair. It is like a throne!"
+msgstr ""
+
+#. socialStories.haircut.3
+msgctxt "socialStories.haircut.3"
+msgid "The hairdresser cuts a little bit. It does not hurt."
+msgstr ""
+
+#. socialStories.haircut.4
+msgctxt "socialStories.haircut.4"
+msgid "I look great! I did it!"
+msgstr ""
+
+#. socialStories.name.doctor
+msgctxt "socialStories.name.doctor"
+msgid "Going to the Doctor"
+msgstr ""
+
+#. socialStories.name.friend
+msgctxt "socialStories.name.friend"
+msgid "Playing with a Friend"
+msgstr ""
+
+#. socialStories.name.haircut
+msgctxt "socialStories.name.haircut"
+msgid "Getting a Haircut"
+msgstr ""
+
+#. socialStories.name.school
+msgctxt "socialStories.name.school"
+msgid "A Day at School"
+msgstr ""
+
+#. socialStories.name.store
+msgctxt "socialStories.name.store"
+msgid "Going to the Store"
+msgstr ""
+
+#. socialStories.school.1
+msgctxt "socialStories.school.1"
+msgid "It is morning. Time to get ready for school."
+msgstr ""
+
+#. socialStories.school.2
+msgctxt "socialStories.school.2"
+msgid "I pack my bag with everything I need."
+msgstr ""
+
+#. socialStories.school.3
+msgctxt "socialStories.school.3"
+msgid "I say hello to my teacher and friends."
+msgstr ""
+
+#. socialStories.school.4
+msgctxt "socialStories.school.4"
+msgid "We learn new things in class. It is fun."
+msgstr ""
+
+#. socialStories.school.5
+msgctxt "socialStories.school.5"
+msgid "At lunchtime, I eat my food and play."
+msgstr ""
+
+#. socialStories.school.6
+msgctxt "socialStories.school.6"
+msgid "School is over. I go home. It was a good day!"
+msgstr ""
+
+#. socialStories.store.1
+msgctxt "socialStories.store.1"
+msgid "We make a shopping list."
+msgstr ""
+
+#. socialStories.store.2
+msgctxt "socialStories.store.2"
+msgid "We drive to the store."
+msgstr ""
+
+#. socialStories.store.3
+msgctxt "socialStories.store.3"
+msgid "I help find things and put them in the cart."
+msgstr ""
+
+#. socialStories.store.4
+msgctxt "socialStories.store.4"
+msgid "We pay at the register."
+msgstr ""
+
+#. socialStories.store.5
+msgctxt "socialStories.store.5"
+msgid "We go home with our bags. Good job!"
+msgstr ""
+
+#. socialStories.title
+msgctxt "socialStories.title"
+msgid "Social Stories"
+msgstr ""
+
+#. soundLibrary.airplane
+msgctxt "soundLibrary.airplane"
+msgid "Airplane"
+msgstr ""
+
+#. soundLibrary.bee
+msgctxt "soundLibrary.bee"
+msgid "Bee"
+msgstr ""
+
+#. soundLibrary.bell
+msgctxt "soundLibrary.bell"
+msgid "Bell"
+msgstr ""
+
+#. soundLibrary.bus
+msgctxt "soundLibrary.bus"
+msgid "Bus"
+msgstr ""
+
+#. soundLibrary.car
+msgctxt "soundLibrary.car"
+msgid "Car"
+msgstr ""
+
+#. soundLibrary.cat
+msgctxt "soundLibrary.cat"
+msgid "Cat"
+msgstr ""
+
+#. soundLibrary.cat.animals
+msgctxt "soundLibrary.cat.animals"
+msgid "Animals"
+msgstr ""
+
+#. soundLibrary.cat.music
+msgctxt "soundLibrary.cat.music"
+msgid "Music"
+msgstr ""
+
+#. soundLibrary.cat.nature
+msgctxt "soundLibrary.cat.nature"
+msgid "Nature"
+msgstr ""
+
+#. soundLibrary.cat.vehicles
+msgctxt "soundLibrary.cat.vehicles"
+msgid "Vehicles"
+msgstr ""
+
+#. soundLibrary.cow
+msgctxt "soundLibrary.cow"
+msgid "Cow"
+msgstr ""
+
+#. soundLibrary.dog
+msgctxt "soundLibrary.dog"
+msgid "Dog"
+msgstr ""
+
+#. soundLibrary.drum
+msgctxt "soundLibrary.drum"
+msgid "Drum"
+msgstr ""
+
+#. soundLibrary.firetruck
+msgctxt "soundLibrary.firetruck"
+msgid "Fire truck"
+msgstr ""
+
+#. soundLibrary.frog
+msgctxt "soundLibrary.frog"
+msgid "Frog"
+msgstr ""
+
+#. soundLibrary.guitar
+msgctxt "soundLibrary.guitar"
+msgid "Guitar"
+msgstr ""
+
+#. soundLibrary.lion
+msgctxt "soundLibrary.lion"
+msgid "Lion"
+msgstr ""
+
+#. soundLibrary.piano
+msgctxt "soundLibrary.piano"
+msgid "Piano"
+msgstr ""
+
+#. soundLibrary.pig
+msgctxt "soundLibrary.pig"
+msgid "Pig"
+msgstr ""
+
+#. soundLibrary.rain
+msgctxt "soundLibrary.rain"
+msgid "Rain"
+msgstr ""
+
+#. soundLibrary.rooster
+msgctxt "soundLibrary.rooster"
+msgid "Rooster"
+msgstr ""
+
+#. soundLibrary.thunder
+msgctxt "soundLibrary.thunder"
+msgid "Thunder"
+msgstr ""
+
+#. soundLibrary.title
+msgctxt "soundLibrary.title"
+msgid "Sound Library"
+msgstr ""
+
+#. soundLibrary.train
+msgctxt "soundLibrary.train"
+msgid "Train"
+msgstr ""
+
+#. soundLibrary.waves
+msgctxt "soundLibrary.waves"
+msgid "Waves"
+msgstr ""
+
+#. soundLibrary.wind
+msgctxt "soundLibrary.wind"
+msgid "Wind"
+msgstr ""
+
 #. takk.description
 msgctxt "takk.description"
 msgid "Signs as Alternative and Augmentative Communication (TAKK) — sign the key words while speaking"
@@ -4164,6 +5223,76 @@ msgctxt "talk.yes"
 msgid "Yes"
 msgstr ""
 
+#. timeTracker.minutes
+msgctxt "timeTracker.minutes"
+msgid "minutes"
+msgstr ""
+
+#. timeTracker.newTimer
+msgctxt "timeTracker.newTimer"
+msgid "New timer"
+msgstr ""
+
+#. timeTracker.pause
+msgctxt "timeTracker.pause"
+msgid "Pause"
+msgstr ""
+
+#. timeTracker.pickActivity
+msgctxt "timeTracker.pickActivity"
+msgid "Pick an activity"
+msgstr ""
+
+#. timeTracker.preset.brush
+msgctxt "timeTracker.preset.brush"
+msgid "Brush teeth"
+msgstr ""
+
+#. timeTracker.preset.create
+msgctxt "timeTracker.preset.create"
+msgid "Create"
+msgstr ""
+
+#. timeTracker.preset.exercise
+msgctxt "timeTracker.preset.exercise"
+msgid "Exercise"
+msgstr ""
+
+#. timeTracker.preset.homework
+msgctxt "timeTracker.preset.homework"
+msgid "Homework"
+msgstr ""
+
+#. timeTracker.preset.play
+msgctxt "timeTracker.preset.play"
+msgid "Play time"
+msgstr ""
+
+#. timeTracker.preset.tidy
+msgctxt "timeTracker.preset.tidy"
+msgid "Tidy up"
+msgstr ""
+
+#. timeTracker.resume
+msgctxt "timeTracker.resume"
+msgid "Resume"
+msgstr ""
+
+#. timeTracker.stop
+msgctxt "timeTracker.stop"
+msgid "Stop"
+msgstr ""
+
+#. timeTracker.timesUp
+msgctxt "timeTracker.timesUp"
+msgid "Time is up!"
+msgstr ""
+
+#. timeTracker.title
+msgctxt "timeTracker.title"
+msgid "Time Tracker"
+msgstr ""
+
 #. timer.again
 msgctxt "timer.again"
 msgid "Again"
@@ -4372,5 +5501,30 @@ msgstr ""
 #. vs.title
 msgctxt "vs.title"
 msgid "Visual Support"
+msgstr ""
+
+#. wordBuilder.correct
+msgctxt "wordBuilder.correct"
+msgid "Correct"
+msgstr ""
+
+#. wordBuilder.hear
+msgctxt "wordBuilder.hear"
+msgid "Hear the word"
+msgstr ""
+
+#. wordBuilder.next
+msgctxt "wordBuilder.next"
+msgid "Next word"
+msgstr ""
+
+#. wordBuilder.title
+msgctxt "wordBuilder.title"
+msgid "Word Builder"
+msgstr ""
+
+#. wordBuilder.tryAgain
+msgctxt "wordBuilder.tryAgain"
+msgid "Try again!"
 msgstr ""
 

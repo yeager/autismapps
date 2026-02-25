@@ -17,7 +17,7 @@
 
     <section class="stats">
       <div class="stat"><span class="stat-num">42</span><span class="stat-label">{$t('about.apps')}</span></div>
-      <div class="stat"><span class="stat-num">22</span><span class="stat-label">{$t('about.languages')}</span></div>
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label">{$t('about.languages')}</span></div>
       <div class="stat"><span class="stat-num">100%</span><span class="stat-label">{$t('about.free')}</span></div>
     </section>
 

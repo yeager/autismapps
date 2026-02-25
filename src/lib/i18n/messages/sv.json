@@ -1125,7 +1125,7 @@
   "about.features": "Funktioner",
   "about.feat.tts": "Talsyntes på alla interaktiva element",
   "about.feat.pwa": "Fungerar offline — installera på vilken enhet som helst",
-  "about.feat.i18n": "22 språk via Transifex",
+  "about.feat.i18n": "Svenska och engelska (fler språk kommer via Transifex)",
   "about.feat.a11y": "Tillgänglig: stora tryckytor, hög kontrast",
   "about.feat.privacy": "Ingen spårning, inga annonser, ingen datainsamling",
   "about.feat.free": "Gratis och öppen källkod för alltid",

@@ -1124,7 +1124,7 @@
   "about.features": "Features",
   "about.feat.tts": "Text-to-speech on all interactive elements",
   "about.feat.pwa": "Works offline — install on any device",
-  "about.feat.i18n": "22 languages via Transifex",
+  "about.feat.i18n": "Swedish and English (more languages coming via Transifex)",
   "about.feat.a11y": "Accessible: large touch targets, high contrast",
   "about.feat.privacy": "No tracking, no ads, no data collection",
   "about.feat.free": "Free and open source forever",

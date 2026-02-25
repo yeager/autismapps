@@ -349,7 +349,7 @@
         <div class="debug-row">
           <span class="debug-label">Piper status:</span>
           <span class="debug-value">
-            {$ttsStatus.piperReady ? '✅ Redo' : $ttsStatus.piperFailed ? '❌ Misslyckades' : '⏳ Laddar...'}
+            {$ttsStatus.piperReady ? '✅ Redo' : $ttsStatus.piperFailed ? '❌ Ej tillgänglig' : '⏳ Laddar...'}
           </span>
         </div>
         {#if $ttsStatus.lastSpoke}
@@ -365,22 +365,24 @@
           </div>
         {/if}
         <div class="debug-btns">
-          <button class="test-btn" onclick={() => speak('Hej! Piper WASM testar.')}>
+          <button class="test-btn" onclick={() => speak('Hej! TTS-motorn testar.')}>
             🔊 Testa TTS
           </button>
-          <button class="test-btn" onclick={async () => {
-            const stored = await getStoredVoices();
-            for (const v of stored) await removeVoice(v);
-            alert(`Rensade ${stored.length} cachade röster. Ladda om sidan.`);
-          }}>
-            🗑️ Rensa TTS-cache
-          </button>
-          <button class="test-btn" onclick={async () => {
-            await preloadVoice('sv');
-            await preloadVoice('en');
-          }}>
-            📥 Ladda ner röster
-          </button>
+          {#if $ttsStatus.engine === 'piper'}
+            <button class="test-btn" onclick={async () => {
+              const stored = await getStoredVoices();
+              for (const v of stored) await removeVoice(v);
+              alert(`Rensade ${stored.length} cachade röster. Ladda om sidan.`);
+            }}>
+              🗑️ Rensa TTS-cache
+            </button>
+            <button class="test-btn" onclick={async () => {
+              await preloadVoice('sv');
+              await preloadVoice('en');
+            }}>
+              📥 Ladda ner röster
+            </button>
+          {/if}
         </div>
       </div>
     </div>

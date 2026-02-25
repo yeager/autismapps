@@ -30,6 +30,11 @@ function getVoiceId(lang: string): string {
 	return get(selectedVoiceEn);
 }
 
+// Proactively init TTS engine on load so status is available immediately
+if (browser) {
+	setTimeout(() => initPiper(), 500);
+}
+
 let speaking = false;
 let piperReady = false;
 let piperFailed = false;
@@ -60,6 +65,14 @@ let currentUtterance: SpeechSynthesisUtterance | null = null;
 let piperInitPromise: Promise<typeof import('@mintplex-labs/piper-tts-web') | null> | null = null;
 let pathMapPatched = false;
 
+// Detect iOS/iPadOS — Piper WASM requires SharedArrayBuffer which Safari lacks
+function isIOSDevice(): boolean {
+	if (!browser) return false;
+	const ua = navigator.userAgent;
+	return /iPad|iPhone|iPod/.test(ua) ||
+		(navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS
+}
+
 function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | null> {
 	if (!browser) return Promise.resolve(null);
 	if (piperModule) return Promise.resolve(piperModule);
@@ -67,6 +80,14 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 
 	if (!piperInitPromise) {
 		piperInitPromise = (async () => {
+			// Skip Piper entirely on iOS/iPadOS — no SharedArrayBuffer support
+			if (isIOSDevice()) {
+				console.log('[TTS] iOS/iPadOS detected — using Web Speech API (Piper WASM not supported)');
+				piperFailed = true;
+				updateStatus({ piperFailed: true, engine: 'webspeech', lastError: 'iOS/iPadOS: Piper WASM stöds ej — använder Web Speech API' });
+				return null;
+			}
+
 			try {
 				console.log('[TTS] Loading Piper WASM...');
 				// Pre-configure onnxruntime-web: single thread + local WASM files

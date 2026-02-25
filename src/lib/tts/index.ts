@@ -33,6 +33,27 @@ function getVoiceId(lang: string): string {
 let speaking = false;
 let piperReady = false;
 let piperFailed = false;
+
+// Diagnostic store for settings debug panel
+export const ttsStatus = writable<{
+	engine: 'piper' | 'webspeech' | 'none';
+	piperReady: boolean;
+	piperFailed: boolean;
+	voiceCached: boolean;
+	lastSpoke: string;
+	lastError: string;
+}>({
+	engine: 'none',
+	piperReady: false,
+	piperFailed: false,
+	voiceCached: false,
+	lastSpoke: '',
+	lastError: '',
+});
+
+function updateStatus(patch: Partial<ReturnType<typeof get<typeof ttsStatus>>>) {
+	ttsStatus.update(s => ({ ...s, ...patch }));
+}
 let piperModule: typeof import('@mintplex-labs/piper-tts-web') | null = null;
 let currentAudio: HTMLAudioElement | null = null;
 let currentUtterance: SpeechSynthesisUtterance | null = null;
@@ -51,6 +72,7 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 				const mod = await import('@mintplex-labs/piper-tts-web');
 				piperModule = mod;
 				piperReady = true;
+				updateStatus({ piperReady: true, engine: 'piper' });
 
 				// Patch PATH_MAP with extra voices (Lisa, etc.)
 				patchPathMap();
@@ -60,6 +82,7 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 			} catch (e) {
 				console.error('[TTS] ❌ Piper WASM failed to load:', e);
 				piperFailed = true;
+				updateStatus({ piperFailed: true, engine: 'webspeech', lastError: String(e) });
 				return null;
 			}
 		})();
@@ -154,13 +177,16 @@ export async function speak(text: string, opts: TTSOptions = {}): Promise<void> 
 	if (piper) {
 		try {
 			await speakPiper(piper, text, lang, rate, opts);
+			updateStatus({ engine: 'piper', lastSpoke: text, lastError: '' });
 			return;
 		} catch (e) {
 			console.error('[TTS] Piper speak error:', e);
+			updateStatus({ lastError: `Piper speak: ${e}` });
 		}
 	}
 
 	console.warn('[TTS] Using Web Speech API fallback');
+	updateStatus({ engine: 'webspeech', lastSpoke: text });
 	speakWebSpeech(text, lang, rate, opts);
 }
 

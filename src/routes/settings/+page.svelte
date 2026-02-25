@@ -1,7 +1,7 @@
 <script lang="ts">
   import { get } from 'svelte/store';
   import { t, locale, setLocale } from '$lib/i18n';
-  import { speak, preloadVoice, getStoredVoices, getEngine, selectedVoiceSv, selectedVoiceEn } from '$lib/tts';
+  import { speak, preloadVoice, getStoredVoices, getEngine, selectedVoiceSv, selectedVoiceEn, ttsStatus } from '$lib/tts';
   import { voicesForLang, type VoiceOption } from '$lib/tts/voices';
   import {
     theme, textSize, ttsSpeed, phoneticEmphasis,
@@ -318,6 +318,40 @@
         </div>
       </div>
     {/if}
+
+    <!-- TTS Debug Panel -->
+    <div class="section">
+      <h2>🔍 TTS Diagnostik</h2>
+      <div class="debug-panel">
+        <div class="debug-row">
+          <span class="debug-label">Motor:</span>
+          <span class="debug-value" class:ok={$ttsStatus.engine === 'piper'} class:warn={$ttsStatus.engine === 'webspeech'} class:err={$ttsStatus.engine === 'none'}>
+            {$ttsStatus.engine === 'piper' ? '✅ Piper WASM' : $ttsStatus.engine === 'webspeech' ? '⚠️ Web Speech (fallback)' : '❌ Ingen'}
+          </span>
+        </div>
+        <div class="debug-row">
+          <span class="debug-label">Piper status:</span>
+          <span class="debug-value">
+            {$ttsStatus.piperReady ? '✅ Redo' : $ttsStatus.piperFailed ? '❌ Misslyckades' : '⏳ Laddar...'}
+          </span>
+        </div>
+        {#if $ttsStatus.lastSpoke}
+          <div class="debug-row">
+            <span class="debug-label">Senaste:</span>
+            <span class="debug-value">"{$ttsStatus.lastSpoke.slice(0, 40)}"</span>
+          </div>
+        {/if}
+        {#if $ttsStatus.lastError}
+          <div class="debug-row">
+            <span class="debug-label">Fel:</span>
+            <span class="debug-value err">{$ttsStatus.lastError.slice(0, 80)}</span>
+          </div>
+        {/if}
+        <button class="test-btn" onclick={() => speak('Hej! Piper WASM testar.')}>
+          🔊 Testa TTS
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -335,6 +369,15 @@
     font-size: 1.6em;
     font-weight: 700;
   }
+
+  .debug-panel { background:var(--bg-card); border:2px solid var(--border); border-radius:12px; padding:1rem; display:flex; flex-direction:column; gap:.5rem; }
+  .debug-row { display:flex; gap:.5rem; align-items:center; }
+  .debug-label { font-weight:600; min-width:100px; font-size:.9rem; }
+  .debug-value { font-size:.9rem; }
+  .debug-value.ok { color:#4caf50; }
+  .debug-value.warn { color:#ff9800; }
+  .debug-value.err { color:#f44336; }
+  .test-btn { margin-top:.5rem; padding:.5rem 1rem; border:2px solid var(--border); border-radius:8px; background:var(--bg-card); cursor:pointer; min-height:44px; font-size:.95rem; }
 
   .mode-toggle {
     display: flex;

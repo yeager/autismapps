@@ -130,20 +130,8 @@
   }
 
   function exportPNG() {
-    const boardEl = document.querySelector('.board-grid') as HTMLElement;
-    if (!boardEl) return;
-    // Use canvas to export
-    import('html2canvas').then(({ default: html2canvas }) => {
-      html2canvas(boardEl).then(canvas => {
-        const link = document.createElement('a');
-        link.download = `${boardName || 'board'}.png`;
-        link.href = canvas.toDataURL();
-        link.click();
-      });
-    }).catch(() => {
-      // Fallback: just print
-      printBoard();
-    });
+    // Fallback to print since html2canvas is not available
+    printBoard();
   }
 
   // Templates
@@ -341,7 +329,7 @@
           {#if !cell.isEmpty}
             <button
               class="cell-clear"
-              onclick|stopPropagation={() => clearCell(i)}
+              onclick={(e) => { e.stopPropagation(); clearCell(i); }}
               aria-label={$t('board.clear_cell')}
             >✕</button>
           {/if}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Star -->
+  <polygon points="18,3 21.5,12 31,12 23.5,18 26,27 18,22 10,27 12.5,18 5,12 14.5,12" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#27AE60" opacity="0.2"/>
+  <polygon points="18,3 21.5,12 31,12 23.5,18 26,27 18,22 10,27 12.5,18 5,12 14.5,12" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Progress chart (bar chart) -->
+  <!-- Chart axes -->
+  <line x1="32" y1="8" x2="32" y2="42" stroke="#27AE60" stroke-width="2" stroke-linecap="round"/>
+  <line x1="32" y1="42" x2="46" y2="42" stroke="#27AE60" stroke-width="2" stroke-linecap="round"/>
+  <!-- Bars (ascending to show progress) -->
+  <rect x="33.5" y="34" width="3" height="8" rx="1" fill="#27AE60" opacity="0.3"/>
+  <rect x="37.5" y="26" width="3" height="16" rx="1" fill="#27AE60" opacity="0.45"/>
+  <rect x="41.5" y="18" width="3" height="24" rx="1" fill="#27AE60" opacity="0.6"/>
+  <!-- Connecting progress line under star -->
+  <polyline points="4,38 10,36 16,34 22,30 28,32" stroke="#27AE60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" stroke-dasharray="3,2"/>
+  <!-- Small circles on the progress line -->
+  <circle cx="10" cy="36" r="1.5" fill="#27AE60" opacity="0.5"/>
+  <circle cx="16" cy="34" r="1.5" fill="#27AE60" opacity="0.5"/>
+  <circle cx="22" cy="30" r="1.5" fill="#27AE60" opacity="0.5"/>
+</svg>

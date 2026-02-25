@@ -64,7 +64,8 @@ export { db };
 export async function saveBoard(board: Board): Promise<number> {
   board.updatedAt = new Date();
   if (!board.createdAt) board.createdAt = new Date();
-  return await db.boards.put(board);
+  const id = await db.boards.put(board);
+  return id!;
 }
 
 export async function getBoards(): Promise<Board[]> {
@@ -81,7 +82,8 @@ export async function deleteBoard(id: number): Promise<void> {
 
 export async function saveSchedule(schedule: Schedule): Promise<number> {
   if (!schedule.createdAt) schedule.createdAt = new Date();
-  return await db.schedules.put(schedule);
+  const id = await db.schedules.put(schedule);
+  return id!;
 }
 
 export async function getSchedules(): Promise<Schedule[]> {

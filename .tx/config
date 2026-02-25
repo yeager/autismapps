@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[o:danielnylander:p:autismapps:r:messages]
+file_filter = translations/<lang>.po
+source_file = messages.pot
+source_lang = en
+type = PO

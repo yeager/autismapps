@@ -61,8 +61,33 @@
     speak($t('app.title') + '. ' + $t('app.subtitle'));
   }
 
+  let webSpeechVoices = $state<VoiceOption[]>([]);
+
+  function loadWebSpeechVoices() {
+    if (typeof speechSynthesis === 'undefined') return;
+    const langPrefix = $locale === 'sv' ? 'sv' : 'en';
+    const sysVoices = speechSynthesis.getVoices()
+      .filter(v => v.lang.startsWith(langPrefix))
+      .map((v, i) => ({
+        id: `webspeech:${v.voiceURI}`,
+        name: v.name.replace(/^Microsoft /, '').replace(/^Google /, ''),
+        lang: langPrefix,
+        gender: 'neutral' as const,
+        quality: v.localService ? 'high' as const : 'medium' as const,
+        sizeMb: 0,
+      }));
+    webSpeechVoices = sysVoices;
+  }
+
+  // Load system voices (may be async on some browsers)
+  if (typeof speechSynthesis !== 'undefined') {
+    speechSynthesis.onvoiceschanged = loadWebSpeechVoices;
+    loadWebSpeechVoices();
+  }
+
   function currentVoices(): VoiceOption[] {
-    return voicesForLang($locale);
+    if (ttsEngine === 'piper') return voicesForLang($locale);
+    return webSpeechVoices.length > 0 ? webSpeechVoices : voicesForLang($locale);
   }
 
   function selectedVoiceForLang(): string {
@@ -73,8 +98,8 @@
     if (v.lang === 'sv') $selectedVoiceSv = v.id;
     else $selectedVoiceEn = v.id;
 
-    // Download if not cached
-    if (!storedVoices.includes(v.id)) {
+    // Download if Piper voice not cached
+    if (!v.id.startsWith('webspeech:') && !storedVoices.includes(v.id)) {
       downloadingVoice = v.id;
       await preloadVoice(v.lang);
       storedVoices = await getStoredVoices();
@@ -211,7 +236,7 @@
             <span class="voice-meta">
               {v.gender === 'female' ? '♀' : v.gender === 'male' ? '♂' : '⚬'}
               {v.quality}
-              {#if !isCached}· ⬇️ {v.sizeMb}MB{/if}
+              {#if !isCached && v.sizeMb > 0}· ⬇️ {v.sizeMb}MB{/if}
             </span>
             {#if isSelected}<span class="voice-check">✓</span>{/if}
             {#if isDownloading}<span class="voice-dl">⏳</span>{/if}

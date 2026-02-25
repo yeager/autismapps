@@ -336,11 +336,20 @@ function speakWebSpeech(text: string, lang: string, rate: number, opts: TTSOptio
 	utterance.pitch = 1.0;
 
 	const voices = speechSynthesis.getVoices();
-	const langPrefix = utterance.lang.split('-')[0];
-	const preferred = voices.find((v) => v.lang.startsWith(langPrefix) && v.localService);
-	const fallback = voices.find((v) => v.lang.startsWith(langPrefix));
-	if (preferred) utterance.voice = preferred;
-	else if (fallback) utterance.voice = fallback;
+	const voiceId = getVoiceId(lang);
+
+	// If user selected a specific Web Speech voice, use it
+	if (voiceId.startsWith('webspeech:')) {
+		const uri = voiceId.replace('webspeech:', '');
+		const match = voices.find((v) => v.voiceURI === uri);
+		if (match) utterance.voice = match;
+	} else {
+		const langPrefix = utterance.lang.split('-')[0];
+		const preferred = voices.find((v) => v.lang.startsWith(langPrefix) && v.localService);
+		const fallback = voices.find((v) => v.lang.startsWith(langPrefix));
+		if (preferred) utterance.voice = preferred;
+		else if (fallback) utterance.voice = fallback;
+	}
 
 	if (opts.onWord) {
 		utterance.addEventListener('boundary', (e) => {

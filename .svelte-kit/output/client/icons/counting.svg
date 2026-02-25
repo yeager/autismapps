@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="24" fill="#FFF9C4"/>
+  <text x="30" y="48" font-size="28" font-weight="900" fill="#F57F17">1</text>
+  <text x="55" y="48" font-size="28" font-weight="900" fill="#FF8F00">2</text>
+  <text x="80" y="48" font-size="28" font-weight="900" fill="#EF6C00">3</text>
+  <text x="30" y="85" font-size="24">🍎</text>
+  <text x="55" y="85" font-size="24">🍎</text>
+  <text x="80" y="85" font-size="24">🍎</text>
+</svg>

@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/apps/break-check/+page.svelte";

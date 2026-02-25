@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#9B59B6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Cushion/pillow -->
+  <ellipse cx="24" cy="22" rx="14" ry="8" />
+  <path d="M10 22 Q12 28 24 28 Q36 28 38 22" />
+  <!-- Gentle wave lines below (calm/peace) -->
+  <path d="M8 35 Q14 32 20 35 Q26 38 32 35 Q38 32 42 35" />
+  <path d="M8 40 Q14 37 20 40 Q26 43 32 40 Q38 37 42 40" />
+</svg>

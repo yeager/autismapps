@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Robot head -->
+  <rect x="8" y="10" width="20" height="18" rx="4" stroke="#3498DB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Antenna -->
+  <line x1="18" y1="10" x2="18" y2="5" stroke="#3498DB" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="18" cy="4" r="2" fill="#3498DB" opacity="0.3" stroke="#3498DB" stroke-width="1.5"/>
+  <!-- Eyes (friendly) -->
+  <circle cx="14" cy="18" r="2.5" fill="#3498DB" opacity="0.5"/>
+  <circle cx="22" cy="18" r="2.5" fill="#3498DB" opacity="0.5"/>
+  <!-- Smile -->
+  <path d="M13 24 Q18 28 23 24" stroke="#3498DB" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Ears -->
+  <rect x="4" y="16" width="4" height="6" rx="1.5" stroke="#3498DB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="28" y="16" width="4" height="6" rx="1.5" stroke="#3498DB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Robot body (small) -->
+  <rect x="11" y="28" width="14" height="8" rx="3" stroke="#3498DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Body detail -->
+  <circle cx="18" cy="32" r="1.5" fill="#3498DB" opacity="0.4"/>
+  <!-- Checklist on the right -->
+  <line x1="35" y1="12" x2="45" y2="12" stroke="#3498DB" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <polyline points="35,18 36.5,20 39,16" stroke="#3498DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="41" y1="18" x2="46" y2="18" stroke="#3498DB" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <polyline points="35,24 36.5,26 39,22" stroke="#3498DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="41" y1="24" x2="46" y2="24" stroke="#3498DB" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <rect x="35" y="29" width="4" height="4" rx="1" stroke="#3498DB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="41" y1="31" x2="46" y2="31" stroke="#3498DB" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+</svg>

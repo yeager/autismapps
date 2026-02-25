@@ -1,0 +1,1 @@
+import{R as l}from"./Bu7XKhG-.js";const t=localStorage.getItem("active-profile-id"),o=l(t?Number(t):null),r=l(null);o.subscribe(e=>{e!==null?localStorage.setItem("active-profile-id",String(e)):localStorage.removeItem("active-profile-id")});export{o as a,r as b};

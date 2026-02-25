@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/apps/focus-buddy/+page.svelte";

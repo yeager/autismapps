@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Pointing hand -->
+  <path d="M8 34 v-8 c0-1, 0.5-2, 1.5-2 h2 c1 0, 1.5 1, 1.5 2 v4" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Pointing finger extending up-right -->
+  <line x1="13" y1="30" x2="13" y2="14" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Finger tip -->
+  <circle cx="13" cy="12" r="2" fill="#E67E22"/>
+  <!-- Other fingers curled -->
+  <path d="M13 34 h4 c1 0, 2-0.5, 2-1.5 v-3 c0-1-1-1.5-2-1.5" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 34 h2 c1 0, 1.5-0.5, 1.5-1.5 v-2 c0-1-0.5-1.5-1.5-1.5" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Speech lines radiating from finger tip -->
+  <line x1="20" y1="10" x2="26" y2="8" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+  <line x1="20" y1="14" x2="27" y2="13" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+  <line x1="20" y1="18" x2="26" y2="18" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+  <!-- Speech bubble -->
+  <rect x="28" y="6" width="16" height="14" rx="3" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="32" y1="11" x2="40" y2="11" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+  <line x1="32" y1="16" x2="37" y2="16" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+</svg>

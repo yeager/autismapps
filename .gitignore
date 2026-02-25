@@ -1,1 +1,3 @@
-build\nnode_modules\n.svelte-kit
+build
+node_modules
+.svelte-kit

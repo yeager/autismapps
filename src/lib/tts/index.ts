@@ -179,9 +179,30 @@ export async function speak(text: string, opts: TTSOptions = {}): Promise<void> 
 			await speakPiper(piper, text, lang, rate, opts);
 			updateStatus({ engine: 'piper', lastSpoke: text, lastError: '' });
 			return;
-		} catch (e) {
+		} catch (e: any) {
+			const msg = String(e);
 			console.error('[TTS] Piper speak error:', e);
-			updateStatus({ lastError: `Piper speak: ${e}` });
+			// If cache is corrupt (JSON parse error), clear and retry once
+			if (msg.includes('JSON') || msg.includes('Parse') || msg.includes('Entry')) {
+				console.warn('[TTS] Corrupt cache detected, clearing and retrying...');
+				try {
+					const voiceId = getVoiceId(lang);
+					await piper.remove(voiceId);
+					console.log(`[TTS] Removed corrupt cache for ${voiceId}`);
+					await piper.download(voiceId, (p) => {
+						const pct = p.total ? Math.round((p.loaded * 100) / p.total) : 0;
+						console.log(`[TTS] Re-download ${voiceId}: ${pct}%`);
+					});
+					await speakPiper(piper, text, lang, rate, opts);
+					updateStatus({ engine: 'piper', lastSpoke: text, lastError: '' });
+					return;
+				} catch (e2) {
+					console.error('[TTS] Retry also failed:', e2);
+					updateStatus({ lastError: `Piper retry: ${e2}` });
+				}
+			} else {
+				updateStatus({ lastError: `Piper speak: ${msg}` });
+			}
 		}
 	}
 

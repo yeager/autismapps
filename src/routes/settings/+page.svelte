@@ -1,7 +1,7 @@
 <script lang="ts">
   import { get } from 'svelte/store';
   import { t, locale, setLocale } from '$lib/i18n';
-  import { speak, preloadVoice, getStoredVoices, getEngine, selectedVoiceSv, selectedVoiceEn, ttsStatus } from '$lib/tts';
+  import { speak, preloadVoice, getStoredVoices, removeVoice, getEngine, selectedVoiceSv, selectedVoiceEn, ttsStatus } from '$lib/tts';
   import { voicesForLang, type VoiceOption } from '$lib/tts/voices';
   import {
     theme, textSize, ttsSpeed, phoneticEmphasis,
@@ -347,9 +347,24 @@
             <span class="debug-value err">{$ttsStatus.lastError.slice(0, 80)}</span>
           </div>
         {/if}
-        <button class="test-btn" onclick={() => speak('Hej! Piper WASM testar.')}>
-          🔊 Testa TTS
-        </button>
+        <div class="debug-btns">
+          <button class="test-btn" onclick={() => speak('Hej! Piper WASM testar.')}>
+            🔊 Testa TTS
+          </button>
+          <button class="test-btn" onclick={async () => {
+            const stored = await getStoredVoices();
+            for (const v of stored) await removeVoice(v);
+            alert(`Rensade ${stored.length} cachade röster. Ladda om sidan.`);
+          }}>
+            🗑️ Rensa TTS-cache
+          </button>
+          <button class="test-btn" onclick={async () => {
+            await preloadVoice('sv');
+            await preloadVoice('en');
+          }}>
+            📥 Ladda ner röster
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -377,7 +392,8 @@
   .debug-value.ok { color:#4caf50; }
   .debug-value.warn { color:#ff9800; }
   .debug-value.err { color:#f44336; }
-  .test-btn { margin-top:.5rem; padding:.5rem 1rem; border:2px solid var(--border); border-radius:8px; background:var(--bg-card); cursor:pointer; min-height:44px; font-size:.95rem; }
+  .debug-btns { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.5rem; }
+  .test-btn { padding:.5rem 1rem; border:2px solid var(--border); border-radius:8px; background:var(--bg-card); cursor:pointer; min-height:44px; font-size:.85rem; }
 
   .mode-toggle {
     display: flex;

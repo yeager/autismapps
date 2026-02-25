@@ -174,6 +174,25 @@ export async function removeVoice(voiceId: string): Promise<void> {
 	try { await piper.remove(voiceId); } catch { /* ignore */ }
 }
 
+// Phonetic substitutions for words that TTS engines mispronounce
+const PHONETIC_SV: Record<string, string> = {
+	'autismappar': 'auttism-appar',
+	'Autismappar': 'Auttism-appar',
+	'ARASAAC': 'arrasaak',
+	'TEACCH': 'tiitch',
+	'PECS': 'peks',
+	'LAMP': 'lamp',
+};
+
+function applyPhonetics(text: string, lang: string): string {
+	const map = lang === 'sv' ? PHONETIC_SV : {};
+	let result = text;
+	for (const [word, phonetic] of Object.entries(map)) {
+		result = result.replaceAll(word, phonetic);
+	}
+	return result;
+}
+
 export async function speak(text: string, opts: TTSOptions = {}): Promise<void> {
 	stop();
 	if (!text || !browser) return;
@@ -181,6 +200,7 @@ export async function speak(text: string, opts: TTSOptions = {}): Promise<void> 
 	const lang = opts.lang || get(locale);
 	const storeRate = get(ttsSpeed);
 	const rate = opts.rate ?? (storeRate !== 1.0 ? storeRate : DEFAULT_RATE);
+	text = applyPhonetics(text, lang);
 
 	const piper = await initPiper();
 	if (piper) {

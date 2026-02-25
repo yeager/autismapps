@@ -298,7 +298,8 @@ async function speakPiper(
 
 	const audio = new Audio();
 	audio.src = URL.createObjectURL(wav);
-	audio.playbackRate = rate;
+	// Piper is much faster than Web Speech — halve the rate for Piper
+	audio.playbackRate = rate * 0.5;
 
 	speaking = true;
 	currentAudio = audio;

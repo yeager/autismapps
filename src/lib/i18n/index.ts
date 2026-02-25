@@ -1,5 +1,5 @@
 import { writable, derived, get } from 'svelte/store';
-import en from '../../../messages/en.json';
+import en from './messages/en.json';
 
 const translations: Record<string, Record<string, string>> = { en };
 const loadedLocales = new Set(['en']);
@@ -10,7 +10,7 @@ export const fallbackLocale = 'en';
 export async function loadLocale(lang: string) {
   if (loadedLocales.has(lang)) return;
   try {
-    const mod = await import(`../../../messages/${lang}.json`);
+    const mod = await import(`./messages/${lang}.json`);
     translations[lang] = mod.default;
     loadedLocales.add(lang);
   } catch {

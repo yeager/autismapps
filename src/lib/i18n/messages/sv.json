@@ -12,7 +12,6 @@
   "app.category.emotions": "Känslor och lugn",
   "app.category.learning": "Lärande",
   "app.category.play": "Minne och lek",
-
   "app.board_builder": "Brädbyggaren",
   "app.board_builder.desc": "Skapa AKK-kommunikationsbrädor med piktogram",
   "app.talk_board": "Pratbrädan",
@@ -35,7 +34,6 @@
   "app.conversation_aid.desc": "Stöd för samtal och social interaktion",
   "app.social_stories": "Sociala berättelser",
   "app.social_stories.desc": "Visuella berättelser om sociala situationer",
-
   "app.day_planner": "Dagsplanerare",
   "app.day_planner.desc": "Visuell dagsplanerare med tvåvägskommunikation",
   "app.picture_schedule": "Bildschema",
@@ -50,7 +48,6 @@
   "app.clothes_chooser.desc": "Hjälp att välja kläder efter väder och aktivitet",
   "app.cooking_helper": "Matlagaren",
   "app.cooking_helper.desc": "Visuella matlagningsinstruktioner steg för steg",
-
   "app.visual_timer": "Visuell timer",
   "app.visual_timer.desc": "Visuell nedräkning med först-sedan-stöd",
   "app.time_tracker": "Tidskollen",
@@ -63,7 +60,6 @@
   "app.practice_board.desc": "Spåra övningstillfällen och framsteg",
   "app.school_day": "Skoldagen",
   "app.school_day.desc": "Visuellt skolschema och dagsöversikt",
-
   "app.emotion_map": "Känslokartan",
   "app.emotion_map.desc": "Identifiera och uttryck känslor med bilder",
   "app.calm_room": "Lugnarummet",
@@ -76,7 +72,6 @@
   "app.anger_manager.desc": "Verktyg och strategier för att hantera ilska",
   "app.reward_chart": "Belöningskartan",
   "app.reward_chart.desc": "Visuellt belönings- och motivationssystem",
-
   "app.word_builder": "Ordbyggaren",
   "app.word_builder.desc": "Bygg ord från ljud och bokstäver",
   "app.sentence_builder": "Meningsbyggaren",
@@ -87,7 +82,6 @@
   "app.math_aid.desc": "Visuell matematik med konkreta exempel",
   "app.money_check": "Pengakollen",
   "app.money_check.desc": "Lär dig om pengar och att ge tillbaka växel",
-
   "app.memory_game": "Minnesspel",
   "app.memory_game.desc": "Matcha par med bilder och ljud",
   "app.sound_library": "Ljudlådan",
@@ -96,7 +90,6 @@
   "app.diary.desc": "Visuell dagbok med bilder och text",
   "app.chooser": "Väljaren",
   "app.chooser.desc": "Hjälp att göra val mellan alternativ",
-
   "settings.title": "Inställningar",
   "settings.simple": "Enkel",
   "settings.advanced": "Avancerad",
@@ -123,7 +116,6 @@
   "settings.import_data": "Importera data",
   "settings.on": "På",
   "settings.off": "Av",
-
   "board.title": "Brädbyggaren",
   "board.new": "Nytt bräde",
   "board.search_pictograms": "Sök piktogram...",
@@ -143,7 +135,6 @@
   "board.tap_to_add": "Tryck för att lägga till piktogram",
   "board.no_results": "Inga piktogram hittades",
   "board.drag_here": "Dra piktogram hit",
-
   "talk.sentence_strip": "Tryck på bilder för att bygga en mening",
   "talk.speak_all": "Läs allt",
   "talk.clear": "Rensa",
@@ -155,7 +146,6 @@
   "talk.stop": "Stopp",
   "talk.load_board": "Ladda bräde",
   "talk.fullscreen": "Helskärm",
-
   "schedule.title": "Bildschema",
   "schedule.new": "Nytt schema",
   "schedule.today": "Idag",
@@ -167,5 +157,6 @@
   "schedule.now": "Nu",
   "schedule.next": "Nästa",
   "schedule.print": "Skriv ut",
-  "schedule.my_schedules": "Mina scheman"
+  "schedule.my_schedules": "Mina scheman",
+  "app.choose_category": "Välj en kategori för att börja"
 }

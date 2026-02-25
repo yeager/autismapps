@@ -12,7 +12,6 @@
   "app.category.emotions": "Emotions & Calm",
   "app.category.learning": "Learning",
   "app.category.play": "Memory & Play",
-
   "app.board_builder": "Board Builder",
   "app.board_builder.desc": "Create AAC communication boards with pictograms",
   "app.talk_board": "Talk Board",
@@ -35,7 +34,6 @@
   "app.conversation_aid.desc": "Support for conversations and social interaction",
   "app.social_stories": "Social Stories",
   "app.social_stories.desc": "Visual stories about social situations",
-
   "app.day_planner": "Day Planner",
   "app.day_planner.desc": "Visual daily planner with two-way communication",
   "app.picture_schedule": "Picture Schedule",
@@ -50,7 +48,6 @@
   "app.clothes_chooser.desc": "Help choosing clothes based on weather and activity",
   "app.cooking_helper": "Cooking Helper",
   "app.cooking_helper.desc": "Visual cooking instructions step by step",
-
   "app.visual_timer": "Visual Timer",
   "app.visual_timer.desc": "Visual countdown with first-then support",
   "app.time_tracker": "Time Tracker",
@@ -63,7 +60,6 @@
   "app.practice_board.desc": "Track practice sessions and progress",
   "app.school_day": "School Day",
   "app.school_day.desc": "Visual school day schedule and overview",
-
   "app.emotion_map": "Emotion Map",
   "app.emotion_map.desc": "Identify and express emotions with pictures",
   "app.calm_room": "Calm Room",
@@ -76,7 +72,6 @@
   "app.anger_manager.desc": "Tools and strategies for managing anger",
   "app.reward_chart": "Reward Chart",
   "app.reward_chart.desc": "Visual reward and motivation system",
-
   "app.word_builder": "Word Builder",
   "app.word_builder.desc": "Build words from sounds and letters",
   "app.sentence_builder": "Sentence Builder",
@@ -87,7 +82,6 @@
   "app.math_aid.desc": "Visual math with concrete examples",
   "app.money_check": "Money Check",
   "app.money_check.desc": "Learn about money and making change",
-
   "app.memory_game": "Memory Game",
   "app.memory_game.desc": "Match pairs with pictures and sounds",
   "app.sound_library": "Sound Library",
@@ -96,7 +90,6 @@
   "app.diary.desc": "Visual diary with pictures and text",
   "app.chooser": "Chooser",
   "app.chooser.desc": "Help making choices between options",
-
   "settings.title": "Settings",
   "settings.simple": "Simple",
   "settings.advanced": "Advanced",
@@ -123,7 +116,6 @@
   "settings.import_data": "Import Data",
   "settings.on": "On",
   "settings.off": "Off",
-
   "board.title": "Board Builder",
   "board.new": "New Board",
   "board.search_pictograms": "Search pictograms...",
@@ -143,7 +135,6 @@
   "board.tap_to_add": "Tap to add pictogram",
   "board.no_results": "No pictograms found",
   "board.drag_here": "Drag pictogram here",
-
   "talk.sentence_strip": "Tap pictures to build a sentence",
   "talk.speak_all": "Speak All",
   "talk.clear": "Clear",
@@ -155,7 +146,6 @@
   "talk.stop": "Stop",
   "talk.load_board": "Load Board",
   "talk.fullscreen": "Fullscreen",
-
   "schedule.title": "Picture Schedule",
   "schedule.new": "New Schedule",
   "schedule.today": "Today",
@@ -167,5 +157,6 @@
   "schedule.now": "Now",
   "schedule.next": "Next",
   "schedule.print": "Print",
-  "schedule.my_schedules": "My Schedules"
+  "schedule.my_schedules": "My Schedules",
+  "app.choose_category": "Choose a category to get started"
 }

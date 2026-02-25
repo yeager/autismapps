@@ -23,12 +23,12 @@ export const ALL_APPS: AppDef[] = [
   // Communication (AAC)
   { id: 'board-builder', name: 'app.board_builder', description: 'app.board_builder.desc', category: 'communication', icon: '/icons/board-builder.svg', route: '/apps/board-builder', ready: true },
   { id: 'talk-board', name: 'app.talk_board', description: 'app.talk_board.desc', category: 'communication', icon: '/icons/talk-board.svg', route: '/apps/talk-board', ready: true },
-  { id: 'situation-cards', name: 'app.situation_cards', description: 'app.situation_cards.desc', category: 'communication', icon: '/icons/situation-cards.svg', route: '/apps/situation-cards', ready: false },
+  { id: 'situation-cards', name: 'app.situation_cards', description: 'app.situation_cards.desc', category: 'communication', icon: '/icons/situation-cards.svg', route: '/apps/situation-cards', ready: true },
   { id: 'sign-dictionary', name: 'app.sign_dictionary', description: 'app.sign_dictionary.desc', category: 'communication', icon: '/icons/sign-dictionary.svg', route: '/apps/sign-dictionary', ready: false },
-  { id: 'talking-mat', name: 'app.talking_mat', description: 'app.talking_mat.desc', category: 'communication', icon: '/icons/talking-mat.svg', route: '/apps/talking-mat', ready: false },
-  { id: 'pecs-trainer', name: 'app.pecs_trainer', description: 'app.pecs_trainer.desc', category: 'communication', icon: '/icons/pecs-trainer.svg', route: '/apps/pecs-trainer', ready: false },
-  { id: 'point-talk', name: 'app.point_talk', description: 'app.point_talk.desc', category: 'communication', icon: '/icons/point-talk.svg', route: '/apps/point-talk', ready: false },
-  { id: 'phrase-builder', name: 'app.phrase_builder', description: 'app.phrase_builder.desc', category: 'communication', icon: '/icons/phrase-builder.svg', route: '/apps/phrase-builder', ready: false },
+  { id: 'talking-mat', name: 'app.talking_mat', description: 'app.talking_mat.desc', category: 'communication', icon: '/icons/talking-mat.svg', route: '/apps/talking-mat', ready: true },
+  { id: 'pecs-trainer', name: 'app.pecs_trainer', description: 'app.pecs_trainer.desc', category: 'communication', icon: '/icons/pecs-trainer.svg', route: '/apps/pecs-trainer', ready: true },
+  { id: 'point-talk', name: 'app.point_talk', description: 'app.point_talk.desc', category: 'communication', icon: '/icons/point-talk.svg', route: '/apps/point-talk', ready: true },
+  { id: 'phrase-builder', name: 'app.phrase_builder', description: 'app.phrase_builder.desc', category: 'communication', icon: '/icons/phrase-builder.svg', route: '/apps/phrase-builder', ready: true },
   { id: 'pecs-board', name: 'app.pecs_board', description: 'app.pecs_board.desc', category: 'communication', icon: '/icons/pecs-board.svg', route: '/apps/pecs-board', ready: false },
   { id: 'conversation-aid', name: 'app.conversation_aid', description: 'app.conversation_aid.desc', category: 'communication', icon: '/icons/conversation-aid.svg', route: '/apps/conversation-aid', ready: false },
   { id: 'social-stories', name: 'app.social_stories', description: 'app.social_stories.desc', category: 'communication', icon: '/icons/social-stories.svg', route: '/apps/social-stories', ready: false },
@@ -43,7 +43,7 @@ export const ALL_APPS: AppDef[] = [
   { id: 'cooking-helper', name: 'app.cooking_helper', description: 'app.cooking_helper.desc', category: 'daily', icon: '/icons/cooking-helper.svg', route: '/apps/cooking-helper', ready: false },
 
   // Time & Planning
-  { id: 'visual-timer', name: 'app.visual_timer', description: 'app.visual_timer.desc', category: 'time', icon: '/icons/visual-timer.svg', route: '/apps/visual-timer', ready: false },
+  { id: 'visual-timer', name: 'app.visual_timer', description: 'app.visual_timer.desc', category: 'time', icon: '/icons/visual-timer.svg', route: '/apps/visual-timer', ready: true },
   { id: 'time-tracker', name: 'app.time_tracker', description: 'app.time_tracker.desc', category: 'time', icon: '/icons/time-tracker.svg', route: '/apps/time-tracker', ready: false },
   { id: 'clock-teacher', name: 'app.clock_teacher', description: 'app.clock_teacher.desc', category: 'time', icon: '/icons/clock-teacher.svg', route: '/apps/clock-teacher', ready: false },
   { id: 'break-check', name: 'app.break_check', description: 'app.break_check.desc', category: 'time', icon: '/icons/break-check.svg', route: '/apps/break-check', ready: false },
@@ -51,8 +51,8 @@ export const ALL_APPS: AppDef[] = [
   { id: 'school-day', name: 'app.school_day', description: 'app.school_day.desc', category: 'time', icon: '/icons/school-day.svg', route: '/apps/school-day', ready: false },
 
   // Emotions & Calm
-  { id: 'emotion-map', name: 'app.emotion_map', description: 'app.emotion_map.desc', category: 'emotions', icon: '/icons/emotion-map.svg', route: '/apps/emotion-map', ready: false },
-  { id: 'calm-room', name: 'app.calm_room', description: 'app.calm_room.desc', category: 'emotions', icon: '/icons/calm-room.svg', route: '/apps/calm-room', ready: false },
+  { id: 'emotion-map', name: 'app.emotion_map', description: 'app.emotion_map.desc', category: 'emotions', icon: '/icons/emotion-map.svg', route: '/apps/emotion-map', ready: true },
+  { id: 'calm-room', name: 'app.calm_room', description: 'app.calm_room.desc', category: 'emotions', icon: '/icons/calm-room.svg', route: '/apps/calm-room', ready: true },
   { id: 'focus-buddy', name: 'app.focus_buddy', description: 'app.focus_buddy.desc', category: 'emotions', icon: '/icons/focus-buddy.svg', route: '/apps/focus-buddy', ready: false },
   { id: 'energy-meter', name: 'app.energy_meter', description: 'app.energy_meter.desc', category: 'emotions', icon: '/icons/energy-meter.svg', route: '/apps/energy-meter', ready: false },
   { id: 'anger-manager', name: 'app.anger_manager', description: 'app.anger_manager.desc', category: 'emotions', icon: '/icons/anger-manager.svg', route: '/apps/anger-manager', ready: false },

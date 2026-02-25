@@ -1,3 +1,5 @@
 build
 node_modules
 .svelte-kit
+ort-wasm-simd-threaded.asyncify.wasm
+ort-wasm-simd-threaded.jspi.wasm

@@ -7,6 +7,7 @@ import { get, writable } from 'svelte/store';
 import { ttsSpeed } from '$lib/a11y';
 import { locale } from '$lib/i18n';
 import { browser } from '$app/environment';
+import { base } from '$app/paths';
 import { EXTRA_PATH_MAP } from './voices';
 
 const DEFAULT_RATE = 0.5;
@@ -93,11 +94,12 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 				// Pre-configure onnxruntime-web: single thread + local WASM files
 				try {
 					const ort = await import('onnxruntime-web');
-					const hasShared = typeof SharedArrayBuffer !== 'undefined';
-					ort.env.wasm.numThreads = hasShared ? navigator.hardwareConcurrency : 1;
-					// Serve WASM from same origin to avoid CORS/COEP issues
-					ort.env.wasm.wasmPaths = '/';
-					console.log(`[TTS] ONNX: threads=${ort.env.wasm.numThreads}, SAB=${hasShared}, wasmPaths=/`);
+					// Force single-thread — avoids COOP/COEP header requirement for SharedArrayBuffer
+					ort.env.wasm.numThreads = 1;
+					// Serve WASM from same origin — use base path for GH Pages
+					const wasmBase = (base || '') + '/';
+					ort.env.wasm.wasmPaths = wasmBase;
+					console.log(`[TTS] ONNX: threads=1 (forced), wasmPaths=${wasmBase}`);
 				} catch (e) {
 					console.warn('[TTS] Could not pre-configure onnxruntime:', e);
 				}

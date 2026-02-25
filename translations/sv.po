@@ -147,7 +147,7 @@ msgstr "Visuella matlagningsinstruktioner steg för steg"
 #. app.counting
 msgctxt "app.counting"
 msgid "Counting"
-msgstr ""
+msgstr "Räkning"
 
 #. app.counting.desc
 msgctxt "app.counting.desc"
@@ -287,7 +287,7 @@ msgstr "Bygg meningar med piktogram"
 #. app.picture_dictionary
 msgctxt "app.picture_dictionary"
 msgid "Picture Dictionary"
-msgstr ""
+msgstr "Bildordbok"
 
 #. app.picture_dictionary.desc
 msgctxt "app.picture_dictionary.desc"
@@ -472,7 +472,7 @@ msgstr "Autismappar"
 #. app.visual_support
 msgctxt "app.visual_support"
 msgid "Visual Support"
-msgstr ""
+msgstr "Bildstöd"
 
 #. app.visual_support.desc
 msgctxt "app.visual_support.desc"
@@ -607,12 +607,12 @@ msgstr ""
 #. break.ex.body_scan
 msgctxt "break.ex.body_scan"
 msgid "Body Scan"
-msgstr ""
+msgstr "Känn av kroppen"
 
 #. break.ex.breathing
 msgctxt "break.ex.breathing"
 msgid "Breathing"
-msgstr ""
+msgstr "Andning"
 
 #. break.ex.counting
 msgctxt "break.ex.counting"
@@ -627,7 +627,7 @@ msgstr ""
 #. break.ex.stretching
 msgctxt "break.ex.stretching"
 msgid "Stretching"
-msgstr ""
+msgstr "Sträck ut"
 
 #. break.feeling_better
 msgctxt "break.feeling_better"
@@ -657,7 +657,7 @@ msgstr ""
 #. break.step.deep_breath
 msgctxt "break.step.deep_breath"
 msgid "Take a deep breath"
-msgstr ""
+msgstr "Ta ett djupt andetag"
 
 #. break.step.feel_feet
 msgctxt "break.step.feel_feet"
@@ -752,12 +752,12 @@ msgstr ""
 #. break.step.smell_2
 msgctxt "break.step.smell_2"
 msgid "Name 2 things you can SMELL"
-msgstr ""
+msgstr "Nämn två saker som du kan LUKTA"
 
 #. break.step.taste_1
 msgctxt "break.step.taste_1"
 msgid "Name 1 thing you can TASTE"
-msgstr ""
+msgstr "Nämn en sak som du kan SMAKA"
 
 #. break.step.touch_4
 msgctxt "break.step.touch_4"
@@ -1092,7 +1092,7 @@ msgstr ""
 #. clock.correct
 msgctxt "clock.correct"
 msgid "Correct!"
-msgstr ""
+msgstr "Rätt!"
 
 #. clock.credit
 msgctxt "clock.credit"
@@ -1117,7 +1117,7 @@ msgstr ""
 #. clock.next
 msgctxt "clock.next"
 msgid "Next"
-msgstr ""
+msgstr "Nästa"
 
 #. clock.quiz
 msgctxt "clock.quiz"
@@ -1132,12 +1132,12 @@ msgstr ""
 #. clock.title
 msgctxt "clock.title"
 msgid "Clock Teacher"
-msgstr ""
+msgstr "Klockläraren"
 
 #. clock.what_time
 msgctxt "clock.what_time"
 msgid "What time is it?"
-msgstr ""
+msgstr "Vad är klockan?"
 
 #. clock.wrong
 msgctxt "clock.wrong"
@@ -1162,7 +1162,7 @@ msgstr ""
 #. clothes.jacket
 msgctxt "clothes.jacket"
 msgid "Jacket"
-msgstr ""
+msgstr "Jacka"
 
 #. clothes.light_gloves
 msgctxt "clothes.light_gloves"
@@ -1182,7 +1182,7 @@ msgstr ""
 #. clothes.pants
 msgctxt "clothes.pants"
 msgid "Pants"
-msgstr ""
+msgstr "Byxor"
 
 #. clothes.pick_clothes
 msgctxt "clothes.pick_clothes"
@@ -1192,7 +1192,7 @@ msgstr ""
 #. clothes.scarf
 msgctxt "clothes.scarf"
 msgid "Scarf"
-msgstr ""
+msgstr "Halsduk"
 
 #. clothes.shorts
 msgctxt "clothes.shorts"
@@ -1202,7 +1202,7 @@ msgstr ""
 #. clothes.sneakers
 msgctxt "clothes.sneakers"
 msgid "Sneakers"
-msgstr ""
+msgstr "Gympaskor"
 
 #. clothes.sunglasses
 msgctxt "clothes.sunglasses"
@@ -1222,17 +1222,17 @@ msgstr ""
 #. clothes.umbrella
 msgctxt "clothes.umbrella"
 msgid "Umbrella"
-msgstr ""
+msgstr "Paraply"
 
 #. clothes.warm_pants
 msgctxt "clothes.warm_pants"
 msgid "Warm pants"
-msgstr ""
+msgstr "Varma byxor"
 
 #. clothes.weather.rainy
 msgctxt "clothes.weather.rainy"
 msgid "Rainy"
-msgstr ""
+msgstr "Regnigt"
 
 #. clothes.weather.snowy
 msgctxt "clothes.weather.snowy"
@@ -1262,7 +1262,7 @@ msgstr ""
 #. clothes.winter_jacket
 msgctxt "clothes.winter_jacket"
 msgid "Winter jacket"
-msgstr ""
+msgstr "Vinterjacka"
 
 #. clothesChooser.allDone
 msgctxt "clothesChooser.allDone"
@@ -1392,7 +1392,7 @@ msgstr ""
 #. cook.sandwich
 msgctxt "cook.sandwich"
 msgid "Sandwich"
-msgstr ""
+msgstr "Macka"
 
 #. cook.smoothie
 msgctxt "cook.smoothie"
@@ -1432,7 +1432,7 @@ msgstr ""
 #. cook.step.berries
 msgctxt "cook.step.berries"
 msgid "Add berries"
-msgstr ""
+msgstr "Tillsätt bär"
 
 #. cook.step.blend
 msgctxt "cook.step.blend"
@@ -1457,7 +1457,7 @@ msgstr ""
 #. cook.step.cheese
 msgctxt "cook.step.cheese"
 msgid "Add cheese"
-msgstr ""
+msgstr "Tillsätt ost"
 
 #. cook.step.cut_half
 msgctxt "cook.step.cut_half"
@@ -1522,7 +1522,7 @@ msgstr ""
 #. counting.title
 msgctxt "counting.title"
 msgid "Counting"
-msgstr ""
+msgstr "Räkning"
 
 #. diary.credit
 msgctxt "diary.credit"
@@ -1542,17 +1542,17 @@ msgstr ""
 #. diary.mood.angry
 msgctxt "diary.mood.angry"
 msgid "Angry"
-msgstr ""
+msgstr "Arg"
 
 #. diary.mood.excited
 msgctxt "diary.mood.excited"
 msgid "Excited"
-msgstr ""
+msgstr "Upprymd"
 
 #. diary.mood.happy
 msgctxt "diary.mood.happy"
 msgid "Happy"
-msgstr ""
+msgstr "Glad"
 
 #. diary.mood.okay
 msgctxt "diary.mood.okay"
@@ -1562,7 +1562,7 @@ msgstr ""
 #. diary.mood.sad
 msgctxt "diary.mood.sad"
 msgid "Sad"
-msgstr ""
+msgstr "Ledsen"
 
 #. diary.mood.sick
 msgctxt "diary.mood.sick"
@@ -1572,22 +1572,22 @@ msgstr ""
 #. diary.mood.tired
 msgctxt "diary.mood.tired"
 msgid "Tired"
-msgstr ""
+msgstr "Trött"
 
 #. diary.mood.worried
 msgctxt "diary.mood.worried"
 msgid "Worried"
-msgstr ""
+msgstr "Oroad"
 
 #. diary.new
 msgctxt "diary.new"
 msgid "New Entry"
-msgstr ""
+msgstr "Ny post"
 
 #. diary.save
 msgctxt "diary.save"
 msgid "Save"
-msgstr ""
+msgstr "Spara"
 
 #. diary.saved
 msgctxt "diary.saved"
@@ -1597,7 +1597,7 @@ msgstr ""
 #. diary.title
 msgctxt "diary.title"
 msgid "My Diary"
-msgstr ""
+msgstr "Min dagbok"
 
 #. diary.what_happened
 msgctxt "diary.what_happened"
@@ -1607,32 +1607,32 @@ msgstr ""
 #. dict.cat.animals
 msgctxt "dict.cat.animals"
 msgid "Animals"
-msgstr ""
+msgstr "Djur"
 
 #. dict.cat.body
 msgctxt "dict.cat.body"
 msgid "Body"
-msgstr ""
+msgstr "Kroppen"
 
 #. dict.cat.clothes
 msgctxt "dict.cat.clothes"
 msgid "Clothes"
-msgstr ""
+msgstr "Kläder"
 
 #. dict.cat.food
 msgctxt "dict.cat.food"
 msgid "Food"
-msgstr ""
+msgstr "Mat"
 
 #. dict.cat.home
 msgctxt "dict.cat.home"
 msgid "Home"
-msgstr ""
+msgstr "Hemma"
 
 #. dict.cat.school
 msgctxt "dict.cat.school"
 msgid "School"
-msgstr ""
+msgstr "Skola"
 
 #. dict.correct_was
 msgctxt "dict.correct_was"
@@ -1647,7 +1647,7 @@ msgstr ""
 #. dict.fantastic
 msgctxt "dict.fantastic"
 msgid "Fantastic! 🌟"
-msgstr ""
+msgstr "Fantastiskt! 🌟"
 
 #. dict.flashcards_all
 msgctxt "dict.flashcards_all"
@@ -1657,7 +1657,7 @@ msgstr ""
 #. dict.great
 msgctxt "dict.great"
 msgid "Great job! ⭐"
-msgstr ""
+msgstr "Bra jobbat! ⭐"
 
 #. dict.hear_again
 msgctxt "dict.hear_again"
@@ -1667,7 +1667,7 @@ msgstr ""
 #. dict.next
 msgctxt "dict.next"
 msgid "Next"
-msgstr ""
+msgstr "Nästa"
 
 #. dict.pick_category
 msgctxt "dict.pick_category"
@@ -1687,7 +1687,7 @@ msgstr ""
 #. dict.star
 msgctxt "dict.star"
 msgid "You're a star! ✨"
-msgstr ""
+msgstr "Du är bäst! ✨"
 
 #. dict.tap_to_reveal
 msgctxt "dict.tap_to_reveal"
@@ -1697,12 +1697,12 @@ msgstr ""
 #. dict.title
 msgctxt "dict.title"
 msgid "Picture Dictionary"
-msgstr ""
+msgstr "Bildordbok"
 
 #. dict.well_done
 msgctxt "dict.well_done"
 msgid "Well done! 👏"
-msgstr ""
+msgstr "Bra jobbat! 👏"
 
 #. dict.which_is
 msgctxt "dict.which_is"
@@ -1712,7 +1712,7 @@ msgstr ""
 #. dict.words
 msgctxt "dict.words"
 msgid "words"
-msgstr ""
+msgstr "ord"
 
 #. emotion.angry
 msgctxt "emotion.angry"
@@ -2092,7 +2092,7 @@ msgstr ""
 #. energy.title
 msgctxt "energy.title"
 msgid "Energy Meter"
-msgstr ""
+msgstr "Energimätare"
 
 #. energy.today
 msgctxt "energy.today"
@@ -2162,7 +2162,7 @@ msgstr ""
 #. focus.parked
 msgctxt "focus.parked"
 msgid "Parked"
-msgstr ""
+msgstr "Parkerad"
 
 #. focus.parked_desc
 msgctxt "focus.parked_desc"
@@ -2177,12 +2177,12 @@ msgstr ""
 #. focus.ready
 msgctxt "focus.ready"
 msgid "Ready"
-msgstr ""
+msgstr "Redo"
 
 #. focus.start_break
 msgctxt "focus.start_break"
 msgid "Take a Break"
-msgstr ""
+msgstr "Ta en paus"
 
 #. focus.start_work
 msgctxt "focus.start_work"
@@ -2192,12 +2192,12 @@ msgstr ""
 #. focus.stop
 msgctxt "focus.stop"
 msgid "Stop"
-msgstr ""
+msgstr "Stopp"
 
 #. focus.tasks
 msgctxt "focus.tasks"
 msgid "Tasks"
-msgstr ""
+msgstr "Uppgifter"
 
 #. focus.thought_parked
 msgctxt "focus.thought_parked"
@@ -2232,12 +2232,12 @@ msgstr ""
 #. guide.all_done
 msgctxt "guide.all_done"
 msgid "All done! Great job!"
-msgstr ""
+msgstr "Allt klart! Bra jobbat!"
 
 #. guide.brush_teeth
 msgctxt "guide.brush_teeth"
 msgid "Brush Teeth"
-msgstr ""
+msgstr "Borsta tänderna"
 
 #. guide.credit
 msgctxt "guide.credit"
@@ -2247,12 +2247,12 @@ msgstr ""
 #. guide.get_dressed
 msgctxt "guide.get_dressed"
 msgid "Get Dressed"
-msgstr ""
+msgstr "Klä på sig"
 
 #. guide.pack_bag
 msgctxt "guide.pack_bag"
 msgid "Pack School Bag"
-msgstr ""
+msgstr "Packa skolväskan"
 
 #. guide.pick
 msgctxt "guide.pick"
@@ -2372,12 +2372,12 @@ msgstr ""
 #. guide.steps
 msgctxt "guide.steps"
 msgid "steps"
-msgstr ""
+msgstr "Steg"
 
 #. guide.title
 msgctxt "guide.title"
 msgid "Step Guide"
-msgstr ""
+msgstr "Stegvisaren"
 
 #. guide.wash_hands
 msgctxt "guide.wash_hands"
@@ -2747,7 +2747,7 @@ msgstr "äpple"
 #. letter.word.arm
 msgctxt "letter.word.arm"
 msgid "arm"
-msgstr "arm"
+msgstr ""
 
 #. letter.word.ball
 msgctxt "letter.word.ball"
@@ -2797,7 +2797,7 @@ msgstr "hund"
 #. letter.word.door
 msgctxt "letter.word.door"
 msgid "door"
-msgstr ""
+msgstr "dörr"
 
 #. letter.word.ear
 msgctxt "letter.word.ear"
@@ -2972,7 +2972,7 @@ msgstr ""
 #. money.clear
 msgctxt "money.clear"
 msgid "Clear"
-msgstr ""
+msgstr "Töm"
 
 #. money.coins
 msgctxt "money.coins"
@@ -3007,7 +3007,7 @@ msgstr ""
 #. money.undo
 msgctxt "money.undo"
 msgid "Undo"
-msgstr ""
+msgstr "Ångra"
 
 #. pecs.bring_to_partner
 msgctxt "pecs.bring_to_partner"
@@ -3217,7 +3217,7 @@ msgstr ""
 #. practice.brush_teeth
 msgctxt "practice.brush_teeth"
 msgid "Brush teeth"
-msgstr ""
+msgstr "Borsta tänder"
 
 #. practice.clean_up
 msgctxt "practice.clean_up"
@@ -3257,7 +3257,7 @@ msgstr ""
 #. practice.title
 msgctxt "practice.title"
 msgid "Practice Board"
-msgstr ""
+msgstr "Övningstavlan"
 
 #. practice.well_done
 msgctxt "practice.well_done"
@@ -3727,7 +3727,7 @@ msgstr "Stor"
 #. settings.text_size.normal
 msgctxt "settings.text_size.normal"
 msgid "Normal"
-msgstr "Normal"
+msgstr ""
 
 #. settings.theme
 msgctxt "settings.theme"
@@ -3772,7 +3772,7 @@ msgstr "Snabb"
 #. settings.tts_speed.normal
 msgctxt "settings.tts_speed.normal"
 msgid "Normal"
-msgstr "Normal"
+msgstr ""
 
 #. settings.tts_speed.slow
 msgctxt "settings.tts_speed.slow"
@@ -3912,7 +3912,7 @@ msgstr "Situationskort"
 #. situation.transport
 msgctxt "situation.transport"
 msgid "Transport"
-msgstr "Transport"
+msgstr ""
 
 #. takk.description
 msgctxt "takk.description"
@@ -4187,7 +4187,7 @@ msgstr "Först-sedan-tavla"
 #. timer.min
 msgctxt "timer.min"
 msgid "min"
-msgstr "min"
+msgstr ""
 
 #. timer.minutes
 msgctxt "timer.minutes"
@@ -4237,7 +4237,7 @@ msgstr ""
 #. vs.done
 msgctxt "vs.done"
 msgid "Done"
-msgstr ""
+msgstr "Klar"
 
 #. vs.done_editing
 msgctxt "vs.done_editing"
@@ -4257,7 +4257,7 @@ msgstr ""
 #. vs.reset
 msgctxt "vs.reset"
 msgid "Reset"
-msgstr ""
+msgstr "Nollställ"
 
 #. vs.step.arrive
 msgctxt "vs.step.arrive"
@@ -4287,12 +4287,12 @@ msgstr ""
 #. vs.step.brush_teeth
 msgctxt "vs.step.brush_teeth"
 msgid "Brush teeth"
-msgstr ""
+msgstr "Borsta tänder"
 
 #. vs.step.come_home
 msgctxt "vs.step.come_home"
 msgid "Come home"
-msgstr ""
+msgstr "Komma hem"
 
 #. vs.step.dinner
 msgctxt "vs.step.dinner"
@@ -4302,7 +4302,7 @@ msgstr ""
 #. vs.step.get_dressed
 msgctxt "vs.step.get_dressed"
 msgid "Get dressed"
-msgstr ""
+msgstr "Klä på sig"
 
 #. vs.step.go
 msgctxt "vs.step.go"
@@ -4332,7 +4332,7 @@ msgstr ""
 #. vs.step.read
 msgctxt "vs.step.read"
 msgid "Read a book"
-msgstr ""
+msgstr "Läsa en bok"
 
 #. vs.step.shower
 msgctxt "vs.step.shower"
@@ -4342,27 +4342,27 @@ msgstr ""
 #. vs.step.wake_up
 msgctxt "vs.step.wake_up"
 msgid "Wake up"
-msgstr ""
+msgstr "Vakna"
 
 #. vs.steps
 msgctxt "vs.steps"
 msgid "steps"
-msgstr ""
+msgstr "Steg"
 
 #. vs.template.evening
 msgctxt "vs.template.evening"
 msgid "Evening Routine"
-msgstr ""
+msgstr "Kvällsrutin"
 
 #. vs.template.morning
 msgctxt "vs.template.morning"
 msgid "Morning Routine"
-msgstr ""
+msgstr "Morgonrutin"
 
 #. vs.template.school
 msgctxt "vs.template.school"
 msgid "School Day"
-msgstr ""
+msgstr "Skoldag"
 
 #. vs.templates
 msgctxt "vs.templates"
@@ -4372,5 +4372,5 @@ msgstr ""
 #. vs.title
 msgctxt "vs.title"
 msgid "Visual Support"
-msgstr ""
+msgstr "Bildstöd"
 

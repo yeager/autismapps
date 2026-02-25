@@ -231,7 +231,7 @@
     {#if phase === 2 && partnerArea && selectedItem}
       <div class="partner-area">
         <p>{$t('pecs.bring_to_partner')}</p>
-        <div class="partner-hand" onclick={deliverToPartner} role="button" tabindex="0" aria-label="Partner">
+        <div class="partner-hand" onclick={deliverToPartner} onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') deliverToPartner(); }} role="button" tabindex="0" aria-label="Partner">
           <span>🤲</span>
           <p>{$t('pecs.tap_to_give')}</p>
         </div>

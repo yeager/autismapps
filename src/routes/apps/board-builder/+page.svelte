@@ -189,7 +189,7 @@
       </div>
 
       <div class="field">
-        <label>{$t('board.grid_size')}</label>
+        <span id="grid-size-label">{$t('board.grid_size')}</span>
         <div class="grid-options">
           {#each GRID_OPTIONS as size}
             <button
@@ -202,7 +202,7 @@
       </div>
 
       <div class="field">
-        <label>{$t('board.category_color')}</label>
+        <span id="cat-color-label">{$t('board.category_color')}</span>
         <div class="color-options">
           {#each COLORS as color}
             <button
@@ -327,11 +327,14 @@
             <span class="cell-placeholder">+</span>
           {/if}
           {#if !cell.isEmpty}
-            <button
+            <span
               class="cell-clear"
+              role="button"
+              tabindex="0"
               onclick={(e) => { e.stopPropagation(); clearCell(i); }}
+              onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.stopPropagation(); clearCell(i); }}}
               aria-label={$t('board.clear_cell')}
-            >✕</button>
+            >✕</span>
           {/if}
         </button>
       {/each}

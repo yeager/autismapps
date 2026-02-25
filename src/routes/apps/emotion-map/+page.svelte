@@ -120,6 +120,38 @@
   function stopQuiz() {
     quizMode = false;
   }
+
+  function exportCSV() {
+    if (diaryEntries.length === 0) return;
+    const header = 'Time,Emotion,Zone,Note';
+    const rows = diaryEntries.map(e => {
+      const em = EMOTIONS.find(x => x.id === e.emotion);
+      const zone = em ? em.zone : '';
+      const note = (e.note || '').replace(/"/g, '""');
+      return `"${e.time}","${e.emotion}","${zone}","${note}"`;
+    });
+    const csv = [header, ...rows].join('\n');
+    downloadFile(csv, 'emotion-diary.csv', 'text/csv');
+  }
+
+  function exportJSON() {
+    if (diaryEntries.length === 0) return;
+    const data = diaryEntries.map(e => {
+      const em = EMOTIONS.find(x => x.id === e.emotion);
+      return { time: e.time, emotion: e.emotion, zone: em?.zone, note: e.note };
+    });
+    downloadFile(JSON.stringify(data, null, 2), 'emotion-diary.json', 'application/json');
+  }
+
+  function downloadFile(content: string, filename: string, mime: string) {
+    const blob = new Blob([content], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
 </script>
 
 <div class="emotion-page">
@@ -169,6 +201,11 @@
       {/each}
       {#if diaryEntries.length === 0}
         <p class="empty">{$t('emotion.no_entries')}</p>
+      {:else}
+        <div class="export-btns">
+          <button class="export-btn" onclick={exportCSV}>📊 CSV</button>
+          <button class="export-btn" onclick={exportJSON}>📋 JSON</button>
+        </div>
       {/if}
     </div>
   {:else if selectedEmotion}
@@ -330,4 +367,19 @@
 
   .credit { text-align: center; padding: 12px; font-size: 0.7em; color: var(--text-muted); line-height: 1.4; }
   .credit a { color: inherit; text-decoration: underline; }
+  .export-btns {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  .export-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    cursor: pointer;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
 </style>

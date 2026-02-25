@@ -109,8 +109,8 @@
 
   <!-- PIN Dialog -->
   {#if pinTarget}
-    <div class="overlay" transition:fade onclick={() => { pinTarget = null; }}>
-      <div class="pin-dialog" onclick={(e) => e.stopPropagation()} transition:fly={{ y: 30 }}>
+    <div class="overlay" role="button" tabindex="-1" transition:fade onclick={() => { pinTarget = null; }} onkeydown={(e) => { if (e.key === 'Escape') pinTarget = null; }}>
+      <div class="pin-dialog" role="dialog" aria-modal="true" tabindex="-1" onclick={(e) => e.stopPropagation()} onkeydown={(e) => e.stopPropagation()} transition:fly={{ y: 30 }}>
         <h2>{$t('profile.enter_pin')}</h2>
         <div class="pin-dots">
           {#each Array(4) as _, i}
@@ -136,21 +136,21 @@
 
   <!-- Create Dialog -->
   {#if showCreate}
-    <div class="overlay" transition:fade onclick={() => { showCreate = false; }}>
-      <div class="create-dialog" onclick={(e) => e.stopPropagation()} transition:fly={{ y: 30 }}>
+    <div class="overlay" role="button" tabindex="-1" transition:fade onclick={() => { showCreate = false; }} onkeydown={(e) => { if (e.key === 'Escape') showCreate = false; }}>
+      <div class="create-dialog" role="dialog" aria-modal="true" tabindex="-1" onclick={(e) => e.stopPropagation()} onkeydown={(e) => e.stopPropagation()} transition:fly={{ y: 30 }}>
         <h2>{$t('profile.new')}</h2>
 
-        <label class="field-label">{$t('profile.name')}</label>
-        <input type="text" bind:value={newName} placeholder={$t('profile.name_placeholder')} class="text-input" />
+        <label class="field-label" for="profile-name">{$t('profile.name')}</label>
+        <input id="profile-name" type="text" bind:value={newName} placeholder={$t('profile.name_placeholder')} class="text-input" />
 
-        <label class="field-label">{$t('profile.avatar')}</label>
+        <span class="field-label" id="avatar-label">{$t('profile.avatar')}</span>
         <div class="avatar-grid">
           {#each AVATARS as emoji}
             <button class="avatar-pick" class:selected={newAvatar === emoji} onclick={() => { newAvatar = emoji; }}>{emoji}</button>
           {/each}
         </div>
 
-        <label class="field-label">{$t('profile.role')}</label>
+        <span class="field-label" id="role-label">{$t('profile.role')}</span>
         <div class="role-grid">
           {#each ROLES as role}
             <button class="role-pick" class:selected={newRole === role.id} onclick={() => { newRole = role.id; }}>
@@ -159,8 +159,8 @@
           {/each}
         </div>
 
-        <label class="field-label">{$t('profile.pin_optional')}</label>
-        <input type="password" bind:value={newPin} maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="••••" class="text-input pin-field" />
+        <label class="field-label" for="profile-pin">{$t('profile.pin_optional')}</label>
+        <input id="profile-pin" type="password" bind:value={newPin} maxlength="4" pattern="[0-9]*" inputmode="numeric" placeholder="••••" class="text-input pin-field" />
 
         <div class="dialog-actions">
           <button class="cancel-btn" onclick={() => { showCreate = false; }}>{$t('app.back')}</button>

@@ -130,12 +130,12 @@
           <span class="strip-hint">{$t('talk.sentence_strip')}</span>
         {:else}
           {#each sentenceStrip as cell, i}
-            <span class="strip-word" onclick={() => speak(cell.label)}>
+            <button class="strip-word" onclick={() => speak(cell.label)}>
               {#if cell.pictogramUrl}
                 <img src={cell.pictogramUrl} alt={cell.label} width="40" height="40" />
               {/if}
               {cell.label}
-            </span>
+            </button>
           {/each}
         {/if}
       </div>

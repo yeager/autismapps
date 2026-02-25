@@ -419,7 +419,7 @@
       </div>
 
       <div class="speed-control">
-        <label>{$t('letter.speech_speed')}</label>
+        <span class="speed-label">{$t('letter.speech_speed')}</span>
         <div class="speed-options">
           <button class="speed-btn" class:active={speechRate === 0.4} onclick={() => { speechRate = 0.4; }}>🐢</button>
           <button class="speed-btn" class:active={speechRate === 0.6} onclick={() => { speechRate = 0.6; }}>🚶</button>

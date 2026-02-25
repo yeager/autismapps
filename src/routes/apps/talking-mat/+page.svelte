@@ -141,7 +141,7 @@
           <p class="bar-label">{$t('mat.tap_to_place')}</p>
           <div class="unplaced-items">
             {#each unplaced as item}
-              <div class="unplaced-card" draggable="true" ondragstart={() => startDrag(item)}>
+              <div class="unplaced-card" role="listitem" draggable="true" ondragstart={() => startDrag(item)}>
                 {#if item.url}<img src={item.url} alt={item.word} width="56" height="56" />{/if}
                 <span class="unplaced-label">{item.word}</span>
                 <div class="place-buttons">

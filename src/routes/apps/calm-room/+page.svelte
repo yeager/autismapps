@@ -14,6 +14,14 @@
   let breathTimer: ReturnType<typeof setTimeout> | null = null;
   let breathScale = $state(1);
 
+  const BREATH_PATTERNS = [
+    { id: '4-7-8', label: 'calm.pattern_478', inhale: 4, hold: 7, exhale: 8 },
+    { id: '4-4-4', label: 'calm.pattern_box', inhale: 4, hold: 4, exhale: 4 },
+    { id: '3-0-6', label: 'calm.pattern_simple', inhale: 3, hold: 0, exhale: 6 },
+    { id: '5-0-5', label: 'calm.pattern_calm', inhale: 5, hold: 0, exhale: 5 },
+  ];
+  let breathPattern = $state(BREATH_PATTERNS[0]);
+
   // Pressure
   let pressing = $state(false);
   let pressureSize = $state(80);
@@ -79,32 +87,40 @@
 
   function breathCycle() {
     if (!breathRunning) return;
-    // Inhale 4s
-    breathPhase = 'inhale';
-    breathScale = 1.6;
-    breathCount = 4;
-    speak($t('calm.breathe_in'));
+    const p = breathPattern;
     const countDown = (from: number, next: () => void) => {
       breathCount = from;
       if (from <= 0) { next(); return; }
       breathTimer = setTimeout(() => countDown(from - 1, next), 1000);
     };
-    countDown(4, () => {
+    // Inhale
+    breathPhase = 'inhale';
+    breathScale = 1.6;
+    breathCount = p.inhale;
+    speak($t('calm.breathe_in'));
+    countDown(p.inhale, () => {
       if (!breathRunning) return;
-      // Hold 7s
-      breathPhase = 'hold';
-      breathCount = 7;
-      speak($t('calm.hold'));
-      countDown(7, () => {
-        if (!breathRunning) return;
-        // Exhale 8s
-        breathPhase = 'exhale';
-        breathScale = 1;
-        breathCount = 8;
-        speak($t('calm.breathe_out'));
-        countDown(8, () => { if (breathRunning) breathCycle(); });
-      });
+      if (p.hold > 0) {
+        // Hold
+        breathPhase = 'hold';
+        breathCount = p.hold;
+        speak($t('calm.hold'));
+        countDown(p.hold, () => {
+          if (!breathRunning) return;
+          doExhale();
+        });
+      } else {
+        doExhale();
+      }
     });
+
+    function doExhale() {
+      breathPhase = 'exhale';
+      breathScale = 1;
+      breathCount = p.exhale;
+      speak($t('calm.breathe_out'));
+      countDown(p.exhale, () => { if (breathRunning) breathCycle(); });
+    }
   }
 
   function stopBreathing() { breathRunning = false; if (breathTimer) clearTimeout(breathTimer); breathScale = 1; }
@@ -271,7 +287,21 @@
     </div>
   {:else if activeActivity === 'breathing'}
     <div class="breath-area">
-      <div class="breath-circle" style="transform: scale({breathScale}); transition: transform {breathPhase === 'inhale' ? '4s' : breathPhase === 'exhale' ? '8s' : '0s'} ease-in-out">
+      {#if !breathRunning}
+        <div class="pattern-selector">
+          {#each BREATH_PATTERNS as p}
+            <button
+              class="pattern-btn"
+              class:active={breathPattern.id === p.id}
+              onclick={() => { breathPattern = p; }}
+            >
+              <span class="pattern-name">{$t(p.label)}</span>
+              <span class="pattern-timing">{p.inhale}-{p.hold}-{p.exhale}</span>
+            </button>
+          {/each}
+        </div>
+      {/if}
+      <div class="breath-circle" style="transform: scale({breathScale}); transition: transform {breathPhase === 'inhale' ? breathPattern.inhale + 's' : breathPhase === 'exhale' ? breathPattern.exhale + 's' : '0s'} ease-in-out">
         <span class="breath-text">{$t('calm.' + breathPhase)}</span>
         <span class="breath-count">{breathCount}</span>
       </div>
@@ -381,8 +411,8 @@
 
   <!-- Emergency overlay -->
   {#if showEmergency}
-    <div class="emergency-overlay" onclick={() => { showEmergency = false; }}>
-      <div class="emergency-card" onclick={(e) => e.stopPropagation()}>
+    <div class="emergency-overlay" role="button" tabindex="-1" onclick={() => { showEmergency = false; }} onkeydown={(e) => { if (e.key === 'Escape') showEmergency = false; }}>
+      <div class="emergency-card" role="dialog" aria-modal="true" tabindex="-1" onclick={(e) => e.stopPropagation()} onkeydown={(e) => e.stopPropagation()}>
         <h2>💙 {$t('calm.you_are_safe')}</h2>
         <p>{$t('calm.emergency_msg')}</p>
         <div class="emergency-actions">
@@ -428,6 +458,11 @@
   .act-label { font-weight: 600; font-size: 1em; }
 
   /* Breathing */
+  .pattern-selector { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1rem; }
+  .pattern-btn { padding: 0.5rem 1rem; border: 2px solid var(--border, #ddd); border-radius: 12px; background: var(--bg-card, #fff); cursor: pointer; text-align: center; min-height: 48px; display: flex; flex-direction: column; gap: 2px; }
+  .pattern-btn.active { border-color: #87CEEB; background: #e0f4ff; }
+  .pattern-name { font-weight: 600; font-size: 0.85rem; }
+  .pattern-timing { font-size: 0.75rem; color: var(--text-secondary, #888); }
   .breath-area { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; padding: 20px; }
   .breath-circle {
     width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, #87CEEB, #B0E0E6);

@@ -161,7 +161,7 @@
 
     <!-- Language -->
     <div class="setting">
-      <label class="setting-label">{$t('settings.language')}</label>
+      <span class="setting-label">{$t('settings.language')}</span>
       <div class="setting-options">
         {#each LANGUAGES as lang}
           <button
@@ -175,7 +175,7 @@
 
     <!-- Voice selection -->
     <div class="setting setting-column">
-      <label class="setting-label">{$t('settings.voice')}</label>
+      <span class="setting-label">{$t('settings.voice')}</span>
       <p class="setting-hint">
         {$t('settings.tts_engine')}: <strong>{ttsEngine === 'piper' ? 'Piper WASM' : ttsEngine === 'webspeech' ? 'Web Speech API' : '—'}</strong>
       </p>
@@ -206,7 +206,7 @@
 
     <!-- Text Size -->
     <div class="setting">
-      <label class="setting-label">{$t('settings.text_size')}</label>
+      <span class="setting-label">{$t('settings.text_size')}</span>
       <div class="setting-options">
         {#each TEXT_SIZES as size}
           <button
@@ -220,7 +220,7 @@
 
     <!-- Theme -->
     <div class="setting">
-      <label class="setting-label">{$t('settings.theme')}</label>
+      <span class="setting-label">{$t('settings.theme')}</span>
       <div class="setting-options">
         {#each THEMES as th}
           <button
@@ -236,7 +236,7 @@
     {#if advanced}
       <!-- TTS Speed Slider -->
       <div class="setting setting-column">
-        <label class="setting-label">{$t('settings.tts_speed')}</label>
+        <span class="setting-label">{$t('settings.tts_speed')}</span>
         <div class="slider-row">
           <span class="slider-label">{$t('settings.tts_speed.slow')}</span>
           <input
@@ -256,7 +256,7 @@
 
       <!-- Phonetic emphasis -->
       <div class="setting">
-        <label class="setting-label">{$t('settings.phonetic')}</label>
+        <span class="setting-label">{$t('settings.phonetic')}</span>
         <div class="setting-options">
           <button
             class="toggle-btn"
@@ -268,7 +268,7 @@
 
       <!-- Screen reader -->
       <div class="setting">
-        <label class="setting-label">{$t('settings.screen_reader')}</label>
+        <span class="setting-label">{$t('settings.screen_reader')}</span>
         <div class="setting-options">
           <button
             class="toggle-btn"
@@ -280,7 +280,7 @@
 
       <!-- Animations -->
       <div class="setting">
-        <label class="setting-label">{$t('settings.animations')}</label>
+        <span class="setting-label">{$t('settings.animations')}</span>
         <div class="setting-options">
           <button
             class="toggle-btn"
@@ -292,7 +292,7 @@
 
       <!-- ARASAAC B/W -->
       <div class="setting">
-        <label class="setting-label">{$t('settings.arasaac_bw')}</label>
+        <span class="setting-label">{$t('settings.arasaac_bw')}</span>
         <div class="setting-options">
           <button
             class="toggle-btn"
@@ -304,7 +304,7 @@
 
       <!-- Data management -->
       <div class="setting">
-        <label class="setting-label">{$t('settings.export_data')}</label>
+        <span class="setting-label">{$t('settings.export_data')}</span>
         <div class="setting-options">
           <button class="option-btn" onclick={exportData}>📦 {$t('settings.export_data')}</button>
           <button class="option-btn" onclick={importData}>📥 {$t('settings.import_data')}</button>
@@ -312,7 +312,7 @@
       </div>
 
       <div class="setting">
-        <label class="setting-label">{$t('settings.clear_data')}</label>
+        <span class="setting-label">{$t('settings.clear_data')}</span>
         <div class="setting-options">
           <button class="option-btn danger" onclick={clearData}>🗑️ {$t('settings.clear_data')}</button>
         </div>

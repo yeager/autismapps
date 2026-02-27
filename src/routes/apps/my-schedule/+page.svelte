@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -48,6 +49,8 @@
     save();
   }
 </script>
+
+<WelcomeDialog appId="my-schedule" titleKey="app.my_schedule" purposeKey="welcome.mySchedule.purpose" howKey="welcome.mySchedule.how" goalKey="welcome.mySchedule.goal" icon="📋" />
 
 <div class="app" in:fade>
   <header class="hdr">

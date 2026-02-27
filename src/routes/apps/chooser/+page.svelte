@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -63,6 +64,8 @@
     ];
   }
 </script>
+
+<WelcomeDialog appId="chooser" titleKey="app.chooser" purposeKey="welcome.chooser.purpose" howKey="welcome.chooser.how" goalKey="welcome.chooser.goal" icon="🎯" />
 
 <div class="chooser-page">
   <header class="app-header">

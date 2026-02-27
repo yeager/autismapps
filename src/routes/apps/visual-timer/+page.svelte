@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
@@ -135,6 +136,8 @@
     }
   }
 </script>
+
+<WelcomeDialog appId="visual-timer" titleKey="app.visual_timer" purposeKey="welcome.visualTimer.purpose" howKey="welcome.visualTimer.how" goalKey="welcome.visualTimer.goal" icon="⏳" />
 
 <div class="timer-page" class:fullscreen>
   <header class="app-header">

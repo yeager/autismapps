@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -94,6 +95,8 @@
     return '🌙';
   }
 </script>
+
+<WelcomeDialog appId="practice-board" titleKey="app.practice_board" purposeKey="welcome.practiceBoard.purpose" howKey="welcome.practiceBoard.how" goalKey="welcome.practiceBoard.goal" icon="📊" />
 
 <div class="app-container" in:fade>
   <header class="sticky-header">

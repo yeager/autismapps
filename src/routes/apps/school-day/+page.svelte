@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -34,6 +35,8 @@
 
   let currentIdx = $derived(PERIODS.findLastIndex(p => p.time <= now));
 </script>
+
+<WelcomeDialog appId="school-day" titleKey="app.school_day" purposeKey="welcome.schoolDay.purpose" howKey="welcome.schoolDay.how" goalKey="welcome.schoolDay.goal" icon="🏫" />
 
 <div class="app" in:fade>
   <header class="hdr">

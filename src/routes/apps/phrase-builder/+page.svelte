@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
@@ -67,6 +68,8 @@
     selectedObject = null;
   }
 </script>
+
+<WelcomeDialog appId="phrase-builder" titleKey="app.phrase_builder" purposeKey="welcome.phraseBuilder.purpose" howKey="welcome.phraseBuilder.how" goalKey="welcome.phraseBuilder.goal" icon="📝" />
 
 <div class="phrase-page">
   <header class="app-header">

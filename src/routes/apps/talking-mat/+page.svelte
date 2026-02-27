@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
@@ -65,6 +66,8 @@
   const neutral = $derived(items.filter(i => i.zone === 'neutral'));
   const negative = $derived(items.filter(i => i.zone === 'negative'));
 </script>
+
+<WelcomeDialog appId="talking-mat" titleKey="app.talking_mat" purposeKey="welcome.talkingMat.purpose" howKey="welcome.talkingMat.how" goalKey="welcome.talkingMat.goal" icon="🟢" />
 
 <div class="mat-page">
   <header class="app-header">

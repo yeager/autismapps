@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -51,6 +52,8 @@
     if (done.every(Boolean)) speak($t('routineBuddy.allDone'));
   }
 </script>
+
+<WelcomeDialog appId="routine-buddy" titleKey="app.routine_buddy" purposeKey="welcome.routineBuddy.purpose" howKey="welcome.routineBuddy.how" goalKey="welcome.routineBuddy.goal" icon="🔁" />
 
 <div class="app" in:fade>
   <header class="hdr">

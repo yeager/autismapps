@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
@@ -160,6 +161,8 @@
     loadItems();
   }
 </script>
+
+<WelcomeDialog appId="pecs-trainer" titleKey="app.pecs_trainer" purposeKey="welcome.pecsTrainer.purpose" howKey="welcome.pecsTrainer.how" goalKey="welcome.pecsTrainer.goal" icon="🔄" />
 
 <div class="pecs-page">
   <header class="app-header">

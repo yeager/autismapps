@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -80,6 +81,8 @@
     loadWord();
   }
 </script>
+
+<WelcomeDialog appId="word-builder" titleKey="app.word_builder" purposeKey="welcome.wordBuilder.purpose" howKey="welcome.wordBuilder.how" goalKey="welcome.wordBuilder.goal" icon="🔤" />
 
 <div class="app" in:fade>
   <header class="hdr">

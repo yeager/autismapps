@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -36,6 +37,8 @@
 
   function clearStrip() { strip = []; }
 </script>
+
+<WelcomeDialog appId="pecs-board" titleKey="app.pecs_board" purposeKey="welcome.pecsBoard.purpose" howKey="welcome.pecsBoard.how" goalKey="welcome.pecsBoard.goal" icon="🖼️" />
 
 <div class="app" in:fade>
   <header class="hdr">

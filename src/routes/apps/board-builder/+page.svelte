@@ -1,5 +1,6 @@
 <script lang="ts">
   import { t } from '$lib/i18n';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { speak } from '$lib/tts';
   import { searchPictograms, getPictogramUrl, type PictogramSearchResult } from '$lib/arasaac';
   import { saveBoard, getBoards, deleteBoard, type Board, type BoardCell } from '$lib/storage';
@@ -171,6 +172,8 @@
   // Load boards on mount
   $effect(() => { loadSavedBoards(); });
 </script>
+
+<WelcomeDialog appId="board-builder" titleKey="app.board_builder" purposeKey="welcome.boardBuilder.purpose" howKey="welcome.boardBuilder.how" goalKey="welcome.boardBuilder.goal" icon="🧩" />
 
 <div class="board-builder">
   <div class="builder-sidebar">

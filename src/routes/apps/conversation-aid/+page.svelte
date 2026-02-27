@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -42,6 +43,8 @@
     speak($t(p.key));
   }
 </script>
+
+<WelcomeDialog appId="conversation-aid" titleKey="app.conversation_aid" purposeKey="welcome.conversationAid.purpose" howKey="welcome.conversationAid.how" goalKey="welcome.conversationAid.goal" icon="💬" />
 
 <div class="app" in:fade>
   <header class="hdr">

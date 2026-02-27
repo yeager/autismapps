@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -67,6 +68,8 @@
 
   let doneCount = $derived(Object.values(completed).filter(Boolean).length);
 </script>
+
+<WelcomeDialog appId="day-planner" titleKey="app.day_planner" purposeKey="welcome.dayPlanner.purpose" howKey="welcome.dayPlanner.how" goalKey="welcome.dayPlanner.goal" icon="📅" />
 
 <div class="app" in:fade>
   <header class="hdr">

@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -87,6 +88,8 @@
     }
   }
 </script>
+
+<WelcomeDialog appId="social-stories" titleKey="app.social_stories" purposeKey="welcome.socialStories.purpose" howKey="welcome.socialStories.how" goalKey="welcome.socialStories.goal" icon="📚" />
 
 <div class="app" in:fade>
   <header class="hdr">

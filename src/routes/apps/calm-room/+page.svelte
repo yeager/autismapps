@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
 
@@ -266,6 +267,8 @@
   }
   function resetRelax() { relaxStep = 0; }
 </script>
+
+<WelcomeDialog appId="calm-room" titleKey="app.calm_room" purposeKey="welcome.calmRoom.purpose" howKey="welcome.calmRoom.how" goalKey="welcome.calmRoom.goal" icon="🧘" />
 
 <div class="calm-page" style={activeActivity === 'colors' && colorRunning ? `background: hsl(${colorHue}, 60%, 85%)` : ''}>
   <header class="app-header">

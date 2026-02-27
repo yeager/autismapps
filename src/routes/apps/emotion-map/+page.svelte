@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -153,6 +154,8 @@
     URL.revokeObjectURL(url);
   }
 </script>
+
+<WelcomeDialog appId="emotion-map" titleKey="app.emotion_map" purposeKey="welcome.emotionMap.purpose" howKey="welcome.emotionMap.how" goalKey="welcome.emotionMap.goal" icon="🗺️" />
 
 <div class="emotion-page">
   <header class="app-header">

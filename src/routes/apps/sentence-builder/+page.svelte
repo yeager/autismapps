@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -98,6 +99,8 @@
     load();
   }
 </script>
+
+<WelcomeDialog appId="sentence-builder" titleKey="app.sentence_builder" purposeKey="welcome.sentenceBuilder.purpose" howKey="welcome.sentenceBuilder.how" goalKey="welcome.sentenceBuilder.goal" icon="✏️" />
 
 <div class="app" in:fade>
   <header class="hdr">

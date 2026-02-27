@@ -1,5 +1,6 @@
 <script lang="ts">
   import { t, locale } from '$lib/i18n';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { speak, stop } from '$lib/tts';
   import { searchPictograms, type PictogramSearchResult } from '$lib/arasaac';
   import { saveSchedule, getSchedules, deleteSchedule, type Schedule, type ScheduleItem } from '$lib/storage';
@@ -244,6 +245,8 @@
 
   $effect(() => { loadSchedules(); });
 </script>
+
+<WelcomeDialog appId="picture-schedule" titleKey="app.picture_schedule" purposeKey="welcome.pictureSchedule.purpose" howKey="welcome.pictureSchedule.how" goalKey="welcome.pictureSchedule.goal" icon="🖼️" />
 
 <div class="schedule-app">
   <!-- Toolbar -->

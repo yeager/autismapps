@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -96,6 +97,8 @@
     speak(`${$t('clothesChooser.youChose')}: ${parts}`);
   }
 </script>
+
+<WelcomeDialog appId="clothes-chooser" titleKey="app.clothes_chooser" purposeKey="welcome.clothesChooser.purpose" howKey="welcome.clothesChooser.how" goalKey="welcome.clothesChooser.goal" icon="👕" />
 
 <div class="app-container" in:fade>
   <header class="sticky-header">

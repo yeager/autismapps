@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -77,6 +78,8 @@
     save();
   }
 </script>
+
+<WelcomeDialog appId="diary" titleKey="app.diary" purposeKey="welcome.diary.purpose" howKey="welcome.diary.how" goalKey="welcome.diary.goal" icon="📔" />
 
 <div class="diary-page">
   <header class="app-header">

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -62,6 +63,8 @@
     return (lvl / 5) * 100;
   }
 </script>
+
+<WelcomeDialog appId="energy-meter" titleKey="app.energy_meter" purposeKey="welcome.energyMeter.purpose" howKey="welcome.energyMeter.how" goalKey="welcome.energyMeter.goal" icon="🔋" />
 
 <div class="energy-page">
   <header class="app-header">

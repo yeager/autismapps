@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -50,6 +51,8 @@
     speak($t(`soundLibrary.cat.${cat.id}`));
   }
 </script>
+
+<WelcomeDialog appId="sound-library" titleKey="app.sound_library" purposeKey="welcome.soundLibrary.purpose" howKey="welcome.soundLibrary.how" goalKey="welcome.soundLibrary.goal" icon="🔊" />
 
 <div class="app" in:fade>
   <header class="hdr">

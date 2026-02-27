@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -173,6 +174,8 @@
     return '#3498DB';
   }
 </script>
+
+<WelcomeDialog appId="focus-buddy" titleKey="app.focus_buddy" purposeKey="welcome.focusBuddy.purpose" howKey="welcome.focusBuddy.how" goalKey="welcome.focusBuddy.goal" icon="🎯" />
 
 <div class="focus-page">
   <header class="app-header">

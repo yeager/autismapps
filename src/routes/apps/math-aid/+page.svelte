@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -50,6 +51,8 @@
 
   function clearAnswer() { userAnswer = ''; correct = null; }
 </script>
+
+<WelcomeDialog appId="math-aid" titleKey="app.math_aid" purposeKey="welcome.mathAid.purpose" howKey="welcome.mathAid.how" goalKey="welcome.mathAid.goal" icon="➕" />
 
 <div class="app" in:fade>
   <header class="hdr">

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -43,6 +44,8 @@
     speak(`${total} ${$t('money.kr')}`);
   }
 </script>
+
+<WelcomeDialog appId="money-check" titleKey="app.money_check" purposeKey="welcome.moneyCheck.purpose" howKey="welcome.moneyCheck.how" goalKey="welcome.moneyCheck.goal" icon="💰" />
 
 <div class="money-page">
   <header class="app-header">

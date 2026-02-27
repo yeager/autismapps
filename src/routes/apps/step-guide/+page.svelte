@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -72,6 +73,8 @@
     else goto('/');
   }
 </script>
+
+<WelcomeDialog appId="step-guide" titleKey="app.step_guide" purposeKey="welcome.stepGuide.purpose" howKey="welcome.stepGuide.how" goalKey="welcome.stepGuide.goal" icon="👣" />
 
 <div class="guide-page">
   <header class="app-header">

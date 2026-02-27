@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -123,6 +124,8 @@
     return ((stepIdx) / activeExercise.steps.length) * 100;
   }
 </script>
+
+<WelcomeDialog appId="break-check" titleKey="app.break_check" purposeKey="welcome.breakCheck.purpose" howKey="welcome.breakCheck.how" goalKey="welcome.breakCheck.goal" icon="⏸️" />
 
 <div class="break-page">
   <header class="app-header">

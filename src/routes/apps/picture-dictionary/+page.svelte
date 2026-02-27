@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { locale } from '$lib/i18n';
@@ -245,6 +246,8 @@
     else { mode = 'categories'; activeCategory = null; }
   }
 </script>
+
+<WelcomeDialog appId="picture-dictionary" titleKey="app.picture_dictionary" purposeKey="welcome.pictureDictionary.purpose" howKey="welcome.pictureDictionary.how" goalKey="welcome.pictureDictionary.goal" icon="📖" />
 
 <div class="dict-page">
   <header class="app-header">

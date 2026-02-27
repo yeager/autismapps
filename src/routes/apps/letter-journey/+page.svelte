@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { locale } from '$lib/i18n';
@@ -369,6 +370,8 @@
     else if (m === 'coarticulation') startCoarticulation();
   }
 </script>
+
+<WelcomeDialog appId="letter-journey" titleKey="app.letter_journey" purposeKey="welcome.letterJourney.purpose" howKey="welcome.letterJourney.how" goalKey="welcome.letterJourney.goal" icon="🔤" />
 
 <div class="letter-page">
   <header class="app-header">

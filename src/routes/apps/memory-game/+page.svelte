@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -61,6 +62,8 @@
 
   let gridCols = $derived(pairs <= 4 ? 4 : pairs <= 6 ? 4 : 4);
 </script>
+
+<WelcomeDialog appId="memory-game" titleKey="app.memory_game" purposeKey="welcome.memoryGame.purpose" howKey="welcome.memoryGame.how" goalKey="welcome.memoryGame.goal" icon="🃏" />
 
 <div class="app" in:fade>
   <header class="hdr">

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms, getPictogramUrl } from '$lib/arasaac';
@@ -67,6 +68,8 @@
     speak(word);
   }
 </script>
+
+<WelcomeDialog appId="situation-cards" titleKey="app.situation_cards" purposeKey="welcome.situationCards.purpose" howKey="welcome.situationCards.how" goalKey="welcome.situationCards.goal" icon="🃏" />
 
 <div class="situation-page">
   <header class="app-header">

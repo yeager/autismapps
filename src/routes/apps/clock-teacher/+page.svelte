@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -66,6 +67,8 @@
     }
   }
 </script>
+
+<WelcomeDialog appId="clock-teacher" titleKey="app.clock_teacher" purposeKey="welcome.clockTeacher.purpose" howKey="welcome.clockTeacher.how" goalKey="welcome.clockTeacher.goal" icon="🕐" />
 
 <div class="clock-page">
   <header class="app-header">

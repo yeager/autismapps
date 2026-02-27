@@ -1,5 +1,6 @@
 <script lang="ts">
   import { t } from '$lib/i18n';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { speak, stop } from '$lib/tts';
   import { getBoards, type Board, type BoardCell } from '$lib/storage';
   import { getTakkSign, openSignVideo } from '$lib/takk';
@@ -101,6 +102,8 @@
 
   $effect(() => { loadBoards(); });
 </script>
+
+<WelcomeDialog appId="talk-board" titleKey="app.talk_board" purposeKey="welcome.talkBoard.purpose" howKey="welcome.talkBoard.how" goalKey="welcome.talkBoard.goal" icon="🗣️" />
 
 <div class="talk-board" class:fullscreen={isFullscreen}>
   {#if showBoardList}

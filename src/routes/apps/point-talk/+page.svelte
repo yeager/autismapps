@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
@@ -100,6 +101,8 @@
     speak(text);
   }
 </script>
+
+<WelcomeDialog appId="point-talk" titleKey="app.point_talk" purposeKey="welcome.pointTalk.purpose" howKey="welcome.pointTalk.how" goalKey="welcome.pointTalk.goal" icon="👆" />
 
 <div class="point-page">
   <header class="app-header">

@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -152,6 +153,8 @@
     window.open(`${BASE}/ord/${id}`, '_blank');
   }
 </script>
+
+<WelcomeDialog appId="sign-dictionary" titleKey="app.sign_dictionary" purposeKey="welcome.signDictionary.purpose" howKey="welcome.signDictionary.how" goalKey="welcome.signDictionary.goal" icon="🤟" />
 
 <div class="app-container" in:fade>
   <header class="sticky-header">

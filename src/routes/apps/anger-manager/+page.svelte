@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -36,6 +37,8 @@
     speak($t(s.key));
   }
 </script>
+
+<WelcomeDialog appId="anger-manager" titleKey="app.anger_manager" purposeKey="welcome.angerManager.purpose" howKey="welcome.angerManager.how" goalKey="welcome.angerManager.goal" icon="🌡️" />
 
 <div class="app" in:fade>
   <header class="hdr">

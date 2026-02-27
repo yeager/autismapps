@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -60,6 +61,8 @@
 
   let progress = $derived(Math.min(100, (stars / goal) * 100));
 </script>
+
+<WelcomeDialog appId="reward-chart" titleKey="app.reward_chart" purposeKey="welcome.rewardChart.purpose" howKey="welcome.rewardChart.how" goalKey="welcome.rewardChart.goal" icon="⭐" />
 
 <div class="app" in:fade>
   <header class="hdr">

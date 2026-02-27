@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -65,6 +66,8 @@
     }
   }
 </script>
+
+<WelcomeDialog appId="cooking-helper" titleKey="app.cooking_helper" purposeKey="welcome.cookingHelper.purpose" howKey="welcome.cookingHelper.how" goalKey="welcome.cookingHelper.goal" icon="👨‍🍳" />
 
 <div class="cook-page">
   <header class="app-header">

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -38,6 +39,8 @@
     reset();
   }
 </script>
+
+<WelcomeDialog appId="counting" titleKey="app.counting" purposeKey="welcome.counting.purpose" howKey="welcome.counting.how" goalKey="welcome.counting.goal" icon="🔢" />
 
 <div class="counting-page">
   <header class="app-header">

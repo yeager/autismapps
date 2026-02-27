@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -58,6 +59,8 @@
   let progress = $derived(totalSeconds > 0 ? ((totalSeconds - remaining) / totalSeconds) * 100 : 0);
   let display = $derived(`${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`);
 </script>
+
+<WelcomeDialog appId="time-tracker" titleKey="app.time_tracker" purposeKey="welcome.timeTracker.purpose" howKey="welcome.timeTracker.how" goalKey="welcome.timeTracker.goal" icon="⏱️" />
 
 <div class="app" in:fade>
   <header class="hdr">

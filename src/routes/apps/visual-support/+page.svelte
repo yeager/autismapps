@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -142,6 +143,8 @@
     else goto('/');
   }
 </script>
+
+<WelcomeDialog appId="visual-support" titleKey="app.visual_support" purposeKey="welcome.visualSupport.purpose" howKey="welcome.visualSupport.how" goalKey="welcome.visualSupport.goal" icon="📸" />
 
 <div class="vs-page">
   <header class="app-header">

@@ -1,16 +1,16 @@
 # Autismappar 🧩
 
-**SvelteKit PWA with 42 AAC/TEACCH apps for children with autism, ADHD and verbal dyspraxia**
+**SvelteKit PWA with 42 AAC/TEACCH apps for children with neurodevelopmental conditions (NPF), intellectual disabilities (IF) and verbal dyspraxia**
 
 🌐 **Live:** [yeager.github.io/autismapps](https://yeager.github.io/autismapps/)  
-🇸🇪 **Swedish name:** Autismappar  
+🇸🇪 **Swedish name:** Autismappar (NPF-appar)
 📄 **License:** CC BY-NC-SA 4.0
 
 ---
 
 ## What is this?
 
-A free, open-source collection of evidence-based apps designed for children with autism spectrum disorder, ADHD, and speech-language difficulties. Built as a single Progressive Web App that works offline on any device.
+A free, open-source collection of evidence-based apps designed for children with neurodevelopmental conditions (NPF/NDD — autism, ADHD), intellectual disabilities (IF/ID), and speech-language difficulties. Built as a single Progressive Web App that works offline on any device.
 
 ### Design Principles
 

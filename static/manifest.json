@@ -1,6 +1,6 @@
 {
-  "name": "Autism Apps",
-  "short_name": "AutismApps",
+  "name": "NPF-appar",
+  "short_name": "NPF-appar",
   "description": "Communication & Learning Tools — a PWA launcher for accessibility apps",
   "start_url": "/",
   "display": "standalone",

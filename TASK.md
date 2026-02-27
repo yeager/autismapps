@@ -1,7 +1,7 @@
 # Fas 2: Build 8 new AAC apps + profile system
 
 ## CONTEXT
-SvelteKit PWA for autism/AAC tools. 3 apps exist: board-builder, talk-board, picture-schedule.
+SvelteKit PWA for NPF/IF/AAC tools. 3 apps exist: board-builder, talk-board, picture-schedule.
 - Svelte 5 runes ($state, $derived, $effect)
 - ARASAAC API (src/lib/arasaac/) — FREE, CC-BY-NC-SA 3.0
 - TTS via Web Speech API (src/lib/tts/)

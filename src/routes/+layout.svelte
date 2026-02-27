@@ -6,6 +6,8 @@
   import { theme, textSize, reducedMotion, themeClass, textSizeClass } from '$lib/a11y';
   import { speak, preloadVoice } from '$lib/tts';
   import { browser } from '$app/environment';
+  import AchievementPopup from '$lib/components/rewards/AchievementPopup.svelte';
+  import StarCounter from '$lib/components/rewards/StarCounter.svelte';
 
   let { children } = $props();
 
@@ -53,6 +55,16 @@
 
       <div class="header-spacer"></div>
 
+      <StarCounter />
+
+      <button
+        class="rewards-btn"
+        onclick={() => goto('/rewards')}
+        aria-label={$t('rewards.nav')}
+      >
+        ⭐
+      </button>
+
       <button
         class="settings-btn"
         onclick={goSettings}
@@ -69,6 +81,8 @@
   <main class="app-main" class:has-header={!isHome}>
     {@render children()}
   </main>
+
+  <AchievementPopup />
 </div>
 
 <style>
@@ -121,6 +135,21 @@
     transition: background var(--transition);
   }
   .settings-btn:hover { background: var(--bg-hover); }
+
+  .rewards-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition);
+    font-size: 1.2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .rewards-btn:hover { background: var(--bg-hover); }
 
   .app-main {
     flex: 1;

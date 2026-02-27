@@ -71,7 +71,23 @@ const db = new Dexie('AutismApps') as Dexie & {
   settings: EntityTable<UserSettings, 'id'>;
   profiles: EntityTable<Profile, 'id'>;
   appProgress: EntityTable<AppProgress, 'id'>;
+  goldStars: EntityTable<{ id?: number; profileId: number; appId: string; reason: string; earnedAt: Date }, 'id'>;
+  achievements: EntityTable<{ id?: number; profileId: number; achievementKey: string; appId?: string; unlockedAt: Date }, 'id'>;
+  rewardGoals: EntityTable<{ id?: number; profileId: number; type: string; target: number; current: number; rewardText: string; appId?: string; completed: boolean; createdAt: Date }, 'id'>;
+  diplomas: EntityTable<{ id?: number; profileId: number; childName: string; achievementKey: string; appId?: string; earnedAt: Date }, 'id'>;
 };
+
+db.version(3).stores({
+  boards: "++id, name, category, createdAt",
+  schedules: "++id, name, date, createdAt",
+  settings: "++id, &key",
+  profiles: "++id, name, createdAt",
+  appProgress: "++id, profileId, appId, [profileId+appId]",
+  goldStars: "++id, profileId, appId, earnedAt",
+  achievements: "++id, profileId, achievementKey",
+  rewardGoals: "++id, profileId, type, completed",
+  diplomas: "++id, profileId, achievementKey, earnedAt"
+});
 
 db.version(1).stores({
   boards: '++id, name, category, createdAt',

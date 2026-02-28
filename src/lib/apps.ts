@@ -16,8 +16,8 @@ export const CATEGORY_META: Record<AppCategory, { color: string; label: string; 
   time:          { color: '#27AE60', label: 'app.category.time', emoji: '⏰' },
   emotions:      { color: '#9B59B6', label: 'app.category.emotions', emoji: '💜' },
   learning:      { color: '#F1C40F', label: 'app.category.learning', emoji: '📚' },
-  play:          { color: '#E74C3C', label: 'app.category.play', emoji: '🎮' }
-  speech:       { color: '#E91E63', label: 'app.category.speech', emoji: '🗣️' },
+  play:          { color: '#E74C3C', label: 'app.category.play', emoji: '🎮' },
+  speech:        { color: '#E91E63', label: 'app.category.speech', emoji: '🗣️' }
 };
 
 export const ALL_APPS: AppDef[] = [

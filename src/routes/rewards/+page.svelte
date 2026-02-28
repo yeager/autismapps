@@ -2,7 +2,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { goto } from '$app/navigation';
-  import { isNativeApp } from '$lib/platform';
+  
   import { activeProfileId, activeProfile } from '$lib/stores/profile';
   import { getProfile } from '$lib/storage';
   import {
@@ -24,7 +24,7 @@
   let newGoalReward = $state('');
 
   $effect(() => {
-    if (browser && !$activeProfileId && isNativeApp) {
+    if (browser && !$activeProfileId ) {
       goto('/profiles');
     }
   });

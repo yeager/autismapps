@@ -24,7 +24,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - run: npm run build && cp build/index.html build/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build

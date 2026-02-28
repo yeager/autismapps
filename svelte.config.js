@@ -11,7 +11,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: dev ? '' : '/autismapps'
+			base: dev || process.env.TAURI_ENV_PLATFORM ? '' : '/autismapps'
 		}
 	}
 };

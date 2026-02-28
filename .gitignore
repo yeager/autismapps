@@ -3,3 +3,7 @@ node_modules
 .svelte-kit
 ort-wasm-simd-threaded.asyncify.wasm
 ort-wasm-simd-threaded.jspi.wasm
+
+# Tauri
+src-tauri/target/
+src-tauri/binaries/

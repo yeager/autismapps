@@ -66,11 +66,11 @@ export const ALL_APPS: AppDef[] = [
   // Learning
   { id: 'word-builder', name: 'app.word_builder', description: 'app.word_builder.desc', category: 'learning', icon: '/icons/word-builder.svg', route: '/apps/word-builder', ready: true },
   { id: 'sentence-builder', name: 'app.sentence_builder', description: 'app.sentence_builder.desc', category: 'learning', icon: '/icons/sentence-builder.svg', route: '/apps/sentence-builder', ready: true },
-  { id: 'letter-journey', name: 'app.letter_journey', description: 'app.letter_journey.desc', category: 'learning', icon: '/icons/letter-journey.svg', route: '/apps/letter-journey', ready: true },
-  { id: 'oral-motor', name: 'app.oral_motor', description: 'app.oral_motor.desc', category: 'learning', icon: '/icons/oral-motor.svg', route: '/apps/oral-motor', ready: true },
-  { id: 'sound-chain', name: 'app.sound_chain', description: 'app.sound_chain.desc', category: 'learning', icon: '/icons/sound-chain.svg', route: '/apps/sound-chain', ready: true },
-  { id: 'speech-practice', name: 'app.speech_practice', description: 'app.speech_practice.desc', category: 'learning', icon: '/icons/speech-practice.svg', route: '/apps/speech-practice', ready: true },
-  { id: 'syllable-jump', name: 'app.syllable_jump', description: 'app.syllable_jump.desc', category: 'learning', icon: '/icons/syllable-jump.svg', route: '/apps/syllable-jump', ready: true },
+  { id: 'letter-journey', name: 'app.letter_journey', description: 'app.letter_journey.desc', category: 'speech', icon: '/icons/letter-journey.svg', route: '/apps/letter-journey', ready: true },
+  { id: 'oral-motor', name: 'app.oral_motor', description: 'app.oral_motor.desc', category: 'speech', icon: '/icons/oral-motor.svg', route: '/apps/oral-motor', ready: true },
+  { id: 'sound-chain', name: 'app.sound_chain', description: 'app.sound_chain.desc', category: 'speech', icon: '/icons/sound-chain.svg', route: '/apps/sound-chain', ready: true },
+  { id: 'speech-practice', name: 'app.speech_practice', description: 'app.speech_practice.desc', category: 'speech', icon: '/icons/speech-practice.svg', route: '/apps/speech-practice', ready: true },
+  { id: 'syllable-jump', name: 'app.syllable_jump', description: 'app.syllable_jump.desc', category: 'speech', icon: '/icons/syllable-jump.svg', route: '/apps/syllable-jump', ready: true },
   { id: 'picture-dictionary', name: 'app.picture_dictionary', description: 'app.picture_dictionary.desc', category: 'learning', icon: '/icons/picture-dictionary.svg', route: '/apps/picture-dictionary', ready: true },
   { id: 'focus-buddy', name: 'app.focus_buddy', description: 'app.focus_buddy.desc', category: 'time', icon: '/icons/focus-buddy.svg', route: '/apps/focus-buddy', ready: true },
   { id: 'math-aid', name: 'app.math_aid', description: 'app.math_aid.desc', category: 'learning', icon: '/icons/math-aid.svg', route: '/apps/math-aid', ready: true },
@@ -81,5 +81,12 @@ export const ALL_APPS: AppDef[] = [
   { id: 'memory-game', name: 'app.memory_game', description: 'app.memory_game.desc', category: 'play', icon: '/icons/memory-game.svg', route: '/apps/memory-game', ready: true },
   { id: 'sound-library', name: 'app.sound_library', description: 'app.sound_library.desc', category: 'play', icon: '/icons/sound-library.svg', route: '/apps/sound-library', ready: true },
   { id: 'diary', name: 'app.diary', description: 'app.diary.desc', category: 'emotions', icon: '/icons/diary.svg', route: '/apps/diary', ready: true },
-  { id: 'chooser', name: 'app.chooser', description: 'app.chooser.desc', category: 'play', icon: '/icons/chooser.svg', route: '/apps/chooser', ready: true }
+  { id: 'chooser', name: 'app.chooser', description: 'app.chooser.desc', category: 'play', icon: '/icons/chooser.svg', route: '/apps/chooser', ready: true },
+  // Speech & Dyspraxia Therapy (new)
+  { id: 'speech-rhythm', name: 'app.speech_rhythm', description: 'app.speech_rhythm.desc', category: 'speech', icon: '/icons/speech-rhythm.svg', route: '/apps/speech-rhythm', ready: true },
+  { id: 'sound-lottery', name: 'app.sound_lottery', description: 'app.sound_lottery.desc', category: 'speech', icon: '/icons/sound-lottery.svg', route: '/apps/sound-lottery', ready: true },
+  { id: 'mouth-gym', name: 'app.mouth_gym', description: 'app.mouth_gym.desc', category: 'speech', icon: '/icons/mouth-gym.svg', route: '/apps/mouth-gym', ready: true },
+  { id: 'word-parade', name: 'app.word_parade', description: 'app.word_parade.desc', category: 'speech', icon: '/icons/word-parade.svg', route: '/apps/word-parade', ready: true },
+  { id: 'story-workshop', name: 'app.story_workshop', description: 'app.story_workshop.desc', category: 'speech', icon: '/icons/story-workshop.svg', route: '/apps/story-workshop', ready: true },
+  { id: 'the-mimic', name: 'app.the_mimic', description: 'app.the_mimic.desc', category: 'speech', icon: '/icons/the-mimic.svg', route: '/apps/the-mimic', ready: true },
 ];

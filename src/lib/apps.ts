@@ -88,5 +88,6 @@ export const ALL_APPS: AppDef[] = [
   { id: 'mouth-gym', name: 'app.mouth_gym', description: 'app.mouth_gym.desc', category: 'speech', icon: '/icons/mouth-gym.svg', route: '/apps/mouth-gym', ready: true },
   { id: 'word-parade', name: 'app.word_parade', description: 'app.word_parade.desc', category: 'speech', icon: '/icons/word-parade.svg', route: '/apps/word-parade', ready: true },
   { id: 'story-workshop', name: 'app.story_workshop', description: 'app.story_workshop.desc', category: 'speech', icon: '/icons/story-workshop.svg', route: '/apps/story-workshop', ready: true },
+  { id: 'sagostunden', name: 'app.sagostunden', description: 'app.sagostunden.desc', category: 'play', icon: '/icons/sagostunden.svg', route: '/apps/sagostunden', ready: true },
   { id: 'the-mimic', name: 'app.the_mimic', description: 'app.the_mimic.desc', category: 'speech', icon: '/icons/the-mimic.svg', route: '/apps/the-mimic', ready: true },
 ];

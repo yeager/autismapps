@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { ALL_APPS, CATEGORY_META, type AppCategory } from '$lib/apps';
@@ -39,7 +40,7 @@
   <!-- Hero image — always present, fades when category selected -->
   <div class="hero-wrapper" class:faded={activeCategory !== null}>
     <img
-      src="/icons/hero.svg"
+      src={`${base}/icons/hero.svg`}
       alt={$t('app.title') + ' — ' + $t('app.subtitle')}
       class="hero-image"
       draggable="false"
@@ -128,7 +129,7 @@
             aria-label="{$t(app.name)}: {$t(app.description)}"
           >
             <div class="card-icon">
-              <img src={app.icon} alt="" width="56" height="56" loading="lazy" onerror={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+              <img src={`${base}${app.icon}`} alt="" width="56" height="56" loading="lazy" onerror={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
             </div>
             <span class="card-name">{$t(app.name)}</span>
             <span class="card-desc">{$t(app.description)}</span>

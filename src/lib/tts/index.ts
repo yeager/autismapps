@@ -9,6 +9,7 @@ import { locale } from '$lib/i18n';
 import { browser } from '$app/environment';
 import { base } from '$app/paths';
 import { EXTRA_PATH_MAP, CUSTOM_VOICE_URLS } from './voices';
+import { isTauri, getLocalVoiceUrl, BUNDLED_VOICES } from './tauri-voices';
 
 const DEFAULT_RATE = 0.5;
 
@@ -158,6 +159,37 @@ async function downloadCustomVoice(
 ): Promise<void> {
 	const urls = CUSTOM_VOICE_URLS[voiceId];
 	if (!urls) return;
+
+	// In Tauri: load from bundled resources instead of network
+	const bundled = BUNDLED_VOICES[voiceId];
+	if (bundled && isTauri()) {
+		console.log(`[TTS] Loading bundled voice ${voiceId} from Tauri resources`);
+		for (const key of ['model', 'config'] as const) {
+			const filename = bundled[key];
+			const localUrl = await getLocalVoiceUrl(filename);
+			if (!localUrl) {
+				console.warn(`[TTS] Bundled file ${filename} not found, falling back to network`);
+				break;
+			}
+			const res = await fetch(localUrl);
+			if (!res.ok) {
+				console.warn(`[TTS] Failed to fetch bundled ${filename}: ${res.status}`);
+				break;
+			}
+			const blob = await res.blob();
+			const root = await navigator.storage.getDirectory();
+			const dir = await root.getDirectoryHandle('piper', { create: true });
+			const file = await dir.getFileHandle(filename, { create: true });
+			const writable = await file.createWritable();
+			await writable.write(blob);
+			await writable.close();
+			console.log(`[TTS] Cached bundled ${filename} in OPFS`);
+			if (key === 'model' && callback) {
+				callback({ loaded: blob.size, total: blob.size });
+			}
+		}
+		return;
+	}
 
 	console.log(`[TTS] Custom download for ${voiceId} from ${urls.model}`);
 

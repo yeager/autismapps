@@ -83,6 +83,14 @@ jobs:
             rm -rf src-tauri/binaries/piper
           fi
 
+      - name: Download Alma voice for bundling
+        shell: bash
+        run: |
+          mkdir -p src-tauri/resources/voices
+          curl -L "https://huggingface.co/yeagersthlm/piper-voice-sv-alma/resolve/main/sv_SE-alma-medium.onnx" -o src-tauri/resources/voices/sv_SE-alma-medium.onnx
+          curl -L "https://huggingface.co/yeagersthlm/piper-voice-sv-alma/resolve/main/sv_SE-alma-medium.onnx.json" -o src-tauri/resources/voices/sv_SE-alma-medium.onnx.json
+          ls -la src-tauri/resources/voices/
+
       - name: Build Tauri app
         uses: tauri-apps/tauri-action@v0
         env:

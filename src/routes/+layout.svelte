@@ -12,8 +12,8 @@
 
   let { children } = $props();
 
-  const isHome = $derived($page.url.pathname === '/');
-  const isApp = $derived($page.url.pathname.startsWith('/apps/'));
+  const isHome = $derived($page.url.pathname === base + '/' || $page.url.pathname === base);
+  const isApp = $derived($page.url.pathname.startsWith(base + '/apps/'));
 
   function goBack() {
     if (isApp) {

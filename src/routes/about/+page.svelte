@@ -1,12 +1,13 @@
 <script>
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import { t } from '$lib/i18n';
   import { fade } from 'svelte/transition';
 </script>
 
 <div class="about" in:fade>
   <header class="hdr">
-    <button class="back" onclick={() => goto('/')}>←</button>
+    <button class="back" onclick={() => goto(`${base}/`)}>←</button>
     <h1>🧩 {$t('about.title')}</h1>
   </header>
 

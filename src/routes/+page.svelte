@@ -61,7 +61,7 @@
 
   function openApp(app: typeof ALL_APPS[0]) {
     if (app.ready) {
-      goto(app.route);
+      goto(`${base}${app.route}`);
     } else {
       speak($t('app.coming_soon'));
     }
@@ -133,7 +133,7 @@
       </div>
       <button
         class="settings-icon"
-      onclick={() => goto('/settings')}
+      onclick={() => goto(`${base}/settings`)}
       aria-label={$t('app.settings')}
       onfocus={() => speak($t('app.settings'))}
     >
@@ -144,7 +144,7 @@
     </button>
     <button
       class="about-icon"
-      onclick={() => goto('/about')}
+      onclick={() => goto(`${base}/about`)}
       aria-label={$t('about.title')}
     >
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

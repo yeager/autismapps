@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -121,7 +122,7 @@
 <main class="sagostunden" style="--fs: {fontSize}px">
   <!-- Top nav -->
   <nav class="top-bar">
-    <button class="back-btn" onclick={() => goto('/')}>← {$t('common.back')}</button>
+    <button class="back-btn" onclick={() => goto(`${base}/`)}>← {$t('common.back')}</button>
     <h1>📖 {$t('app.sagostunden')}</h1>
     <div class="nav-tabs">
       <button class:active={view === 'select'} onclick={() => view = 'select'}>

@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -102,7 +103,7 @@
 
 <div class="app-container" in:fade>
   <header class="sticky-header">
-    <button class="back-btn" onclick={() => step > 0 ? (step === 0 ? goto('/') : (step--, showFeedback = false)) : goto('/')} aria-label={$t('common.back')}>←</button>
+    <button class="back-btn" onclick={() => step > 0 ? (step === 0 ? goto(`${base}/`) : (step--, showFeedback = false)) : goto(`${base}/`)} aria-label={$t('common.back')}>←</button>
     <h1>👔 {$t('clothesChooser.title')}</h1>
   </header>
 

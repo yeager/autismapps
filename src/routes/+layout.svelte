@@ -2,6 +2,7 @@
   import '../app.css';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import { t, locale, setLocale } from '$lib/i18n';
   import { theme, textSize, reducedMotion, themeClass, textSizeClass } from '$lib/a11y';
   import { speak, preloadVoice } from '$lib/tts';
@@ -16,14 +17,14 @@
 
   function goBack() {
     if (isApp) {
-      goto('/');
+      goto(`${base}/`);
     } else {
       history.back();
     }
   }
 
   function goSettings() {
-    goto('/settings');
+    goto(`${base}/settings`);
   }
 
   // Initialize locale + preload Piper TTS voice
@@ -59,7 +60,7 @@
 
       <button
         class="rewards-btn"
-        onclick={() => goto('/rewards')}
+        onclick={() => goto(`${base}/rewards`)}
         aria-label={$t('rewards.nav')}
       >
         ⭐

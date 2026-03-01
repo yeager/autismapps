@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -70,7 +71,7 @@
 
   function goBack() {
     if (activeGuide) { activeGuide = null; }
-    else goto('/');
+    else goto(`${base}/`);
   }
 </script>
 

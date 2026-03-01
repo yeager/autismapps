@@ -2,6 +2,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   
   import { activeProfileId, activeProfile } from '$lib/stores/profile';
   import { getProfile } from '$lib/storage';
@@ -25,7 +26,7 @@
 
   $effect(() => {
     if (browser && !$activeProfileId ) {
-      goto('/profiles');
+      goto(`${base}/profiles`);
     }
   });
 

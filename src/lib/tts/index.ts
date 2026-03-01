@@ -103,6 +103,11 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 				console.log(`[TTS] ONNX: threads=1, proxy=false, wasmPaths=${wasmBase}`);
 
 				const mod = await import('@mintplex-labs/piper-tts-web');
+				// Patch piper WASM locations to use base path
+				if (mod.TtsSession?.WASM_LOCATIONS) {
+					mod.TtsSession.WASM_LOCATIONS.onnxWasm = wasmBase;
+					console.log(`[TTS] Patched piper WASM_LOCATIONS.onnxWasm = ${wasmBase}`);
+				}
 				piperModule = mod;
 				piperReady = true;
 				updateStatus({ piperReady: true, engine: 'piper' });

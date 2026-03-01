@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -116,7 +117,7 @@
   function goBack() {
     if (timer) { clearInterval(timer); timer = null; }
     if (view === 'exercise') { view = 'menu'; activeExercise = null; }
-    else goto('/');
+    else goto(`${base}/`);
   }
 
   function progressPct(): number {

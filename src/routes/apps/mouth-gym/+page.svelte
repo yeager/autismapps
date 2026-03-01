@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { fade } from 'svelte/transition';
@@ -145,7 +146,7 @@
     if (holdInterval) { clearInterval(holdInterval); holdInterval = null; }
     if (exerciseDone || selectedExercise) { selectedExercise = null; exerciseDone = false; }
     else if (selectedCategory) { selectedCategory = null; }
-    else { goto('/'); }
+    else { goto(`${base}/`); }
   }
 </script>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { getProfiles, createProfile, deleteProfile, verifyPin, type Profile } from '$lib/storage';
@@ -44,7 +45,7 @@
     activeProfileId.set(p.id!);
     activeProfile.set(p);
     speak($t('profile.welcome') + ' ' + p.name);
-    goto('/');
+    goto(`${base}/`);
   }
 
   async function checkPin() {

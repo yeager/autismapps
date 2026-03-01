@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -105,7 +106,7 @@
 
 <div class="app" in:fade>
   <header class="hdr">
-    <button class="back" onclick={() => selectedExercise ? (selectedExercise = null) : goto('/')}>←</button>
+    <button class="back" onclick={() => selectedExercise ? (selectedExercise = null) : goto(`${base}/`)}>←</button>
     <h1>👄 {$t('oralMotor.title')}</h1>
   </header>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -131,7 +132,7 @@
 
 <div class="app" in:fade>
   <header class="hdr">
-    <button class="back" onclick={() => selectedLevel ? (selectedLevel = null, showSuccess = false) : goto('/')}>←</button>
+    <button class="back" onclick={() => selectedLevel ? (selectedLevel = null, showSuccess = false) : goto(`${base}/`)}>←</button>
     <h1>🔗 {$t('soundChain.title')}</h1>
   </header>
 

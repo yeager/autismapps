@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -82,7 +83,7 @@
       view = 'board';
       selectedTask = null;
     } else {
-      goto('/');
+      goto(`${base}/`);
     }
   }
 

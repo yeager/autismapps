@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -242,7 +243,7 @@
   }
 
   function goBack() {
-    if (mode === 'categories') goto('/');
+    if (mode === 'categories') goto(`${base}/`);
     else { mode = 'categories'; activeCategory = null; }
   }
 </script>

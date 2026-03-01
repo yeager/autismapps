@@ -1663,5 +1663,11 @@
   "welcome.sagostunden.purpose": "Story Time helps children practice narrative skills through visual storytelling using ARASAAC pictograms. Narrative ability — telling coherent stories with a beginning, middle and end — is a critical language milestone that many children with language disorders find challenging.",
   "welcome.sagostunden.how": "Choose a story template, then select words and characters using pictograms to fill in the blanks. The app generates a unique illustrated story that can be read aloud. This scaffolded approach lets children create stories even before they can write, building confidence and creativity.",
   "welcome.sagostunden.goal": "Develop narrative language skills including sequencing, character perspective, and story structure. Research shows that visual storytelling supports language comprehension and production in children with autism and language disorders, while the creative element keeps engagement high.",
-  "common.back": "Back"
+  "common.back": "Back",
+  "sagostunden.slot.animal": "Animal",
+  "sagostunden.slot.place": "Place",
+  "sagostunden.slot.thing": "Thing",
+  "sagostunden.slot.food": "Food",
+  "sagostunden.slot.character": "Character",
+  "sagostunden.slot.action": "Action"
 }

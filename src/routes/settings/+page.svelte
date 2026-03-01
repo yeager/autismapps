@@ -233,6 +233,7 @@
             onclick={() => selectVoice(v)}
           >
             <span class="voice-name">{v.name}</span>
+            <span class="voice-desc">{v.description || ""}</span>
             <span class="voice-meta">
               {v.gender === 'female' ? '♀' : v.gender === 'male' ? '♂' : '⚬'}
               {v.quality}
@@ -623,6 +624,7 @@
   .voice-card.active { border-color: #27AE60; background: rgba(39,174,96,0.08); }
   .voice-card.downloading { opacity: 0.7; }
   .voice-name { font-weight: 700; font-size: 1em; }
+  .voice-desc { font-size: 0.75em; color: var(--text-muted); text-align: center; line-height: 1.3; min-height: 1.3em; }
   .voice-meta { font-size: 0.75em; color: var(--text-muted); }
   .voice-check { position: absolute; top: 4px; right: 6px; color: #27AE60; font-size: 0.85em; }
   .voice-dl { position: absolute; top: 4px; left: 6px; }

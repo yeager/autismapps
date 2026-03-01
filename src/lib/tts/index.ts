@@ -8,13 +8,14 @@ import { ttsSpeed } from '$lib/a11y';
 import { locale } from '$lib/i18n';
 import { browser } from '$app/environment';
 import { base } from '$app/paths';
-import { EXTRA_PATH_MAP } from './voices';
+import { EXTRA_PATH_MAP, CUSTOM_VOICE_URLS } from './voices';
 
 const DEFAULT_RATE = 0.5;
 
 // Selected voice IDs per language — persisted in localStorage
+// Default Swedish voice is Alma (custom-trained for these apps)
 export const selectedVoiceSv = writable<string>(
-	browser ? localStorage.getItem('tts-voice-sv') || 'sv_SE-nst-medium' : 'sv_SE-nst-medium'
+	browser ? localStorage.getItem('tts-voice-sv') || 'sv_SE-alma-medium' : 'sv_SE-alma-medium'
 );
 export const selectedVoiceEn = writable<string>(
 	browser ? localStorage.getItem('tts-voice-en') || 'en_US-hfc_female-medium' : 'en_US-hfc_female-medium'
@@ -93,14 +94,9 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 				console.log('[TTS] Loading Piper WASM...');
 
 				// CRITICAL: Configure onnxruntime-web BEFORE importing piper-tts-web.
-				// Must set numThreads=1 and wasmPaths so it finds our static WASM files.
-				// onnxruntime-web 1.24.2 only ships threaded variants — numThreads=1
-				// makes it work without SharedArrayBuffer (no COOP/COEP headers needed).
 				const ort = await import('onnxruntime-web');
 				ort.env.wasm.numThreads = 1;
-				// Proxy=none prevents Worker creation which can fail on GH Pages
 				ort.env.wasm.proxy = false;
-				// Serve WASM from same origin — use base path for GH Pages
 				const wasmBase = (base || '') + '/';
 				ort.env.wasm.wasmPaths = wasmBase;
 				console.log(`[TTS] ONNX: threads=1, proxy=false, wasmPaths=${wasmBase}`);
@@ -110,8 +106,8 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 				piperReady = true;
 				updateStatus({ piperReady: true, engine: 'piper' });
 
-				// Patch PATH_MAP with extra voices (Lisa, etc.)
-				patchPathMap();
+				// Patch PATH_MAP with extra voices (Lisa, Alma, etc.)
+				patchPathMap(mod);
 
 				console.log('[TTS] ✅ Piper WASM loaded');
 				return mod;
@@ -127,32 +123,82 @@ function initPiper(): Promise<typeof import('@mintplex-labs/piper-tts-web') | nu
 }
 
 /**
- * Inject extra voice entries into the bundled PATH_MAP.
- * The PATH_MAP is a const in the module scope — we locate it via the
- * module's internal predict flow which reads PATH_MAP[voiceId].
- * Since we can't modify a const directly, we monkey-patch by importing
- * the raw JS module and adding entries.
+ * Inject extra voice entries into the library's PATH_MAP.
+ * PATH_MAP is a const but its properties are mutable.
  */
-function patchPathMap() {
+function patchPathMap(mod: typeof import('@mintplex-labs/piper-tts-web')) {
 	if (pathMapPatched) return;
 	try {
-		// The PATH_MAP is accessible as a side-effect of the module
-		// We inject by calling download/predict which will read it
-		// Actually, simpler: the module exports predict which internally
-		// references PATH_MAP. We can add keys by patching the compiled object.
-		// Access the module's internal state via the dist file
-		const modPath = '@mintplex-labs/piper-tts-web';
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		const mod = piperModule as any;
-		// Try to find PATH_MAP in module internals
-		if (mod && mod.__esModule) {
-			// The module re-exports from piper-tts-web.js which has PATH_MAP as a local const
-			// We can't easily patch it without forking. Instead, use the HuggingFace URL directly.
+		const pathMap = (mod as any).PATH_MAP;
+		if (pathMap && typeof pathMap === 'object') {
+			for (const [voiceId, path] of Object.entries(EXTRA_PATH_MAP)) {
+				if (!(voiceId in pathMap)) {
+					pathMap[voiceId] = path;
+					console.log(`[TTS] Added ${voiceId} to PATH_MAP`);
+				}
+			}
+		} else {
+			console.warn('[TTS] PATH_MAP not found on module — custom voices may not work');
 		}
 		pathMapPatched = true;
-		console.log('[TTS] Extra voices registered');
 	} catch (e) {
-		console.warn('[TTS] PATH_MAP patch failed (non-critical):', e);
+		console.warn('[TTS] PATH_MAP patch failed:', e);
+	}
+}
+
+/**
+ * Custom download for voices hosted outside diffusionstudio/piper-voices.
+ * Downloads model + config into OPFS with the standard filename convention
+ * so the piper library finds them in cache.
+ */
+async function downloadCustomVoice(
+	voiceId: string,
+	callback?: (progress: { loaded: number; total: number }) => void
+): Promise<void> {
+	const urls = CUSTOM_VOICE_URLS[voiceId];
+	if (!urls) return;
+
+	console.log(`[TTS] Custom download for ${voiceId} from ${urls.model}`);
+
+	// Download both model and config
+	const downloads = [
+		{ url: urls.model, reportProgress: true },
+		{ url: urls.config, reportProgress: false },
+	];
+
+	for (const dl of downloads) {
+		const res = await fetch(dl.url);
+		if (!res.ok) throw new Error(`Failed to fetch ${dl.url}: ${res.status}`);
+
+		const contentLength = +(res.headers.get('Content-Length') ?? 0);
+		const reader = res.body?.getReader();
+		const chunks: Uint8Array[] = [];
+		let received = 0;
+
+		if (reader) {
+			while (true) {
+				const { done, value } = await reader.read();
+				if (done) break;
+				chunks.push(value);
+				received += value.length;
+				if (dl.reportProgress && callback) {
+					callback({ loaded: received, total: contentLength });
+				}
+			}
+		}
+
+		const blob = new Blob(chunks, { type: res.headers.get('Content-Type') ?? undefined });
+
+		// Write to OPFS with the filename the piper library expects
+		const root = await navigator.storage.getDirectory();
+		const dir = await root.getDirectoryHandle('piper', { create: true });
+		const filename = dl.url.split('/').at(-1)!;
+		const file = await dir.getFileHandle(filename, { create: true });
+		const writable = await file.createWritable();
+		await writable.write(blob);
+		await writable.close();
+		console.log(`[TTS] Cached ${filename} in OPFS`);
 	}
 }
 
@@ -175,10 +221,17 @@ export async function preloadVoice(lang?: string): Promise<void> {
 		try { stored = await piper.stored(); } catch { stored = []; }
 		if (!stored.includes(voiceId)) {
 			console.log(`[TTS] Downloading voice: ${voiceId}...`);
-			await piper.download(voiceId, (progress) => {
-				const pct = progress.total ? Math.round((progress.loaded * 100) / progress.total) : 0;
-				console.log(`[TTS] Download ${voiceId}: ${pct}%`);
-			});
+			if (voiceId in CUSTOM_VOICE_URLS) {
+				await downloadCustomVoice(voiceId, (progress) => {
+					const pct = progress.total ? Math.round((progress.loaded * 100) / progress.total) : 0;
+					console.log(`[TTS] Download ${voiceId}: ${pct}%`);
+				});
+			} else {
+				await piper.download(voiceId, (progress) => {
+					const pct = progress.total ? Math.round((progress.loaded * 100) / progress.total) : 0;
+					console.log(`[TTS] Download ${voiceId}: ${pct}%`);
+				});
+			}
 			console.log(`[TTS] ✅ Voice ${voiceId} ready`);
 		} else {
 			console.log(`[TTS] Voice ${voiceId} already cached`);
@@ -196,7 +249,6 @@ export async function getStoredVoices(): Promise<string[]> {
 		return await piper.stored();
 	} catch (e) {
 		console.warn('[TTS] stored() failed (corrupt IndexedDB?), clearing cache:', e);
-		// Try to recover by clearing the piper IDB store
 		try {
 			const dbs = await indexedDB.databases();
 			for (const dbInfo of dbs) {
@@ -261,10 +313,17 @@ export async function speak(text: string, opts: TTSOptions = {}): Promise<void> 
 					const voiceId = getVoiceId(lang);
 					await piper.remove(voiceId);
 					console.log(`[TTS] Removed corrupt cache for ${voiceId}`);
-					await piper.download(voiceId, (p) => {
-						const pct = p.total ? Math.round((p.loaded * 100) / p.total) : 0;
-						console.log(`[TTS] Re-download ${voiceId}: ${pct}%`);
-					});
+					if (voiceId in CUSTOM_VOICE_URLS) {
+						await downloadCustomVoice(voiceId, (p) => {
+							const pct = p.total ? Math.round((p.loaded * 100) / p.total) : 0;
+							console.log(`[TTS] Re-download ${voiceId}: ${pct}%`);
+						});
+					} else {
+						await piper.download(voiceId, (p) => {
+							const pct = p.total ? Math.round((p.loaded * 100) / p.total) : 0;
+							console.log(`[TTS] Re-download ${voiceId}: ${pct}%`);
+						});
+					}
 					await speakPiper(piper, text, lang, rate, opts);
 					updateStatus({ engine: 'piper', lastSpoke: text, lastError: '' });
 					return;
@@ -292,6 +351,16 @@ async function speakPiper(
 ): Promise<void> {
 	const voiceId = getVoiceId(lang);
 	console.log(`[TTS] Piper: "${text}" (voice=${voiceId}, rate=${rate})`);
+
+	// For custom-hosted voices, ensure they're downloaded first
+	if (voiceId in CUSTOM_VOICE_URLS) {
+		let stored: string[] = [];
+		try { stored = await piper.stored(); } catch { stored = []; }
+		if (!stored.includes(voiceId)) {
+			console.log(`[TTS] Auto-downloading custom voice ${voiceId}...`);
+			await downloadCustomVoice(voiceId);
+		}
+	}
 
 	const wav = await piper.predict({ text, voiceId });
 	if (!wav || wav.size === 0) throw new Error('Piper returned empty WAV');

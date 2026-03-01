@@ -187,7 +187,7 @@
           </svg>
         </button>
       </div>
-      <div class="app-grid" style="--card-min: {filtered.length <= 3 ? '240px' : filtered.length <= 6 ? '200px' : '160px'}; --card-min-mobile: {filtered.length <= 3 ? '180px' : filtered.length <= 6 ? '150px' : '130px'}; --card-min-h: {filtered.length <= 3 ? '220px' : filtered.length <= 6 ? '190px' : '170px'}">
+      <div class="app-grid" style="--card-min: {filtered.length <= 3 ? '240px' : filtered.length <= 6 ? '200px' : '160px'}; --card-min-mobile: {filtered.length <= 3 ? '180px' : filtered.length <= 6 ? '150px' : '130px'}; --card-min-h: {filtered.length <= 3 ? '160px' : filtered.length <= 6 ? '140px' : '120px'}">
         {#each filtered as app, i (app.id)}
           <button
             class="app-card"
@@ -480,7 +480,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px 12px 16px;
+    padding: 14px 10px 12px;
     background: var(--bg-card);
     border: 2px solid var(--border);
     border-radius: var(--radius);
@@ -519,8 +519,8 @@
   }
 
   .card-icon {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -529,8 +529,8 @@
     flex-shrink: 0;
   }
   .card-icon img {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
   }
 

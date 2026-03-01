@@ -46,7 +46,7 @@
 
     const results = await Promise.all(
       theme.words.map(async (w, i) => {
-        const res = await searchPictograms(w, 'en'); // always search in English for reliability
+        const res = await searchPictograms(w, get(locale)); // always search in English for reliability
         const displayWord = translated ? translated[i].sv : w;
         return res[0] ? { word: displayWord, id: res[0].id, url: res[0].url } : { word: displayWord, id: 0, url: '' };
       })
@@ -56,7 +56,7 @@
       const coreTranslated = lang === 'sv' ? await translateKeywords(CORE_WORDS) : null;
       corePictograms = await Promise.all(
         CORE_WORDS.map(async (w, i) => {
-          const res = await searchPictograms(w, 'en');
+          const res = await searchPictograms(w, get(locale));
           const displayWord = coreTranslated ? coreTranslated[i].sv : w;
           return res[0] ? { word: displayWord, id: res[0].id, url: res[0].url } : { word: displayWord, id: 0, url: '' };
         })

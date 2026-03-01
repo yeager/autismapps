@@ -117,7 +117,7 @@
   loadSaved();
 </script>
 
-<WelcomeDialog appId="sagostunden" />
+<WelcomeDialog appId="sagostunden" titleKey="app.sagostunden" purposeKey="welcome.sagostunden.purpose" howKey="welcome.sagostunden.how" goalKey="welcome.sagostunden.goal" icon="📖" />
 
 <main class="sagostunden" style="--fs: {fontSize}px">
   <!-- Top nav -->
@@ -339,8 +339,8 @@
     font-size: 18px;
     padding: 8px 16px;
     border-radius: 12px;
-    border: 2px solid #333;
-    background: white;
+    border: 2px solid var(--border);
+    background: var(--bg-card);
     cursor: pointer;
     font-weight: 600;
   }
@@ -353,8 +353,8 @@
   .nav-tabs button {
     padding: 10px 20px;
     border-radius: 12px;
-    border: 2px solid #9B59B6;
-    background: white;
+    border: 2px solid var(--accent, #9B59B6);
+    background: var(--bg-card);
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
@@ -362,7 +362,7 @@
   }
 
   .nav-tabs button.active {
-    background: #9B59B6;
+    background: var(--accent, #9B59B6);
     color: white;
   }
 
@@ -372,19 +372,19 @@
 
   h2 {
     font-size: 24px;
-    color: #2C3E50;
+    color: var(--text);
     margin-bottom: 16px;
   }
 
   h3 {
     font-size: 20px;
-    color: #8E44AD;
+    color: var(--accent, #8E44AD);
     margin: 16px 0 8px;
   }
 
   .hint {
     font-size: 16px;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 12px;
   }
 
@@ -397,9 +397,9 @@
 
   .template-card {
     padding: 16px;
-    border: 3px solid #ddd;
+    border: 3px solid var(--border);
     border-radius: 16px;
-    background: white;
+    background: var(--bg-card);
     cursor: pointer;
     text-align: center;
     transition: all 0.2s;
@@ -407,13 +407,13 @@
   }
 
   .template-card:hover {
-    border-color: #9B59B6;
+    border-color: var(--accent, #9B59B6);
     transform: translateY(-2px);
   }
 
   .template-card.selected {
-    border-color: #9B59B6;
-    background: #F3E5F5;
+    border-color: var(--accent, #9B59B6);
+    background: var(--bg-hover);
   }
 
   .template-title {
@@ -440,9 +440,9 @@
     align-items: center;
     gap: 4px;
     padding: 10px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border);
     border-radius: 12px;
-    background: white;
+    background: var(--bg-card);
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
@@ -450,8 +450,8 @@
   }
 
   .word-btn:hover {
-    border-color: #9B59B6;
-    background: #FAFAFA;
+    border-color: var(--accent, #9B59B6);
+    background: var(--bg-hover);
   }
 
   .picto-thumb {
@@ -471,7 +471,7 @@
     align-items: center;
     gap: 12px;
     padding: 12px 16px;
-    background: #F3E5F5;
+    background: var(--bg-hover);
     border-radius: 12px;
     font-size: 20px;
     font-weight: 700;
@@ -492,7 +492,7 @@
   .slot-section {
     margin-bottom: 20px;
     padding: 12px;
-    border: 2px solid #eee;
+    border: 2px solid var(--border);
     border-radius: 16px;
   }
 
@@ -519,21 +519,21 @@
   }
 
   .big-btn.primary {
-    background: #9B59B6;
+    background: var(--accent, #9B59B6);
     color: white;
   }
 
   .big-btn.secondary {
-    background: #ECF0F1;
-    color: #2C3E50;
-    border: 2px solid #BDC3C7;
+    background: var(--bg-card);
+    color: var(--text);
+    border: 2px solid var(--border);
   }
 
   /* Story view */
   .story-title {
     font-size: 32px;
     text-align: center;
-    color: #8E44AD;
+    color: var(--accent, #8E44AD);
     margin-bottom: 20px;
   }
 
@@ -551,7 +551,7 @@
     align-items: center;
     gap: 4px;
     padding: 8px 12px;
-    background: #F3E5F5;
+    background: var(--bg-hover);
     border-radius: 12px;
     font-weight: 600;
     font-size: 14px;
@@ -565,7 +565,7 @@
 
   .story-text p {
     margin: 16px 0;
-    color: #2C3E50;
+    color: var(--text);
   }
 
   .story-actions {
@@ -585,14 +585,14 @@
 
   .saved-card {
     padding: 16px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border);
     border-radius: 16px;
-    background: white;
+    background: var(--bg-card);
   }
 
   .saved-card.favorite {
-    border-color: #F1C40F;
-    background: #FFFDE7;
+    border-color: var(--accent, #F1C40F);
+    background: var(--bg-hover);
   }
 
   .saved-header {
@@ -609,12 +609,12 @@
 
   .saved-date {
     font-size: 14px;
-    color: #999;
+    color: var(--text-muted);
   }
 
   .saved-preview {
     font-size: 16px;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 12px;
   }
 
@@ -625,9 +625,9 @@
 
   .saved-actions button {
     padding: 8px 16px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--border);
     border-radius: 10px;
-    background: white;
+    background: var(--bg-card);
     font-size: 16px;
     cursor: pointer;
   }
@@ -635,7 +635,7 @@
   .empty-msg {
     text-align: center;
     font-size: 20px;
-    color: #999;
+    color: var(--text-muted);
     padding: 40px;
   }
 
@@ -643,7 +643,7 @@
   .settings {
     margin-top: 24px;
     padding: 16px;
-    border: 2px solid #eee;
+    border: 2px solid var(--border);
     border-radius: 16px;
   }
 
@@ -667,7 +667,7 @@
   .credit {
     text-align: center;
     font-size: 14px;
-    color: #999;
+    color: var(--text-muted);
     padding: 24px 0;
   }
 

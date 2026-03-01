@@ -85,8 +85,8 @@
       if (!words) continue;
       page.cards = await Promise.all(
         words.map(async (w) => {
-          const results = await searchPictograms(w, 'en');
-          const svResults = await searchPictograms(w, 'sv');
+          const results = await searchPictograms(w, get(locale));
+          // Swedish results handled by locale-aware search above
           return {
             id: crypto.randomUUID(),
             label: get(locale) === 'sv' ? (svResults[0]?.keyword || w) : w,

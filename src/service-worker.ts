@@ -42,20 +42,26 @@ sw.addEventListener('fetch', (event) => {
   if (url.origin === location.origin && event.request.mode === 'navigate') {
     event.respondWith(
       (async () => {
+        // For navigation requests, serve cached page or SPA fallback (index.html)
+        // SvelteKit's client-side router handles the actual routing
         const cached = await caches.match(event.request);
-        const response = cached || await fetch(event.request).catch(() => null);
-        if (!response || response.status !== 200) {
-          // SPA fallback: serve cached index.html for unknown routes (GitHub Pages 404)
-          const fallback = await caches.match(base + '/');
-          if (fallback) return addCoopCoep(fallback);
-          return new Response('<html><body><h1>Offline</h1><p>Appen är inte tillgänglig offline ännu. Anslut till internet och försök igen.</p></body></html>', { status: 503, headers: { 'Content-Type': 'text/html' } });
-        }
-        // Cache it
-        if (!cached) {
-          const cache = await caches.open(CACHE);
-          cache.put(event.request, response.clone());
-        }
-        return addCoopCoep(response);
+        if (cached) return addCoopCoep(cached);
+
+        // SPA fallback: serve the index page for any /launcher/* route
+        const indexResponse = await caches.match(`${base}/`);
+        if (indexResponse) return addCoopCoep(indexResponse);
+
+        // Last resort: try network
+        try {
+          const networkResponse = await fetch(event.request);
+          if (networkResponse.ok) return addCoopCoep(networkResponse);
+        } catch {}
+
+        // Truly offline
+        return new Response('<html><body><h1>Offline</h1><p>Appen är inte tillgänglig offline ännu. Anslut till internet och försök igen.</p></body></html>', {
+          status: 503,
+          headers: { 'Content-Type': 'text/html; charset=utf-8' }
+        });
       })()
     );
     return;

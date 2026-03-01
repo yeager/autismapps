@@ -42,7 +42,7 @@
 
   function changeLang(code: string) {
     setLocale(code);
-    if (browser) localStorage.setItem('locale', code);
+    if (browser) { localStorage.setItem('locale', code); localStorage.setItem('lang', code); }
     speak($t(`settings.language`));
   }
 

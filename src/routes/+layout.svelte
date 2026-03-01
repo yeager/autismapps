@@ -29,8 +29,12 @@
 
   // Initialize locale + preload Piper TTS voice
   if (browser) {
-    const saved = localStorage.getItem('locale');
-    if (saved) setLocale(saved);
+    const saved = localStorage.getItem('locale') || localStorage.getItem('lang');
+    if (saved) {
+      setLocale(saved);
+      localStorage.setItem('locale', saved);
+      localStorage.setItem('lang', saved);
+    }
     // Preload Piper WASM voice on first load
     preloadVoice();
   }

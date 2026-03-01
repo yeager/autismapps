@@ -25,7 +25,7 @@
 
   function pickLang(code: string) {
     setLocale(code);
-    if (browser) localStorage.setItem("locale", code);
+    if (browser) { localStorage.setItem("locale", code); localStorage.setItem("lang", code); };
     langOpen = false;
   }
 

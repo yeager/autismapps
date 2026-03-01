@@ -99,8 +99,40 @@
     <div class="brand">
       <h1>{$t('app.title')}</h1>
     </div>
-    <button
-      class="settings-icon"
+    <div class="header-actions">
+      <div class="lang-switcher" bind:this={langRef}>
+        <button
+          class="lang-btn"
+          onclick={toggleLang}
+          aria-label="Switch language"
+        >
+          <span class="lang-flag">{currentFlag}</span>
+          <svg class="lang-chevron" class:open={langOpen} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        {#if langOpen}
+          <div class="lang-dropdown" transition:fly={{ y: -8, duration: 200 }}>
+            {#each LANGUAGES as lang}
+              <button
+                class="lang-option"
+                class:active={$locale === lang.code}
+                onclick={() => pickLang(lang.code)}
+              >
+                <span class="lang-option-flag">{lang.flag}</span>
+                <span class="lang-option-name">{lang.name}</span>
+                {#if $locale === lang.code}
+                  <svg class="lang-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6L9 17l-5-5"/>
+                  </svg>
+                {/if}
+              </button>
+            {/each}
+          </div>
+        {/if}
+      </div>
+      <button
+        class="settings-icon"
       onclick={() => goto('/settings')}
       aria-label={$t('app.settings')}
       onfocus={() => speak($t('app.settings'))}
@@ -120,6 +152,7 @@
         <path d="M12 16v-4M12 8h.01"/>
       </svg>
     </button>
+    </div>
   </header>
 
   <!-- Category buttons -->
@@ -279,6 +312,12 @@
     font-size: 1.3em;
     font-weight: 700;
     letter-spacing: -0.02em;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 
   .settings-icon {

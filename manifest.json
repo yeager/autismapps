@@ -1,0 +1,24 @@
+{
+  "name": "NPF-appar",
+  "short_name": "NPF-appar",
+  "description": "Communication & Learning Tools \u2014 a PWA launcher for accessibility apps",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FAFBFC",
+  "theme_color": "#4F46E5",
+  "orientation": "any",
+  "categories": [
+    "education",
+    "health",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "scope": "."
+}

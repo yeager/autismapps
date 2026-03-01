@@ -3,7 +3,7 @@
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
-import { build, files, version } from '$service-worker';
+import { base, build, files, version } from '$service-worker';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 const CACHE = `cache-${version}`;
@@ -46,9 +46,9 @@ sw.addEventListener('fetch', (event) => {
         const response = cached || await fetch(event.request).catch(() => null);
         if (!response || response.status !== 200) {
           // SPA fallback: serve cached index.html for unknown routes (GitHub Pages 404)
-          const fallback = await caches.match('/autismapps/') || await caches.match('/');
+          const fallback = await caches.match(base + '/');
           if (fallback) return addCoopCoep(fallback);
-          return new Response('Offline', { status: 503 });
+          return new Response('<html><body><h1>Offline</h1><p>Appen är inte tillgänglig offline ännu. Anslut till internet och försök igen.</p></body></html>', { status: 503, headers: { 'Content-Type': 'text/html' } });
         }
         // Cache it
         if (!cached) {

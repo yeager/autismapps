@@ -1663,5 +1663,6 @@
   "sagostunden.cat.actions": "Handlingar",
   "welcome.sagostunden.purpose": "Skapa roliga sagor genom att välja ord och bilder.",
   "welcome.sagostunden.how": "Välj en sagomall, plocka ord med bildstöd, och en unik saga skapas åt dig!",
-  "welcome.sagostunden.goal": "Träna läsning och kreativitet genom visuellt berättande."
+  "welcome.sagostunden.goal": "Träna läsning och kreativitet genom visuellt berättande.",
+  "common.back": "Tillbaka"
 }

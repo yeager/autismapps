@@ -1,7 +1,8 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import { t } from '$lib/i18n';
+  import { t, locale, setLocale } from '$lib/i18n';
+  import { browser } from '$app/environment';
   import { speak } from '$lib/tts';
   import { ALL_APPS, CATEGORY_META, type AppCategory } from '$lib/apps';
   import { fly, fade } from 'svelte/transition';
@@ -9,6 +10,41 @@
   let activeCategory = $state<AppCategory | null>(null);
 
   const categories = Object.entries(CATEGORY_META) as [AppCategory, typeof CATEGORY_META[AppCategory]][];
+
+  const LANGUAGES = [
+    { code: "sv", flag: "🇸🇪", name: "Svenska" },
+    { code: "en", flag: "🇬🇧", name: "English" },
+  ];
+
+  let langOpen = $state(false);
+  let langRef: HTMLDivElement | undefined = $state();
+
+  function toggleLang() {
+    langOpen = !langOpen;
+  }
+
+  function pickLang(code: string) {
+    setLocale(code);
+    if (browser) localStorage.setItem("locale", code);
+    langOpen = false;
+  }
+
+  function handleClickOutside(e: MouseEvent) {
+    if (langOpen && langRef && !langRef.contains(e.target as Node)) {
+      langOpen = false;
+    }
+  }
+
+  // Attach click-outside listener
+  $effect(() => {
+    if (langOpen && browser) {
+      const handler = (e: MouseEvent) => handleClickOutside(e);
+      document.addEventListener("click", handler, true);
+      return () => document.removeEventListener("click", handler, true);
+    }
+  });
+
+  const currentFlag = $derived(LANGUAGES.find(l => l.code === $locale)?.flag ?? "🇸🇪");
 
   const filtered = $derived(
     activeCategory ? ALL_APPS.filter((app) => app.category === activeCategory) : []
@@ -492,5 +528,82 @@
     .hero-arrow { animation: none; }
     .app-card { animation: none; }
     .hero-wrapper { transition: none; }
+  }
+
+  /* Language switcher */
+  .lang-switcher {
+    position: relative;
+  }
+
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition);
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+  }
+  .lang-btn:hover { background: var(--bg-hover); }
+
+  .lang-flag {
+    font-size: 1.4em;
+    line-height: 1;
+  }
+
+  .lang-chevron {
+    transition: transform 0.2s ease;
+    color: var(--text-muted);
+  }
+  .lang-chevron.open {
+    transform: rotate(180deg);
+  }
+
+  .lang-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    min-width: 160px;
+    overflow: hidden;
+    z-index: 100;
+  }
+
+  .lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background var(--transition);
+    min-height: 48px;
+  }
+  .lang-option:hover {
+    background: var(--bg-hover);
+  }
+  .lang-option.active {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    font-weight: 600;
+  }
+
+  .lang-option-flag {
+    font-size: 1.3em;
+  }
+
+  .lang-option-name {
+    flex: 1;
+    text-align: left;
+  }
+
+  .lang-check {
+    color: var(--accent);
+    flex-shrink: 0;
   }
 </style>

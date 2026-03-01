@@ -45,7 +45,8 @@ sw.addEventListener('fetch', (event) => {
         const cached = await caches.match(event.request);
         const response = cached || await fetch(event.request).catch(() => null);
         if (!response || response.status !== 200) {
-          const fallback = await caches.match('/');
+          // SPA fallback: serve cached index.html for unknown routes (GitHub Pages 404)
+          const fallback = await caches.match('/autismapps/') || await caches.match('/');
           if (fallback) return addCoopCoep(fallback);
           return new Response('Offline', { status: 503 });
         }

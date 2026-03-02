@@ -9,6 +9,7 @@
   import { browser } from '$app/environment';
   import AchievementPopup from '$lib/components/rewards/AchievementPopup.svelte';
   import StarCounter from '$lib/components/rewards/StarCounter.svelte';
+  import { totalStars } from '$lib/rewards/store';
 
   let { children } = $props();
 
@@ -61,6 +62,16 @@
       <div class="header-spacer"></div>
 
       <StarCounter />
+
+      {#if $totalStars > 0}
+        <button
+          class="diploma-btn"
+          onclick={() => goto(`${base}/diploma`)}
+          aria-label={$t('diploma.nav')}
+        >
+          📜
+        </button>
+      {/if}
 
       <button
         class="rewards-btn"
@@ -140,6 +151,21 @@
     transition: background var(--transition);
   }
   .settings-btn:hover { background: var(--bg-hover); }
+
+  .diploma-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition);
+    font-size: 1.2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .diploma-btn:hover { background: var(--bg-hover); }
 
   .rewards-btn {
     display: flex;

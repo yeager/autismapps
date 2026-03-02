@@ -68,6 +68,10 @@
       </ul>
     </section>
 
+    <section class="section offline-link-section">
+      <a class="offline-link" href="{base}/offline">📲 {$t('about.offline_link')}</a>
+    </section>
+
     <section class="section developer">
       <h2>{$t('about.developer')}</h2>
       <p><strong>Daniel Nylander</strong></p>
@@ -111,4 +115,7 @@
   .links a:hover { color:var(--text); }
   .made-in { text-align:center; font-size:1.1rem; font-weight:600; }
   .license { text-align:center; color:var(--text-secondary); font-size:.85rem; }
+  .offline-link-section { text-align:center; }
+  .offline-link { display:inline-block; padding:1rem 2rem; background:var(--accent, #2196f3); color:white; border-radius:12px; text-decoration:none; font-size:1.15rem; font-weight:600; min-height:48px; }
+  .offline-link:hover { opacity:.9; }
 </style>

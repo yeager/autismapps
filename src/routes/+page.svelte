@@ -171,12 +171,12 @@
     position: absolute; top: calc(100% + 4px); right: 0;
     background: var(--bg-card, #fff); border: 2px solid var(--border, #ddd);
     border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    min-width: 150px; z-index: 100; overflow: hidden;
+    min-width: 150px; max-width: calc(100vw - 16px); z-index: 100; overflow: hidden;
   }
   .lang-option {
-    display: flex; align-items: center; gap: 8px; width: 100%;
-    padding: 10px 14px; font-size: 1em; border: none; background: none; cursor: pointer;
-    color: var(--text, #2C3E50);
+    display: flex; align-items: center; gap: 10px; width: 100%;
+    padding: 12px 16px; font-size: 1.05em; border: none; background: none; cursor: pointer;
+    color: var(--text, #2C3E50); min-height: 48px;
   }
   .lang-option:hover { background: var(--bg-hover, #f0f0f0); }
   .lang-option.active { font-weight: 700; }

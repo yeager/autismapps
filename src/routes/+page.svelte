@@ -280,10 +280,10 @@
 
     .cat-btn {
       flex-direction: column; gap: 2px;
-      padding: 6px 10px; min-width: 64px; min-height: 52px;
+      padding: 6px 10px; min-width: 72px; min-height: 52px; flex-shrink: 0;
       font-size: 0.75em; text-align: center;
     }
-    .cat-label { white-space: nowrap; font-size: 0.85em; text-align: center; }
+    .cat-label { white-space: nowrap; font-size: 0.85em; text-align: center; overflow: visible; }
     .cat-count { display: none; }
 
     .app-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px; }

@@ -42,20 +42,24 @@ sw.addEventListener('fetch', (event) => {
   if (url.origin === location.origin && event.request.mode === 'navigate') {
     event.respondWith(
       (async () => {
-        // For navigation requests, serve cached page or SPA fallback (index.html)
-        // SvelteKit's client-side router handles the actual routing
+        // Network-first for navigation requests
+        try {
+          const networkResponse = await fetch(event.request);
+          if (networkResponse.ok) {
+            // Update cache with fresh response
+            const clone = networkResponse.clone();
+            caches.open(CACHE).then((cache) => cache.put(event.request, clone));
+            return addCoopCoep(networkResponse);
+          }
+        } catch {}
+
+        // Fallback to cache
         const cached = await caches.match(event.request);
         if (cached) return addCoopCoep(cached);
 
-        // SPA fallback: serve the index page for any /launcher/* route
+        // SPA fallback: serve the index page
         const indexResponse = await caches.match(`${base}/`);
         if (indexResponse) return addCoopCoep(indexResponse);
-
-        // Last resort: try network
-        try {
-          const networkResponse = await fetch(event.request);
-          if (networkResponse.ok) return addCoopCoep(networkResponse);
-        } catch {}
 
         // Truly offline
         return new Response('<html><body><h1>Offline</h1><p>Appen är inte tillgänglig offline ännu. Anslut till internet och försök igen.</p></body></html>', {
@@ -70,23 +74,37 @@ sw.addEventListener('fetch', (event) => {
   // Skip external requests except ARASAAC API images
   if (url.origin !== location.origin && !url.hostname.includes('arasaac.org')) return;
 
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
+  const isAsset = ASSETS.includes(url.pathname);
 
-      return fetch(event.request).then((response) => {
+  if (isAsset) {
+    // Cache-first for known static assets
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        return cached || fetch(event.request).then((response) => {
+          if (response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        }).catch(() => new Response('Offline', { status: 503 }));
+      })
+    );
+  } else {
+    // Network-first for dynamic content and ARASAAC images
+    event.respondWith(
+      fetch(event.request).then((response) => {
         if (response.status === 200) {
           const clone = response.clone();
-          caches.open(CACHE).then((cache) => {
-            cache.put(event.request, clone);
-          });
+          caches.open(CACHE).then((cache) => cache.put(event.request, clone));
         }
         return response;
       }).catch(() => {
-        return new Response('Offline', { status: 503 });
-      });
-    })
-  );
+        return caches.match(event.request).then((cached) => {
+          return cached || new Response('Offline', { status: 503 });
+        });
+      })
+    );
+  }
 });
 
 function addCoopCoep(response: Response): Response {

@@ -1,6 +1,5 @@
 <script>
   import { goto } from '$app/navigation';
-  import { tick } from 'svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
@@ -53,19 +52,6 @@
 
   function selectWord(slot, word) {
     selectedWords = { ...selectedWords, [slot]: word };
-
-    // Auto-advance to next empty slot
-    tick().then(() => {
-      const nextEmpty = neededSlots.find(s => s !== slot && !selectedWords[s]);
-      if (nextEmpty) {
-        const el = document.getElementById('slot-' + nextEmpty);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        // All slots filled — scroll to create button
-        const btn = document.getElementById('create-story-btn');
-        if (btn) btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
   }
 
   function removeWord(slot) {
@@ -120,27 +106,6 @@
     if (!currentStory) return;
     const text = currentStory.paragraphs.join(' ');
     speak(text);
-  }
-
-  /** Get pictograms relevant to a specific paragraph */
-  function paragraphPictograms(story, paraIndex) {
-    if (!story || !story.template || !story.words) return [];
-    const lang = 'sv';
-    const paraTemplate = story.template.paragraphs?.[lang]?.[paraIndex] || '';
-    const pics = [];
-    const seen = new Set();
-    for (const [slot, word] of Object.entries(story.words)) {
-      // Check if this slot's placeholder appears in this paragraph template
-      if (paraTemplate.includes('{' + slot + '}') || 
-          paraTemplate.includes('{en_' + slot + '}') || 
-          paraTemplate.includes('{a_' + slot + '}')) {
-        if (!seen.has(word.id)) {
-          seen.add(word.id);
-          pics.push(word);
-        }
-      }
-    }
-    return pics;
   }
 
   function wordsForSlot(slot) {
@@ -221,7 +186,7 @@
           <p class="hint">{$t('sagostunden.pick_words_hint')}</p>
 
           {#each neededSlots as slot}
-            <div class="slot-section" id={"slot-" + slot}>
+            <div class="slot-section">
               <h3>{SLOT_LABELS[slot]?.emoji} {$t(SLOT_LABELS[slot]?.labelKey)}</h3>
 
               {#if selectedWords[slot]}
@@ -263,7 +228,7 @@
 
         <!-- Step 3: Generate -->
         <div class="step actions">
-          <button id="create-story-btn" class="big-btn primary" onclick={createStory}>
+          <button class="big-btn primary" onclick={createStory}>
             📖 {$t('sagostunden.create_story')}
           </button>
         </div>
@@ -311,22 +276,10 @@
           </div>
         {/if}
 
-        <!-- Story text with pictograms -->
+        <!-- Story text -->
         <div class="story-text" style="font-size: var(--fs)">
           {#each currentStory.paragraphs as para, i}
-            <div class="story-paragraph" transition:fade={{ delay: i * 300, duration: 400 }}>
-              <div class="para-pictos">
-                {#each paragraphPictograms(currentStory, i) as picto}
-                  <img
-                    src={pictogramUrl(picto.arasaac, 300)}
-                    alt={picto.sv}
-                    class="para-picto-img"
-                    loading="lazy"
-                  />
-                {/each}
-              </div>
-              <p>{para}</p>
-            </div>
+            <p transition:fade={{ delay: i * 300, duration: 400 }}>{para}</p>
           {/each}
         </div>
 
@@ -661,34 +614,8 @@
   }
 
   .story-text p {
-    margin: 8px 0 0;
+    margin: 16px 0;
     color: var(--text, #2C3E50);
-  }
-
-  .story-paragraph {
-    margin: 20px 0;
-    padding: 16px;
-    background: var(--bg-hover, #FAFAFA);
-    border-radius: var(--radius, 16px);
-    border: 2px solid var(--border, #eee);
-  }
-
-  .para-pictos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-
-  .para-picto-img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    border-radius: 12px;
-    background: white;
-    padding: 4px;
-    border: 2px solid var(--border, #ddd);
   }
 
   .story-actions {

@@ -437,7 +437,10 @@ function speakWebSpeech(text: string, lang: string, rate: number, opts: TTSOptio
 
 	const utterance = new SpeechSynthesisUtterance(text);
 	utterance.lang = lang === 'sv' ? 'sv-SE' : lang === 'en' ? 'en-US' : lang;
-	utterance.rate = rate;
+	// Safari macOS handles low rates much slower than iOS — apply minimum
+	const isMacSafari = /Macintosh.*Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+	const minWebSpeechRate = isMacSafari ? 0.5 : 0.3;
+	utterance.rate = Math.max(rate, minWebSpeechRate);
 	utterance.pitch = 1.0;
 
 	const voices = speechSynthesis.getVoices();

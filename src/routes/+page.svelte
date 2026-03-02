@@ -256,6 +256,7 @@
   .card-name {
     font-weight: 600; font-size: 0.8em; line-height: 1.2;
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    word-break: break-word; overflow-wrap: break-word; min-height: 2.4em;
   }
 
   .card-badge {

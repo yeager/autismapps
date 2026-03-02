@@ -70,6 +70,7 @@
 
     <section class="section offline-link-section">
       <a class="offline-link" href="{base}/offline">📲 {$t('about.offline_link')}</a>
+      <a class="offline-link" href="{base}/material">📄 {$t('material.title')}</a>
     </section>
 
     <section class="section developer">

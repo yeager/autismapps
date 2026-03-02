@@ -1730,5 +1730,12 @@
   "diploma.encourage_main": "Bra kämpat!",
   "diploma.encourage_sub": "Du är en stjärna! ⭐",
   "diploma.print": "Skriv ut",
-  "diploma.export": "Exportera"
+  "diploma.export": "Exportera",
+  "material.title": "Material",
+  "material.intro": "Här hittar du utskrivbart material om autismappar.se — perfekt att dela med skola, habilitering, logoped eller familj. Allt material är gratis att ladda ner och skriva ut.",
+  "material.handout_sv": "Handout — Svenska",
+  "material.handout_sv_desc": "A4-häfte med alla appar, beskrivningar och skärmbilder. PDF.",
+  "material.handout_en": "Handout — English",
+  "material.handout_en_desc": "A4 booklet with all apps, descriptions and screenshots. PDF.",
+  "material.license": "Materialet får fritt kopieras och delas i icke-kommersiellt syfte."
 }

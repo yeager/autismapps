@@ -56,6 +56,7 @@
 </script>
 
 <div class="launcher">
+  <img class="hero-bg" src={`${base}/icons/hero.svg`} alt="" aria-hidden="true" />
   <header class="launcher-header">
     <div class="brand"><h1>🧩 {$t('app.title')}</h1></div>
     <div class="header-actions">
@@ -301,6 +302,11 @@
   /* High contrast */
   :global(.theme-high-contrast) .cat-btn.active { background: #fff; color: #000; border-color: #fff; }
   :global(.theme-high-contrast) .app-card:hover { border-color: #fff; }
+
+  .hero-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.08; pointer-events: none; user-select: none; }
+  :global(.theme-high-contrast) .hero-bg { opacity: 0.03; }
+  .launcher-header { position: relative; z-index: 1; }
+  .main-area { position: relative; z-index: 1; }
 
   @media (prefers-reduced-motion: reduce) { .app-card { transition: none; } }
 </style>

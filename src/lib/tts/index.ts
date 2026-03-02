@@ -1,7 +1,7 @@
 /**
  * TTS module — Piper WASM is the PRIMARY engine.
  * Web Speech API is fallback ONLY if Piper completely fails.
- * Default rate is 0.5x (slow for children with language disorders).
+ * Default rate is 0.25x (slow for children with language disorders).
  */
 import { get, writable } from 'svelte/store';
 import { ttsSpeed } from '$lib/a11y';
@@ -12,7 +12,7 @@ import { EXTRA_PATH_MAP, CUSTOM_VOICE_URLS } from './voices';
 import { preprocessText } from './pronunciation-map';
 import { isTauri, getLocalVoiceUrl, BUNDLED_VOICES } from './tauri-voices';
 
-const DEFAULT_RATE = 0.3;
+const DEFAULT_RATE = 0.25;
 
 // Selected voice IDs per language — persisted in localStorage
 // Default Swedish voice is Alma (custom-trained for these apps)
@@ -400,8 +400,8 @@ async function speakPiper(
 
 	const audio = new Audio();
 	audio.src = URL.createObjectURL(wav);
-	// Piper is much faster than Web Speech — halve the rate for Piper
-	audio.playbackRate = rate * 0.5;
+	// Piper is much faster than Web Speech — scale down rate for Piper (0.4x multiplier)
+	audio.playbackRate = rate * 0.4;
 
 	speaking = true;
 	currentAudio = audio;

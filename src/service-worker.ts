@@ -37,32 +37,33 @@ sw.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
 
-  // For same-origin navigations, inject COOP/COEP headers to enable SharedArrayBuffer
-  // (needed for ONNX/Piper WASM on GitHub Pages which doesn't support custom headers)
+  // For same-origin navigations: network-first with SPA fallback
   if (url.origin === location.origin && event.request.mode === 'navigate') {
     event.respondWith(
       (async () => {
-        // Network-first for navigation requests
+        // Try network first
         try {
           const networkResponse = await fetch(event.request);
           if (networkResponse.ok) {
-            // Update cache with fresh response
             const clone = networkResponse.clone();
             caches.open(CACHE).then((cache) => cache.put(event.request, clone));
             return addCoopCoep(networkResponse);
           }
         } catch {}
 
-        // Fallback to cache
+        // Fallback to cache for this exact URL
         const cached = await caches.match(event.request);
         if (cached) return addCoopCoep(cached);
 
-        // SPA fallback: serve the index page
-        const indexResponse = await caches.match(`${base}/`);
+        // SPA fallback: serve index.html (try both / and /index.html)
+        const indexResponse =
+          await caches.match(`${base}/index.html`) ||
+          await caches.match(`${base}/`) ||
+          await caches.match('/index.html') ||
+          await caches.match('/');
         if (indexResponse) return addCoopCoep(indexResponse);
 
-        // Truly offline
-        return new Response('<html><body><h1>Offline</h1><p>Appen är inte tillgänglig offline ännu. Anslut till internet och försök igen.</p></body></html>', {
+        return new Response('<html><body><h1>Offline</h1><p>Anslut till internet och försök igen.</p></body></html>', {
           status: 503,
           headers: { 'Content-Type': 'text/html; charset=utf-8' }
         });
@@ -71,13 +72,13 @@ sw.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip external requests except ARASAAC API images
+  // Skip external requests except ARASAAC images
   if (url.origin !== location.origin && !url.hostname.includes('arasaac.org')) return;
 
   const isAsset = ASSETS.includes(url.pathname);
 
   if (isAsset) {
-    // Cache-first for known static assets
+    // Cache-first for static build assets
     event.respondWith(
       caches.match(event.request).then((cached) => {
         return cached || fetch(event.request).then((response) => {
@@ -90,7 +91,7 @@ sw.addEventListener('fetch', (event) => {
       })
     );
   } else {
-    // Network-first for dynamic content and ARASAAC images
+    // Network-first for dynamic content (ARASAAC images etc)
     event.respondWith(
       fetch(event.request).then((response) => {
         if (response.status === 200) {

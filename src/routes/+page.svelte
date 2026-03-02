@@ -190,17 +190,17 @@
   .lang-flag { font-size: 1.4em; }
   .lang-switcher { position: relative; }
   .lang-dropdown {
-    position: absolute; top: calc(100% + 4px); right: 0;
+    position: fixed; top: 56px; right: 8px;
     background: var(--bg-card, #fff); border: 2px solid var(--border, #ddd);
     border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    min-width: 150px; max-width: calc(100vw - 16px); z-index: 9999; overflow: hidden;
+    min-width: 150px; max-width: calc(100vw - 16px); z-index: 10000; overflow: hidden;
   }
   .menu-wrapper { position: relative; }
   .menu-dropdown {
-    position: absolute; top: calc(100% + 4px); right: 0;
+    position: fixed; top: 56px; right: 8px;
     background: var(--bg-card, #fff); border: 2px solid var(--border, #ddd);
     border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    min-width: 200px; max-width: calc(100vw - 16px); z-index: 9999; overflow: hidden;
+    min-width: 200px; max-width: calc(100vw - 16px); z-index: 10000; overflow: hidden;
   }
   .menu-option {
     display: flex; align-items: center; gap: 10px; width: 100%;
@@ -342,7 +342,7 @@
 
   .hero-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.08; pointer-events: none; user-select: none; }
   :global(.theme-high-contrast) .hero-bg { opacity: 0.03; }
-  .launcher-header { position: relative; z-index: 1; }
+  .launcher-header { position: relative; z-index: 100; }
   .main-area { position: relative; z-index: 1; }
 
   @media (prefers-reduced-motion: reduce) { .app-card { transition: none; } }

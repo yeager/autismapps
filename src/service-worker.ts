@@ -3,7 +3,7 @@
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
-import { base, build, files, version } from '$service-worker';
+import { build, files, version } from '$service-worker';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 const CACHE = `cache-${version}`;
@@ -37,31 +37,25 @@ sw.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
 
-  // For same-origin navigations: network-first with SPA fallback
-  if (url.origin === location.origin && event.request.mode === 'navigate') {
+  // Navigation requests: let GitHub Pages 404.html SPA fallback work normally.
+  // Only intercept if truly offline.
+  if (event.request.mode === 'navigate') {
     event.respondWith(
       (async () => {
-        // Try network first
         try {
-          const networkResponse = await fetch(event.request);
-          if (networkResponse.ok) {
-            const clone = networkResponse.clone();
-            caches.open(CACHE).then((cache) => cache.put(event.request, clone));
-            return addCoopCoep(networkResponse);
+          // Try network — GitHub Pages returns 404 with SPA HTML, which is fine
+          const response = await fetch(event.request);
+          // Accept any response that has HTML body (including 404 from GH Pages)
+          if (response.status < 500) {
+            return addCoopCoep(response);
           }
         } catch {}
 
-        // Fallback to cache for this exact URL
-        const cached = await caches.match(event.request);
-        if (cached) return addCoopCoep(cached);
-
-        // SPA fallback: serve index.html (try both / and /index.html)
-        const indexResponse =
-          await caches.match(`${base}/index.html`) ||
-          await caches.match(`${base}/`) ||
+        // Truly offline: serve cached index.html as SPA shell
+        const cached =
           await caches.match('/index.html') ||
           await caches.match('/');
-        if (indexResponse) return addCoopCoep(indexResponse);
+        if (cached) return addCoopCoep(cached);
 
         return new Response('<html><body><h1>Offline</h1><p>Anslut till internet och försök igen.</p></body></html>', {
           status: 503,

@@ -42,7 +42,7 @@
 
   function changeLang(code: string) {
     setLocale(code);
-    if (browser) { localStorage.setItem('locale', code); localStorage.setItem('lang', code); }
+    if (browser) localStorage.setItem('locale', code);
     speak($t(`settings.language`));
   }
 
@@ -116,7 +116,7 @@
   }
 
   function getSpeedLabel(val: number): string {
-    if (val <= 0.5) return $t('settings.tts_speed.slow');
+    if (val <= 0.3) return $t('settings.tts_speed.slow');
     if (val >= 1.0) return $t('settings.tts_speed.fast');
     return $t('settings.tts_speed.normal');
   }
@@ -284,7 +284,7 @@
           <span class="slider-label">{$t('settings.tts_speed.slow')}</span>
           <input
             type="range"
-            min="0.3"
+            min="0.1"
             max="1.5"
             step="0.1"
             value={$ttsSpeed}

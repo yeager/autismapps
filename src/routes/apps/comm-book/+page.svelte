@@ -1,10 +1,10 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms, getPictogramUrl } from '$lib/arasaac';
+  import { translateKeywords } from '$lib/arasaac/sv-lookup';
   import { locale } from '$lib/i18n';
   import { get } from 'svelte/store';
   import { fade } from 'svelte/transition';
@@ -15,7 +15,7 @@
     pictogramUrl: string;
     pictogramId: number;
     isPhoto: boolean;
-    photoData?: string; // base64 data URL for personal photos
+    photoData?: string;
   }
 
   interface CommPage {
@@ -26,7 +26,6 @@
     cards: CommCard[];
   }
 
-  // Default pages with ARASAAC pictograms
   const DEFAULT_PAGES: CommPage[] = [
     { id: 'favorites', name: 'commBook.page.favorites', icon: '⭐', color: '#F1C40F', cards: [] },
     { id: 'food', name: 'commBook.page.food', icon: '🍎', color: '#E67E22', cards: [] },
@@ -46,6 +45,9 @@
     feelings: ['happy', 'sad', 'angry', 'tired', 'scared', 'excited', 'hungry', 'thirsty', 'sick', 'calm'],
   };
 
+  // Version key to detect stale caches with English labels
+  const CACHE_VERSION = 'comm-book-v2';
+
   let pages = $state<CommPage[]>(loadPages());
   let currentPageId = $state('favorites');
   let sentenceStrip = $state<CommCard[]>([]);
@@ -61,6 +63,13 @@
 
   function loadPages(): CommPage[] {
     try {
+      const version = localStorage.getItem('comm-book-version');
+      // If version mismatch, clear stale cache so pages reinitialize with correct locale
+      if (version !== CACHE_VERSION) {
+        localStorage.removeItem('comm-book-pages');
+        localStorage.setItem('comm-book-version', CACHE_VERSION);
+        return DEFAULT_PAGES;
+      }
       const data = localStorage.getItem('comm-book-pages');
       if (data) return JSON.parse(data);
     } catch {}
@@ -69,29 +78,32 @@
 
   function savePages() {
     localStorage.setItem('comm-book-pages', JSON.stringify(pages));
+    localStorage.setItem('comm-book-version', CACHE_VERSION);
   }
 
   $effect(() => {
-    // Load default cards for pages that are empty (except favorites)
     const needsInit = pages.some(p => p.id !== 'favorites' && p.cards.length === 0 && CATEGORY_WORDS[p.id]);
     if (needsInit) initializePages();
   });
 
   async function initializePages() {
     loading = true;
+    const lang = get(locale);
     for (const page of pages) {
       if (page.id === 'favorites' || page.cards.length > 0) continue;
       const words = CATEGORY_WORDS[page.id];
       if (!words) continue;
+      // Translate all words at once for Swedish
+      const translated = lang === 'sv' ? await translateKeywords(words) : null;
       page.cards = await Promise.all(
-        words.map(async (w) => {
-          const results = await searchPictograms(w, get(locale));
-          // Swedish results handled by locale-aware search above
+        words.map(async (w, i) => {
+          const results = await searchPictograms(w, lang);
+          const displayWord = translated ? translated[i].sv : (results[0]?.keyword || w);
           return {
             id: crypto.randomUUID(),
-            label: get(locale) === 'sv' ? (svResults[0]?.keyword || w) : w,
-            pictogramUrl: results[0]?.url || '',
-            pictogramId: results[0]?.id || 0,
+            label: displayWord,
+            pictogramUrl: results[0]?.url || getPictogramUrl(translated?.[i]?.id || 0, false),
+            pictogramId: results[0]?.id || translated?.[i]?.id || 0,
             isPhoto: false,
           };
         })
@@ -106,10 +118,8 @@
     if (editMode) return;
     speak(card.label);
     sentenceStrip = [...sentenceStrip, card];
-    // Auto-add to favorites if not there
     const favPage = pages.find(p => p.id === 'favorites');
     if (favPage && !favPage.cards.some(c => c.label === card.label)) {
-      // Only auto-add after 3 taps (tracked in localStorage)
       const tapCounts: Record<string, number> = JSON.parse(localStorage.getItem('comm-book-taps') || '{}');
       tapCounts[card.label] = (tapCounts[card.label] || 0) + 1;
       localStorage.setItem('comm-book-taps', JSON.stringify(tapCounts));
@@ -234,7 +244,7 @@
 
 <div class="app" in:fade>
   <header class="hdr">
-    <button class="back" onclick={() => goto(`${base}/`)} aria-label={$t('app.back')}>←</button>
+    <button class="back" onclick={() => goto('/')} aria-label={$t('app.back')}>←</button>
     <h1>📖 {$t('commBook.title')}</h1>
     <div class="hdr-actions">
       <button class="icon-btn" class:active={editMode} onclick={() => { editMode = !editMode; showAddCard = false; }} aria-label={$t('commBook.edit')}>✏️</button>
@@ -246,7 +256,6 @@
   </header>
 
   <main class="cnt">
-    <!-- Sentence strip -->
     {#if sentenceStrip.length > 0}
       <section class="strip-area">
         <div class="strip">
@@ -266,16 +275,13 @@
       </section>
     {/if}
 
-    <!-- Tab bar -->
-    <nav class="tabs" role="tablist">
+    <nav class="tabs">
       {#each pages as page}
         <button
           class="tab"
           class:active={currentPageId === page.id}
           style="--tab-color: {page.color}"
           onclick={() => { currentPageId = page.id; showAddCard = false; }}
-          role="tab"
-          aria-selected={currentPageId === page.id}
         >
           <span class="tab-icon">{page.icon}</span>
           <span class="tab-name">{$t(page.name)}</span>
@@ -286,13 +292,12 @@
     {#if loading}
       <div class="loading">⏳ {$t('commBook.loading')}</div>
     {:else}
-      <!-- Cards grid -->
-      <section class="card-grid" role="tabpanel">
+      <section class="card-grid">
         {#each currentPage.cards as card (card.id)}
           <div class="comm-card-wrap">
             <button class="comm-card" onclick={() => tapCard(card)} style="border-color: {currentPage.color}">
               {#if card.pictogramUrl}
-                <img src={card.pictogramUrl} alt={card.label} width="80" height="80" loading="lazy" />
+                <img src={card.pictogramUrl} alt={card.label} loading="lazy" />
               {/if}
               <span class="card-label">{card.label}</span>
             </button>
@@ -314,7 +319,6 @@
         {/if}
       </section>
 
-      <!-- Add card panel -->
       {#if showAddCard}
         <section class="add-panel" in:fade>
           <h3>{$t('commBook.addCard')}</h3>
@@ -356,7 +360,7 @@
   .hdr { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-card, #fff); border-bottom: 1px solid var(--border, #e0e0e0); }
   .back { background: none; border: none; font-size: 1.5em; cursor: pointer; padding: 4px 8px; }
   h1 { font-size: 1.3em; margin: 0; flex: 1; }
-  h2, h3, h4 { margin: 0 0 8px; font-weight: 600; }
+  h3, h4 { margin: 0 0 8px; font-weight: 600; }
   h3 { font-size: 1em; }
   h4 { font-size: .9em; }
   .cnt { flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 16px; max-width: 900px; margin: 0 auto; width: 100%; }
@@ -386,16 +390,16 @@
 
   .loading { text-align: center; padding: 30px; }
 
-  /* Cards */
+  /* Cards — compact, square-ish proportions */
   .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; }
   .comm-card-wrap { position: relative; }
-  .comm-card { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 8px; border: 3px solid; border-radius: 12px; background: var(--bg-card, #fff); cursor: pointer; width: 100%; transition: all .15s; min-height: 110px; justify-content: center; }
+  .comm-card { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 6px; border: 3px solid; border-radius: 12px; background: var(--bg-card, #fff); cursor: pointer; width: 100%; transition: all .15s; aspect-ratio: 1 / 1; justify-content: center; overflow: hidden; }
   .comm-card:hover { transform: scale(1.03); box-shadow: 0 2px 8px rgba(0,0,0,.1); }
   .comm-card:active { transform: scale(0.97); }
-  .comm-card img { border-radius: 6px; object-fit: cover; }
-  .card-label { font-size: .8em; font-weight: 600; text-align: center; line-height: 1.2; }
+  .comm-card img { border-radius: 6px; object-fit: contain; width: 64px; height: 64px; flex-shrink: 0; }
+  .card-label { font-size: 16px; font-weight: 700; text-align: center; line-height: 1.1; word-break: break-word; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
   .remove-btn { position: absolute; top: -6px; right: -6px; width: 24px; height: 24px; border-radius: 50%; background: #E74C3C; color: white; border: 2px solid white; font-size: .7em; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-  .add-card-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 12px; border: 3px dashed; border-radius: 12px; background: transparent; cursor: pointer; min-height: 110px; opacity: .6; }
+  .add-card-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 12px; border: 3px dashed; border-radius: 12px; background: transparent; cursor: pointer; aspect-ratio: 1 / 1; opacity: .6; }
   .add-card-btn:hover { opacity: 1; }
   .add-icon { font-size: 2em; }
   .empty-hint { text-align: center; color: #888; font-style: italic; grid-column: 1 / -1; padding: 20px; }

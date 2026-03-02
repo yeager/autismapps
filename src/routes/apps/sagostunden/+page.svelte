@@ -1,22 +1,20 @@
 <script>
   import { goto } from '$app/navigation';
-  import { base } from '$app/paths';
-  import { t, locale } from '$lib/i18n';
+  import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
-  import { fade, fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
   import { ALL_WORDS, WORD_CATEGORIES, pictogramUrl } from '$lib/sagostunden/words';
-  import { TEMPLATES } from '$lib/sagostunden/templates';
+  import { TEMPLATES, fillTemplate } from '$lib/sagostunden/templates';
   import { generateStory } from '$lib/sagostunden/engine';
   import { saveStory, getAllStories, deleteStory, toggleFavorite } from '$lib/sagostunden/storage';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
 
-  // Wizard step: 1=pick template, 2=pick words, 3=read story
-  let step = $state(1);
-  let view = $state('create'); // 'create' | 'saved'
+  // View state
+  let view = $state('select'); // 'select' | 'story' | 'saved'
 
   // Word selection
-  let selectedWords = $state({});
-  let activeSlotIndex = $state(0);
+  let selectedCategory = $state('djur');
+  let selectedWords = $state({});  // slot → word
 
   // Template
   let selectedTemplate = $state(null);
@@ -33,10 +31,15 @@
 
   // Slots needed by current template
   let neededSlots = $derived(selectedTemplate ? selectedTemplate.slots : []);
-  let activeSlot = $derived(neededSlots[activeSlotIndex] || null);
-  let allSlotsFilled = $derived(
-    neededSlots.length > 0 && neededSlots.every(s => selectedWords[s])
-  );
+
+  const SLOT_LABELS = {
+    DJUR: { emoji: '🐾', labelKey: 'sagostunden.cat.animals' },
+    PLATS: { emoji: '🏠', labelKey: 'sagostunden.cat.places' },
+    SAK: { emoji: '🎁', labelKey: 'sagostunden.cat.things' },
+    MAT: { emoji: '🍎', labelKey: 'sagostunden.cat.food' },
+    PERSON: { emoji: '👤', labelKey: 'sagostunden.cat.people' },
+    VERB: { emoji: '⚡', labelKey: 'sagostunden.cat.actions' },
+  };
 
   const SLOT_TO_CAT = {
     DJUR: 'djur',
@@ -47,86 +50,33 @@
     VERB: 'verb',
   };
 
-  const SLOT_LABEL_KEYS = {
-    DJUR:   { emoji: '🐾', key: 'sagostunden.slot.animal' },
-    PLATS:  { emoji: '🏠', key: 'sagostunden.slot.place' },
-    SAK:    { emoji: '🎁', key: 'sagostunden.slot.thing' },
-    MAT:    { emoji: '🍎', key: 'sagostunden.slot.food' },
-    PERSON: { emoji: '👤', key: 'sagostunden.slot.character' },
-    VERB:   { emoji: '⚡', key: 'sagostunden.slot.action' },
-  };
-
-  function wordLabel(word) {
-    const lang = $locale?.startsWith('en') ? 'en' : 'sv';
-    return word[lang] || word.sv;
-  }
-
-  function selectTemplate(tmpl) {
-    selectedTemplate = tmpl;
-    selectedWords = {};
-    activeSlotIndex = 0;
-    step = 2;
-  }
-
   function selectWord(slot, word) {
     selectedWords = { ...selectedWords, [slot]: word };
-    const lang = $locale?.startsWith('en') ? 'en' : 'sv';
-    speak(word[lang] || word.sv);
-
-    // Auto-advance to next unfilled slot or create story
-    const nextEmpty = neededSlots.findIndex((s, i) => i > activeSlotIndex && !selectedWords[s] && s !== slot);
-    if (nextEmpty >= 0) {
-      activeSlotIndex = nextEmpty;
-    } else {
-      // Check if all filled
-      const updated = { ...selectedWords, [slot]: word };
-      const allDone = neededSlots.every(s => updated[s]);
-      if (allDone) {
-        // Small delay so user sees the selection, then auto-create
-        setTimeout(() => createStory(), 400);
-      }
-    }
   }
 
   function removeWord(slot) {
     const copy = { ...selectedWords };
     delete copy[slot];
     selectedWords = copy;
-    // Jump to that slot
-    const idx = neededSlots.indexOf(slot);
-    if (idx >= 0) activeSlotIndex = idx;
   }
 
   function createStory() {
     if (!selectedTemplate) return;
-    const lang = $locale?.startsWith('en') ? 'en' : 'sv';
-    currentStory = generateStory(selectedTemplate, selectedWords, lang);
-    step = 3;
+    currentStory = generateStory(selectedTemplate, selectedWords);
+    view = 'story';
   }
 
   function randomStory() {
-    const lang = $locale?.startsWith('en') ? 'en' : 'sv';
-    currentStory = generateStory(undefined, undefined, lang);
-    step = 3;
-    view = 'create';
-  }
-
-  function newStory() {
-    step = 1;
-    selectedTemplate = null;
-    selectedWords = {};
-    activeSlotIndex = 0;
-    currentStory = null;
-    view = 'create';
+    currentStory = generateStory();
+    view = 'story';
   }
 
   async function save() {
     if (!currentStory) return;
-    const lang = $locale?.startsWith('en') ? 'en' : 'sv';
-    const titleKey = currentStory.template.titleKey;
     await saveStory({
       storyId: currentStory.id,
-      title: $t(titleKey) || currentStory.template.title,
+      title: currentStory.template.title,
+      titleKey: currentStory.template.titleKey,
       paragraphs: currentStory.paragraphs,
       wordIds: Object.fromEntries(
         Object.entries(currentStory.words).map(([k, w]) => [k, w.id])
@@ -163,19 +113,43 @@
     return cat ? ALL_WORDS.filter(w => w.category === cat) : [];
   }
 
+  /** Get translated story title, falling back to raw title */
+  function storyTitle(tmpl) {
+    if (tmpl.titleKey) {
+      const translated = $t(tmpl.titleKey);
+      if (translated && translated !== tmpl.titleKey) return translated;
+    }
+    return tmpl.title;
+  }
+
+  /** Get translated title for saved story */
+  function savedTitle(story) {
+    if (story.titleKey) {
+      const translated = $t(story.titleKey);
+      if (translated && translated !== story.titleKey) return translated;
+    }
+    return story.title;
+  }
+
   // Init
   loadSaved();
 </script>
 
-<WelcomeDialog appId="sagostunden" titleKey="app.sagostunden" purposeKey="welcome.sagostunden.purpose" howKey="welcome.sagostunden.how" goalKey="welcome.sagostunden.goal" icon="📖" />
+<WelcomeDialog
+  appId="sagostunden"
+  titleKey="app.sagostunden"
+  purposeKey="welcome.sagostunden.purpose"
+  howKey="welcome.sagostunden.how"
+  goalKey="welcome.sagostunden.goal"
+  icon="📖"
+/>
 
 <main class="sagostunden" style="--fs: {fontSize}px">
-  <!-- Top nav -->
+  <!-- Top nav (no back button — app shell provides one) -->
   <nav class="top-bar">
-    <button class="back-btn" onclick={() => goto(`${base}/`)}>← {$t('common.back')}</button>
     <h1>📖 {$t('app.sagostunden')}</h1>
     <div class="nav-tabs">
-      <button class:active={view === 'create'} onclick={newStory}>
+      <button class:active={view === 'select'} onclick={() => view = 'select'}>
         ✨ {$t('sagostunden.create')}
       </button>
       <button class:active={view === 'saved'} onclick={() => { view = 'saved'; loadSaved(); }}>
@@ -184,189 +158,147 @@
     </div>
   </nav>
 
-  {#if view === 'create'}
-
-    <!-- Step indicator -->
-    {#if step <= 3}
-      <div class="step-indicator">
-        <div class="step-dot" class:active={step === 1} class:done={step > 1}
-             onclick={() => { if (step > 1) { step = 1; selectedTemplate = null; selectedWords = {}; activeSlotIndex = 0; } }}>
-          <span class="step-num">{step > 1 ? '✓' : '1'}</span>
-          <span class="step-label">{$t('sagostunden.pick_template')}</span>
-        </div>
-        <div class="step-line" class:done={step > 1}></div>
-        <div class="step-dot" class:active={step === 2} class:done={step > 2}
-             onclick={() => { if (step > 2 && selectedTemplate) { step = 2; activeSlotIndex = 0; } }}>
-          <span class="step-num">{step > 2 ? '✓' : '2'}</span>
-          <span class="step-label">{$t('sagostunden.pick_words')}</span>
-        </div>
-        <div class="step-line" class:done={step > 2}></div>
-        <div class="step-dot" class:active={step === 3}>
-          <span class="step-num">3</span>
-          <span class="step-label">{$t('sagostunden.read')}</span>
-        </div>
-      </div>
-    {/if}
-
-    <!-- STEP 1: Pick template -->
-    {#if step === 1}
-      <section class="wizard-step" transition:fade={{ duration: 200 }}>
-        <h2>{$t('sagostunden.pick_template')}</h2>
+  {#if view === 'select'}
+    <section class="select-view" transition:fade={{ duration: 200 }}>
+      <!-- Step 1: Pick template -->
+      <div class="step">
+        <h2>1. {$t('sagostunden.pick_template')}</h2>
         <div class="template-grid">
           {#each TEMPLATES as tmpl}
             <button
               class="template-card"
-              onclick={() => selectTemplate(tmpl)}
+              class:selected={selectedTemplate?.id === tmpl.id}
+              onclick={() => { selectedTemplate = tmpl; selectedWords = {}; }}
             >
-              <span class="template-title">{$t(tmpl.titleKey) || tmpl.title}</span>
+              <span class="template-title">{storyTitle(tmpl)}</span>
               <span class="template-slots">
-                {tmpl.slots.map(s => SLOT_LABEL_KEYS[s]?.emoji || '').join(' ')}
+                {tmpl.slots.map(s => SLOT_LABELS[s]?.emoji || '').join(' ')}
               </span>
             </button>
           {/each}
         </div>
+      </div>
 
-        <div class="actions" style="margin-top: 24px;">
-          <button class="big-btn secondary" onclick={randomStory}>
-            🎲 {$t('sagostunden.random_story')}
-          </button>
-        </div>
-      </section>
+      {#if selectedTemplate}
+        <!-- Step 2: Pick words for slots -->
+        <div class="step">
+          <h2>2. {$t('sagostunden.pick_words')}</h2>
+          <p class="hint">{$t('sagostunden.pick_words_hint')}</p>
 
-    <!-- STEP 2: Pick words, one slot at a time -->
-    {:else if step === 2}
-      <section class="wizard-step" transition:fade={{ duration: 200 }}>
-        <!-- Slot tabs -->
-        <div class="slot-tabs">
-          {#each neededSlots as slot, i}
-            <button
-              class="slot-tab"
-              class:active={i === activeSlotIndex}
-              class:filled={selectedWords[slot]}
-              onclick={() => { activeSlotIndex = i; }}
-            >
-              <span class="slot-tab-emoji">{SLOT_LABEL_KEYS[slot]?.emoji}</span>
+          {#each neededSlots as slot}
+            <div class="slot-section">
+              <h3>{SLOT_LABELS[slot]?.emoji} {$t(SLOT_LABELS[slot]?.labelKey)}</h3>
+
               {#if selectedWords[slot]}
-                <img
-                  src={pictogramUrl(selectedWords[slot].arasaac, 80)}
-                  alt={wordLabel(selectedWords[slot])}
-                  class="slot-tab-picto"
-                />
-              {/if}
-              <span class="slot-tab-label">
-                {$t(SLOT_LABEL_KEYS[slot]?.key) || slot}
-              </span>
-            </button>
-          {/each}
-        </div>
-
-        <!-- Active slot word picker -->
-        {#if activeSlot}
-          {#key activeSlot}
-            <div class="slot-picker" transition:fly={{ x: 50, duration: 250 }}>
-              <h2>
-                {SLOT_LABEL_KEYS[activeSlot]?.emoji}
-                {$t(SLOT_LABEL_KEYS[activeSlot]?.key) || activeSlot}
-              </h2>
-
-              {#if selectedWords[activeSlot]}
                 <div class="selected-word">
-                  <img
-                    src={pictogramUrl(selectedWords[activeSlot].arasaac, 150)}
-                    alt={wordLabel(selectedWords[activeSlot])}
-                    class="picto-large"
-                  />
-                  <span class="selected-word-text">{wordLabel(selectedWords[activeSlot])}</span>
-                  <button class="remove-btn" onclick={() => removeWord(activeSlot)}>✕</button>
+                  {#if showPictograms}
+                    <img
+                      src={pictogramUrl(selectedWords[slot].arasaac, 100)}
+                      alt={selectedWords[slot].sv}
+                      class="picto-small"
+                      loading="lazy"
+                    />
+                  {/if}
+                  <span>{selectedWords[slot].sv}</span>
+                  <button class="remove-btn" onclick={() => removeWord(slot)}>✕</button>
                 </div>
               {:else}
                 <div class="word-grid">
-                  {#each wordsForSlot(activeSlot) as word}
+                  {#each wordsForSlot(slot) as word}
                     <button
                       class="word-btn"
-                      onclick={() => selectWord(activeSlot, word)}
+                      onclick={() => { selectWord(slot, word); speak(word.sv); }}
                     >
-                      <img
-                        src={pictogramUrl(word.arasaac, 150)}
-                        alt={wordLabel(word)}
-                        class="picto-word"
-                        loading="lazy"
-                      />
-                      <span class="word-label">{wordLabel(word)}</span>
+                      {#if showPictograms}
+                        <img
+                          src={pictogramUrl(word.arasaac, 100)}
+                          alt={word.sv}
+                          class="picto-thumb"
+                          loading="lazy"
+                        />
+                      {/if}
+                      <span>{word.sv}</span>
                     </button>
                   {/each}
                 </div>
               {/if}
             </div>
-          {/key}
-        {/if}
+          {/each}
+        </div>
 
-        {#if allSlotsFilled}
-          <div class="actions" style="margin-top: 20px;">
-            <button class="big-btn primary" onclick={createStory}>
-              📖 {$t('sagostunden.create_story')}
-            </button>
-          </div>
-        {/if}
-      </section>
+        <!-- Step 3: Generate -->
+        <div class="step actions">
+          <button class="big-btn primary" onclick={createStory}>
+            📖 {$t('sagostunden.create_story')}
+          </button>
+        </div>
+      {/if}
 
-    <!-- STEP 3: Read story -->
-    {:else if step === 3}
-      <section class="wizard-step" transition:fade={{ duration: 200 }}>
-        {#if currentStory}
-          <h2 class="story-title">{$t(currentStory.template.titleKey) || currentStory.template.title}</h2>
+      <div class="step actions">
+        <button class="big-btn secondary" onclick={randomStory}>
+          🎲 {$t('sagostunden.random_story')}
+        </button>
+      </div>
 
-          <!-- Word pictograms row -->
+      <!-- Settings -->
+      <details class="settings">
+        <summary>⚙️ {$t('sagostunden.settings')}</summary>
+        <label>
+          {$t('sagostunden.font_size')}: {fontSize}px
+          <input type="range" min="16" max="48" step="2" bind:value={fontSize} />
+        </label>
+        <label>
+          <input type="checkbox" bind:checked={showPictograms} />
+          {$t('sagostunden.show_pictograms')}
+        </label>
+      </details>
+    </section>
+
+  {:else if view === 'story'}
+    <section class="story-view" transition:fade={{ duration: 200 }}>
+      {#if currentStory}
+        <h2 class="story-title">{storyTitle(currentStory.template)}</h2>
+
+        <!-- Word pictograms row -->
+        {#if showPictograms}
           <div class="story-words-row">
             {#each Object.entries(currentStory.words) as [slot, word]}
               <div class="story-word-badge">
                 <img
                   src={pictogramUrl(word.arasaac, 100)}
-                  alt={wordLabel(word)}
-                  class="picto-badge"
+                  alt={word.sv}
+                  class="picto-small"
+                  loading="lazy"
                 />
-                <span>{wordLabel(word)}</span>
+                <span>{word.sv}</span>
               </div>
             {/each}
           </div>
-
-          <!-- Story text -->
-          <div class="story-text" style="font-size: var(--fs)">
-            {#each currentStory.paragraphs as para, i}
-              <p transition:fade={{ delay: i * 300, duration: 400 }}>{para}</p>
-            {/each}
-          </div>
-
-          <div class="story-actions">
-            <button class="big-btn primary" onclick={readAloud}>
-              🔊 {$t('sagostunden.read_aloud')}
-            </button>
-            <button class="big-btn secondary" onclick={save}>
-              💾 {$t('sagostunden.save_story')}
-            </button>
-            <button class="big-btn secondary" onclick={newStory}>
-              ✨ {$t('sagostunden.new_story')}
-            </button>
-          </div>
         {/if}
-      </section>
-    {/if}
 
-    <!-- Settings -->
-    <details class="settings">
-      <summary>⚙️ {$t('sagostunden.settings')}</summary>
-      <label>
-        {$t('sagostunden.font_size')}: {fontSize}px
-        <input type="range" min="16" max="48" step="2" bind:value={fontSize} />
-      </label>
-      <label>
-        <input type="checkbox" bind:checked={showPictograms} />
-        {$t('sagostunden.show_pictograms')}
-      </label>
-    </details>
+        <!-- Story text -->
+        <div class="story-text" style="font-size: var(--fs)">
+          {#each currentStory.paragraphs as para, i}
+            <p transition:fade={{ delay: i * 300, duration: 400 }}>{para}</p>
+          {/each}
+        </div>
+
+        <div class="story-actions">
+          <button class="big-btn primary" onclick={readAloud}>
+            🔊 {$t('sagostunden.read_aloud')}
+          </button>
+          <button class="big-btn secondary" onclick={save}>
+            💾 {$t('sagostunden.save_story')}
+          </button>
+          <button class="big-btn secondary" onclick={() => view = 'select'}>
+            ✨ {$t('sagostunden.new_story')}
+          </button>
+        </div>
+      {/if}
+    </section>
 
   {:else if view === 'saved'}
-    <section class="wizard-step" transition:fade={{ duration: 200 }}>
+    <section class="saved-view" transition:fade={{ duration: 200 }}>
       <h2>💾 {$t('sagostunden.saved_stories')}</h2>
 
       {#if savedStories.length === 0}
@@ -376,14 +308,14 @@
           {#each savedStories as story}
             <div class="saved-card" class:favorite={story.favorite}>
               <div class="saved-header">
-                <h3>{story.title}</h3>
+                <h3>{savedTitle(story)}</h3>
                 <span class="saved-date">
-                  {new Date(story.createdAt).toLocaleDateString($locale?.startsWith('en') ? 'en-GB' : 'sv-SE')}
+                  {new Date(story.createdAt).toLocaleDateString('sv-SE')}
                 </span>
               </div>
               <p class="saved-preview">{story.paragraphs[0]}</p>
               <div class="saved-actions">
-                <button onclick={() => { currentStory = { paragraphs: story.paragraphs, template: { title: story.title, titleKey: '' }, words: {} }; step = 3; view = 'create'; }}>
+                <button onclick={() => { currentStory = { paragraphs: story.paragraphs, template: { title: story.title, titleKey: story.titleKey }, words: {} }; view = 'story'; }}>
                   📖 {$t('sagostunden.read')}
                 </button>
                 <button onclick={() => toggleFav(story.id)}>
@@ -411,6 +343,8 @@
     font-family: system-ui, sans-serif;
     min-height: 100dvh;
     --fs: 24px;
+    color: var(--text, #2C3E50);
+    background: var(--bg, #FFFFFF);
   }
 
   .top-bar {
@@ -425,16 +359,7 @@
     font-size: 28px;
     margin: 0;
     flex: 1;
-  }
-
-  .back-btn {
-    font-size: 18px;
-    padding: 8px 16px;
-    border-radius: 12px;
-    border: 2px solid var(--border);
-    background: var(--bg-card);
-    cursor: pointer;
-    font-weight: 600;
+    color: var(--text, #2C3E50);
   }
 
   .nav-tabs {
@@ -444,9 +369,10 @@
 
   .nav-tabs button {
     padding: 10px 20px;
-    border-radius: 12px;
-    border: 2px solid var(--accent, #9B59B6);
-    background: var(--bg-card);
+    border-radius: var(--radius, 12px);
+    border: 2px solid var(--border, #9B59B6);
+    background: var(--bg-card, white);
+    color: var(--text, #2C3E50);
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
@@ -454,84 +380,36 @@
   }
 
   .nav-tabs button.active {
-    background: var(--accent, #9B59B6);
+    background: #9B59B6;
     color: white;
   }
 
-  /* Step indicator */
-  .step-indicator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    margin-bottom: 28px;
-    padding: 0 16px;
+  :global(.theme-high-contrast) .nav-tabs button.active {
+    background: #FFFFFF;
+    color: #000000;
+    border-color: #FFFFFF;
   }
 
-  .step-dot {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
-    opacity: 0.4;
-    transition: opacity 0.2s;
-  }
-
-  .step-dot.active, .step-dot.done {
-    opacity: 1;
-  }
-
-  .step-num {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 18px;
-  }
-
-  .step-dot.active .step-num {
-    background: var(--accent, #9B59B6);
-    color: white;
-  }
-
-  .step-dot.done .step-num {
-    background: #27AE60;
-    color: white;
-  }
-
-  .step-label {
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  .step-line {
-    height: 3px;
-    width: 60px;
-    background: var(--border);
-    margin: 0 8px;
-    margin-bottom: 20px;
-    transition: background 0.2s;
-  }
-
-  .step-line.done {
-    background: #27AE60;
-  }
-
-  /* Wizard step */
-  .wizard-step {
+  .step {
     margin-bottom: 32px;
   }
 
   h2 {
     font-size: 24px;
-    color: var(--text);
+    color: var(--text, #2C3E50);
     margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: 20px;
+    color: var(--text, #8E44AD);
+    margin: 16px 0 8px;
+  }
+
+  .hint {
+    font-size: 16px;
+    color: var(--text-muted, #666);
+    margin-bottom: 12px;
   }
 
   /* Template grid */
@@ -543,9 +421,10 @@
 
   .template-card {
     padding: 16px;
-    border: 3px solid var(--border);
-    border-radius: 16px;
-    background: var(--bg-card);
+    border: 3px solid var(--border, #ddd);
+    border-radius: var(--radius, 16px);
+    background: var(--bg-card, white);
+    color: var(--text, #2C3E50);
     cursor: pointer;
     text-align: center;
     transition: all 0.2s;
@@ -553,9 +432,23 @@
   }
 
   .template-card:hover {
-    border-color: var(--accent, #9B59B6);
+    border-color: #9B59B6;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  :global(.theme-high-contrast) .template-card:hover {
+    border-color: #FFFFFF;
+  }
+
+  .template-card.selected {
+    border-color: #9B59B6;
+    background: #F3E5F5;
+  }
+
+  :global(.theme-high-contrast) .template-card.selected {
+    border-color: #FFFFFF;
+    background: #333333;
+    color: #FFFFFF;
   }
 
   .template-title {
@@ -569,70 +462,23 @@
     font-size: 24px;
   }
 
-  /* Slot tabs */
-  .slot-tabs {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-
-  .slot-tab {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    padding: 10px 16px;
-    border: 3px solid var(--border);
-    border-radius: 14px;
-    background: var(--bg-card);
-    cursor: pointer;
-    transition: all 0.2s;
-    min-width: 80px;
-  }
-
-  .slot-tab.active {
-    border-color: var(--accent, #9B59B6);
-    background: var(--bg-hover);
-    transform: scale(1.05);
-  }
-
-  .slot-tab.filled {
-    border-color: #27AE60;
-  }
-
-  .slot-tab-emoji {
-    font-size: 24px;
-  }
-
-  .slot-tab-picto {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    display: block;
-  }
-
-  .slot-tab-label {
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  /* Word grid — BIG pictograms for kids */
+  /* Word grid */
   .word-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
   }
 
   .word-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    padding: 12px;
-    border: 3px solid var(--border);
-    border-radius: 16px;
-    background: var(--bg-card);
+    gap: 4px;
+    padding: 10px;
+    border: 2px solid var(--border, #ddd);
+    border-radius: var(--radius, 12px);
+    background: var(--bg-card, white);
+    color: var(--text, #2C3E50);
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
@@ -640,61 +486,56 @@
   }
 
   .word-btn:hover {
-    border-color: var(--accent, #9B59B6);
-    background: var(--bg-hover);
-    transform: scale(1.05);
+    border-color: #9B59B6;
+    background: var(--bg-hover, #FAFAFA);
   }
 
-  /* Pictogram in word picker — large and clear */
-  .picto-word {
-    width: 96px;
-    height: 96px;
+  :global(.theme-high-contrast) .word-btn:hover {
+    border-color: #FFFFFF;
+  }
+
+  .picto-thumb {
+    width: 64px;
+    height: 64px;
     object-fit: contain;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
   }
 
-  .word-label {
-    font-size: 16px;
-    font-weight: 700;
-    text-align: center;
+  .picto-small {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
   }
 
-  /* Selected word display */
   .selected-word {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 16px 20px;
-    background: var(--bg-hover);
-    border-radius: 16px;
-    border: 3px solid #27AE60;
-  }
-
-  .picto-large {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    display: block !important;
-  }
-
-  .selected-word-text {
-    font-size: 24px;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--bg-hover, #F3E5F5);
+    border: 2px solid var(--border, transparent);
+    border-radius: var(--radius, 12px);
+    font-size: 20px;
     font-weight: 700;
-    flex: 1;
+    color: var(--text, #2C3E50);
   }
 
   .remove-btn {
+    margin-left: auto;
     background: #E74C3C;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
     cursor: pointer;
-    flex-shrink: 0;
+  }
+
+  .slot-section {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 2px solid var(--border, #eee);
+    border-radius: var(--radius, 16px);
   }
 
   /* Buttons */
@@ -707,7 +548,7 @@
 
   .big-btn {
     padding: 16px 32px;
-    border-radius: 16px;
+    border-radius: var(--radius, 16px);
     border: none;
     font-size: 22px;
     font-weight: 700;
@@ -720,21 +561,27 @@
   }
 
   .big-btn.primary {
-    background: var(--accent, #9B59B6);
+    background: #9B59B6;
     color: white;
   }
 
+  :global(.theme-high-contrast) .big-btn.primary {
+    background: #FFFFFF;
+    color: #000000;
+    border: 2px solid #FFFFFF;
+  }
+
   .big-btn.secondary {
-    background: var(--bg-card);
-    color: var(--text);
-    border: 2px solid var(--border);
+    background: var(--bg-card, #ECF0F1);
+    color: var(--text, #2C3E50);
+    border: 2px solid var(--border, #BDC3C7);
   }
 
   /* Story view */
   .story-title {
     font-size: 32px;
     text-align: center;
-    color: var(--accent, #8E44AD);
+    color: var(--text, #8E44AD);
     margin-bottom: 20px;
   }
 
@@ -752,17 +599,12 @@
     align-items: center;
     gap: 4px;
     padding: 8px 12px;
-    background: var(--bg-hover);
-    border-radius: 12px;
+    background: var(--bg-hover, #F3E5F5);
+    border: 2px solid var(--border, transparent);
+    border-radius: var(--radius, 12px);
     font-weight: 600;
     font-size: 14px;
-  }
-
-  .picto-badge {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    display: block !important;
+    color: var(--text, #2C3E50);
   }
 
   .story-text {
@@ -773,7 +615,7 @@
 
   .story-text p {
     margin: 16px 0;
-    color: var(--text);
+    color: var(--text, #2C3E50);
   }
 
   .story-actions {
@@ -793,14 +635,20 @@
 
   .saved-card {
     padding: 16px;
-    border: 2px solid var(--border);
-    border-radius: 16px;
-    background: var(--bg-card);
+    border: 2px solid var(--border, #ddd);
+    border-radius: var(--radius, 16px);
+    background: var(--bg-card, white);
+    color: var(--text, #2C3E50);
   }
 
   .saved-card.favorite {
-    border-color: var(--accent, #F1C40F);
-    background: var(--bg-hover);
+    border-color: #F1C40F;
+    background: var(--bg-hover, #FFFDE7);
+  }
+
+  :global(.theme-high-contrast) .saved-card.favorite {
+    border-color: #F1C40F;
+    background: #333300;
   }
 
   .saved-header {
@@ -813,16 +661,17 @@
   .saved-header h3 {
     margin: 0;
     font-size: 20px;
+    color: var(--text, #2C3E50);
   }
 
   .saved-date {
     font-size: 14px;
-    color: var(--text-muted);
+    color: var(--text-muted, #999);
   }
 
   .saved-preview {
     font-size: 16px;
-    color: var(--text-muted);
+    color: var(--text-muted, #666);
     margin-bottom: 12px;
   }
 
@@ -833,9 +682,10 @@
 
   .saved-actions button {
     padding: 8px 16px;
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    background: var(--bg-card);
+    border: 2px solid var(--border, #ddd);
+    border-radius: var(--radius, 10px);
+    background: var(--bg-card, white);
+    color: var(--text, #2C3E50);
     font-size: 16px;
     cursor: pointer;
   }
@@ -843,7 +693,7 @@
   .empty-msg {
     text-align: center;
     font-size: 20px;
-    color: var(--text-muted);
+    color: var(--text-muted, #999);
     padding: 40px;
   }
 
@@ -851,20 +701,22 @@
   .settings {
     margin-top: 24px;
     padding: 16px;
-    border: 2px solid var(--border);
-    border-radius: 16px;
+    border: 2px solid var(--border, #eee);
+    border-radius: var(--radius, 16px);
   }
 
   .settings summary {
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
+    color: var(--text, #2C3E50);
   }
 
   .settings label {
     display: block;
     margin: 12px 0;
     font-size: 16px;
+    color: var(--text, #2C3E50);
   }
 
   .settings input[type="range"] {
@@ -875,7 +727,7 @@
   .credit {
     text-align: center;
     font-size: 14px;
-    color: var(--text-muted);
+    color: var(--text-muted, #999);
     padding: 24px 0;
   }
 
@@ -884,13 +736,8 @@
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
     .word-grid {
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-    .picto-word {
-      width: 80px;
-      height: 80px;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
     }
     .top-bar h1 { font-size: 22px; }
-    .step-line { width: 30px; }
   }
 </style>

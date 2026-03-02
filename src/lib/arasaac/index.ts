@@ -25,18 +25,22 @@ export async function searchPictograms(
   // For Swedish: try local lookup first (Danne's arasaac-sv.po)
   if (lang === 'sv') {
     const lookup = await loadSvLookup();
-    // Search query might be in Swedish — find matching English key
     const queryLower = query.toLowerCase();
-    // First: exact match on Swedish value
+    // First: exact match on English key (e.g. query="happy" → lookup["happy"].sv="glad")
+    const exactEnKey = lookup[queryLower];
+    if (exactEnKey && exactEnKey.id) {
+      return [{ id: exactEnKey.id, keyword: exactEnKey.sv, url: getPictogramUrl(exactEnKey.id, false), urlBW: getPictogramUrl(exactEnKey.id, true) }];
+    }
+    // Second: exact match on Swedish value
     for (const [en, entry] of Object.entries(lookup)) {
       if (entry.sv.toLowerCase() === queryLower && entry.id) {
         return [{ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) }];
       }
     }
-    // Second: partial match on Swedish value
+    // Third: partial match on English key or Swedish value
     const partialSv: PictogramSearchResult[] = [];
     for (const [en, entry] of Object.entries(lookup)) {
-      if (entry.sv.toLowerCase().includes(queryLower) && entry.id) {
+      if ((en.includes(queryLower) || entry.sv.toLowerCase().includes(queryLower)) && entry.id) {
         partialSv.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
         if (partialSv.length >= 50) break;
       }

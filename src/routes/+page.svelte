@@ -8,7 +8,6 @@
   import { fly, fade } from 'svelte/transition';
 
   let activeCategory = $state<AppCategory | null>(null);
-
   const categories = Object.entries(CATEGORY_META) as [AppCategory, typeof CATEGORY_META[AppCategory]][];
 
   const LANGUAGES = [
@@ -19,52 +18,36 @@
   let langOpen = $state(false);
   let langRef: HTMLDivElement | undefined = $state();
 
-  function toggleLang() {
-    langOpen = !langOpen;
-  }
-
+  function toggleLang() { langOpen = !langOpen; }
   function pickLang(code: string) {
     setLocale(code);
-    if (browser) { localStorage.setItem("locale", code); localStorage.setItem("lang", code); };
+    if (browser) { localStorage.setItem("locale", code); localStorage.setItem("lang", code); }
     langOpen = false;
   }
 
-  function handleClickOutside(e: MouseEvent) {
-    if (langOpen && langRef && !langRef.contains(e.target as Node)) {
-      langOpen = false;
-    }
-  }
-
-  // Attach click-outside listener
   $effect(() => {
     if (langOpen && browser) {
-      const handler = (e: MouseEvent) => handleClickOutside(e);
+      const handler = (e: MouseEvent) => {
+        if (langRef && !langRef.contains(e.target as Node)) langOpen = false;
+      };
       document.addEventListener("click", handler, true);
       return () => document.removeEventListener("click", handler, true);
     }
   });
 
   const currentFlag = $derived(LANGUAGES.find(l => l.code === $locale)?.flag ?? "🇸🇪");
-
   const filtered = $derived(
     activeCategory ? ALL_APPS.filter((app) => app.category === activeCategory) : []
   );
 
   function selectCategory(cat: AppCategory) {
-    if (activeCategory === cat) {
-      activeCategory = null;
-    } else {
-      activeCategory = cat;
-      speak($t(CATEGORY_META[cat].label));
-    }
+    activeCategory = activeCategory === cat ? null : cat;
+    if (activeCategory) speak($t(CATEGORY_META[cat].label));
   }
 
   function openApp(app: typeof ALL_APPS[0]) {
-    if (app.ready) {
-      goto(`${base}${app.route}`);
-    } else {
-      speak($t('app.coming_soon'));
-    }
+    if (app.ready) goto(`${base}${app.route}`);
+    else speak($t('app.coming_soon'));
   }
 
   function getCategoryColor(cat: AppCategory): string {
@@ -72,577 +55,252 @@
   }
 </script>
 
-<div class="launcher" class:has-category={activeCategory !== null}>
-  <!-- Hero image — always present, fades when category selected -->
-  <div class="hero-wrapper" class:faded={activeCategory !== null}>
-    <img
-      src={`${base}/icons/hero.svg`}
-      alt={$t('app.title') + ' — ' + $t('app.subtitle')}
-      class="hero-image"
-      draggable="false"
-    />
-    <div class="hero-brand" aria-hidden="true">{$t('app.title.brand')}</div>
-    {#if !activeCategory}
-      <div class="hero-overlay" transition:fade={{ duration: 300 }}>
-        <div class="hero-cta">
-          <p class="hero-tagline">{$t('app.choose_category')}</p>
-          <svg class="hero-arrow" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-          </svg>
-        </div>
-      </div>
-    {/if}
-  </div>
-
-  <!-- Top bar with settings -->
+<div class="launcher">
   <header class="launcher-header">
-    <div class="brand">
-      <h1>{$t('app.title')}</h1>
-    </div>
+    <div class="brand"><h1>🧩 {$t('app.title')}</h1></div>
     <div class="header-actions">
       <div class="lang-switcher" bind:this={langRef}>
-        <button
-          class="lang-btn"
-          onclick={toggleLang}
-          aria-label="Switch language"
-        >
+        <button class="icon-btn" onclick={toggleLang} aria-label="Switch language">
           <span class="lang-flag">{currentFlag}</span>
-          <svg class="lang-chevron" class:open={langOpen} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
         </button>
         {#if langOpen}
           <div class="lang-dropdown" transition:fly={{ y: -8, duration: 200 }}>
             {#each LANGUAGES as lang}
-              <button
-                class="lang-option"
-                class:active={$locale === lang.code}
-                onclick={() => pickLang(lang.code)}
-              >
-                <span class="lang-option-flag">{lang.flag}</span>
-                <span class="lang-option-name">{lang.name}</span>
-                {#if $locale === lang.code}
-                  <svg class="lang-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 6L9 17l-5-5"/>
-                  </svg>
-                {/if}
+              <button class="lang-option" class:active={$locale === lang.code} onclick={() => pickLang(lang.code)}>
+                <span>{lang.flag}</span><span>{lang.name}</span>
+                {#if $locale === lang.code}<span class="check">✓</span>{/if}
               </button>
             {/each}
           </div>
         {/if}
       </div>
-      <button
-        class="settings-icon"
-      onclick={() => goto(`${base}/settings`)}
-      aria-label={$t('app.settings')}
-      onfocus={() => speak($t('app.settings'))}
-    >
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
-        <circle cx="12" cy="12" r="3"/>
-      </svg>
-    </button>
-    <button
-      class="about-icon"
-      onclick={() => goto(`${base}/about`)}
-      aria-label={$t('about.title')}
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M12 16v-4M12 8h.01"/>
-      </svg>
-    </button>
+      <button class="icon-btn" onclick={() => goto(`${base}/settings`)} aria-label={$t('app.settings')}>⚙️</button>
+      <button class="icon-btn" onclick={() => goto(`${base}/about`)} aria-label={$t('about.title')}>ℹ️</button>
     </div>
   </header>
 
-  <!-- Category buttons -->
-  <nav class="categories" aria-label={$t('app.choose_category')}>
-    {#each categories as [key, meta]}
-      <button
-        class="cat-btn"
-        class:active={activeCategory === key}
-        onclick={() => selectCategory(key)}
-        onfocus={() => speak($t(meta.label))}
-        aria-pressed={activeCategory === key}
-        aria-label={$t(meta.label)}
-        style="--cat-color: {meta.color}"
-      >
-        <span class="cat-emoji" aria-hidden="true">{meta.emoji}</span>
-        <span class="cat-label">{$t(meta.label)}</span>
-        <span class="cat-count">{ALL_APPS.filter(a => a.category === key).length}</span>
-      </button>
-    {/each}
-  </nav>
-
-  <!-- App grid — only visible when category selected -->
-  {#if activeCategory}
-    <div class="app-section" transition:fly={{ y: 40, duration: 350 }}>
-      <div class="section-header">
-        <h2 style="color: {getCategoryColor(activeCategory)}">
-          {CATEGORY_META[activeCategory].emoji} {$t(CATEGORY_META[activeCategory].label)}
-        </h2>
-        <button class="close-section" onclick={() => activeCategory = null} aria-label={$t('app.back')}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-            <path d="M18 6L6 18M6 6l12 12"/>
-          </svg>
+  <div class="main-area">
+    <nav class="categories" aria-label={$t('app.choose_category')}>
+      {#each categories as [key, meta]}
+        <button
+          class="cat-btn"
+          class:active={activeCategory === key}
+          onclick={() => selectCategory(key)}
+          aria-pressed={activeCategory === key}
+          style="--cat-color: {meta.color}"
+        >
+          <span class="cat-emoji">{meta.emoji}</span>
+          <span class="cat-label">{$t(meta.label)}</span>
+          <span class="cat-count">{ALL_APPS.filter(a => a.category === key).length}</span>
         </button>
-      </div>
-      <div class="app-grid" style="--card-min: {filtered.length <= 3 ? '240px' : filtered.length <= 6 ? '200px' : '160px'}; --card-min-mobile: {filtered.length <= 3 ? '180px' : filtered.length <= 6 ? '150px' : '130px'}; --card-min-h: {filtered.length <= 3 ? '160px' : filtered.length <= 6 ? '140px' : '120px'}">
-        {#each filtered as app, i (app.id)}
-          <button
-            class="app-card"
-            class:coming-soon={!app.ready}
-            onclick={() => openApp(app)}
-            onfocus={() => speak($t(app.name) + '. ' + $t(app.description))}
-            style="--card-accent: {getCategoryColor(app.category)}; --delay: {i * 50}ms"
-            aria-label="{$t(app.name)}: {$t(app.description)}"
-          >
-            <div class="card-icon">
-              <img src={`${base}${app.icon}`} alt="" width="56" height="56" loading="lazy" onerror={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
-            </div>
-            <span class="card-name">{$t(app.name)}</span>
-            <span class="card-desc">{$t(app.description)}</span>
-            {#if !app.ready}
-              <span class="card-badge">{$t('app.coming_soon')}</span>
-            {/if}
-          </button>
-        {/each}
-      </div>
+      {/each}
+    </nav>
+
+    <div class="app-area">
+      {#if activeCategory}
+        <div class="app-section" transition:fade={{ duration: 150 }}>
+          <div class="section-header">
+            <h2 style="color: {getCategoryColor(activeCategory)}">
+              {CATEGORY_META[activeCategory].emoji} {$t(CATEGORY_META[activeCategory].label)}
+            </h2>
+            <button class="close-btn" onclick={() => activeCategory = null}>✕</button>
+          </div>
+          <div class="app-grid">
+            {#each filtered as app (app.id)}
+              <button
+                class="app-card"
+                class:coming-soon={!app.ready}
+                onclick={() => openApp(app)}
+                style="--card-accent: {getCategoryColor(app.category)}"
+              >
+                <div class="card-icon">
+                  <img src={`${base}${app.icon}`} alt="" width="48" height="48" loading="lazy" onerror={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                </div>
+                <span class="card-name">{$t(app.name)}</span>
+                {#if !app.ready}<span class="card-badge">{$t('app.coming_soon')}</span>{/if}
+              </button>
+            {/each}
+          </div>
+        </div>
+      {:else}
+        <div class="welcome-area">
+          <p class="welcome-msg">{$t('app.choose_category')}</p>
+        </div>
+      {/if}
     </div>
-  {/if}
+  </div>
 </div>
 
 <style>
   .launcher {
     display: flex;
     flex-direction: column;
-    min-height: 100dvh;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  /* Hero image */
-  .hero-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    max-height: 70dvh;
+    height: 100dvh;
     overflow: hidden;
-    transition: opacity 0.5s ease, filter 0.5s ease, max-height 0.5s ease;
+    background: var(--bg, #fff);
+    color: var(--text, #2C3E50);
   }
 
-  .hero-wrapper.faded {
-    max-height: 30dvh;
-    opacity: 0.2;
-    filter: blur(2px);
-  }
-
-  .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    user-select: none;
-    -webkit-user-drag: none;
-  }
-
-  .hero-brand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-    font-size: clamp(3rem, 10vw, 7rem);
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    color: rgba(255, 255, 255, 0.18);
-    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.08);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-    z-index: 1;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 40px 20px 30px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.4));
-    display: flex;
-    justify-content: center;
-  }
-
-  .hero-cta {
-    text-align: center;
-    color: white;
-  }
-
-  .hero-tagline {
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  }
-
-  .hero-arrow {
-    animation: bounce 2s ease infinite;
-    opacity: 0.8;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
-  }
-
-  /* Header */
   .launcher-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
+    padding: 6px 16px;
+    border-bottom: 2px solid var(--border, #eee);
+    flex-shrink: 0;
+    min-height: 48px;
+    background: var(--bg-card, #fff);
   }
 
-  .brand h1 {
-    font-size: 1.3em;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
+  .brand h1 { font-size: 1.15em; font-weight: 700; margin: 0; }
 
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
+  .header-actions { display: flex; align-items: center; gap: 2px; }
 
-  .settings-icon {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-sm);
-    transition: background var(--transition);
+  .icon-btn {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 10px; font-size: 1.3em;
+    background: none; border: none; cursor: pointer;
+    color: var(--text, #2C3E50);
   }
-  .settings-icon:hover { background: var(--bg-hover); }
-
-  .about-icon {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-sm);
-    transition: background var(--transition);
-    color: var(--text-secondary);
+  .icon-btn:hover { background: var(--bg-hover, #f0f0f0); }
+  .lang-flag { font-size: 1.4em; }
+  .lang-switcher { position: relative; }
+  .lang-dropdown {
+    position: absolute; top: calc(100% + 4px); right: 0;
+    background: var(--bg-card, #fff); border: 2px solid var(--border, #ddd);
+    border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    min-width: 150px; z-index: 100; overflow: hidden;
   }
-  .about-icon:hover { background: var(--bg-hover); }
+  .lang-option {
+    display: flex; align-items: center; gap: 8px; width: 100%;
+    padding: 10px 14px; font-size: 1em; border: none; background: none; cursor: pointer;
+    color: var(--text, #2C3E50);
+  }
+  .lang-option:hover { background: var(--bg-hover, #f0f0f0); }
+  .lang-option.active { font-weight: 700; }
+  .check { color: var(--accent, #3498DB); margin-left: auto; }
 
-  /* Categories */
+  /* Main: sidebar + content */
+  .main-area { flex: 1; display: flex; overflow: hidden; min-height: 0; }
+
+  /* Categories — sidebar */
   .categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 16px 20px;
-  }
-
-  @media (max-width: 600px) {
-    .categories {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      padding: 12px 16px;
-    }
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 8px; overflow-y: auto; flex-shrink: 0;
+    width: 190px; border-right: 2px solid var(--border, #eee);
+    background: var(--bg-card, #fafafa);
   }
 
   .cat-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 18px;
-    border-radius: var(--radius);
-    font-weight: 600;
-    font-size: 0.95em;
-    background: var(--bg-card);
-    border: 2px solid var(--border);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 56px;
-    position: relative;
-    overflow: hidden;
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 10px; border-radius: 12px;
+    font-weight: 600; font-size: 0.88em;
+    background: none; border: 2px solid transparent;
+    cursor: pointer; min-height: 44px;
+    color: var(--text, #2C3E50); text-align: left;
   }
+  .cat-btn:hover { border-color: var(--cat-color); background: color-mix(in srgb, var(--cat-color) 8%, transparent); }
+  .cat-btn.active { background: var(--cat-color); color: white; border-color: var(--cat-color); }
 
-  .cat-btn::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: var(--cat-color);
-    border-radius: 0 2px 2px 0;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-
-  .cat-btn:hover {
-    border-color: var(--cat-color);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px color-mix(in srgb, var(--cat-color) 20%, transparent);
-  }
-
-  .cat-btn:hover::before,
-  .cat-btn.active::before {
-    opacity: 1;
-  }
-
-  .cat-btn.active {
-    background: var(--cat-color);
-    color: white;
-    border-color: var(--cat-color);
-    transform: scale(1.02);
-    box-shadow: 0 4px 16px color-mix(in srgb, var(--cat-color) 30%, transparent);
-  }
-
-  .cat-emoji {
-    font-size: 1.4em;
-    flex-shrink: 0;
-  }
-
-  .cat-label {
-    flex: 1;
-    text-align: left;
-  }
-
+  .cat-emoji { font-size: 1.2em; flex-shrink: 0; }
+  .cat-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .cat-count {
-    font-size: 0.75em;
-    padding: 2px 8px;
-    border-radius: 100px;
-    background: rgba(0,0,0,0.08);
+    font-size: 0.7em; padding: 1px 6px; border-radius: 100px;
+    background: rgba(0,0,0,0.08); flex-shrink: 0;
   }
+  .cat-btn.active .cat-count { background: rgba(255,255,255,0.25); }
 
-  .cat-btn.active .cat-count {
-    background: rgba(255,255,255,0.25);
-  }
+  /* App area */
+  .app-area { flex: 1; overflow-y: auto; min-width: 0; }
 
-  /* App section */
-  .app-section {
-    padding: 0 20px 40px;
-  }
+  .app-section { padding: 10px 14px; height: 100%; display: flex; flex-direction: column; }
 
   .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 0;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px; flex-shrink: 0;
   }
+  .section-header h2 { font-size: 1.1em; font-weight: 700; margin: 0; }
 
-  .section-header h2 {
-    font-size: 1.3em;
-    font-weight: 700;
+  .close-btn {
+    width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; border: none; background: none;
+    font-size: 1.1em; cursor: pointer; color: var(--text-muted, #999);
   }
+  .close-btn:hover { background: var(--bg-hover, #f0f0f0); }
 
-  .close-section {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background var(--transition);
-    color: var(--text-muted);
-  }
-  .close-section:hover {
-    background: var(--bg-hover);
-    color: var(--text);
-  }
-
-  /* App grid — adaptive: fewer apps = bigger cards */
   .app-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--card-min, 160px), 1fr));
-    gap: 14px;
-  }
-
-  @media (max-width: 600px) {
-    .app-grid {
-      grid-template-columns: repeat(auto-fill, minmax(var(--card-min-mobile, 130px), 1fr));
-      gap: 10px;
-    }
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 8px; flex: 1; align-content: start;
   }
 
   .app-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 14px 10px 12px;
-    background: var(--bg-card);
-    border: 2px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: var(--card-min-h, 170px);
-    gap: 8px;
-    animation: cardIn 0.4s ease both;
-    animation-delay: var(--delay);
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 10px 6px 8px; background: var(--bg-card, #fff);
+    border: 2px solid var(--border, #eee); border-radius: 12px;
+    cursor: pointer; gap: 4px; position: relative;
+    color: var(--text, #2C3E50); transition: all 0.15s;
   }
-
-  @keyframes cardIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px) scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  .app-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--card-accent);
-  }
-  .app-card:active {
-    transform: translateY(0) scale(0.98);
-  }
-  .app-card.coming-soon {
-    opacity: 0.5;
-  }
-  .app-card.coming-soon:hover {
-    opacity: 0.7;
-  }
+  .app-card:hover { border-color: var(--card-accent); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .app-card:active { transform: scale(0.97); }
+  .app-card.coming-soon { opacity: 0.4; }
 
   .card-icon {
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    background: color-mix(in srgb, var(--card-accent) 10%, transparent);
-    flex-shrink: 0;
+    width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+    border-radius: 10px; background: color-mix(in srgb, var(--card-accent) 10%, transparent);
   }
-  .card-icon img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-  }
+  .card-icon img { width: 34px; height: 34px; object-fit: contain; }
 
   .card-name {
-    font-weight: 600;
-    font-size: 0.95em;
-    line-height: 1.2;
-  }
-
-  .card-desc {
-    font-size: 0.75em;
-    color: var(--text-muted);
-    line-height: 1.3;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-weight: 600; font-size: 0.8em; line-height: 1.2;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
   }
 
   .card-badge {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    font-size: 0.65em;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 100px;
-    background: var(--border);
-    color: var(--text-muted);
+    position: absolute; top: 3px; right: 3px;
+    font-size: 0.55em; font-weight: 600; padding: 1px 5px;
+    border-radius: 100px; background: var(--border, #ddd); color: var(--text-muted, #999);
   }
 
-  /* Reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .hero-arrow { animation: none; }
-    .app-card { animation: none; }
-    .hero-wrapper { transition: none; }
+  .welcome-area { display: flex; align-items: center; justify-content: center; height: 100%; }
+  .welcome-msg { font-size: 1.2em; color: var(--text-muted, #999); text-align: center; }
+
+  /* ===== PORTRAIT / MOBILE ===== */
+  @media (max-width: 700px), (orientation: portrait) and (max-width: 1024px) {
+    .main-area { flex-direction: column; }
+
+    .categories {
+      flex-direction: row; width: auto;
+      border-right: none; border-bottom: 2px solid var(--border, #eee);
+      overflow-x: auto; overflow-y: hidden;
+      padding: 6px 8px; gap: 4px;
+    }
+
+    .cat-btn {
+      flex-direction: column; gap: 2px;
+      padding: 6px 10px; min-width: 64px; min-height: 52px;
+      font-size: 0.75em; text-align: center;
+    }
+    .cat-label { white-space: nowrap; font-size: 0.85em; text-align: center; }
+    .cat-count { display: none; }
+
+    .app-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px; }
+    .app-card { padding: 8px 4px 6px; }
+    .card-icon { width: 38px; height: 38px; }
+    .card-icon img { width: 28px; height: 28px; }
+    .card-name { font-size: 0.75em; }
   }
 
-  /* Language switcher */
-  .lang-switcher {
-    position: relative;
+  /* ===== LARGE LANDSCAPE ===== */
+  @media (min-width: 1200px) {
+    .categories { width: 230px; }
+    .app-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
   }
 
-  .lang-btn {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 8px 10px;
-    border-radius: var(--radius-sm);
-    transition: background var(--transition);
-    min-height: 44px;
-    min-width: 44px;
-    justify-content: center;
-  }
-  .lang-btn:hover { background: var(--bg-hover); }
+  /* High contrast */
+  :global(.theme-high-contrast) .cat-btn.active { background: #fff; color: #000; border-color: #fff; }
+  :global(.theme-high-contrast) .app-card:hover { border-color: #fff; }
 
-  .lang-flag {
-    font-size: 1.4em;
-    line-height: 1;
-  }
-
-  .lang-chevron {
-    transition: transform 0.2s ease;
-    color: var(--text-muted);
-  }
-  .lang-chevron.open {
-    transform: rotate(180deg);
-  }
-
-  .lang-dropdown {
-    position: absolute;
-    top: calc(100% + 6px);
-    right: 0;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-lg);
-    min-width: 160px;
-    overflow: hidden;
-    z-index: 100;
-  }
-
-  .lang-option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    padding: 12px 16px;
-    font-size: 0.95em;
-    font-weight: 500;
-    transition: background var(--transition);
-    min-height: 48px;
-  }
-  .lang-option:hover {
-    background: var(--bg-hover);
-  }
-  .lang-option.active {
-    background: color-mix(in srgb, var(--accent) 12%, transparent);
-    font-weight: 600;
-  }
-
-  .lang-option-flag {
-    font-size: 1.3em;
-  }
-
-  .lang-option-name {
-    flex: 1;
-    text-align: left;
-  }
-
-  .lang-check {
-    color: var(--accent);
-    flex-shrink: 0;
-  }
+  @media (prefers-reduced-motion: reduce) { .app-card { transition: none; } }
 </style>

@@ -49,6 +49,8 @@ export const ttsStatus = writable<{
 	piperReady: boolean;
 	piperFailed: boolean;
 	voiceCached: boolean;
+	downloading: boolean;
+	downloadProgress: number;
 	lastSpoke: string;
 	lastError: string;
 }>({
@@ -56,6 +58,8 @@ export const ttsStatus = writable<{
 	piperReady: false,
 	piperFailed: false,
 	voiceCached: false,
+	downloading: false,
+	downloadProgress: 0,
 	lastSpoke: '',
 	lastError: '',
 });
@@ -254,17 +258,21 @@ export async function preloadVoice(lang?: string): Promise<void> {
 		try { stored = await piper.stored(); } catch { stored = []; }
 		if (!stored.includes(voiceId)) {
 			console.log(`[TTS] Downloading voice: ${voiceId}...`);
+			updateStatus({ downloading: true, downloadProgress: 0 });
 			if (voiceId in CUSTOM_VOICE_URLS) {
 				await downloadCustomVoice(voiceId, (progress) => {
 					const pct = progress.total ? Math.round((progress.loaded * 100) / progress.total) : 0;
+					updateStatus({ downloadProgress: pct });
 					console.log(`[TTS] Download ${voiceId}: ${pct}%`);
 				});
 			} else {
 				await piper.download(voiceId, (progress) => {
 					const pct = progress.total ? Math.round((progress.loaded * 100) / progress.total) : 0;
+					updateStatus({ downloadProgress: pct });
 					console.log(`[TTS] Download ${voiceId}: ${pct}%`);
 				});
 			}
+			updateStatus({ downloading: false, downloadProgress: 100, voiceCached: true });
 			console.log(`[TTS] ✅ Voice ${voiceId} ready`);
 		} else {
 			console.log(`[TTS] Voice ${voiceId} already cached`);

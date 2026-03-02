@@ -122,6 +122,12 @@ const SV_PRONUNCIATION_MAP: Record<string, string> = {
 	'memory': 'memmori',
 
 	// ---- Autism / therapy terms ----
+	'autism': 'aotism',
+	'autismen': 'aotismen',
+	'autismspektrum': 'aotismspektrum',
+	'autistisk': 'aotistisk',
+	'autistiska': 'aotistiska',
+	'autistiskt': 'aotistiskt',
 	'ARASAAC': 'arrasaak',
 	'TEACCH': 'tiitsch',
 	'PECS': 'pecks',

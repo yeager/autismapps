@@ -9,6 +9,7 @@
   import { browser } from '$app/environment';
   import AchievementPopup from '$lib/components/rewards/AchievementPopup.svelte';
   import StarCounter from '$lib/components/rewards/StarCounter.svelte';
+  import TTSDownloadBanner from '$lib/components/TTSDownloadBanner.svelte';
   import { totalStars } from '$lib/rewards/store';
 
   let { children } = $props();
@@ -31,11 +32,10 @@
   // Initialize locale + preload Piper TTS voice
   if (browser) {
     const saved = localStorage.getItem('locale') || localStorage.getItem('lang');
-    if (saved) {
-      setLocale(saved);
-      localStorage.setItem('locale', saved);
-      localStorage.setItem('lang', saved);
-    }
+    const detected = saved || (navigator.language.startsWith('sv') ? 'sv' : 'en');
+    setLocale(detected);
+    localStorage.setItem('locale', detected);
+    localStorage.setItem('lang', detected);
     // Preload Piper WASM voice on first load
     preloadVoice();
   }
@@ -58,6 +58,14 @@
         </svg>
         <span>{$t('app.back')}</span>
       </button>
+
+      <a
+        class="site-link"
+        href="https://www.autismappar.se/"
+        aria-label="Autismappar.se"
+      >
+        🧩
+      </a>
 
       <div class="header-spacer"></div>
 
@@ -99,6 +107,7 @@
   </main>
 
   <AchievementPopup />
+  <TTSDownloadBanner />
 </div>
 
 <style>
@@ -140,6 +149,19 @@
     min-width: 44px;
   }
   .back-btn:hover { background: var(--bg-hover); }
+
+  .site-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition);
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  .site-link:hover { background: var(--bg-hover); }
 
   .settings-btn {
     display: flex;
@@ -186,6 +208,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .app-main.has-header {
     /* padding handled by individual pages */

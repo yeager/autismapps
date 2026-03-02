@@ -1736,5 +1736,9 @@
   "material.handout_sv_desc": "A4 booklet with all apps, descriptions and screenshots. PDF.",
   "material.handout_en": "Handout — English",
   "material.handout_en_desc": "A4 booklet with all apps, descriptions and screenshots. PDF.",
-  "material.license": "This material may be freely copied and shared for non-commercial purposes."
+  "material.license": "This material may be freely copied and shared for non-commercial purposes.",
+  "app.menu": "Menu",
+  "app.website": "Website",
+  "tts.downloading": "Downloading voice...",
+  "sagostunden.print": "Print"
 }

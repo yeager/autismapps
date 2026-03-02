@@ -7,3 +7,8 @@ ort-wasm-simd-threaded.jspi.wasm
 # Tauri
 src-tauri/target/
 src-tauri/binaries/
+
+# Temp data files
+arasaac-sv-keywords*.json
+arasaac-sv-plurals*
+deepl-*.json

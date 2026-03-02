@@ -38,6 +38,22 @@ function articleEn(word: string): string {
   return /^[aeiou]/i.test(word) ? 'an' : 'a';
 }
 
+/** Swedish definite form (bestämd form)
+ *  en-ord: katt→katten, fjäril→fjärilen, apa→apan, clown→clownen
+ *  ett-ord: lejon→lejonet, paraply→paraplyet, äpple→äpplet
+ */
+function definiteSv(word: string, gender: string): string {
+  const w = word.toLowerCase();
+  if (gender === 'ett') {
+    // ett-ord: ends in vowel → +t, else → +et
+    if (/[aeiouyåäö]$/.test(w)) return w + 't';
+    return w + 'et';
+  }
+  // en-ord: ends in vowel → +n, else → +en
+  if (/[aeiouyåäö]$/.test(w)) return w + 'n';
+  return w + 'en';
+}
+
 /** Capitalize first character of a string */
 function capitalize(s: string): string {
   if (!s) return s;
@@ -63,18 +79,24 @@ export function fillTemplate(
       const name = lang === 'en' ? word.en : word.sv;
 
       if (lang === 'sv') {
-        // Swedish: {en_X} → "en katt" / "ett lejon"
+        // Swedish: {en_X} → "en katt" / "ett lejon" (indefinite)
         const article = word.gender === 'ett' ? 'ett' : 'en';
         text = text.replace(new RegExp(`\\{en_${key}\\}`, 'g'), `${article} ${name}`);
+        // Swedish: {def_X} → "katten" / "lejonet" (definite, explicit)
+        const def = definiteSv(name, word.gender);
+        text = text.replace(new RegExp(`\\{def_${key}\\}`, 'g'), def);
+        // Swedish: {X} → base form (use {def_X} for explicit definite)
+        text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), name);
       } else {
         // English: {a_X} → "a cat" / "an elephant"
         const article = articleEn(name);
         text = text.replace(new RegExp(`\\{a_${key}\\}`, 'g'), `${article} ${name}`);
-        // Also handle {en_X} in case someone uses Swedish placeholder pattern in English
         text = text.replace(new RegExp(`\\{en_${key}\\}`, 'g'), `${article} ${name}`);
+        // English: {def_X} → "the cat"
+        text = text.replace(new RegExp(`\\{def_${key}\\}`, 'g'), `the ${name}`);
+        // English: {X} → base form (use {def_X} for explicit "the X")
+        text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), name);
       }
-
-      text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), name);
     }
     // Capitalize first character of each paragraph
     return capitalize(text);

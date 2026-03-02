@@ -21,10 +21,10 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         'Det var en gång {en_DJUR} som bodde i {en_PLATS}.',
-        '{DJUR} älskade att {VERB} varje dag.',
-        'En dag hittade {DJUR} {en_SAK} som glittrade i solen.',
-        '"{SAK}! Vilken fantastisk sak!" ropade {DJUR} glatt.',
-        'Och så levde {DJUR} lycklig i alla sina dagar med sin fina {SAK}.'
+        '{def_DJUR} älskade att {VERB} varje dag.',
+        'En dag hittade {def_DJUR} {en_SAK} som glittrade i solen.',
+        '"{SAK}! Vilken fantastisk sak!" ropade {def_DJUR} glatt.',
+        'Och så levde {def_DJUR} lycklig i alla sina dagar med sin fina {SAK}.'
       ],
       en: [
         'Once upon a time there was {a_DJUR} who lived in {a_PLATS}.',
@@ -43,10 +43,10 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_DJUR} var väldigt hungrig en solig morgon.',
-        '{DJUR} gick till {en_PLATS} för att leta efter mat.',
-        'Där träffade {DJUR} {en_PERSON} som hade {en_MAT}.',
-        '"Vill du dela med dig?" frågade {DJUR} artigt.',
-        '{PERSON} log och gav {DJUR} lite {MAT}. "Tack!" sa {DJUR} och blev mätt och glad.'
+        '{def_DJUR} gick till {en_PLATS} för att leta efter mat.',
+        'Där träffade {def_DJUR} {en_PERSON} som hade {en_MAT}.',
+        '"Vill du dela med dig?" frågade {def_DJUR} artigt.',
+        '{def_PERSON} log och gav {def_DJUR} lite {MAT}. "Tack!" sa {def_DJUR} och blev mätt och glad.'
       ],
       en: [
         '{a_DJUR} was very hungry one sunny morning.',
@@ -65,7 +65,7 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_PERSON} hittade {en_SAK} som var alldeles magisk.',
-        'Varje gång {PERSON} rörde vid {SAK} började den att lysa.',
+        'Varje gång {def_PERSON} rörde vid {def_SAK} började den att lysa.',
         'Plötsligt kom {en_DJUR} fram och ville också titta.',
         'Tillsammans bestämde de sig för att {VERB}.',
         'Det blev den bästa dagen någonsin!'
@@ -87,9 +87,9 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_DJUR} kände sig lite ensam.',
-        'En dag gick {DJUR} till {en_PLATS} och träffade {en_PERSON}.',
-        '"Hej! Vill du {VERB} med mig?" frågade {PERSON}.',
-        '{DJUR} nickade glatt och de började {VERB} tillsammans.',
+        'En dag gick {def_DJUR} till {en_PLATS} och träffade {en_PERSON}.',
+        '"Hej! Vill du {VERB} med mig?" frågade {def_PERSON}.',
+        '{def_DJUR} nickade glatt och de började {VERB} tillsammans.',
         'Från den dagen var de allra bästa vänner.'
       ],
       en: [
@@ -110,8 +110,8 @@ export const TEMPLATES: StoryTemplate[] = [
       sv: [
         '{en_PERSON} fyllde år och bjöd alla på kalas.',
         '{en_DJUR} kom med {en_SAK} som present.',
-        'De åt massor av {MAT} och dansade hela dagen.',
-        '"{SAK} var den bästa presenten jag fått!" sa {PERSON}.',
+        'De åt massor av {def_MAT} och dansade hela dagen.',
+        '"{def_SAK} var den bästa presenten jag fått!" sa {def_PERSON}.',
         'Alla kramade varandra och sjöng grattis en sista gång.'
       ],
       en: [
@@ -131,10 +131,10 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_PERSON} hörde talas om {en_SAK} som var gömd i {en_PLATS}.',
-        '{PERSON} packade sin väska och gav sig av på äventyr.',
-        'På vägen mötte {PERSON} {en_DJUR} som ville hjälpa till.',
-        'Tillsammans letade de överallt tills de hittade {SAK}!',
-        '"Vi gjorde det!" jublade {PERSON} och kramade {DJUR}.'
+        '{def_PERSON} packade sin väska och gav sig av på äventyr.',
+        'På vägen mötte {def_PERSON} {en_DJUR} som ville hjälpa till.',
+        'Tillsammans letade de överallt tills de hittade {def_SAK}!',
+        '"Vi gjorde det!" jublade {def_PERSON} och kramade {def_DJUR}.'
       ],
       en: [
         '{a_PERSON} heard about {a_SAK} hidden in {a_PLATS}.',
@@ -153,10 +153,10 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         'Det regnade ute och {en_DJUR} satt hemma och tittade ut genom fönstret.',
-        '"Jag vet! Jag kan {VERB}!" sa {DJUR} och tog fram {en_SAK}.',
-        '{DJUR} började {VERB} och hade jätteroligt.',
+        '"Jag vet! Jag kan {VERB}!" sa {def_DJUR} och tog fram {en_SAK}.',
+        '{def_DJUR} började {VERB} och hade jätteroligt.',
         'Snart slutade det regna och solen tittade fram.',
-        '{DJUR} sprang till {en_PLATS} med {SAK} under armen.'
+        '{def_DJUR} sprang till {en_PLATS} med {def_SAK} under armen.'
       ],
       en: [
         'It was raining outside and {a_DJUR} sat at home looking out the window.',
@@ -175,10 +175,10 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         'En natt drömde {en_PERSON} om {en_PLATS} långt borta.',
-        'I drömmen flög {PERSON} genom luften ovanför molnen.',
-        '{PERSON} landade och mötte {en_DJUR} som gav hen {en_SAK}.',
-        '"Den här {SAK} har magiska krafter", viskade {DJUR}.',
-        'När {PERSON} vaknade låg {SAK} på kudden. Eller var det en dröm?'
+        'I drömmen flög {def_PERSON} genom luften ovanför molnen.',
+        '{def_PERSON} landade och mötte {en_DJUR} som gav hen {en_SAK}.',
+        '"Den här {SAK} har magiska krafter", viskade {def_DJUR}.',
+        'När {def_PERSON} vaknade låg {def_SAK} på kudden. Eller var det en dröm?'
       ],
       en: [
         'One night {a_PERSON} dreamed of {a_PLATS} far away.',
@@ -197,8 +197,8 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_PERSON} och {en_DJUR} bestämde sig för att laga mat.',
-        'De tog fram {en_SAK} och la {MAT} i den.',
-        '"Vi behöver mer {MAT}!" sa {DJUR} och hoppade upp och ner.',
+        'De tog fram {en_SAK} och la {def_MAT} i den.',
+        '"Vi behöver mer {MAT}!" sa {def_DJUR} och hoppade upp och ner.',
         'Till slut var maten klar och det doftade underbart.',
         'De satte sig ner och åt upp allt. "Mums!" sa de båda.'
       ],
@@ -219,7 +219,7 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_PERSON} byggde en raket av {en_SAK}.',
-        '"Ska vi flyga till rymden?" frågade {PERSON} sin kompis {en_DJUR}.',
+        '"Ska vi flyga till rymden?" frågade {def_PERSON} sin kompis {en_DJUR}.',
         'Raketen lyfte och de flög förbi stjärnor och planeter.',
         'De landade på {en_PLATS} där allt var uppochner.',
         'Efter ett fantastiskt äventyr flög de tillbaka hem lagom till middag.'
@@ -241,9 +241,9 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_DJUR} och {en_PERSON} ville leka kurragömma.',
-        '{DJUR} gömde sig bakom {en_SAK} i {en_PLATS}.',
-        '{PERSON} letade och letade men hittade inte {DJUR}.',
-        '"Här är jag!" ropade {DJUR} och hoppade fram.',
+        '{def_DJUR} gömde sig bakom {en_SAK} i {en_PLATS}.',
+        '{def_PERSON} letade och letade men hittade inte {def_DJUR}.',
+        '"Här är jag!" ropade {def_DJUR} och hoppade fram.',
         'De skrattade och lekte kurragömma hela eftermiddagen.'
       ],
       en: [
@@ -264,7 +264,7 @@ export const TEMPLATES: StoryTemplate[] = [
       sv: [
         '{en_PERSON} ville spela musik och tog fram {en_SAK}.',
         '{en_DJUR} hörde musiken och kom för att lyssna.',
-        '"Kan jag {VERB} med?" frågade {DJUR} förhoppningsfullt.',
+        '"Kan jag {VERB} med?" frågade {def_DJUR} förhoppningsfullt.',
         'Tillsammans spelade de den vackraste musiken.',
         'Alla som lyssnade började {VERB} och klappa händerna!'
       ],
@@ -285,9 +285,9 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_PERSON} gick ut i trädgården och hittade {en_SAK}.',
-        'Under {SAK} satt {en_DJUR} och åt {MAT}.',
-        '"Åh, vad söt du är!" sa {PERSON} och satte sig bredvid.',
-        '{DJUR} delade med sig av sin {MAT}.',
+        'Under {def_SAK} satt {en_DJUR} och åt {def_MAT}.',
+        '"Åh, vad söt du är!" sa {def_PERSON} och satte sig bredvid.',
+        '{def_DJUR} delade med sig av sin {MAT}.',
         'De satt i solen och njöt av den fina dagen tillsammans.'
       ],
       en: [
@@ -330,9 +330,9 @@ export const TEMPLATES: StoryTemplate[] = [
       sv: [
         '{en_DJUR} hade gått vilse i {en_PLATS} och var rädd.',
         '{en_PERSON} hörde ett ljud och sprang dit.',
-        'Med hjälp av {en_SAK} lyckades {PERSON} hitta {DJUR}.',
-        '"Tack för att du räddade mig!" sa {DJUR} tacksamt.',
-        '{PERSON} kramade {DJUR} och de gick hem tillsammans.'
+        'Med hjälp av {en_SAK} lyckades {def_PERSON} hitta {def_DJUR}.',
+        '"Tack för att du räddade mig!" sa {def_DJUR} tacksamt.',
+        '{def_PERSON} kramade {def_DJUR} och de gick hem tillsammans.'
       ],
       en: [
         '{a_DJUR} had gotten lost in {a_PLATS} and was scared.',
@@ -352,9 +352,9 @@ export const TEMPLATES: StoryTemplate[] = [
       sv: [
         '{en_PERSON} ville måla en tavla av {en_PLATS}.',
         '{en_DJUR} kom och ville hjälpa till.',
-        '{DJUR} doppade sin svans i färgen och målade med den.',
+        '{def_DJUR} doppade sin svans i färgen och målade med den.',
         'Resultatet blev en härlig tavla med {en_SAK} i mitten.',
-        '"Det är konst!" skrattade {PERSON} och hängde upp tavlan.'
+        '"Det är konst!" skrattade {def_PERSON} och hängde upp tavlan.'
       ],
       en: [
         '{a_PERSON} wanted to paint a picture of {a_PLATS}.',
@@ -373,10 +373,10 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_PERSON} planterade {en_SAK} i trädgården.',
-        'Nästa morgon hade det vuxit till ett träd fullt med {MAT}!',
-        '{en_DJUR} kom flygande och plockade {MAT} från trädet.',
-        '"Det här är ett magiskt träd!" utbrast {PERSON}.',
-        'De delade {MAT} med alla i byn och alla blev glada.'
+        'Nästa morgon hade det vuxit till ett träd fullt med {def_MAT}!',
+        '{en_DJUR} kom flygande och plockade {def_MAT} från trädet.',
+        '"Det här är ett magiskt träd!" utbrast {def_PERSON}.',
+        'De delade {def_MAT} med alla i byn och alla blev glada.'
       ],
       en: [
         '{a_PERSON} planted {a_SAK} in the garden.',
@@ -395,10 +395,10 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         'Det var kväll och {en_DJUR} var trött efter en lång dag.',
-        '{DJUR} kramade sin {SAK} och kröp ner i sängen.',
-        '{en_PERSON} kom och stoppade om {DJUR}.',
-        '"Godnatt, lilla {DJUR}", viskade {PERSON} och tände nattlampan.',
-        '{DJUR} somnade och drömde om {en_PLATS} full av äventyr.'
+        '{def_DJUR} kramade sin {SAK} och kröp ner i sängen.',
+        '{en_PERSON} kom och stoppade om {def_DJUR}.',
+        '"Godnatt, lilla {def_DJUR}", viskade {def_PERSON} och tände nattlampan.',
+        '{def_DJUR} somnade och drömde om {en_PLATS} full av äventyr.'
       ],
       en: [
         'It was evening and {a_DJUR} was tired after a long day.',
@@ -417,10 +417,10 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         'Cirkusen kom till stan och {en_DJUR} ville uppträda.',
-        '{en_PERSON} hjälpte {DJUR} att öva.',
-        '{DJUR} jonglerade med {en_SAK} och alla jublade.',
-        'Till slut fick {DJUR} {VERB} på scenen.',
-        'Publiken klappade och {DJUR} bugade stolt!'
+        '{en_PERSON} hjälpte {def_DJUR} att öva.',
+        '{def_DJUR} jonglerade med {en_SAK} och alla jublade.',
+        'Till slut fick {def_DJUR} {VERB} på scenen.',
+        'Publiken klappade och {def_DJUR} bugade stolt!'
       ],
       en: [
         'The circus came to town and {a_DJUR} wanted to perform.',
@@ -440,9 +440,9 @@ export const TEMPLATES: StoryTemplate[] = [
       sv: [
         '{en_PERSON} och {en_DJUR} klev ombord på en stor båt.',
         'De seglade mot {en_PLATS} medan vågorna gungade.',
-        'Till lunch åt de {MAT} på däck i solskenet.',
+        'Till lunch åt de {def_MAT} på däck i solskenet.',
         'De såg delfiner hoppa i vattnet runt båten.',
-        'När de kom fram till {PLATS} var de fyllda av glädje.'
+        'När de kom fram till {def_PLATS} var de fyllda av glädje.'
       ],
       en: [
         '{a_PERSON} and {a_DJUR} climbed aboard a big boat.',
@@ -462,7 +462,7 @@ export const TEMPLATES: StoryTemplate[] = [
       sv: [
         '{en_DJUR} sprang till lekplatsen en solig eftermiddag.',
         'Där väntade {en_PERSON} med {en_SAK}.',
-        '"Ska vi {VERB}?" frågade {PERSON} med ett stort leende.',
+        '"Ska vi {VERB}?" frågade {def_PERSON} med ett stort leende.',
         'De lekte hela dagen och andra barn ville också vara med.',
         'När solen gick ner lovade de att träffas igen imorgon.'
       ],
@@ -484,7 +484,7 @@ export const TEMPLATES: StoryTemplate[] = [
       sv: [
         '{en_PERSON} gick till biblioteket för att hitta en bok.',
         'Där satt {en_DJUR} och läste om {en_PLATS}.',
-        '"Titta! Den här boken har en bild av {en_SAK}!" sa {DJUR}.',
+        '"Titta! Den här boken har en bild av {en_SAK}!" sa {def_DJUR}.',
         'De läste boken tillsammans och fantiserade om äventyr.',
         'Innan de gick hem lånade de tre böcker var.'
       ],
@@ -505,10 +505,10 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         '{en_PERSON} hittade {en_SAK} som gav superkrafter!',
-        'Nu kunde {PERSON} flyga högt ovanför husen.',
+        'Nu kunde {def_PERSON} flyga högt ovanför husen.',
         '{en_DJUR} i {en_PLATS} behövde hjälp.',
-        '{PERSON} flög dit snabbt och räddade {DJUR}.',
-        '"Du är min hjälte!" sa {DJUR} och alla i {PLATS} jublade.'
+        '{def_PERSON} flög dit snabbt och räddade {def_DJUR}.',
+        '"Du är min hjälte!" sa {def_DJUR} och alla i {def_PLATS} jublade.'
       ],
       en: [
         '{a_PERSON} found {a_SAK} that gave superpowers!',
@@ -527,9 +527,9 @@ export const TEMPLATES: StoryTemplate[] = [
     paragraphs: {
       sv: [
         'Det var marknadsdag och {en_PERSON} gick dit med {en_DJUR}.',
-        'Det fanns massor av {MAT} i alla färger.',
-        '{DJUR} ville ha {en_SAK} som glittrade i ett stånd.',
-        '{PERSON} köpte {SAK} åt {DJUR} och {MAT} att äta.',
+        'Det fanns massor av {def_MAT} i alla färger.',
+        '{def_DJUR} ville ha {en_SAK} som glittrade i ett stånd.',
+        '{def_PERSON} köpte {def_SAK} åt {def_DJUR} och {def_MAT} att äta.',
         'De gick hem nöjda med sina fynd och magen full.'
       ],
       en: [
@@ -550,8 +550,8 @@ export const TEMPLATES: StoryTemplate[] = [
       sv: [
         'En klar natt gick {en_PERSON} och {en_DJUR} ut för att titta på stjärnorna.',
         'De tog med sig {en_SAK} och la sig på gräset.',
-        '"Titta! Jag ser en stjärnbild som ser ut som {en_PLATS}!" sa {DJUR}.',
-        '{PERSON} pekade mot en stjärna som blinkade extra starkt.',
+        '"Titta! Jag ser en stjärnbild som ser ut som {en_PLATS}!" sa {def_DJUR}.',
+        '{def_PERSON} pekade mot en stjärna som blinkade extra starkt.',
         'De önskade sig något fint och gick in och somnade med ett leende.'
       ],
       en: [

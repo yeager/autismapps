@@ -54,16 +54,24 @@
   function selectWord(slot, word) {
     selectedWords = { ...selectedWords, [slot]: word };
 
-    // Auto-advance to next empty slot
+    // Auto-advance to next empty slot with visual highlight
     tick().then(() => {
       const nextEmpty = neededSlots.find(s => s !== slot && !selectedWords[s]);
       if (nextEmpty) {
         const el = document.getElementById('slot-' + nextEmpty);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.classList.add('slot-highlight');
+          setTimeout(() => el.classList.remove('slot-highlight'), 2000);
+        }
       } else {
         // All slots filled — scroll to create button
         const btn = document.getElementById('create-story-btn');
-        if (btn) btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (btn) {
+          btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          btn.classList.add('pulse');
+          setTimeout(() => btn.classList.remove('pulse'), 2000);
+        }
       }
     });
   }
@@ -120,6 +128,82 @@
     if (!currentStory) return;
     const text = currentStory.paragraphs.join(' ');
     speak(text);
+  }
+
+  function printStory() {
+    if (!currentStory) return;
+    const title = storyTitle(currentStory.template);
+    const words = Object.entries(currentStory.words);
+    const paragraphs = currentStory.paragraphs;
+    const pictos = words.map(([_, w]) => ({
+      src: pictogramUrl(w.arasaac, 300),
+      label: w.sv
+    }));
+    const paraPictos = paragraphs.map((_, i) =>
+      paragraphPictograms(currentStory, i).map(p => ({
+        src: pictogramUrl(p.arasaac, 300),
+        label: p.sv
+      }))
+    );
+
+    const printHtml = `<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<title>${title} — Sagostunden</title>
+<style>
+  @page { margin: 20mm; size: A4; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; color: #2C3E50; line-height: 1.6; padding: 24px; }
+  .header { text-align: center; margin-bottom: 24px; border-bottom: 3px solid #7C3AED; padding-bottom: 16px; }
+  .header h1 { font-size: 28px; color: #7C3AED; margin-bottom: 4px; }
+  .header .subtitle { font-size: 14px; color: #666; }
+  .words-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 20px 0; }
+  .word-badge { text-align: center; }
+  .word-badge img { width: 80px; height: 80px; object-fit: contain; display: block; margin: 0 auto 4px; }
+  .word-badge span { font-size: 14px; font-weight: 600; }
+  .paragraph { margin: 24px 0; page-break-inside: avoid; }
+  .para-pictos { display: flex; gap: 12px; margin-bottom: 8px; }
+  .para-pictos img { width: 100px; height: 100px; object-fit: contain; border: 1px solid #e0e0e0; border-radius: 8px; padding: 4px; }
+  .para-text { font-size: 20px; line-height: 1.7; }
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 2px solid #e0e0e0; text-align: center; font-size: 11px; color: #999; }
+  .footer .app-info { margin-bottom: 4px; }
+  @media print { body { padding: 0; } .no-print { display: none !important; } }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>📖 ${title}</h1>
+    <div class="subtitle">Skapad med Sagostunden — autismappar.se</div>
+  </div>
+  <div class="words-row">
+    ${pictos.map(p => `<div class="word-badge"><img src="${p.src}" alt="${p.label}"><span>${p.label}</span></div>`).join('')}
+  </div>
+  ${paragraphs.map((para, i) => `
+    <div class="paragraph">
+      <div class="para-pictos">
+        ${paraPictos[i].map(p => `<img src="${p.src}" alt="${p.label}" title="${p.label}">`).join('')}
+      </div>
+      <p class="para-text">${para}</p>
+    </div>
+  `).join('')}
+  <div class="footer">
+    <div class="app-info">Sagostunden v1.0 — autismappar.se/launcher/apps/sagostunden</div>
+    <div>Bildstöd från ARASAAC (CC BY-NC-SA 4.0) — arasaac.org</div>
+  </div>
+  <div class="no-print" style="text-align:center;margin-top:24px">
+    <button onclick="window.print()" style="font-size:18px;padding:12px 32px;background:#7C3AED;color:#fff;border:none;border-radius:8px;cursor:pointer">🖨️ Skriv ut</button>
+  </div>
+</body>
+</html>`;
+
+    const printWin = window.open('', '_blank');
+    if (printWin) {
+      printWin.document.write(printHtml);
+      printWin.document.close();
+      // Wait for images to load, then auto-print
+      printWin.onload = () => setTimeout(() => printWin.print(), 500);
+    }
   }
 
   /** Get pictograms relevant to a specific paragraph */
@@ -203,7 +287,7 @@
             <button
               class="template-card"
               class:selected={selectedTemplate?.id === tmpl.id}
-              onclick={() => { selectedTemplate = tmpl; selectedWords = {}; }}
+              onclick={() => { selectedTemplate = tmpl; selectedWords = {}; tick().then(() => { const el = document.getElementById('step-words'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); }}
             >
               <span class="template-title">{storyTitle(tmpl)}</span>
               <span class="template-slots">
@@ -216,7 +300,7 @@
 
       {#if selectedTemplate}
         <!-- Step 2: Pick words for slots -->
-        <div class="step">
+        <div class="step" id="step-words">
           <h2>2. {$t('sagostunden.pick_words')}</h2>
           <p class="hint">{$t('sagostunden.pick_words_hint')}</p>
 
@@ -336,6 +420,9 @@
           </button>
           <button class="big-btn secondary" onclick={save}>
             💾 {$t('sagostunden.save_story')}
+          </button>
+          <button class="big-btn secondary" onclick={printStory}>
+            🖨️ {$t('sagostunden.print') || 'Skriv ut'}
           </button>
           <button class="big-btn secondary" onclick={() => view = 'select'}>
             ✨ {$t('sagostunden.new_story')}
@@ -813,4 +900,22 @@
     }
     .top-bar h1 { font-size: 22px; }
   }
+
+  .slot-highlight {
+    animation: slot-glow 0.6s ease-in-out 2;
+    border-color: var(--accent, #3498db) !important;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
+  }
+  @keyframes slot-glow {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1); }
+    50% { box-shadow: 0 0 0 8px rgba(52, 152, 219, 0.4); }
+  }
+  .pulse {
+    animation: btn-pulse 0.5s ease-in-out 3;
+  }
+  @keyframes btn-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
 </style>
+

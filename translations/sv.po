@@ -1,8 +1,14 @@
+# Translators:
+# Daniel Nylander <po@danielnylander.se>, 2026
+# 
 msgid ""
 msgstr ""
+"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
+"Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/305369/sv/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. angerManager.doingGreat
 msgctxt "angerManager.doingGreat"
@@ -876,8 +882,11 @@ msgstr "Bra gjort! Du tog en skön paus!"
 
 #. calm.advice_critical
 msgctxt "calm.advice_critical"
-msgid "Very high stress. Press the emergency button or go to breathing. You are safe. 💙"
-msgstr "Mycket hög stress. Tryck på nödknappen eller gå till andning. Du är trygg. 💙"
+msgid ""
+"Very high stress. Press the emergency button or go to breathing. You are "
+"safe. 💙"
+msgstr ""
+"Mycket hög stress. Tryck på nödknappen eller gå till andning. Du är trygg. 💙"
 
 #. calm.advice_high
 msgctxt "calm.advice_high"
@@ -921,7 +930,8 @@ msgstr "Färgflöde"
 
 #. calm.emergency_msg
 msgctxt "calm.emergency_msg"
-msgid "Take 5 deep breaths. Count each one. You are safe. Everything will be okay."
+msgid ""
+"Take 5 deep breaths. Count each one. You are safe. Everything will be okay."
 msgstr "Ta 5 djupa andetag. Räkna varje. Du är trygg. Allt kommer bli bra."
 
 #. calm.exhale
@@ -1147,7 +1157,8 @@ msgstr "Välj åt mig!"
 #. chooser.credit
 msgctxt "chooser.credit"
 msgid "Visual decision helper — great when choices feel overwhelming"
-msgstr "Visuell beslutsstöd – perfekt när valmöjligheterna känns överväldigande"
+msgstr ""
+"Visuell beslutsstöd – perfekt när valmöjligheterna känns överväldigande"
 
 #. chooser.instruction
 msgctxt "chooser.instruction"
@@ -1582,7 +1593,8 @@ msgstr "Var är...?"
 #. cook.credit
 msgctxt "cook.credit"
 msgid "Visual step-by-step recipes (TEACCH-inspired structured cooking)"
-msgstr "Visuella steg-för-steg-recept (TEACCH-inspirerad strukturerad matlagning)"
+msgstr ""
+"Visuella steg-för-steg-recept (TEACCH-inspirerad strukturerad matlagning)"
 
 #. cook.done
 msgctxt "cook.done"
@@ -2341,18 +2353,28 @@ msgstr "Du är i en fantastisk zon! Fortsätt så."
 
 #. energy.strat.3
 msgctxt "energy.strat.3"
-msgid "Perfect energy for learning and playing! Channel it into something fun."
-msgstr "Perfekt energi för att lära sig och leka! Kanalisera den till något roligt."
+msgid ""
+"Perfect energy for learning and playing! Channel it into something fun."
+msgstr ""
+"Perfekt energi för att lära sig och leka! Kanalisera den till något roligt."
 
 #. energy.strat.4
 msgctxt "energy.strat.4"
-msgid "Time to slow down. Try deep breaths, squeeze a stress ball, or take a short walk."
-msgstr "Dags att ta det lugnt. Försök att andas djupt, krama en stressboll eller ta en kort promenad."
+msgid ""
+"Time to slow down. Try deep breaths, squeeze a stress ball, or take a short "
+"walk."
+msgstr ""
+"Dags att ta det lugnt. Försök att andas djupt, krama en stressboll eller ta "
+"en kort promenad."
 
 #. energy.strat.5
 msgctxt "energy.strat.5"
-msgid "Stop and breathe. Find a quiet space. Count to 10. Ask an adult for help if needed."
-msgstr "Stanna upp och andas. Hitta en lugn plats. Räkna till 10. Be en vuxen om hjälp om det behövs."
+msgid ""
+"Stop and breathe. Find a quiet space. Count to 10. Ask an adult for help if "
+"needed."
+msgstr ""
+"Stanna upp och andas. Hitta en lugn plats. Räkna till 10. Be en vuxen om "
+"hjälp om det behövs."
 
 #. energy.strategies
 msgctxt "energy.strategies"
@@ -2396,8 +2418,11 @@ msgstr "Rast"
 
 #. focus.credit
 msgctxt "focus.credit"
-msgid "Pomodoro-based focus timer with parked thoughts for managing distractions"
-msgstr "Pomodoro-baserad fokus-timer med parkerade tankar för att hantera distraktioner"
+msgid ""
+"Pomodoro-based focus timer with parked thoughts for managing distractions"
+msgstr ""
+"Pomodoro-baserad fokus-timer med parkerade tankar för att hantera "
+"distraktioner"
 
 #. focus.focus_time
 msgctxt "focus.focus_time"
@@ -2512,7 +2537,8 @@ msgstr "Borsta tänderna"
 #. guide.credit
 msgctxt "guide.credit"
 msgid "Visual step-by-step task guides (TEACCH-inspired structured teaching)"
-msgstr "Visuella steg-för-steg-guider (TEACCH-inspirerad strukturerad undervisning)"
+msgstr ""
+"Visuella steg-för-steg-guider (TEACCH-inspirerad strukturerad undervisning)"
 
 #. guide.get_dressed
 msgctxt "guide.get_dressed"
@@ -2691,8 +2717,12 @@ msgstr "Rätt!"
 
 #. letter.credit
 msgctxt "letter.credit"
-msgid "Based on DTTC principles (Strand, 2020) for childhood apraxia of speech. Not a substitute for speech therapy."
-msgstr "Baserad på DTTC-principer (Strand, 2020) för verbal dyspraxi. Ersätter inte logopedbehandling."
+msgid ""
+"Based on DTTC principles (Strand, 2020) for childhood apraxia of speech. Not"
+" a substitute for speech therapy."
+msgstr ""
+"Baserad på DTTC-principer (Strand, 2020) för verbal dyspraxi. Ersätter inte "
+"logopedbehandling."
 
 #. letter.cv
 msgctxt "letter.cv"
@@ -2756,8 +2786,12 @@ msgstr "Ljudkombinationer"
 
 #. letter.mode.coarticulation_desc
 msgctxt "letter.mode.coarticulation_desc"
-msgid "Practice smooth transitions between consonants and vowels — core motor planning"
-msgstr "Öva på smidiga övergångar mellan konsonanter och vokaler — grundläggande motorisk planering"
+msgid ""
+"Practice smooth transitions between consonants and vowels — core motor "
+"planning"
+msgstr ""
+"Öva på smidiga övergångar mellan konsonanter och vokaler — grundläggande "
+"motorisk planering"
 
 #. letter.mode.explore
 msgctxt "letter.mode.explore"
@@ -4482,7 +4516,7 @@ msgstr "Enkel"
 #. settings.test_voice
 msgctxt "settings.test_voice"
 msgid "Test voice"
-msgstr "Teströst"
+msgstr "Testa röst"
 
 #. settings.text_size
 msgctxt "settings.text_size"
@@ -4976,8 +5010,12 @@ msgstr "Vind"
 
 #. takk.description
 msgctxt "takk.description"
-msgid "Signs as Alternative and Augmentative Communication (TAKK) — sign the key words while speaking"
-msgstr "Tecken som alternativ och kompletterande kommunikation (TAKK) — teckna nyckelorden medan du talar"
+msgid ""
+"Signs as Alternative and Augmentative Communication (TAKK) — sign the key "
+"words while speaking"
+msgstr ""
+"Tecken som alternativ och kompletterande kommunikation (TAKK) — teckna "
+"nyckelorden medan du talar"
 
 #. takk.how_to_sign
 msgctxt "takk.how_to_sign"
@@ -5528,4 +5566,3 @@ msgstr "Ordbyggaren"
 msgctxt "wordBuilder.tryAgain"
 msgid "Try again!"
 msgstr "Försök igen!"
-

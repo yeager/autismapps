@@ -17,8 +17,11 @@
 
   let langOpen = $state(false);
   let langRef: HTMLDivElement | undefined = $state();
+  let menuOpen = $state(false);
+  let menuRef: HTMLDivElement | undefined = $state();
 
-  function toggleLang() { langOpen = !langOpen; }
+  function toggleLang() { langOpen = !langOpen; menuOpen = false; }
+  function toggleMenu() { menuOpen = !menuOpen; langOpen = false; }
   function pickLang(code: string) {
     setLocale(code);
     if (browser) { localStorage.setItem("locale", code); localStorage.setItem("lang", code); }
@@ -26,9 +29,10 @@
   }
 
   $effect(() => {
-    if (langOpen && browser) {
+    if ((langOpen || menuOpen) && browser) {
       const handler = (e: MouseEvent) => {
-        if (langRef && !langRef.contains(e.target as Node)) langOpen = false;
+        if (langOpen && langRef && !langRef.contains(e.target as Node)) langOpen = false;
+        if (menuOpen && menuRef && !menuRef.contains(e.target as Node)) menuOpen = false;
       };
       document.addEventListener("click", handler, true);
       return () => document.removeEventListener("click", handler, true);
@@ -60,6 +64,26 @@
   <header class="launcher-header">
     <div class="brand"><h1>🧩 {$t('app.title')}</h1></div>
     <div class="header-actions">
+      <div class="menu-wrapper" bind:this={menuRef}>
+        <button class="icon-btn" onclick={toggleMenu} aria-label={$t('app.menu') || 'Meny'}>☰</button>
+        {#if menuOpen}
+          <div class="menu-dropdown" transition:fly={{ y: -8, duration: 200 }}>
+            <button class="menu-option" onclick={() => { menuOpen = false; goto(`${base}/diploma`); }}>
+              <span>📜</span><span>{$t('diploma.nav') || 'Diplom'}</span>
+            </button>
+            <button class="menu-option" onclick={() => { menuOpen = false; goto(`${base}/settings`); }}>
+              <span>⚙️</span><span>{$t('app.settings')}</span>
+            </button>
+            <button class="menu-option" onclick={() => { menuOpen = false; goto(`${base}/about`); }}>
+              <span>ℹ️</span><span>{$t('about.title')}</span>
+            </button>
+            <div class="menu-divider"></div>
+            <a class="menu-option" href="https://www.autismappar.se/">
+              <span>🏠</span><span>{$t('app.website')}</span>
+            </a>
+          </div>
+        {/if}
+      </div>
       <div class="lang-switcher" bind:this={langRef}>
         <button class="icon-btn" onclick={toggleLang} aria-label="Switch language">
           <span class="lang-flag">{currentFlag}</span>
@@ -75,8 +99,6 @@
           </div>
         {/if}
       </div>
-      <button class="icon-btn" onclick={() => goto(`${base}/settings`)} aria-label={$t('app.settings')}>⚙️</button>
-      <button class="icon-btn" onclick={() => goto(`${base}/about`)} aria-label={$t('about.title')}>ℹ️</button>
     </div>
   </header>
 
@@ -171,8 +193,22 @@
     position: absolute; top: calc(100% + 4px); right: 0;
     background: var(--bg-card, #fff); border: 2px solid var(--border, #ddd);
     border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    min-width: 150px; max-width: calc(100vw - 16px); z-index: 100; overflow: hidden;
+    min-width: 150px; max-width: calc(100vw - 16px); z-index: 9999; overflow: hidden;
   }
+  .menu-wrapper { position: relative; }
+  .menu-dropdown {
+    position: absolute; top: calc(100% + 4px); right: 0;
+    background: var(--bg-card, #fff); border: 2px solid var(--border, #ddd);
+    border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    min-width: 200px; max-width: calc(100vw - 16px); z-index: 9999; overflow: hidden;
+  }
+  .menu-option {
+    display: flex; align-items: center; gap: 10px; width: 100%;
+    padding: 12px 16px; font-size: 1.05em; border: none; background: none; cursor: pointer;
+    color: var(--text, #2C3E50); min-height: 48px; text-decoration: none;
+  }
+  .menu-option:hover { background: var(--bg-hover, #f0f0f0); }
+  .menu-divider { height: 1px; background: var(--border, #eee); margin: 4px 0; }
   .lang-option {
     display: flex; align-items: center; gap: 10px; width: 100%;
     padding: 12px 16px; font-size: 1.05em; border: none; background: none; cursor: pointer;

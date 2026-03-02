@@ -1737,5 +1737,9 @@
   "material.handout_sv_desc": "A4-häfte med alla appar, beskrivningar och skärmbilder. PDF.",
   "material.handout_en": "Handout — English",
   "material.handout_en_desc": "A4 booklet with all apps, descriptions and screenshots. PDF.",
-  "material.license": "Materialet får fritt kopieras och delas i icke-kommersiellt syfte."
+  "material.license": "Materialet får fritt kopieras och delas i icke-kommersiellt syfte.",
+  "app.menu": "Meny",
+  "app.website": "Webbplats",
+  "tts.downloading": "Laddar ner röst...",
+  "sagostunden.print": "Skriv ut"
 }

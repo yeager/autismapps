@@ -53,6 +53,8 @@ sw.addEventListener('fetch', (event) => {
 
         // Truly offline: serve cached index.html as SPA shell
         const cached =
+          await caches.match('/launcher/index.html') ||
+          await caches.match('/launcher/') ||
           await caches.match('/index.html') ||
           await caches.match('/');
         if (cached) return addCoopCoep(cached);
@@ -62,6 +64,23 @@ sw.addEventListener('fetch', (event) => {
           headers: { 'Content-Type': 'text/html; charset=utf-8' }
         });
       })()
+    );
+    return;
+  }
+
+  // Cache Piper TTS model files from HuggingFace (cache-first after first download)
+  if (url.hostname.includes('huggingface.co') && (url.pathname.endsWith('.onnx') || url.pathname.endsWith('.onnx.json') || url.pathname.endsWith('.wasm') || url.pathname.endsWith('.data'))) {
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        if (cached) return cached;
+        return fetch(event.request).then((response) => {
+          if (response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        });
+      })
     );
     return;
   }
@@ -103,12 +122,6 @@ sw.addEventListener('fetch', (event) => {
 });
 
 function addCoopCoep(response: Response): Response {
-  const headers = new Headers(response.headers);
-  headers.set('Cross-Origin-Opener-Policy', 'same-origin');
-  headers.set('Cross-Origin-Embedder-Policy', 'credentialless');
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers,
-  });
+  // Don't add COOP/COEP — it breaks cross-origin images (ARASAAC pictograms)
+  return response;
 }

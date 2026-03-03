@@ -53,6 +53,19 @@
 
   function selectWord(slot, word) {
     selectedWords = { ...selectedWords, [slot]: word };
+    speak(word.sv);
+    // Auto-advance: scroll to next empty slot
+    setTimeout(() => {
+      const nextEmpty = neededSlots.find(s => s !== slot && !selectedWords[s]);
+      if (nextEmpty) {
+        const el = document.getElementById(`slot-${nextEmpty}`);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        // All slots filled — scroll to create button
+        const btn = document.getElementById('create-btn');
+        if (btn) btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 200);
   }
 
   function removeWord(slot) {
@@ -120,9 +133,8 @@
 <WelcomeDialog appId="sagostunden" />
 
 <main class="sagostunden" style="--fs: {fontSize}px">
-  <!-- Top nav -->
-  <nav class="top-bar">
-    <button class="back-btn" onclick={() => goto(base + '/')}>← {$t('common.back')}</button>
+  <!-- Page title + tabs -->
+  <div class="page-title">
     <h1>📖 {$t('app.sagostunden')}</h1>
     <div class="nav-tabs">
       <button class:active={view === 'select'} onclick={() => view = 'select'}>
@@ -132,7 +144,7 @@
         💾 {$t('sagostunden.saved')}
       </button>
     </div>
-  </nav>
+  </div>
 
   {#if view === 'select'}
     <section class="select-view" transition:fade={{ duration: 200 }}>
@@ -144,7 +156,17 @@
             <button
               class="template-card"
               class:selected={selectedTemplate?.id === tmpl.id}
-              onclick={() => { selectedTemplate = tmpl; selectedWords = {}; }}
+              onclick={() => { 
+                selectedTemplate = tmpl; 
+                selectedWords = {}; 
+                speak(tmpl.title);
+                // Scroll to first slot after template selection
+                setTimeout(() => {
+                  const firstSlot = tmpl.slots[0];
+                  const el = document.getElementById(`slot-${firstSlot}`);
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 200);
+              }}
             >
               <span class="template-title">{tmpl.title}</span>
               <span class="template-slots">
@@ -162,7 +184,7 @@
           <p class="hint">{$t('sagostunden.pick_words_hint')}</p>
 
           {#each neededSlots as slot}
-            <div class="slot-section">
+            <div class="slot-section" id="slot-{slot}">
               <h3>{SLOT_LABELS[slot]?.emoji} {SLOT_LABELS[slot]?.label}</h3>
 
               {#if selectedWords[slot]}
@@ -183,7 +205,7 @@
                   {#each wordsForSlot(slot) as word}
                     <button
                       class="word-btn"
-                      onclick={() => { selectWord(slot, word); speak(word.sv); }}
+                      onclick={() => selectWord(slot, word)}
                     >
                       {#if showPictograms}
                         <img
@@ -204,7 +226,7 @@
 
         <!-- Step 3: Generate -->
         <div class="step actions">
-          <button class="big-btn primary" onclick={createStory}>
+          <button class="big-btn primary" id="create-btn" onclick={createStory}>
             📖 {$t('sagostunden.create_story')}
           </button>
         </div>
@@ -321,7 +343,7 @@
     --fs: 24px;
   }
 
-  .top-bar {
+  .page-title {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -329,20 +351,10 @@
     margin-bottom: 24px;
   }
 
-  .top-bar h1 {
+  .page-title h1 {
     font-size: 28px;
     margin: 0;
     flex: 1;
-  }
-
-  .back-btn {
-    font-size: 18px;
-    padding: 8px 16px;
-    border-radius: 12px;
-    border: 2px solid #333;
-    background: white;
-    cursor: pointer;
-    font-weight: 600;
   }
 
   .nav-tabs {

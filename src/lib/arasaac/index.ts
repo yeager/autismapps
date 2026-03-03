@@ -87,12 +87,9 @@ export function getPictogramUrl(
   bw: boolean = false,
   size: number = 300
 ): string {
-  const base = `${API_BASE}/pictograms/${id}`;
-  const params = new URLSearchParams();
-  if (bw) params.set('color', 'false');
-  if (size !== 300) params.set('resolution', String(size));
-  const qs = params.toString();
-  return qs ? `${base}?${qs}` : base;
+  // Valid sizes: 300, 500, 2500
+  const validSize = [300, 500, 2500].includes(size) ? size : 300;
+  return `https://static.arasaac.org/pictograms/${id}/${id}_${validSize}.png`;
 }
 
 export async function getPictogramById(id: number, lang: string = 'en'): Promise<Pictogram | null> {

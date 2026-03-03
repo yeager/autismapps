@@ -9,6 +9,7 @@
   import { generateStory } from '$lib/sagostunden/engine';
   import { saveStory, getAllStories, deleteStory, toggleFavorite } from '$lib/sagostunden/storage';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   // View state
   let view = $state('select'); // 'select' | 'story' | 'saved'
@@ -29,6 +30,7 @@
   // Settings
   let fontSize = $state(24);
   let showPictograms = $state(true);
+  let showStar = $state(false);
 
   // Slots needed by current template
   let neededSlots = $derived(selectedTemplate ? selectedTemplate.slots : []);
@@ -74,15 +76,21 @@
     selectedWords = copy;
   }
 
-  function createStory() {
+  async function createStory() {
     if (!selectedTemplate) return;
     currentStory = generateStory(selectedTemplate, selectedWords);
     view = 'story';
+    await awardStar('sagostunden', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
   }
 
-  function randomStory() {
+  async function randomStory() {
     currentStory = generateStory();
     view = 'story';
+    await awardStar('sagostunden', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
   }
 
   async function save() {
@@ -138,6 +146,8 @@
   goalKey="welcome.sagostunden.goal"
   icon="📖"
 />
+
+<GoldStarBurst show={showStar} />
 
 <main class="sagostunden" style="--fs: {fontSize}px">
   <!-- Page title + tabs -->

@@ -5,6 +5,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   let mode = $state('menu'); // menu, addition, subtraction
   let a = $state(0), b = $state(0), answer = $state(null), op = $state('+');
@@ -13,6 +14,7 @@
   let score = $state(0);
   let total = $state(0);
   let maxNum = $state(10);
+  let showStar = $state(false);
 
   function startMode(m) {
     mode = m;
@@ -31,12 +33,15 @@
     speak(`${a} ${op === '+' ? 'plus' : 'minus'} ${b}`);
   }
 
-  function check() {
+  async function check() {
     total++;
     if (parseInt(userAnswer) === answer) {
       correct = true;
       score++;
       speak($t('mathAid.correct'));
+      await awardStar('math-aid', 'rewards.star.completed');
+      showStar = true;
+      setTimeout(() => showStar = false, 2000);
       setTimeout(newProblem, 1500);
     } else {
       correct = false;
@@ -54,6 +59,8 @@
 </script>
 
 <WelcomeDialog appId="math-aid" titleKey="app.math_aid" purposeKey="welcome.mathAid.purpose" howKey="welcome.mathAid.how" goalKey="welcome.mathAid.goal" icon="➕" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="app" in:fade>
 

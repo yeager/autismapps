@@ -5,18 +5,27 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   let count = $state(0);
   let maxCount = $state(10);
   let items = $state<string[]>([]);
+  let showStar = $state(false);
 
   const COUNTER_EMOJIS = ['🍎', '⭐', '🐟', '🌸', '🎈', '🦋', '🍊', '🐛', '🌻', '🔵'];
 
-  function addOne() {
+  async function addOne() {
     if (count >= maxCount) return;
     count++;
     items = [...items, COUNTER_EMOJIS[(count - 1) % COUNTER_EMOJIS.length]];
     speak(String(count));
+    
+    // Award star when reaching max count
+    if (count === maxCount) {
+      await awardStar('counting', 'rewards.star.completed');
+      showStar = true;
+      setTimeout(() => showStar = false, 2000);
+    }
   }
 
   function removeOne() {
@@ -42,6 +51,8 @@
 </script>
 
 <WelcomeDialog appId="counting" titleKey="app.counting" purposeKey="welcome.counting.purpose" howKey="welcome.counting.how" goalKey="welcome.counting.goal" icon="🔢" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="counting-page">
   <div class="page-title">

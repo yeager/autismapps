@@ -7,6 +7,7 @@
   import { searchPictograms } from '$lib/arasaac';
   import { locale } from '$lib/i18n';
   import { get } from 'svelte/store';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   let duration = $state(5);
   let remaining = $state(0);
@@ -15,6 +16,7 @@
   let interval: ReturnType<typeof setInterval> | null = null;
   let stars = $state(0);
   let fullscreen = $state(false);
+  let showStar = $state(false);
 
   // First-Then
   let firstThenMode = $state(false);
@@ -48,6 +50,7 @@
         vibrate();
         stars++;
         speak($t('timer.done'));
+        awardStarAsync();
       }
     }, 1000);
   }
@@ -71,6 +74,7 @@
         vibrate();
         stars++;
         speak($t('timer.done'));
+        awardStarAsync();
       }
     }, 1000);
   }
@@ -136,9 +140,17 @@
       fullscreen = false;
     }
   }
+
+  async function awardStarAsync() {
+    await awardStar('visual-timer', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
+  }
 </script>
 
 <WelcomeDialog appId="visual-timer" titleKey="app.visual_timer" purposeKey="welcome.visualTimer.purpose" howKey="welcome.visualTimer.how" goalKey="welcome.visualTimer.goal" icon="⏳" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="timer-page" class:fullscreen>
   <div class="page-title">

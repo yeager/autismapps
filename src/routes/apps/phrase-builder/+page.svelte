@@ -5,6 +5,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   interface PictoWord { word: string; url: string; id: number; }
 
@@ -25,12 +26,22 @@
   let selectedVerb = $state<PictoWord | null>(null);
   let selectedObject = $state<PictoWord | null>(null);
   let favorites = $state<string[]>([]);
+  let showStar = $state(false);
+  let lastCompleteSentence = $state('');
 
   const sentence = $derived(
     [selectedSubject?.word, selectedVerb?.word, selectedObject?.word].filter(Boolean).join(' ')
   );
 
   $effect(() => { loadAll(); });
+
+  $effect(() => {
+    // Award star when a complete phrase is built
+    if (selectedSubject && selectedVerb && selectedObject && sentence && sentence !== lastCompleteSentence) {
+      lastCompleteSentence = sentence;
+      awardStarAsync();
+    }
+  });
 
   async function loadAll() {
     loading = true;
@@ -64,9 +75,17 @@
     selectedVerb = null;
     selectedObject = null;
   }
+
+  async function awardStarAsync() {
+    await awardStar('phrase-builder', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
+  }
 </script>
 
 <WelcomeDialog appId="phrase-builder" titleKey="app.phrase_builder" purposeKey="welcome.phraseBuilder.purpose" howKey="welcome.phraseBuilder.how" goalKey="welcome.phraseBuilder.goal" icon="📝" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="phrase-page">
   <div class="page-title">

@@ -5,6 +5,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   const THEMES = [
     { id: 'animals', icon: '🐾', emojis: ['🐶','🐱','🐰','🐸','🐻','🦊','🐨','🐼'] },
@@ -21,6 +22,7 @@
   let moves = $state(0);
   let gameWon = $state(false);
   let lockBoard = $state(false);
+  let showStar = $state(false);
 
   function startGame(thm) {
     theme = t;
@@ -54,6 +56,7 @@
         if (matched.size === pairs) {
           gameWon = true;
           speak($t('memoryGame.youWon'));
+          awardStarAsync();
         }
       } else {
         setTimeout(() => { flipped = []; lockBoard = false; }, 1000);
@@ -62,9 +65,17 @@
   }
 
   let gridCols = $derived(pairs <= 4 ? 4 : pairs <= 6 ? 4 : 4);
+
+  async function awardStarAsync() {
+    await awardStar('memory-game', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
+  }
 </script>
 
 <WelcomeDialog appId="memory-game" titleKey="app.memory_game" purposeKey="welcome.memoryGame.purpose" howKey="welcome.memoryGame.how" goalKey="welcome.memoryGame.goal" icon="🃏" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="app" in:fade>
 

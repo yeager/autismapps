@@ -5,6 +5,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade, scale } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   // === STAVELSEHOPPET — Syllable Jumping Game ===
   // Break words into syllables with visual/rhythmic cues
@@ -65,6 +66,7 @@
   let speechRate = $state(0.6);
   let showCelebration = $state(false);
   let bounceIdx = $state(-1);
+  let showStar = $state(false);
 
   const currentSet = $derived(selectedSetIdx !== null ? WORD_SETS[selectedSetIdx] : null);
   const currentWord = $derived(currentSet ? currentSet.words[currentWordIdx] : null);
@@ -113,13 +115,16 @@
     isPlaying = false;
   }
 
-  function nextWord() {
+  async function nextWord() {
     if (!currentSet) return;
     if (currentWordIdx < currentSet.words.length - 1) {
       currentWordIdx++;
       tappedSyllables = [];
     } else {
       showCelebration = true;
+      await awardStar('syllable-jump', 'rewards.star.completed');
+      showStar = true;
+      setTimeout(() => showStar = false, 2000);
     }
   }
 
@@ -129,6 +134,8 @@
 </script>
 
 <WelcomeDialog appId="syllable-jump" titleKey="app.syllable_jump" purposeKey="welcome.syllableJump.purpose" howKey="welcome.syllableJump.how" goalKey="welcome.syllableJump.goal" icon="🦘" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="app" in:fade>
 

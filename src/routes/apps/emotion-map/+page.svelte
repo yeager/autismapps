@@ -8,6 +8,7 @@
   import { activeProfileId } from '$lib/stores/profile';
   import { get } from 'svelte/store';
   import { fade, fly } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   interface Emotion {
     id: string; emoji: string; label: string; zone: 'green' | 'yellow' | 'orange' | 'red';
@@ -44,6 +45,7 @@
   let diaryEntries = $state<{ emotion: string; time: string; note: string }[]>([]);
   let showDiary = $state(false);
   let diaryNote = $state('');
+  let showStar = $state(false);
 
   // Quiz mode (from GTK4 kanslokartan)
   let quizMode = $state(false);
@@ -75,12 +77,15 @@
     speak($t(e.label));
   }
 
-  function logEmotion() {
+  async function logEmotion() {
     if (!selectedEmotion) return;
     diaryEntries = [{ emotion: selectedEmotion.id, time: new Date().toISOString(), note: diaryNote }, ...diaryEntries].slice(0, 50);
     diaryNote = '';
     saveDiary();
     speak($t('emotion.logged'));
+    await awardStar('emotion-map', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
   }
 
   function getZoneEmotions(zone: string) {
@@ -157,6 +162,8 @@
 </script>
 
 <WelcomeDialog appId="emotion-map" titleKey="app.emotion_map" purposeKey="welcome.emotionMap.purpose" howKey="welcome.emotionMap.how" goalKey="welcome.emotionMap.goal" icon="🗺️" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="emotion-page">
   <div class="page-title">

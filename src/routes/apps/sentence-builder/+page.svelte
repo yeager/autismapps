@@ -5,6 +5,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   // Fitzgerald Key: yellow=person, green=verb, orange=object
   const SENTENCES = [
@@ -52,6 +53,7 @@
   let placed = $state([]);
   let correct = $state(false);
   let score = $state(0);
+  let showStar = $state(false);
 
   function shuffle(arr) {
     const a = [...arr];
@@ -82,6 +84,7 @@
         correct = true;
         score++;
         speak(built);
+        awardStarAsync();
       } else {
         speak($t('sentenceBuilder.tryAgain'));
         setTimeout(() => load(), 1200);
@@ -99,9 +102,17 @@
     sentIdx = (sentIdx + 1) % SENTENCES.length;
     load();
   }
+
+  async function awardStarAsync() {
+    await awardStar('sentence-builder', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
+  }
 </script>
 
 <WelcomeDialog appId="sentence-builder" titleKey="app.sentence_builder" purposeKey="welcome.sentenceBuilder.purpose" howKey="welcome.sentenceBuilder.how" goalKey="welcome.sentenceBuilder.goal" icon="✏️" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="app" in:fade>
 

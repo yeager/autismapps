@@ -130,7 +130,14 @@
   loadSaved();
 </script>
 
-<WelcomeDialog appId="sagostunden" />
+<WelcomeDialog
+  appId="sagostunden"
+  titleKey="app.sagostunden"
+  purposeKey="welcome.sagostunden.purpose"
+  howKey="welcome.sagostunden.how"
+  goalKey="welcome.sagostunden.goal"
+  icon="📖"
+/>
 
 <main class="sagostunden" style="--fs: {fontSize}px">
   <!-- Page title + tabs -->

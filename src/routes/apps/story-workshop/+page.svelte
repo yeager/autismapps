@@ -5,6 +5,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   // === BERÄTTARVERKSTAN — Story Workshop ===
   // Narrative speech practice for DTTC's "connected speech" phase

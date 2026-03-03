@@ -5,6 +5,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   const WORDS = [
     { word: 'SOL', hint: '☀️' },
@@ -26,6 +27,7 @@
   let placed = $state([]);
   let correct = $state(false);
   let score = $state(0);
+  let showStar = $state(false);
 
   function shuffle(arr) {
     const a = [...arr];
@@ -60,6 +62,7 @@
         correct = true;
         score++;
         speak(`${WORDS[wordIdx].word}! ${$t('wordBuilder.correct')}`);
+        awardStarAsync();
       } else {
         speak($t('wordBuilder.tryAgain'));
         setTimeout(() => {
@@ -81,9 +84,17 @@
     wordIdx = (wordIdx + 1) % WORDS.length;
     loadWord();
   }
+
+  async function awardStarAsync() {
+    await awardStar('word-builder', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
+  }
 </script>
 
 <WelcomeDialog appId="word-builder" titleKey="app.word_builder" purposeKey="welcome.wordBuilder.purpose" howKey="welcome.wordBuilder.how" goalKey="welcome.wordBuilder.goal" icon="🔤" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="app" in:fade>
 

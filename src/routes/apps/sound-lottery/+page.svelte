@@ -5,6 +5,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   // === LJUDLOTTERIET — Sound Lottery ===
   // Randomized phoneme practice with hierarchy:
@@ -48,6 +49,7 @@
   let wheelAngle = $state(0);
   let masteredSounds = $state<Set<string>>(new Set());
   let totalReps = $state(0);
+  let showStar = $state(false);
 
   // Load progress
 
@@ -96,7 +98,7 @@
     else if (currentLevel === 'sentence') currentSentenceIdx = (currentSentenceIdx + 1) % selectedPhoneme.sentences.length;
   }
 
-  function advanceLevel() {
+  async function advanceLevel() {
     const idx = LEVELS.indexOf(currentLevel);
     if (idx < LEVELS.length - 1) {
       currentLevel = LEVELS[idx + 1];
@@ -104,7 +106,9 @@
     } else if (selectedPhoneme) {
       // Mastered!
       masteredSounds = new Set([...masteredSounds, selectedPhoneme.sound]);
-      
+      await awardStar('sound-lottery', 'rewards.star.completed');
+      showStar = true;
+      setTimeout(() => showStar = false, 2000);
     }
   }
 
@@ -125,6 +129,8 @@
 </script>
 
 <WelcomeDialog appId="sound-lottery" titleKey="app.sound_lottery" purposeKey="welcome.soundLottery.purpose" howKey="welcome.soundLottery.how" goalKey="welcome.soundLottery.goal" icon="🎰" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="app" in:fade>
 

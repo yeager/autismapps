@@ -4,10 +4,12 @@
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   type Activity = 'breathing' | 'pressure' | 'sounds' | 'colors' | 'grounding' | 'relaxation' | 'stress' | null;
 
   let activeActivity = $state<Activity>(null);
+  let showStar = $state(false);
 
   // Breathing
   let breathPhase = $state<'inhale' | 'hold' | 'exhale'>('inhale');
@@ -251,25 +253,41 @@
   function stopColors() { colorRunning = false; if (colorInterval) clearInterval(colorInterval); }
 
   // Grounding
-  function nextGrounding() {
+  async function nextGrounding() {
     if (groundingStep < GROUNDING_STEPS.length - 1) {
       groundingStep++;
       speak($t(GROUNDING_STEPS[groundingStep].key));
+      
+      // Award star when grounding exercise is completed
+      if (groundingStep === GROUNDING_STEPS.length - 1) {
+        await awardStar('calm-room', 'rewards.star.completed');
+        showStar = true;
+        setTimeout(() => showStar = false, 2000);
+      }
     }
   }
   function resetGrounding() { groundingStep = 0; }
 
   // Relaxation
-  function nextRelax() {
+  async function nextRelax() {
     if (relaxStep < RELAX_PARTS.length - 1) {
       relaxStep++;
       speak($t(RELAX_PARTS[relaxStep]));
+      
+      // Award star when relaxation exercise is completed
+      if (relaxStep === RELAX_PARTS.length - 1) {
+        await awardStar('calm-room', 'rewards.star.completed');
+        showStar = true;
+        setTimeout(() => showStar = false, 2000);
+      }
     }
   }
   function resetRelax() { relaxStep = 0; }
 </script>
 
 <WelcomeDialog appId="calm-room" titleKey="app.calm_room" purposeKey="welcome.calmRoom.purpose" howKey="welcome.calmRoom.how" goalKey="welcome.calmRoom.goal" icon="🧘" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="calm-page" style={activeActivity === 'colors' && colorRunning ? `background: hsl(${colorHue}, 60%, 85%)` : ''}>
   <div class="page-title">

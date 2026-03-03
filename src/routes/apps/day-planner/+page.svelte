@@ -8,6 +8,7 @@
   import { activeProfileId } from '$lib/stores/profile';
   import { fade } from 'svelte/transition';
   import { get } from 'svelte/store';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   const TIME_SLOTS = [
     { id: 'morning', icon: '🌅', time: '07:00' },
@@ -27,6 +28,7 @@
   let completed = $state({});
   let editing = $state(null);
   let customActivities = $state({});
+  let showStar = $state(false);
 
   $effect(() => {
     const pid = get(activeProfileId);
@@ -54,11 +56,19 @@
     }
   }
 
-  function toggle(id) {
+  async function toggle(id) {
     completed = { ...completed, [id]: !completed[id] };
     const slot = TIME_SLOTS.find(s => s.id === id);
     if (completed[id] && slot) speak(`${$t(`dayPlanner.slot.${id}`)} ✅`);
     save();
+    
+    // Check if all tasks are completed
+    const allCompleted = TIME_SLOTS.every(slot => completed[slot.id]);
+    if (allCompleted) {
+      await awardStar('day-planner', 'rewards.star.completed');
+      showStar = true;
+      setTimeout(() => showStar = false, 2000);
+    }
   }
 
   function setCustomIcon(slotId, icon) {
@@ -71,6 +81,8 @@
 </script>
 
 <WelcomeDialog appId="day-planner" titleKey="app.day_planner" purposeKey="welcome.dayPlanner.purpose" howKey="welcome.dayPlanner.how" goalKey="welcome.dayPlanner.goal" icon="📅" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="app" in:fade>
 

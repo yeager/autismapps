@@ -4,6 +4,156 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
 
+#. about.apps
+msgctxt "about.apps"
+msgid "apps"
+msgstr "appar"
+
+#. about.audience.children
+msgctxt "about.audience.children"
+msgid "Children with NPF (autism, ADHD), intellectual disabilities, DLD, or verbal dyspraxia"
+msgstr "Barn med NPF (autism, ADHD), IF, DLD eller verbal dyspraxi"
+
+#. about.audience.parents
+msgctxt "about.audience.parents"
+msgid "Parents and families"
+msgstr "Föräldrar och familjer"
+
+#. about.audience.teachers
+msgctxt "about.audience.teachers"
+msgid "Special education teachers and school staff"
+msgstr "Specialpedagoger och skolpersonal"
+
+#. about.audience.therapists
+msgctxt "about.audience.therapists"
+msgid "Speech therapists and habilitation teams"
+msgstr "Logopeder och habiliteringsteam"
+
+#. about.credit.arasaac
+msgctxt "about.credit.arasaac"
+msgid "Pictograms (CC BY-NC-SA 3.0)"
+msgstr "Piktogram (CC BY-NC-SA 3.0)"
+
+#. about.credit.piper
+msgctxt "about.credit.piper"
+msgid "Offline text-to-speech engine"
+msgstr "Offline-talsyntes"
+
+#. about.credit.signs
+msgctxt "about.credit.signs"
+msgid "Swedish Sign Language (CC BY-NC-SA 4.0, Stockholm University)"
+msgstr "Svenskt teckenspråk (CC BY-NC-SA 4.0, Stockholms universitet)"
+
+#. about.credits
+msgctxt "about.credits"
+msgid "Credits"
+msgstr "Tack till"
+
+#. about.description
+msgctxt "about.description"
+msgid "A free collection of evidence-based apps designed for children with neurodevelopmental conditions (NPF/NDD), intellectual disabilities (IF/ID), and speech-language difficulties. All apps work offline, are accessible, and use proven methods like AAC, TEACCH, PECS and LAMP."
+msgstr "En fri samling evidensbaserade appar designade för barn med neuropsykiatriska funktionsnedsättningar (NPF), intellektuell funktionsnedsättning (IF) och tal- och språksvårigheter. Alla appar fungerar offline, är tillgängliga och använder beprövade metoder som AKK, TEACCH, PECS och LAMP."
+
+#. about.developer
+msgctxt "about.developer"
+msgid "Developer"
+msgstr "Utvecklare"
+
+#. about.feat.a11y
+msgctxt "about.feat.a11y"
+msgid "Accessible: large touch targets, high contrast"
+msgstr "Tillgänglig: stora tryckytor, hög kontrast"
+
+#. about.feat.free
+msgctxt "about.feat.free"
+msgid "Free and open source forever"
+msgstr "Gratis och öppen källkod för alltid"
+
+#. about.feat.i18n
+msgctxt "about.feat.i18n"
+msgid "Swedish and English (more languages coming via Transifex)"
+msgstr "Svenska och engelska (fler språk kommer via Transifex)"
+
+#. about.feat.privacy
+msgctxt "about.feat.privacy"
+msgid "No tracking, no ads, no data collection"
+msgstr "Ingen spårning, inga annonser, ingen datainsamling"
+
+#. about.feat.pwa
+msgctxt "about.feat.pwa"
+msgid "Works offline — install on any device"
+msgstr "Fungerar offline — installera på vilken enhet som helst"
+
+#. about.feat.tts
+msgctxt "about.feat.tts"
+msgid "Text-to-speech on all interactive elements"
+msgstr "Talsyntes på alla interaktiva element"
+
+#. about.features
+msgctxt "about.features"
+msgid "Features"
+msgstr "Funktioner"
+
+#. about.forWhom
+msgctxt "about.forWhom"
+msgid "For whom?"
+msgstr "För vem?"
+
+#. about.free
+msgctxt "about.free"
+msgid "free"
+msgstr "gratis"
+
+#. about.languages
+msgctxt "about.languages"
+msgid "languages"
+msgstr "språk"
+
+#. about.madeIn
+msgctxt "about.madeIn"
+msgid "Developed in Sweden"
+msgstr "Utvecklade i Sverige"
+
+#. about.method.aac
+msgctxt "about.method.aac"
+msgid "Augmentative and Alternative Communication"
+msgstr "Alternativ och kompletterande kommunikation"
+
+#. about.method.lamp
+msgctxt "about.method.lamp"
+msgid "Language Acquisition through Motor Planning"
+msgstr "Språkinlärning genom motorisk planering"
+
+#. about.method.pecs
+msgctxt "about.method.pecs"
+msgid "Picture Exchange Communication System"
+msgstr "Bildbaserat kommunikationssystem"
+
+#. about.method.teacch
+msgctxt "about.method.teacch"
+msgid "Structured teaching and visual support"
+msgstr "Strukturerad undervisning och visuellt stöd"
+
+#. about.methods
+msgctxt "about.methods"
+msgid "Methods"
+msgstr "Metoder"
+
+#. about.tagline
+msgctxt "about.tagline"
+msgid "Free apps for children with neurodevelopmental conditions, language disorders and intellectual disabilities"
+msgstr "Fria appar för barn med NPF, språkstörning och IF"
+
+#. about.title
+msgctxt "about.title"
+msgid "About"
+msgstr "Om oss"
+
+#. about.whatIs
+msgctxt "about.whatIs"
+msgid "What is Autism Apps?"
+msgstr "Vad är Autismappar?"
+
 #. angerManager.doingGreat
 msgctxt "angerManager.doingGreat"
 msgid "You are doing great!"
@@ -164,6 +314,11 @@ msgctxt "app.category.play"
 msgid "Memory & Play"
 msgstr "Minne och lek"
 
+#. app.category.speech
+msgctxt "app.category.speech"
+msgid "Speech & Dyspraxia"
+msgstr "Tal & Dyspraxi"
+
 #. app.category.time
 msgctxt "app.category.time"
 msgid "Time & Planning"
@@ -208,6 +363,16 @@ msgstr "Hjälp att välja kläder efter väder och aktivitet"
 msgctxt "app.coming_soon"
 msgid "Coming Soon"
 msgstr "Kommer snart"
+
+#. app.comm_book
+msgctxt "app.comm_book"
+msgid "Communication Book"
+msgstr "Kommunikationsboken"
+
+#. app.comm_book.desc
+msgctxt "app.comm_book.desc"
+msgid "Digital communication book with tabs, photos and pictograms"
+msgstr "Digital kommunikationsbok med flikar, foton och piktogram"
 
 #. app.conversation_aid
 msgctxt "app.conversation_aid"
@@ -329,6 +494,16 @@ msgctxt "app.money_check.desc"
 msgid "Learn about money and making change"
 msgstr "Lär dig om pengar och att ge tillbaka växel"
 
+#. app.mouth_gym
+msgctxt "app.mouth_gym"
+msgid "Mouth Gym"
+msgstr "Mungymnastiken"
+
+#. app.mouth_gym.desc
+msgctxt "app.mouth_gym.desc"
+msgid "Animated visual guides for tongue, lips and jaw — based on PROMPT therapy"
+msgstr "Animerade visuella guider för tunga, läppar och käke — baserad på PROMPT-terapi"
+
 #. app.my_schedule
 msgctxt "app.my_schedule"
 msgid "My Schedule"
@@ -338,6 +513,16 @@ msgstr "Mitt schema"
 msgctxt "app.my_schedule.desc"
 msgid "Create your own visual schedule"
 msgstr "Skapa ditt eget visuella schema"
+
+#. app.oral_motor
+msgctxt "app.oral_motor"
+msgid "Oral Motor"
+msgstr "Munmotoriken"
+
+#. app.oral_motor.desc
+msgctxt "app.oral_motor.desc"
+msgid "Practice oral motor movements for speech — tongue, lips, jaw and breathing"
+msgstr "Öva munmotoriska rörelser för tal — tunga, läppar, käke och andning"
 
 #. app.pecs_board
 msgctxt "app.pecs_board"
@@ -429,6 +614,16 @@ msgctxt "app.routine_buddy.desc"
 msgid "Step-by-step daily routines"
 msgstr "Steg-för-steg-rutiner för varje dag"
 
+#. app.sagostunden
+msgctxt "app.sagostunden"
+msgid "Story Time"
+msgstr "Sagostunden"
+
+#. app.sagostunden.desc
+msgctxt "app.sagostunden.desc"
+msgid "Create fun stories by choosing words and pictures"
+msgstr "Skapa roliga sagor genom att välja ord och bilder"
+
 #. app.school_day
 msgctxt "app.school_day"
 msgid "School Day"
@@ -453,6 +648,16 @@ msgstr "Meningsbyggaren"
 msgctxt "app.sentence_builder.desc"
 msgid "Build sentences with color-coded words"
 msgstr "Bygg meningar med färgkodade ord"
+
+#. app.sentence_strip
+msgctxt "app.sentence_strip"
+msgid "Sentence Strip"
+msgstr "Meningsremsan"
+
+#. app.sentence_strip.desc
+msgctxt "app.sentence_strip.desc"
+msgid "Build sentences with PECS sentence strips (Phase IV-VI)"
+msgstr "Bygg meningar med PECS-meningsremsor (fas IV-VI)"
 
 #. app.settings
 msgctxt "app.settings"
@@ -489,6 +694,16 @@ msgctxt "app.social_stories.desc"
 msgid "Visual stories for everyday situations"
 msgstr "Visuella berättelser för vardagssituationer"
 
+#. app.sound_chain
+msgctxt "app.sound_chain"
+msgid "Sound Chain"
+msgstr "Ljudkedjan"
+
+#. app.sound_chain.desc
+msgctxt "app.sound_chain.desc"
+msgid "Chain sounds together into syllables and words — visual chain links"
+msgstr "Kedja ihop ljud till stavelser och ord — visuella kedjelänkar"
+
 #. app.sound_library
 msgctxt "app.sound_library"
 msgid "Sound Library"
@@ -498,6 +713,36 @@ msgstr "Ljudlådan"
 msgctxt "app.sound_library.desc"
 msgid "Explore fun sounds by category"
 msgstr "Utforska roliga ljud efter kategori"
+
+#. app.sound_lottery
+msgctxt "app.sound_lottery"
+msgid "Sound Lottery"
+msgstr "Ljudlotteriet"
+
+#. app.sound_lottery.desc
+msgctxt "app.sound_lottery.desc"
+msgid "Randomized phoneme practice — spin the wheel and practice sounds in isolation → syllable → word → sentence"
+msgstr "Slumpad fonemträning — snurra hjulet och öva ljud i isolering → stavelse → ord → mening"
+
+#. app.speech_practice
+msgctxt "app.speech_practice"
+msgid "Speech Practice"
+msgstr "Pratpraktiken"
+
+#. app.speech_practice.desc
+msgctxt "app.speech_practice.desc"
+msgid "Structured speech training with the DTTC method — listen, imitate, practice"
+msgstr "Strukturerad talträning med DTTC-metoden — lyssna, härma, öva"
+
+#. app.speech_rhythm
+msgctxt "app.speech_rhythm"
+msgid "Speech Rhythm"
+msgstr "Talrytmen"
+
+#. app.speech_rhythm.desc
+msgctxt "app.speech_rhythm.desc"
+msgid "Prosody and rhythm training for CAS — tap along, stress patterns and intonation"
+msgstr "Prosodi- och rytmträning för verbal dyspraxi — tappa takten, betoningsmönster och intonation"
 
 #. app.step_guide
 msgctxt "app.step_guide"
@@ -509,10 +754,40 @@ msgctxt "app.step_guide.desc"
 msgid "Break tasks into clear visual steps"
 msgstr "Dela upp uppgifter i tydliga visuella steg"
 
+#. app.story_workshop
+msgctxt "app.story_workshop"
+msgid "Story Workshop"
+msgstr "Berättarverkstan"
+
+#. app.story_workshop.desc
+msgctxt "app.story_workshop.desc"
+msgid "Narrative speech practice — build simple stories with picture sequences and practice telling them"
+msgstr "Narrativ talträning — bygg enkla berättelser med bildsekvenser och öva berätta dem"
+
 #. app.subtitle
 msgctxt "app.subtitle"
 msgid "Communication & Learning Tools"
 msgstr "Kommunikations- och lärandeverktyg"
+
+#. app.syllable_jump
+msgctxt "app.syllable_jump"
+msgid "Syllable Jump"
+msgstr "Stavelsehoppet"
+
+#. app.syllable_jump.desc
+msgctxt "app.syllable_jump.desc"
+msgid "Jump through syllables — clap the rhythm and build words"
+msgstr "Hoppa genom stavelser — klappa takten och bygg ord"
+
+#. app.symbol_text
+msgctxt "app.symbol_text"
+msgid "Symbol Text"
+msgstr "Symboltext"
+
+#. app.symbol_text.desc
+msgctxt "app.symbol_text.desc"
+msgid "Type text and see pictograms above each word"
+msgstr "Skriv text och se piktogram ovanför varje ord"
 
 #. app.talk_board
 msgctxt "app.talk_board"
@@ -533,6 +808,16 @@ msgstr "Samtalsmatta"
 msgctxt "app.talking_mat.desc"
 msgid "Express opinions by sorting pictures into zones"
 msgstr "Uttryck åsikter genom att sortera bilder i zoner"
+
+#. app.the_mimic
+msgctxt "app.the_mimic"
+msgid "The Mimic"
+msgstr "Efterhärmaren"
+
+#. app.the_mimic.desc
+msgctxt "app.the_mimic.desc"
+msgid "Listen and repeat with increasing complexity — sounds → words → phrases → sentences. Core DTTC technique"
+msgstr "Lyssna och upprepa med ökande komplexitet — ljud → ord → fraser → meningar. Kärn-DTTC-teknik"
 
 #. app.time_tracker
 msgctxt "app.time_tracker"
@@ -584,6 +869,371 @@ msgctxt "app.word_builder.desc"
 msgid "Build words letter by letter"
 msgstr "Bygg ord bokstav för bokstav"
 
+#. app.word_parade
+msgctxt "app.word_parade"
+msgid "Word Parade"
+msgstr "Ordparaden"
+
+#. app.word_parade.desc
+msgctxt "app.word_parade.desc"
+msgid "Minimal pairs — words that differ by one sound. Critical phonological training"
+msgstr "Minimala par — ord som skiljer sig med ett ljud (bil/pil). Kritisk fonologisk träning"
+
+#. bb.angry
+msgctxt "bb.angry"
+msgid "angry"
+msgstr "arg"
+
+#. bb.apple
+msgctxt "bb.apple"
+msgid "apple"
+msgstr "äpple"
+
+#. bb.banana
+msgctxt "bb.banana"
+msgid "banana"
+msgstr "banan"
+
+#. bb.bath
+msgctxt "bb.bath"
+msgid "bath"
+msgstr "bad"
+
+#. bb.bored
+msgctxt "bb.bored"
+msgid "bored"
+msgstr "uttråkad"
+
+#. bb.bread
+msgctxt "bb.bread"
+msgid "bread"
+msgstr "bröd"
+
+#. bb.brush_teeth
+msgctxt "bb.brush_teeth"
+msgid "brush teeth"
+msgstr "borsta tänderna"
+
+#. bb.calm
+msgctxt "bb.calm"
+msgid "calm"
+msgstr "lugn"
+
+#. bb.cheese
+msgctxt "bb.cheese"
+msgid "cheese"
+msgstr "ost"
+
+#. bb.chicken
+msgctxt "bb.chicken"
+msgid "chicken"
+msgstr "kyckling"
+
+#. bb.clean
+msgctxt "bb.clean"
+msgid "clean"
+msgstr "städa"
+
+#. bb.comb
+msgctxt "bb.comb"
+msgid "comb"
+msgstr "kam"
+
+#. bb.computer
+msgctxt "bb.computer"
+msgid "computer"
+msgstr "dator"
+
+#. bb.cook
+msgctxt "bb.cook"
+msgid "cook"
+msgstr "laga mat"
+
+#. bb.cookie
+msgctxt "bb.cookie"
+msgid "cookie"
+msgstr "kaka"
+
+#. bb.count
+msgctxt "bb.count"
+msgid "count"
+msgstr "räkna"
+
+#. bb.deodorant
+msgctxt "bb.deodorant"
+msgid "deodorant"
+msgstr "deodorant"
+
+#. bb.draw
+msgctxt "bb.draw"
+msgid "draw"
+msgstr "rita"
+
+#. bb.dress
+msgctxt "bb.dress"
+msgid "dress"
+msgstr "klä på sig"
+
+#. bb.drink
+msgctxt "bb.drink"
+msgid "drink"
+msgstr "dricka"
+
+#. bb.eat
+msgctxt "bb.eat"
+msgid "eat"
+msgstr "äta"
+
+#. bb.egg
+msgctxt "bb.egg"
+msgid "egg"
+msgstr "ägg"
+
+#. bb.excited
+msgctxt "bb.excited"
+msgid "excited"
+msgstr "ivrig"
+
+#. bb.fish
+msgctxt "bb.fish"
+msgid "fish"
+msgstr "fisk"
+
+#. bb.friend
+msgctxt "bb.friend"
+msgid "friend"
+msgstr "kompis"
+
+#. bb.gym
+msgctxt "bb.gym"
+msgid "gym"
+msgstr "gympa"
+
+#. bb.happy
+msgctxt "bb.happy"
+msgid "happy"
+msgstr "glad"
+
+#. bb.help
+msgctxt "bb.help"
+msgid "help"
+msgstr "hjälp"
+
+#. bb.hungry
+msgctxt "bb.hungry"
+msgid "hungry"
+msgstr "hungrig"
+
+#. bb.ice_cream
+msgctxt "bb.ice_cream"
+msgid "ice cream"
+msgstr "glass"
+
+#. bb.juice
+msgctxt "bb.juice"
+msgid "juice"
+msgstr "juice"
+
+#. bb.listen
+msgctxt "bb.listen"
+msgid "listen"
+msgstr "lyssna"
+
+#. bb.love
+msgctxt "bb.love"
+msgid "love"
+msgstr "kärlek"
+
+#. bb.milk
+msgctxt "bb.milk"
+msgid "milk"
+msgstr "mjölk"
+
+#. bb.mirror
+msgctxt "bb.mirror"
+msgid "mirror"
+msgstr "spegel"
+
+#. bb.nail
+msgctxt "bb.nail"
+msgid "nail"
+msgstr "nagel"
+
+#. bb.pain
+msgctxt "bb.pain"
+msgid "pain"
+msgstr "ont"
+
+#. bb.pasta
+msgctxt "bb.pasta"
+msgid "pasta"
+msgstr "pasta"
+
+#. bb.play
+msgctxt "bb.play"
+msgid "play"
+msgstr "leka"
+
+#. bb.proud
+msgctxt "bb.proud"
+msgid "proud"
+msgstr "stolt"
+
+#. bb.read
+msgctxt "bb.read"
+msgid "read"
+msgstr "läsa"
+
+#. bb.rest
+msgctxt "bb.rest"
+msgid "rest"
+msgstr "vila"
+
+#. bb.rice
+msgctxt "bb.rice"
+msgid "rice"
+msgstr "ris"
+
+#. bb.sad
+msgctxt "bb.sad"
+msgid "sad"
+msgstr "ledsen"
+
+#. bb.scared
+msgctxt "bb.scared"
+msgid "scared"
+msgstr "rädd"
+
+#. bb.shampoo
+msgctxt "bb.shampoo"
+msgid "shampoo"
+msgstr "schampo"
+
+#. bb.shower
+msgctxt "bb.shower"
+msgid "shower"
+msgstr "duscha"
+
+#. bb.shy
+msgctxt "bb.shy"
+msgid "shy"
+msgstr "blyg"
+
+#. bb.sing
+msgctxt "bb.sing"
+msgid "sing"
+msgstr "sjunga"
+
+#. bb.sit
+msgctxt "bb.sit"
+msgid "sit"
+msgstr "sitta"
+
+#. bb.sleep
+msgctxt "bb.sleep"
+msgid "sleep"
+msgstr "sova"
+
+#. bb.soap
+msgctxt "bb.soap"
+msgid "soap"
+msgstr "tvål"
+
+#. bb.soup
+msgctxt "bb.soup"
+msgid "soup"
+msgstr "soppa"
+
+#. bb.speak
+msgctxt "bb.speak"
+msgid "speak"
+msgstr "prata"
+
+#. bb.surprise
+msgctxt "bb.surprise"
+msgid "surprise"
+msgstr "förvåning"
+
+#. bb.teacher
+msgctxt "bb.teacher"
+msgid "teacher"
+msgstr "lärare"
+
+#. bb.thirsty
+msgctxt "bb.thirsty"
+msgid "thirsty"
+msgstr "törstig"
+
+#. bb.tired
+msgctxt "bb.tired"
+msgid "tired"
+msgstr "trött"
+
+#. bb.tissue
+msgctxt "bb.tissue"
+msgid "tissue"
+msgstr "näsduk"
+
+#. bb.toilet
+msgctxt "bb.toilet"
+msgid "toilet"
+msgstr "toalett"
+
+#. bb.toothbrush
+msgctxt "bb.toothbrush"
+msgid "toothbrush"
+msgstr "tandborste"
+
+#. bb.toothpaste
+msgctxt "bb.toothpaste"
+msgid "toothpaste"
+msgstr "tandkräm"
+
+#. bb.towel
+msgctxt "bb.towel"
+msgid "towel"
+msgstr "handduk"
+
+#. bb.wash
+msgctxt "bb.wash"
+msgid "wash"
+msgstr "tvätta"
+
+#. bb.wash_hands
+msgctxt "bb.wash_hands"
+msgid "wash hands"
+msgstr "tvätta händerna"
+
+#. bb.watch_tv
+msgctxt "bb.watch_tv"
+msgid "watch TV"
+msgstr "titta på TV"
+
+#. bb.water
+msgctxt "bb.water"
+msgid "water"
+msgstr "vatten"
+
+#. bb.work
+msgctxt "bb.work"
+msgid "work"
+msgstr "arbeta"
+
+#. bb.worried
+msgctxt "bb.worried"
+msgid "worried"
+msgstr "orolig"
+
+#. bb.write
+msgctxt "bb.write"
+msgid "write"
+msgstr "skriva"
+
+#. bb.yogurt
+msgctxt "bb.yogurt"
+msgid "yogurt"
+msgstr "yoghurt"
+
 #. board.board_name
 msgctxt "board.board_name"
 msgid "Board Name"
@@ -634,6 +1284,11 @@ msgctxt "board.grid_size"
 msgid "Grid Size"
 msgstr "Rutstorlek"
 
+#. board.my_board
+msgctxt "board.my_board"
+msgid "My Board"
+msgstr "Min tavla"
+
 #. board.my_boards
 msgctxt "board.my_boards"
 msgid "My Boards"
@@ -648,6 +1303,11 @@ msgstr "Nytt bräde"
 msgctxt "board.no_results"
 msgid "No pictograms found"
 msgstr "Inga piktogram hittades"
+
+#. board.no_saved
+msgctxt "board.no_saved"
+msgid "No saved boards yet"
+msgstr "Inga sparade tavlor ännu"
 
 #. board.print
 msgctxt "board.print"
@@ -668,6 +1328,31 @@ msgstr "Sök piktogram..."
 msgctxt "board.tap_to_add"
 msgid "Tap to add pictogram"
 msgstr "Tryck för att lägga till piktogram"
+
+#. board.template.emotions
+msgctxt "board.template.emotions"
+msgid "Emotions"
+msgstr "Känslor"
+
+#. board.template.food
+msgctxt "board.template.food"
+msgid "Food"
+msgstr "Mat"
+
+#. board.template.home
+msgctxt "board.template.home"
+msgid "Home"
+msgstr "Hem"
+
+#. board.template.hygiene
+msgctxt "board.template.hygiene"
+msgid "Hygiene"
+msgstr "Hygien"
+
+#. board.template.school
+msgctxt "board.template.school"
+msgid "School"
+msgstr "Skola"
 
 #. board.templates
 msgctxt "board.templates"
@@ -1449,6 +2134,396 @@ msgctxt "clothesChooser.youChose"
 msgid "You chose"
 msgstr "Du valde"
 
+#. comm.angry
+msgctxt "comm.angry"
+msgid "angry"
+msgstr "arg"
+
+#. comm.apple
+msgctxt "comm.apple"
+msgid "apple"
+msgstr "äpple"
+
+#. comm.banana
+msgctxt "comm.banana"
+msgid "banana"
+msgstr "banan"
+
+#. comm.bathroom
+msgctxt "comm.bathroom"
+msgid "bathroom"
+msgstr "badrum"
+
+#. comm.bedroom
+msgctxt "comm.bedroom"
+msgid "bedroom"
+msgstr "sovrum"
+
+#. comm.bread
+msgctxt "comm.bread"
+msgid "bread"
+msgstr "bröd"
+
+#. comm.brother
+msgctxt "comm.brother"
+msgid "brother"
+msgstr "bror"
+
+#. comm.bus
+msgctxt "comm.bus"
+msgid "bus"
+msgstr "buss"
+
+#. comm.calm
+msgctxt "comm.calm"
+msgid "calm"
+msgstr "lugn"
+
+#. comm.car
+msgctxt "comm.car"
+msgid "car"
+msgstr "bil"
+
+#. comm.cheese
+msgctxt "comm.cheese"
+msgid "cheese"
+msgstr "ost"
+
+#. comm.chicken
+msgctxt "comm.chicken"
+msgid "chicken"
+msgstr "kyckling"
+
+#. comm.computer
+msgctxt "comm.computer"
+msgid "computer"
+msgstr "dator"
+
+#. comm.dad
+msgctxt "comm.dad"
+msgid "dad"
+msgstr "pappa"
+
+#. comm.dance
+msgctxt "comm.dance"
+msgid "dance"
+msgstr "dansa"
+
+#. comm.doctor
+msgctxt "comm.doctor"
+msgid "doctor"
+msgstr "doktor"
+
+#. comm.draw
+msgctxt "comm.draw"
+msgid "draw"
+msgstr "rita"
+
+#. comm.egg
+msgctxt "comm.egg"
+msgid "egg"
+msgstr "ägg"
+
+#. comm.excited
+msgctxt "comm.excited"
+msgid "excited"
+msgstr "ivrig"
+
+#. comm.fish
+msgctxt "comm.fish"
+msgid "fish"
+msgstr "fisk"
+
+#. comm.friend
+msgctxt "comm.friend"
+msgid "friend"
+msgstr "kompis"
+
+#. comm.grandma
+msgctxt "comm.grandma"
+msgid "grandma"
+msgstr "mormor"
+
+#. comm.grandpa
+msgctxt "comm.grandpa"
+msgid "grandpa"
+msgstr "morfar"
+
+#. comm.happy
+msgctxt "comm.happy"
+msgid "happy"
+msgstr "glad"
+
+#. comm.home
+msgctxt "comm.home"
+msgid "home"
+msgstr "hem"
+
+#. comm.hospital
+msgctxt "comm.hospital"
+msgid "hospital"
+msgstr "sjukhus"
+
+#. comm.hot_chocolate
+msgctxt "comm.hot_chocolate"
+msgid "hot chocolate"
+msgstr "varm choklad"
+
+#. comm.hungry
+msgctxt "comm.hungry"
+msgid "hungry"
+msgstr "hungrig"
+
+#. comm.juice
+msgctxt "comm.juice"
+msgid "juice"
+msgstr "juice"
+
+#. comm.kitchen
+msgctxt "comm.kitchen"
+msgid "kitchen"
+msgstr "kök"
+
+#. comm.milk
+msgctxt "comm.milk"
+msgid "milk"
+msgstr "mjölk"
+
+#. comm.mom
+msgctxt "comm.mom"
+msgid "mom"
+msgstr "mamma"
+
+#. comm.park
+msgctxt "comm.park"
+msgid "park"
+msgstr "park"
+
+#. comm.pasta
+msgctxt "comm.pasta"
+msgid "pasta"
+msgstr "pasta"
+
+#. comm.pizza
+msgctxt "comm.pizza"
+msgid "pizza"
+msgstr "pizza"
+
+#. comm.play
+msgctxt "comm.play"
+msgid "play"
+msgstr "leka"
+
+#. comm.playground
+msgctxt "comm.playground"
+msgid "playground"
+msgstr "lekplats"
+
+#. comm.read
+msgctxt "comm.read"
+msgid "read"
+msgstr "läsa"
+
+#. comm.rice
+msgctxt "comm.rice"
+msgid "rice"
+msgstr "ris"
+
+#. comm.run
+msgctxt "comm.run"
+msgid "run"
+msgstr "springa"
+
+#. comm.sad
+msgctxt "comm.sad"
+msgid "sad"
+msgstr "ledsen"
+
+#. comm.scared
+msgctxt "comm.scared"
+msgid "scared"
+msgstr "rädd"
+
+#. comm.school
+msgctxt "comm.school"
+msgid "school"
+msgstr "skola"
+
+#. comm.sick
+msgctxt "comm.sick"
+msgid "sick"
+msgstr "sjuk"
+
+#. comm.sing
+msgctxt "comm.sing"
+msgid "sing"
+msgstr "sjunga"
+
+#. comm.sister
+msgctxt "comm.sister"
+msgid "sister"
+msgstr "syster"
+
+#. comm.sleep
+msgctxt "comm.sleep"
+msgid "sleep"
+msgstr "sova"
+
+#. comm.smoothie
+msgctxt "comm.smoothie"
+msgid "smoothie"
+msgstr "smoothie"
+
+#. comm.soup
+msgctxt "comm.soup"
+msgid "soup"
+msgstr "soppa"
+
+#. comm.store
+msgctxt "comm.store"
+msgid "store"
+msgstr "affär"
+
+#. comm.swim
+msgctxt "comm.swim"
+msgid "swim"
+msgstr "simma"
+
+#. comm.tea
+msgctxt "comm.tea"
+msgid "tea"
+msgstr "te"
+
+#. comm.teacher
+msgctxt "comm.teacher"
+msgid "teacher"
+msgstr "lärare"
+
+#. comm.thirsty
+msgctxt "comm.thirsty"
+msgid "thirsty"
+msgstr "törstig"
+
+#. comm.tired
+msgctxt "comm.tired"
+msgid "tired"
+msgstr "trött"
+
+#. comm.walk
+msgctxt "comm.walk"
+msgid "walk"
+msgstr "gå"
+
+#. comm.watch_tv
+msgctxt "comm.watch_tv"
+msgid "watch TV"
+msgstr "titta på TV"
+
+#. comm.water
+msgctxt "comm.water"
+msgid "water"
+msgstr "vatten"
+
+#. comm.yogurt
+msgctxt "comm.yogurt"
+msgid "yogurt"
+msgstr "yoghurt"
+
+#. commBook.addCard
+msgctxt "commBook.addCard"
+msgid "Add card"
+msgstr "Lägg till kort"
+
+#. commBook.addPhoto
+msgctxt "commBook.addPhoto"
+msgid "Add personal photo"
+msgstr "Lägg till eget foto"
+
+#. commBook.edit
+msgctxt "commBook.edit"
+msgid "Edit"
+msgstr "Redigera"
+
+#. commBook.emptyHint
+msgctxt "commBook.emptyHint"
+msgid "Tap ✏️ to add cards"
+msgstr "Tryck ✏️ för att lägga till kort"
+
+#. commBook.loading
+msgctxt "commBook.loading"
+msgid "Loading communication book…"
+msgstr "Laddar kommunikationsbok…"
+
+#. commBook.page.activities
+msgctxt "commBook.page.activities"
+msgid "Activities"
+msgstr "Aktiviteter"
+
+#. commBook.page.drinks
+msgctxt "commBook.page.drinks"
+msgid "Drinks"
+msgstr "Dryck"
+
+#. commBook.page.favorites
+msgctxt "commBook.page.favorites"
+msgid "Favorites"
+msgstr "Favoriter"
+
+#. commBook.page.feelings
+msgctxt "commBook.page.feelings"
+msgid "Feelings"
+msgstr "Känslor"
+
+#. commBook.page.food
+msgctxt "commBook.page.food"
+msgid "Food"
+msgstr "Mat"
+
+#. commBook.page.people
+msgctxt "commBook.page.people"
+msgid "People"
+msgstr "Personer"
+
+#. commBook.page.places
+msgctxt "commBook.page.places"
+msgid "Places"
+msgstr "Platser"
+
+#. commBook.photoLabel
+msgctxt "commBook.photoLabel"
+msgid "Label for the photo"
+msgstr "Etikett för fotot"
+
+#. commBook.searchArasaac
+msgctxt "commBook.searchArasaac"
+msgid "Search pictograms"
+msgstr "Sök piktogram"
+
+#. commBook.searchPlaceholder
+msgctxt "commBook.searchPlaceholder"
+msgid "Search for a word…"
+msgstr "Sök efter ord…"
+
+#. commBook.takePhoto
+msgctxt "commBook.takePhoto"
+msgid "Take photo or choose image"
+msgstr "Ta foto eller välj bild"
+
+#. commBook.title
+msgctxt "commBook.title"
+msgid "Communication Book"
+msgstr "Kommunikationsboken"
+
+#. common.remove
+msgctxt "common.remove"
+msgid "Remove"
+msgstr "Ta bort"
+
+#. common.speak
+msgctxt "common.speak"
+msgid "Speak"
+msgstr "Läs upp"
+
 #. conversationAid.again
 msgctxt "conversationAid.again"
 msgid "Again"
@@ -1996,43 +3071,43 @@ msgstr "Ångestfull"
 
 #. emotion.body.arms
 msgctxt "emotion.body.arms"
-msgid "Arms"
-msgstr "Armarna"
+msgid "arms"
+msgstr "armar"
 
 #. emotion.body.chest
 msgctxt "emotion.body.chest"
-msgid "Chest"
-msgstr "Bröstet"
+msgid "chest"
+msgstr "bröst"
 
 #. emotion.body.face
 msgctxt "emotion.body.face"
-msgid "Face"
-msgstr "Ansiktet"
+msgid "face"
+msgstr "ansikte"
 
 #. emotion.body.hands
 msgctxt "emotion.body.hands"
-msgid "Hands"
-msgstr "Händerna"
+msgid "hands"
+msgstr "händer"
 
 #. emotion.body.head
 msgctxt "emotion.body.head"
-msgid "Head"
-msgstr "Huvudet"
+msgid "head"
+msgstr "huvud"
 
 #. emotion.body.legs
 msgctxt "emotion.body.legs"
-msgid "Legs"
-msgstr "Benen"
+msgid "legs"
+msgstr "ben"
 
 #. emotion.body.stomach
 msgctxt "emotion.body.stomach"
-msgid "Stomach"
-msgstr "Magen"
+msgid "stomach"
+msgstr "mage"
 
 #. emotion.body.whole
 msgctxt "emotion.body.whole"
-msgid "Whole body"
-msgstr "Hela kroppen"
+msgid "whole body"
+msgstr "hela kroppen"
 
 #. emotion.calm
 msgctxt "emotion.calm"
@@ -2103,6 +3178,11 @@ msgstr "Överväldigad"
 msgctxt "emotion.proud"
 msgid "Proud"
 msgstr "Stolt"
+
+#. emotion.quiz
+msgctxt "emotion.quiz"
+msgid "Quiz"
+msgstr "Quiz"
 
 #. emotion.quiz_what
 msgctxt "emotion.quiz_what"
@@ -2448,6 +3528,11 @@ msgstr "Snabb tanke att parkera…"
 msgctxt "focus.ready"
 msgid "Ready"
 msgstr "Redo"
+
+#. focus.remove
+msgctxt "focus.remove"
+msgid "Remove"
+msgstr "Ta bort"
 
 #. focus.start_break
 msgctxt "focus.start_break"
@@ -3164,35 +4249,175 @@ msgctxt "letter.you_can"
 msgid "You can do it! 🎯"
 msgstr "Du klarar det! 🎯"
 
+#. mat.bedtime
+msgctxt "mat.bedtime"
+msgid "bedtime"
+msgstr "läggdags"
+
+#. mat.bread
+msgctxt "mat.bread"
+msgid "bread"
+msgstr "bröd"
+
+#. mat.candy
+msgctxt "mat.candy"
+msgid "candy"
+msgstr "godis"
+
+#. mat.chicken
+msgctxt "mat.chicken"
+msgid "chicken"
+msgstr "kyckling"
+
 #. mat.choose_topic
 msgctxt "mat.choose_topic"
 msgid "Choose a topic to discuss"
 msgstr "Välj ett ämne att prata om"
+
+#. mat.computer
+msgctxt "mat.computer"
+msgid "computer"
+msgstr "dator"
+
+#. mat.cooking
+msgctxt "mat.cooking"
+msgid "cooking"
+msgstr "matlagning"
 
 #. mat.credit
 msgctxt "mat.credit"
 msgid "Inspired by Talking Mats™ framework — talkingmats.com"
 msgstr "Inspirerad av Talking Mats™ — talkingmats.com"
 
+#. mat.cycling
+msgctxt "mat.cycling"
+msgid "cycling"
+msgstr "cykling"
+
+#. mat.dancing
+msgctxt "mat.dancing"
+msgid "dancing"
+msgstr "dans"
+
+#. mat.drawing
+msgctxt "mat.drawing"
+msgid "drawing"
+msgstr "ritning"
+
+#. mat.eating
+msgctxt "mat.eating"
+msgid "eating"
+msgstr "äta"
+
+#. mat.family
+msgctxt "mat.family"
+msgid "family"
+msgstr "familj"
+
+#. mat.football
+msgctxt "mat.football"
+msgid "football"
+msgstr "fotboll"
+
+#. mat.friends
+msgctxt "mat.friends"
+msgid "friends"
+msgstr "kompisar"
+
+#. mat.fruit
+msgctxt "mat.fruit"
+msgid "fruit"
+msgstr "frukt"
+
+#. mat.gaming
+msgctxt "mat.gaming"
+msgid "gaming"
+msgstr "spel"
+
+#. mat.group_work
+msgctxt "mat.group_work"
+msgid "group work"
+msgstr "grupparbete"
+
+#. mat.gym
+msgctxt "mat.gym"
+msgid "gym"
+msgstr "idrott"
+
+#. mat.home
+msgctxt "mat.home"
+msgid "home"
+msgstr "hem"
+
+#. mat.homework
+msgctxt "mat.homework"
+msgid "homework"
+msgstr "läxor"
+
+#. mat.math
+msgctxt "mat.math"
+msgid "math"
+msgstr "matte"
+
+#. mat.milk
+msgctxt "mat.milk"
+msgid "milk"
+msgstr "mjölk"
+
+#. mat.morning
+msgctxt "mat.morning"
+msgid "morning"
+msgstr "morgon"
+
+#. mat.music
+msgctxt "mat.music"
+msgid "music"
+msgstr "musik"
+
 #. mat.negative
 msgctxt "mat.negative"
-msgid "I don't like"
-msgstr "Jag gillar inte"
+msgid "Negative"
+msgstr "Negativt"
 
 #. mat.neutral
 msgctxt "mat.neutral"
-msgid "It's okay"
-msgstr "Det är okej"
+msgid "Neutral"
+msgstr "Neutralt"
+
+#. mat.pizza
+msgctxt "mat.pizza"
+msgid "pizza"
+msgstr "pizza"
+
+#. mat.playing
+msgctxt "mat.playing"
+msgid "playing"
+msgstr "leka"
 
 #. mat.positive
 msgctxt "mat.positive"
-msgid "I like"
-msgstr "Jag gillar"
+msgid "Positive"
+msgstr "Positivt"
+
+#. mat.reading
+msgctxt "mat.reading"
+msgid "reading"
+msgstr "läsning"
+
+#. mat.recess
+msgctxt "mat.recess"
+msgid "recess"
+msgstr "rast"
 
 #. mat.reset
 msgctxt "mat.reset"
 msgid "Reset"
 msgstr "Återställ"
+
+#. mat.rice
+msgctxt "mat.rice"
+msgid "rice"
+msgstr "ris"
 
 #. mat.save
 msgctxt "mat.save"
@@ -3203,6 +4428,26 @@ msgstr "Spara"
 msgctxt "mat.saved"
 msgid "Session saved!"
 msgstr "Session sparad!"
+
+#. mat.school
+msgctxt "mat.school"
+msgid "school"
+msgstr "skola"
+
+#. mat.shopping
+msgctxt "mat.shopping"
+msgid "shopping"
+msgstr "handla"
+
+#. mat.soup
+msgctxt "mat.soup"
+msgid "soup"
+msgstr "soppa"
+
+#. mat.swimming
+msgctxt "mat.swimming"
+msgid "swimming"
+msgstr "simning"
 
 #. mat.tap_to_place
 msgctxt "mat.tap_to_place"
@@ -3233,6 +4478,26 @@ msgstr "Mat"
 msgctxt "mat.topic.school"
 msgid "School"
 msgstr "Skolan"
+
+#. mat.vegetables
+msgctxt "mat.vegetables"
+msgid "vegetables"
+msgstr "grönsaker"
+
+#. mat.walking
+msgctxt "mat.walking"
+msgid "walking"
+msgstr "promenader"
+
+#. mat.water
+msgctxt "mat.water"
+msgid "water"
+msgstr "vatten"
+
+#. mat.writing
+msgctxt "mat.writing"
+msgid "writing"
+msgstr "skrivning"
 
 #. mathAid.addition
 msgctxt "mathAid.addition"
@@ -3364,6 +4629,76 @@ msgctxt "money.undo"
 msgid "Undo"
 msgstr "Ångra"
 
+#. mouthGym.category.breath
+msgctxt "mouthGym.category.breath"
+msgid "Breathing"
+msgstr "Andning"
+
+#. mouthGym.category.jaw
+msgctxt "mouthGym.category.jaw"
+msgid "Jaw"
+msgstr "Käke"
+
+#. mouthGym.category.lips
+msgctxt "mouthGym.category.lips"
+msgid "Lips"
+msgstr "Läppar"
+
+#. mouthGym.category.tongue
+msgctxt "mouthGym.category.tongue"
+msgid "Tongue"
+msgstr "Tunga"
+
+#. mouthGym.done
+msgctxt "mouthGym.done"
+msgid "Done! 🎉"
+msgstr "Klart! 🎉"
+
+#. mouthGym.hold
+msgctxt "mouthGym.hold"
+msgid "Hold"
+msgstr "Håll kvar"
+
+#. mouthGym.intro
+msgctxt "mouthGym.intro"
+msgid "Gymnastics for your mouth! 💪"
+msgstr "Gymnastik för munnen! 💪"
+
+#. mouthGym.mirror
+msgctxt "mouthGym.mirror"
+msgid "Use a mirror!"
+msgstr "Använd spegeln!"
+
+#. mouthGym.next
+msgctxt "mouthGym.next"
+msgid "Next exercise"
+msgstr "Nästa övning"
+
+#. mouthGym.of
+msgctxt "mouthGym.of"
+msgid "of"
+msgstr "av"
+
+#. mouthGym.reps
+msgctxt "mouthGym.reps"
+msgid "Repetitions"
+msgstr "Repetitioner"
+
+#. mouthGym.seconds
+msgctxt "mouthGym.seconds"
+msgid "seconds"
+msgstr "sekunder"
+
+#. mouthGym.step
+msgctxt "mouthGym.step"
+msgid "Step"
+msgstr "Steg"
+
+#. mouthGym.title
+msgctxt "mouthGym.title"
+msgid "Mouth Gym"
+msgstr "Mungymnastiken"
+
 #. mySchedule.add
 msgctxt "mySchedule.add"
 msgid "Add"
@@ -3384,25 +4719,285 @@ msgctxt "mySchedule.whatToDo"
 msgid "What to do?"
 msgstr "Vad ska du göra?"
 
+#. oralMotor.allDone
+msgctxt "oralMotor.allDone"
+msgid "Great job! All steps done! ⭐"
+msgstr "Bra jobbat! Alla steg klara! ⭐"
+
+#. oralMotor.breath
+msgctxt "oralMotor.breath"
+msgid "Breathing"
+msgstr "Andning"
+
+#. oralMotor.breath.balloon
+msgctxt "oralMotor.breath.balloon"
+msgid "Blow up a balloon"
+msgstr "Blås upp en ballong"
+
+#. oralMotor.breath.blow
+msgctxt "oralMotor.breath.blow"
+msgid "Blow forward"
+msgstr "Blås framåt"
+
+#. oralMotor.breath.candle
+msgctxt "oralMotor.breath.candle"
+msgid "Blow out a candle"
+msgstr "Blås ut ett ljus"
+
+#. oralMotor.breath.desc
+msgctxt "oralMotor.breath.desc"
+msgid "Practice breathing and blowing"
+msgstr "Öva andning och blåsning"
+
+#. oralMotor.breath.long
+msgctxt "oralMotor.breath.long"
+msgid "Blow long and slowly"
+msgstr "Blås långt och långsamt"
+
+#. oralMotor.breath.puff
+msgctxt "oralMotor.breath.puff"
+msgid "Puff out air"
+msgstr "Puffa ut luft"
+
+#. oralMotor.intro
+msgctxt "oralMotor.intro"
+msgid "Choose an exercise to train your oral motor skills!"
+msgstr "Välj en övning för att träna munmotoriken!"
+
+#. oralMotor.jaw
+msgctxt "oralMotor.jaw"
+msgid "Jaw"
+msgstr "Käke"
+
+#. oralMotor.jaw.clench
+msgctxt "oralMotor.jaw.clench"
+msgid "Gently clench your teeth"
+msgstr "Bit ihop försiktigt"
+
+#. oralMotor.jaw.close
+msgctxt "oralMotor.jaw.close"
+msgid "Close your mouth"
+msgstr "Stäng munnen"
+
+#. oralMotor.jaw.desc
+msgctxt "oralMotor.jaw.desc"
+msgid "Train jaw movements"
+msgstr "Träna käkens rörelser"
+
+#. oralMotor.jaw.open
+msgctxt "oralMotor.jaw.open"
+msgid "Open your mouth wide"
+msgstr "Öppna munnen stort"
+
+#. oralMotor.jaw.openClose
+msgctxt "oralMotor.jaw.openClose"
+msgid "Open and close, open and close"
+msgstr "Öppna och stäng, öppna och stäng"
+
+#. oralMotor.jaw.side
+msgctxt "oralMotor.jaw.side"
+msgid "Move your jaw to the side"
+msgstr "Rör käken åt sidan"
+
+#. oralMotor.lips
+msgctxt "oralMotor.lips"
+msgid "Lips"
+msgstr "Läppar"
+
+#. oralMotor.lips.desc
+msgctxt "oralMotor.lips.desc"
+msgid "Practice lip movements and shapes"
+msgstr "Öva läpprörelser och form"
+
+#. oralMotor.lips.fish
+msgctxt "oralMotor.lips.fish"
+msgid "Make a fish face"
+msgstr "Gör en fiskmun"
+
+#. oralMotor.lips.kiss
+msgctxt "oralMotor.lips.kiss"
+msgid "Make a kiss"
+msgstr "Gör en puss"
+
+#. oralMotor.lips.pucker
+msgctxt "oralMotor.lips.pucker"
+msgid "Pucker your lips"
+msgstr "Trut med läpparna"
+
+#. oralMotor.lips.puckerSmile
+msgctxt "oralMotor.lips.puckerSmile"
+msgid "Pucker and smile, pucker and smile"
+msgstr "Trut och le, trut och le"
+
+#. oralMotor.lips.smile
+msgctxt "oralMotor.lips.smile"
+msgid "Smile big"
+msgstr "Le stort"
+
+#. oralMotor.playAll
+msgctxt "oralMotor.playAll"
+msgid "Play all"
+msgstr "Spela alla"
+
+#. oralMotor.repeat
+msgctxt "oralMotor.repeat"
+msgid "Repeat"
+msgstr "Upprepa"
+
+#. oralMotor.speed
+msgctxt "oralMotor.speed"
+msgid "Speech rate"
+msgstr "Talhastighet"
+
+#. oralMotor.title
+msgctxt "oralMotor.title"
+msgid "Oral Motor"
+msgstr "Munmotoriken"
+
+#. oralMotor.tongue
+msgctxt "oralMotor.tongue"
+msgid "Tongue"
+msgstr "Tunga"
+
+#. oralMotor.tongue.circle
+msgctxt "oralMotor.tongue.circle"
+msgid "Move your tongue in a circle"
+msgstr "Rör tungan runt i en cirkel"
+
+#. oralMotor.tongue.desc
+msgctxt "oralMotor.tongue.desc"
+msgid "Move your tongue in different directions"
+msgstr "Rör tungan i olika riktningar"
+
+#. oralMotor.tongue.down
+msgctxt "oralMotor.tongue.down"
+msgid "Stretch your tongue down toward your chin"
+msgstr "Sträck tungan nedåt mot hakan"
+
+#. oralMotor.tongue.left
+msgctxt "oralMotor.tongue.left"
+msgid "Move your tongue to the left"
+msgstr "Rör tungan åt vänster"
+
+#. oralMotor.tongue.right
+msgctxt "oralMotor.tongue.right"
+msgid "Move your tongue to the right"
+msgstr "Rör tungan åt höger"
+
+#. oralMotor.tongue.up
+msgctxt "oralMotor.tongue.up"
+msgid "Lift your tongue up to the roof of your mouth"
+msgstr "Lyft tungan uppåt mot gommen"
+
+#. pecs.apple
+msgctxt "pecs.apple"
+msgid "apple"
+msgstr "äpple"
+
+#. pecs.ball
+msgctxt "pecs.ball"
+msgid "ball"
+msgstr "boll"
+
+#. pecs.banana
+msgctxt "pecs.banana"
+msgid "banana"
+msgstr "banan"
+
+#. pecs.bird
+msgctxt "pecs.bird"
+msgid "bird"
+msgstr "fågel"
+
+#. pecs.book
+msgctxt "pecs.book"
+msgid "book"
+msgstr "bok"
+
 #. pecs.bring_to_partner
 msgctxt "pecs.bring_to_partner"
 msgid "Bring the picture to your partner"
 msgstr "Ge bilden till din partner"
+
+#. pecs.bubbles
+msgctxt "pecs.bubbles"
+msgid "bubbles"
+msgstr "bubblor"
+
+#. pecs.car
+msgctxt "pecs.car"
+msgid "car"
+msgstr "bil"
+
+#. pecs.cat
+msgctxt "pecs.cat"
+msgid "cat"
+msgstr "katt"
+
+#. pecs.cookie
+msgctxt "pecs.cookie"
+msgid "cookie"
+msgstr "kaka"
 
 #. pecs.correct
 msgctxt "pecs.correct"
 msgid "Correct"
 msgstr "Rätt"
 
+#. pecs.dog
+msgctxt "pecs.dog"
+msgid "dog"
+msgstr "hund"
+
 #. pecs.find
 msgctxt "pecs.find"
 msgid "Find"
 msgstr "Hitta"
 
+#. pecs.fish
+msgctxt "pecs.fish"
+msgid "fish"
+msgstr "fisk"
+
+#. pecs.flower
+msgctxt "pecs.flower"
+msgid "flower"
+msgstr "blomma"
+
 #. pecs.great
 msgctxt "pecs.great"
 msgid "Great job!"
 msgstr "Bra jobbat!"
+
+#. pecs.i_hear
+msgctxt "pecs.i_hear"
+msgid "I hear"
+msgstr "Jag hör"
+
+#. pecs.i_see
+msgctxt "pecs.i_see"
+msgid "I see"
+msgstr "Jag ser"
+
+#. pecs.i_want
+msgctxt "pecs.i_want"
+msgid "I want"
+msgstr "Jag vill"
+
+#. pecs.juice
+msgctxt "pecs.juice"
+msgid "juice"
+msgstr "juice"
+
+#. pecs.music
+msgctxt "pecs.music"
+msgid "music"
+msgstr "musik"
+
+#. pecs.partner
+msgctxt "pecs.partner"
+msgid "Partner"
+msgstr "Mottagare"
 
 #. pecs.phase1
 msgctxt "pecs.phase1"
@@ -3464,6 +5059,26 @@ msgctxt "pecs.phase6_desc"
 msgid "Comment on things: 'I see...', 'I hear...'"
 msgstr "Kommentera saker: 'Jag ser...', 'Jag hör...'"
 
+#. pecs.puzzle
+msgctxt "pecs.puzzle"
+msgid "puzzle"
+msgstr "pussel"
+
+#. pecs.rain
+msgctxt "pecs.rain"
+msgid "rain"
+msgstr "regn"
+
+#. pecs.sun
+msgctxt "pecs.sun"
+msgid "sun"
+msgstr "sol"
+
+#. pecs.swing
+msgctxt "pecs.swing"
+msgid "swing"
+msgstr "gunga"
+
 #. pecs.tap_to_give
 msgctxt "pecs.tap_to_give"
 msgid "Tap to give"
@@ -3474,6 +5089,11 @@ msgctxt "pecs.title"
 msgid "PECS Trainer"
 msgstr "PECS-träning"
 
+#. pecs.tree
+msgctxt "pecs.tree"
+msgid "tree"
+msgstr "träd"
+
 #. pecs.trials
 msgctxt "pecs.trials"
 msgid "Trials"
@@ -3483,6 +5103,11 @@ msgstr "Försök"
 msgctxt "pecs.try_again"
 msgid "Try again!"
 msgstr "Försök igen!"
+
+#. pecs.water
+msgctxt "pecs.water"
+msgid "water"
+msgstr "vatten"
 
 #. pecs.what_want
 msgctxt "pecs.what_want"
@@ -3599,6 +5224,16 @@ msgctxt "pecsBoard.worried"
 msgid "Worried"
 msgstr "Orolig"
 
+#. phrase.I
+msgctxt "phrase.I"
+msgid "I"
+msgstr "jag"
+
+#. phrase.dad
+msgctxt "phrase.dad"
+msgid "dad"
+msgstr "pappa"
+
 #. phrase.does
 msgctxt "phrase.does"
 msgid "Does?"
@@ -3609,15 +5244,45 @@ msgctxt "phrase.favorites"
 msgid "Favorites"
 msgstr "Favoriter"
 
+#. phrase.friend
+msgctxt "phrase.friend"
+msgid "friend"
+msgstr "kompis"
+
+#. phrase.he
+msgctxt "phrase.he"
+msgid "he"
+msgstr "han"
+
+#. phrase.mom
+msgctxt "phrase.mom"
+msgid "mom"
+msgstr "mamma"
+
 #. phrase.object
 msgctxt "phrase.object"
 msgid "What"
 msgstr "Vad"
 
+#. phrase.she
+msgctxt "phrase.she"
+msgid "she"
+msgstr "hon"
+
 #. phrase.subject
 msgctxt "phrase.subject"
 msgid "Who"
 msgstr "Vem"
+
+#. phrase.teacher
+msgctxt "phrase.teacher"
+msgid "teacher"
+msgstr "lärare"
+
+#. phrase.they
+msgctxt "phrase.they"
+msgid "they"
+msgstr "de"
 
 #. phrase.title
 msgctxt "phrase.title"
@@ -3629,6 +5294,11 @@ msgctxt "phrase.verb"
 msgid "Does what"
 msgstr "Gör vad"
 
+#. phrase.we
+msgctxt "phrase.we"
+msgid "we"
+msgstr "vi"
+
 #. phrase.what
 msgctxt "phrase.what"
 msgid "What?"
@@ -3638,6 +5308,216 @@ msgstr "Vad?"
 msgctxt "phrase.who"
 msgid "Who?"
 msgstr "Vem?"
+
+#. phrase.word.I
+msgctxt "phrase.word.I"
+msgid "I"
+msgstr "jag"
+
+#. phrase.word.apple
+msgctxt "phrase.word.apple"
+msgid "apple"
+msgstr "äpple"
+
+#. phrase.word.ball
+msgctxt "phrase.word.ball"
+msgid "ball"
+msgstr "boll"
+
+#. phrase.word.book
+msgctxt "phrase.word.book"
+msgid "book"
+msgstr "bok"
+
+#. phrase.word.car
+msgctxt "phrase.word.car"
+msgid "car"
+msgstr "bil"
+
+#. phrase.word.cookie
+msgctxt "phrase.word.cookie"
+msgid "cookie"
+msgstr "kaka"
+
+#. phrase.word.dad
+msgctxt "phrase.word.dad"
+msgid "dad"
+msgstr "pappa"
+
+#. phrase.word.drink
+msgctxt "phrase.word.drink"
+msgid "drink"
+msgstr "dricka"
+
+#. phrase.word.eat
+msgctxt "phrase.word.eat"
+msgid "eat"
+msgstr "äta"
+
+#. phrase.word.food
+msgctxt "phrase.word.food"
+msgid "food"
+msgstr "mat"
+
+#. phrase.word.friend
+msgctxt "phrase.word.friend"
+msgid "friend"
+msgstr "kompis"
+
+#. phrase.word.give
+msgctxt "phrase.word.give"
+msgid "give"
+msgstr "ge"
+
+#. phrase.word.go
+msgctxt "phrase.word.go"
+msgid "go"
+msgstr "gå"
+
+#. phrase.word.have
+msgctxt "phrase.word.have"
+msgid "have"
+msgstr "har"
+
+#. phrase.word.he
+msgctxt "phrase.word.he"
+msgid "he"
+msgstr "han"
+
+#. phrase.word.hear
+msgctxt "phrase.word.hear"
+msgid "hear"
+msgstr "höra"
+
+#. phrase.word.home
+msgctxt "phrase.word.home"
+msgid "home"
+msgstr "hem"
+
+#. phrase.word.like
+msgctxt "phrase.word.like"
+msgid "like"
+msgstr "gillar"
+
+#. phrase.word.make
+msgctxt "phrase.word.make"
+msgid "make"
+msgstr "göra"
+
+#. phrase.word.milk
+msgctxt "phrase.word.milk"
+msgid "milk"
+msgstr "mjölk"
+
+#. phrase.word.mom
+msgctxt "phrase.word.mom"
+msgid "mom"
+msgstr "mamma"
+
+#. phrase.word.music
+msgctxt "phrase.word.music"
+msgid "music"
+msgstr "musik"
+
+#. phrase.word.play
+msgctxt "phrase.word.play"
+msgid "play"
+msgstr "leka"
+
+#. phrase.word.puzzle
+msgctxt "phrase.word.puzzle"
+msgid "puzzle"
+msgstr "pussel"
+
+#. phrase.word.read
+msgctxt "phrase.word.read"
+msgid "read"
+msgstr "läsa"
+
+#. phrase.word.school
+msgctxt "phrase.word.school"
+msgid "school"
+msgstr "skola"
+
+#. phrase.word.see
+msgctxt "phrase.word.see"
+msgid "see"
+msgstr "se"
+
+#. phrase.word.she
+msgctxt "phrase.word.she"
+msgid "she"
+msgstr "hon"
+
+#. phrase.word.teacher
+msgctxt "phrase.word.teacher"
+msgid "teacher"
+msgstr "lärare"
+
+#. phrase.word.they
+msgctxt "phrase.word.they"
+msgid "they"
+msgstr "de"
+
+#. phrase.word.want
+msgctxt "phrase.word.want"
+msgid "want"
+msgstr "vill"
+
+#. phrase.word.water
+msgctxt "phrase.word.water"
+msgid "water"
+msgstr "vatten"
+
+#. phrase.word.we
+msgctxt "phrase.word.we"
+msgid "we"
+msgstr "vi"
+
+#. phrase.word.you
+msgctxt "phrase.word.you"
+msgid "you"
+msgstr "du"
+
+#. phrase.you
+msgctxt "phrase.you"
+msgid "you"
+msgstr "du"
+
+#. point.I
+msgctxt "point.I"
+msgid "I"
+msgstr "jag"
+
+#. point.angry
+msgctxt "point.angry"
+msgid "angry"
+msgstr "arg"
+
+#. point.bad
+msgctxt "point.bad"
+msgid "bad"
+msgstr "dålig"
+
+#. point.ball
+msgctxt "point.ball"
+msgid "ball"
+msgstr "boll"
+
+#. point.big
+msgctxt "point.big"
+msgid "big"
+msgstr "stor"
+
+#. point.book
+msgctxt "point.book"
+msgid "book"
+msgstr "bok"
+
+#. point.can
+msgctxt "point.can"
+msgid "can"
+msgstr "kan"
 
 #. point.cat.actions
 msgctxt "point.cat.actions"
@@ -3679,15 +5559,275 @@ msgctxt "point.cat.things"
 msgid "Things"
 msgstr "Saker"
 
+#. point.cold
+msgctxt "point.cold"
+msgid "cold"
+msgstr "kall"
+
+#. point.dad
+msgctxt "point.dad"
+msgid "dad"
+msgstr "pappa"
+
+#. point.do
+msgctxt "point.do"
+msgid "do"
+msgstr "göra"
+
+#. point.down
+msgctxt "point.down"
+msgid "down"
+msgstr "ner"
+
+#. point.drink
+msgctxt "point.drink"
+msgid "drink"
+msgstr "dricka"
+
+#. point.eat
+msgctxt "point.eat"
+msgid "eat"
+msgstr "äta"
+
+#. point.food
+msgctxt "point.food"
+msgid "food"
+msgstr "mat"
+
+#. point.give
+msgctxt "point.give"
+msgid "give"
+msgstr "ge"
+
+#. point.go
+msgctxt "point.go"
+msgid "go"
+msgstr "gå"
+
+#. point.good
+msgctxt "point.good"
+msgid "good"
+msgstr "bra"
+
+#. point.goodbye
+msgctxt "point.goodbye"
+msgid "goodbye"
+msgstr "hejdå"
+
+#. point.happy
+msgctxt "point.happy"
+msgid "happy"
+msgstr "glad"
+
+#. point.have
+msgctxt "point.have"
+msgid "have"
+msgstr "har"
+
+#. point.he
+msgctxt "point.he"
+msgid "he"
+msgstr "han"
+
+#. point.hear
+msgctxt "point.hear"
+msgid "hear"
+msgstr "höra"
+
+#. point.hello
+msgctxt "point.hello"
+msgid "hello"
+msgstr "hej"
+
+#. point.help
+msgctxt "point.help"
+msgid "help"
+msgstr "hjälp"
+
+#. point.here
+msgctxt "point.here"
+msgid "here"
+msgstr "här"
+
+#. point.home
+msgctxt "point.home"
+msgid "home"
+msgstr "hem"
+
+#. point.hot
+msgctxt "point.hot"
+msgid "hot"
+msgstr "varm"
+
+#. point.in
+msgctxt "point.in"
+msgid "in"
+msgstr "in"
+
+#. point.like
+msgctxt "point.like"
+msgid "like"
+msgstr "gillar"
+
+#. point.make
+msgctxt "point.make"
+msgid "make"
+msgstr "göra"
+
+#. point.mom
+msgctxt "point.mom"
+msgid "mom"
+msgstr "mamma"
+
+#. point.more
+msgctxt "point.more"
+msgid "more"
+msgstr "mer"
+
+#. point.no
+msgctxt "point.no"
+msgid "no"
+msgstr "nej"
+
+#. point.not
+msgctxt "point.not"
+msgid "not"
+msgstr "inte"
+
+#. point.out
+msgctxt "point.out"
+msgid "out"
+msgstr "ut"
+
+#. point.play
+msgctxt "point.play"
+msgid "play"
+msgstr "leka"
+
+#. point.please
+msgctxt "point.please"
+msgid "please"
+msgstr "snälla"
+
+#. point.read
+msgctxt "point.read"
+msgid "read"
+msgstr "läsa"
+
+#. point.sad
+msgctxt "point.sad"
+msgid "sad"
+msgstr "ledsen"
+
+#. point.scared
+msgctxt "point.scared"
+msgid "scared"
+msgstr "rädd"
+
+#. point.school
+msgctxt "point.school"
+msgid "school"
+msgstr "skola"
+
+#. point.see
+msgctxt "point.see"
+msgid "see"
+msgstr "se"
+
+#. point.she
+msgctxt "point.she"
+msgid "she"
+msgstr "hon"
+
+#. point.small
+msgctxt "point.small"
+msgid "small"
+msgstr "liten"
+
+#. point.stop
+msgctxt "point.stop"
+msgid "stop"
+msgstr "stopp"
+
+#. point.take
+msgctxt "point.take"
+msgid "take"
+msgstr "ta"
+
 #. point.tap_words
 msgctxt "point.tap_words"
 msgid "Tap words to build a sentence"
 msgstr "Tryck på ord för att bygga en mening"
 
+#. point.thank_you
+msgctxt "point.thank_you"
+msgid "thank you"
+msgstr "tack"
+
+#. point.there
+msgctxt "point.there"
+msgid "there"
+msgstr "där"
+
+#. point.they
+msgctxt "point.they"
+msgid "they"
+msgstr "de"
+
 #. point.title
 msgctxt "point.title"
 msgid "Point Talk"
 msgstr "Pekprat"
+
+#. point.up
+msgctxt "point.up"
+msgid "up"
+msgstr "upp"
+
+#. point.want
+msgctxt "point.want"
+msgid "want"
+msgstr "vill"
+
+#. point.water
+msgctxt "point.water"
+msgid "water"
+msgstr "vatten"
+
+#. point.we
+msgctxt "point.we"
+msgid "we"
+msgstr "vi"
+
+#. point.what
+msgctxt "point.what"
+msgid "what"
+msgstr "vad"
+
+#. point.when
+msgctxt "point.when"
+msgid "when"
+msgstr "när"
+
+#. point.where
+msgctxt "point.where"
+msgid "where"
+msgstr "var"
+
+#. point.who
+msgctxt "point.who"
+msgid "who"
+msgstr "vem"
+
+#. point.yes
+msgctxt "point.yes"
+msgid "yes"
+msgstr "ja"
+
+#. point.you
+msgctxt "point.you"
+msgid "you"
+msgstr "du"
 
 #. practice.add_tasks
 msgctxt "practice.add_tasks"
@@ -4119,6 +6259,271 @@ msgctxt "rewardChart.title"
 msgid "Reward Chart"
 msgstr "Belöningstavla"
 
+#. rewards.achievement.fifteen_minutes
+msgctxt "rewards.achievement.fifteen_minutes"
+msgid "Fifteen minutes"
+msgstr "Femton minuter"
+
+#. rewards.achievement.fifteen_minutes.desc
+msgctxt "rewards.achievement.fifteen_minutes.desc"
+msgid "15 minutes of practice — keep going!"
+msgstr "15 minuters övning — fortsätt så!"
+
+#. rewards.achievement.fifty_stars
+msgctxt "rewards.achievement.fifty_stars"
+msgid "Fifty stars"
+msgstr "Femtio stjärnor"
+
+#. rewards.achievement.fifty_stars.desc
+msgctxt "rewards.achievement.fifty_stars.desc"
+msgid "50 gold stars — absolutely incredible work!"
+msgstr "50 guldstjärnor — helt otroligt bra jobbat!"
+
+#. rewards.achievement.first_star
+msgctxt "rewards.achievement.first_star"
+msgid "First star"
+msgstr "Första stjärnan"
+
+#. rewards.achievement.first_star.desc
+msgctxt "rewards.achievement.first_star.desc"
+msgid "You got your very first gold star!"
+msgstr "Du fick din allra första guldstjärna!"
+
+#. rewards.achievement.five_minutes
+msgctxt "rewards.achievement.five_minutes"
+msgid "Five minutes"
+msgstr "Fem minuter"
+
+#. rewards.achievement.five_minutes.desc
+msgctxt "rewards.achievement.five_minutes.desc"
+msgid "You've practised for five minutes — great start!"
+msgstr "Du har övat i fem minuter — bra start!"
+
+#. rewards.achievement.five_stars
+msgctxt "rewards.achievement.five_stars"
+msgid "Five stars"
+msgstr "Fem stjärnor"
+
+#. rewards.achievement.five_stars.desc
+msgctxt "rewards.achievement.five_stars.desc"
+msgid "You've collected five gold stars — fantastic!"
+msgstr "Du har samlat fem guldstjärnor — fantastiskt!"
+
+#. rewards.achievement.ten_stars
+msgctxt "rewards.achievement.ten_stars"
+msgid "Ten stars"
+msgstr "Tio stjärnor"
+
+#. rewards.achievement.ten_stars.desc
+msgctxt "rewards.achievement.ten_stars.desc"
+msgid "A whole ten gold stars — you're amazing!"
+msgstr "Hela tio guldstjärnor — du är jätteduktig!"
+
+#. rewards.achievement.thirty_minutes
+msgctxt "rewards.achievement.thirty_minutes"
+msgid "Thirty minutes"
+msgstr "Trettio minuter"
+
+#. rewards.achievement.thirty_minutes.desc
+msgctxt "rewards.achievement.thirty_minutes.desc"
+msgid "Half an hour of practice — what an achievement!"
+msgstr "En halvtimmes övning — vilken prestation!"
+
+#. rewards.achievement.twenty_five_stars
+msgctxt "rewards.achievement.twenty_five_stars"
+msgid "Twenty-five stars"
+msgstr "Tjugofem stjärnor"
+
+#. rewards.achievement.twenty_five_stars.desc
+msgctxt "rewards.achievement.twenty_five_stars.desc"
+msgid "25 gold stars! You're a real star!"
+msgstr "25 guldstjärnor! Du är en riktig stjärna!"
+
+#. rewards.achievement_unlocked
+msgctxt "rewards.achievement_unlocked"
+msgid "New achievement"
+msgstr "Ny framgång"
+
+#. rewards.add_goal
+msgctxt "rewards.add_goal"
+msgid "Add"
+msgstr "Lägg till"
+
+#. rewards.cancel
+msgctxt "rewards.cancel"
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. rewards.diploma.awarded_to
+msgctxt "rewards.diploma.awarded_to"
+msgid "Awarded to"
+msgstr "Tilldelas"
+
+#. rewards.diploma.created
+msgctxt "rewards.diploma.created"
+msgid "Diploma created!"
+msgstr "Diplom skapat!"
+
+#. rewards.diploma.print
+msgctxt "rewards.diploma.print"
+msgid "Print"
+msgstr "Skriv ut"
+
+#. rewards.diploma.title
+msgctxt "rewards.diploma.title"
+msgid "Diploma"
+msgstr "Diplom"
+
+#. rewards.earn_diploma
+msgctxt "rewards.earn_diploma"
+msgid "Create diploma"
+msgstr "Skapa diplom"
+
+#. rewards.goal_completed
+msgctxt "rewards.goal_completed"
+msgid "Goal achieved!"
+msgstr "Mål uppnått!"
+
+#. rewards.goal_created
+msgctxt "rewards.goal_created"
+msgid "New goal created!"
+msgstr "Nytt mål skapat!"
+
+#. rewards.goal_reward_placeholder
+msgctxt "rewards.goal_reward_placeholder"
+msgid "What happens at the goal? (e.g. ice cream!)"
+msgstr "Vad händer vid målet? (t.ex. glass!)"
+
+#. rewards.goal_type.stars
+msgctxt "rewards.goal_type.stars"
+msgid "Gold stars"
+msgstr "Guldstjärnor"
+
+#. rewards.goal_type.time
+msgctxt "rewards.goal_type.time"
+msgid "Minutes"
+msgstr "Minuter"
+
+#. rewards.gold_stars
+msgctxt "rewards.gold_stars"
+msgid "gold stars"
+msgstr "guldstjärnor"
+
+#. rewards.greeting
+msgctxt "rewards.greeting"
+msgid "Hi {name}! Here are your achievements 🌟"
+msgstr "Hej {name}! Här ser du dina framsteg 🌟"
+
+#. rewards.nav
+msgctxt "rewards.nav"
+msgid "Rewards"
+msgstr "Belöningar"
+
+#. rewards.new_goal
+msgctxt "rewards.new_goal"
+msgid "New goal"
+msgstr "Nytt mål"
+
+#. rewards.no_diplomas_yet
+msgctxt "rewards.no_diplomas_yet"
+msgid "No diplomas yet. Unlock achievements to earn diplomas!"
+msgstr "Inga diplom ännu. Lås upp framsteg för att tjäna diplom!"
+
+#. rewards.no_stars_yet
+msgctxt "rewards.no_stars_yet"
+msgid "No gold stars yet — keep practising and they'll come!"
+msgstr "Inga guldstjärnor ännu — fortsätt öva så kommer de!"
+
+#. rewards.praise.bra_jobbat
+msgctxt "rewards.praise.bra_jobbat"
+msgid "Great job!"
+msgstr "Bra jobbat!"
+
+#. rewards.praise.du_ar_duktig
+msgctxt "rewards.praise.du_ar_duktig"
+msgid "You're so good!"
+msgstr "Vad duktig du är!"
+
+#. rewards.praise.fantastiskt
+msgctxt "rewards.praise.fantastiskt"
+msgid "Fantastic!"
+msgstr "Fantastiskt!"
+
+#. rewards.praise.jattebra
+msgctxt "rewards.praise.jattebra"
+msgid "Awesome!"
+msgstr "Jättebra!"
+
+#. rewards.praise.kanon
+msgctxt "rewards.praise.kanon"
+msgid "Amazing!"
+msgstr "Kanon!"
+
+#. rewards.praise.snyggt
+msgctxt "rewards.praise.snyggt"
+msgid "Nice!"
+msgstr "Snyggt!"
+
+#. rewards.praise.toppen
+msgctxt "rewards.praise.toppen"
+msgid "Wonderful!"
+msgstr "Toppen!"
+
+#. rewards.praise.wow
+msgctxt "rewards.praise.wow"
+msgid "Wow, what a star!"
+msgstr "Wow, vilken stjärna!"
+
+#. rewards.settings.diplomas
+msgctxt "rewards.settings.diplomas"
+msgid "Diplomas"
+msgstr "Diplom"
+
+#. rewards.settings.enabled
+msgctxt "rewards.settings.enabled"
+msgid "Rewards enabled"
+msgstr "Belöningar aktiverade"
+
+#. rewards.settings.praise
+msgctxt "rewards.settings.praise"
+msgid "Verbal praise"
+msgstr "Muntligt beröm"
+
+#. rewards.star.completed
+msgctxt "rewards.star.completed"
+msgid "Great work with the exercise!"
+msgstr "Bra jobbat med övningen!"
+
+#. rewards.tab.achievements
+msgctxt "rewards.tab.achievements"
+msgid "Achievements"
+msgstr "Framsteg"
+
+#. rewards.tab.diplomas
+msgctxt "rewards.tab.diplomas"
+msgid "Diplomas"
+msgstr "Diplom"
+
+#. rewards.tab.goals
+msgctxt "rewards.tab.goals"
+msgid "Goals"
+msgstr "Mål"
+
+#. rewards.tab.stars
+msgctxt "rewards.tab.stars"
+msgid "Stars"
+msgstr "Stjärnor"
+
+#. rewards.title
+msgctxt "rewards.title"
+msgid "Rewards"
+msgstr "Belöningar"
+
+#. rewards.toggle_label
+msgctxt "rewards.toggle_label"
+msgid "Rewards"
+msgstr "Belöningar"
+
 #. routineBuddy.allDone
 msgctxt "routineBuddy.allDone"
 msgid "All done!"
@@ -4249,6 +6654,121 @@ msgctxt "routineBuddy.wash"
 msgid "Wash face and hands"
 msgstr "Tvätta ansikte och händer"
 
+#. sagostunden.cat.actions
+msgctxt "sagostunden.cat.actions"
+msgid "Actions"
+msgstr "Handlingar"
+
+#. sagostunden.cat.animals
+msgctxt "sagostunden.cat.animals"
+msgid "Animals"
+msgstr "Djur"
+
+#. sagostunden.cat.food
+msgctxt "sagostunden.cat.food"
+msgid "Food"
+msgstr "Mat"
+
+#. sagostunden.cat.people
+msgctxt "sagostunden.cat.people"
+msgid "Characters"
+msgstr "Karaktärer"
+
+#. sagostunden.cat.places
+msgctxt "sagostunden.cat.places"
+msgid "Places"
+msgstr "Platser"
+
+#. sagostunden.cat.things
+msgctxt "sagostunden.cat.things"
+msgid "Things"
+msgstr "Saker"
+
+#. sagostunden.create
+msgctxt "sagostunden.create"
+msgid "Create"
+msgstr "Skapa"
+
+#. sagostunden.create_story
+msgctxt "sagostunden.create_story"
+msgid "Create story!"
+msgstr "Skapa saga!"
+
+#. sagostunden.credit
+msgctxt "sagostunden.credit"
+msgid "Pictograms by ARASAAC (CC BY-NC-SA 4.0)"
+msgstr "Bildstöd från ARASAAC (CC BY-NC-SA 4.0)"
+
+#. sagostunden.font_size
+msgctxt "sagostunden.font_size"
+msgid "Text size"
+msgstr "Textstorlek"
+
+#. sagostunden.new_story
+msgctxt "sagostunden.new_story"
+msgid "New story"
+msgstr "Ny saga"
+
+#. sagostunden.no_saved
+msgctxt "sagostunden.no_saved"
+msgid "No saved stories yet. Create one!"
+msgstr "Inga sparade sagor ännu. Skapa en!"
+
+#. sagostunden.pick_template
+msgctxt "sagostunden.pick_template"
+msgid "Pick a story"
+msgstr "Välj en saga"
+
+#. sagostunden.pick_words
+msgctxt "sagostunden.pick_words"
+msgid "Choose your words"
+msgstr "Välj dina ord"
+
+#. sagostunden.pick_words_hint
+msgctxt "sagostunden.pick_words_hint"
+msgid "Tap a word to add it, or skip to get a random one!"
+msgstr "Tryck på ett ord för att lägga till det, eller hoppa över för slumpmässigt!"
+
+#. sagostunden.random_story
+msgctxt "sagostunden.random_story"
+msgid "Surprise me!"
+msgstr "Överraska mig!"
+
+#. sagostunden.read
+msgctxt "sagostunden.read"
+msgid "Read"
+msgstr "Läs"
+
+#. sagostunden.read_aloud
+msgctxt "sagostunden.read_aloud"
+msgid "Read aloud"
+msgstr "Läs högt"
+
+#. sagostunden.save_story
+msgctxt "sagostunden.save_story"
+msgid "Save"
+msgstr "Spara"
+
+#. sagostunden.saved
+msgctxt "sagostunden.saved"
+msgid "Saved"
+msgstr "Sparade"
+
+#. sagostunden.saved_stories
+msgctxt "sagostunden.saved_stories"
+msgid "Saved stories"
+msgstr "Sparade sagor"
+
+#. sagostunden.settings
+msgctxt "sagostunden.settings"
+msgid "Settings"
+msgstr "Inställningar"
+
+#. sagostunden.show_pictograms
+msgctxt "sagostunden.show_pictograms"
+msgid "Show pictograms"
+msgstr "Visa bildstöd"
+
 #. schedule.add_activity
 msgctxt "schedule.add_activity"
 msgid "Add Activity"
@@ -4289,6 +6809,11 @@ msgctxt "schedule.next"
 msgid "Next"
 msgstr "Nästa"
 
+#. schedule.no_schedules
+msgctxt "schedule.no_schedules"
+msgid "No schedules yet"
+msgstr "Inga scheman ännu"
+
 #. schedule.now
 msgctxt "schedule.now"
 msgid "Now"
@@ -4299,6 +6824,21 @@ msgctxt "schedule.print"
 msgid "Print"
 msgstr "Skriv ut"
 
+#. schedule.remove
+msgctxt "schedule.remove"
+msgid "Remove"
+msgstr "Ta bort"
+
+#. schedule.set_now
+msgctxt "schedule.set_now"
+msgid "Set as now"
+msgstr "Markera som nu"
+
+#. schedule.speak
+msgctxt "schedule.speak"
+msgid "Speak"
+msgstr "Läs upp"
+
 #. schedule.title
 msgctxt "schedule.title"
 msgid "Picture Schedule"
@@ -4308,6 +6848,11 @@ msgstr "Bildschema"
 msgctxt "schedule.today"
 msgid "Today"
 msgstr "Idag"
+
+#. schedule.type_activity
+msgctxt "schedule.type_activity"
+msgid "Or type activity name..."
+msgstr "Eller skriv aktivitetsnamn..."
 
 #. schoolDay.period.art
 msgctxt "schoolDay.period.art"
@@ -4369,6 +6914,156 @@ msgctxt "schoolDay.title"
 msgid "School Day"
 msgstr "Skoldag"
 
+#. sentence.ar
+msgctxt "sentence.ar"
+msgid "is"
+msgstr "är"
+
+#. sentence.arbetar
+msgctxt "sentence.arbetar"
+msgid "works"
+msgstr "arbetar"
+
+#. sentence.ata
+msgctxt "sentence.ata"
+msgid "eat"
+msgstr "äta"
+
+#. sentence.barnet
+msgctxt "sentence.barnet"
+msgid "The child"
+msgstr "Barnet"
+
+#. sentence.bilen
+msgctxt "sentence.bilen"
+msgid "The car"
+msgstr "Bilen"
+
+#. sentence.bok
+msgctxt "sentence.bok"
+msgid "book"
+msgstr "bok"
+
+#. sentence.dricka
+msgctxt "sentence.dricka"
+msgid "drink"
+msgstr "dricka"
+
+#. sentence.en
+msgctxt "sentence.en"
+msgid "a"
+msgstr "en"
+
+#. sentence.ga
+msgctxt "sentence.ga"
+msgid "go"
+msgstr "gå"
+
+#. sentence.gar
+msgctxt "sentence.gar"
+msgid "go"
+msgstr "går"
+
+#. sentence.glad
+msgctxt "sentence.glad"
+msgid "happy"
+msgstr "glad"
+
+#. sentence.hunden
+msgctxt "sentence.hunden"
+msgid "The dog"
+msgstr "Hunden"
+
+#. sentence.jag
+msgctxt "sentence.jag"
+msgid "I"
+msgstr "Jag"
+
+#. sentence.katten
+msgctxt "sentence.katten"
+msgid "The cat"
+msgstr "Katten"
+
+#. sentence.kor
+msgctxt "sentence.kor"
+msgid "drives"
+msgstr "kör"
+
+#. sentence.laser
+msgctxt "sentence.laser"
+msgid "reads"
+msgstr "läser"
+
+#. sentence.leker
+msgctxt "sentence.leker"
+msgid "plays"
+msgstr "leker"
+
+#. sentence.mamma
+msgctxt "sentence.mamma"
+msgid "Mom"
+msgstr "Mamma"
+
+#. sentence.mat
+msgctxt "sentence.mat"
+msgid "food"
+msgstr "mat"
+
+#. sentence.pa
+msgctxt "sentence.pa"
+msgid "on"
+msgstr "på"
+
+#. sentence.pappa
+msgctxt "sentence.pappa"
+msgid "Dad"
+msgstr "Pappa"
+
+#. sentence.ska
+msgctxt "sentence.ska"
+msgid "will"
+msgstr "ska"
+
+#. sentence.skolan
+msgctxt "sentence.skolan"
+msgid "school"
+msgstr "skolan"
+
+#. sentence.soffan
+msgctxt "sentence.soffan"
+msgid "the sofa"
+msgstr "soffan"
+
+#. sentence.sover
+msgctxt "sentence.sover"
+msgid "sleeps"
+msgstr "sover"
+
+#. sentence.springer
+msgctxt "sentence.springer"
+msgid "runs"
+msgstr "springer"
+
+#. sentence.till
+msgctxt "sentence.till"
+msgid "to"
+msgstr "till"
+
+#. sentence.vatten
+msgctxt "sentence.vatten"
+msgid "water"
+msgstr "vatten"
+
+#. sentence.vi
+msgctxt "sentence.vi"
+msgid "we"
+msgstr "vi"
+
+#. sentence.vill
+msgctxt "sentence.vill"
+msgid "want"
+msgstr "vill"
+
 #. sentenceBuilder.buildHere
 msgctxt "sentenceBuilder.buildHere"
 msgid "Build your sentence here..."
@@ -4418,6 +7113,121 @@ msgstr "Meningsbyggaren"
 msgctxt "sentenceBuilder.tryAgain"
 msgid "Try again!"
 msgstr "Försök igen!"
+
+#. sentenceStrip.cat.actions
+msgctxt "sentenceStrip.cat.actions"
+msgid "Actions"
+msgstr "Aktiviteter"
+
+#. sentenceStrip.cat.feelings
+msgctxt "sentenceStrip.cat.feelings"
+msgid "Feelings"
+msgstr "Känslor"
+
+#. sentenceStrip.cat.food
+msgctxt "sentenceStrip.cat.food"
+msgid "Food"
+msgstr "Mat"
+
+#. sentenceStrip.cat.places
+msgctxt "sentenceStrip.cat.places"
+msgid "Places"
+msgstr "Platser"
+
+#. sentenceStrip.cat.toys
+msgctxt "sentenceStrip.cat.toys"
+msgid "Toys"
+msgstr "Leksaker"
+
+#. sentenceStrip.clear
+msgctxt "sentenceStrip.clear"
+msgid "Clear"
+msgstr "Rensa"
+
+#. sentenceStrip.hint
+msgctxt "sentenceStrip.hint"
+msgid "Choose a starter phrase and add words to build a sentence"
+msgstr "Välj en startfras och lägg till ord för att bygga en mening"
+
+#. sentenceStrip.iFeel
+msgctxt "sentenceStrip.iFeel"
+msgid "I feel"
+msgstr "Jag känner"
+
+#. sentenceStrip.iHave
+msgctxt "sentenceStrip.iHave"
+msgid "I have"
+msgstr "Jag har"
+
+#. sentenceStrip.iHear
+msgctxt "sentenceStrip.iHear"
+msgid "I hear"
+msgstr "Jag hör"
+
+#. sentenceStrip.iLike
+msgctxt "sentenceStrip.iLike"
+msgid "I like"
+msgstr "Jag gillar"
+
+#. sentenceStrip.iSee
+msgctxt "sentenceStrip.iSee"
+msgid "I see"
+msgstr "Jag ser"
+
+#. sentenceStrip.iWant
+msgctxt "sentenceStrip.iWant"
+msgid "I want"
+msgstr "Jag vill"
+
+#. sentenceStrip.loading
+msgctxt "sentenceStrip.loading"
+msgid "Loading pictograms…"
+msgstr "Laddar piktogram…"
+
+#. sentenceStrip.phase
+msgctxt "sentenceStrip.phase"
+msgid "PECS Phase"
+msgstr "PECS-fas"
+
+#. sentenceStrip.pickWord
+msgctxt "sentenceStrip.pickWord"
+msgid "Pick a word"
+msgstr "Välj ord"
+
+#. sentenceStrip.save
+msgctxt "sentenceStrip.save"
+msgid "Save"
+msgstr "Spara"
+
+#. sentenceStrip.saved
+msgctxt "sentenceStrip.saved"
+msgid "Saved sentences"
+msgstr "Sparade meningar"
+
+#. sentenceStrip.speak
+msgctxt "sentenceStrip.speak"
+msgid "Speak"
+msgstr "Läs upp"
+
+#. sentenceStrip.starters
+msgctxt "sentenceStrip.starters"
+msgid "Sentence starters"
+msgstr "Startfraser"
+
+#. sentenceStrip.strip
+msgctxt "sentenceStrip.strip"
+msgid "Sentence strip"
+msgstr "Meningsremsa"
+
+#. sentenceStrip.tapRemove
+msgctxt "sentenceStrip.tapRemove"
+msgid "Tap to remove"
+msgstr "Tryck för att ta bort"
+
+#. sentenceStrip.title
+msgctxt "sentenceStrip.title"
+msgid "Sentence Strip Workshop"
+msgstr "Meningsremsan"
 
 #. settings.advanced
 msgctxt "settings.advanced"
@@ -4634,6 +7444,501 @@ msgctxt "signDictionary.title"
 msgid "Sign Dictionary"
 msgstr "Teckenordbok"
 
+#. sit.angry
+msgctxt "sit.angry"
+msgid "angry"
+msgstr "arg"
+
+#. sit.apple
+msgctxt "sit.apple"
+msgid "apple"
+msgstr "äpple"
+
+#. sit.arm
+msgctxt "sit.arm"
+msgid "arm"
+msgstr "arm"
+
+#. sit.ball
+msgctxt "sit.ball"
+msgid "ball"
+msgstr "boll"
+
+#. sit.banana
+msgctxt "sit.banana"
+msgid "banana"
+msgstr "banan"
+
+#. sit.bandage
+msgctxt "sit.bandage"
+msgid "bandage"
+msgstr "plåster"
+
+#. sit.bathroom
+msgctxt "sit.bathroom"
+msgid "bathroom"
+msgstr "badrum"
+
+#. sit.bed
+msgctxt "sit.bed"
+msgid "bed"
+msgstr "säng"
+
+#. sit.better
+msgctxt "sit.better"
+msgid "better"
+msgstr "bättre"
+
+#. sit.bicycle
+msgctxt "sit.bicycle"
+msgid "bicycle"
+msgstr "cykel"
+
+#. sit.book
+msgctxt "sit.book"
+msgid "book"
+msgstr "bok"
+
+#. sit.bored
+msgctxt "sit.bored"
+msgid "bored"
+msgstr "uttråkad"
+
+#. sit.bread
+msgctxt "sit.bread"
+msgid "bread"
+msgstr "bröd"
+
+#. sit.bus
+msgctxt "sit.bus"
+msgid "bus"
+msgstr "buss"
+
+#. sit.calm
+msgctxt "sit.calm"
+msgid "calm"
+msgstr "lugn"
+
+#. sit.car
+msgctxt "sit.car"
+msgid "car"
+msgstr "bil"
+
+#. sit.catch
+msgctxt "sit.catch"
+msgid "catch"
+msgstr "fånga"
+
+#. sit.chair
+msgctxt "sit.chair"
+msgid "chair"
+msgstr "stol"
+
+#. sit.chicken
+msgctxt "sit.chicken"
+msgid "chicken"
+msgstr "kyckling"
+
+#. sit.clean
+msgctxt "sit.clean"
+msgid "clean"
+msgstr "städa"
+
+#. sit.climb
+msgctxt "sit.climb"
+msgid "climb"
+msgstr "klättra"
+
+#. sit.comb
+msgctxt "sit.comb"
+msgid "comb"
+msgstr "kam"
+
+#. sit.cook
+msgctxt "sit.cook"
+msgid "cook"
+msgstr "laga mat"
+
+#. sit.count
+msgctxt "sit.count"
+msgid "count"
+msgstr "räkna"
+
+#. sit.desk
+msgctxt "sit.desk"
+msgid "desk"
+msgstr "bänk"
+
+#. sit.doctor
+msgctxt "sit.doctor"
+msgid "doctor"
+msgstr "doktor"
+
+#. sit.door
+msgctxt "sit.door"
+msgid "door"
+msgstr "dörr"
+
+#. sit.draw
+msgctxt "sit.draw"
+msgid "draw"
+msgstr "rita"
+
+#. sit.dry
+msgctxt "sit.dry"
+msgid "dry"
+msgstr "torka"
+
+#. sit.eat
+msgctxt "sit.eat"
+msgid "eat"
+msgstr "äta"
+
+#. sit.excited
+msgctxt "sit.excited"
+msgid "excited"
+msgstr "ivrig"
+
+#. sit.fast
+msgctxt "sit.fast"
+msgid "fast"
+msgstr "snabb"
+
+#. sit.friend
+msgctxt "sit.friend"
+msgid "friend"
+msgstr "kompis"
+
+#. sit.go
+msgctxt "sit.go"
+msgid "go"
+msgstr "kör"
+
+#. sit.happy
+msgctxt "sit.happy"
+msgid "happy"
+msgstr "glad"
+
+#. sit.head
+msgctxt "sit.head"
+msgid "head"
+msgstr "huvud"
+
+#. sit.help
+msgctxt "sit.help"
+msgid "help"
+msgstr "hjälp"
+
+#. sit.hungry
+msgctxt "sit.hungry"
+msgid "hungry"
+msgstr "hungrig"
+
+#. sit.i_want
+msgctxt "sit.i_want"
+msgid "I want"
+msgstr "jag vill"
+
+#. sit.jump
+msgctxt "sit.jump"
+msgid "jump"
+msgstr "hoppa"
+
+#. sit.kitchen
+msgctxt "sit.kitchen"
+msgid "kitchen"
+msgstr "kök"
+
+#. sit.leg
+msgctxt "sit.leg"
+msgid "leg"
+msgstr "ben"
+
+#. sit.listen
+msgctxt "sit.listen"
+msgid "listen"
+msgstr "lyssna"
+
+#. sit.medicine
+msgctxt "sit.medicine"
+msgid "medicine"
+msgstr "medicin"
+
+#. sit.milk
+msgctxt "sit.milk"
+msgid "milk"
+msgstr "mjölk"
+
+#. sit.mirror
+msgctxt "sit.mirror"
+msgid "mirror"
+msgstr "spegel"
+
+#. sit.more
+msgctxt "sit.more"
+msgid "more"
+msgstr "mer"
+
+#. sit.no
+msgctxt "sit.no"
+msgid "no"
+msgstr "nej"
+
+#. sit.pain
+msgctxt "sit.pain"
+msgid "pain"
+msgstr "ont"
+
+#. sit.pencil
+msgctxt "sit.pencil"
+msgid "pencil"
+msgstr "penna"
+
+#. sit.plate
+msgctxt "sit.plate"
+msgid "plate"
+msgstr "tallrik"
+
+#. sit.play
+msgctxt "sit.play"
+msgid "play"
+msgstr "leka"
+
+#. sit.proud
+msgctxt "sit.proud"
+msgid "proud"
+msgstr "stolt"
+
+#. sit.push
+msgctxt "sit.push"
+msgid "push"
+msgstr "knuffa"
+
+#. sit.read
+msgctxt "sit.read"
+msgid "read"
+msgstr "läsa"
+
+#. sit.rice
+msgctxt "sit.rice"
+msgid "rice"
+msgstr "ris"
+
+#. sit.road
+msgctxt "sit.road"
+msgid "road"
+msgstr "väg"
+
+#. sit.run
+msgctxt "sit.run"
+msgid "run"
+msgstr "springa"
+
+#. sit.sad
+msgctxt "sit.sad"
+msgid "sad"
+msgstr "ledsen"
+
+#. sit.sand
+msgctxt "sit.sand"
+msgid "sand"
+msgstr "sand"
+
+#. sit.scared
+msgctxt "sit.scared"
+msgid "scared"
+msgstr "rädd"
+
+#. sit.seat_belt
+msgctxt "sit.seat_belt"
+msgid "seat belt"
+msgstr "bälte"
+
+#. sit.shampoo
+msgctxt "sit.shampoo"
+msgid "shampoo"
+msgstr "schampo"
+
+#. sit.share
+msgctxt "sit.share"
+msgid "share"
+msgstr "dela"
+
+#. sit.shower
+msgctxt "sit.shower"
+msgid "shower"
+msgstr "dusch"
+
+#. sit.shy
+msgctxt "sit.shy"
+msgid "shy"
+msgstr "blyg"
+
+#. sit.sick
+msgctxt "sit.sick"
+msgid "sick"
+msgstr "sjuk"
+
+#. sit.sing
+msgctxt "sit.sing"
+msgid "sing"
+msgstr "sjunga"
+
+#. sit.sleep
+msgctxt "sit.sleep"
+msgid "sleep"
+msgstr "sova"
+
+#. sit.slide
+msgctxt "sit.slide"
+msgid "slide"
+msgstr "rutschkana"
+
+#. sit.slow
+msgctxt "sit.slow"
+msgid "slow"
+msgstr "långsam"
+
+#. sit.soap
+msgctxt "sit.soap"
+msgid "soap"
+msgstr "tvål"
+
+#. sit.soup
+msgctxt "sit.soup"
+msgid "soup"
+msgstr "soppa"
+
+#. sit.spoon
+msgctxt "sit.spoon"
+msgid "spoon"
+msgstr "sked"
+
+#. sit.stomach
+msgctxt "sit.stomach"
+msgid "stomach"
+msgstr "mage"
+
+#. sit.stop
+msgctxt "sit.stop"
+msgid "stop"
+msgstr "stopp"
+
+#. sit.surprised
+msgctxt "sit.surprised"
+msgid "surprised"
+msgstr "förvånad"
+
+#. sit.swing
+msgctxt "sit.swing"
+msgid "swing"
+msgstr "gunga"
+
+#. sit.table
+msgctxt "sit.table"
+msgid "table"
+msgstr "bord"
+
+#. sit.teacher
+msgctxt "sit.teacher"
+msgid "teacher"
+msgstr "lärare"
+
+#. sit.television
+msgctxt "sit.television"
+msgid "television"
+msgstr "TV"
+
+#. sit.thermometer
+msgctxt "sit.thermometer"
+msgid "thermometer"
+msgstr "termometer"
+
+#. sit.thirsty
+msgctxt "sit.thirsty"
+msgid "thirsty"
+msgstr "törstig"
+
+#. sit.ticket
+msgctxt "sit.ticket"
+msgid "ticket"
+msgstr "biljett"
+
+#. sit.tired
+msgctxt "sit.tired"
+msgid "tired"
+msgstr "trött"
+
+#. sit.tissue
+msgctxt "sit.tissue"
+msgid "tissue"
+msgstr "näsduk"
+
+#. sit.toilet
+msgctxt "sit.toilet"
+msgid "toilet"
+msgstr "toalett"
+
+#. sit.toothbrush
+msgctxt "sit.toothbrush"
+msgid "toothbrush"
+msgstr "tandborste"
+
+#. sit.towel
+msgctxt "sit.towel"
+msgid "towel"
+msgstr "handduk"
+
+#. sit.train
+msgctxt "sit.train"
+msgid "train"
+msgstr "tåg"
+
+#. sit.turn
+msgctxt "sit.turn"
+msgid "turn"
+msgstr "tur"
+
+#. sit.wait
+msgctxt "sit.wait"
+msgid "wait"
+msgstr "vänta"
+
+#. sit.walk
+msgctxt "sit.walk"
+msgid "walk"
+msgstr "gå"
+
+#. sit.wash_hands
+msgctxt "sit.wash_hands"
+msgid "wash hands"
+msgstr "tvätta händerna"
+
+#. sit.water
+msgctxt "sit.water"
+msgid "water"
+msgstr "vatten"
+
+#. sit.window
+msgctxt "sit.window"
+msgid "window"
+msgstr "fönster"
+
+#. sit.worried
+msgctxt "sit.worried"
+msgid "worried"
+msgstr "orolig"
+
+#. sit.write
+msgctxt "sit.write"
+msgid "write"
+msgstr "skriva"
+
+#. sit.yes
+msgctxt "sit.yes"
+msgid "yes"
+msgstr "ja"
+
 #. situation.core_words
 msgctxt "situation.core_words"
 msgid "Core Words"
@@ -4844,6 +8149,166 @@ msgctxt "socialStories.title"
 msgid "Social Stories"
 msgstr "Sociala berättelser"
 
+#. soundChain.backToLevels
+msgctxt "soundChain.backToLevels"
+msgid "Back to levels"
+msgstr "Tillbaka till nivåer"
+
+#. soundChain.chains
+msgctxt "soundChain.chains"
+msgid "chains"
+msgstr "kedjor"
+
+#. soundChain.intro
+msgctxt "soundChain.intro"
+msgid "Chain sounds together into words! Start simple and build up."
+msgstr "Kedja ihop ljud till ord! Börja enkelt och bygg på."
+
+#. soundChain.level.cv
+msgctxt "soundChain.level.cv"
+msgid "Consonant + Vowel"
+msgstr "Konsonant + Vokal"
+
+#. soundChain.level.cvc
+msgctxt "soundChain.level.cvc"
+msgid "Consonant + Vowel + Consonant"
+msgstr "Konsonant + Vokal + Konsonant"
+
+#. soundChain.level.vowels
+msgctxt "soundChain.level.vowels"
+msgid "Vowels"
+msgstr "Vokaler"
+
+#. soundChain.level.words
+msgctxt "soundChain.level.words"
+msgid "Whole words"
+msgstr "Hela ord"
+
+#. soundChain.levelDone
+msgctxt "soundChain.levelDone"
+msgid "Whole level done! 🏆"
+msgstr "Hela nivån klar! 🏆"
+
+#. soundChain.playChain
+msgctxt "soundChain.playChain"
+msgid "Play chain"
+msgstr "Spela kedjan"
+
+#. soundChain.sayWord
+msgctxt "soundChain.sayWord"
+msgid "Say word"
+msgstr "Säg ordet"
+
+#. soundChain.speed
+msgctxt "soundChain.speed"
+msgid "Speech rate"
+msgstr "Talhastighet"
+
+#. soundChain.title
+msgctxt "soundChain.title"
+msgid "Sound Chain"
+msgstr "Ljudkedjan"
+
+#. soundChain.word.a
+msgctxt "soundChain.word.a"
+msgid "A"
+msgstr "A"
+
+#. soundChain.word.ao
+msgctxt "soundChain.word.ao"
+msgid "A-O"
+msgstr "A-O"
+
+#. soundChain.word.ba
+msgctxt "soundChain.word.ba"
+msgid "Ba"
+msgstr "Ba"
+
+#. soundChain.word.banan
+msgctxt "soundChain.word.banan"
+msgid "Banana"
+msgstr "Banan"
+
+#. soundChain.word.bil
+msgctxt "soundChain.word.bil"
+msgid "Car"
+msgstr "Bil"
+
+#. soundChain.word.boll
+msgctxt "soundChain.word.boll"
+msgid "Ball"
+msgstr "Boll"
+
+#. soundChain.word.hus
+msgctxt "soundChain.word.hus"
+msgid "House"
+msgstr "Hus"
+
+#. soundChain.word.ia
+msgctxt "soundChain.word.ia"
+msgid "I-A"
+msgstr "I-A"
+
+#. soundChain.word.katt
+msgctxt "soundChain.word.katt"
+msgid "Cat"
+msgstr "Katt"
+
+#. soundChain.word.lampa
+msgctxt "soundChain.word.lampa"
+msgid "Lamp"
+msgstr "Lampa"
+
+#. soundChain.word.ma
+msgctxt "soundChain.word.ma"
+msgid "Ma"
+msgstr "Ma"
+
+#. soundChain.word.mama
+msgctxt "soundChain.word.mama"
+msgid "Mama"
+msgstr "Mama"
+
+#. soundChain.word.mat
+msgctxt "soundChain.word.mat"
+msgid "Food"
+msgstr "Mat"
+
+#. soundChain.word.mo
+msgctxt "soundChain.word.mo"
+msgid "Mo"
+msgstr "Mo"
+
+#. soundChain.word.o
+msgctxt "soundChain.word.o"
+msgid "O"
+msgstr "O"
+
+#. soundChain.word.pa
+msgctxt "soundChain.word.pa"
+msgid "Pa"
+msgstr "Pa"
+
+#. soundChain.word.papa
+msgctxt "soundChain.word.papa"
+msgid "Papa"
+msgstr "Papa"
+
+#. soundChain.word.so
+msgctxt "soundChain.word.so"
+msgid "So"
+msgstr "So"
+
+#. soundChain.word.sol
+msgctxt "soundChain.word.sol"
+msgid "Sun"
+msgstr "Sol"
+
+#. soundChain.word.ue
+msgctxt "soundChain.word.ue"
+msgid "U-E"
+msgstr "U-E"
+
 #. soundLibrary.airplane
 msgctxt "soundLibrary.airplane"
 msgid "Airplane"
@@ -4973,6 +8438,891 @@ msgstr "Vågor"
 msgctxt "soundLibrary.wind"
 msgid "Wind"
 msgstr "Vind"
+
+#. soundLottery.intro
+msgctxt "soundLottery.intro"
+msgid "Spin the wheel and practice sounds!"
+msgstr "Snurra hjulet och öva ljud!"
+
+#. soundLottery.level.isolation
+msgctxt "soundLottery.level.isolation"
+msgid "Isolation"
+msgstr "Isolering"
+
+#. soundLottery.level.sentence
+msgctxt "soundLottery.level.sentence"
+msgid "Sentence"
+msgstr "Mening"
+
+#. soundLottery.level.syllable
+msgctxt "soundLottery.level.syllable"
+msgid "Syllable"
+msgstr "Stavelse"
+
+#. soundLottery.level.word
+msgctxt "soundLottery.level.word"
+msgid "Word"
+msgstr "Ord"
+
+#. soundLottery.listen
+msgctxt "soundLottery.listen"
+msgid "Listen"
+msgstr "Lyssna"
+
+#. soundLottery.mastered
+msgctxt "soundLottery.mastered"
+msgid "Mastered sounds"
+msgstr "Bemästrade ljud"
+
+#. soundLottery.next
+msgctxt "soundLottery.next"
+msgid "Next Level"
+msgstr "Nästa nivå"
+
+#. soundLottery.practicing
+msgctxt "soundLottery.practicing"
+msgid "Practicing"
+msgstr "Övar nu"
+
+#. soundLottery.progress
+msgctxt "soundLottery.progress"
+msgid "Progress"
+msgstr "Framsteg"
+
+#. soundLottery.reps
+msgctxt "soundLottery.reps"
+msgid "Repetitions"
+msgstr "Repetitioner"
+
+#. soundLottery.spin
+msgctxt "soundLottery.spin"
+msgid "Spin!"
+msgstr "Snurra!"
+
+#. soundLottery.title
+msgctxt "soundLottery.title"
+msgid "Sound Lottery"
+msgstr "Ljudlotteriet"
+
+#. speechPractice.intro
+msgctxt "speechPractice.intro"
+msgid "Practice speech step by step with the DTTC method!"
+msgstr "Öva tal steg för steg med DTTC-metoden!"
+
+#. speechPractice.item.ba
+msgctxt "speechPractice.item.ba"
+msgid "Ba"
+msgstr "Ba"
+
+#. speechPractice.item.da
+msgctxt "speechPractice.item.da"
+msgid "Da"
+msgstr "Da"
+
+#. speechPractice.item.hej
+msgctxt "speechPractice.item.hej"
+msgid "Hi"
+msgstr "Hej"
+
+#. speechPractice.item.hjalp
+msgctxt "speechPractice.item.hjalp"
+msgid "Help"
+msgstr "Hjälp"
+
+#. speechPractice.item.ja
+msgctxt "speechPractice.item.ja"
+msgid "Yes"
+msgstr "Ja"
+
+#. speechPractice.item.jagHeter
+msgctxt "speechPractice.item.jagHeter"
+msgid "My name is"
+msgstr "Jag heter"
+
+#. speechPractice.item.jagVill
+msgctxt "speechPractice.item.jagVill"
+msgid "I want"
+msgstr "Jag vill"
+
+#. speechPractice.item.jagVillHa
+msgctxt "speechPractice.item.jagVillHa"
+msgid "I want to have"
+msgstr "Jag vill ha"
+
+#. speechPractice.item.kanJagFa
+msgctxt "speechPractice.item.kanJagFa"
+msgid "Can I have?"
+msgstr "Kan jag få?"
+
+#. speechPractice.item.komOchTitta
+msgctxt "speechPractice.item.komOchTitta"
+msgid "Come and look"
+msgstr "Kom och titta"
+
+#. speechPractice.item.la
+msgctxt "speechPractice.item.la"
+msgid "La"
+msgstr "La"
+
+#. speechPractice.item.ma
+msgctxt "speechPractice.item.ma"
+msgid "Ma"
+msgstr "Ma"
+
+#. speechPractice.item.mat
+msgctxt "speechPractice.item.mat"
+msgid "Food"
+msgstr "Mat"
+
+#. speechPractice.item.na
+msgctxt "speechPractice.item.na"
+msgid "Na"
+msgstr "Na"
+
+#. speechPractice.item.nej
+msgctxt "speechPractice.item.nej"
+msgid "No"
+msgstr "Nej"
+
+#. speechPractice.item.pa
+msgctxt "speechPractice.item.pa"
+msgid "Pa"
+msgstr "Pa"
+
+#. speechPractice.item.tack
+msgctxt "speechPractice.item.tack"
+msgid "Thanks"
+msgstr "Tack"
+
+#. speechPractice.item.titta
+msgctxt "speechPractice.item.titta"
+msgid "Look"
+msgstr "Titta"
+
+#. speechPractice.item.vadArDet
+msgctxt "speechPractice.item.vadArDet"
+msgid "What is it?"
+msgstr "Vad är det?"
+
+#. speechPractice.item.vatten
+msgctxt "speechPractice.item.vatten"
+msgid "Water"
+msgstr "Vatten"
+
+#. speechPractice.items
+msgctxt "speechPractice.items"
+msgid "exercises"
+msgstr "övningar"
+
+#. speechPractice.listen
+msgctxt "speechPractice.listen"
+msgid "Listen"
+msgstr "Lyssna"
+
+#. speechPractice.nextStage
+msgctxt "speechPractice.nextStage"
+msgid "Next stage"
+msgstr "Nästa steg"
+
+#. speechPractice.prevStage
+msgctxt "speechPractice.prevStage"
+msgid "Previous stage"
+msgstr "Förra steget"
+
+#. speechPractice.repeatPause
+msgctxt "speechPractice.repeatPause"
+msgid "Repeat with pause"
+msgstr "Repetera med paus"
+
+#. speechPractice.reps
+msgctxt "speechPractice.reps"
+msgid "Repetitions"
+msgstr "Repetitioner"
+
+#. speechPractice.set.phrases
+msgctxt "speechPractice.set.phrases"
+msgid "Short phrases"
+msgstr "Korta fraser"
+
+#. speechPractice.set.simple
+msgctxt "speechPractice.set.simple"
+msgid "Simple syllables"
+msgstr "Enkla stavelser"
+
+#. speechPractice.set.words
+msgctxt "speechPractice.set.words"
+msgid "Everyday words"
+msgstr "Vardagsord"
+
+#. speechPractice.slow
+msgctxt "speechPractice.slow"
+msgid "Slow"
+msgstr "Långsamt"
+
+#. speechPractice.speed
+msgctxt "speechPractice.speed"
+msgid "Speech rate"
+msgstr "Talhastighet"
+
+#. speechPractice.stage.delayed
+msgctxt "speechPractice.stage.delayed"
+msgid "Delayed"
+msgstr "Fördröjt"
+
+#. speechPractice.stage.independent
+msgctxt "speechPractice.stage.independent"
+msgid "Independent"
+msgstr "Självständigt"
+
+#. speechPractice.stage.model
+msgctxt "speechPractice.stage.model"
+msgid "Model"
+msgstr "Modell"
+
+#. speechPractice.stage.simultaneous
+msgctxt "speechPractice.stage.simultaneous"
+msgid "Simultaneous"
+msgstr "Samtidigt"
+
+#. speechPractice.stageDesc.delayed
+msgctxt "speechPractice.stageDesc.delayed"
+msgid "Wait a moment, then say it yourself"
+msgstr "Vänta lite, säg det sedan själv"
+
+#. speechPractice.stageDesc.independent
+msgctxt "speechPractice.stageDesc.independent"
+msgid "Say it all by yourself without help!"
+msgstr "Säg det helt själv utan hjälp!"
+
+#. speechPractice.stageDesc.model
+msgctxt "speechPractice.stageDesc.model"
+msgid "Listen to the model — hear how it should sound"
+msgstr "Lyssna på modellen — hör hur det ska låta"
+
+#. speechPractice.stageDesc.simultaneous
+msgctxt "speechPractice.stageDesc.simultaneous"
+msgid "Say it AT THE SAME TIME as the model"
+msgstr "Säg det SAMTIDIGT som modellen"
+
+#. speechPractice.title
+msgctxt "speechPractice.title"
+msgid "Speech Practice"
+msgstr "Pratpraktiken"
+
+#. speechRhythm.bpm
+msgctxt "speechRhythm.bpm"
+msgid "BPM"
+msgstr "BPM"
+
+#. speechRhythm.correct
+msgctxt "speechRhythm.correct"
+msgid "Correct! 🎉"
+msgstr "Rätt! 🎉"
+
+#. speechRhythm.intonation.instruction
+msgctxt "speechRhythm.intonation.instruction"
+msgid "Follow the melody curve with your voice!"
+msgstr "Följ melodikurvan med din röst!"
+
+#. speechRhythm.intro
+msgctxt "speechRhythm.intro"
+msgid "Practice the rhythm and melody of speech!"
+msgstr "Öva talets rytm och melodi!"
+
+#. speechRhythm.listen
+msgctxt "speechRhythm.listen"
+msgid "Listen"
+msgstr "Lyssna"
+
+#. speechRhythm.mode.intonation
+msgctxt "speechRhythm.mode.intonation"
+msgid "Intonation"
+msgstr "Intonation"
+
+#. speechRhythm.mode.stress
+msgctxt "speechRhythm.mode.stress"
+msgid "Stress"
+msgstr "Betoning"
+
+#. speechRhythm.mode.tap
+msgctxt "speechRhythm.mode.tap"
+msgid "Tap Along"
+msgstr "Tappa takten"
+
+#. speechRhythm.next
+msgctxt "speechRhythm.next"
+msgid "Next"
+msgstr "Nästa"
+
+#. speechRhythm.score
+msgctxt "speechRhythm.score"
+msgid "Score"
+msgstr "Poäng"
+
+#. speechRhythm.speed
+msgctxt "speechRhythm.speed"
+msgid "Tempo"
+msgstr "Tempo"
+
+#. speechRhythm.streak
+msgctxt "speechRhythm.streak"
+msgid "Streak"
+msgstr "Rätt i rad"
+
+#. speechRhythm.stress.instruction
+msgctxt "speechRhythm.stress.instruction"
+msgid "Tap the stressed syllable!"
+msgstr "Tryck på den betonade stavelsen!"
+
+#. speechRhythm.tap.instruction
+msgctxt "speechRhythm.tap.instruction"
+msgid "Tap the drum in time with the syllables!"
+msgstr "Tryck på trumman i takt med stavelserna!"
+
+#. speechRhythm.title
+msgctxt "speechRhythm.title"
+msgid "Speech Rhythm"
+msgstr "Talrytmen"
+
+#. speechRhythm.tryAgain
+msgctxt "speechRhythm.tryAgain"
+msgid "Try again!"
+msgstr "Försök igen!"
+
+#. story.birthday.scene1
+msgctxt "story.birthday.scene1"
+msgid "Today is a party!"
+msgstr "Idag är det kalas!"
+
+#. story.birthday.scene2
+msgctxt "story.birthday.scene2"
+msgid "The child receives gifts."
+msgstr "Barnet får presenter."
+
+#. story.birthday.scene3
+msgctxt "story.birthday.scene3"
+msgid "The cake has candles."
+msgstr "Tårtan har ljus."
+
+#. story.birthday.scene4
+msgctxt "story.birthday.scene4"
+msgid "The child blows out the candles."
+msgstr "Barnet blåser ut ljusen."
+
+#. story.birthday.scene5
+msgctxt "story.birthday.scene5"
+msgid "Everyone sings. Happy birthday!"
+msgstr "Alla sjunger. Grattis!"
+
+#. story.birthday.title
+msgctxt "story.birthday.title"
+msgid "Party!"
+msgstr "Kalas!"
+
+#. story.morning.scene1
+msgctxt "story.morning.scene1"
+msgid "The child sleeps in bed."
+msgstr "Barnet sover i sängen."
+
+#. story.morning.scene2
+msgctxt "story.morning.scene2"
+msgid "The alarm rings. Time to wake up!"
+msgstr "Klockan ringer. Dags att vakna!"
+
+#. story.morning.scene3
+msgctxt "story.morning.scene3"
+msgid "The child brushes their teeth."
+msgstr "Barnet borstar tänderna."
+
+#. story.morning.scene4
+msgctxt "story.morning.scene4"
+msgid "Now the child eats breakfast."
+msgstr "Nu äter barnet frukost."
+
+#. story.morning.scene5
+msgctxt "story.morning.scene5"
+msgid "The child is ready for the day!"
+msgstr "Barnet är redo för dagen!"
+
+#. story.morning.title
+msgctxt "story.morning.title"
+msgid "Good morning!"
+msgstr "God morgon!"
+
+#. story.park.scene1
+msgctxt "story.park.scene1"
+msgid "The child walks to the park."
+msgstr "Barnet går till parken."
+
+#. story.park.scene2
+msgctxt "story.park.scene2"
+msgid "A dog runs by."
+msgstr "En hund springer förbi."
+
+#. story.park.scene3
+msgctxt "story.park.scene3"
+msgid "The child sees a balloon."
+msgstr "Barnet ser en ballong."
+
+#. story.park.scene4
+msgctxt "story.park.scene4"
+msgid "Mom buys ice cream."
+msgstr "Mamma köper glass."
+
+#. story.park.scene5
+msgctxt "story.park.scene5"
+msgid "They go home again."
+msgstr "De går hem igen."
+
+#. story.park.title
+msgctxt "story.park.title"
+msgid "At the park"
+msgstr "I parken"
+
+#. story.pet.scene1
+msgctxt "story.pet.scene1"
+msgid "The cat sits in the window."
+msgstr "Katten sitter i fönstret."
+
+#. story.pet.scene2
+msgctxt "story.pet.scene2"
+msgid "She sees a bird outside."
+msgstr "Den ser en fågel ute."
+
+#. story.pet.scene3
+msgctxt "story.pet.scene3"
+msgid "The cat wants to hunt!"
+msgstr "Katten vill jaga!"
+
+#. story.pet.scene4
+msgctxt "story.pet.scene4"
+msgid "But the door is closed."
+msgstr "Men dörren är stängd."
+
+#. story.pet.scene5
+msgctxt "story.pet.scene5"
+msgid "The cat gets food instead."
+msgstr "Katten får mat istället."
+
+#. story.pet.title
+msgctxt "story.pet.title"
+msgid "The Cat"
+msgstr "Katten"
+
+#. story.rain.scene1
+msgctxt "story.rain.scene1"
+msgid "It's sunny outside."
+msgstr "Det är soligt ute."
+
+#. story.rain.scene2
+msgctxt "story.rain.scene2"
+msgid "Clouds appear in the sky."
+msgstr "Moln kommer på himlen."
+
+#. story.rain.scene3
+msgctxt "story.rain.scene3"
+msgid "It starts to rain!"
+msgstr "Det börjar regna!"
+
+#. story.rain.scene4
+msgctxt "story.rain.scene4"
+msgid "The child takes the umbrella."
+msgstr "Barnet tar paraplyet."
+
+#. story.rain.scene5
+msgctxt "story.rain.scene5"
+msgid "Look! A rainbow!"
+msgstr "Titta! En regnbåge!"
+
+#. story.rain.title
+msgctxt "story.rain.title"
+msgid "It's raining!"
+msgstr "Det regnar!"
+
+#. storyWorkshop.intro
+msgctxt "storyWorkshop.intro"
+msgid "Build a story and tell it!"
+msgstr "Bygg en berättelse och berätta den!"
+
+#. storyWorkshop.listen
+msgctxt "storyWorkshop.listen"
+msgid "Listen to the story"
+msgstr "Lyssna på berättelsen"
+
+#. storyWorkshop.newStory
+msgctxt "storyWorkshop.newStory"
+msgid "New story"
+msgstr "Ny berättelse"
+
+#. storyWorkshop.next
+msgctxt "storyWorkshop.next"
+msgid "Next"
+msgstr "Nästa"
+
+#. storyWorkshop.scene
+msgctxt "storyWorkshop.scene"
+msgid "Scene"
+msgstr "Bild"
+
+#. storyWorkshop.step.choose
+msgctxt "storyWorkshop.step.choose"
+msgid "Choose pictures"
+msgstr "Välj bilder"
+
+#. storyWorkshop.step.order
+msgctxt "storyWorkshop.step.order"
+msgid "Order the story"
+msgstr "Ordna berättelsen"
+
+#. storyWorkshop.step.practice
+msgctxt "storyWorkshop.step.practice"
+msgid "Practice telling"
+msgstr "Öva berätta"
+
+#. storyWorkshop.step.tell
+msgctxt "storyWorkshop.step.tell"
+msgid "Tell it yourself!"
+msgstr "Berätta själv!"
+
+#. storyWorkshop.stories
+msgctxt "storyWorkshop.stories"
+msgid "Stories"
+msgstr "Berättelser"
+
+#. storyWorkshop.title
+msgctxt "storyWorkshop.title"
+msgid "Story Workshop"
+msgstr "Berättarverkstan"
+
+#. storyWorkshop.yourTurn
+msgctxt "storyWorkshop.yourTurn"
+msgid "Your turn to tell!"
+msgstr "Din tur att berätta!"
+
+#. strip.angry
+msgctxt "strip.angry"
+msgid "angry"
+msgstr "arg"
+
+#. strip.apple
+msgctxt "strip.apple"
+msgid "apple"
+msgstr "äpple"
+
+#. strip.ball
+msgctxt "strip.ball"
+msgid "ball"
+msgstr "boll"
+
+#. strip.banana
+msgctxt "strip.banana"
+msgid "banana"
+msgstr "banan"
+
+#. strip.bathroom
+msgctxt "strip.bathroom"
+msgid "bathroom"
+msgstr "badrum"
+
+#. strip.bed
+msgctxt "strip.bed"
+msgid "bed"
+msgstr "säng"
+
+#. strip.blocks
+msgctxt "strip.blocks"
+msgid "blocks"
+msgstr "klossar"
+
+#. strip.book
+msgctxt "strip.book"
+msgid "book"
+msgstr "bok"
+
+#. strip.bread
+msgctxt "strip.bread"
+msgid "bread"
+msgstr "bröd"
+
+#. strip.calm
+msgctxt "strip.calm"
+msgid "calm"
+msgstr "lugn"
+
+#. strip.car
+msgctxt "strip.car"
+msgid "car"
+msgstr "bil"
+
+#. strip.category.actions
+msgctxt "strip.category.actions"
+msgid "Actions"
+msgstr "Handlingar"
+
+#. strip.category.feelings
+msgctxt "strip.category.feelings"
+msgid "Feelings"
+msgstr "Känslor"
+
+#. strip.category.food
+msgctxt "strip.category.food"
+msgid "Food"
+msgstr "Mat"
+
+#. strip.category.places
+msgctxt "strip.category.places"
+msgid "Places"
+msgstr "Platser"
+
+#. strip.category.toys
+msgctxt "strip.category.toys"
+msgid "Toys"
+msgstr "Leksaker"
+
+#. strip.cookie
+msgctxt "strip.cookie"
+msgid "cookie"
+msgstr "kaka"
+
+#. strip.crayons
+msgctxt "strip.crayons"
+msgid "crayons"
+msgstr "kritor"
+
+#. strip.dance
+msgctxt "strip.dance"
+msgid "dance"
+msgstr "dansa"
+
+#. strip.doll
+msgctxt "strip.doll"
+msgid "doll"
+msgstr "docka"
+
+#. strip.draw
+msgctxt "strip.draw"
+msgid "draw"
+msgstr "rita"
+
+#. strip.excited
+msgctxt "strip.excited"
+msgid "excited"
+msgstr "glad"
+
+#. strip.happy
+msgctxt "strip.happy"
+msgid "happy"
+msgstr "glad"
+
+#. strip.home
+msgctxt "strip.home"
+msgid "home"
+msgstr "hem"
+
+#. strip.hungry
+msgctxt "strip.hungry"
+msgid "hungry"
+msgstr "hungrig"
+
+#. strip.juice
+msgctxt "strip.juice"
+msgid "juice"
+msgstr "juice"
+
+#. strip.kitchen
+msgctxt "strip.kitchen"
+msgid "kitchen"
+msgstr "kök"
+
+#. strip.milk
+msgctxt "strip.milk"
+msgid "milk"
+msgstr "mjölk"
+
+#. strip.outside
+msgctxt "strip.outside"
+msgid "outside"
+msgstr "utomhus"
+
+#. strip.park
+msgctxt "strip.park"
+msgid "park"
+msgstr "park"
+
+#. strip.play
+msgctxt "strip.play"
+msgid "play"
+msgstr "leka"
+
+#. strip.puzzle
+msgctxt "strip.puzzle"
+msgid "puzzle"
+msgstr "pussel"
+
+#. strip.read
+msgctxt "strip.read"
+msgid "read"
+msgstr "läsa"
+
+#. strip.run
+msgctxt "strip.run"
+msgid "run"
+msgstr "springa"
+
+#. strip.sad
+msgctxt "strip.sad"
+msgid "sad"
+msgstr "ledsen"
+
+#. strip.sandwich
+msgctxt "strip.sandwich"
+msgid "sandwich"
+msgstr "smörgås"
+
+#. strip.scared
+msgctxt "strip.scared"
+msgid "scared"
+msgstr "rädd"
+
+#. strip.school
+msgctxt "strip.school"
+msgid "school"
+msgstr "skola"
+
+#. strip.sing
+msgctxt "strip.sing"
+msgid "sing"
+msgstr "sjunga"
+
+#. strip.sleep
+msgctxt "strip.sleep"
+msgid "sleep"
+msgstr "sova"
+
+#. strip.store
+msgctxt "strip.store"
+msgid "store"
+msgstr "butik"
+
+#. strip.swim
+msgctxt "strip.swim"
+msgid "swim"
+msgstr "simma"
+
+#. strip.teddy_bear
+msgctxt "strip.teddy_bear"
+msgid "teddy bear"
+msgstr "nalle"
+
+#. strip.tired
+msgctxt "strip.tired"
+msgid "tired"
+msgstr "trött"
+
+#. strip.water
+msgctxt "strip.water"
+msgid "water"
+msgstr "vatten"
+
+#. syllableJump.backToSets
+msgctxt "syllableJump.backToSets"
+msgid "Back to levels"
+msgstr "Tillbaka till nivåer"
+
+#. syllableJump.great
+msgctxt "syllableJump.great"
+msgid "Great job!"
+msgstr "Bra jobbat!"
+
+#. syllableJump.intro
+msgctxt "syllableJump.intro"
+msgid "Break words into syllables — tap and clap along!"
+msgstr "Dela upp ord i stavelser — tryck och klappa med!"
+
+#. syllableJump.listen
+msgctxt "syllableJump.listen"
+msgid "Listen"
+msgstr "Lyssna"
+
+#. syllableJump.next
+msgctxt "syllableJump.next"
+msgid "Next"
+msgstr "Nästa"
+
+#. syllableJump.reset
+msgctxt "syllableJump.reset"
+msgid "Start over"
+msgstr "Börja om"
+
+#. syllableJump.set.easy
+msgctxt "syllableJump.set.easy"
+msgid "Easy (2 syllables)"
+msgstr "Lätt (2 stavelser)"
+
+#. syllableJump.set.hard
+msgctxt "syllableJump.set.hard"
+msgid "Hard (3-5 syllables)"
+msgstr "Svår (3-5 stavelser)"
+
+#. syllableJump.set.medium
+msgctxt "syllableJump.set.medium"
+msgid "Medium (2-3 syllables)"
+msgstr "Medel (2-3 stavelser)"
+
+#. syllableJump.setDone
+msgctxt "syllableJump.setDone"
+msgid "All words done! 🎉"
+msgstr "Alla ord klara! 🎉"
+
+#. syllableJump.speed
+msgctxt "syllableJump.speed"
+msgid "Speech rate"
+msgstr "Talhastighet"
+
+#. syllableJump.syllableCount
+msgctxt "syllableJump.syllableCount"
+msgid "syllables"
+msgstr "stavelser"
+
+#. syllableJump.title
+msgctxt "syllableJump.title"
+msgid "Syllable Jump"
+msgstr "Stavelsehoppet"
+
+#. syllableJump.words
+msgctxt "syllableJump.words"
+msgid "words"
+msgstr "ord"
+
+#. symbolText.convert
+msgctxt "symbolText.convert"
+msgid "Show with symbols"
+msgstr "Visa med symboler"
+
+#. symbolText.examples
+msgctxt "symbolText.examples"
+msgid "Try an example sentence"
+msgstr "Prova en exempelmening"
+
+#. symbolText.placeholder
+msgctxt "symbolText.placeholder"
+msgid "Type a sentence here…"
+msgstr "Skriv en mening här…"
+
+#. symbolText.result
+msgctxt "symbolText.result"
+msgid "Text with symbols"
+msgstr "Text med symboler"
+
+#. symbolText.saved
+msgctxt "symbolText.saved"
+msgid "Saved texts"
+msgstr "Sparade texter"
+
+#. symbolText.title
+msgctxt "symbolText.title"
+msgid "Symbol-Supported Text"
+msgstr "Symboltext"
 
 #. takk.description
 msgctxt "takk.description"
@@ -5199,6 +9549,16 @@ msgctxt "talk.no"
 msgid "No"
 msgstr "Nej"
 
+#. talk.no_boards
+msgctxt "talk.no_boards"
+msgid "No boards yet. Create one in Board Builder!"
+msgstr "Inga tavlor ännu. Skapa en i Tavlbyggaren!"
+
+#. talk.open_builder
+msgctxt "talk.open_builder"
+msgid "Open Board Builder →"
+msgstr "Öppna Tavlbyggaren →"
+
 #. talk.sentence_strip
 msgctxt "talk.sentence_strip"
 msgid "Tap pictures to build a sentence"
@@ -5219,10 +9579,190 @@ msgctxt "talk.toilet"
 msgid "Toilet"
 msgstr "Toalett"
 
+#. talk.word.bad
+msgctxt "talk.word.bad"
+msgid "bad"
+msgstr "dålig"
+
+#. talk.word.big
+msgctxt "talk.word.big"
+msgid "big"
+msgstr "stor"
+
+#. talk.word.drink
+msgctxt "talk.word.drink"
+msgid "drink"
+msgstr "dricka"
+
+#. talk.word.eat
+msgctxt "talk.word.eat"
+msgid "eat"
+msgstr "äta"
+
+#. talk.word.go
+msgctxt "talk.word.go"
+msgid "go"
+msgstr "gå"
+
+#. talk.word.good
+msgctxt "talk.word.good"
+msgid "good"
+msgstr "bra"
+
+#. talk.word.happy
+msgctxt "talk.word.happy"
+msgid "happy"
+msgstr "glad"
+
+#. talk.word.here
+msgctxt "talk.word.here"
+msgid "here"
+msgstr "här"
+
+#. talk.word.i
+msgctxt "talk.word.i"
+msgid "I"
+msgstr "jag"
+
+#. talk.word.like
+msgctxt "talk.word.like"
+msgid "like"
+msgstr "gillar"
+
+#. talk.word.little
+msgctxt "talk.word.little"
+msgid "little"
+msgstr "liten"
+
+#. talk.word.not
+msgctxt "talk.word.not"
+msgid "not"
+msgstr "inte"
+
+#. talk.word.play
+msgctxt "talk.word.play"
+msgid "play"
+msgstr "leka"
+
+#. talk.word.sad
+msgctxt "talk.word.sad"
+msgid "sad"
+msgstr "ledsen"
+
+#. talk.word.there
+msgctxt "talk.word.there"
+msgid "there"
+msgstr "där"
+
+#. talk.word.want
+msgctxt "talk.word.want"
+msgid "want"
+msgstr "vill"
+
+#. talk.word.what
+msgctxt "talk.word.what"
+msgid "what"
+msgstr "vad"
+
+#. talk.word.where
+msgctxt "talk.word.where"
+msgid "where"
+msgstr "var"
+
+#. talk.word.who
+msgctxt "talk.word.who"
+msgid "who"
+msgstr "vem"
+
+#. talk.word.you
+msgctxt "talk.word.you"
+msgid "you"
+msgstr "du"
+
 #. talk.yes
 msgctxt "talk.yes"
 msgid "Yes"
 msgstr "Ja"
+
+#. theMimic.faster
+msgctxt "theMimic.faster"
+msgid "Faster"
+msgstr "Snabbare"
+
+#. theMimic.intro
+msgctxt "theMimic.intro"
+msgid "Listen and mimic — from simple to complex!"
+msgstr "Lyssna och härma — från enkelt till svårt!"
+
+#. theMimic.level.phrases
+msgctxt "theMimic.level.phrases"
+msgid "Phrases"
+msgstr "Fraser"
+
+#. theMimic.level.sentences
+msgctxt "theMimic.level.sentences"
+msgid "Sentences"
+msgstr "Meningar"
+
+#. theMimic.level.sounds
+msgctxt "theMimic.level.sounds"
+msgid "Sounds"
+msgstr "Ljud"
+
+#. theMimic.level.words
+msgctxt "theMimic.level.words"
+msgid "Words"
+msgstr "Ord"
+
+#. theMimic.listen
+msgctxt "theMimic.listen"
+msgid "Listen"
+msgstr "Lyssna"
+
+#. theMimic.next
+msgctxt "theMimic.next"
+msgid "Next"
+msgstr "Nästa"
+
+#. theMimic.progress
+msgctxt "theMimic.progress"
+msgid "Progress"
+msgstr "Framsteg"
+
+#. theMimic.repeat
+msgctxt "theMimic.repeat"
+msgid "Repeat"
+msgstr "Repetera"
+
+#. theMimic.reps
+msgctxt "theMimic.reps"
+msgid "Repetitions"
+msgstr "Repetitioner"
+
+#. theMimic.slower
+msgctxt "theMimic.slower"
+msgid "Slower"
+msgstr "Långsammare"
+
+#. theMimic.speed
+msgctxt "theMimic.speed"
+msgid "Speed"
+msgstr "Hastighet"
+
+#. theMimic.streak
+msgctxt "theMimic.streak"
+msgid "Streak"
+msgstr "I rad"
+
+#. theMimic.title
+msgctxt "theMimic.title"
+msgid "The Mimic"
+msgstr "Efterhärmaren"
+
+#. theMimic.yourTurn
+msgctxt "theMimic.yourTurn"
+msgid "Your turn!"
+msgstr "Din tur!"
 
 #. timeTracker.minutes
 msgctxt "timeTracker.minutes"
@@ -5504,6 +10044,871 @@ msgctxt "vs.title"
 msgid "Visual Support"
 msgstr "Bildstöd"
 
+#. welcome.angerManager.goal
+msgctxt "welcome.angerManager.goal"
+msgid "Provide concrete tools to manage anger and prevent outbursts."
+msgstr "Ge konkreta verktyg att hantera ilska och förebygga utbrott."
+
+#. welcome.angerManager.how
+msgctxt "welcome.angerManager.how"
+msgid "Show how angry you are on the thermometer. Get strategy suggestions based on level."
+msgstr "Visa hur arg du är på termometern. Få förslag på strategier att lugna ner dig beroende på nivå."
+
+#. welcome.angerManager.purpose
+msgctxt "welcome.angerManager.purpose"
+msgid "Anger thermometer with calming strategies."
+msgstr "Ilsketermometer med lugnande strategier. Stöd för barn med NPF som har svårt med ilskereglering."
+
+#. welcome.boardBuilder.goal
+msgctxt "welcome.boardBuilder.goal"
+msgid "Give educators and parents tools to create individually adapted communication aids."
+msgstr "Ge pedagoger och föräldrar verktyg att skapa individuellt anpassade kommunikationshjälpmedel."
+
+#. welcome.boardBuilder.how
+msgctxt "welcome.boardBuilder.how"
+msgid "Choose size, search for pictograms, drag and drop to arrange. Save and use in daily life."
+msgstr "Välj storlek, sök efter piktogram, dra och släpp för att ordna. Spara och använd brädan i vardagen."
+
+#. welcome.boardBuilder.purpose
+msgctxt "welcome.boardBuilder.purpose"
+msgid "Create custom AAC communication boards with ARASAAC pictograms."
+msgstr "Skapa egna AKK-kommunikationsbrädor med piktogram från ARASAAC. Anpassat för barn med NPF och IF."
+
+#. welcome.breakCheck.goal
+msgctxt "welcome.breakCheck.goal"
+msgid "Prevent overload through regular breaks and sensory balance."
+msgstr "Förebygga överbelastning genom regelbundna pauser och sensorisk balans."
+
+#. welcome.breakCheck.how
+msgctxt "welcome.breakCheck.how"
+msgid "The app reminds about breaks at regular intervals and suggests activities: movement, rest or play."
+msgstr "Appen påminner om pauser med jämna mellanrum och föreslår pausaktiviteter: rörelse, vila eller lek."
+
+#. welcome.breakCheck.purpose
+msgctxt "welcome.breakCheck.purpose"
+msgid "Reminders for regular breaks with activity suggestions."
+msgstr "Påminnelser om regelbundna pauser med aktivitetsförslag. Viktigt för barn med NPF som har svårt med självreglering."
+
+#. welcome.calmRoom.goal
+msgctxt "welcome.calmRoom.goal"
+msgid "Provide tools for self-regulation and sensory balance in stressful situations."
+msgstr "Ge verktyg för självreglering och sensorisk balans i stressiga situationer."
+
+#. welcome.calmRoom.how
+msgctxt "welcome.calmRoom.how"
+msgid "Choose from calming activities: deep breathing, soothing sounds, visual patterns."
+msgstr "Välj bland lugnande aktiviteter: djupandning, lugna ljud, visuella mönster, tyngdkänsla."
+
+#. welcome.calmRoom.purpose
+msgctxt "welcome.calmRoom.purpose"
+msgid "Calming activities and sensory tools for winding down."
+msgstr "Lugnande aktiviteter och sinnesverktyg för nedvarvning. Stöd för barn med NPF vid sensorisk överbelastning."
+
+#. welcome.chooser.goal
+msgctxt "welcome.chooser.goal"
+msgid "Reduce stress around choices by making the decision process visual and playful."
+msgstr "Minska stress kring val genom att göra beslutsprocessen visuell och lekfull."
+
+#. welcome.chooser.how
+msgctxt "welcome.chooser.how"
+msgid "Add alternatives with pictures or text. Spin the wheel or let the app choose."
+msgstr "Lägg in alternativ med bilder eller text. Snurra hjulet eller låt appen välja åt dig."
+
+#. welcome.chooser.purpose
+msgctxt "welcome.chooser.purpose"
+msgid "Help making choices between alternatives."
+msgstr "Hjälp att göra val mellan alternativ. Stöd för barn med NPF som har svårt med beslutsfattande."
+
+#. welcome.clockTeacher.goal
+msgctxt "welcome.clockTeacher.goal"
+msgid "Build understanding of time concepts through playful interaction."
+msgstr "Bygga förståelse för tidsbegrepp genom lekfull interaktion."
+
+#. welcome.clockTeacher.how
+msgctxt "welcome.clockTeacher.how"
+msgid "Practice with analog and digital clocks. Drag the hands, answer questions and get feedback."
+msgstr "Öva med analoga och digitala klockor. Dra i visarna, svara på frågor och få direkt feedback."
+
+#. welcome.clockTeacher.purpose
+msgctxt "welcome.clockTeacher.purpose"
+msgid "Learn to read the clock with interactive exercises."
+msgstr "Lär dig läsa klockan med interaktiva övningar. Anpassat för barn med NPF och IF."
+
+#. welcome.clothesChooser.goal
+msgctxt "welcome.clothesChooser.goal"
+msgid "Increase independence when getting dressed through visual decision support."
+msgstr "Öka självständigheten vid påklädning genom visuellt beslutssstöd."
+
+#. welcome.clothesChooser.how
+msgctxt "welcome.clothesChooser.how"
+msgid "The app shows the weather and suggests suitable clothes with pictures."
+msgstr "Appen visar vädret och föreslår lämpliga kläder med bilder. Barnet väljer bland alternativen."
+
+#. welcome.clothesChooser.purpose
+msgctxt "welcome.clothesChooser.purpose"
+msgid "Help choosing clothes based on weather and activity."
+msgstr "Hjälp att välja kläder efter väder och aktivitet. Stöd för barn med NPF som har svårt med vardagsbeslut."
+
+#. welcome.commBook.goal
+msgctxt "welcome.commBook.goal"
+msgid "To give the child a personal, always-available communication book that can be customized with their own pictures and words."
+msgstr "Att ge barnet en personlig, alltid-tillgänglig kommunikationsbok som kan anpassas med egna bilder och ord."
+
+#. welcome.commBook.how
+msgctxt "welcome.commBook.how"
+msgid "1. Select a tab (food, drinks, etc.). 2. Tap a card to add it to the sentence strip. 3. Tap 🔊 to speak. 4. Use ✏️ to customize with your own photos and symbols."
+msgstr "1. Välj en flik (mat, dryck, etc.). 2. Tryck på ett kort för att lägga till det i meningsremsan. 3. Tryck 🔊 för att läsa upp. 4. Använd ✏️ för att anpassa med egna foton och symboler."
+
+#. welcome.commBook.purpose
+msgctxt "welcome.commBook.purpose"
+msgid "The Communication Book is a digital version of PECS communication books. With tabs for categories, personal photos and ARASAAC pictograms."
+msgstr "Kommunikationsboken är en digital version av PECS-kommunikationsböcker. Med flikar för kategorier, egna foton och ARASAAC-piktogram."
+
+#. welcome.conversationAid.goal
+msgctxt "welcome.conversationAid.goal"
+msgid "Reduce anxiety around social conversations through prepared phrases and visual support."
+msgstr "Minska ångest kring sociala samtal genom förberedda fraser och visuellt stöd."
+
+#. welcome.conversationAid.how
+msgctxt "welcome.conversationAid.how"
+msgid "Choose a conversation situation, browse suggested phrases and tap to speak."
+msgstr "Välj en samtalssituation, bläddra bland föreslagna fraser och tryck för att tala."
+
+#. welcome.conversationAid.purpose
+msgctxt "welcome.conversationAid.purpose"
+msgid "Ready-made phrases and support for conversations."
+msgstr "Färdiga fraser och stöd för samtal. Hjälper barn med NPF att navigera sociala situationer."
+
+#. welcome.cookingHelper.goal
+msgctxt "welcome.cookingHelper.goal"
+msgid "Enable participation in cooking through clear visual instructions."
+msgstr "Möjliggöra delaktighet i matlagning genom tydliga visuella instruktioner."
+
+#. welcome.cookingHelper.how
+msgctxt "welcome.cookingHelper.how"
+msgid "Choose a recipe, follow steps with large pictures and short instructions. One step at a time."
+msgstr "Välj recept, följ stegen med stora bilder och korta instruktioner. Ett steg visas åt gången."
+
+#. welcome.cookingHelper.purpose
+msgctxt "welcome.cookingHelper.purpose"
+msgid "Visual cooking instructions step by step."
+msgstr "Visuella matlagningsinstruktioner steg för steg. Anpassat för barn med NPF och IF som vill laga mat."
+
+#. welcome.counting.goal
+msgctxt "welcome.counting.goal"
+msgid "Build basic number understanding by connecting quantity to numbers visually."
+msgstr "Bygga grundläggande talförståelse genom att koppla antal till siffror visuellt."
+
+#. welcome.counting.how
+msgctxt "welcome.counting.how"
+msgid "Tap objects to count them. See the number grow. Hear the number read aloud."
+msgstr "Tryck på föremål för att räkna dem. Se siffran växa. Hör talet uppläst."
+
+#. welcome.counting.purpose
+msgctxt "welcome.counting.purpose"
+msgid "Visual counting with concrete objects."
+msgstr "Visuell räkning med konkreta föremål. Grundläggande matematikstöd för barn med NPF och IF."
+
+#. welcome.dayPlanner.goal
+msgctxt "welcome.dayPlanner.goal"
+msgid "Create security through clear visual structure and predictability in everyday life."
+msgstr "Skapa trygghet genom tydlig visuell struktur och förutsägbarhet i vardagen."
+
+#. welcome.dayPlanner.how
+msgctxt "welcome.dayPlanner.how"
+msgid "Add activities with pictures and times. Drag to arrange. Mark as complete during the day."
+msgstr "Lägg till aktiviteter med bilder och tider. Dra för att ordna. Markera som klara under dagen."
+
+#. welcome.dayPlanner.purpose
+msgctxt "welcome.dayPlanner.purpose"
+msgid "Visual day planning with timeline. Creates structure and predictability."
+msgstr "Visuell dagsplanering med tidslinje. Skapar struktur och förutsägbarhet för barn med NPF och IF."
+
+#. welcome.diary.goal
+msgctxt "welcome.diary.goal"
+msgid "Provide a private space to express thoughts and feelings with optional support."
+msgstr "Ge ett privat utrymme att uttrycka tankar och känslor med valfritt stöd."
+
+#. welcome.diary.how
+msgctxt "welcome.diary.how"
+msgid "Write or choose pictures to tell about your day. Look back at old entries."
+msgstr "Skriv eller välj bilder för att berätta om din dag. Titta tillbaka på gamla inlägg."
+
+#. welcome.diary.purpose
+msgctxt "welcome.diary.purpose"
+msgid "Visual diary with pictures, emojis and text."
+msgstr "Visuell dagbok med bilder, emojis och text. Stöd för barn med NPF att uttrycka tankar och minnas."
+
+#. welcome.dontShowAgain
+msgctxt "welcome.dontShowAgain"
+msgid "Don't show again"
+msgstr "Visa inte igen"
+
+#. welcome.emotionMap.goal
+msgctxt "welcome.emotionMap.goal"
+msgid "Develop emotional awareness and the ability to communicate about feelings."
+msgstr "Utveckla emotionell medvetenhet och förmågan att kommunicera om känslor."
+
+#. welcome.emotionMap.how
+msgctxt "welcome.emotionMap.how"
+msgid "Choose how you feel from the pictures. See where in your body you feel it."
+msgstr "Välj hur du mår bland bilderna. Se var i kroppen du känner det. Lär dig sätta ord på känslor."
+
+#. welcome.emotionMap.purpose
+msgctxt "welcome.emotionMap.purpose"
+msgid "Identify and express feelings with pictures."
+msgstr "Identifiera och uttryck känslor med bilder. Stöd för barn med NPF och IF som har svårt med känsloreglering."
+
+#. welcome.energyMeter.goal
+msgctxt "welcome.energyMeter.goal"
+msgid "Increase self-awareness about energy and rest needs for better self-regulation."
+msgstr "Öka självmedvetenheten om energi och behov av vila, för bättre självreglering."
+
+#. welcome.energyMeter.how
+msgctxt "welcome.energyMeter.how"
+msgid "Mark your energy level during the day — high, medium or low. See patterns over time."
+msgstr "Markera din energinivå under dagen — hög, medium eller låg. Se mönster över tid."
+
+#. welcome.energyMeter.purpose
+msgctxt "welcome.energyMeter.purpose"
+msgid "Track and display energy levels during the day."
+msgstr "Spåra och visa energinivåer under dagen. Hjälper barn med NPF att förstå sin ork."
+
+#. welcome.focusBuddy.goal
+msgctxt "welcome.focusBuddy.goal"
+msgid "Train focus ability with short, rewarding sessions that motivate."
+msgstr "Träna fokusförmågan med korta, belönande pass som motiverar."
+
+#. welcome.focusBuddy.how
+msgctxt "welcome.focusBuddy.how"
+msgid "Set a focus period, work while the timer counts down. Get rewards for completed sessions."
+msgstr "Ställ in en fokusperiod, jobba medan timern räknar ner. Få belöning för avklarade pass."
+
+#. welcome.focusBuddy.purpose
+msgctxt "welcome.focusBuddy.purpose"
+msgid "Help maintaining focus with timers and rewards."
+msgstr "Hjälp att behålla fokus med timers och belöningar. Anpassat för barn med NPF och ADHD."
+
+#. welcome.goal
+msgctxt "welcome.goal"
+msgid "Purpose & goal"
+msgstr "Mål och syfte"
+
+#. welcome.howItWorks
+msgctxt "welcome.howItWorks"
+msgid "How does it work?"
+msgstr "Hur fungerar det?"
+
+#. welcome.letsGo
+msgctxt "welcome.letsGo"
+msgid "Let's go!"
+msgstr "Nu kör vi!"
+
+#. welcome.letterJourney.goal
+msgctxt "welcome.letterJourney.goal"
+msgid "Build phonemic awareness and letter knowledge as a foundation for reading."
+msgstr "Bygga fonemisk medvetenhet och bokstavskännedom som grund för läsning."
+
+#. welcome.letterJourney.how
+msgctxt "welcome.letterJourney.how"
+msgid "See the letter, hear the sound, watch the animation. Practice forming the letter."
+msgstr "Se bokstaven, hör ljudet, se animationen. Öva att forma bokstaven med fingret."
+
+#. welcome.letterJourney.purpose
+msgctxt "welcome.letterJourney.purpose"
+msgid "Learn letters with phonics and animation."
+msgstr "Lär dig bokstäver med fonetik och animation. Grundläggande literacy för barn med NPF och IF."
+
+#. welcome.mathAid.goal
+msgctxt "welcome.mathAid.goal"
+msgid "Make mathematics concrete and understandable through visual representations."
+msgstr "Göra matematik konkret och begriplig genom visuella representationer."
+
+#. welcome.mathAid.how
+msgctxt "welcome.mathAid.how"
+msgid "Count with pictures, drag objects and see results visually."
+msgstr "Räkna med bilder, dra föremål och se resultatet visuellt. Steg-för-steg-förklaringar."
+
+#. welcome.mathAid.purpose
+msgctxt "welcome.mathAid.purpose"
+msgid "Visual math with concrete objects."
+msgstr "Visuell matte med konkreta föremål. Anpassat för barn med NPF och IF."
+
+#. welcome.memoryGame.goal
+msgctxt "welcome.memoryGame.goal"
+msgid "Train working memory and concentration through play."
+msgstr "Träna arbetsminne och koncentration genom lek."
+
+#. welcome.memoryGame.how
+msgctxt "welcome.memoryGame.how"
+msgid "Flip cards, find matching pairs. Difficulty can be adjusted."
+msgstr "Vänd kort, hitta matchande par. Svårighetsgraden kan anpassas."
+
+#. welcome.memoryGame.purpose
+msgctxt "welcome.memoryGame.purpose"
+msgid "Classic memory game with pictures — train your memory in a fun way."
+msgstr "Klassiskt minnesspel med bilder — träna minnet på ett roligt sätt. Anpassat för barn med NPF."
+
+#. welcome.moneyCheck.goal
+msgctxt "welcome.moneyCheck.goal"
+msgid "Build practical money skills for increased independence in everyday life."
+msgstr "Bygga praktiska färdigheter kring pengar för ökad självständighet i vardagen."
+
+#. welcome.moneyCheck.how
+msgctxt "welcome.moneyCheck.how"
+msgid "Practice recognizing coins and bills, counting money and giving correct change."
+msgstr "Öva att känna igen mynt och sedlar, räkna pengar och ge tillbaka rätt växel."
+
+#. welcome.moneyCheck.purpose
+msgctxt "welcome.moneyCheck.purpose"
+msgid "Learn about money and giving change."
+msgstr "Lär dig om pengar och att ge tillbaka växel. Livsfärdighet för barn med NPF och IF."
+
+#. welcome.mouthGym.goal
+msgctxt "welcome.mouthGym.goal"
+msgid "Strengthen oral motor control — the foundation for clear speech."
+msgstr "Stärka munmotorisk kontroll — grunden för tydligt tal."
+
+#. welcome.mouthGym.how
+msgctxt "welcome.mouthGym.how"
+msgid "Choose a muscle group, follow the animation and do the exercises in front of a mirror."
+msgstr "Välj muskelgrupp, följ animationen och gör övningarna framför en spegel."
+
+#. welcome.mouthGym.purpose
+msgctxt "welcome.mouthGym.purpose"
+msgid "Visually guided oral motor exercises based on PROMPT therapy principles."
+msgstr "Visuellt guidade munmotoriska övningar baserade på PROMPT-terapiprinciper."
+
+#. welcome.mySchedule.goal
+msgctxt "welcome.mySchedule.goal"
+msgid "A flexible schedule tool adaptable to each child's unique needs."
+msgstr "Ett flexibelt schemaverktyg som kan anpassas efter varje barns unika behov."
+
+#. welcome.mySchedule.how
+msgctxt "welcome.mySchedule.how"
+msgid "Customize the schedule with the child's own activities, pictures and colors."
+msgstr "Anpassa schemat med barnets egna aktiviteter, bilder och färger. Spara och återanvänd."
+
+#. welcome.mySchedule.purpose
+msgctxt "welcome.mySchedule.purpose"
+msgid "Create a personal visual schedule adapted for the child."
+msgstr "Skapa ett personligt visuellt schema anpassat för barnet. Perfekt för barn med NPF som behöver struktur."
+
+#. welcome.oralMotor.goal
+msgctxt "welcome.oralMotor.goal"
+msgid "Strengthen oral motor control and movement planning as a foundation for better speech."
+msgstr "Stärka munmotorisk kontroll och rörelseplanering som grund för bättre tal."
+
+#. welcome.oralMotor.how
+msgctxt "welcome.oralMotor.how"
+msgid "Choose an exercise group (tongue, lips, jaw, breathing). Follow the steps — the app shows and tells you what to do."
+msgstr "Välj övningsgrupp (tunga, läppar, käke, andning). Följ stegen — appen visar och säger vad du ska göra."
+
+#. welcome.oralMotor.purpose
+msgctxt "welcome.oralMotor.purpose"
+msgid "Train the oral motor skills needed for clear speech. Adapted for children with neurodevelopmental conditions and childhood apraxia of speech."
+msgstr "Träna munmotoriken som behövs för tydligt tal. Anpassad för barn med NPF och verbal dyspraxi."
+
+#. welcome.pecsBoard.goal
+msgctxt "welcome.pecsBoard.goal"
+msgid "Quick and easy picture communication for everyday needs and wishes."
+msgstr "Snabb och enkel bildkommunikation för vardagliga behov och önskemål."
+
+#. welcome.pecsBoard.how
+msgctxt "welcome.pecsBoard.how"
+msgid "Choose a category, tap pictures to communicate. Build sentence strips by combining pictures."
+msgstr "Välj en kategori, tryck på bilder för att kommunicera. Bygg meningsremsor genom att kombinera flera bilder."
+
+#. welcome.pecsBoard.purpose
+msgctxt "welcome.pecsBoard.purpose"
+msgid "Communication boards with pictures sorted by needs, feelings and activities."
+msgstr "Kommunikationstavlor med bilder sorterade efter behov, känslor och aktiviteter. Inspirerat av PECS för barn med NPF och IF."
+
+#. welcome.pecsTrainer.goal
+msgctxt "welcome.pecsTrainer.goal"
+msgid "Build basic communication skills step by step through picture exchange."
+msgstr "Bygga grundläggande kommunikationsfärdigheter steg för steg genom bildutbyte."
+
+#. welcome.pecsTrainer.how
+msgctxt "welcome.pecsTrainer.how"
+msgid "The child selects a picture, gives it to a communication partner, and receives what the picture shows."
+msgstr "Barnet väljer en bild, ger den till en kommunikationspartner (förälder/pedagog) och får det som bilden visar. Faserna ökar i komplexitet."
+
+#. welcome.pecsTrainer.purpose
+msgctxt "welcome.pecsTrainer.purpose"
+msgid "Practice picture exchange communication (PECS-inspired) — a structured way to learn communication with pictures."
+msgstr "Träna bildutbyteskommunikation (PECS-inspirerat) — ett strukturerat sätt att lära kommunikation med bilder för barn med NPF och IF."
+
+#. welcome.phraseBuilder.goal
+msgctxt "welcome.phraseBuilder.goal"
+msgid "Develop the ability to express complex thoughts through symbol combinations."
+msgstr "Utveckla förmågan att uttrycka sammansatta tankar genom symbolkombinationer."
+
+#. welcome.phraseBuilder.how
+msgctxt "welcome.phraseBuilder.how"
+msgid "Select pictograms in the right order to build a sentence. Press play to hear the whole sentence."
+msgstr "Välj piktogram i rätt ordning för att bygga en mening. Tryck på play för att höra hela meningen."
+
+#. welcome.phraseBuilder.purpose
+msgctxt "welcome.phraseBuilder.purpose"
+msgid "Build sentences with pictograms — an AAC tool for expressing complex thoughts with pictures."
+msgstr "Bygg meningar med piktogram — ett AKK-verktyg för att uttrycka mer komplexa tankar med bilder."
+
+#. welcome.pictureDictionary.goal
+msgctxt "welcome.pictureDictionary.goal"
+msgid "Build vocabulary through visual connection between picture and word."
+msgstr "Bygga ordförråd genom visuell koppling mellan bild och ord."
+
+#. welcome.pictureDictionary.how
+msgctxt "welcome.pictureDictionary.how"
+msgid "Choose a category, see pictures with words. Test yourself by matching words and pictures."
+msgstr "Välj kategori, se bilder med ord. Testa dig själv genom att matcha ord och bild."
+
+#. welcome.pictureDictionary.purpose
+msgctxt "welcome.pictureDictionary.purpose"
+msgid "Browse, learn and test your knowledge of everyday words with pictures."
+msgstr "Bläddra, lär dig och testa dina kunskaper om vardagliga ord med bilder. Stöd för barn med NPF och språkstörning."
+
+#. welcome.pictureSchedule.goal
+msgctxt "welcome.pictureSchedule.goal"
+msgid "Increase independence through visual structure the child can follow on their own."
+msgstr "Öka självständigheten genom visuell struktur som barnet kan följa på egen hand."
+
+#. welcome.pictureSchedule.how
+msgctxt "welcome.pictureSchedule.how"
+msgid "Choose pictures for the day's activities, arrange top to bottom. The child checks off each step."
+msgstr "Välj bilder för dagens aktiviteter, ordna dem uppifrån och ner. Barnet bockar av varje steg."
+
+#. welcome.pictureSchedule.purpose
+msgctxt "welcome.pictureSchedule.purpose"
+msgid "Create visual daily schedules with pictures — basic TEACCH-inspired support."
+msgstr "Skapa visuella dagsscheman med bilder — grundläggande TEACCH-inspirerat stöd för barn med NPF och IF."
+
+#. welcome.pointTalk.goal
+msgctxt "welcome.pointTalk.goal"
+msgid "Stimulate language development through structured pointing and naming."
+msgstr "Stimulera språkutveckling genom strukturerad pekning och benämning."
+
+#. welcome.pointTalk.how
+msgctxt "welcome.pointTalk.how"
+msgid "Show pictures and name them. The child points, you confirm and expand."
+msgstr "Visa bilder och benämn dem. Barnet pekar, du bekräftar och utvidgar. Fokus på att koppla bild till ord."
+
+#. welcome.pointTalk.purpose
+msgctxt "welcome.pointTalk.purpose"
+msgid "Aided language stimulation — children learn to communicate by pointing at pictures."
+msgstr "Stödd språkstimulering — barn lär sig kommunicera genom att peka på bilder. Utformad för barn med NPF, IF och språkstörning."
+
+#. welcome.practiceBoard.goal
+msgctxt "welcome.practiceBoard.goal"
+msgid "Make progress visible and build motivation through clear visual feedback."
+msgstr "Synliggöra framsteg och bygga motivation genom tydlig visuell feedback."
+
+#. welcome.practiceBoard.how
+msgctxt "welcome.practiceBoard.how"
+msgid "Add what you're practicing, mark each time you practice. Watch your progress grow."
+msgstr "Lägg till vad du övar, markera varje gång du övat. Se dina framsteg växa."
+
+#. welcome.practiceBoard.purpose
+msgctxt "welcome.practiceBoard.purpose"
+msgid "Track practice sessions and progress visually."
+msgstr "Spåra övningstillfällen och framsteg visuellt. Motivation för barn med NPF och IF."
+
+#. welcome.rewardChart.goal
+msgctxt "welcome.rewardChart.goal"
+msgid "Motivate through positive reinforcement and make progress toward goals visible."
+msgstr "Motivera genom positiv förstärkning och synliggöra framsteg mot mål."
+
+#. welcome.rewardChart.how
+msgctxt "welcome.rewardChart.how"
+msgid "Set goals, collect stars each time you achieve them. Reach the reward!"
+msgstr "Sätt upp mål, samla stjärnor varje gång du klarar dem. Nå belöningen!"
+
+#. welcome.rewardChart.purpose
+msgctxt "welcome.rewardChart.purpose"
+msgid "Earn stars for good habits and achieved goals."
+msgstr "Tjäna stjärnor för goda vanor och uppnådda mål. Positiv förstärkning för barn med NPF och IF."
+
+#. welcome.routineBuddy.goal
+msgctxt "welcome.routineBuddy.goal"
+msgid "Build independence in daily routines through clear visual steps."
+msgstr "Bygga självständighet i vardagsrutiner genom tydliga visuella steg."
+
+#. welcome.routineBuddy.how
+msgctxt "welcome.routineBuddy.how"
+msgid "Choose a routine, follow the steps with pictures. Each step has a picture and brief instruction."
+msgstr "Välj en rutin, följ stegen med bilder. Varje steg har en bild och en kort instruktion."
+
+#. welcome.routineBuddy.purpose
+msgctxt "welcome.routineBuddy.purpose"
+msgid "Step-by-step routines for everyday — morning, evening, school."
+msgstr "Steg-för-steg-rutiner för vardagen — morgon, kväll, skola. Hjälper barn med NPF och IF att klara rutiner självständigt."
+
+#. welcome.sagostunden.goal
+msgctxt "welcome.sagostunden.goal"
+msgid "Practice reading and creativity through visual storytelling."
+msgstr "Träna läsning och kreativitet genom visuellt berättande."
+
+#. welcome.sagostunden.how
+msgctxt "welcome.sagostunden.how"
+msgid "Choose a story template, pick words with pictograms, and a unique story is generated for you!"
+msgstr "Välj en sagomall, plocka ord med bildstöd, och en unik saga skapas åt dig!"
+
+#. welcome.sagostunden.purpose
+msgctxt "welcome.sagostunden.purpose"
+msgid "Create fun stories by picking words and pictures."
+msgstr "Skapa roliga sagor genom att välja ord och bilder."
+
+#. welcome.schoolDay.goal
+msgctxt "welcome.schoolDay.goal"
+msgid "Reduce stress about the school day through clear visual structure and predictability."
+msgstr "Minska stress kring skoldagen genom tydlig visuell struktur och förutsägbarhet."
+
+#. welcome.schoolDay.how
+msgctxt "welcome.schoolDay.how"
+msgid "Add lessons and breaks. See what's happening now and what's coming next."
+msgstr "Lägg in lektioner och raster. Se vad som händer nu och vad som kommer härnäst."
+
+#. welcome.schoolDay.purpose
+msgctxt "welcome.schoolDay.purpose"
+msgid "Follow your school schedule visually."
+msgstr "Följ ditt skolschema visuellt. Skapar förutsägbarhet i skoldagen för barn med NPF."
+
+#. welcome.sentenceBuilder.goal
+msgctxt "welcome.sentenceBuilder.goal"
+msgid "Strengthen sentence building and grammatical understanding through visual cues."
+msgstr "Stärka meningsbyggnad och grammatisk förståelse genom visuella ledtrådar."
+
+#. welcome.sentenceBuilder.how
+msgctxt "welcome.sentenceBuilder.how"
+msgid "Choose words in the right order. Colors help: subject, verb, object. Hear the sentence read aloud."
+msgstr "Välj ord i rätt ordning. Färgerna hjälper: subjekt, verb, objekt. Hör meningen uppläst."
+
+#. welcome.sentenceBuilder.purpose
+msgctxt "welcome.sentenceBuilder.purpose"
+msgid "Build sentences with color-coded words."
+msgstr "Bygg meningar med färgkodade ord. Literacy-stöd för barn med NPF och IF."
+
+#. welcome.sentenceStrip.goal
+msgctxt "welcome.sentenceStrip.goal"
+msgid "To develop sentence building and communication through visual support, aligned with the PECS methodology."
+msgstr "Att utveckla meningsbyggande och kommunikation genom visuellt stöd, i linje med PECS-metodiken."
+
+#. welcome.sentenceStrip.how
+msgctxt "welcome.sentenceStrip.how"
+msgid "1. Select PECS phase (IV-VI). 2. Tap a starter phrase. 3. Choose a category and add words. 4. Tap 🔊 to hear the full sentence. 5. Save favorites!"
+msgstr "1. Välj PECS-fas (IV-VI) i menyn. 2. Tryck på en startfras. 3. Välj kategori och lägg till ord. 4. Tryck 🔊 för att lyssna på hela meningen. 5. Spara favoriter!"
+
+#. welcome.sentenceStrip.purpose
+msgctxt "welcome.sentenceStrip.purpose"
+msgid "Sentence Strip Workshop helps children with autism build sentences step by step, based on PECS Phases IV-VI. The child selects a starter phrase like \"I want\" and adds words with pictograms."
+msgstr "Meningsremsan hjälper barn med NPF att bygga meningar steg för steg, baserat på PECS fas IV-VI. Barnet väljer en startfras som \"Jag vill\" och lägger till ord med piktogram."
+
+#. welcome.signDictionary.goal
+msgctxt "welcome.signDictionary.goal"
+msgid "Provide an additional communication method through visual signs complementing speech."
+msgstr "Ge ytterligare ett kommunikationssätt genom visuella tecken som komplement till tal."
+
+#. welcome.signDictionary.how
+msgctxt "welcome.signDictionary.how"
+msgid "Search for words, watch the video showing the sign, and practice together."
+msgstr "Sök efter ord, se videon som visar tecknet, och öva tillsammans med barnet."
+
+#. welcome.signDictionary.purpose
+msgctxt "welcome.signDictionary.purpose"
+msgid "Learn sign language (TAKK) — sign dictionary with video."
+msgstr "Lär dig TAKK (Tecken som AKK) — teckenspråksordbok med video. Stöd för barn med NPF, IF och språkstörning."
+
+#. welcome.situationCards.goal
+msgctxt "welcome.situationCards.goal"
+msgid "Facilitate communication in specific everyday situations through prepared visual supports."
+msgstr "Underlätta kommunikation i specifika vardagssituationer genom förberedda bildstöd."
+
+#. welcome.situationCards.how
+msgctxt "welcome.situationCards.how"
+msgid "Choose a situation (food, play, school) and use the picture cards to communicate."
+msgstr "Välj en situation (mat, lek, skola) och använd bildkorten för att kommunicera i den situationen."
+
+#. welcome.situationCards.purpose
+msgctxt "welcome.situationCards.purpose"
+msgid "Ready-made themed boards with pictures for common everyday situations."
+msgstr "Färdiga temabrädor med bilder för vanliga vardagssituationer. Perfekt för barn med NPF som behöver visuellt stöd."
+
+#. welcome.socialStories.goal
+msgctxt "welcome.socialStories.goal"
+msgid "Prepare the child for social situations and reduce anxiety through understanding and predictability."
+msgstr "Förbereda barnet för sociala situationer och minska oro genom förståelse och förutsägbarhet."
+
+#. welcome.socialStories.how
+msgctxt "welcome.socialStories.how"
+msgid "Read the story together with the child. Pictures and simple text explain what happens and how to act."
+msgstr "Läs berättelsen tillsammans med barnet. Bilderna och den enkla texten förklarar vad som händer, varför och hur man kan agera."
+
+#. welcome.socialStories.purpose
+msgctxt "welcome.socialStories.purpose"
+msgid "Visual social stories explaining everyday situations step by step."
+msgstr "Visuella sociala berättelser som förklarar vardagssituationer steg för steg. Baserat på Social Stories™-metoden för barn med NPF."
+
+#. welcome.soundChain.goal
+msgctxt "welcome.soundChain.goal"
+msgid "Build the ability to plan and execute sound sequences — the foundation for fluent speech."
+msgstr "Bygga förmågan att planera och utföra ljudsekvenser — grunden för flytande tal."
+
+#. welcome.soundChain.how
+msgctxt "welcome.soundChain.how"
+msgid "Start with individual sounds, tap to hear them. Chain more sounds together until you form whole words."
+msgstr "Börja med enskilda ljud, tryck för att höra dem. Kedja ihop fler ljud tills du bildar hela ord."
+
+#. welcome.soundChain.purpose
+msgctxt "welcome.soundChain.purpose"
+msgid "Chain individual sounds into syllables and words. Support for children with neurodevelopmental conditions and childhood apraxia of speech (CAS)."
+msgstr "Kedja ihop enskilda ljud till stavelser och ord. Stöd för barn med NPF och verbal dyspraxi (CAS)."
+
+#. welcome.soundLibrary.goal
+msgctxt "welcome.soundLibrary.goal"
+msgid "Stimulate auditory attention and the connection between sound and image."
+msgstr "Stimulera auditiv uppmärksamhet och koppling mellan ljud och bild."
+
+#. welcome.soundLibrary.how
+msgctxt "welcome.soundLibrary.how"
+msgid "Choose a category (animals, nature, instruments), tap to listen."
+msgstr "Välj kategori (djur, natur, instrument), tryck för att lyssna. Lär dig koppla ljud till bild."
+
+#. welcome.soundLibrary.purpose
+msgctxt "welcome.soundLibrary.purpose"
+msgid "Explore fun sounds sorted by category."
+msgstr "Utforska roliga ljud sorterade efter kategori. Sensorisk utforskning för barn med NPF."
+
+#. welcome.soundLottery.goal
+msgctxt "welcome.soundLottery.goal"
+msgid "Systematic practice of all Swedish sounds with motivating randomization."
+msgstr "Systematisk övning av alla svenska ljud med motiverande slumpmoment."
+
+#. welcome.soundLottery.how
+msgctxt "welcome.soundLottery.how"
+msgid "Spin the wheel to get a sound. Practice it in isolation, then in syllables, words and sentences."
+msgstr "Snurra hjulet för att få ett ljud. Öva det i isolering, sedan i stavelser, ord och meningar."
+
+#. welcome.soundLottery.purpose
+msgctxt "welcome.soundLottery.purpose"
+msgid "Randomized phoneme practice with hierarchical progression — from isolated sounds to full sentences."
+msgstr "Slumpad fonemträning med hierarkisk uppbyggnad — från isolerat ljud till hela meningar."
+
+#. welcome.speechPractice.goal
+msgctxt "welcome.speechPractice.goal"
+msgid "Build speech motor automatization through systematic practice in the right order."
+msgstr "Bygga talmotorisk automatisering genom systematisk övning i rätt ordning."
+
+#. welcome.speechPractice.how
+msgctxt "welcome.speechPractice.how"
+msgid "Listen to the model, imitate simultaneously, try with a delay, and finally independently. Repeat many times!"
+msgstr "Lyssna på modellen, härma samtidigt, försök med fördröjning, och till sist självständigt. Repetera många gånger!"
+
+#. welcome.speechPractice.purpose
+msgctxt "welcome.speechPractice.purpose"
+msgid "Structured speech training inspired by the DTTC method. Support for children with neurodevelopmental conditions and childhood apraxia of speech."
+msgstr "Strukturerad talträning inspirerad av DTTC-metoden. Stöd för barn med NPF och verbal dyspraxi."
+
+#. welcome.speechRhythm.goal
+msgctxt "welcome.speechRhythm.goal"
+msgid "Improve the natural rhythm and melody of speech — a key skill in CAS therapy."
+msgstr "Förbättra talets naturliga rytm och melodi — en nyckelfärdighet vid verbal dyspraxi."
+
+#. welcome.speechRhythm.how
+msgctxt "welcome.speechRhythm.how"
+msgid "Listen to the rhythm, tap along, and practice stress patterns. A visual metronome helps you keep time."
+msgstr "Lyssna på rytmen, tappa med i takten, och öva betoningsmönster. Visuell metronom hjälper dig hålla takten."
+
+#. welcome.speechRhythm.purpose
+msgctxt "welcome.speechRhythm.purpose"
+msgid "Prosody and rhythm training for children with CAS. Practices stress, tempo and intonation."
+msgstr "Prosodi- och rytmträning för barn med verbal dyspraxi (CAS). Övar betoning, tempo och intonation."
+
+#. welcome.stepGuide.goal
+msgctxt "welcome.stepGuide.goal"
+msgid "Make difficult tasks manageable by breaking them into small, clear steps."
+msgstr "Göra svåra uppgifter hanterbara genom att bryta ner dem i små, tydliga steg."
+
+#. welcome.stepGuide.how
+msgctxt "welcome.stepGuide.how"
+msgid "Create a guide with steps, pictures and short instructions. Follow one step at a time."
+msgstr "Skapa en guide med steg, bilder och korta instruktioner. Barnet följer stegen ett i taget."
+
+#. welcome.stepGuide.purpose
+msgctxt "welcome.stepGuide.purpose"
+msgid "Break complex tasks into clear visual steps."
+msgstr "Dela upp komplexa uppgifter i tydliga visuella steg. Användbart för barn med NPF och IF som behöver extra struktur."
+
+#. welcome.storyWorkshop.goal
+msgctxt "welcome.storyWorkshop.goal"
+msgid "Develop connected speech — from single words to complete narratives."
+msgstr "Utveckla sammanhängande tal — från enstaka ord till hela berättelser."
+
+#. welcome.storyWorkshop.how
+msgctxt "welcome.storyWorkshop.how"
+msgid "Choose pictures, arrange them into a story, listen to the model and practice telling it yourself."
+msgstr "Välj bilder, ordna dem till en berättelse, lyssna på modellen och öva berätta själv."
+
+#. welcome.storyWorkshop.purpose
+msgctxt "welcome.storyWorkshop.purpose"
+msgid "Narrative speech practice for DTTC's 'connected speech' phase. Build stories with pictures."
+msgstr "Narrativ talträning för DTTC:s 'sammanhängande tal'-fas. Bygg berättelser med bilder."
+
+#. welcome.syllableJump.goal
+msgctxt "welcome.syllableJump.goal"
+msgid "Develop syllable awareness and rhythmic speech planning."
+msgstr "Utveckla stavelsemedvetenhet och rytmisk talplanering."
+
+#. welcome.syllableJump.how
+msgctxt "welcome.syllableJump.how"
+msgid "See the word, tap each syllable in order. Clap along! Hear the whole word when all syllables are done."
+msgstr "Se ordet, tryck på varje stavelse i ordning. Klappa med! Hör hela ordet när alla stavelser är klara."
+
+#. welcome.syllableJump.purpose
+msgctxt "welcome.syllableJump.purpose"
+msgid "Break words into syllables with visual and rhythmic cues. Support for children with neurodevelopmental conditions and childhood apraxia of speech."
+msgstr "Dela upp ord i stavelser med visuella och rytmiska ledtrådar. Stöd för barn med NPF och verbal dyspraxi."
+
+#. welcome.symbolText.goal
+msgctxt "welcome.symbolText.goal"
+msgid "To support reading comprehension and communication by linking text to visual symbols."
+msgstr "Att stödja läsförståelse och kommunikation genom att koppla text till visuella symboler."
+
+#. welcome.symbolText.how
+msgctxt "welcome.symbolText.how"
+msgid "1. Type a sentence in the text box. 2. Tap \"Show with symbols\". 3. Each word is shown with a symbol above it. 4. Tap 🔊 for speech."
+msgstr "1. Skriv en mening i textrutan. 2. Tryck \"Visa med symboler\". 3. Varje ord visas med en symbol ovanför. 4. Tryck 🔊 för uppläsning."
+
+#. welcome.symbolText.purpose
+msgctxt "welcome.symbolText.purpose"
+msgid "Symbol Text automatically shows pictograms above each word you type — inspired by Widgit. Perfect as reading support for children with autism or intellectual disabilities."
+msgstr "Symboltext visar automatiskt piktogram ovanför varje ord du skriver — inspirerat av Widgit. Perfekt som lässtöd för barn med NPF eller IF."
+
+#. welcome.talkBoard.goal
+msgctxt "welcome.talkBoard.goal"
+msgid "Give the child a voice and ability to communicate independently through picture and symbol support."
+msgstr "Ge barnet en röst och möjlighet att kommunicera självständigt genom bild- och symbolstöd."
+
+#. welcome.talkBoard.how
+msgctxt "welcome.talkBoard.how"
+msgid "Tap pictures to speak. Build sentences in the strip at the top. Buttons have fixed positions (LAMP) and Fitzgerald Key colors: yellow=people, green=verbs, orange=things, blue=descriptions."
+msgstr "Tryck på bilder för att tala. Bygg meningar i remsan högst upp. Knapparna har fasta positioner (LAMP) och Fitzgerald Key-färger: gult=personer, grönt=verb, orange=saker, blått=beskrivningar."
+
+#. welcome.talkBoard.purpose
+msgctxt "welcome.talkBoard.purpose"
+msgid "A communication board (AAC) for children with neurodevelopmental conditions who need support to express themselves. Based on core vocabulary with LAMP principles."
+msgstr "En kommunikationstavla (AKK) för barn med NPF och IF som behöver stöd att uttrycka sig. Baserat på kärnvokabulär med LAMP-principer."
+
+#. welcome.talkingMat.goal
+msgctxt "welcome.talkingMat.goal"
+msgid "Give children the ability to express opinions and preferences, even with limited speech."
+msgstr "Ge barn möjlighet att uttrycka sina åsikter och preferenser, även med begränsat tal."
+
+#. welcome.talkingMat.how
+msgctxt "welcome.talkingMat.how"
+msgid "Drag pictures to zones: green (like), yellow (neutral) or red (dislike)."
+msgstr "Dra bilder till zonerna: grön (gillar), gul (neutral) eller röd (gillar inte). Resultatet ger en tydlig bild av barnets åsikter."
+
+#. welcome.talkingMat.purpose
+msgctxt "welcome.talkingMat.purpose"
+msgid "Digital talking mat — a proven tool for expressing opinions by sorting pictures into zones."
+msgstr "Digital samtalmatta — ett beprövat verktyg för att uttrycka åsikter genom att sortera bilder. Användbart för barn med NPF och IF."
+
+#. welcome.theMimic.goal
+msgctxt "welcome.theMimic.goal"
+msgid "Build motor speech planning through systematic imitation."
+msgstr "Bygga talmotorisk planering genom systematisk imitation."
+
+#. welcome.theMimic.how
+msgctxt "welcome.theMimic.how"
+msgid "Listen to the model, mimic it. Start with simple sounds and work up to full sentences."
+msgstr "Lyssna på modellen, härma. Börja med enkla ljud och jobba dig upp till hela meningar."
+
+#. welcome.theMimic.purpose
+msgctxt "welcome.theMimic.purpose"
+msgid "Core DTTC technique — listen and repeat with increasing complexity."
+msgstr "Kärnteknik inom DTTC — lyssna och upprepa med ökande komplexitet."
+
+#. welcome.timeTracker.goal
+msgctxt "welcome.timeTracker.goal"
+msgid "Increase time awareness and help with planning and transitions."
+msgstr "Öka tidsmedvetenheten och hjälpa med planering och övergångar."
+
+#. welcome.timeTracker.how
+msgctxt "welcome.timeTracker.how"
+msgid "Start the timer at the beginning of an activity, see time displayed visually."
+msgstr "Starta timern vid aktivitetens början, se tiden visas visuellt. Pausa och återuppta."
+
+#. welcome.timeTracker.purpose
+msgctxt "welcome.timeTracker.purpose"
+msgid "Track how long activities take with a visual timer."
+msgstr "Spåra hur lång tid aktiviteter tar med visuell timer. Stöd för barn med NPF."
+
+#. welcome.visualSupport.goal
+msgctxt "welcome.visualSupport.goal"
+msgid "Provide visual support that increases predictability and reduces the need for verbal instructions."
+msgstr "Ge visuellt stöd som ökar förutsägbarhet och minskar behovet av verbala instruktioner."
+
+#. welcome.visualSupport.how
+msgctxt "welcome.visualSupport.how"
+msgid "Choose a ready-made routine or create your own. Follow steps with pictures and text."
+msgstr "Välj en färdig rutin eller skapa egen. Följ stegen med bilder och text."
+
+#. welcome.visualSupport.purpose
+msgctxt "welcome.visualSupport.purpose"
+msgid "Visual schedules with step-by-step routines for common activities."
+msgstr "Visuella scheman med steg-för-steg-rutiner för vanliga aktiviteter. TEACCH-inspirerat stöd för barn med NPF."
+
+#. welcome.visualTimer.goal
+msgctxt "welcome.visualTimer.goal"
+msgid "Make abstract time concepts concrete and visual, reduce anxiety around transitions."
+msgstr "Göra abstrakta tidsbegrepp konkreta och visuella, minska ångest kring övergångar."
+
+#. welcome.visualTimer.how
+msgctxt "welcome.visualTimer.how"
+msgid "Set a time, watch it decrease visually. First-then shows what happens next."
+msgstr "Ställ in tid, se den minska visuellt. Först-sedan visar vad som händer härnäst."
+
+#. welcome.visualTimer.purpose
+msgctxt "welcome.visualTimer.purpose"
+msgid "Visual countdown timer with first-then support."
+msgstr "Visuell nedräkningstimer med först-sedan-stöd. Hjälper barn med NPF att förstå tid visuellt."
+
+#. welcome.whatIsThis
+msgctxt "welcome.whatIsThis"
+msgid "What is this?"
+msgstr "Vad är detta?"
+
+#. welcome.wordBuilder.goal
+msgctxt "welcome.wordBuilder.goal"
+msgid "Develop literacy skills through playful, visual letter support."
+msgstr "Utveckla läs- och skrivfärdigheter genom lekfullt, visuellt bokstavsstöd."
+
+#. welcome.wordBuilder.how
+msgctxt "welcome.wordBuilder.how"
+msgid "See a picture, hear the word, drag letters in the right order to spell it."
+msgstr "Se en bild, hör ordet, dra bokstäverna i rätt ordning för att stava det."
+
+#. welcome.wordBuilder.purpose
+msgctxt "welcome.wordBuilder.purpose"
+msgid "Build words letter by letter with visual support."
+msgstr "Bygg ord bokstav för bokstav med visuellt stöd. Anpassat för barn med NPF, IF och språkstörning."
+
+#. welcome.wordParade.goal
+msgctxt "welcome.wordParade.goal"
+msgid "Improve the ability to hear and produce sound differences between similar words."
+msgstr "Förbättra förmågan att höra och producera ljudskillnader mellan liknande ord."
+
+#. welcome.wordParade.how
+msgctxt "welcome.wordParade.how"
+msgid "Listen to word pairs, practice saying them, and guess which word is playing."
+msgstr "Lyssna på ordpar, öva säga dem, och gissa vilket ord som spelas upp."
+
+#. welcome.wordParade.purpose
+msgctxt "welcome.wordParade.purpose"
+msgid "Minimal pair training — words that differ by just one sound. Critical for phonological awareness."
+msgstr "Minimala par-träning — ord som skiljer sig med bara ett ljud. Kritisk för fonologisk medvetenhet."
+
 #. wordBuilder.correct
 msgctxt "wordBuilder.correct"
 msgid "Correct"
@@ -5529,3 +10934,67 @@ msgctxt "wordBuilder.tryAgain"
 msgid "Try again!"
 msgstr "Försök igen!"
 
+#. wordParade.correct
+msgctxt "wordParade.correct"
+msgid "Correct! 🎉"
+msgstr "Rätt! 🎉"
+
+#. wordParade.intro
+msgctxt "wordParade.intro"
+msgid "Hear the difference between similar words!"
+msgstr "Hör skillnaden mellan lika ord!"
+
+#. wordParade.listen1
+msgctxt "wordParade.listen1"
+msgid "Listen: word 1"
+msgstr "Lyssna: ord 1"
+
+#. wordParade.listen2
+msgctxt "wordParade.listen2"
+msgid "Listen: word 2"
+msgstr "Lyssna: ord 2"
+
+#. wordParade.listenBoth
+msgctxt "wordParade.listenBoth"
+msgid "Listen to both"
+msgstr "Lyssna på båda"
+
+#. wordParade.next
+msgctxt "wordParade.next"
+msgid "Next pair"
+msgstr "Nästa par"
+
+#. wordParade.pair
+msgctxt "wordParade.pair"
+msgid "Pair"
+msgstr "Par"
+
+#. wordParade.practiceMode
+msgctxt "wordParade.practiceMode"
+msgid "Practice saying"
+msgstr "Öva säga"
+
+#. wordParade.quizMode
+msgctxt "wordParade.quizMode"
+msgid "Guess correctly"
+msgstr "Gissa rätt"
+
+#. wordParade.score
+msgctxt "wordParade.score"
+msgid "Score"
+msgstr "Poäng"
+
+#. wordParade.title
+msgctxt "wordParade.title"
+msgid "Word Parade"
+msgstr "Ordparaden"
+
+#. wordParade.tryAgain
+msgctxt "wordParade.tryAgain"
+msgid "Listen again!"
+msgstr "Lyssna igen!"
+
+#. wordParade.whichOne
+msgctxt "wordParade.whichOne"
+msgid "Which word did you hear?"
+msgstr "Vilket ord hörde du?"

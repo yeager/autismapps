@@ -193,13 +193,7 @@
     </g>
   </g>
   
-  <!-- Title text -->
-  <text x="600" y="120" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="72" font-weight="800" fill="white" filter="url(#glow)" letter-spacing="-2">
-    Autism Apps
-  </text>
-  <text x="600" y="165" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="24" font-weight="500" fill="white" opacity="0.85" letter-spacing="1">
-    Communication &amp; Learning Tools
-  </text>
+  <!-- Title text removed — rendered as i18n HTML overlay -->
   
   <!-- Puzzle piece accent (autism symbol) -->
   <g transform="translate(370, 70)" opacity="0.25">

@@ -66,8 +66,15 @@
   function loadWebSpeechVoices() {
     if (typeof speechSynthesis === 'undefined') return;
     const langPrefix = $locale === 'sv' ? 'sv' : 'en';
+    const noveltyNames = new Set([
+      'Albert','Bad News','Bahh','Bells','Boing','Bubbles','Cellos','Good News',
+      'Jester','Organ','Trinoids','Whisper','Wobble','Zarvox','Ralph','Fred',
+      'Hysterical','Deranged','Superstar','Junior','Kathy','Princess','Vicki',
+      'Bruce','Agnes'
+    ]);
     const sysVoices = speechSynthesis.getVoices()
-      .filter(v => v.lang.startsWith(langPrefix))
+      .filter(v => v.lang.startsWith(langPrefix) && !noveltyNames.has(v.name.split(' ')[0]))
+      .sort((a, b) => (b.localService ? 1 : 0) - (a.localService ? 1 : 0) || a.name.localeCompare(b.name))
       .map((v, i) => ({
         id: `webspeech:${v.voiceURI}`,
         name: v.name.replace(/^Microsoft /, '').replace(/^Google /, ''),

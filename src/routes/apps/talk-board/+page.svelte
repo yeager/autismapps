@@ -25,28 +25,40 @@
   ];
 
   // Built-in core vocabulary board (always available, LAMP: fixed positions)
-  const CORE_VOCAB: BoardCell[] = [
-    { index: 0, label: 'I', isEmpty: false, color: '#F1C40F', pictogramId: undefined },
-    { index: 1, label: 'you', isEmpty: false, color: '#F1C40F', pictogramId: undefined },
-    { index: 2, label: 'want', isEmpty: false, color: '#27AE60', pictogramId: undefined },
-    { index: 3, label: 'not', isEmpty: false, color: '#E74C3C', pictogramId: undefined },
-    { index: 4, label: 'go', isEmpty: false, color: '#27AE60', pictogramId: undefined },
-    { index: 5, label: 'eat', isEmpty: false, color: '#27AE60', pictogramId: undefined },
-    { index: 6, label: 'drink', isEmpty: false, color: '#27AE60', pictogramId: undefined },
-    { index: 7, label: 'play', isEmpty: false, color: '#27AE60', pictogramId: undefined },
-    { index: 8, label: 'like', isEmpty: false, color: '#27AE60', pictogramId: undefined },
-    { index: 9, label: 'big', isEmpty: false, color: '#3498DB', pictogramId: undefined },
-    { index: 10, label: 'little', isEmpty: false, color: '#3498DB', pictogramId: undefined },
-    { index: 11, label: 'happy', isEmpty: false, color: '#3498DB', pictogramId: undefined },
-    { index: 12, label: 'sad', isEmpty: false, color: '#3498DB', pictogramId: undefined },
-    { index: 13, label: 'good', isEmpty: false, color: '#3498DB', pictogramId: undefined },
-    { index: 14, label: 'bad', isEmpty: false, color: '#3498DB', pictogramId: undefined },
-    { index: 15, label: 'here', isEmpty: false, color: '#E67E22', pictogramId: undefined },
-    { index: 16, label: 'there', isEmpty: false, color: '#E67E22', pictogramId: undefined },
-    { index: 17, label: 'what', isEmpty: false, color: '#9B59B6', pictogramId: undefined },
-    { index: 18, label: 'where', isEmpty: false, color: '#9B59B6', pictogramId: undefined },
-    { index: 19, label: 'who', isEmpty: false, color: '#9B59B6', pictogramId: undefined },
+  // Keys reference i18n: talk.word.<key>
+  const CORE_VOCAB_KEYS = [
+    { key: 'i', color: '#F1C40F' },
+    { key: 'you', color: '#F1C40F' },
+    { key: 'want', color: '#27AE60' },
+    { key: 'not', color: '#E74C3C' },
+    { key: 'go', color: '#27AE60' },
+    { key: 'eat', color: '#27AE60' },
+    { key: 'drink', color: '#27AE60' },
+    { key: 'play', color: '#27AE60' },
+    { key: 'like', color: '#27AE60' },
+    { key: 'big', color: '#3498DB' },
+    { key: 'little', color: '#3498DB' },
+    { key: 'happy', color: '#3498DB' },
+    { key: 'sad', color: '#3498DB' },
+    { key: 'good', color: '#3498DB' },
+    { key: 'bad', color: '#3498DB' },
+    { key: 'here', color: '#E67E22' },
+    { key: 'there', color: '#E67E22' },
+    { key: 'what', color: '#9B59B6' },
+    { key: 'where', color: '#9B59B6' },
+    { key: 'who', color: '#9B59B6' },
   ];
+
+  // Reactive: rebuild labels when language changes
+  let CORE_VOCAB: BoardCell[] = $derived(
+    CORE_VOCAB_KEYS.map((v, i) => ({
+      index: i,
+      label: $t(`talk.word.${v.key}`),
+      isEmpty: false,
+      color: v.color,
+      pictogramId: undefined,
+    }))
+  );
 
   async function loadBoards() {
     boards = await getBoards();
@@ -119,8 +131,8 @@
           </button>
         {:else}
           <div class="empty-state">
-            <p>No boards yet. Create one in Board Builder!</p>
-            <a href="/apps/board-builder" class="link-btn">Open Board Builder →</a>
+            <p>{$t("talk.no_boards")}</p>
+            <a href="/apps/board-builder" class="link-btn">{$t("talk.open_builder")}</a>
           </div>
         {/each}
       </div>

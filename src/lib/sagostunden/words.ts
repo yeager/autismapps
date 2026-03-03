@@ -161,7 +161,7 @@ export const ALL_WORDS: Word[] = [
   { id: 'tomte', sv: 'tomte', en: 'gnome', gender: 'en', category: 'personer', arasaac: 5165 },
   { id: 'älva', sv: 'älva', en: 'fairy', gender: 'en', category: 'personer', arasaac: 5029 },
   { id: 'jätte', sv: 'jätte', en: 'giant', gender: 'en', category: 'personer', arasaac: 5041 },
-  { id: 'troll', sv: 'troll', en: 'troll', gender: 'ett', category: 'personer', arasaac: 5081 },
+  { id: 'troll', sv: 'troll', en: 'troll', gender: 'ett', category: 'personer', arasaac: 6160 },
   { id: 'barn', sv: 'barn', en: 'child', gender: 'ett', category: 'personer', arasaac: 6573 },
   { id: 'mamma', sv: 'mamma', en: 'mom', gender: 'en', category: 'personer', arasaac: 6563 },
   { id: 'pappa', sv: 'pappa', en: 'dad', gender: 'en', category: 'personer', arasaac: 6561 },

@@ -278,7 +278,7 @@
             <button class="delete-btn" onclick={() => sched.id && removeSchedule(sched.id)}>✕</button>
           </div>
         {:else}
-          <p class="muted">No schedules yet</p>
+          <p class="muted">{$t("schedule.no_schedules")}</p>
         {/each}
       </div>
     {/if}
@@ -314,7 +314,7 @@
           <input
             type="text"
             bind:value={customLabel}
-            placeholder="Or type activity name..."
+            placeholder={$t("schedule.type_activity")}
             onkeydown={(e) => { if (e.key === 'Enter' && customLabel.trim() && addingSection) { addCustomItem(addingSection, customLabel); customLabel = ''; addingSection = null; } }}
           />
           <button class="btn" onclick={() => { if (customLabel.trim() && addingSection) { addCustomItem(addingSection, customLabel); customLabel = ''; addingSection = null; } }}>
@@ -387,9 +387,9 @@
                 <span class="item-time">{item.time}</span>
               {/if}
               <div class="item-actions no-print">
-                <button class="icon-btn" onclick={() => speakItem(item)} aria-label="Speak">🔊</button>
-                <button class="icon-btn" onclick={() => setNow(globalIdx)} aria-label="Set as now">📍</button>
-                <button class="icon-btn danger" onclick={() => removeItem(item)} aria-label="Remove">✕</button>
+                <button class="icon-btn" onclick={() => speakItem(item)} aria-label={$t("common.speak")}>🔊</button>
+                <button class="icon-btn" onclick={() => setNow(globalIdx)} aria-label={$t("schedule.set_now")}>📍</button>
+                <button class="icon-btn danger" onclick={() => removeItem(item)} aria-label={$t("common.remove")}>✕</button>
               </div>
             </div>
           {:else}

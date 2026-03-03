@@ -61,7 +61,8 @@
 
   function openApp(app: typeof ALL_APPS[0]) {
     if (app.ready) {
-      goto(app.route);
+      speak($t(app.name));
+      goto(base + app.route);
     } else {
       speak($t('app.coming_soon'));
     }
@@ -76,12 +77,15 @@
   <!-- Hero image — always present, fades when category selected -->
   <div class="hero-wrapper" class:faded={activeCategory !== null}>
     <img
-      src={`${base}/icons/hero.svg`}
+      src={`${base}/icons/hero-v2.svg`}
       alt={$t('app.title') + ' — ' + $t('app.subtitle')}
       class="hero-image"
       draggable="false"
     />
-    <div class="hero-brand" aria-hidden="true">{$t('app.title.brand')}</div>
+    <div class="hero-text-overlay">
+      <h2 class="hero-title">{$t('app.title.brand')}</h2>
+      <p class="hero-subtitle">{$t('app.subtitle')}</p>
+    </div>
     {#if !activeCategory}
       <div class="hero-overlay" transition:fade={{ duration: 300 }}>
         <div class="hero-cta">
@@ -97,29 +101,69 @@
   <!-- Top bar with settings -->
   <header class="launcher-header">
     <div class="brand">
+      <a href="https://autismappar.se/" class="back-to-site" aria-label="Tillbaka till autismappar.se">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </a>
       <h1>{$t('app.title')}</h1>
     </div>
-    <button
-      class="settings-icon"
-      onclick={() => goto('/settings')}
-      aria-label={$t('app.settings')}
-      onfocus={() => speak($t('app.settings'))}
-    >
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
-        <circle cx="12" cy="12" r="3"/>
-      </svg>
-    </button>
-    <button
-      class="about-icon"
-      onclick={() => goto('/about')}
-      aria-label={$t('about.title')}
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M12 16v-4M12 8h.01"/>
-      </svg>
-    </button>
+
+    <div class="header-actions">
+      <!-- Language switcher -->
+      <div class="lang-switcher" bind:this={langRef}>
+        <button
+          class="lang-btn"
+          onclick={toggleLang}
+          aria-label="Byt språk"
+          aria-expanded={langOpen}
+        >
+          <span class="lang-flag">{currentFlag}</span>
+          <svg class="lang-chevron" class:open={langOpen} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        {#if langOpen}
+          <div class="lang-dropdown">
+            {#each LANGUAGES as lang}
+              <button
+                class="lang-option"
+                class:active={$locale === lang.code}
+                onclick={() => pickLang(lang.code)}
+              >
+                <span class="lang-option-flag">{lang.flag}</span>
+                <span class="lang-option-name">{lang.name}</span>
+                {#if $locale === lang.code}
+                  <span class="lang-check">✓</span>
+                {/if}
+              </button>
+            {/each}
+          </div>
+        {/if}
+      </div>
+
+      <button
+        class="settings-icon"
+        onclick={() => goto(base + '/settings')}
+        aria-label={$t('app.settings')}
+        onfocus={() => speak($t('app.settings'))}
+      >
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+      <button
+        class="about-icon"
+        onclick={() => goto(base + '/about')}
+        aria-label={$t('about.title')}
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 16v-4M12 8h.01"/>
+        </svg>
+      </button>
+    </div>
   </header>
 
   <!-- Category buttons -->
@@ -154,7 +198,7 @@
           </svg>
         </button>
       </div>
-      <div class="app-grid" style="--card-min: {filtered.length <= 3 ? '240px' : filtered.length <= 6 ? '200px' : '160px'}; --card-min-mobile: {filtered.length <= 3 ? '180px' : filtered.length <= 6 ? '150px' : '130px'}; --card-min-h: {filtered.length <= 3 ? '220px' : filtered.length <= 6 ? '190px' : '170px'}">
+      <div class="app-grid" style="--card-min: {filtered.length <= 3 ? '160px' : filtered.length <= 6 ? '140px' : '120px'}; --card-min-mobile: {filtered.length <= 3 ? '120px' : filtered.length <= 6 ? '100px' : '90px'}">
         {#each filtered as app, i (app.id)}
           <button
             class="app-card"
@@ -213,20 +257,30 @@
     -webkit-user-drag: none;
   }
 
-  .hero-brand {
+  .hero-text-overlay {
     position: absolute;
-    top: 50%;
+    top: 12%;
     left: 50%;
-    transform: translate(-50%, -60%);
-    font-size: clamp(3rem, 10vw, 7rem);
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    color: rgba(255, 255, 255, 0.18);
-    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.08);
-    white-space: nowrap;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
     pointer-events: none;
-    user-select: none;
-    z-index: 1;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.05em;
+    margin: 4px 0 0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   }
 
   .hero-overlay {
@@ -275,10 +329,35 @@
     border-bottom: 1px solid var(--border);
   }
 
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
   .brand h1 {
     font-size: 1.3em;
     font-weight: 700;
     letter-spacing: -0.02em;
+  }
+
+  .back-to-site {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition);
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .back-to-site:hover { background: var(--bg-hover); color: var(--text); }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 
   .settings-icon {
@@ -441,14 +520,15 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px 12px 16px;
+    padding: 12px 8px 10px;
+    justify-content: center;
     background: var(--bg-card);
     border: 2px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: var(--card-min-h, 170px);
-    gap: 8px;
+    aspect-ratio: 1;
+    gap: 6px;
     animation: cardIn 0.4s ease both;
     animation-delay: var(--delay);
   }
@@ -480,31 +560,31 @@
   }
 
   .card-icon {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 14px;
+    border-radius: 10px;
     background: color-mix(in srgb, var(--card-accent) 10%, transparent);
     flex-shrink: 0;
   }
   .card-icon img {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
   }
 
   .card-name {
     font-weight: 600;
-    font-size: 0.95em;
-    line-height: 1.2;
+    font-size: 0.8em;
+    line-height: 1.15;
   }
 
   .card-desc {
-    font-size: 0.75em;
+    font-size: 0.65em;
     color: var(--text-muted);
-    line-height: 1.3;
+    line-height: 1.2;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -571,7 +651,7 @@
     box-shadow: var(--shadow-lg);
     min-width: 160px;
     overflow: hidden;
-    z-index: 100;
+    z-index: 200;
   }
 
   .lang-option {

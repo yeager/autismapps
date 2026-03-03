@@ -1,11 +1,10 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms, getPictogramUrl } from '$lib/arasaac';
-  import { locale } from '$lib/i18n';
-  import { get } from 'svelte/store';
   import { fade } from 'svelte/transition';
 
   interface CommCard {
@@ -36,13 +35,41 @@
     { id: 'feelings', name: 'commBook.page.feelings', icon: '😊', color: '#1ABC9C', cards: [] },
   ];
 
-  const CATEGORY_WORDS: Record<string, string[]> = {
-    food: ['apple', 'banana', 'bread', 'rice', 'chicken', 'pasta', 'egg', 'cheese', 'soup', 'pizza', 'fish', 'yogurt'],
-    drinks: ['water', 'milk', 'juice', 'tea', 'smoothie', 'hot chocolate'],
-    activities: ['play', 'draw', 'read', 'sing', 'swim', 'run', 'dance', 'watch TV', 'computer', 'playground', 'walk', 'sleep'],
-    places: ['home', 'school', 'park', 'store', 'hospital', 'bathroom', 'kitchen', 'bedroom', 'car', 'bus'],
-    people: ['mom', 'dad', 'brother', 'sister', 'teacher', 'friend', 'grandma', 'grandpa', 'doctor'],
-    feelings: ['happy', 'sad', 'angry', 'tired', 'scared', 'excited', 'hungry', 'thirsty', 'sick', 'calm'],
+  // Keys map to i18n (comm.<key>) for display, English words for ARASAAC search
+  const CATEGORY_KEYS: Record<string, { key: string; en: string }[]> = {
+    food: [
+      { key: 'apple', en: 'apple' }, { key: 'banana', en: 'banana' }, { key: 'bread', en: 'bread' },
+      { key: 'rice', en: 'rice' }, { key: 'chicken', en: 'chicken' }, { key: 'pasta', en: 'pasta' },
+      { key: 'egg', en: 'egg' }, { key: 'cheese', en: 'cheese' }, { key: 'soup', en: 'soup' },
+      { key: 'pizza', en: 'pizza' }, { key: 'fish', en: 'fish' }, { key: 'yogurt', en: 'yogurt' },
+    ],
+    drinks: [
+      { key: 'water', en: 'water' }, { key: 'milk', en: 'milk' }, { key: 'juice', en: 'juice' },
+      { key: 'tea', en: 'tea' }, { key: 'smoothie', en: 'smoothie' }, { key: 'hot_chocolate', en: 'hot chocolate' },
+    ],
+    activities: [
+      { key: 'play', en: 'play' }, { key: 'draw', en: 'draw' }, { key: 'read', en: 'read' },
+      { key: 'sing', en: 'sing' }, { key: 'swim', en: 'swim' }, { key: 'run', en: 'run' },
+      { key: 'dance', en: 'dance' }, { key: 'watch_tv', en: 'watch TV' }, { key: 'computer', en: 'computer' },
+      { key: 'playground', en: 'playground' }, { key: 'walk', en: 'walk' }, { key: 'sleep', en: 'sleep' },
+    ],
+    places: [
+      { key: 'home', en: 'home' }, { key: 'school', en: 'school' }, { key: 'park', en: 'park' },
+      { key: 'store', en: 'store' }, { key: 'hospital', en: 'hospital' }, { key: 'bathroom', en: 'bathroom' },
+      { key: 'kitchen', en: 'kitchen' }, { key: 'bedroom', en: 'bedroom' }, { key: 'car', en: 'car' },
+      { key: 'bus', en: 'bus' },
+    ],
+    people: [
+      { key: 'mom', en: 'mom' }, { key: 'dad', en: 'dad' }, { key: 'brother', en: 'brother' },
+      { key: 'sister', en: 'sister' }, { key: 'teacher', en: 'teacher' }, { key: 'friend', en: 'friend' },
+      { key: 'grandma', en: 'grandma' }, { key: 'grandpa', en: 'grandpa' }, { key: 'doctor', en: 'doctor' },
+    ],
+    feelings: [
+      { key: 'happy', en: 'happy' }, { key: 'sad', en: 'sad' }, { key: 'angry', en: 'angry' },
+      { key: 'tired', en: 'tired' }, { key: 'scared', en: 'scared' }, { key: 'excited', en: 'excited' },
+      { key: 'hungry', en: 'hungry' }, { key: 'thirsty', en: 'thirsty' }, { key: 'sick', en: 'sick' },
+      { key: 'calm', en: 'calm' },
+    ],
   };
 
   let pages = $state<CommPage[]>(loadPages());
@@ -72,7 +99,7 @@
 
   $effect(() => {
     // Load default cards for pages that are empty (except favorites)
-    const needsInit = pages.some(p => p.id !== 'favorites' && p.cards.length === 0 && CATEGORY_WORDS[p.id]);
+    const needsInit = pages.some(p => p.id !== 'favorites' && p.cards.length === 0 && CATEGORY_KEYS[p.id]);
     if (needsInit) initializePages();
   });
 
@@ -80,15 +107,14 @@
     loading = true;
     for (const page of pages) {
       if (page.id === 'favorites' || page.cards.length > 0) continue;
-      const words = CATEGORY_WORDS[page.id];
-      if (!words) continue;
+      const keys = CATEGORY_KEYS[page.id];
+      if (!keys) continue;
       page.cards = await Promise.all(
-        words.map(async (w) => {
-          const results = await searchPictograms(w, 'en');
-          const svResults = await searchPictograms(w, 'sv');
+        keys.map(async (item) => {
+          const results = await searchPictograms(item.en, 'en');
           return {
             id: crypto.randomUUID(),
-            label: get(locale) === 'sv' ? (svResults[0]?.keyword || w) : w,
+            label: $t(`comm.${item.key}`),
             pictogramUrl: results[0]?.url || '',
             pictogramId: results[0]?.id || 0,
             isPhoto: false,
@@ -233,7 +259,7 @@
 
 <div class="app" in:fade>
   <header class="hdr">
-    <button class="back" onclick={() => goto('/')} aria-label={$t('app.back')}>←</button>
+    <button class="back" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>←</button>
     <h1>📖 {$t('commBook.title')}</h1>
     <div class="hdr-actions">
       <button class="icon-btn" class:active={editMode} onclick={() => { editMode = !editMode; showAddCard = false; }} aria-label={$t('commBook.edit')}>✏️</button>

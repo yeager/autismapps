@@ -1,10 +1,11 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
-  import { translateKeywords } from '$lib/arasaac/sv-lookup';
+
   import { locale } from '$lib/i18n';
   import { get } from 'svelte/store';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
@@ -40,6 +41,8 @@
 
   const ITEM_WORDS = ['cookie', 'ball', 'juice', 'car', 'book', 'banana', 'puzzle', 'swing', 'bubbles', 'music', 'water', 'apple'];
   const COMMENT_WORDS = ['dog', 'cat', 'bird', 'flower', 'rain', 'sun', 'tree', 'fish'];
+  const ITEM_WORD_KEYS = ['pecs.cookie', 'pecs.ball', 'pecs.juice', 'pecs.car', 'pecs.book', 'pecs.banana', 'pecs.puzzle', 'pecs.swing', 'pecs.bubbles', 'pecs.music', 'pecs.water', 'pecs.apple'];
+  const COMMENT_WORD_KEYS = ['pecs.dog', 'pecs.cat', 'pecs.bird', 'pecs.flower', 'pecs.rain', 'pecs.sun', 'pecs.tree', 'pecs.fish'];
 
   $effect(() => { loadItems(); loadProgress(); });
 
@@ -60,12 +63,13 @@
     loading = true;
     const lang = get(locale);
     const words = phase === 6 ? COMMENT_WORDS : ITEM_WORDS;
+    const wordKeys = phase === 6 ? COMMENT_WORD_KEYS : ITEM_WORD_KEYS;
     const sliced = words.slice(0, phase <= 2 ? 4 : phase <= 4 ? 8 : 12);
-    const translated = lang === 'sv' ? await translateKeywords(sliced) : null;
+    const slicedKeys = wordKeys.slice(0, phase <= 2 ? 4 : phase <= 4 ? 8 : 12);
     const results = await Promise.all(
-      sliced.map(async (w, i) => {
-        const res = await searchPictograms(w, 'en');
-        const displayWord = translated ? translated[i].sv : w;
+      sliced.map(async (englishWord, i) => {
+        const res = await searchPictograms(englishWord, 'en');
+        const displayWord = $t(slicedKeys[i]);
         return res[0] ? { id: res[0].id, url: res[0].url, word: displayWord } : null;
       })
     );
@@ -73,13 +77,13 @@
     // Load "I want" etc.
     if (phase >= 4) {
       const iw = await searchPictograms('I want', lang);
-      if (iw[0]) iWantPicto = { id: iw[0].id, url: iw[0].url, word: 'I want' };
+      if (iw[0]) iWantPicto = { id: iw[0].id, url: iw[0].url, word: $t('pecs.i_want') };
     }
     if (phase === 6) {
       const is = await searchPictograms('I see', lang);
       const ih = await searchPictograms('I hear', lang);
-      if (is[0]) iSeePicto = { id: is[0].id, url: is[0].url, word: 'I see' };
-      if (ih[0]) iHearPicto = { id: ih[0].id, url: ih[0].url, word: 'I hear' };
+      if (is[0]) iSeePicto = { id: is[0].id, url: is[0].url, word: $t('pecs.i_see') };
+      if (ih[0]) iHearPicto = { id: ih[0].id, url: ih[0].url, word: $t('pecs.i_hear') };
     }
     if (phase >= 2) {
       targetItem = items[Math.floor(Math.random() * items.length)] || null;
@@ -166,7 +170,7 @@
 
 <div class="pecs-page">
   <header class="app-header">
-    <button class="back-btn" onclick={() => goto('/')} aria-label={$t('app.back')}>
+    <button class="back-btn" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <h1>{$t('pecs.title')} — {$t(PHASE_INFO[phase].label)}</h1>
@@ -200,19 +204,19 @@
       <div class="sentence-strip">
         {#if phase === 4 && iWantPicto}
           <button class="strip-starter" onclick={() => addStarter(iWantPicto!)}>
-            <img src={iWantPicto.url} alt="I want" width="40" height="40" />
-            <span>I want</span>
+            <img src={iWantPicto.url} alt={$t('pecs.i_want')} width="40" height="40" />
+            <span>{$t('pecs.i_want')}</span>
           </button>
         {/if}
         {#if phase === 6}
           {#if iSeePicto}
             <button class="strip-starter" onclick={() => addStarter(iSeePicto!)}>
-              <img src={iSeePicto.url} alt="I see" width="40" height="40" /><span>I see</span>
+              <img src={iSeePicto.url} alt={$t('pecs.i_see')} width="40" height="40" /><span>{$t('pecs.i_see')}</span>
             </button>
           {/if}
           {#if iHearPicto}
             <button class="strip-starter" onclick={() => addStarter(iHearPicto!)}>
-              <img src={iHearPicto.url} alt="I hear" width="40" height="40" /><span>I hear</span>
+              <img src={iHearPicto.url} alt={$t("pecs.i_hear")} width="40" height="40" /><span>{$t("pecs.i_hear")}</span>
             </button>
           {/if}
         {/if}
@@ -234,7 +238,7 @@
     {#if phase === 2 && partnerArea && selectedItem}
       <div class="partner-area">
         <p>{$t('pecs.bring_to_partner')}</p>
-        <div class="partner-hand" onclick={deliverToPartner} onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') deliverToPartner(); }} role="button" tabindex="0" aria-label="Partner">
+        <div class="partner-hand" onclick={deliverToPartner} onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') deliverToPartner(); }} role="button" tabindex="0" aria-label={$t("pecs.partner")}>
           <span>🤲</span>
           <p>{$t('pecs.tap_to_give')}</p>
         </div>
@@ -344,14 +348,14 @@
     gap: 10px; padding: 16px; flex: 1;
   }
   .item-card {
-    display: flex; flex-direction: column; align-items: center; gap: 6px;
-    padding: 12px 8px; background: var(--bg-card); border: 2px solid var(--border);
-    border-radius: var(--radius); transition: all 0.15s;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+    padding: 8px 6px; background: var(--bg-card); border: 2px solid var(--border);
+    border-radius: var(--radius); transition: all 0.15s; aspect-ratio: 1;
   }
   .item-card:hover { border-color: #E67E22; transform: scale(1.05); }
   .item-card:active { transform: scale(0.9); }
-  .item-card img { border-radius: 8px; }
-  .item-card span { font-size: 0.8em; font-weight: 600; }
+  .item-card img { border-radius: 8px; width: 64px; height: 64px; object-fit: contain; }
+  .item-card span { font-size: 0.75em; font-weight: 600; text-align: center; line-height: 1.2; }
 
   .score-bar { display: flex; gap: 20px; justify-content: center; padding: 12px; font-size: 0.85em; font-weight: 600; color: var(--text-muted); }
 

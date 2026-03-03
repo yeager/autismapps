@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -56,7 +57,7 @@
 
 <div class="app" in:fade>
   <header class="hdr">
-    <button class="back" onclick={() => mode === 'menu' ? goto('/') : (mode = 'menu')}>←</button>
+    <button class="back" onclick={() => mode === 'menu' ? goto(base + '/') : (mode = 'menu')}>←</button>
     <h1>🔢 {$t('mathAid.title')}</h1>
     {#if mode !== 'menu'}<span class="score">{score}/{total}</span>{/if}
   </header>

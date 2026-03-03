@@ -4,12 +4,14 @@
  * Until ARASAAC has official Swedish support, this bridges the gap.
  */
 
+import { base } from '$app/paths';
+
 let cache: Record<string, { sv: string; id: number }> | null = null;
 
 export async function loadSvLookup(): Promise<Record<string, { sv: string; id: number }>> {
   if (cache) return cache;
   try {
-    const res = await fetch('/arasaac-sv.json');
+    const res = await fetch(`${base}/arasaac-sv.json`);
     if (res.ok) {
       cache = await res.json();
       return cache!;

@@ -1,50 +1,54 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
-  import { translateKeywords } from '$lib/arasaac/sv-lookup';
-  import { locale } from '$lib/i18n';
-  import { get } from 'svelte/store';
 
   interface CoreWord { word: string; category: string; color: string; id: number; url: string; }
 
-  const CORE_VOCAB: { word: string; category: string }[] = [
+  // Core vocab keys — labels resolved via i18n (point.<key>)
+  const CORE_VOCAB_KEYS: { key: string; category: string }[] = [
     // People (yellow)
-    { word: 'I', category: 'people' }, { word: 'you', category: 'people' }, { word: 'he', category: 'people' },
-    { word: 'she', category: 'people' }, { word: 'we', category: 'people' }, { word: 'they', category: 'people' },
-    { word: 'mom', category: 'people' }, { word: 'dad', category: 'people' },
+    { key: 'I', category: 'people' }, { key: 'you', category: 'people' }, { key: 'he', category: 'people' },
+    { key: 'she', category: 'people' }, { key: 'we', category: 'people' }, { key: 'they', category: 'people' },
+    { key: 'mom', category: 'people' }, { key: 'dad', category: 'people' },
     // Actions (green)
-    { word: 'want', category: 'actions' }, { word: 'go', category: 'actions' }, { word: 'stop', category: 'actions' },
-    { word: 'help', category: 'actions' }, { word: 'eat', category: 'actions' }, { word: 'drink', category: 'actions' },
-    { word: 'play', category: 'actions' }, { word: 'read', category: 'actions' }, { word: 'give', category: 'actions' },
-    { word: 'take', category: 'actions' }, { word: 'make', category: 'actions' }, { word: 'see', category: 'actions' },
-    { word: 'hear', category: 'actions' }, { word: 'like', category: 'actions' }, { word: 'do', category: 'actions' },
-    { word: 'have', category: 'actions' }, { word: 'can', category: 'actions' },
+    { key: 'want', category: 'actions' }, { key: 'go', category: 'actions' }, { key: 'stop', category: 'actions' },
+    { key: 'help', category: 'actions' }, { key: 'eat', category: 'actions' }, { key: 'drink', category: 'actions' },
+    { key: 'play', category: 'actions' }, { key: 'read', category: 'actions' }, { key: 'give', category: 'actions' },
+    { key: 'take', category: 'actions' }, { key: 'make', category: 'actions' }, { key: 'see', category: 'actions' },
+    { key: 'hear', category: 'actions' }, { key: 'like', category: 'actions' }, { key: 'do', category: 'actions' },
+    { key: 'have', category: 'actions' }, { key: 'can', category: 'actions' },
     // Descriptions (blue)
-    { word: 'big', category: 'descriptions' }, { word: 'small', category: 'descriptions' },
-    { word: 'good', category: 'descriptions' }, { word: 'bad', category: 'descriptions' },
-    { word: 'hot', category: 'descriptions' }, { word: 'cold', category: 'descriptions' },
-    { word: 'more', category: 'descriptions' }, { word: 'not', category: 'descriptions' },
+    { key: 'big', category: 'descriptions' }, { key: 'small', category: 'descriptions' },
+    { key: 'good', category: 'descriptions' }, { key: 'bad', category: 'descriptions' },
+    { key: 'hot', category: 'descriptions' }, { key: 'cold', category: 'descriptions' },
+    { key: 'more', category: 'descriptions' }, { key: 'not', category: 'descriptions' },
     // Things (orange)
-    { word: 'food', category: 'things' }, { word: 'water', category: 'things' }, { word: 'home', category: 'things' },
-    { word: 'school', category: 'things' }, { word: 'book', category: 'things' }, { word: 'ball', category: 'things' },
+    { key: 'food', category: 'things' }, { key: 'water', category: 'things' }, { key: 'home', category: 'things' },
+    { key: 'school', category: 'things' }, { key: 'book', category: 'things' }, { key: 'ball', category: 'things' },
     // Places (purple)
-    { word: 'here', category: 'places' }, { word: 'there', category: 'places' },
-    { word: 'up', category: 'places' }, { word: 'down', category: 'places' },
-    { word: 'in', category: 'places' }, { word: 'out', category: 'places' },
+    { key: 'here', category: 'places' }, { key: 'there', category: 'places' },
+    { key: 'up', category: 'places' }, { key: 'down', category: 'places' },
+    { key: 'in', category: 'places' }, { key: 'out', category: 'places' },
     // Feelings (pink)
-    { word: 'happy', category: 'feelings' }, { word: 'sad', category: 'feelings' },
-    { word: 'angry', category: 'feelings' }, { word: 'scared', category: 'feelings' },
+    { key: 'happy', category: 'feelings' }, { key: 'sad', category: 'feelings' },
+    { key: 'angry', category: 'feelings' }, { key: 'scared', category: 'feelings' },
     // Questions (teal)
-    { word: 'what', category: 'questions' }, { word: 'where', category: 'questions' },
-    { word: 'who', category: 'questions' }, { word: 'when', category: 'questions' },
+    { key: 'what', category: 'questions' }, { key: 'where', category: 'questions' },
+    { key: 'who', category: 'questions' }, { key: 'when', category: 'questions' },
     // Social (coral)
-    { word: 'yes', category: 'social' }, { word: 'no', category: 'social' },
-    { word: 'please', category: 'social' }, { word: 'thank you', category: 'social' },
-    { word: 'hello', category: 'social' }, { word: 'goodbye', category: 'social' }
+    { key: 'yes', category: 'social' }, { key: 'no', category: 'social' },
+    { key: 'please', category: 'social' }, { key: 'thank_you', category: 'social' },
+    { key: 'hello', category: 'social' }, { key: 'goodbye', category: 'social' }
   ];
+
+  // Resolve to translated words
+  const CORE_VOCAB = $derived(
+    CORE_VOCAB_KEYS.map(v => ({ word: $t(`point.${v.key}`), category: v.category }))
+  );
 
   const CATEGORY_COLORS: Record<string, string> = {
     people: '#F1C40F', actions: '#27AE60', descriptions: '#3498DB',
@@ -65,14 +69,13 @@
 
   async function loadWords() {
     loading = true;
-    const lang = get(locale);
-    const allEnWords = CORE_VOCAB.map(v => v.word);
-    const translated = lang === 'sv' ? await translateKeywords(allEnWords) : null;
-
     const results = await Promise.all(
-      CORE_VOCAB.map(async ({ word, category }, i) => {
-        const res = await searchPictograms(word, 'en');
-        const displayWord = translated ? translated[i].sv : word;
+      CORE_VOCAB_KEYS.map(async ({ key, category }) => {
+        // Always search ARASAAC in English for reliable results
+        const enWord = key.replace('_', ' ');
+        const res = await searchPictograms(enWord, 'en');
+        // Display label from i18n (Swedish or English depending on locale)
+        const displayWord = $t(`point.${key}`);
         return {
           word: displayWord, category, color: CATEGORY_COLORS[category] || '#999',
           id: res[0]?.id || 0, url: res[0]?.url || ''
@@ -106,7 +109,7 @@
 
 <div class="point-page">
   <header class="app-header">
-    <button class="back-btn" onclick={() => goto('/')} aria-label={$t('app.back')}>
+    <button class="back-btn" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <h1>{$t('point.title')}</h1>
@@ -152,7 +155,7 @@
       {#each filtered as w}
         <button class="word-card" style="--wc: {w.color}" onclick={() => addWord(w)} onfocus={() => speak(w.word)}>
           {#if w.url}
-            <img src={w.url} alt={w.word} width="52" height="52" />
+            <img src={w.url} alt={w.word} width="40" height="40" />
           {/if}
           <span class="word-label">{w.word}</span>
         </button>
@@ -207,18 +210,19 @@
   .cat-tab.active { background: var(--cc, #3498DB); color: white; border-color: var(--cc, #3498DB); }
 
   .words-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 8px; padding: 12px; flex: 1;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: 6px; padding: 8px; flex: 1;
   }
   .word-card {
-    display: flex; flex-direction: column; align-items: center; gap: 4px;
-    padding: 10px 6px; background: var(--bg-card); border: 2px solid var(--border);
-    border-radius: var(--radius); border-left: 4px solid var(--wc); transition: all 0.15s;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    padding: 6px 4px; background: var(--bg-card); border: 2px solid var(--border);
+    border-radius: var(--radius); border-left: 3px solid var(--wc); transition: all 0.15s;
+    aspect-ratio: 1; min-width: 0;
   }
   .word-card:hover { transform: scale(1.05); border-color: var(--wc); }
   .word-card:active { transform: scale(0.93); }
-  .word-card img { border-radius: 6px; }
-  .word-label { font-size: 0.75em; font-weight: 600; text-align: center; }
+  .word-card img { border-radius: 4px; width: 40px; height: 40px; object-fit: contain; }
+  .word-label { font-size: 0.65em; font-weight: 600; text-align: center; line-height: 1.1; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 
   .loading { flex: 1; display: flex; align-items: center; justify-content: center; }
   .spinner { width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: #3498DB; border-radius: 50%; animation: spin 0.8s linear infinite; }

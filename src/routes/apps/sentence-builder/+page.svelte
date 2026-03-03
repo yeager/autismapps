@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -8,39 +9,39 @@
   // Fitzgerald Key: yellow=person, green=verb, orange=object
   const SENTENCES = [
     { parts: [
-      { word: 'Jag', cat: 'person' },
-      { word: 'vill', cat: 'verb' },
-      { word: 'äta', cat: 'verb' },
-      { word: 'mat', cat: 'object' },
+      { wordKey: 'sentence.jag', cat: 'person' },
+      { wordKey: 'sentence.vill', cat: 'verb' },
+      { wordKey: 'sentence.ata', cat: 'verb' },
+      { wordKey: 'sentence.mat', cat: 'object' },
     ]},
     { parts: [
-      { word: 'Jag', cat: 'person' },
-      { word: 'vill', cat: 'verb' },
-      { word: 'dricka', cat: 'verb' },
-      { word: 'vatten', cat: 'object' },
+      { wordKey: 'sentence.jag', cat: 'person' },
+      { wordKey: 'sentence.vill', cat: 'verb' },
+      { wordKey: 'sentence.dricka', cat: 'verb' },
+      { wordKey: 'sentence.vatten', cat: 'object' },
     ]},
     { parts: [
-      { word: 'Mamma', cat: 'person' },
-      { word: 'läser', cat: 'verb' },
-      { word: 'en', cat: 'other' },
-      { word: 'bok', cat: 'object' },
+      { wordKey: 'sentence.mamma', cat: 'person' },
+      { wordKey: 'sentence.laser', cat: 'verb' },
+      { wordKey: 'sentence.en', cat: 'other' },
+      { wordKey: 'sentence.bok', cat: 'object' },
     ]},
     { parts: [
-      { word: 'Katten', cat: 'person' },
-      { word: 'sover', cat: 'verb' },
-      { word: 'på', cat: 'other' },
-      { word: 'soffan', cat: 'object' },
+      { wordKey: 'sentence.katten', cat: 'person' },
+      { wordKey: 'sentence.sover', cat: 'verb' },
+      { wordKey: 'sentence.pa', cat: 'other' },
+      { wordKey: 'sentence.soffan', cat: 'object' },
     ]},
     { parts: [
-      { word: 'Jag', cat: 'person' },
-      { word: 'är', cat: 'verb' },
-      { word: 'glad', cat: 'feeling' },
+      { wordKey: 'sentence.jag', cat: 'person' },
+      { wordKey: 'sentence.ar', cat: 'verb' },
+      { wordKey: 'sentence.glad', cat: 'feeling' },
     ]},
     { parts: [
-      { word: 'Vi', cat: 'person' },
-      { word: 'går', cat: 'verb' },
-      { word: 'till', cat: 'other' },
-      { word: 'skolan', cat: 'object' },
+      { wordKey: 'sentence.vi', cat: 'person' },
+      { wordKey: 'sentence.gar', cat: 'verb' },
+      { wordKey: 'sentence.till', cat: 'other' },
+      { wordKey: 'sentence.skolan', cat: 'object' },
     ]},
   ];
 
@@ -72,11 +73,11 @@
     if (w.used) return;
     placed = [...placed, w];
     available = available.map(a => a.id === w.id ? { ...a, used: true } : a);
-    speak(w.word);
+    speak($t(w.wordKey));
 
     if (placed.length === SENTENCES[sentIdx].parts.length) {
-      const built = placed.map(p => p.word).join(' ');
-      const target = SENTENCES[sentIdx].parts.map(p => p.word).join(' ');
+      const built = placed.map(p => $t(p.wordKey)).join(' ');
+      const target = SENTENCES[sentIdx].parts.map(p => $t(p.wordKey)).join(' ');
       if (built === target) {
         correct = true;
         score++;
@@ -104,7 +105,7 @@
 
 <div class="app" in:fade>
   <header class="hdr">
-    <button class="back" onclick={() => goto('/')}>←</button>
+    <button class="back" onclick={() => goto(base + '/')}>←</button>
     <h1>📝 {$t('sentenceBuilder.title')}</h1>
     <span class="score">⭐ {score}</span>
   </header>
@@ -112,7 +113,7 @@
   <main class="cnt">
     <div class="strip">
       {#each placed as w, i}
-        <button class="strip-word" style="--wc:{CAT_COLORS[w.cat]}" onclick={() => removeWord(i)}>{w.word}</button>
+        <button class="strip-word" style="--wc:{CAT_COLORS[w.cat]}" onclick={() => removeWord(i)}>{$t(w.wordKey)}</button>
       {/each}
       {#if placed.length === 0}
         <span class="placeholder">{$t('sentenceBuilder.buildHere')}</span>
@@ -134,7 +135,7 @@
             onclick={() => placeWord(w)}
             disabled={w.used}
           >
-            {w.word}
+            {$t(w.wordKey)}
           </button>
         {/each}
       </div>

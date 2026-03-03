@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -27,11 +28,11 @@
   ];
 
   const CATEGORIES = [
-    { id: 'food', icon: '🍎', words: ['apple', 'banana', 'bread', 'milk', 'water', 'cookie', 'juice', 'sandwich'] },
-    { id: 'toys', icon: '🧸', words: ['ball', 'car', 'doll', 'puzzle', 'blocks', 'book', 'teddy bear', 'crayons'] },
-    { id: 'actions', icon: '🏃', words: ['play', 'run', 'swim', 'draw', 'sing', 'dance', 'read', 'sleep'] },
-    { id: 'feelings', icon: '😊', words: ['happy', 'sad', 'angry', 'tired', 'scared', 'excited', 'calm', 'hungry'] },
-    { id: 'places', icon: '🏠', words: ['home', 'school', 'park', 'store', 'bathroom', 'kitchen', 'outside', 'bed'] },
+    { id: 'food', icon: '🍎', wordKeys: ['strip.apple', 'strip.banana', 'strip.bread', 'strip.milk', 'strip.water', 'strip.cookie', 'strip.juice', 'strip.sandwich'], englishWords: ['apple', 'banana', 'bread', 'milk', 'water', 'cookie', 'juice', 'sandwich'] },
+    { id: 'toys', icon: '🧸', wordKeys: ['strip.ball', 'strip.car', 'strip.doll', 'strip.puzzle', 'strip.blocks', 'strip.book', 'strip.teddy_bear', 'strip.crayons'], englishWords: ['ball', 'car', 'doll', 'puzzle', 'blocks', 'book', 'teddy bear', 'crayons'] },
+    { id: 'actions', icon: '🏃', wordKeys: ['strip.play', 'strip.run', 'strip.swim', 'strip.draw', 'strip.sing', 'strip.dance', 'strip.read', 'strip.sleep'], englishWords: ['play', 'run', 'swim', 'draw', 'sing', 'dance', 'read', 'sleep'] },
+    { id: 'feelings', icon: '😊', wordKeys: ['strip.happy', 'strip.sad', 'strip.angry', 'strip.tired', 'strip.scared', 'strip.excited', 'strip.calm', 'strip.hungry'], englishWords: ['happy', 'sad', 'angry', 'tired', 'scared', 'excited', 'calm', 'hungry'] },
+    { id: 'places', icon: '🏠', wordKeys: ['strip.home', 'strip.school', 'strip.park', 'strip.store', 'strip.bathroom', 'strip.kitchen', 'strip.outside', 'strip.bed'], englishWords: ['home', 'school', 'park', 'store', 'bathroom', 'kitchen', 'outside', 'bed'] },
   ];
 
   interface StripItem {
@@ -43,7 +44,7 @@
 
   interface PictoItem {
     word: string;
-    wordSv: string;
+    wordKey: string;
     url: string;
   }
 
@@ -69,12 +70,11 @@
     selectedCategory = cat;
     loadingPictos = true;
     categoryPictos = await Promise.all(
-      cat.words.map(async (w) => {
-        const results = await searchPictograms(w, 'en');
-        const svResults = await searchPictograms(w, 'sv');
+      cat.englishWords.map(async (englishWord, i) => {
+        const results = await searchPictograms(englishWord, 'en');
         return {
-          word: w,
-          wordSv: svResults?.[0]?.keyword || w,
+          word: englishWord,
+          wordKey: cat.wordKeys[i],
           url: results[0]?.url || '',
         };
       })
@@ -89,8 +89,7 @@
   }
 
   function addWord(picto: PictoItem) {
-    const lang = get(locale);
-    const label = lang === 'sv' ? picto.wordSv : picto.word;
+    const label = $t(picto.wordKey);
     const color = selectedCategory?.id === 'actions' ? FK.verb
       : selectedCategory?.id === 'feelings' ? FK.desc
       : FK.object;
@@ -131,7 +130,7 @@
 
 <div class="app" in:fade>
   <header class="hdr">
-    <button class="back" onclick={() => goto('/')} aria-label={$t('app.back')}>←</button>
+    <button class="back" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>←</button>
     <h1>📋 {$t('sentenceStrip.title')}</h1>
     <div class="phase-select">
       <label>{$t('sentenceStrip.phase')}:</label>
@@ -200,7 +199,7 @@
               {#if picto.url}
                 <img src={picto.url} alt={picto.word} width="64" height="64" loading="lazy" />
               {/if}
-              <span>{get(locale) === 'sv' ? picto.wordSv : picto.word}</span>
+              <span>{$t(picto.wordKey)}</span>
             </button>
           {/each}
         </div>

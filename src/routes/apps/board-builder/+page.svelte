@@ -9,6 +9,7 @@
   import { get } from 'svelte/store';
 
   // State
+  let toast = $state('');
   let gridSize = $state(4);
   let boardName = $state('');
   let centerTitle = $state('');
@@ -94,7 +95,7 @@
 
   async function save() {
     const board: Board = {
-      name: boardName || 'Untitled',
+      name: boardName || $t('board.untitled'),
       category: 'custom',
       gridSize,
       cells: [...cells],
@@ -104,7 +105,9 @@
       updatedAt: new Date()
     };
     await saveBoard(board);
-    speak($t('board.save'));
+    speak($t('board.saved'));
+    toast = $t('board.saved');
+    setTimeout(() => toast = '', 2500);
     await loadSavedBoards();
   }
 
@@ -119,6 +122,8 @@
     centerTitle = board.centerTitle || '';
     categoryColor = board.categoryColor;
     showMyBoards = false;
+    toast = $t('board.loaded');
+    setTimeout(() => toast = '', 2500);
   }
 
   async function removeSavedBoard(id: number) {
@@ -135,33 +140,59 @@
     printBoard();
   }
 
-  // Templates
+  // Templates — en: for ARASAAC search, key: for i18n display
+  interface TemplateWord { key: string; en: string; }
   const TEMPLATES = [
-    { name: 'Home', titleKey: 'Home', color: '#E67E22', keywords: ['cook', 'wash', 'clean', 'sleep', 'eat', 'drink', 'sit', 'play', 'read', 'shower', 'dress', 'toilet', 'brush teeth', 'watch tv', 'rest', 'help'] },
-    { name: 'School', titleKey: 'School', color: '#3498DB', keywords: ['read', 'write', 'draw', 'sing', 'count', 'play', 'eat', 'drink', 'listen', 'speak', 'work', 'rest', 'gym', 'computer', 'friend', 'teacher'] },
-    { name: 'Food', titleKey: 'Food', color: '#27AE60', keywords: ['water', 'milk', 'juice', 'bread', 'apple', 'banana', 'rice', 'pasta', 'chicken', 'fish', 'egg', 'cheese', 'yogurt', 'cookie', 'ice cream', 'soup'] },
-    { name: 'Emotions', titleKey: 'Emotions', color: '#9B59B6', keywords: ['happy', 'sad', 'angry', 'scared', 'tired', 'hungry', 'thirsty', 'pain', 'love', 'surprise', 'calm', 'excited', 'worried', 'proud', 'shy', 'bored'] },
-    { name: 'Hygiene', titleKey: 'Hygiene', color: '#1ABC9C', keywords: ['shower', 'bath', 'brush teeth', 'wash hands', 'soap', 'towel', 'toilet', 'comb', 'deodorant', 'toothbrush', 'toothpaste', 'shampoo', 'mirror', 'nail', 'tissue', 'clean'] },
+    { titleKey: 'home', color: '#E67E22', keywords: [
+      { key: 'cook', en: 'cook' }, { key: 'wash', en: 'wash' }, { key: 'clean', en: 'clean' }, { key: 'sleep', en: 'sleep' },
+      { key: 'eat', en: 'eat' }, { key: 'drink', en: 'drink' }, { key: 'sit', en: 'sit' }, { key: 'play', en: 'play' },
+      { key: 'read', en: 'read' }, { key: 'shower', en: 'shower' }, { key: 'dress', en: 'dress' }, { key: 'toilet', en: 'toilet' },
+      { key: 'brush_teeth', en: 'brush teeth' }, { key: 'watch_tv', en: 'watch tv' }, { key: 'rest', en: 'rest' }, { key: 'help', en: 'help' },
+    ] },
+    { titleKey: 'school', color: '#3498DB', keywords: [
+      { key: 'read', en: 'read' }, { key: 'write', en: 'write' }, { key: 'draw', en: 'draw' }, { key: 'sing', en: 'sing' },
+      { key: 'count', en: 'count' }, { key: 'play', en: 'play' }, { key: 'eat', en: 'eat' }, { key: 'drink', en: 'drink' },
+      { key: 'listen', en: 'listen' }, { key: 'speak', en: 'speak' }, { key: 'work', en: 'work' }, { key: 'rest', en: 'rest' },
+      { key: 'gym', en: 'gym' }, { key: 'computer', en: 'computer' }, { key: 'friend', en: 'friend' }, { key: 'teacher', en: 'teacher' },
+    ] },
+    { titleKey: 'food', color: '#27AE60', keywords: [
+      { key: 'water', en: 'water' }, { key: 'milk', en: 'milk' }, { key: 'juice', en: 'juice' }, { key: 'bread', en: 'bread' },
+      { key: 'apple', en: 'apple' }, { key: 'banana', en: 'banana' }, { key: 'rice', en: 'rice' }, { key: 'pasta', en: 'pasta' },
+      { key: 'chicken', en: 'chicken' }, { key: 'fish', en: 'fish' }, { key: 'egg', en: 'egg' }, { key: 'cheese', en: 'cheese' },
+      { key: 'yogurt', en: 'yogurt' }, { key: 'cookie', en: 'cookie' }, { key: 'ice_cream', en: 'ice cream' }, { key: 'soup', en: 'soup' },
+    ] },
+    { titleKey: 'emotions', color: '#9B59B6', keywords: [
+      { key: 'happy', en: 'happy' }, { key: 'sad', en: 'sad' }, { key: 'angry', en: 'angry' }, { key: 'scared', en: 'scared' },
+      { key: 'tired', en: 'tired' }, { key: 'hungry', en: 'hungry' }, { key: 'thirsty', en: 'thirsty' }, { key: 'pain', en: 'pain' },
+      { key: 'love', en: 'love' }, { key: 'surprise', en: 'surprise' }, { key: 'calm', en: 'calm' }, { key: 'excited', en: 'excited' },
+      { key: 'worried', en: 'worried' }, { key: 'proud', en: 'proud' }, { key: 'shy', en: 'shy' }, { key: 'bored', en: 'bored' },
+    ] },
+    { titleKey: 'hygiene', color: '#1ABC9C', keywords: [
+      { key: 'shower', en: 'shower' }, { key: 'bath', en: 'bath' }, { key: 'brush_teeth', en: 'brush teeth' }, { key: 'wash_hands', en: 'wash hands' },
+      { key: 'soap', en: 'soap' }, { key: 'towel', en: 'towel' }, { key: 'toilet', en: 'toilet' }, { key: 'comb', en: 'comb' },
+      { key: 'deodorant', en: 'deodorant' }, { key: 'toothbrush', en: 'toothbrush' }, { key: 'toothpaste', en: 'toothpaste' }, { key: 'shampoo', en: 'shampoo' },
+      { key: 'mirror', en: 'mirror' }, { key: 'nail', en: 'nail' }, { key: 'tissue', en: 'tissue' }, { key: 'clean', en: 'clean' },
+    ] },
   ];
 
   async function loadTemplate(template: typeof TEMPLATES[0]) {
     gridSize = 4;
-    boardName = template.name;
-    centerTitle = template.titleKey;
+    boardName = $t('board.template.' + template.titleKey);
+    centerTitle = $t('board.template.' + template.titleKey);
     categoryColor = template.color;
     cells = createEmptyCells(4);
     
-    // Search and fill each cell
-    const lang = get(locale);
+    // Search in English for reliable ARASAAC results, display in current locale
     for (let i = 0; i < Math.min(template.keywords.length, 16); i++) {
-      const results = await searchPictograms(template.keywords[i], lang);
+      const item = template.keywords[i];
+      const results = await searchPictograms(item.en, 'en');
       if (results.length > 0) {
         const bw = get(arasaacBW);
         cells[i] = {
           index: i,
           pictogramId: results[0].id,
           pictogramUrl: bw ? results[0].urlBW : results[0].url,
-          label: results[0].keyword,
+          label: $t(`bb.${item.key}`),
           isEmpty: false
         };
       }
@@ -183,7 +214,7 @@
       
       <div class="field">
         <label for="board-name">{$t('board.board_name')}</label>
-        <input id="board-name" type="text" bind:value={boardName} placeholder="My Board" />
+        <input id="board-name" type="text" bind:value={boardName} placeholder={$t("board.my_board")} />
       </div>
 
       <div class="field">
@@ -270,7 +301,7 @@
           {#each TEMPLATES as tmpl}
             <button class="template-item" onclick={() => loadTemplate(tmpl)}>
               <span class="template-dot" style="background: {tmpl.color}"></span>
-              {tmpl.name}
+              {$t('board.template.' + tmpl.titleKey.toLowerCase())}
             </button>
           {/each}
         </div>
@@ -289,7 +320,7 @@
               <button class="delete-btn" onclick={() => board.id && removeSavedBoard(board.id)}>✕</button>
             </div>
           {:else}
-            <p class="no-results">No saved boards yet</p>
+            <p class="no-results">{$t("board.no_saved")}</p>
           {/each}
         </div>
       {/if}
@@ -344,6 +375,10 @@
     </div>
   </div>
 </div>
+
+{#if toast}
+  <div class="toast" role="status" aria-live="polite">✅ {toast}</div>
+{/if}
 
 <style>
   .board-builder {
@@ -719,5 +754,24 @@
       box-shadow: none;
     }
     .cell-clear { display: none !important; }
+  }
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #27AE60;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    z-index: 1000;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    animation: toast-in 0.3s ease;
+  }
+  @keyframes toast-in {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
   }
 </style>

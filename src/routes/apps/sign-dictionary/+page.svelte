@@ -1,7 +1,9 @@
 <script>
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale } from '$lib/i18n';
+  import { get } from 'svelte/store';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
 
@@ -14,11 +16,11 @@
       icon: '👤',
       color: '#f5c542', // yellow
       words: [
-        { sv: 'mamma', en: 'mom', id: '00188' },
-        { sv: 'pappa', en: 'dad', id: '06906' },
-        { sv: 'kompis', en: 'friend', id: '04714' },
-        { sv: 'jag', en: 'I/me', id: '02553' },
-        { sv: 'du', en: 'you', id: '04804' },
+        { sv: 'mamma', en: 'mom', id: '00188', vf: 'mamma' },
+        { sv: 'pappa', en: 'dad', id: '02557', vf: 'pappa' },
+        { sv: 'kompis', en: 'friend', id: '02531', vf: 'kompis' },
+        { sv: 'jag', en: 'I/me', id: '02798', vf: 'jag' },
+        { sv: 'du', en: 'you', id: '02817', vf: 'du' },
       ]
     },
     {
@@ -26,12 +28,12 @@
       icon: '🏃',
       color: '#4caf50', // green
       words: [
-        { sv: 'äta', en: 'eat', id: '16263' },
-        { sv: 'dricka', en: 'drink', id: '01377' },
-        { sv: 'sova', en: 'sleep', id: '00049' },
-        { sv: 'leka', en: 'play', id: '01092' },
-        { sv: 'hjälp', en: 'help', id: '19924' },
-        { sv: 'stopp', en: 'stop', id: '11109' },
+        { sv: 'äta', en: 'eat', id: '01267', vf: 'ata' },
+        { sv: 'dricka', en: 'drink', id: '01377', vf: 'dricka' },
+        { sv: 'sova', en: 'sleep', id: '00049', vf: 'sova' },
+        { sv: 'leka', en: 'play', id: '01092', vf: 'leka' },
+        { sv: 'hjälp', en: 'help', id: '19924', vf: 'hjalp' },
+        { sv: 'stopp', en: 'stop', id: '11109', vf: 'stopp' },
       ]
     },
     {
@@ -39,11 +41,11 @@
       icon: '😊',
       color: '#2196f3', // blue
       words: [
-        { sv: 'glad', en: 'happy', id: '00165' },
-        { sv: 'ledsen', en: 'sad', id: '00185' },
-        { sv: 'arg', en: 'angry', id: '01670' },
-        { sv: 'rädd', en: 'scared', id: '08500' },
-        { sv: 'trött', en: 'tired', id: '00110' },
+        { sv: 'glad', en: 'happy', id: '00165', vf: 'glad' },
+        { sv: 'ledsen', en: 'sad', id: '00185', vf: 'ledsen' },
+        { sv: 'arg', en: 'angry', id: '01670', vf: 'arg' },
+        { sv: 'rädd', en: 'scared', id: '03447', vf: 'radd' },
+        { sv: 'trött', en: 'tired', id: '00966', vf: 'trott' },
       ]
     },
     {
@@ -51,14 +53,14 @@
       icon: '📦',
       color: '#ff9800', // orange
       words: [
-        { sv: 'vatten', en: 'water', id: '00132' },
-        { sv: 'mjölk', en: 'milk', id: '08962' },
-        { sv: 'bröd', en: 'bread', id: '00434' },
-        { sv: 'bil', en: 'car', id: '02158' },
-        { sv: 'hus', en: 'house', id: '00696' },
-        { sv: 'katt', en: 'cat', id: '00344' },
-        { sv: 'sko', en: 'shoe', id: '02224' },
-        { sv: 'jacka', en: 'jacket', id: '00544' },
+        { sv: 'vatten', en: 'water', id: '00132', vf: 'vatten' },
+        { sv: 'mjölk', en: 'milk', id: '08962', vf: 'lattmjolk' },
+        { sv: 'bröd', en: 'bread', id: '00434', vf: 'brod' },
+        { sv: 'bil', en: 'car', id: '02158', vf: 'bil' },
+        { sv: 'hus', en: 'house', id: '00696', vf: 'hus' },
+        { sv: 'katt', en: 'cat', id: '00344', vf: 'katt' },
+        { sv: 'sko', en: 'shoe', id: '02224', vf: 'sko' },
+        { sv: 'jacka', en: 'jacket', id: '00544', vf: 'jacka' },
       ]
     },
     {
@@ -92,9 +94,9 @@
   let searching = $state(false);
   let videoError = $state(false);
 
-  function getVideoUrl(id) {
+  function getVideoUrl(id, vf) {
     const prefix = id.substring(0, 2);
-    return `${BASE}/movies/${prefix}/video-${id}-tecken.mp4`;
+    return `${BASE}/movies/${prefix}/${vf}-${id}-tecken.mp4`;
   }
 
   function getPhotoUrl(id, word) {
@@ -107,11 +109,16 @@
     view = 'words';
   }
 
+  function wordText(word) {
+    const lang = get(locale);
+    return lang === 'sv' ? word.sv : word.en;
+  }
+
   function selectWord(word) {
     selectedWord = word;
     videoError = false;
     view = 'detail';
-    speak(word.sv);
+    speak(wordText(word));
   }
 
   function back() {
@@ -121,7 +128,7 @@
       view = 'categories';
       selectedCategory = null;
     } else {
-      goto('/');
+      goto(base + '/');
     }
   }
 
@@ -200,7 +207,7 @@
         <div class="word-grid">
           {#each searchResults as word}
             <button class="word-card" onclick={() => selectWord(word)}>
-              <span class="word-text">{word.sv}</span>
+              <span class="word-text">{wordText(word)}</span>
               <span class="word-action">🤟</span>
             </button>
           {/each}
@@ -216,7 +223,7 @@
             style="--cat-color: {selectedCategory.color}"
             onclick={() => selectWord(word)}
           >
-            <span class="word-text">{word.sv}</span>
+            <span class="word-text">{wordText(word)}</span>
             <span class="word-action">🤟</span>
           </button>
         {/each}
@@ -224,7 +231,7 @@
 
     {:else if view === 'detail'}
       <div class="detail-view">
-        <h2 class="detail-word">{selectedWord.sv}</h2>
+        <h2 class="detail-word">{wordText(selectedWord)}</h2>
 
         <div class="video-container">
           {#if !videoError}
@@ -234,7 +241,7 @@
               autoplay
               loop
               playsinline
-              src={getVideoUrl(selectedWord.id)}
+              src={getVideoUrl(selectedWord.id, selectedWord.vf || selectedWord.sv)}
               onerror={() => videoError = true}
               class="sign-video"
             >

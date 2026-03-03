@@ -1,33 +1,51 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms, getPictogramUrl } from '$lib/arasaac';
-  import { translateKeywords } from '$lib/arasaac/sv-lookup';
-  import { locale } from '$lib/i18n';
-  import { get } from 'svelte/store';
 
+  interface WordKey { key: string; en: string; }
   interface ThemeBoard {
     id: string;
     label: string;
     emoji: string;
     color: string;
-    words: string[];  // English keys for ARASAAC lookup
+    words: WordKey[];
   }
 
   const THEMES: ThemeBoard[] = [
-    { id: 'school', label: 'situation.school', emoji: '🏫', color: '#3498DB', words: ['teacher', 'book', 'pencil', 'desk', 'friend', 'play', 'read', 'write', 'listen', 'draw', 'count', 'sing'] },
-    { id: 'home', label: 'situation.home', emoji: '🏠', color: '#27AE60', words: ['bed', 'table', 'chair', 'door', 'window', 'television', 'kitchen', 'bathroom', 'sleep', 'eat', 'clean', 'cook'] },
-    { id: 'food', label: 'situation.food', emoji: '🍎', color: '#E67E22', words: ['water', 'milk', 'bread', 'apple', 'banana', 'rice', 'chicken', 'soup', 'hungry', 'thirsty', 'plate', 'spoon'] },
-    { id: 'hygiene', label: 'situation.hygiene', emoji: '🚿', color: '#9B59B6', words: ['soap', 'toothbrush', 'towel', 'shower', 'toilet', 'wash hands', 'comb', 'mirror', 'clean', 'dry', 'shampoo', 'tissue'] },
-    { id: 'doctor', label: 'situation.doctor', emoji: '🏥', color: '#E74C3C', words: ['doctor', 'medicine', 'pain', 'stomach', 'head', 'arm', 'leg', 'thermometer', 'bandage', 'wait', 'sick', 'better'] },
-    { id: 'playground', label: 'situation.playground', emoji: '🛝', color: '#F1C40F', words: ['swing', 'slide', 'ball', 'run', 'jump', 'climb', 'sand', 'friend', 'turn', 'share', 'push', 'catch'] },
-    { id: 'transport', label: 'situation.transport', emoji: '🚌', color: '#1ABC9C', words: ['car', 'bus', 'bicycle', 'train', 'walk', 'road', 'stop', 'go', 'seat belt', 'ticket', 'fast', 'slow'] },
-    { id: 'feelings', label: 'situation.feelings', emoji: '😊', color: '#E91E63', words: ['happy', 'sad', 'angry', 'scared', 'tired', 'excited', 'calm', 'worried', 'surprised', 'proud', 'bored', 'shy'] }
+    { id: 'school', label: 'situation.school', emoji: '🏫', color: '#3498DB', words: [
+      { key: 'teacher', en: 'teacher' }, { key: 'book', en: 'book' }, { key: 'pencil', en: 'pencil' }, { key: 'desk', en: 'desk' }, { key: 'friend', en: 'friend' }, { key: 'play', en: 'play' }, { key: 'read', en: 'read' }, { key: 'write', en: 'write' }, { key: 'listen', en: 'listen' }, { key: 'draw', en: 'draw' }, { key: 'count', en: 'count' }, { key: 'sing', en: 'sing' }
+    ]},
+    { id: 'home', label: 'situation.home', emoji: '🏠', color: '#27AE60', words: [
+      { key: 'bed', en: 'bed' }, { key: 'table', en: 'table' }, { key: 'chair', en: 'chair' }, { key: 'door', en: 'door' }, { key: 'window', en: 'window' }, { key: 'television', en: 'television' }, { key: 'kitchen', en: 'kitchen' }, { key: 'bathroom', en: 'bathroom' }, { key: 'sleep', en: 'sleep' }, { key: 'eat', en: 'eat' }, { key: 'clean', en: 'clean' }, { key: 'cook', en: 'cook' }
+    ]},
+    { id: 'food', label: 'situation.food', emoji: '🍎', color: '#E67E22', words: [
+      { key: 'water', en: 'water' }, { key: 'milk', en: 'milk' }, { key: 'bread', en: 'bread' }, { key: 'apple', en: 'apple' }, { key: 'banana', en: 'banana' }, { key: 'rice', en: 'rice' }, { key: 'chicken', en: 'chicken' }, { key: 'soup', en: 'soup' }, { key: 'hungry', en: 'hungry' }, { key: 'thirsty', en: 'thirsty' }, { key: 'plate', en: 'plate' }, { key: 'spoon', en: 'spoon' }
+    ]},
+    { id: 'hygiene', label: 'situation.hygiene', emoji: '🚿', color: '#9B59B6', words: [
+      { key: 'soap', en: 'soap' }, { key: 'toothbrush', en: 'toothbrush' }, { key: 'towel', en: 'towel' }, { key: 'shower', en: 'shower' }, { key: 'toilet', en: 'toilet' }, { key: 'wash_hands', en: 'wash hands' }, { key: 'comb', en: 'comb' }, { key: 'mirror', en: 'mirror' }, { key: 'clean', en: 'clean' }, { key: 'dry', en: 'dry' }, { key: 'shampoo', en: 'shampoo' }, { key: 'tissue', en: 'tissue' }
+    ]},
+    { id: 'doctor', label: 'situation.doctor', emoji: '🏥', color: '#E74C3C', words: [
+      { key: 'doctor', en: 'doctor' }, { key: 'medicine', en: 'medicine' }, { key: 'pain', en: 'pain' }, { key: 'stomach', en: 'stomach' }, { key: 'head', en: 'head' }, { key: 'arm', en: 'arm' }, { key: 'leg', en: 'leg' }, { key: 'thermometer', en: 'thermometer' }, { key: 'bandage', en: 'bandage' }, { key: 'wait', en: 'wait' }, { key: 'sick', en: 'sick' }, { key: 'better', en: 'better' }
+    ]},
+    { id: 'playground', label: 'situation.playground', emoji: '🛝', color: '#F1C40F', words: [
+      { key: 'swing', en: 'swing' }, { key: 'slide', en: 'slide' }, { key: 'ball', en: 'ball' }, { key: 'run', en: 'run' }, { key: 'jump', en: 'jump' }, { key: 'climb', en: 'climb' }, { key: 'sand', en: 'sand' }, { key: 'friend', en: 'friend' }, { key: 'turn', en: 'turn' }, { key: 'share', en: 'share' }, { key: 'push', en: 'push' }, { key: 'catch', en: 'catch' }
+    ]},
+    { id: 'transport', label: 'situation.transport', emoji: '🚌', color: '#1ABC9C', words: [
+      { key: 'car', en: 'car' }, { key: 'bus', en: 'bus' }, { key: 'bicycle', en: 'bicycle' }, { key: 'train', en: 'train' }, { key: 'walk', en: 'walk' }, { key: 'road', en: 'road' }, { key: 'stop', en: 'stop' }, { key: 'go', en: 'go' }, { key: 'seat_belt', en: 'seat belt' }, { key: 'ticket', en: 'ticket' }, { key: 'fast', en: 'fast' }, { key: 'slow', en: 'slow' }
+    ]},
+    { id: 'feelings', label: 'situation.feelings', emoji: '😊', color: '#E91E63', words: [
+      { key: 'happy', en: 'happy' }, { key: 'sad', en: 'sad' }, { key: 'angry', en: 'angry' }, { key: 'scared', en: 'scared' }, { key: 'tired', en: 'tired' }, { key: 'excited', en: 'excited' }, { key: 'calm', en: 'calm' }, { key: 'worried', en: 'worried' }, { key: 'surprised', en: 'surprised' }, { key: 'proud', en: 'proud' }, { key: 'bored', en: 'bored' }, { key: 'shy', en: 'shy' }
+    ]}
   ];
 
-  const CORE_WORDS = ['yes', 'no', 'more', 'stop', 'help', 'I want'];
+  const CORE_KEYS: WordKey[] = [
+    { key: 'yes', en: 'yes' }, { key: 'no', en: 'no' }, { key: 'more', en: 'more' },
+    { key: 'stop', en: 'stop' }, { key: 'help', en: 'help' }, { key: 'i_want', en: 'I want' }
+  ];
 
   let activeTheme = $state<ThemeBoard | null>(null);
   let boardPictograms = $state<{ word: string; id: number; url: string }[]>([]);
@@ -38,25 +56,20 @@
     activeTheme = theme;
     loading = true;
     speak($t(theme.label));
-    const lang = get(locale);
-
-    // Get translated labels for display
-    const translated = lang === 'sv' ? await translateKeywords(theme.words) : null;
 
     const results = await Promise.all(
-      theme.words.map(async (w, i) => {
-        const res = await searchPictograms(w, 'en'); // always search in English for reliability
-        const displayWord = translated ? translated[i].sv : w;
+      theme.words.map(async (item) => {
+        const res = await searchPictograms(item.en, 'en');
+        const displayWord = $t(`sit.${item.key}`);
         return res[0] ? { word: displayWord, id: res[0].id, url: res[0].url } : { word: displayWord, id: 0, url: '' };
       })
     );
     boardPictograms = results;
     if (corePictograms.length === 0) {
-      const coreTranslated = lang === 'sv' ? await translateKeywords(CORE_WORDS) : null;
       corePictograms = await Promise.all(
-        CORE_WORDS.map(async (w, i) => {
-          const res = await searchPictograms(w, 'en');
-          const displayWord = coreTranslated ? coreTranslated[i].sv : w;
+        CORE_KEYS.map(async (item) => {
+          const res = await searchPictograms(item.en, 'en');
+          const displayWord = $t(`sit.${item.key}`);
           return res[0] ? { word: displayWord, id: res[0].id, url: res[0].url } : { word: displayWord, id: 0, url: '' };
         })
       );
@@ -73,7 +86,7 @@
 
 <div class="situation-page">
   <header class="app-header">
-    <button class="back-btn" onclick={() => activeTheme ? (activeTheme = null) : goto('/')} aria-label={$t('app.back')}>
+    <button class="back-btn" onclick={() => activeTheme ? (activeTheme = null) : goto(base + '/')} aria-label={$t('app.back')}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <h1>{activeTheme ? $t(activeTheme.label) : $t('situation.title')}</h1>

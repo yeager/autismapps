@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
@@ -11,66 +12,66 @@
 
   interface StoryScene {
     icon: string;
-    text: string;
+    textKey: string;
     pictogramHint: string;
   }
 
   interface Story {
     id: string;
-    title: string;
+    titleKey: string;
     icon: string;
     scenes: StoryScene[];
   }
 
   const STORIES: Story[] = [
     {
-      id: 'morning', title: 'God morgon!', icon: '🌅',
+      id: 'morning', titleKey: 'story.morning.title', icon: '🌅',
       scenes: [
-        { icon: '😴', text: 'Barnet sover i sängen.', pictogramHint: 'sleep' },
-        { icon: '⏰', text: 'Klockan ringer. Dags att vakna!', pictogramHint: 'alarm' },
-        { icon: '🪥', text: 'Barnet borstar tänderna.', pictogramHint: 'brush teeth' },
-        { icon: '🥣', text: 'Nu äter barnet frukost.', pictogramHint: 'eat breakfast' },
-        { icon: '😊', text: 'Barnet är redo för dagen!', pictogramHint: 'happy' },
+        { icon: '😴', textKey: 'story.morning.scene1', pictogramHint: 'sleep' },
+        { icon: '⏰', textKey: 'story.morning.scene2', pictogramHint: 'alarm' },
+        { icon: '🪥', textKey: 'story.morning.scene3', pictogramHint: 'brush teeth' },
+        { icon: '🥣', textKey: 'story.morning.scene4', pictogramHint: 'eat breakfast' },
+        { icon: '😊', textKey: 'story.morning.scene5', pictogramHint: 'happy' },
       ]
     },
     {
-      id: 'park', title: 'I parken', icon: '🏞️',
+      id: 'park', titleKey: 'story.park.title', icon: '🏞️',
       scenes: [
-        { icon: '🚶', text: 'Barnet går till parken.', pictogramHint: 'walk' },
-        { icon: '🐕', text: 'En hund springer förbi.', pictogramHint: 'dog' },
-        { icon: '🎈', text: 'Barnet ser en ballong.', pictogramHint: 'balloon' },
-        { icon: '🍦', text: 'Mamma köper glass.', pictogramHint: 'ice cream' },
-        { icon: '🏠', text: 'De går hem igen.', pictogramHint: 'home' },
+        { icon: '🚶', textKey: 'story.park.scene1', pictogramHint: 'walk' },
+        { icon: '🐕', textKey: 'story.park.scene2', pictogramHint: 'dog' },
+        { icon: '🎈', textKey: 'story.park.scene3', pictogramHint: 'balloon' },
+        { icon: '🍦', textKey: 'story.park.scene4', pictogramHint: 'ice cream' },
+        { icon: '🏠', textKey: 'story.park.scene5', pictogramHint: 'home' },
       ]
     },
     {
-      id: 'rain', title: 'Det regnar!', icon: '🌧️',
+      id: 'rain', titleKey: 'story.rain.title', icon: '🌧️',
       scenes: [
-        { icon: '☀️', text: 'Det är soligt ute.', pictogramHint: 'sun' },
-        { icon: '☁️', text: 'Moln kommer på himlen.', pictogramHint: 'clouds' },
-        { icon: '🌧️', text: 'Det börjar regna!', pictogramHint: 'rain' },
-        { icon: '☂️', text: 'Barnet tar paraplyet.', pictogramHint: 'umbrella' },
-        { icon: '🌈', text: 'Titta! En regnbåge!', pictogramHint: 'rainbow' },
+        { icon: '☀️', textKey: 'story.rain.scene1', pictogramHint: 'sun' },
+        { icon: '☁️', textKey: 'story.rain.scene2', pictogramHint: 'clouds' },
+        { icon: '🌧️', textKey: 'story.rain.scene3', pictogramHint: 'rain' },
+        { icon: '☂️', textKey: 'story.rain.scene4', pictogramHint: 'umbrella' },
+        { icon: '🌈', textKey: 'story.rain.scene5', pictogramHint: 'rainbow' },
       ]
     },
     {
-      id: 'birthday', title: 'Kalas!', icon: '🎂',
+      id: 'birthday', titleKey: 'story.birthday.title', icon: '🎂',
       scenes: [
-        { icon: '🎈', text: 'Idag är det kalas!', pictogramHint: 'party' },
-        { icon: '🎁', text: 'Barnet får presenter.', pictogramHint: 'gifts' },
-        { icon: '🎂', text: 'Tårtan har ljus.', pictogramHint: 'cake' },
-        { icon: '🕯️', text: 'Barnet blåser ut ljusen.', pictogramHint: 'candles' },
-        { icon: '🥳', text: 'Alla sjunger. Grattis!', pictogramHint: 'celebrate' },
+        { icon: '🎈', textKey: 'story.birthday.scene1', pictogramHint: 'party' },
+        { icon: '🎁', textKey: 'story.birthday.scene2', pictogramHint: 'gifts' },
+        { icon: '🎂', textKey: 'story.birthday.scene3', pictogramHint: 'cake' },
+        { icon: '🕯️', textKey: 'story.birthday.scene4', pictogramHint: 'candles' },
+        { icon: '🥳', textKey: 'story.birthday.scene5', pictogramHint: 'celebrate' },
       ]
     },
     {
-      id: 'pet', title: 'Katten', icon: '🐱',
+      id: 'pet', titleKey: 'story.pet.title', icon: '🐱',
       scenes: [
-        { icon: '🐱', text: 'Katten sitter i fönstret.', pictogramHint: 'cat' },
-        { icon: '🐦', text: 'Den ser en fågel ute.', pictogramHint: 'bird' },
-        { icon: '😺', text: 'Katten vill jaga!', pictogramHint: 'chase' },
-        { icon: '🚪', text: 'Men dörren är stängd.', pictogramHint: 'door' },
-        { icon: '😸', text: 'Katten får mat istället.', pictogramHint: 'food' },
+        { icon: '🐱', textKey: 'story.pet.scene1', pictogramHint: 'cat' },
+        { icon: '🐦', textKey: 'story.pet.scene2', pictogramHint: 'bird' },
+        { icon: '😺', textKey: 'story.pet.scene3', pictogramHint: 'chase' },
+        { icon: '🚪', textKey: 'story.pet.scene4', pictogramHint: 'door' },
+        { icon: '😸', textKey: 'story.pet.scene5', pictogramHint: 'food' },
       ]
     },
   ];
@@ -86,7 +87,7 @@
   async function playScene(scene: StoryScene) {
     if (isPlaying) return;
     isPlaying = true;
-    await speak(scene.text, { rate: 0.7 });
+    await speak($t(scene.textKey), { rate: 0.7 });
     isPlaying = false;
   }
 
@@ -94,7 +95,7 @@
     if (!selectedStory || isPlaying) return;
     isPlaying = true;
     for (const scene of selectedStory.scenes) {
-      await speak(scene.text, { rate: 0.7 });
+      await speak($t(scene.textKey), { rate: 0.7 });
       await new Promise(r => setTimeout(r, 800));
     }
     isPlaying = false;
@@ -127,7 +128,7 @@
     } else if (selectedStory) {
       selectedStory = null; currentPhase = 'choose';
     } else {
-      goto('/');
+      goto(base + '/');
     }
   }
 

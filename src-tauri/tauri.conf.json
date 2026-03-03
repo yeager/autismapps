@@ -1,13 +1,13 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "Autism Apps",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "identifier": "se.danielnylander.autismapps",
   "build": {
     "frontendDist": "../build",
     "devUrl": "http://localhost:5173",
     "beforeDevCommand": "npm run dev",
-    "beforeBuildCommand": "npm run build"
+    "beforeBuildCommand": "BASE_PATH= npm run build"
   },
   "app": {
     "windows": [
@@ -45,18 +45,13 @@
         ]
       }
     },
-    "externalBin": [
-      "binaries/piper"
-    ],
     "resources": {
       "resources/voices/*": "voices/"
     }
   },
   "plugins": {
     "shell": {
-      "scope": {
-        "sidecar": true
-      }
+      "open": true
     }
   }
 }

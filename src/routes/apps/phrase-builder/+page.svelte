@@ -1,21 +1,20 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
-  import { translateKeywords } from '$lib/arasaac/sv-lookup';
-  import { locale } from '$lib/i18n';
-  import { get } from 'svelte/store';
 
   interface PictoWord { word: string; url: string; id: number; }
 
   // Fitzgerald Key colors
   const COLORS = { subject: '#F1C40F', verb: '#27AE60', object: '#E67E22', desc: '#3498DB' };
 
-  const SUBJECTS_EN = ['I', 'you', 'he', 'she', 'we', 'they', 'mom', 'dad', 'teacher', 'friend'];
-  const VERBS_EN = ['want', 'eat', 'drink', 'go', 'play', 'read', 'like', 'see', 'hear', 'give', 'make', 'have'];
-  const OBJECTS_EN = ['water', 'food', 'ball', 'book', 'car', 'apple', 'milk', 'cookie', 'home', 'school', 'music', 'puzzle'];
+  // English keys for ARASAAC pictogram search + i18n keys for display labels
+  const SUBJECT_KEYS = ['I', 'you', 'he', 'she', 'we', 'they', 'mom', 'dad', 'teacher', 'friend'];
+  const VERB_KEYS = ['want', 'eat', 'drink', 'go', 'play', 'read', 'like', 'see', 'hear', 'give', 'make', 'have'];
+  const OBJECT_KEYS = ['water', 'food', 'ball', 'book', 'car', 'apple', 'milk', 'cookie', 'home', 'school', 'music', 'puzzle'];
 
   let subjects = $state<PictoWord[]>([]);
   let verbs = $state<PictoWord[]>([]);
@@ -35,18 +34,16 @@
 
   async function loadAll() {
     loading = true;
-    const lang = get(locale);
-    const load = async (enWords: string[]) => {
-      const translated = lang === 'sv' ? await translateKeywords(enWords) : null;
+    const load = async (keys: string[]) => {
       return Promise.all(
-        enWords.map(async (w, i) => {
-          const res = await searchPictograms(w, 'en');
-          const displayWord = translated ? translated[i].sv : w;
+        keys.map(async (key) => {
+          const res = await searchPictograms(key, 'en');
+          const displayWord = $t(`phrase.word.${key}`);
           return { word: displayWord, url: res[0]?.url || '', id: res[0]?.id || 0 };
         })
       );
     };
-    [subjects, verbs, objects] = await Promise.all([load(SUBJECTS_EN), load(VERBS_EN), load(OBJECTS_EN)]);
+    [subjects, verbs, objects] = await Promise.all([load(SUBJECT_KEYS), load(VERB_KEYS), load(OBJECT_KEYS)]);
     loading = false;
   }
 
@@ -73,7 +70,7 @@
 
 <div class="phrase-page">
   <header class="app-header">
-    <button class="back-btn" onclick={() => goto('/')} aria-label={$t('app.back')}>
+    <button class="back-btn" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <h1>{$t('phrase.title')}</h1>

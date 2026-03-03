@@ -3,6 +3,156 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. about.apps
+msgctxt "about.apps"
+msgid "apps"
+msgstr ""
+
+#. about.audience.children
+msgctxt "about.audience.children"
+msgid "Children with NPF (autism, ADHD), intellectual disabilities, DLD, or verbal dyspraxia"
+msgstr ""
+
+#. about.audience.parents
+msgctxt "about.audience.parents"
+msgid "Parents and families"
+msgstr ""
+
+#. about.audience.teachers
+msgctxt "about.audience.teachers"
+msgid "Special education teachers and school staff"
+msgstr ""
+
+#. about.audience.therapists
+msgctxt "about.audience.therapists"
+msgid "Speech therapists and habilitation teams"
+msgstr ""
+
+#. about.credit.arasaac
+msgctxt "about.credit.arasaac"
+msgid "Pictograms (CC BY-NC-SA 3.0)"
+msgstr ""
+
+#. about.credit.piper
+msgctxt "about.credit.piper"
+msgid "Offline text-to-speech engine"
+msgstr ""
+
+#. about.credit.signs
+msgctxt "about.credit.signs"
+msgid "Swedish Sign Language (CC BY-NC-SA 4.0, Stockholm University)"
+msgstr ""
+
+#. about.credits
+msgctxt "about.credits"
+msgid "Credits"
+msgstr ""
+
+#. about.description
+msgctxt "about.description"
+msgid "A free collection of evidence-based apps designed for children with neurodevelopmental conditions (NPF/NDD), intellectual disabilities (IF/ID), and speech-language difficulties. All apps work offline, are accessible, and use proven methods like AAC, TEACCH, PECS and LAMP."
+msgstr ""
+
+#. about.developer
+msgctxt "about.developer"
+msgid "Developer"
+msgstr ""
+
+#. about.feat.a11y
+msgctxt "about.feat.a11y"
+msgid "Accessible: large touch targets, high contrast"
+msgstr ""
+
+#. about.feat.free
+msgctxt "about.feat.free"
+msgid "Free and open source forever"
+msgstr ""
+
+#. about.feat.i18n
+msgctxt "about.feat.i18n"
+msgid "Swedish and English (more languages coming via Transifex)"
+msgstr ""
+
+#. about.feat.privacy
+msgctxt "about.feat.privacy"
+msgid "No tracking, no ads, no data collection"
+msgstr ""
+
+#. about.feat.pwa
+msgctxt "about.feat.pwa"
+msgid "Works offline — install on any device"
+msgstr ""
+
+#. about.feat.tts
+msgctxt "about.feat.tts"
+msgid "Text-to-speech on all interactive elements"
+msgstr ""
+
+#. about.features
+msgctxt "about.features"
+msgid "Features"
+msgstr ""
+
+#. about.forWhom
+msgctxt "about.forWhom"
+msgid "For whom?"
+msgstr ""
+
+#. about.free
+msgctxt "about.free"
+msgid "free"
+msgstr ""
+
+#. about.languages
+msgctxt "about.languages"
+msgid "languages"
+msgstr ""
+
+#. about.madeIn
+msgctxt "about.madeIn"
+msgid "Developed in Sweden"
+msgstr ""
+
+#. about.method.aac
+msgctxt "about.method.aac"
+msgid "Augmentative and Alternative Communication"
+msgstr ""
+
+#. about.method.lamp
+msgctxt "about.method.lamp"
+msgid "Language Acquisition through Motor Planning"
+msgstr ""
+
+#. about.method.pecs
+msgctxt "about.method.pecs"
+msgid "Picture Exchange Communication System"
+msgstr ""
+
+#. about.method.teacch
+msgctxt "about.method.teacch"
+msgid "Structured teaching and visual support"
+msgstr ""
+
+#. about.methods
+msgctxt "about.methods"
+msgid "Methods"
+msgstr ""
+
+#. about.tagline
+msgctxt "about.tagline"
+msgid "Free apps for children with neurodevelopmental conditions, language disorders and intellectual disabilities"
+msgstr ""
+
+#. about.title
+msgctxt "about.title"
+msgid "About"
+msgstr ""
+
+#. about.whatIs
+msgctxt "about.whatIs"
+msgid "What is Autism Apps?"
+msgstr ""
+
 #. angerManager.doingGreat
 msgctxt "angerManager.doingGreat"
 msgid "You are doing great!"
@@ -163,6 +313,11 @@ msgctxt "app.category.play"
 msgid "Memory & Play"
 msgstr ""
 
+#. app.category.speech
+msgctxt "app.category.speech"
+msgid "Speech & Dyspraxia"
+msgstr ""
+
 #. app.category.time
 msgctxt "app.category.time"
 msgid "Time & Planning"
@@ -206,6 +361,16 @@ msgstr ""
 #. app.coming_soon
 msgctxt "app.coming_soon"
 msgid "Coming Soon"
+msgstr ""
+
+#. app.comm_book
+msgctxt "app.comm_book"
+msgid "Communication Book"
+msgstr ""
+
+#. app.comm_book.desc
+msgctxt "app.comm_book.desc"
+msgid "Digital communication book with tabs, photos and pictograms"
 msgstr ""
 
 #. app.conversation_aid
@@ -328,6 +493,16 @@ msgctxt "app.money_check.desc"
 msgid "Learn about money and making change"
 msgstr ""
 
+#. app.mouth_gym
+msgctxt "app.mouth_gym"
+msgid "Mouth Gym"
+msgstr ""
+
+#. app.mouth_gym.desc
+msgctxt "app.mouth_gym.desc"
+msgid "Animated visual guides for tongue, lips and jaw — based on PROMPT therapy"
+msgstr ""
+
 #. app.my_schedule
 msgctxt "app.my_schedule"
 msgid "My Schedule"
@@ -336,6 +511,16 @@ msgstr ""
 #. app.my_schedule.desc
 msgctxt "app.my_schedule.desc"
 msgid "Create your own visual schedule"
+msgstr ""
+
+#. app.oral_motor
+msgctxt "app.oral_motor"
+msgid "Oral Motor"
+msgstr ""
+
+#. app.oral_motor.desc
+msgctxt "app.oral_motor.desc"
+msgid "Practice oral motor movements for speech — tongue, lips, jaw and breathing"
 msgstr ""
 
 #. app.pecs_board
@@ -428,6 +613,16 @@ msgctxt "app.routine_buddy.desc"
 msgid "Step-by-step daily routines"
 msgstr ""
 
+#. app.sagostunden
+msgctxt "app.sagostunden"
+msgid "Story Time"
+msgstr ""
+
+#. app.sagostunden.desc
+msgctxt "app.sagostunden.desc"
+msgid "Create fun stories by choosing words and pictures"
+msgstr ""
+
 #. app.school_day
 msgctxt "app.school_day"
 msgid "School Day"
@@ -451,6 +646,16 @@ msgstr ""
 #. app.sentence_builder.desc
 msgctxt "app.sentence_builder.desc"
 msgid "Build sentences with color-coded words"
+msgstr ""
+
+#. app.sentence_strip
+msgctxt "app.sentence_strip"
+msgid "Sentence Strip"
+msgstr ""
+
+#. app.sentence_strip.desc
+msgctxt "app.sentence_strip.desc"
+msgid "Build sentences with PECS sentence strips (Phase IV-VI)"
 msgstr ""
 
 #. app.settings
@@ -488,6 +693,16 @@ msgctxt "app.social_stories.desc"
 msgid "Visual stories for everyday situations"
 msgstr ""
 
+#. app.sound_chain
+msgctxt "app.sound_chain"
+msgid "Sound Chain"
+msgstr ""
+
+#. app.sound_chain.desc
+msgctxt "app.sound_chain.desc"
+msgid "Chain sounds together into syllables and words — visual chain links"
+msgstr ""
+
 #. app.sound_library
 msgctxt "app.sound_library"
 msgid "Sound Library"
@@ -496,6 +711,36 @@ msgstr ""
 #. app.sound_library.desc
 msgctxt "app.sound_library.desc"
 msgid "Explore fun sounds by category"
+msgstr ""
+
+#. app.sound_lottery
+msgctxt "app.sound_lottery"
+msgid "Sound Lottery"
+msgstr ""
+
+#. app.sound_lottery.desc
+msgctxt "app.sound_lottery.desc"
+msgid "Randomized phoneme practice — spin the wheel and practice sounds in isolation → syllable → word → sentence"
+msgstr ""
+
+#. app.speech_practice
+msgctxt "app.speech_practice"
+msgid "Speech Practice"
+msgstr ""
+
+#. app.speech_practice.desc
+msgctxt "app.speech_practice.desc"
+msgid "Structured speech training with the DTTC method — listen, imitate, practice"
+msgstr ""
+
+#. app.speech_rhythm
+msgctxt "app.speech_rhythm"
+msgid "Speech Rhythm"
+msgstr ""
+
+#. app.speech_rhythm.desc
+msgctxt "app.speech_rhythm.desc"
+msgid "Prosody and rhythm training for CAS — tap along, stress patterns and intonation"
 msgstr ""
 
 #. app.step_guide
@@ -508,9 +753,39 @@ msgctxt "app.step_guide.desc"
 msgid "Break tasks into clear visual steps"
 msgstr ""
 
+#. app.story_workshop
+msgctxt "app.story_workshop"
+msgid "Story Workshop"
+msgstr ""
+
+#. app.story_workshop.desc
+msgctxt "app.story_workshop.desc"
+msgid "Narrative speech practice — build simple stories with picture sequences and practice telling them"
+msgstr ""
+
 #. app.subtitle
 msgctxt "app.subtitle"
 msgid "Communication & Learning Tools"
+msgstr ""
+
+#. app.syllable_jump
+msgctxt "app.syllable_jump"
+msgid "Syllable Jump"
+msgstr ""
+
+#. app.syllable_jump.desc
+msgctxt "app.syllable_jump.desc"
+msgid "Jump through syllables — clap the rhythm and build words"
+msgstr ""
+
+#. app.symbol_text
+msgctxt "app.symbol_text"
+msgid "Symbol Text"
+msgstr ""
+
+#. app.symbol_text.desc
+msgctxt "app.symbol_text.desc"
+msgid "Type text and see pictograms above each word"
 msgstr ""
 
 #. app.talk_board
@@ -531,6 +806,16 @@ msgstr ""
 #. app.talking_mat.desc
 msgctxt "app.talking_mat.desc"
 msgid "Express opinions by sorting pictures into zones"
+msgstr ""
+
+#. app.the_mimic
+msgctxt "app.the_mimic"
+msgid "The Mimic"
+msgstr ""
+
+#. app.the_mimic.desc
+msgctxt "app.the_mimic.desc"
+msgid "Listen and repeat with increasing complexity — sounds → words → phrases → sentences. Core DTTC technique"
 msgstr ""
 
 #. app.time_tracker
@@ -583,6 +868,371 @@ msgctxt "app.word_builder.desc"
 msgid "Build words letter by letter"
 msgstr ""
 
+#. app.word_parade
+msgctxt "app.word_parade"
+msgid "Word Parade"
+msgstr ""
+
+#. app.word_parade.desc
+msgctxt "app.word_parade.desc"
+msgid "Minimal pairs — words that differ by one sound. Critical phonological training"
+msgstr ""
+
+#. bb.angry
+msgctxt "bb.angry"
+msgid "angry"
+msgstr ""
+
+#. bb.apple
+msgctxt "bb.apple"
+msgid "apple"
+msgstr ""
+
+#. bb.banana
+msgctxt "bb.banana"
+msgid "banana"
+msgstr ""
+
+#. bb.bath
+msgctxt "bb.bath"
+msgid "bath"
+msgstr ""
+
+#. bb.bored
+msgctxt "bb.bored"
+msgid "bored"
+msgstr ""
+
+#. bb.bread
+msgctxt "bb.bread"
+msgid "bread"
+msgstr ""
+
+#. bb.brush_teeth
+msgctxt "bb.brush_teeth"
+msgid "brush teeth"
+msgstr ""
+
+#. bb.calm
+msgctxt "bb.calm"
+msgid "calm"
+msgstr ""
+
+#. bb.cheese
+msgctxt "bb.cheese"
+msgid "cheese"
+msgstr ""
+
+#. bb.chicken
+msgctxt "bb.chicken"
+msgid "chicken"
+msgstr ""
+
+#. bb.clean
+msgctxt "bb.clean"
+msgid "clean"
+msgstr ""
+
+#. bb.comb
+msgctxt "bb.comb"
+msgid "comb"
+msgstr ""
+
+#. bb.computer
+msgctxt "bb.computer"
+msgid "computer"
+msgstr ""
+
+#. bb.cook
+msgctxt "bb.cook"
+msgid "cook"
+msgstr ""
+
+#. bb.cookie
+msgctxt "bb.cookie"
+msgid "cookie"
+msgstr ""
+
+#. bb.count
+msgctxt "bb.count"
+msgid "count"
+msgstr ""
+
+#. bb.deodorant
+msgctxt "bb.deodorant"
+msgid "deodorant"
+msgstr ""
+
+#. bb.draw
+msgctxt "bb.draw"
+msgid "draw"
+msgstr ""
+
+#. bb.dress
+msgctxt "bb.dress"
+msgid "dress"
+msgstr ""
+
+#. bb.drink
+msgctxt "bb.drink"
+msgid "drink"
+msgstr ""
+
+#. bb.eat
+msgctxt "bb.eat"
+msgid "eat"
+msgstr ""
+
+#. bb.egg
+msgctxt "bb.egg"
+msgid "egg"
+msgstr ""
+
+#. bb.excited
+msgctxt "bb.excited"
+msgid "excited"
+msgstr ""
+
+#. bb.fish
+msgctxt "bb.fish"
+msgid "fish"
+msgstr ""
+
+#. bb.friend
+msgctxt "bb.friend"
+msgid "friend"
+msgstr ""
+
+#. bb.gym
+msgctxt "bb.gym"
+msgid "gym"
+msgstr ""
+
+#. bb.happy
+msgctxt "bb.happy"
+msgid "happy"
+msgstr ""
+
+#. bb.help
+msgctxt "bb.help"
+msgid "help"
+msgstr ""
+
+#. bb.hungry
+msgctxt "bb.hungry"
+msgid "hungry"
+msgstr ""
+
+#. bb.ice_cream
+msgctxt "bb.ice_cream"
+msgid "ice cream"
+msgstr ""
+
+#. bb.juice
+msgctxt "bb.juice"
+msgid "juice"
+msgstr ""
+
+#. bb.listen
+msgctxt "bb.listen"
+msgid "listen"
+msgstr ""
+
+#. bb.love
+msgctxt "bb.love"
+msgid "love"
+msgstr ""
+
+#. bb.milk
+msgctxt "bb.milk"
+msgid "milk"
+msgstr ""
+
+#. bb.mirror
+msgctxt "bb.mirror"
+msgid "mirror"
+msgstr ""
+
+#. bb.nail
+msgctxt "bb.nail"
+msgid "nail"
+msgstr ""
+
+#. bb.pain
+msgctxt "bb.pain"
+msgid "pain"
+msgstr ""
+
+#. bb.pasta
+msgctxt "bb.pasta"
+msgid "pasta"
+msgstr ""
+
+#. bb.play
+msgctxt "bb.play"
+msgid "play"
+msgstr ""
+
+#. bb.proud
+msgctxt "bb.proud"
+msgid "proud"
+msgstr ""
+
+#. bb.read
+msgctxt "bb.read"
+msgid "read"
+msgstr ""
+
+#. bb.rest
+msgctxt "bb.rest"
+msgid "rest"
+msgstr ""
+
+#. bb.rice
+msgctxt "bb.rice"
+msgid "rice"
+msgstr ""
+
+#. bb.sad
+msgctxt "bb.sad"
+msgid "sad"
+msgstr ""
+
+#. bb.scared
+msgctxt "bb.scared"
+msgid "scared"
+msgstr ""
+
+#. bb.shampoo
+msgctxt "bb.shampoo"
+msgid "shampoo"
+msgstr ""
+
+#. bb.shower
+msgctxt "bb.shower"
+msgid "shower"
+msgstr ""
+
+#. bb.shy
+msgctxt "bb.shy"
+msgid "shy"
+msgstr ""
+
+#. bb.sing
+msgctxt "bb.sing"
+msgid "sing"
+msgstr ""
+
+#. bb.sit
+msgctxt "bb.sit"
+msgid "sit"
+msgstr ""
+
+#. bb.sleep
+msgctxt "bb.sleep"
+msgid "sleep"
+msgstr ""
+
+#. bb.soap
+msgctxt "bb.soap"
+msgid "soap"
+msgstr ""
+
+#. bb.soup
+msgctxt "bb.soup"
+msgid "soup"
+msgstr ""
+
+#. bb.speak
+msgctxt "bb.speak"
+msgid "speak"
+msgstr ""
+
+#. bb.surprise
+msgctxt "bb.surprise"
+msgid "surprise"
+msgstr ""
+
+#. bb.teacher
+msgctxt "bb.teacher"
+msgid "teacher"
+msgstr ""
+
+#. bb.thirsty
+msgctxt "bb.thirsty"
+msgid "thirsty"
+msgstr ""
+
+#. bb.tired
+msgctxt "bb.tired"
+msgid "tired"
+msgstr ""
+
+#. bb.tissue
+msgctxt "bb.tissue"
+msgid "tissue"
+msgstr ""
+
+#. bb.toilet
+msgctxt "bb.toilet"
+msgid "toilet"
+msgstr ""
+
+#. bb.toothbrush
+msgctxt "bb.toothbrush"
+msgid "toothbrush"
+msgstr ""
+
+#. bb.toothpaste
+msgctxt "bb.toothpaste"
+msgid "toothpaste"
+msgstr ""
+
+#. bb.towel
+msgctxt "bb.towel"
+msgid "towel"
+msgstr ""
+
+#. bb.wash
+msgctxt "bb.wash"
+msgid "wash"
+msgstr ""
+
+#. bb.wash_hands
+msgctxt "bb.wash_hands"
+msgid "wash hands"
+msgstr ""
+
+#. bb.watch_tv
+msgctxt "bb.watch_tv"
+msgid "watch TV"
+msgstr ""
+
+#. bb.water
+msgctxt "bb.water"
+msgid "water"
+msgstr ""
+
+#. bb.work
+msgctxt "bb.work"
+msgid "work"
+msgstr ""
+
+#. bb.worried
+msgctxt "bb.worried"
+msgid "worried"
+msgstr ""
+
+#. bb.write
+msgctxt "bb.write"
+msgid "write"
+msgstr ""
+
+#. bb.yogurt
+msgctxt "bb.yogurt"
+msgid "yogurt"
+msgstr ""
+
 #. board.board_name
 msgctxt "board.board_name"
 msgid "Board Name"
@@ -633,6 +1283,11 @@ msgctxt "board.grid_size"
 msgid "Grid Size"
 msgstr ""
 
+#. board.my_board
+msgctxt "board.my_board"
+msgid "My Board"
+msgstr ""
+
 #. board.my_boards
 msgctxt "board.my_boards"
 msgid "My Boards"
@@ -646,6 +1301,11 @@ msgstr ""
 #. board.no_results
 msgctxt "board.no_results"
 msgid "No pictograms found"
+msgstr ""
+
+#. board.no_saved
+msgctxt "board.no_saved"
+msgid "No saved boards yet"
 msgstr ""
 
 #. board.print
@@ -666,6 +1326,31 @@ msgstr ""
 #. board.tap_to_add
 msgctxt "board.tap_to_add"
 msgid "Tap to add pictogram"
+msgstr ""
+
+#. board.template.emotions
+msgctxt "board.template.emotions"
+msgid "Emotions"
+msgstr ""
+
+#. board.template.food
+msgctxt "board.template.food"
+msgid "Food"
+msgstr ""
+
+#. board.template.home
+msgctxt "board.template.home"
+msgid "Home"
+msgstr ""
+
+#. board.template.hygiene
+msgctxt "board.template.hygiene"
+msgid "Hygiene"
+msgstr ""
+
+#. board.template.school
+msgctxt "board.template.school"
+msgid "School"
 msgstr ""
 
 #. board.templates
@@ -1448,6 +2133,396 @@ msgctxt "clothesChooser.youChose"
 msgid "You chose"
 msgstr ""
 
+#. comm.angry
+msgctxt "comm.angry"
+msgid "angry"
+msgstr ""
+
+#. comm.apple
+msgctxt "comm.apple"
+msgid "apple"
+msgstr ""
+
+#. comm.banana
+msgctxt "comm.banana"
+msgid "banana"
+msgstr ""
+
+#. comm.bathroom
+msgctxt "comm.bathroom"
+msgid "bathroom"
+msgstr ""
+
+#. comm.bedroom
+msgctxt "comm.bedroom"
+msgid "bedroom"
+msgstr ""
+
+#. comm.bread
+msgctxt "comm.bread"
+msgid "bread"
+msgstr ""
+
+#. comm.brother
+msgctxt "comm.brother"
+msgid "brother"
+msgstr ""
+
+#. comm.bus
+msgctxt "comm.bus"
+msgid "bus"
+msgstr ""
+
+#. comm.calm
+msgctxt "comm.calm"
+msgid "calm"
+msgstr ""
+
+#. comm.car
+msgctxt "comm.car"
+msgid "car"
+msgstr ""
+
+#. comm.cheese
+msgctxt "comm.cheese"
+msgid "cheese"
+msgstr ""
+
+#. comm.chicken
+msgctxt "comm.chicken"
+msgid "chicken"
+msgstr ""
+
+#. comm.computer
+msgctxt "comm.computer"
+msgid "computer"
+msgstr ""
+
+#. comm.dad
+msgctxt "comm.dad"
+msgid "dad"
+msgstr ""
+
+#. comm.dance
+msgctxt "comm.dance"
+msgid "dance"
+msgstr ""
+
+#. comm.doctor
+msgctxt "comm.doctor"
+msgid "doctor"
+msgstr ""
+
+#. comm.draw
+msgctxt "comm.draw"
+msgid "draw"
+msgstr ""
+
+#. comm.egg
+msgctxt "comm.egg"
+msgid "egg"
+msgstr ""
+
+#. comm.excited
+msgctxt "comm.excited"
+msgid "excited"
+msgstr ""
+
+#. comm.fish
+msgctxt "comm.fish"
+msgid "fish"
+msgstr ""
+
+#. comm.friend
+msgctxt "comm.friend"
+msgid "friend"
+msgstr ""
+
+#. comm.grandma
+msgctxt "comm.grandma"
+msgid "grandma"
+msgstr ""
+
+#. comm.grandpa
+msgctxt "comm.grandpa"
+msgid "grandpa"
+msgstr ""
+
+#. comm.happy
+msgctxt "comm.happy"
+msgid "happy"
+msgstr ""
+
+#. comm.home
+msgctxt "comm.home"
+msgid "home"
+msgstr ""
+
+#. comm.hospital
+msgctxt "comm.hospital"
+msgid "hospital"
+msgstr ""
+
+#. comm.hot_chocolate
+msgctxt "comm.hot_chocolate"
+msgid "hot chocolate"
+msgstr ""
+
+#. comm.hungry
+msgctxt "comm.hungry"
+msgid "hungry"
+msgstr ""
+
+#. comm.juice
+msgctxt "comm.juice"
+msgid "juice"
+msgstr ""
+
+#. comm.kitchen
+msgctxt "comm.kitchen"
+msgid "kitchen"
+msgstr ""
+
+#. comm.milk
+msgctxt "comm.milk"
+msgid "milk"
+msgstr ""
+
+#. comm.mom
+msgctxt "comm.mom"
+msgid "mom"
+msgstr ""
+
+#. comm.park
+msgctxt "comm.park"
+msgid "park"
+msgstr ""
+
+#. comm.pasta
+msgctxt "comm.pasta"
+msgid "pasta"
+msgstr ""
+
+#. comm.pizza
+msgctxt "comm.pizza"
+msgid "pizza"
+msgstr ""
+
+#. comm.play
+msgctxt "comm.play"
+msgid "play"
+msgstr ""
+
+#. comm.playground
+msgctxt "comm.playground"
+msgid "playground"
+msgstr ""
+
+#. comm.read
+msgctxt "comm.read"
+msgid "read"
+msgstr ""
+
+#. comm.rice
+msgctxt "comm.rice"
+msgid "rice"
+msgstr ""
+
+#. comm.run
+msgctxt "comm.run"
+msgid "run"
+msgstr ""
+
+#. comm.sad
+msgctxt "comm.sad"
+msgid "sad"
+msgstr ""
+
+#. comm.scared
+msgctxt "comm.scared"
+msgid "scared"
+msgstr ""
+
+#. comm.school
+msgctxt "comm.school"
+msgid "school"
+msgstr ""
+
+#. comm.sick
+msgctxt "comm.sick"
+msgid "sick"
+msgstr ""
+
+#. comm.sing
+msgctxt "comm.sing"
+msgid "sing"
+msgstr ""
+
+#. comm.sister
+msgctxt "comm.sister"
+msgid "sister"
+msgstr ""
+
+#. comm.sleep
+msgctxt "comm.sleep"
+msgid "sleep"
+msgstr ""
+
+#. comm.smoothie
+msgctxt "comm.smoothie"
+msgid "smoothie"
+msgstr ""
+
+#. comm.soup
+msgctxt "comm.soup"
+msgid "soup"
+msgstr ""
+
+#. comm.store
+msgctxt "comm.store"
+msgid "store"
+msgstr ""
+
+#. comm.swim
+msgctxt "comm.swim"
+msgid "swim"
+msgstr ""
+
+#. comm.tea
+msgctxt "comm.tea"
+msgid "tea"
+msgstr ""
+
+#. comm.teacher
+msgctxt "comm.teacher"
+msgid "teacher"
+msgstr ""
+
+#. comm.thirsty
+msgctxt "comm.thirsty"
+msgid "thirsty"
+msgstr ""
+
+#. comm.tired
+msgctxt "comm.tired"
+msgid "tired"
+msgstr ""
+
+#. comm.walk
+msgctxt "comm.walk"
+msgid "walk"
+msgstr ""
+
+#. comm.watch_tv
+msgctxt "comm.watch_tv"
+msgid "watch TV"
+msgstr ""
+
+#. comm.water
+msgctxt "comm.water"
+msgid "water"
+msgstr ""
+
+#. comm.yogurt
+msgctxt "comm.yogurt"
+msgid "yogurt"
+msgstr ""
+
+#. commBook.addCard
+msgctxt "commBook.addCard"
+msgid "Add card"
+msgstr ""
+
+#. commBook.addPhoto
+msgctxt "commBook.addPhoto"
+msgid "Add personal photo"
+msgstr ""
+
+#. commBook.edit
+msgctxt "commBook.edit"
+msgid "Edit"
+msgstr ""
+
+#. commBook.emptyHint
+msgctxt "commBook.emptyHint"
+msgid "Tap ✏️ to add cards"
+msgstr ""
+
+#. commBook.loading
+msgctxt "commBook.loading"
+msgid "Loading communication book…"
+msgstr ""
+
+#. commBook.page.activities
+msgctxt "commBook.page.activities"
+msgid "Activities"
+msgstr ""
+
+#. commBook.page.drinks
+msgctxt "commBook.page.drinks"
+msgid "Drinks"
+msgstr ""
+
+#. commBook.page.favorites
+msgctxt "commBook.page.favorites"
+msgid "Favorites"
+msgstr ""
+
+#. commBook.page.feelings
+msgctxt "commBook.page.feelings"
+msgid "Feelings"
+msgstr ""
+
+#. commBook.page.food
+msgctxt "commBook.page.food"
+msgid "Food"
+msgstr ""
+
+#. commBook.page.people
+msgctxt "commBook.page.people"
+msgid "People"
+msgstr ""
+
+#. commBook.page.places
+msgctxt "commBook.page.places"
+msgid "Places"
+msgstr ""
+
+#. commBook.photoLabel
+msgctxt "commBook.photoLabel"
+msgid "Label for the photo"
+msgstr ""
+
+#. commBook.searchArasaac
+msgctxt "commBook.searchArasaac"
+msgid "Search pictograms"
+msgstr ""
+
+#. commBook.searchPlaceholder
+msgctxt "commBook.searchPlaceholder"
+msgid "Search for a word…"
+msgstr ""
+
+#. commBook.takePhoto
+msgctxt "commBook.takePhoto"
+msgid "Take photo or choose image"
+msgstr ""
+
+#. commBook.title
+msgctxt "commBook.title"
+msgid "Communication Book"
+msgstr ""
+
+#. common.remove
+msgctxt "common.remove"
+msgid "Remove"
+msgstr ""
+
+#. common.speak
+msgctxt "common.speak"
+msgid "Speak"
+msgstr ""
+
 #. conversationAid.again
 msgctxt "conversationAid.again"
 msgid "Again"
@@ -1995,42 +3070,42 @@ msgstr ""
 
 #. emotion.body.arms
 msgctxt "emotion.body.arms"
-msgid "Arms"
+msgid "arms"
 msgstr ""
 
 #. emotion.body.chest
 msgctxt "emotion.body.chest"
-msgid "Chest"
+msgid "chest"
 msgstr ""
 
 #. emotion.body.face
 msgctxt "emotion.body.face"
-msgid "Face"
+msgid "face"
 msgstr ""
 
 #. emotion.body.hands
 msgctxt "emotion.body.hands"
-msgid "Hands"
+msgid "hands"
 msgstr ""
 
 #. emotion.body.head
 msgctxt "emotion.body.head"
-msgid "Head"
+msgid "head"
 msgstr ""
 
 #. emotion.body.legs
 msgctxt "emotion.body.legs"
-msgid "Legs"
+msgid "legs"
 msgstr ""
 
 #. emotion.body.stomach
 msgctxt "emotion.body.stomach"
-msgid "Stomach"
+msgid "stomach"
 msgstr ""
 
 #. emotion.body.whole
 msgctxt "emotion.body.whole"
-msgid "Whole body"
+msgid "whole body"
 msgstr ""
 
 #. emotion.calm
@@ -2101,6 +3176,11 @@ msgstr ""
 #. emotion.proud
 msgctxt "emotion.proud"
 msgid "Proud"
+msgstr ""
+
+#. emotion.quiz
+msgctxt "emotion.quiz"
+msgid "Quiz"
 msgstr ""
 
 #. emotion.quiz_what
@@ -2446,6 +3526,11 @@ msgstr ""
 #. focus.ready
 msgctxt "focus.ready"
 msgid "Ready"
+msgstr ""
+
+#. focus.remove
+msgctxt "focus.remove"
+msgid "Remove"
 msgstr ""
 
 #. focus.start_break
@@ -3163,9 +4248,39 @@ msgctxt "letter.you_can"
 msgid "You can do it! 🎯"
 msgstr ""
 
+#. mat.bedtime
+msgctxt "mat.bedtime"
+msgid "bedtime"
+msgstr ""
+
+#. mat.bread
+msgctxt "mat.bread"
+msgid "bread"
+msgstr ""
+
+#. mat.candy
+msgctxt "mat.candy"
+msgid "candy"
+msgstr ""
+
+#. mat.chicken
+msgctxt "mat.chicken"
+msgid "chicken"
+msgstr ""
+
 #. mat.choose_topic
 msgctxt "mat.choose_topic"
 msgid "Choose a topic to discuss"
+msgstr ""
+
+#. mat.computer
+msgctxt "mat.computer"
+msgid "computer"
+msgstr ""
+
+#. mat.cooking
+msgctxt "mat.cooking"
+msgid "cooking"
 msgstr ""
 
 #. mat.credit
@@ -3173,24 +4288,134 @@ msgctxt "mat.credit"
 msgid "Inspired by Talking Mats™ framework — talkingmats.com"
 msgstr ""
 
+#. mat.cycling
+msgctxt "mat.cycling"
+msgid "cycling"
+msgstr ""
+
+#. mat.dancing
+msgctxt "mat.dancing"
+msgid "dancing"
+msgstr ""
+
+#. mat.drawing
+msgctxt "mat.drawing"
+msgid "drawing"
+msgstr ""
+
+#. mat.eating
+msgctxt "mat.eating"
+msgid "eating"
+msgstr ""
+
+#. mat.family
+msgctxt "mat.family"
+msgid "family"
+msgstr ""
+
+#. mat.football
+msgctxt "mat.football"
+msgid "football"
+msgstr ""
+
+#. mat.friends
+msgctxt "mat.friends"
+msgid "friends"
+msgstr ""
+
+#. mat.fruit
+msgctxt "mat.fruit"
+msgid "fruit"
+msgstr ""
+
+#. mat.gaming
+msgctxt "mat.gaming"
+msgid "gaming"
+msgstr ""
+
+#. mat.group_work
+msgctxt "mat.group_work"
+msgid "group work"
+msgstr ""
+
+#. mat.gym
+msgctxt "mat.gym"
+msgid "gym"
+msgstr ""
+
+#. mat.home
+msgctxt "mat.home"
+msgid "home"
+msgstr ""
+
+#. mat.homework
+msgctxt "mat.homework"
+msgid "homework"
+msgstr ""
+
+#. mat.math
+msgctxt "mat.math"
+msgid "math"
+msgstr ""
+
+#. mat.milk
+msgctxt "mat.milk"
+msgid "milk"
+msgstr ""
+
+#. mat.morning
+msgctxt "mat.morning"
+msgid "morning"
+msgstr ""
+
+#. mat.music
+msgctxt "mat.music"
+msgid "music"
+msgstr ""
+
 #. mat.negative
 msgctxt "mat.negative"
-msgid "I don't like"
+msgid "Negative"
 msgstr ""
 
 #. mat.neutral
 msgctxt "mat.neutral"
-msgid "It's okay"
+msgid "Neutral"
+msgstr ""
+
+#. mat.pizza
+msgctxt "mat.pizza"
+msgid "pizza"
+msgstr ""
+
+#. mat.playing
+msgctxt "mat.playing"
+msgid "playing"
 msgstr ""
 
 #. mat.positive
 msgctxt "mat.positive"
-msgid "I like"
+msgid "Positive"
+msgstr ""
+
+#. mat.reading
+msgctxt "mat.reading"
+msgid "reading"
+msgstr ""
+
+#. mat.recess
+msgctxt "mat.recess"
+msgid "recess"
 msgstr ""
 
 #. mat.reset
 msgctxt "mat.reset"
 msgid "Reset"
+msgstr ""
+
+#. mat.rice
+msgctxt "mat.rice"
+msgid "rice"
 msgstr ""
 
 #. mat.save
@@ -3201,6 +4426,26 @@ msgstr ""
 #. mat.saved
 msgctxt "mat.saved"
 msgid "Session saved!"
+msgstr ""
+
+#. mat.school
+msgctxt "mat.school"
+msgid "school"
+msgstr ""
+
+#. mat.shopping
+msgctxt "mat.shopping"
+msgid "shopping"
+msgstr ""
+
+#. mat.soup
+msgctxt "mat.soup"
+msgid "soup"
+msgstr ""
+
+#. mat.swimming
+msgctxt "mat.swimming"
+msgid "swimming"
 msgstr ""
 
 #. mat.tap_to_place
@@ -3231,6 +4476,26 @@ msgstr ""
 #. mat.topic.school
 msgctxt "mat.topic.school"
 msgid "School"
+msgstr ""
+
+#. mat.vegetables
+msgctxt "mat.vegetables"
+msgid "vegetables"
+msgstr ""
+
+#. mat.walking
+msgctxt "mat.walking"
+msgid "walking"
+msgstr ""
+
+#. mat.water
+msgctxt "mat.water"
+msgid "water"
+msgstr ""
+
+#. mat.writing
+msgctxt "mat.writing"
+msgid "writing"
 msgstr ""
 
 #. mathAid.addition
@@ -3363,6 +4628,76 @@ msgctxt "money.undo"
 msgid "Undo"
 msgstr ""
 
+#. mouthGym.category.breath
+msgctxt "mouthGym.category.breath"
+msgid "Breathing"
+msgstr ""
+
+#. mouthGym.category.jaw
+msgctxt "mouthGym.category.jaw"
+msgid "Jaw"
+msgstr ""
+
+#. mouthGym.category.lips
+msgctxt "mouthGym.category.lips"
+msgid "Lips"
+msgstr ""
+
+#. mouthGym.category.tongue
+msgctxt "mouthGym.category.tongue"
+msgid "Tongue"
+msgstr ""
+
+#. mouthGym.done
+msgctxt "mouthGym.done"
+msgid "Done! 🎉"
+msgstr ""
+
+#. mouthGym.hold
+msgctxt "mouthGym.hold"
+msgid "Hold"
+msgstr ""
+
+#. mouthGym.intro
+msgctxt "mouthGym.intro"
+msgid "Gymnastics for your mouth! 💪"
+msgstr ""
+
+#. mouthGym.mirror
+msgctxt "mouthGym.mirror"
+msgid "Use a mirror!"
+msgstr ""
+
+#. mouthGym.next
+msgctxt "mouthGym.next"
+msgid "Next exercise"
+msgstr ""
+
+#. mouthGym.of
+msgctxt "mouthGym.of"
+msgid "of"
+msgstr ""
+
+#. mouthGym.reps
+msgctxt "mouthGym.reps"
+msgid "Repetitions"
+msgstr ""
+
+#. mouthGym.seconds
+msgctxt "mouthGym.seconds"
+msgid "seconds"
+msgstr ""
+
+#. mouthGym.step
+msgctxt "mouthGym.step"
+msgid "Step"
+msgstr ""
+
+#. mouthGym.title
+msgctxt "mouthGym.title"
+msgid "Mouth Gym"
+msgstr ""
+
 #. mySchedule.add
 msgctxt "mySchedule.add"
 msgid "Add"
@@ -3383,9 +4718,224 @@ msgctxt "mySchedule.whatToDo"
 msgid "What to do?"
 msgstr ""
 
+#. oralMotor.allDone
+msgctxt "oralMotor.allDone"
+msgid "Great job! All steps done! ⭐"
+msgstr ""
+
+#. oralMotor.breath
+msgctxt "oralMotor.breath"
+msgid "Breathing"
+msgstr ""
+
+#. oralMotor.breath.balloon
+msgctxt "oralMotor.breath.balloon"
+msgid "Blow up a balloon"
+msgstr ""
+
+#. oralMotor.breath.blow
+msgctxt "oralMotor.breath.blow"
+msgid "Blow forward"
+msgstr ""
+
+#. oralMotor.breath.candle
+msgctxt "oralMotor.breath.candle"
+msgid "Blow out a candle"
+msgstr ""
+
+#. oralMotor.breath.desc
+msgctxt "oralMotor.breath.desc"
+msgid "Practice breathing and blowing"
+msgstr ""
+
+#. oralMotor.breath.long
+msgctxt "oralMotor.breath.long"
+msgid "Blow long and slowly"
+msgstr ""
+
+#. oralMotor.breath.puff
+msgctxt "oralMotor.breath.puff"
+msgid "Puff out air"
+msgstr ""
+
+#. oralMotor.intro
+msgctxt "oralMotor.intro"
+msgid "Choose an exercise to train your oral motor skills!"
+msgstr ""
+
+#. oralMotor.jaw
+msgctxt "oralMotor.jaw"
+msgid "Jaw"
+msgstr ""
+
+#. oralMotor.jaw.clench
+msgctxt "oralMotor.jaw.clench"
+msgid "Gently clench your teeth"
+msgstr ""
+
+#. oralMotor.jaw.close
+msgctxt "oralMotor.jaw.close"
+msgid "Close your mouth"
+msgstr ""
+
+#. oralMotor.jaw.desc
+msgctxt "oralMotor.jaw.desc"
+msgid "Train jaw movements"
+msgstr ""
+
+#. oralMotor.jaw.open
+msgctxt "oralMotor.jaw.open"
+msgid "Open your mouth wide"
+msgstr ""
+
+#. oralMotor.jaw.openClose
+msgctxt "oralMotor.jaw.openClose"
+msgid "Open and close, open and close"
+msgstr ""
+
+#. oralMotor.jaw.side
+msgctxt "oralMotor.jaw.side"
+msgid "Move your jaw to the side"
+msgstr ""
+
+#. oralMotor.lips
+msgctxt "oralMotor.lips"
+msgid "Lips"
+msgstr ""
+
+#. oralMotor.lips.desc
+msgctxt "oralMotor.lips.desc"
+msgid "Practice lip movements and shapes"
+msgstr ""
+
+#. oralMotor.lips.fish
+msgctxt "oralMotor.lips.fish"
+msgid "Make a fish face"
+msgstr ""
+
+#. oralMotor.lips.kiss
+msgctxt "oralMotor.lips.kiss"
+msgid "Make a kiss"
+msgstr ""
+
+#. oralMotor.lips.pucker
+msgctxt "oralMotor.lips.pucker"
+msgid "Pucker your lips"
+msgstr ""
+
+#. oralMotor.lips.puckerSmile
+msgctxt "oralMotor.lips.puckerSmile"
+msgid "Pucker and smile, pucker and smile"
+msgstr ""
+
+#. oralMotor.lips.smile
+msgctxt "oralMotor.lips.smile"
+msgid "Smile big"
+msgstr ""
+
+#. oralMotor.playAll
+msgctxt "oralMotor.playAll"
+msgid "Play all"
+msgstr ""
+
+#. oralMotor.repeat
+msgctxt "oralMotor.repeat"
+msgid "Repeat"
+msgstr ""
+
+#. oralMotor.speed
+msgctxt "oralMotor.speed"
+msgid "Speech rate"
+msgstr ""
+
+#. oralMotor.title
+msgctxt "oralMotor.title"
+msgid "Oral Motor"
+msgstr ""
+
+#. oralMotor.tongue
+msgctxt "oralMotor.tongue"
+msgid "Tongue"
+msgstr ""
+
+#. oralMotor.tongue.circle
+msgctxt "oralMotor.tongue.circle"
+msgid "Move your tongue in a circle"
+msgstr ""
+
+#. oralMotor.tongue.desc
+msgctxt "oralMotor.tongue.desc"
+msgid "Move your tongue in different directions"
+msgstr ""
+
+#. oralMotor.tongue.down
+msgctxt "oralMotor.tongue.down"
+msgid "Stretch your tongue down toward your chin"
+msgstr ""
+
+#. oralMotor.tongue.left
+msgctxt "oralMotor.tongue.left"
+msgid "Move your tongue to the left"
+msgstr ""
+
+#. oralMotor.tongue.right
+msgctxt "oralMotor.tongue.right"
+msgid "Move your tongue to the right"
+msgstr ""
+
+#. oralMotor.tongue.up
+msgctxt "oralMotor.tongue.up"
+msgid "Lift your tongue up to the roof of your mouth"
+msgstr ""
+
+#. pecs.apple
+msgctxt "pecs.apple"
+msgid "apple"
+msgstr ""
+
+#. pecs.ball
+msgctxt "pecs.ball"
+msgid "ball"
+msgstr ""
+
+#. pecs.banana
+msgctxt "pecs.banana"
+msgid "banana"
+msgstr ""
+
+#. pecs.bird
+msgctxt "pecs.bird"
+msgid "bird"
+msgstr ""
+
+#. pecs.book
+msgctxt "pecs.book"
+msgid "book"
+msgstr ""
+
 #. pecs.bring_to_partner
 msgctxt "pecs.bring_to_partner"
 msgid "Bring the picture to your partner"
+msgstr ""
+
+#. pecs.bubbles
+msgctxt "pecs.bubbles"
+msgid "bubbles"
+msgstr ""
+
+#. pecs.car
+msgctxt "pecs.car"
+msgid "car"
+msgstr ""
+
+#. pecs.cat
+msgctxt "pecs.cat"
+msgid "cat"
+msgstr ""
+
+#. pecs.cookie
+msgctxt "pecs.cookie"
+msgid "cookie"
 msgstr ""
 
 #. pecs.correct
@@ -3393,14 +4943,59 @@ msgctxt "pecs.correct"
 msgid "Correct"
 msgstr ""
 
+#. pecs.dog
+msgctxt "pecs.dog"
+msgid "dog"
+msgstr ""
+
 #. pecs.find
 msgctxt "pecs.find"
 msgid "Find"
 msgstr ""
 
+#. pecs.fish
+msgctxt "pecs.fish"
+msgid "fish"
+msgstr ""
+
+#. pecs.flower
+msgctxt "pecs.flower"
+msgid "flower"
+msgstr ""
+
 #. pecs.great
 msgctxt "pecs.great"
 msgid "Great job!"
+msgstr ""
+
+#. pecs.i_hear
+msgctxt "pecs.i_hear"
+msgid "I hear"
+msgstr ""
+
+#. pecs.i_see
+msgctxt "pecs.i_see"
+msgid "I see"
+msgstr ""
+
+#. pecs.i_want
+msgctxt "pecs.i_want"
+msgid "I want"
+msgstr ""
+
+#. pecs.juice
+msgctxt "pecs.juice"
+msgid "juice"
+msgstr ""
+
+#. pecs.music
+msgctxt "pecs.music"
+msgid "music"
+msgstr ""
+
+#. pecs.partner
+msgctxt "pecs.partner"
+msgid "Partner"
 msgstr ""
 
 #. pecs.phase1
@@ -3463,6 +5058,26 @@ msgctxt "pecs.phase6_desc"
 msgid "Comment on things: 'I see...', 'I hear...'"
 msgstr ""
 
+#. pecs.puzzle
+msgctxt "pecs.puzzle"
+msgid "puzzle"
+msgstr ""
+
+#. pecs.rain
+msgctxt "pecs.rain"
+msgid "rain"
+msgstr ""
+
+#. pecs.sun
+msgctxt "pecs.sun"
+msgid "sun"
+msgstr ""
+
+#. pecs.swing
+msgctxt "pecs.swing"
+msgid "swing"
+msgstr ""
+
 #. pecs.tap_to_give
 msgctxt "pecs.tap_to_give"
 msgid "Tap to give"
@@ -3473,6 +5088,11 @@ msgctxt "pecs.title"
 msgid "PECS Trainer"
 msgstr ""
 
+#. pecs.tree
+msgctxt "pecs.tree"
+msgid "tree"
+msgstr ""
+
 #. pecs.trials
 msgctxt "pecs.trials"
 msgid "Trials"
@@ -3481,6 +5101,11 @@ msgstr ""
 #. pecs.try_again
 msgctxt "pecs.try_again"
 msgid "Try again!"
+msgstr ""
+
+#. pecs.water
+msgctxt "pecs.water"
+msgid "water"
 msgstr ""
 
 #. pecs.what_want
@@ -3598,6 +5223,16 @@ msgctxt "pecsBoard.worried"
 msgid "Worried"
 msgstr ""
 
+#. phrase.I
+msgctxt "phrase.I"
+msgid "I"
+msgstr ""
+
+#. phrase.dad
+msgctxt "phrase.dad"
+msgid "dad"
+msgstr ""
+
 #. phrase.does
 msgctxt "phrase.does"
 msgid "Does?"
@@ -3608,14 +5243,44 @@ msgctxt "phrase.favorites"
 msgid "Favorites"
 msgstr ""
 
+#. phrase.friend
+msgctxt "phrase.friend"
+msgid "friend"
+msgstr ""
+
+#. phrase.he
+msgctxt "phrase.he"
+msgid "he"
+msgstr ""
+
+#. phrase.mom
+msgctxt "phrase.mom"
+msgid "mom"
+msgstr ""
+
 #. phrase.object
 msgctxt "phrase.object"
 msgid "What"
 msgstr ""
 
+#. phrase.she
+msgctxt "phrase.she"
+msgid "she"
+msgstr ""
+
 #. phrase.subject
 msgctxt "phrase.subject"
 msgid "Who"
+msgstr ""
+
+#. phrase.teacher
+msgctxt "phrase.teacher"
+msgid "teacher"
+msgstr ""
+
+#. phrase.they
+msgctxt "phrase.they"
+msgid "they"
 msgstr ""
 
 #. phrase.title
@@ -3628,6 +5293,11 @@ msgctxt "phrase.verb"
 msgid "Does what"
 msgstr ""
 
+#. phrase.we
+msgctxt "phrase.we"
+msgid "we"
+msgstr ""
+
 #. phrase.what
 msgctxt "phrase.what"
 msgid "What?"
@@ -3636,6 +5306,216 @@ msgstr ""
 #. phrase.who
 msgctxt "phrase.who"
 msgid "Who?"
+msgstr ""
+
+#. phrase.word.I
+msgctxt "phrase.word.I"
+msgid "I"
+msgstr ""
+
+#. phrase.word.apple
+msgctxt "phrase.word.apple"
+msgid "apple"
+msgstr ""
+
+#. phrase.word.ball
+msgctxt "phrase.word.ball"
+msgid "ball"
+msgstr ""
+
+#. phrase.word.book
+msgctxt "phrase.word.book"
+msgid "book"
+msgstr ""
+
+#. phrase.word.car
+msgctxt "phrase.word.car"
+msgid "car"
+msgstr ""
+
+#. phrase.word.cookie
+msgctxt "phrase.word.cookie"
+msgid "cookie"
+msgstr ""
+
+#. phrase.word.dad
+msgctxt "phrase.word.dad"
+msgid "dad"
+msgstr ""
+
+#. phrase.word.drink
+msgctxt "phrase.word.drink"
+msgid "drink"
+msgstr ""
+
+#. phrase.word.eat
+msgctxt "phrase.word.eat"
+msgid "eat"
+msgstr ""
+
+#. phrase.word.food
+msgctxt "phrase.word.food"
+msgid "food"
+msgstr ""
+
+#. phrase.word.friend
+msgctxt "phrase.word.friend"
+msgid "friend"
+msgstr ""
+
+#. phrase.word.give
+msgctxt "phrase.word.give"
+msgid "give"
+msgstr ""
+
+#. phrase.word.go
+msgctxt "phrase.word.go"
+msgid "go"
+msgstr ""
+
+#. phrase.word.have
+msgctxt "phrase.word.have"
+msgid "have"
+msgstr ""
+
+#. phrase.word.he
+msgctxt "phrase.word.he"
+msgid "he"
+msgstr ""
+
+#. phrase.word.hear
+msgctxt "phrase.word.hear"
+msgid "hear"
+msgstr ""
+
+#. phrase.word.home
+msgctxt "phrase.word.home"
+msgid "home"
+msgstr ""
+
+#. phrase.word.like
+msgctxt "phrase.word.like"
+msgid "like"
+msgstr ""
+
+#. phrase.word.make
+msgctxt "phrase.word.make"
+msgid "make"
+msgstr ""
+
+#. phrase.word.milk
+msgctxt "phrase.word.milk"
+msgid "milk"
+msgstr ""
+
+#. phrase.word.mom
+msgctxt "phrase.word.mom"
+msgid "mom"
+msgstr ""
+
+#. phrase.word.music
+msgctxt "phrase.word.music"
+msgid "music"
+msgstr ""
+
+#. phrase.word.play
+msgctxt "phrase.word.play"
+msgid "play"
+msgstr ""
+
+#. phrase.word.puzzle
+msgctxt "phrase.word.puzzle"
+msgid "puzzle"
+msgstr ""
+
+#. phrase.word.read
+msgctxt "phrase.word.read"
+msgid "read"
+msgstr ""
+
+#. phrase.word.school
+msgctxt "phrase.word.school"
+msgid "school"
+msgstr ""
+
+#. phrase.word.see
+msgctxt "phrase.word.see"
+msgid "see"
+msgstr ""
+
+#. phrase.word.she
+msgctxt "phrase.word.she"
+msgid "she"
+msgstr ""
+
+#. phrase.word.teacher
+msgctxt "phrase.word.teacher"
+msgid "teacher"
+msgstr ""
+
+#. phrase.word.they
+msgctxt "phrase.word.they"
+msgid "they"
+msgstr ""
+
+#. phrase.word.want
+msgctxt "phrase.word.want"
+msgid "want"
+msgstr ""
+
+#. phrase.word.water
+msgctxt "phrase.word.water"
+msgid "water"
+msgstr ""
+
+#. phrase.word.we
+msgctxt "phrase.word.we"
+msgid "we"
+msgstr ""
+
+#. phrase.word.you
+msgctxt "phrase.word.you"
+msgid "you"
+msgstr ""
+
+#. phrase.you
+msgctxt "phrase.you"
+msgid "you"
+msgstr ""
+
+#. point.I
+msgctxt "point.I"
+msgid "I"
+msgstr ""
+
+#. point.angry
+msgctxt "point.angry"
+msgid "angry"
+msgstr ""
+
+#. point.bad
+msgctxt "point.bad"
+msgid "bad"
+msgstr ""
+
+#. point.ball
+msgctxt "point.ball"
+msgid "ball"
+msgstr ""
+
+#. point.big
+msgctxt "point.big"
+msgid "big"
+msgstr ""
+
+#. point.book
+msgctxt "point.book"
+msgid "book"
+msgstr ""
+
+#. point.can
+msgctxt "point.can"
+msgid "can"
 msgstr ""
 
 #. point.cat.actions
@@ -3678,14 +5558,274 @@ msgctxt "point.cat.things"
 msgid "Things"
 msgstr ""
 
+#. point.cold
+msgctxt "point.cold"
+msgid "cold"
+msgstr ""
+
+#. point.dad
+msgctxt "point.dad"
+msgid "dad"
+msgstr ""
+
+#. point.do
+msgctxt "point.do"
+msgid "do"
+msgstr ""
+
+#. point.down
+msgctxt "point.down"
+msgid "down"
+msgstr ""
+
+#. point.drink
+msgctxt "point.drink"
+msgid "drink"
+msgstr ""
+
+#. point.eat
+msgctxt "point.eat"
+msgid "eat"
+msgstr ""
+
+#. point.food
+msgctxt "point.food"
+msgid "food"
+msgstr ""
+
+#. point.give
+msgctxt "point.give"
+msgid "give"
+msgstr ""
+
+#. point.go
+msgctxt "point.go"
+msgid "go"
+msgstr ""
+
+#. point.good
+msgctxt "point.good"
+msgid "good"
+msgstr ""
+
+#. point.goodbye
+msgctxt "point.goodbye"
+msgid "goodbye"
+msgstr ""
+
+#. point.happy
+msgctxt "point.happy"
+msgid "happy"
+msgstr ""
+
+#. point.have
+msgctxt "point.have"
+msgid "have"
+msgstr ""
+
+#. point.he
+msgctxt "point.he"
+msgid "he"
+msgstr ""
+
+#. point.hear
+msgctxt "point.hear"
+msgid "hear"
+msgstr ""
+
+#. point.hello
+msgctxt "point.hello"
+msgid "hello"
+msgstr ""
+
+#. point.help
+msgctxt "point.help"
+msgid "help"
+msgstr ""
+
+#. point.here
+msgctxt "point.here"
+msgid "here"
+msgstr ""
+
+#. point.home
+msgctxt "point.home"
+msgid "home"
+msgstr ""
+
+#. point.hot
+msgctxt "point.hot"
+msgid "hot"
+msgstr ""
+
+#. point.in
+msgctxt "point.in"
+msgid "in"
+msgstr ""
+
+#. point.like
+msgctxt "point.like"
+msgid "like"
+msgstr ""
+
+#. point.make
+msgctxt "point.make"
+msgid "make"
+msgstr ""
+
+#. point.mom
+msgctxt "point.mom"
+msgid "mom"
+msgstr ""
+
+#. point.more
+msgctxt "point.more"
+msgid "more"
+msgstr ""
+
+#. point.no
+msgctxt "point.no"
+msgid "no"
+msgstr ""
+
+#. point.not
+msgctxt "point.not"
+msgid "not"
+msgstr ""
+
+#. point.out
+msgctxt "point.out"
+msgid "out"
+msgstr ""
+
+#. point.play
+msgctxt "point.play"
+msgid "play"
+msgstr ""
+
+#. point.please
+msgctxt "point.please"
+msgid "please"
+msgstr ""
+
+#. point.read
+msgctxt "point.read"
+msgid "read"
+msgstr ""
+
+#. point.sad
+msgctxt "point.sad"
+msgid "sad"
+msgstr ""
+
+#. point.scared
+msgctxt "point.scared"
+msgid "scared"
+msgstr ""
+
+#. point.school
+msgctxt "point.school"
+msgid "school"
+msgstr ""
+
+#. point.see
+msgctxt "point.see"
+msgid "see"
+msgstr ""
+
+#. point.she
+msgctxt "point.she"
+msgid "she"
+msgstr ""
+
+#. point.small
+msgctxt "point.small"
+msgid "small"
+msgstr ""
+
+#. point.stop
+msgctxt "point.stop"
+msgid "stop"
+msgstr ""
+
+#. point.take
+msgctxt "point.take"
+msgid "take"
+msgstr ""
+
 #. point.tap_words
 msgctxt "point.tap_words"
 msgid "Tap words to build a sentence"
 msgstr ""
 
+#. point.thank_you
+msgctxt "point.thank_you"
+msgid "thank you"
+msgstr ""
+
+#. point.there
+msgctxt "point.there"
+msgid "there"
+msgstr ""
+
+#. point.they
+msgctxt "point.they"
+msgid "they"
+msgstr ""
+
 #. point.title
 msgctxt "point.title"
 msgid "Point Talk"
+msgstr ""
+
+#. point.up
+msgctxt "point.up"
+msgid "up"
+msgstr ""
+
+#. point.want
+msgctxt "point.want"
+msgid "want"
+msgstr ""
+
+#. point.water
+msgctxt "point.water"
+msgid "water"
+msgstr ""
+
+#. point.we
+msgctxt "point.we"
+msgid "we"
+msgstr ""
+
+#. point.what
+msgctxt "point.what"
+msgid "what"
+msgstr ""
+
+#. point.when
+msgctxt "point.when"
+msgid "when"
+msgstr ""
+
+#. point.where
+msgctxt "point.where"
+msgid "where"
+msgstr ""
+
+#. point.who
+msgctxt "point.who"
+msgid "who"
+msgstr ""
+
+#. point.yes
+msgctxt "point.yes"
+msgid "yes"
+msgstr ""
+
+#. point.you
+msgctxt "point.you"
+msgid "you"
 msgstr ""
 
 #. practice.add_tasks
@@ -4118,6 +6258,271 @@ msgctxt "rewardChart.title"
 msgid "Reward Chart"
 msgstr ""
 
+#. rewards.achievement.fifteen_minutes
+msgctxt "rewards.achievement.fifteen_minutes"
+msgid "Fifteen minutes"
+msgstr ""
+
+#. rewards.achievement.fifteen_minutes.desc
+msgctxt "rewards.achievement.fifteen_minutes.desc"
+msgid "15 minutes of practice — keep going!"
+msgstr ""
+
+#. rewards.achievement.fifty_stars
+msgctxt "rewards.achievement.fifty_stars"
+msgid "Fifty stars"
+msgstr ""
+
+#. rewards.achievement.fifty_stars.desc
+msgctxt "rewards.achievement.fifty_stars.desc"
+msgid "50 gold stars — absolutely incredible work!"
+msgstr ""
+
+#. rewards.achievement.first_star
+msgctxt "rewards.achievement.first_star"
+msgid "First star"
+msgstr ""
+
+#. rewards.achievement.first_star.desc
+msgctxt "rewards.achievement.first_star.desc"
+msgid "You got your very first gold star!"
+msgstr ""
+
+#. rewards.achievement.five_minutes
+msgctxt "rewards.achievement.five_minutes"
+msgid "Five minutes"
+msgstr ""
+
+#. rewards.achievement.five_minutes.desc
+msgctxt "rewards.achievement.five_minutes.desc"
+msgid "You've practised for five minutes — great start!"
+msgstr ""
+
+#. rewards.achievement.five_stars
+msgctxt "rewards.achievement.five_stars"
+msgid "Five stars"
+msgstr ""
+
+#. rewards.achievement.five_stars.desc
+msgctxt "rewards.achievement.five_stars.desc"
+msgid "You've collected five gold stars — fantastic!"
+msgstr ""
+
+#. rewards.achievement.ten_stars
+msgctxt "rewards.achievement.ten_stars"
+msgid "Ten stars"
+msgstr ""
+
+#. rewards.achievement.ten_stars.desc
+msgctxt "rewards.achievement.ten_stars.desc"
+msgid "A whole ten gold stars — you're amazing!"
+msgstr ""
+
+#. rewards.achievement.thirty_minutes
+msgctxt "rewards.achievement.thirty_minutes"
+msgid "Thirty minutes"
+msgstr ""
+
+#. rewards.achievement.thirty_minutes.desc
+msgctxt "rewards.achievement.thirty_minutes.desc"
+msgid "Half an hour of practice — what an achievement!"
+msgstr ""
+
+#. rewards.achievement.twenty_five_stars
+msgctxt "rewards.achievement.twenty_five_stars"
+msgid "Twenty-five stars"
+msgstr ""
+
+#. rewards.achievement.twenty_five_stars.desc
+msgctxt "rewards.achievement.twenty_five_stars.desc"
+msgid "25 gold stars! You're a real star!"
+msgstr ""
+
+#. rewards.achievement_unlocked
+msgctxt "rewards.achievement_unlocked"
+msgid "New achievement"
+msgstr ""
+
+#. rewards.add_goal
+msgctxt "rewards.add_goal"
+msgid "Add"
+msgstr ""
+
+#. rewards.cancel
+msgctxt "rewards.cancel"
+msgid "Cancel"
+msgstr ""
+
+#. rewards.diploma.awarded_to
+msgctxt "rewards.diploma.awarded_to"
+msgid "Awarded to"
+msgstr ""
+
+#. rewards.diploma.created
+msgctxt "rewards.diploma.created"
+msgid "Diploma created!"
+msgstr ""
+
+#. rewards.diploma.print
+msgctxt "rewards.diploma.print"
+msgid "Print"
+msgstr ""
+
+#. rewards.diploma.title
+msgctxt "rewards.diploma.title"
+msgid "Diploma"
+msgstr ""
+
+#. rewards.earn_diploma
+msgctxt "rewards.earn_diploma"
+msgid "Create diploma"
+msgstr ""
+
+#. rewards.goal_completed
+msgctxt "rewards.goal_completed"
+msgid "Goal achieved!"
+msgstr ""
+
+#. rewards.goal_created
+msgctxt "rewards.goal_created"
+msgid "New goal created!"
+msgstr ""
+
+#. rewards.goal_reward_placeholder
+msgctxt "rewards.goal_reward_placeholder"
+msgid "What happens at the goal? (e.g. ice cream!)"
+msgstr ""
+
+#. rewards.goal_type.stars
+msgctxt "rewards.goal_type.stars"
+msgid "Gold stars"
+msgstr ""
+
+#. rewards.goal_type.time
+msgctxt "rewards.goal_type.time"
+msgid "Minutes"
+msgstr ""
+
+#. rewards.gold_stars
+msgctxt "rewards.gold_stars"
+msgid "gold stars"
+msgstr ""
+
+#. rewards.greeting
+msgctxt "rewards.greeting"
+msgid "Hi {name}! Here are your achievements 🌟"
+msgstr ""
+
+#. rewards.nav
+msgctxt "rewards.nav"
+msgid "Rewards"
+msgstr ""
+
+#. rewards.new_goal
+msgctxt "rewards.new_goal"
+msgid "New goal"
+msgstr ""
+
+#. rewards.no_diplomas_yet
+msgctxt "rewards.no_diplomas_yet"
+msgid "No diplomas yet. Unlock achievements to earn diplomas!"
+msgstr ""
+
+#. rewards.no_stars_yet
+msgctxt "rewards.no_stars_yet"
+msgid "No gold stars yet — keep practising and they'll come!"
+msgstr ""
+
+#. rewards.praise.bra_jobbat
+msgctxt "rewards.praise.bra_jobbat"
+msgid "Great job!"
+msgstr ""
+
+#. rewards.praise.du_ar_duktig
+msgctxt "rewards.praise.du_ar_duktig"
+msgid "You're so good!"
+msgstr ""
+
+#. rewards.praise.fantastiskt
+msgctxt "rewards.praise.fantastiskt"
+msgid "Fantastic!"
+msgstr ""
+
+#. rewards.praise.jattebra
+msgctxt "rewards.praise.jattebra"
+msgid "Awesome!"
+msgstr ""
+
+#. rewards.praise.kanon
+msgctxt "rewards.praise.kanon"
+msgid "Amazing!"
+msgstr ""
+
+#. rewards.praise.snyggt
+msgctxt "rewards.praise.snyggt"
+msgid "Nice!"
+msgstr ""
+
+#. rewards.praise.toppen
+msgctxt "rewards.praise.toppen"
+msgid "Wonderful!"
+msgstr ""
+
+#. rewards.praise.wow
+msgctxt "rewards.praise.wow"
+msgid "Wow, what a star!"
+msgstr ""
+
+#. rewards.settings.diplomas
+msgctxt "rewards.settings.diplomas"
+msgid "Diplomas"
+msgstr ""
+
+#. rewards.settings.enabled
+msgctxt "rewards.settings.enabled"
+msgid "Rewards enabled"
+msgstr ""
+
+#. rewards.settings.praise
+msgctxt "rewards.settings.praise"
+msgid "Verbal praise"
+msgstr ""
+
+#. rewards.star.completed
+msgctxt "rewards.star.completed"
+msgid "Great work with the exercise!"
+msgstr ""
+
+#. rewards.tab.achievements
+msgctxt "rewards.tab.achievements"
+msgid "Achievements"
+msgstr ""
+
+#. rewards.tab.diplomas
+msgctxt "rewards.tab.diplomas"
+msgid "Diplomas"
+msgstr ""
+
+#. rewards.tab.goals
+msgctxt "rewards.tab.goals"
+msgid "Goals"
+msgstr ""
+
+#. rewards.tab.stars
+msgctxt "rewards.tab.stars"
+msgid "Stars"
+msgstr ""
+
+#. rewards.title
+msgctxt "rewards.title"
+msgid "Rewards"
+msgstr ""
+
+#. rewards.toggle_label
+msgctxt "rewards.toggle_label"
+msgid "Rewards"
+msgstr ""
+
 #. routineBuddy.allDone
 msgctxt "routineBuddy.allDone"
 msgid "All done!"
@@ -4248,6 +6653,121 @@ msgctxt "routineBuddy.wash"
 msgid "Wash face and hands"
 msgstr ""
 
+#. sagostunden.cat.actions
+msgctxt "sagostunden.cat.actions"
+msgid "Actions"
+msgstr ""
+
+#. sagostunden.cat.animals
+msgctxt "sagostunden.cat.animals"
+msgid "Animals"
+msgstr ""
+
+#. sagostunden.cat.food
+msgctxt "sagostunden.cat.food"
+msgid "Food"
+msgstr ""
+
+#. sagostunden.cat.people
+msgctxt "sagostunden.cat.people"
+msgid "Characters"
+msgstr ""
+
+#. sagostunden.cat.places
+msgctxt "sagostunden.cat.places"
+msgid "Places"
+msgstr ""
+
+#. sagostunden.cat.things
+msgctxt "sagostunden.cat.things"
+msgid "Things"
+msgstr ""
+
+#. sagostunden.create
+msgctxt "sagostunden.create"
+msgid "Create"
+msgstr ""
+
+#. sagostunden.create_story
+msgctxt "sagostunden.create_story"
+msgid "Create story!"
+msgstr ""
+
+#. sagostunden.credit
+msgctxt "sagostunden.credit"
+msgid "Pictograms by ARASAAC (CC BY-NC-SA 4.0)"
+msgstr ""
+
+#. sagostunden.font_size
+msgctxt "sagostunden.font_size"
+msgid "Text size"
+msgstr ""
+
+#. sagostunden.new_story
+msgctxt "sagostunden.new_story"
+msgid "New story"
+msgstr ""
+
+#. sagostunden.no_saved
+msgctxt "sagostunden.no_saved"
+msgid "No saved stories yet. Create one!"
+msgstr ""
+
+#. sagostunden.pick_template
+msgctxt "sagostunden.pick_template"
+msgid "Pick a story"
+msgstr ""
+
+#. sagostunden.pick_words
+msgctxt "sagostunden.pick_words"
+msgid "Choose your words"
+msgstr ""
+
+#. sagostunden.pick_words_hint
+msgctxt "sagostunden.pick_words_hint"
+msgid "Tap a word to add it, or skip to get a random one!"
+msgstr ""
+
+#. sagostunden.random_story
+msgctxt "sagostunden.random_story"
+msgid "Surprise me!"
+msgstr ""
+
+#. sagostunden.read
+msgctxt "sagostunden.read"
+msgid "Read"
+msgstr ""
+
+#. sagostunden.read_aloud
+msgctxt "sagostunden.read_aloud"
+msgid "Read aloud"
+msgstr ""
+
+#. sagostunden.save_story
+msgctxt "sagostunden.save_story"
+msgid "Save"
+msgstr ""
+
+#. sagostunden.saved
+msgctxt "sagostunden.saved"
+msgid "Saved"
+msgstr ""
+
+#. sagostunden.saved_stories
+msgctxt "sagostunden.saved_stories"
+msgid "Saved stories"
+msgstr ""
+
+#. sagostunden.settings
+msgctxt "sagostunden.settings"
+msgid "Settings"
+msgstr ""
+
+#. sagostunden.show_pictograms
+msgctxt "sagostunden.show_pictograms"
+msgid "Show pictograms"
+msgstr ""
+
 #. schedule.add_activity
 msgctxt "schedule.add_activity"
 msgid "Add Activity"
@@ -4288,6 +6808,11 @@ msgctxt "schedule.next"
 msgid "Next"
 msgstr ""
 
+#. schedule.no_schedules
+msgctxt "schedule.no_schedules"
+msgid "No schedules yet"
+msgstr ""
+
 #. schedule.now
 msgctxt "schedule.now"
 msgid "Now"
@@ -4298,6 +6823,21 @@ msgctxt "schedule.print"
 msgid "Print"
 msgstr ""
 
+#. schedule.remove
+msgctxt "schedule.remove"
+msgid "Remove"
+msgstr ""
+
+#. schedule.set_now
+msgctxt "schedule.set_now"
+msgid "Set as now"
+msgstr ""
+
+#. schedule.speak
+msgctxt "schedule.speak"
+msgid "Speak"
+msgstr ""
+
 #. schedule.title
 msgctxt "schedule.title"
 msgid "Picture Schedule"
@@ -4306,6 +6846,11 @@ msgstr ""
 #. schedule.today
 msgctxt "schedule.today"
 msgid "Today"
+msgstr ""
+
+#. schedule.type_activity
+msgctxt "schedule.type_activity"
+msgid "Or type activity name..."
 msgstr ""
 
 #. schoolDay.period.art
@@ -4368,6 +6913,156 @@ msgctxt "schoolDay.title"
 msgid "School Day"
 msgstr ""
 
+#. sentence.ar
+msgctxt "sentence.ar"
+msgid "is"
+msgstr ""
+
+#. sentence.arbetar
+msgctxt "sentence.arbetar"
+msgid "works"
+msgstr ""
+
+#. sentence.ata
+msgctxt "sentence.ata"
+msgid "eat"
+msgstr ""
+
+#. sentence.barnet
+msgctxt "sentence.barnet"
+msgid "The child"
+msgstr ""
+
+#. sentence.bilen
+msgctxt "sentence.bilen"
+msgid "The car"
+msgstr ""
+
+#. sentence.bok
+msgctxt "sentence.bok"
+msgid "book"
+msgstr ""
+
+#. sentence.dricka
+msgctxt "sentence.dricka"
+msgid "drink"
+msgstr ""
+
+#. sentence.en
+msgctxt "sentence.en"
+msgid "a"
+msgstr ""
+
+#. sentence.ga
+msgctxt "sentence.ga"
+msgid "go"
+msgstr ""
+
+#. sentence.gar
+msgctxt "sentence.gar"
+msgid "go"
+msgstr ""
+
+#. sentence.glad
+msgctxt "sentence.glad"
+msgid "happy"
+msgstr ""
+
+#. sentence.hunden
+msgctxt "sentence.hunden"
+msgid "The dog"
+msgstr ""
+
+#. sentence.jag
+msgctxt "sentence.jag"
+msgid "I"
+msgstr ""
+
+#. sentence.katten
+msgctxt "sentence.katten"
+msgid "The cat"
+msgstr ""
+
+#. sentence.kor
+msgctxt "sentence.kor"
+msgid "drives"
+msgstr ""
+
+#. sentence.laser
+msgctxt "sentence.laser"
+msgid "reads"
+msgstr ""
+
+#. sentence.leker
+msgctxt "sentence.leker"
+msgid "plays"
+msgstr ""
+
+#. sentence.mamma
+msgctxt "sentence.mamma"
+msgid "Mom"
+msgstr ""
+
+#. sentence.mat
+msgctxt "sentence.mat"
+msgid "food"
+msgstr ""
+
+#. sentence.pa
+msgctxt "sentence.pa"
+msgid "on"
+msgstr ""
+
+#. sentence.pappa
+msgctxt "sentence.pappa"
+msgid "Dad"
+msgstr ""
+
+#. sentence.ska
+msgctxt "sentence.ska"
+msgid "will"
+msgstr ""
+
+#. sentence.skolan
+msgctxt "sentence.skolan"
+msgid "school"
+msgstr ""
+
+#. sentence.soffan
+msgctxt "sentence.soffan"
+msgid "the sofa"
+msgstr ""
+
+#. sentence.sover
+msgctxt "sentence.sover"
+msgid "sleeps"
+msgstr ""
+
+#. sentence.springer
+msgctxt "sentence.springer"
+msgid "runs"
+msgstr ""
+
+#. sentence.till
+msgctxt "sentence.till"
+msgid "to"
+msgstr ""
+
+#. sentence.vatten
+msgctxt "sentence.vatten"
+msgid "water"
+msgstr ""
+
+#. sentence.vi
+msgctxt "sentence.vi"
+msgid "we"
+msgstr ""
+
+#. sentence.vill
+msgctxt "sentence.vill"
+msgid "want"
+msgstr ""
+
 #. sentenceBuilder.buildHere
 msgctxt "sentenceBuilder.buildHere"
 msgid "Build your sentence here..."
@@ -4416,6 +7111,121 @@ msgstr ""
 #. sentenceBuilder.tryAgain
 msgctxt "sentenceBuilder.tryAgain"
 msgid "Try again!"
+msgstr ""
+
+#. sentenceStrip.cat.actions
+msgctxt "sentenceStrip.cat.actions"
+msgid "Actions"
+msgstr ""
+
+#. sentenceStrip.cat.feelings
+msgctxt "sentenceStrip.cat.feelings"
+msgid "Feelings"
+msgstr ""
+
+#. sentenceStrip.cat.food
+msgctxt "sentenceStrip.cat.food"
+msgid "Food"
+msgstr ""
+
+#. sentenceStrip.cat.places
+msgctxt "sentenceStrip.cat.places"
+msgid "Places"
+msgstr ""
+
+#. sentenceStrip.cat.toys
+msgctxt "sentenceStrip.cat.toys"
+msgid "Toys"
+msgstr ""
+
+#. sentenceStrip.clear
+msgctxt "sentenceStrip.clear"
+msgid "Clear"
+msgstr ""
+
+#. sentenceStrip.hint
+msgctxt "sentenceStrip.hint"
+msgid "Choose a starter phrase and add words to build a sentence"
+msgstr ""
+
+#. sentenceStrip.iFeel
+msgctxt "sentenceStrip.iFeel"
+msgid "I feel"
+msgstr ""
+
+#. sentenceStrip.iHave
+msgctxt "sentenceStrip.iHave"
+msgid "I have"
+msgstr ""
+
+#. sentenceStrip.iHear
+msgctxt "sentenceStrip.iHear"
+msgid "I hear"
+msgstr ""
+
+#. sentenceStrip.iLike
+msgctxt "sentenceStrip.iLike"
+msgid "I like"
+msgstr ""
+
+#. sentenceStrip.iSee
+msgctxt "sentenceStrip.iSee"
+msgid "I see"
+msgstr ""
+
+#. sentenceStrip.iWant
+msgctxt "sentenceStrip.iWant"
+msgid "I want"
+msgstr ""
+
+#. sentenceStrip.loading
+msgctxt "sentenceStrip.loading"
+msgid "Loading pictograms…"
+msgstr ""
+
+#. sentenceStrip.phase
+msgctxt "sentenceStrip.phase"
+msgid "PECS Phase"
+msgstr ""
+
+#. sentenceStrip.pickWord
+msgctxt "sentenceStrip.pickWord"
+msgid "Pick a word"
+msgstr ""
+
+#. sentenceStrip.save
+msgctxt "sentenceStrip.save"
+msgid "Save"
+msgstr ""
+
+#. sentenceStrip.saved
+msgctxt "sentenceStrip.saved"
+msgid "Saved sentences"
+msgstr ""
+
+#. sentenceStrip.speak
+msgctxt "sentenceStrip.speak"
+msgid "Speak"
+msgstr ""
+
+#. sentenceStrip.starters
+msgctxt "sentenceStrip.starters"
+msgid "Sentence starters"
+msgstr ""
+
+#. sentenceStrip.strip
+msgctxt "sentenceStrip.strip"
+msgid "Sentence strip"
+msgstr ""
+
+#. sentenceStrip.tapRemove
+msgctxt "sentenceStrip.tapRemove"
+msgid "Tap to remove"
+msgstr ""
+
+#. sentenceStrip.title
+msgctxt "sentenceStrip.title"
+msgid "Sentence Strip Workshop"
 msgstr ""
 
 #. settings.advanced
@@ -4633,6 +7443,501 @@ msgctxt "signDictionary.title"
 msgid "Sign Dictionary"
 msgstr ""
 
+#. sit.angry
+msgctxt "sit.angry"
+msgid "angry"
+msgstr ""
+
+#. sit.apple
+msgctxt "sit.apple"
+msgid "apple"
+msgstr ""
+
+#. sit.arm
+msgctxt "sit.arm"
+msgid "arm"
+msgstr ""
+
+#. sit.ball
+msgctxt "sit.ball"
+msgid "ball"
+msgstr ""
+
+#. sit.banana
+msgctxt "sit.banana"
+msgid "banana"
+msgstr ""
+
+#. sit.bandage
+msgctxt "sit.bandage"
+msgid "bandage"
+msgstr ""
+
+#. sit.bathroom
+msgctxt "sit.bathroom"
+msgid "bathroom"
+msgstr ""
+
+#. sit.bed
+msgctxt "sit.bed"
+msgid "bed"
+msgstr ""
+
+#. sit.better
+msgctxt "sit.better"
+msgid "better"
+msgstr ""
+
+#. sit.bicycle
+msgctxt "sit.bicycle"
+msgid "bicycle"
+msgstr ""
+
+#. sit.book
+msgctxt "sit.book"
+msgid "book"
+msgstr ""
+
+#. sit.bored
+msgctxt "sit.bored"
+msgid "bored"
+msgstr ""
+
+#. sit.bread
+msgctxt "sit.bread"
+msgid "bread"
+msgstr ""
+
+#. sit.bus
+msgctxt "sit.bus"
+msgid "bus"
+msgstr ""
+
+#. sit.calm
+msgctxt "sit.calm"
+msgid "calm"
+msgstr ""
+
+#. sit.car
+msgctxt "sit.car"
+msgid "car"
+msgstr ""
+
+#. sit.catch
+msgctxt "sit.catch"
+msgid "catch"
+msgstr ""
+
+#. sit.chair
+msgctxt "sit.chair"
+msgid "chair"
+msgstr ""
+
+#. sit.chicken
+msgctxt "sit.chicken"
+msgid "chicken"
+msgstr ""
+
+#. sit.clean
+msgctxt "sit.clean"
+msgid "clean"
+msgstr ""
+
+#. sit.climb
+msgctxt "sit.climb"
+msgid "climb"
+msgstr ""
+
+#. sit.comb
+msgctxt "sit.comb"
+msgid "comb"
+msgstr ""
+
+#. sit.cook
+msgctxt "sit.cook"
+msgid "cook"
+msgstr ""
+
+#. sit.count
+msgctxt "sit.count"
+msgid "count"
+msgstr ""
+
+#. sit.desk
+msgctxt "sit.desk"
+msgid "desk"
+msgstr ""
+
+#. sit.doctor
+msgctxt "sit.doctor"
+msgid "doctor"
+msgstr ""
+
+#. sit.door
+msgctxt "sit.door"
+msgid "door"
+msgstr ""
+
+#. sit.draw
+msgctxt "sit.draw"
+msgid "draw"
+msgstr ""
+
+#. sit.dry
+msgctxt "sit.dry"
+msgid "dry"
+msgstr ""
+
+#. sit.eat
+msgctxt "sit.eat"
+msgid "eat"
+msgstr ""
+
+#. sit.excited
+msgctxt "sit.excited"
+msgid "excited"
+msgstr ""
+
+#. sit.fast
+msgctxt "sit.fast"
+msgid "fast"
+msgstr ""
+
+#. sit.friend
+msgctxt "sit.friend"
+msgid "friend"
+msgstr ""
+
+#. sit.go
+msgctxt "sit.go"
+msgid "go"
+msgstr ""
+
+#. sit.happy
+msgctxt "sit.happy"
+msgid "happy"
+msgstr ""
+
+#. sit.head
+msgctxt "sit.head"
+msgid "head"
+msgstr ""
+
+#. sit.help
+msgctxt "sit.help"
+msgid "help"
+msgstr ""
+
+#. sit.hungry
+msgctxt "sit.hungry"
+msgid "hungry"
+msgstr ""
+
+#. sit.i_want
+msgctxt "sit.i_want"
+msgid "I want"
+msgstr ""
+
+#. sit.jump
+msgctxt "sit.jump"
+msgid "jump"
+msgstr ""
+
+#. sit.kitchen
+msgctxt "sit.kitchen"
+msgid "kitchen"
+msgstr ""
+
+#. sit.leg
+msgctxt "sit.leg"
+msgid "leg"
+msgstr ""
+
+#. sit.listen
+msgctxt "sit.listen"
+msgid "listen"
+msgstr ""
+
+#. sit.medicine
+msgctxt "sit.medicine"
+msgid "medicine"
+msgstr ""
+
+#. sit.milk
+msgctxt "sit.milk"
+msgid "milk"
+msgstr ""
+
+#. sit.mirror
+msgctxt "sit.mirror"
+msgid "mirror"
+msgstr ""
+
+#. sit.more
+msgctxt "sit.more"
+msgid "more"
+msgstr ""
+
+#. sit.no
+msgctxt "sit.no"
+msgid "no"
+msgstr ""
+
+#. sit.pain
+msgctxt "sit.pain"
+msgid "pain"
+msgstr ""
+
+#. sit.pencil
+msgctxt "sit.pencil"
+msgid "pencil"
+msgstr ""
+
+#. sit.plate
+msgctxt "sit.plate"
+msgid "plate"
+msgstr ""
+
+#. sit.play
+msgctxt "sit.play"
+msgid "play"
+msgstr ""
+
+#. sit.proud
+msgctxt "sit.proud"
+msgid "proud"
+msgstr ""
+
+#. sit.push
+msgctxt "sit.push"
+msgid "push"
+msgstr ""
+
+#. sit.read
+msgctxt "sit.read"
+msgid "read"
+msgstr ""
+
+#. sit.rice
+msgctxt "sit.rice"
+msgid "rice"
+msgstr ""
+
+#. sit.road
+msgctxt "sit.road"
+msgid "road"
+msgstr ""
+
+#. sit.run
+msgctxt "sit.run"
+msgid "run"
+msgstr ""
+
+#. sit.sad
+msgctxt "sit.sad"
+msgid "sad"
+msgstr ""
+
+#. sit.sand
+msgctxt "sit.sand"
+msgid "sand"
+msgstr ""
+
+#. sit.scared
+msgctxt "sit.scared"
+msgid "scared"
+msgstr ""
+
+#. sit.seat_belt
+msgctxt "sit.seat_belt"
+msgid "seat belt"
+msgstr ""
+
+#. sit.shampoo
+msgctxt "sit.shampoo"
+msgid "shampoo"
+msgstr ""
+
+#. sit.share
+msgctxt "sit.share"
+msgid "share"
+msgstr ""
+
+#. sit.shower
+msgctxt "sit.shower"
+msgid "shower"
+msgstr ""
+
+#. sit.shy
+msgctxt "sit.shy"
+msgid "shy"
+msgstr ""
+
+#. sit.sick
+msgctxt "sit.sick"
+msgid "sick"
+msgstr ""
+
+#. sit.sing
+msgctxt "sit.sing"
+msgid "sing"
+msgstr ""
+
+#. sit.sleep
+msgctxt "sit.sleep"
+msgid "sleep"
+msgstr ""
+
+#. sit.slide
+msgctxt "sit.slide"
+msgid "slide"
+msgstr ""
+
+#. sit.slow
+msgctxt "sit.slow"
+msgid "slow"
+msgstr ""
+
+#. sit.soap
+msgctxt "sit.soap"
+msgid "soap"
+msgstr ""
+
+#. sit.soup
+msgctxt "sit.soup"
+msgid "soup"
+msgstr ""
+
+#. sit.spoon
+msgctxt "sit.spoon"
+msgid "spoon"
+msgstr ""
+
+#. sit.stomach
+msgctxt "sit.stomach"
+msgid "stomach"
+msgstr ""
+
+#. sit.stop
+msgctxt "sit.stop"
+msgid "stop"
+msgstr ""
+
+#. sit.surprised
+msgctxt "sit.surprised"
+msgid "surprised"
+msgstr ""
+
+#. sit.swing
+msgctxt "sit.swing"
+msgid "swing"
+msgstr ""
+
+#. sit.table
+msgctxt "sit.table"
+msgid "table"
+msgstr ""
+
+#. sit.teacher
+msgctxt "sit.teacher"
+msgid "teacher"
+msgstr ""
+
+#. sit.television
+msgctxt "sit.television"
+msgid "television"
+msgstr ""
+
+#. sit.thermometer
+msgctxt "sit.thermometer"
+msgid "thermometer"
+msgstr ""
+
+#. sit.thirsty
+msgctxt "sit.thirsty"
+msgid "thirsty"
+msgstr ""
+
+#. sit.ticket
+msgctxt "sit.ticket"
+msgid "ticket"
+msgstr ""
+
+#. sit.tired
+msgctxt "sit.tired"
+msgid "tired"
+msgstr ""
+
+#. sit.tissue
+msgctxt "sit.tissue"
+msgid "tissue"
+msgstr ""
+
+#. sit.toilet
+msgctxt "sit.toilet"
+msgid "toilet"
+msgstr ""
+
+#. sit.toothbrush
+msgctxt "sit.toothbrush"
+msgid "toothbrush"
+msgstr ""
+
+#. sit.towel
+msgctxt "sit.towel"
+msgid "towel"
+msgstr ""
+
+#. sit.train
+msgctxt "sit.train"
+msgid "train"
+msgstr ""
+
+#. sit.turn
+msgctxt "sit.turn"
+msgid "turn"
+msgstr ""
+
+#. sit.wait
+msgctxt "sit.wait"
+msgid "wait"
+msgstr ""
+
+#. sit.walk
+msgctxt "sit.walk"
+msgid "walk"
+msgstr ""
+
+#. sit.wash_hands
+msgctxt "sit.wash_hands"
+msgid "wash hands"
+msgstr ""
+
+#. sit.water
+msgctxt "sit.water"
+msgid "water"
+msgstr ""
+
+#. sit.window
+msgctxt "sit.window"
+msgid "window"
+msgstr ""
+
+#. sit.worried
+msgctxt "sit.worried"
+msgid "worried"
+msgstr ""
+
+#. sit.write
+msgctxt "sit.write"
+msgid "write"
+msgstr ""
+
+#. sit.yes
+msgctxt "sit.yes"
+msgid "yes"
+msgstr ""
+
 #. situation.core_words
 msgctxt "situation.core_words"
 msgid "Core Words"
@@ -4843,6 +8148,166 @@ msgctxt "socialStories.title"
 msgid "Social Stories"
 msgstr ""
 
+#. soundChain.backToLevels
+msgctxt "soundChain.backToLevels"
+msgid "Back to levels"
+msgstr ""
+
+#. soundChain.chains
+msgctxt "soundChain.chains"
+msgid "chains"
+msgstr ""
+
+#. soundChain.intro
+msgctxt "soundChain.intro"
+msgid "Chain sounds together into words! Start simple and build up."
+msgstr ""
+
+#. soundChain.level.cv
+msgctxt "soundChain.level.cv"
+msgid "Consonant + Vowel"
+msgstr ""
+
+#. soundChain.level.cvc
+msgctxt "soundChain.level.cvc"
+msgid "Consonant + Vowel + Consonant"
+msgstr ""
+
+#. soundChain.level.vowels
+msgctxt "soundChain.level.vowels"
+msgid "Vowels"
+msgstr ""
+
+#. soundChain.level.words
+msgctxt "soundChain.level.words"
+msgid "Whole words"
+msgstr ""
+
+#. soundChain.levelDone
+msgctxt "soundChain.levelDone"
+msgid "Whole level done! 🏆"
+msgstr ""
+
+#. soundChain.playChain
+msgctxt "soundChain.playChain"
+msgid "Play chain"
+msgstr ""
+
+#. soundChain.sayWord
+msgctxt "soundChain.sayWord"
+msgid "Say word"
+msgstr ""
+
+#. soundChain.speed
+msgctxt "soundChain.speed"
+msgid "Speech rate"
+msgstr ""
+
+#. soundChain.title
+msgctxt "soundChain.title"
+msgid "Sound Chain"
+msgstr ""
+
+#. soundChain.word.a
+msgctxt "soundChain.word.a"
+msgid "A"
+msgstr ""
+
+#. soundChain.word.ao
+msgctxt "soundChain.word.ao"
+msgid "A-O"
+msgstr ""
+
+#. soundChain.word.ba
+msgctxt "soundChain.word.ba"
+msgid "Ba"
+msgstr ""
+
+#. soundChain.word.banan
+msgctxt "soundChain.word.banan"
+msgid "Banana"
+msgstr ""
+
+#. soundChain.word.bil
+msgctxt "soundChain.word.bil"
+msgid "Car"
+msgstr ""
+
+#. soundChain.word.boll
+msgctxt "soundChain.word.boll"
+msgid "Ball"
+msgstr ""
+
+#. soundChain.word.hus
+msgctxt "soundChain.word.hus"
+msgid "House"
+msgstr ""
+
+#. soundChain.word.ia
+msgctxt "soundChain.word.ia"
+msgid "I-A"
+msgstr ""
+
+#. soundChain.word.katt
+msgctxt "soundChain.word.katt"
+msgid "Cat"
+msgstr ""
+
+#. soundChain.word.lampa
+msgctxt "soundChain.word.lampa"
+msgid "Lamp"
+msgstr ""
+
+#. soundChain.word.ma
+msgctxt "soundChain.word.ma"
+msgid "Ma"
+msgstr ""
+
+#. soundChain.word.mama
+msgctxt "soundChain.word.mama"
+msgid "Mama"
+msgstr ""
+
+#. soundChain.word.mat
+msgctxt "soundChain.word.mat"
+msgid "Food"
+msgstr ""
+
+#. soundChain.word.mo
+msgctxt "soundChain.word.mo"
+msgid "Mo"
+msgstr ""
+
+#. soundChain.word.o
+msgctxt "soundChain.word.o"
+msgid "O"
+msgstr ""
+
+#. soundChain.word.pa
+msgctxt "soundChain.word.pa"
+msgid "Pa"
+msgstr ""
+
+#. soundChain.word.papa
+msgctxt "soundChain.word.papa"
+msgid "Papa"
+msgstr ""
+
+#. soundChain.word.so
+msgctxt "soundChain.word.so"
+msgid "So"
+msgstr ""
+
+#. soundChain.word.sol
+msgctxt "soundChain.word.sol"
+msgid "Sun"
+msgstr ""
+
+#. soundChain.word.ue
+msgctxt "soundChain.word.ue"
+msgid "U-E"
+msgstr ""
+
 #. soundLibrary.airplane
 msgctxt "soundLibrary.airplane"
 msgid "Airplane"
@@ -4971,6 +8436,891 @@ msgstr ""
 #. soundLibrary.wind
 msgctxt "soundLibrary.wind"
 msgid "Wind"
+msgstr ""
+
+#. soundLottery.intro
+msgctxt "soundLottery.intro"
+msgid "Spin the wheel and practice sounds!"
+msgstr ""
+
+#. soundLottery.level.isolation
+msgctxt "soundLottery.level.isolation"
+msgid "Isolation"
+msgstr ""
+
+#. soundLottery.level.sentence
+msgctxt "soundLottery.level.sentence"
+msgid "Sentence"
+msgstr ""
+
+#. soundLottery.level.syllable
+msgctxt "soundLottery.level.syllable"
+msgid "Syllable"
+msgstr ""
+
+#. soundLottery.level.word
+msgctxt "soundLottery.level.word"
+msgid "Word"
+msgstr ""
+
+#. soundLottery.listen
+msgctxt "soundLottery.listen"
+msgid "Listen"
+msgstr ""
+
+#. soundLottery.mastered
+msgctxt "soundLottery.mastered"
+msgid "Mastered sounds"
+msgstr ""
+
+#. soundLottery.next
+msgctxt "soundLottery.next"
+msgid "Next Level"
+msgstr ""
+
+#. soundLottery.practicing
+msgctxt "soundLottery.practicing"
+msgid "Practicing"
+msgstr ""
+
+#. soundLottery.progress
+msgctxt "soundLottery.progress"
+msgid "Progress"
+msgstr ""
+
+#. soundLottery.reps
+msgctxt "soundLottery.reps"
+msgid "Repetitions"
+msgstr ""
+
+#. soundLottery.spin
+msgctxt "soundLottery.spin"
+msgid "Spin!"
+msgstr ""
+
+#. soundLottery.title
+msgctxt "soundLottery.title"
+msgid "Sound Lottery"
+msgstr ""
+
+#. speechPractice.intro
+msgctxt "speechPractice.intro"
+msgid "Practice speech step by step with the DTTC method!"
+msgstr ""
+
+#. speechPractice.item.ba
+msgctxt "speechPractice.item.ba"
+msgid "Ba"
+msgstr ""
+
+#. speechPractice.item.da
+msgctxt "speechPractice.item.da"
+msgid "Da"
+msgstr ""
+
+#. speechPractice.item.hej
+msgctxt "speechPractice.item.hej"
+msgid "Hi"
+msgstr ""
+
+#. speechPractice.item.hjalp
+msgctxt "speechPractice.item.hjalp"
+msgid "Help"
+msgstr ""
+
+#. speechPractice.item.ja
+msgctxt "speechPractice.item.ja"
+msgid "Yes"
+msgstr ""
+
+#. speechPractice.item.jagHeter
+msgctxt "speechPractice.item.jagHeter"
+msgid "My name is"
+msgstr ""
+
+#. speechPractice.item.jagVill
+msgctxt "speechPractice.item.jagVill"
+msgid "I want"
+msgstr ""
+
+#. speechPractice.item.jagVillHa
+msgctxt "speechPractice.item.jagVillHa"
+msgid "I want to have"
+msgstr ""
+
+#. speechPractice.item.kanJagFa
+msgctxt "speechPractice.item.kanJagFa"
+msgid "Can I have?"
+msgstr ""
+
+#. speechPractice.item.komOchTitta
+msgctxt "speechPractice.item.komOchTitta"
+msgid "Come and look"
+msgstr ""
+
+#. speechPractice.item.la
+msgctxt "speechPractice.item.la"
+msgid "La"
+msgstr ""
+
+#. speechPractice.item.ma
+msgctxt "speechPractice.item.ma"
+msgid "Ma"
+msgstr ""
+
+#. speechPractice.item.mat
+msgctxt "speechPractice.item.mat"
+msgid "Food"
+msgstr ""
+
+#. speechPractice.item.na
+msgctxt "speechPractice.item.na"
+msgid "Na"
+msgstr ""
+
+#. speechPractice.item.nej
+msgctxt "speechPractice.item.nej"
+msgid "No"
+msgstr ""
+
+#. speechPractice.item.pa
+msgctxt "speechPractice.item.pa"
+msgid "Pa"
+msgstr ""
+
+#. speechPractice.item.tack
+msgctxt "speechPractice.item.tack"
+msgid "Thanks"
+msgstr ""
+
+#. speechPractice.item.titta
+msgctxt "speechPractice.item.titta"
+msgid "Look"
+msgstr ""
+
+#. speechPractice.item.vadArDet
+msgctxt "speechPractice.item.vadArDet"
+msgid "What is it?"
+msgstr ""
+
+#. speechPractice.item.vatten
+msgctxt "speechPractice.item.vatten"
+msgid "Water"
+msgstr ""
+
+#. speechPractice.items
+msgctxt "speechPractice.items"
+msgid "exercises"
+msgstr ""
+
+#. speechPractice.listen
+msgctxt "speechPractice.listen"
+msgid "Listen"
+msgstr ""
+
+#. speechPractice.nextStage
+msgctxt "speechPractice.nextStage"
+msgid "Next stage"
+msgstr ""
+
+#. speechPractice.prevStage
+msgctxt "speechPractice.prevStage"
+msgid "Previous stage"
+msgstr ""
+
+#. speechPractice.repeatPause
+msgctxt "speechPractice.repeatPause"
+msgid "Repeat with pause"
+msgstr ""
+
+#. speechPractice.reps
+msgctxt "speechPractice.reps"
+msgid "Repetitions"
+msgstr ""
+
+#. speechPractice.set.phrases
+msgctxt "speechPractice.set.phrases"
+msgid "Short phrases"
+msgstr ""
+
+#. speechPractice.set.simple
+msgctxt "speechPractice.set.simple"
+msgid "Simple syllables"
+msgstr ""
+
+#. speechPractice.set.words
+msgctxt "speechPractice.set.words"
+msgid "Everyday words"
+msgstr ""
+
+#. speechPractice.slow
+msgctxt "speechPractice.slow"
+msgid "Slow"
+msgstr ""
+
+#. speechPractice.speed
+msgctxt "speechPractice.speed"
+msgid "Speech rate"
+msgstr ""
+
+#. speechPractice.stage.delayed
+msgctxt "speechPractice.stage.delayed"
+msgid "Delayed"
+msgstr ""
+
+#. speechPractice.stage.independent
+msgctxt "speechPractice.stage.independent"
+msgid "Independent"
+msgstr ""
+
+#. speechPractice.stage.model
+msgctxt "speechPractice.stage.model"
+msgid "Model"
+msgstr ""
+
+#. speechPractice.stage.simultaneous
+msgctxt "speechPractice.stage.simultaneous"
+msgid "Simultaneous"
+msgstr ""
+
+#. speechPractice.stageDesc.delayed
+msgctxt "speechPractice.stageDesc.delayed"
+msgid "Wait a moment, then say it yourself"
+msgstr ""
+
+#. speechPractice.stageDesc.independent
+msgctxt "speechPractice.stageDesc.independent"
+msgid "Say it all by yourself without help!"
+msgstr ""
+
+#. speechPractice.stageDesc.model
+msgctxt "speechPractice.stageDesc.model"
+msgid "Listen to the model — hear how it should sound"
+msgstr ""
+
+#. speechPractice.stageDesc.simultaneous
+msgctxt "speechPractice.stageDesc.simultaneous"
+msgid "Say it AT THE SAME TIME as the model"
+msgstr ""
+
+#. speechPractice.title
+msgctxt "speechPractice.title"
+msgid "Speech Practice"
+msgstr ""
+
+#. speechRhythm.bpm
+msgctxt "speechRhythm.bpm"
+msgid "BPM"
+msgstr ""
+
+#. speechRhythm.correct
+msgctxt "speechRhythm.correct"
+msgid "Correct! 🎉"
+msgstr ""
+
+#. speechRhythm.intonation.instruction
+msgctxt "speechRhythm.intonation.instruction"
+msgid "Follow the melody curve with your voice!"
+msgstr ""
+
+#. speechRhythm.intro
+msgctxt "speechRhythm.intro"
+msgid "Practice the rhythm and melody of speech!"
+msgstr ""
+
+#. speechRhythm.listen
+msgctxt "speechRhythm.listen"
+msgid "Listen"
+msgstr ""
+
+#. speechRhythm.mode.intonation
+msgctxt "speechRhythm.mode.intonation"
+msgid "Intonation"
+msgstr ""
+
+#. speechRhythm.mode.stress
+msgctxt "speechRhythm.mode.stress"
+msgid "Stress"
+msgstr ""
+
+#. speechRhythm.mode.tap
+msgctxt "speechRhythm.mode.tap"
+msgid "Tap Along"
+msgstr ""
+
+#. speechRhythm.next
+msgctxt "speechRhythm.next"
+msgid "Next"
+msgstr ""
+
+#. speechRhythm.score
+msgctxt "speechRhythm.score"
+msgid "Score"
+msgstr ""
+
+#. speechRhythm.speed
+msgctxt "speechRhythm.speed"
+msgid "Tempo"
+msgstr ""
+
+#. speechRhythm.streak
+msgctxt "speechRhythm.streak"
+msgid "Streak"
+msgstr ""
+
+#. speechRhythm.stress.instruction
+msgctxt "speechRhythm.stress.instruction"
+msgid "Tap the stressed syllable!"
+msgstr ""
+
+#. speechRhythm.tap.instruction
+msgctxt "speechRhythm.tap.instruction"
+msgid "Tap the drum in time with the syllables!"
+msgstr ""
+
+#. speechRhythm.title
+msgctxt "speechRhythm.title"
+msgid "Speech Rhythm"
+msgstr ""
+
+#. speechRhythm.tryAgain
+msgctxt "speechRhythm.tryAgain"
+msgid "Try again!"
+msgstr ""
+
+#. story.birthday.scene1
+msgctxt "story.birthday.scene1"
+msgid "Today is a party!"
+msgstr ""
+
+#. story.birthday.scene2
+msgctxt "story.birthday.scene2"
+msgid "The child receives gifts."
+msgstr ""
+
+#. story.birthday.scene3
+msgctxt "story.birthday.scene3"
+msgid "The cake has candles."
+msgstr ""
+
+#. story.birthday.scene4
+msgctxt "story.birthday.scene4"
+msgid "The child blows out the candles."
+msgstr ""
+
+#. story.birthday.scene5
+msgctxt "story.birthday.scene5"
+msgid "Everyone sings. Happy birthday!"
+msgstr ""
+
+#. story.birthday.title
+msgctxt "story.birthday.title"
+msgid "Party!"
+msgstr ""
+
+#. story.morning.scene1
+msgctxt "story.morning.scene1"
+msgid "The child sleeps in bed."
+msgstr ""
+
+#. story.morning.scene2
+msgctxt "story.morning.scene2"
+msgid "The alarm rings. Time to wake up!"
+msgstr ""
+
+#. story.morning.scene3
+msgctxt "story.morning.scene3"
+msgid "The child brushes their teeth."
+msgstr ""
+
+#. story.morning.scene4
+msgctxt "story.morning.scene4"
+msgid "Now the child eats breakfast."
+msgstr ""
+
+#. story.morning.scene5
+msgctxt "story.morning.scene5"
+msgid "The child is ready for the day!"
+msgstr ""
+
+#. story.morning.title
+msgctxt "story.morning.title"
+msgid "Good morning!"
+msgstr ""
+
+#. story.park.scene1
+msgctxt "story.park.scene1"
+msgid "The child walks to the park."
+msgstr ""
+
+#. story.park.scene2
+msgctxt "story.park.scene2"
+msgid "A dog runs by."
+msgstr ""
+
+#. story.park.scene3
+msgctxt "story.park.scene3"
+msgid "The child sees a balloon."
+msgstr ""
+
+#. story.park.scene4
+msgctxt "story.park.scene4"
+msgid "Mom buys ice cream."
+msgstr ""
+
+#. story.park.scene5
+msgctxt "story.park.scene5"
+msgid "They go home again."
+msgstr ""
+
+#. story.park.title
+msgctxt "story.park.title"
+msgid "At the park"
+msgstr ""
+
+#. story.pet.scene1
+msgctxt "story.pet.scene1"
+msgid "The cat sits in the window."
+msgstr ""
+
+#. story.pet.scene2
+msgctxt "story.pet.scene2"
+msgid "She sees a bird outside."
+msgstr ""
+
+#. story.pet.scene3
+msgctxt "story.pet.scene3"
+msgid "The cat wants to hunt!"
+msgstr ""
+
+#. story.pet.scene4
+msgctxt "story.pet.scene4"
+msgid "But the door is closed."
+msgstr ""
+
+#. story.pet.scene5
+msgctxt "story.pet.scene5"
+msgid "The cat gets food instead."
+msgstr ""
+
+#. story.pet.title
+msgctxt "story.pet.title"
+msgid "The Cat"
+msgstr ""
+
+#. story.rain.scene1
+msgctxt "story.rain.scene1"
+msgid "It's sunny outside."
+msgstr ""
+
+#. story.rain.scene2
+msgctxt "story.rain.scene2"
+msgid "Clouds appear in the sky."
+msgstr ""
+
+#. story.rain.scene3
+msgctxt "story.rain.scene3"
+msgid "It starts to rain!"
+msgstr ""
+
+#. story.rain.scene4
+msgctxt "story.rain.scene4"
+msgid "The child takes the umbrella."
+msgstr ""
+
+#. story.rain.scene5
+msgctxt "story.rain.scene5"
+msgid "Look! A rainbow!"
+msgstr ""
+
+#. story.rain.title
+msgctxt "story.rain.title"
+msgid "It's raining!"
+msgstr ""
+
+#. storyWorkshop.intro
+msgctxt "storyWorkshop.intro"
+msgid "Build a story and tell it!"
+msgstr ""
+
+#. storyWorkshop.listen
+msgctxt "storyWorkshop.listen"
+msgid "Listen to the story"
+msgstr ""
+
+#. storyWorkshop.newStory
+msgctxt "storyWorkshop.newStory"
+msgid "New story"
+msgstr ""
+
+#. storyWorkshop.next
+msgctxt "storyWorkshop.next"
+msgid "Next"
+msgstr ""
+
+#. storyWorkshop.scene
+msgctxt "storyWorkshop.scene"
+msgid "Scene"
+msgstr ""
+
+#. storyWorkshop.step.choose
+msgctxt "storyWorkshop.step.choose"
+msgid "Choose pictures"
+msgstr ""
+
+#. storyWorkshop.step.order
+msgctxt "storyWorkshop.step.order"
+msgid "Order the story"
+msgstr ""
+
+#. storyWorkshop.step.practice
+msgctxt "storyWorkshop.step.practice"
+msgid "Practice telling"
+msgstr ""
+
+#. storyWorkshop.step.tell
+msgctxt "storyWorkshop.step.tell"
+msgid "Tell it yourself!"
+msgstr ""
+
+#. storyWorkshop.stories
+msgctxt "storyWorkshop.stories"
+msgid "Stories"
+msgstr ""
+
+#. storyWorkshop.title
+msgctxt "storyWorkshop.title"
+msgid "Story Workshop"
+msgstr ""
+
+#. storyWorkshop.yourTurn
+msgctxt "storyWorkshop.yourTurn"
+msgid "Your turn to tell!"
+msgstr ""
+
+#. strip.angry
+msgctxt "strip.angry"
+msgid "angry"
+msgstr ""
+
+#. strip.apple
+msgctxt "strip.apple"
+msgid "apple"
+msgstr ""
+
+#. strip.ball
+msgctxt "strip.ball"
+msgid "ball"
+msgstr ""
+
+#. strip.banana
+msgctxt "strip.banana"
+msgid "banana"
+msgstr ""
+
+#. strip.bathroom
+msgctxt "strip.bathroom"
+msgid "bathroom"
+msgstr ""
+
+#. strip.bed
+msgctxt "strip.bed"
+msgid "bed"
+msgstr ""
+
+#. strip.blocks
+msgctxt "strip.blocks"
+msgid "blocks"
+msgstr ""
+
+#. strip.book
+msgctxt "strip.book"
+msgid "book"
+msgstr ""
+
+#. strip.bread
+msgctxt "strip.bread"
+msgid "bread"
+msgstr ""
+
+#. strip.calm
+msgctxt "strip.calm"
+msgid "calm"
+msgstr ""
+
+#. strip.car
+msgctxt "strip.car"
+msgid "car"
+msgstr ""
+
+#. strip.category.actions
+msgctxt "strip.category.actions"
+msgid "Actions"
+msgstr ""
+
+#. strip.category.feelings
+msgctxt "strip.category.feelings"
+msgid "Feelings"
+msgstr ""
+
+#. strip.category.food
+msgctxt "strip.category.food"
+msgid "Food"
+msgstr ""
+
+#. strip.category.places
+msgctxt "strip.category.places"
+msgid "Places"
+msgstr ""
+
+#. strip.category.toys
+msgctxt "strip.category.toys"
+msgid "Toys"
+msgstr ""
+
+#. strip.cookie
+msgctxt "strip.cookie"
+msgid "cookie"
+msgstr ""
+
+#. strip.crayons
+msgctxt "strip.crayons"
+msgid "crayons"
+msgstr ""
+
+#. strip.dance
+msgctxt "strip.dance"
+msgid "dance"
+msgstr ""
+
+#. strip.doll
+msgctxt "strip.doll"
+msgid "doll"
+msgstr ""
+
+#. strip.draw
+msgctxt "strip.draw"
+msgid "draw"
+msgstr ""
+
+#. strip.excited
+msgctxt "strip.excited"
+msgid "excited"
+msgstr ""
+
+#. strip.happy
+msgctxt "strip.happy"
+msgid "happy"
+msgstr ""
+
+#. strip.home
+msgctxt "strip.home"
+msgid "home"
+msgstr ""
+
+#. strip.hungry
+msgctxt "strip.hungry"
+msgid "hungry"
+msgstr ""
+
+#. strip.juice
+msgctxt "strip.juice"
+msgid "juice"
+msgstr ""
+
+#. strip.kitchen
+msgctxt "strip.kitchen"
+msgid "kitchen"
+msgstr ""
+
+#. strip.milk
+msgctxt "strip.milk"
+msgid "milk"
+msgstr ""
+
+#. strip.outside
+msgctxt "strip.outside"
+msgid "outside"
+msgstr ""
+
+#. strip.park
+msgctxt "strip.park"
+msgid "park"
+msgstr ""
+
+#. strip.play
+msgctxt "strip.play"
+msgid "play"
+msgstr ""
+
+#. strip.puzzle
+msgctxt "strip.puzzle"
+msgid "puzzle"
+msgstr ""
+
+#. strip.read
+msgctxt "strip.read"
+msgid "read"
+msgstr ""
+
+#. strip.run
+msgctxt "strip.run"
+msgid "run"
+msgstr ""
+
+#. strip.sad
+msgctxt "strip.sad"
+msgid "sad"
+msgstr ""
+
+#. strip.sandwich
+msgctxt "strip.sandwich"
+msgid "sandwich"
+msgstr ""
+
+#. strip.scared
+msgctxt "strip.scared"
+msgid "scared"
+msgstr ""
+
+#. strip.school
+msgctxt "strip.school"
+msgid "school"
+msgstr ""
+
+#. strip.sing
+msgctxt "strip.sing"
+msgid "sing"
+msgstr ""
+
+#. strip.sleep
+msgctxt "strip.sleep"
+msgid "sleep"
+msgstr ""
+
+#. strip.store
+msgctxt "strip.store"
+msgid "store"
+msgstr ""
+
+#. strip.swim
+msgctxt "strip.swim"
+msgid "swim"
+msgstr ""
+
+#. strip.teddy_bear
+msgctxt "strip.teddy_bear"
+msgid "teddy bear"
+msgstr ""
+
+#. strip.tired
+msgctxt "strip.tired"
+msgid "tired"
+msgstr ""
+
+#. strip.water
+msgctxt "strip.water"
+msgid "water"
+msgstr ""
+
+#. syllableJump.backToSets
+msgctxt "syllableJump.backToSets"
+msgid "Back to levels"
+msgstr ""
+
+#. syllableJump.great
+msgctxt "syllableJump.great"
+msgid "Great job!"
+msgstr ""
+
+#. syllableJump.intro
+msgctxt "syllableJump.intro"
+msgid "Break words into syllables — tap and clap along!"
+msgstr ""
+
+#. syllableJump.listen
+msgctxt "syllableJump.listen"
+msgid "Listen"
+msgstr ""
+
+#. syllableJump.next
+msgctxt "syllableJump.next"
+msgid "Next"
+msgstr ""
+
+#. syllableJump.reset
+msgctxt "syllableJump.reset"
+msgid "Start over"
+msgstr ""
+
+#. syllableJump.set.easy
+msgctxt "syllableJump.set.easy"
+msgid "Easy (2 syllables)"
+msgstr ""
+
+#. syllableJump.set.hard
+msgctxt "syllableJump.set.hard"
+msgid "Hard (3-5 syllables)"
+msgstr ""
+
+#. syllableJump.set.medium
+msgctxt "syllableJump.set.medium"
+msgid "Medium (2-3 syllables)"
+msgstr ""
+
+#. syllableJump.setDone
+msgctxt "syllableJump.setDone"
+msgid "All words done! 🎉"
+msgstr ""
+
+#. syllableJump.speed
+msgctxt "syllableJump.speed"
+msgid "Speech rate"
+msgstr ""
+
+#. syllableJump.syllableCount
+msgctxt "syllableJump.syllableCount"
+msgid "syllables"
+msgstr ""
+
+#. syllableJump.title
+msgctxt "syllableJump.title"
+msgid "Syllable Jump"
+msgstr ""
+
+#. syllableJump.words
+msgctxt "syllableJump.words"
+msgid "words"
+msgstr ""
+
+#. symbolText.convert
+msgctxt "symbolText.convert"
+msgid "Show with symbols"
+msgstr ""
+
+#. symbolText.examples
+msgctxt "symbolText.examples"
+msgid "Try an example sentence"
+msgstr ""
+
+#. symbolText.placeholder
+msgctxt "symbolText.placeholder"
+msgid "Type a sentence here…"
+msgstr ""
+
+#. symbolText.result
+msgctxt "symbolText.result"
+msgid "Text with symbols"
+msgstr ""
+
+#. symbolText.saved
+msgctxt "symbolText.saved"
+msgid "Saved texts"
+msgstr ""
+
+#. symbolText.title
+msgctxt "symbolText.title"
+msgid "Symbol-Supported Text"
 msgstr ""
 
 #. takk.description
@@ -5198,6 +9548,16 @@ msgctxt "talk.no"
 msgid "No"
 msgstr ""
 
+#. talk.no_boards
+msgctxt "talk.no_boards"
+msgid "No boards yet. Create one in Board Builder!"
+msgstr ""
+
+#. talk.open_builder
+msgctxt "talk.open_builder"
+msgid "Open Board Builder →"
+msgstr ""
+
 #. talk.sentence_strip
 msgctxt "talk.sentence_strip"
 msgid "Tap pictures to build a sentence"
@@ -5218,9 +9578,189 @@ msgctxt "talk.toilet"
 msgid "Toilet"
 msgstr ""
 
+#. talk.word.bad
+msgctxt "talk.word.bad"
+msgid "bad"
+msgstr ""
+
+#. talk.word.big
+msgctxt "talk.word.big"
+msgid "big"
+msgstr ""
+
+#. talk.word.drink
+msgctxt "talk.word.drink"
+msgid "drink"
+msgstr ""
+
+#. talk.word.eat
+msgctxt "talk.word.eat"
+msgid "eat"
+msgstr ""
+
+#. talk.word.go
+msgctxt "talk.word.go"
+msgid "go"
+msgstr ""
+
+#. talk.word.good
+msgctxt "talk.word.good"
+msgid "good"
+msgstr ""
+
+#. talk.word.happy
+msgctxt "talk.word.happy"
+msgid "happy"
+msgstr ""
+
+#. talk.word.here
+msgctxt "talk.word.here"
+msgid "here"
+msgstr ""
+
+#. talk.word.i
+msgctxt "talk.word.i"
+msgid "I"
+msgstr ""
+
+#. talk.word.like
+msgctxt "talk.word.like"
+msgid "like"
+msgstr ""
+
+#. talk.word.little
+msgctxt "talk.word.little"
+msgid "little"
+msgstr ""
+
+#. talk.word.not
+msgctxt "talk.word.not"
+msgid "not"
+msgstr ""
+
+#. talk.word.play
+msgctxt "talk.word.play"
+msgid "play"
+msgstr ""
+
+#. talk.word.sad
+msgctxt "talk.word.sad"
+msgid "sad"
+msgstr ""
+
+#. talk.word.there
+msgctxt "talk.word.there"
+msgid "there"
+msgstr ""
+
+#. talk.word.want
+msgctxt "talk.word.want"
+msgid "want"
+msgstr ""
+
+#. talk.word.what
+msgctxt "talk.word.what"
+msgid "what"
+msgstr ""
+
+#. talk.word.where
+msgctxt "talk.word.where"
+msgid "where"
+msgstr ""
+
+#. talk.word.who
+msgctxt "talk.word.who"
+msgid "who"
+msgstr ""
+
+#. talk.word.you
+msgctxt "talk.word.you"
+msgid "you"
+msgstr ""
+
 #. talk.yes
 msgctxt "talk.yes"
 msgid "Yes"
+msgstr ""
+
+#. theMimic.faster
+msgctxt "theMimic.faster"
+msgid "Faster"
+msgstr ""
+
+#. theMimic.intro
+msgctxt "theMimic.intro"
+msgid "Listen and mimic — from simple to complex!"
+msgstr ""
+
+#. theMimic.level.phrases
+msgctxt "theMimic.level.phrases"
+msgid "Phrases"
+msgstr ""
+
+#. theMimic.level.sentences
+msgctxt "theMimic.level.sentences"
+msgid "Sentences"
+msgstr ""
+
+#. theMimic.level.sounds
+msgctxt "theMimic.level.sounds"
+msgid "Sounds"
+msgstr ""
+
+#. theMimic.level.words
+msgctxt "theMimic.level.words"
+msgid "Words"
+msgstr ""
+
+#. theMimic.listen
+msgctxt "theMimic.listen"
+msgid "Listen"
+msgstr ""
+
+#. theMimic.next
+msgctxt "theMimic.next"
+msgid "Next"
+msgstr ""
+
+#. theMimic.progress
+msgctxt "theMimic.progress"
+msgid "Progress"
+msgstr ""
+
+#. theMimic.repeat
+msgctxt "theMimic.repeat"
+msgid "Repeat"
+msgstr ""
+
+#. theMimic.reps
+msgctxt "theMimic.reps"
+msgid "Repetitions"
+msgstr ""
+
+#. theMimic.slower
+msgctxt "theMimic.slower"
+msgid "Slower"
+msgstr ""
+
+#. theMimic.speed
+msgctxt "theMimic.speed"
+msgid "Speed"
+msgstr ""
+
+#. theMimic.streak
+msgctxt "theMimic.streak"
+msgid "Streak"
+msgstr ""
+
+#. theMimic.title
+msgctxt "theMimic.title"
+msgid "The Mimic"
+msgstr ""
+
+#. theMimic.yourTurn
+msgctxt "theMimic.yourTurn"
+msgid "Your turn!"
 msgstr ""
 
 #. timeTracker.minutes
@@ -5503,6 +10043,871 @@ msgctxt "vs.title"
 msgid "Visual Support"
 msgstr ""
 
+#. welcome.angerManager.goal
+msgctxt "welcome.angerManager.goal"
+msgid "Provide concrete tools to manage anger and prevent outbursts."
+msgstr ""
+
+#. welcome.angerManager.how
+msgctxt "welcome.angerManager.how"
+msgid "Show how angry you are on the thermometer. Get strategy suggestions based on level."
+msgstr ""
+
+#. welcome.angerManager.purpose
+msgctxt "welcome.angerManager.purpose"
+msgid "Anger thermometer with calming strategies."
+msgstr ""
+
+#. welcome.boardBuilder.goal
+msgctxt "welcome.boardBuilder.goal"
+msgid "Give educators and parents tools to create individually adapted communication aids."
+msgstr ""
+
+#. welcome.boardBuilder.how
+msgctxt "welcome.boardBuilder.how"
+msgid "Choose size, search for pictograms, drag and drop to arrange. Save and use in daily life."
+msgstr ""
+
+#. welcome.boardBuilder.purpose
+msgctxt "welcome.boardBuilder.purpose"
+msgid "Create custom AAC communication boards with ARASAAC pictograms."
+msgstr ""
+
+#. welcome.breakCheck.goal
+msgctxt "welcome.breakCheck.goal"
+msgid "Prevent overload through regular breaks and sensory balance."
+msgstr ""
+
+#. welcome.breakCheck.how
+msgctxt "welcome.breakCheck.how"
+msgid "The app reminds about breaks at regular intervals and suggests activities: movement, rest or play."
+msgstr ""
+
+#. welcome.breakCheck.purpose
+msgctxt "welcome.breakCheck.purpose"
+msgid "Reminders for regular breaks with activity suggestions."
+msgstr ""
+
+#. welcome.calmRoom.goal
+msgctxt "welcome.calmRoom.goal"
+msgid "Provide tools for self-regulation and sensory balance in stressful situations."
+msgstr ""
+
+#. welcome.calmRoom.how
+msgctxt "welcome.calmRoom.how"
+msgid "Choose from calming activities: deep breathing, soothing sounds, visual patterns."
+msgstr ""
+
+#. welcome.calmRoom.purpose
+msgctxt "welcome.calmRoom.purpose"
+msgid "Calming activities and sensory tools for winding down."
+msgstr ""
+
+#. welcome.chooser.goal
+msgctxt "welcome.chooser.goal"
+msgid "Reduce stress around choices by making the decision process visual and playful."
+msgstr ""
+
+#. welcome.chooser.how
+msgctxt "welcome.chooser.how"
+msgid "Add alternatives with pictures or text. Spin the wheel or let the app choose."
+msgstr ""
+
+#. welcome.chooser.purpose
+msgctxt "welcome.chooser.purpose"
+msgid "Help making choices between alternatives."
+msgstr ""
+
+#. welcome.clockTeacher.goal
+msgctxt "welcome.clockTeacher.goal"
+msgid "Build understanding of time concepts through playful interaction."
+msgstr ""
+
+#. welcome.clockTeacher.how
+msgctxt "welcome.clockTeacher.how"
+msgid "Practice with analog and digital clocks. Drag the hands, answer questions and get feedback."
+msgstr ""
+
+#. welcome.clockTeacher.purpose
+msgctxt "welcome.clockTeacher.purpose"
+msgid "Learn to read the clock with interactive exercises."
+msgstr ""
+
+#. welcome.clothesChooser.goal
+msgctxt "welcome.clothesChooser.goal"
+msgid "Increase independence when getting dressed through visual decision support."
+msgstr ""
+
+#. welcome.clothesChooser.how
+msgctxt "welcome.clothesChooser.how"
+msgid "The app shows the weather and suggests suitable clothes with pictures."
+msgstr ""
+
+#. welcome.clothesChooser.purpose
+msgctxt "welcome.clothesChooser.purpose"
+msgid "Help choosing clothes based on weather and activity."
+msgstr ""
+
+#. welcome.commBook.goal
+msgctxt "welcome.commBook.goal"
+msgid "To give the child a personal, always-available communication book that can be customized with their own pictures and words."
+msgstr ""
+
+#. welcome.commBook.how
+msgctxt "welcome.commBook.how"
+msgid "1. Select a tab (food, drinks, etc.). 2. Tap a card to add it to the sentence strip. 3. Tap 🔊 to speak. 4. Use ✏️ to customize with your own photos and symbols."
+msgstr ""
+
+#. welcome.commBook.purpose
+msgctxt "welcome.commBook.purpose"
+msgid "The Communication Book is a digital version of PECS communication books. With tabs for categories, personal photos and ARASAAC pictograms."
+msgstr ""
+
+#. welcome.conversationAid.goal
+msgctxt "welcome.conversationAid.goal"
+msgid "Reduce anxiety around social conversations through prepared phrases and visual support."
+msgstr ""
+
+#. welcome.conversationAid.how
+msgctxt "welcome.conversationAid.how"
+msgid "Choose a conversation situation, browse suggested phrases and tap to speak."
+msgstr ""
+
+#. welcome.conversationAid.purpose
+msgctxt "welcome.conversationAid.purpose"
+msgid "Ready-made phrases and support for conversations."
+msgstr ""
+
+#. welcome.cookingHelper.goal
+msgctxt "welcome.cookingHelper.goal"
+msgid "Enable participation in cooking through clear visual instructions."
+msgstr ""
+
+#. welcome.cookingHelper.how
+msgctxt "welcome.cookingHelper.how"
+msgid "Choose a recipe, follow steps with large pictures and short instructions. One step at a time."
+msgstr ""
+
+#. welcome.cookingHelper.purpose
+msgctxt "welcome.cookingHelper.purpose"
+msgid "Visual cooking instructions step by step."
+msgstr ""
+
+#. welcome.counting.goal
+msgctxt "welcome.counting.goal"
+msgid "Build basic number understanding by connecting quantity to numbers visually."
+msgstr ""
+
+#. welcome.counting.how
+msgctxt "welcome.counting.how"
+msgid "Tap objects to count them. See the number grow. Hear the number read aloud."
+msgstr ""
+
+#. welcome.counting.purpose
+msgctxt "welcome.counting.purpose"
+msgid "Visual counting with concrete objects."
+msgstr ""
+
+#. welcome.dayPlanner.goal
+msgctxt "welcome.dayPlanner.goal"
+msgid "Create security through clear visual structure and predictability in everyday life."
+msgstr ""
+
+#. welcome.dayPlanner.how
+msgctxt "welcome.dayPlanner.how"
+msgid "Add activities with pictures and times. Drag to arrange. Mark as complete during the day."
+msgstr ""
+
+#. welcome.dayPlanner.purpose
+msgctxt "welcome.dayPlanner.purpose"
+msgid "Visual day planning with timeline. Creates structure and predictability."
+msgstr ""
+
+#. welcome.diary.goal
+msgctxt "welcome.diary.goal"
+msgid "Provide a private space to express thoughts and feelings with optional support."
+msgstr ""
+
+#. welcome.diary.how
+msgctxt "welcome.diary.how"
+msgid "Write or choose pictures to tell about your day. Look back at old entries."
+msgstr ""
+
+#. welcome.diary.purpose
+msgctxt "welcome.diary.purpose"
+msgid "Visual diary with pictures, emojis and text."
+msgstr ""
+
+#. welcome.dontShowAgain
+msgctxt "welcome.dontShowAgain"
+msgid "Don't show again"
+msgstr ""
+
+#. welcome.emotionMap.goal
+msgctxt "welcome.emotionMap.goal"
+msgid "Develop emotional awareness and the ability to communicate about feelings."
+msgstr ""
+
+#. welcome.emotionMap.how
+msgctxt "welcome.emotionMap.how"
+msgid "Choose how you feel from the pictures. See where in your body you feel it."
+msgstr ""
+
+#. welcome.emotionMap.purpose
+msgctxt "welcome.emotionMap.purpose"
+msgid "Identify and express feelings with pictures."
+msgstr ""
+
+#. welcome.energyMeter.goal
+msgctxt "welcome.energyMeter.goal"
+msgid "Increase self-awareness about energy and rest needs for better self-regulation."
+msgstr ""
+
+#. welcome.energyMeter.how
+msgctxt "welcome.energyMeter.how"
+msgid "Mark your energy level during the day — high, medium or low. See patterns over time."
+msgstr ""
+
+#. welcome.energyMeter.purpose
+msgctxt "welcome.energyMeter.purpose"
+msgid "Track and display energy levels during the day."
+msgstr ""
+
+#. welcome.focusBuddy.goal
+msgctxt "welcome.focusBuddy.goal"
+msgid "Train focus ability with short, rewarding sessions that motivate."
+msgstr ""
+
+#. welcome.focusBuddy.how
+msgctxt "welcome.focusBuddy.how"
+msgid "Set a focus period, work while the timer counts down. Get rewards for completed sessions."
+msgstr ""
+
+#. welcome.focusBuddy.purpose
+msgctxt "welcome.focusBuddy.purpose"
+msgid "Help maintaining focus with timers and rewards."
+msgstr ""
+
+#. welcome.goal
+msgctxt "welcome.goal"
+msgid "Purpose & goal"
+msgstr ""
+
+#. welcome.howItWorks
+msgctxt "welcome.howItWorks"
+msgid "How does it work?"
+msgstr ""
+
+#. welcome.letsGo
+msgctxt "welcome.letsGo"
+msgid "Let's go!"
+msgstr ""
+
+#. welcome.letterJourney.goal
+msgctxt "welcome.letterJourney.goal"
+msgid "Build phonemic awareness and letter knowledge as a foundation for reading."
+msgstr ""
+
+#. welcome.letterJourney.how
+msgctxt "welcome.letterJourney.how"
+msgid "See the letter, hear the sound, watch the animation. Practice forming the letter."
+msgstr ""
+
+#. welcome.letterJourney.purpose
+msgctxt "welcome.letterJourney.purpose"
+msgid "Learn letters with phonics and animation."
+msgstr ""
+
+#. welcome.mathAid.goal
+msgctxt "welcome.mathAid.goal"
+msgid "Make mathematics concrete and understandable through visual representations."
+msgstr ""
+
+#. welcome.mathAid.how
+msgctxt "welcome.mathAid.how"
+msgid "Count with pictures, drag objects and see results visually."
+msgstr ""
+
+#. welcome.mathAid.purpose
+msgctxt "welcome.mathAid.purpose"
+msgid "Visual math with concrete objects."
+msgstr ""
+
+#. welcome.memoryGame.goal
+msgctxt "welcome.memoryGame.goal"
+msgid "Train working memory and concentration through play."
+msgstr ""
+
+#. welcome.memoryGame.how
+msgctxt "welcome.memoryGame.how"
+msgid "Flip cards, find matching pairs. Difficulty can be adjusted."
+msgstr ""
+
+#. welcome.memoryGame.purpose
+msgctxt "welcome.memoryGame.purpose"
+msgid "Classic memory game with pictures — train your memory in a fun way."
+msgstr ""
+
+#. welcome.moneyCheck.goal
+msgctxt "welcome.moneyCheck.goal"
+msgid "Build practical money skills for increased independence in everyday life."
+msgstr ""
+
+#. welcome.moneyCheck.how
+msgctxt "welcome.moneyCheck.how"
+msgid "Practice recognizing coins and bills, counting money and giving correct change."
+msgstr ""
+
+#. welcome.moneyCheck.purpose
+msgctxt "welcome.moneyCheck.purpose"
+msgid "Learn about money and giving change."
+msgstr ""
+
+#. welcome.mouthGym.goal
+msgctxt "welcome.mouthGym.goal"
+msgid "Strengthen oral motor control — the foundation for clear speech."
+msgstr ""
+
+#. welcome.mouthGym.how
+msgctxt "welcome.mouthGym.how"
+msgid "Choose a muscle group, follow the animation and do the exercises in front of a mirror."
+msgstr ""
+
+#. welcome.mouthGym.purpose
+msgctxt "welcome.mouthGym.purpose"
+msgid "Visually guided oral motor exercises based on PROMPT therapy principles."
+msgstr ""
+
+#. welcome.mySchedule.goal
+msgctxt "welcome.mySchedule.goal"
+msgid "A flexible schedule tool adaptable to each child's unique needs."
+msgstr ""
+
+#. welcome.mySchedule.how
+msgctxt "welcome.mySchedule.how"
+msgid "Customize the schedule with the child's own activities, pictures and colors."
+msgstr ""
+
+#. welcome.mySchedule.purpose
+msgctxt "welcome.mySchedule.purpose"
+msgid "Create a personal visual schedule adapted for the child."
+msgstr ""
+
+#. welcome.oralMotor.goal
+msgctxt "welcome.oralMotor.goal"
+msgid "Strengthen oral motor control and movement planning as a foundation for better speech."
+msgstr ""
+
+#. welcome.oralMotor.how
+msgctxt "welcome.oralMotor.how"
+msgid "Choose an exercise group (tongue, lips, jaw, breathing). Follow the steps — the app shows and tells you what to do."
+msgstr ""
+
+#. welcome.oralMotor.purpose
+msgctxt "welcome.oralMotor.purpose"
+msgid "Train the oral motor skills needed for clear speech. Adapted for children with neurodevelopmental conditions and childhood apraxia of speech."
+msgstr ""
+
+#. welcome.pecsBoard.goal
+msgctxt "welcome.pecsBoard.goal"
+msgid "Quick and easy picture communication for everyday needs and wishes."
+msgstr ""
+
+#. welcome.pecsBoard.how
+msgctxt "welcome.pecsBoard.how"
+msgid "Choose a category, tap pictures to communicate. Build sentence strips by combining pictures."
+msgstr ""
+
+#. welcome.pecsBoard.purpose
+msgctxt "welcome.pecsBoard.purpose"
+msgid "Communication boards with pictures sorted by needs, feelings and activities."
+msgstr ""
+
+#. welcome.pecsTrainer.goal
+msgctxt "welcome.pecsTrainer.goal"
+msgid "Build basic communication skills step by step through picture exchange."
+msgstr ""
+
+#. welcome.pecsTrainer.how
+msgctxt "welcome.pecsTrainer.how"
+msgid "The child selects a picture, gives it to a communication partner, and receives what the picture shows."
+msgstr ""
+
+#. welcome.pecsTrainer.purpose
+msgctxt "welcome.pecsTrainer.purpose"
+msgid "Practice picture exchange communication (PECS-inspired) — a structured way to learn communication with pictures."
+msgstr ""
+
+#. welcome.phraseBuilder.goal
+msgctxt "welcome.phraseBuilder.goal"
+msgid "Develop the ability to express complex thoughts through symbol combinations."
+msgstr ""
+
+#. welcome.phraseBuilder.how
+msgctxt "welcome.phraseBuilder.how"
+msgid "Select pictograms in the right order to build a sentence. Press play to hear the whole sentence."
+msgstr ""
+
+#. welcome.phraseBuilder.purpose
+msgctxt "welcome.phraseBuilder.purpose"
+msgid "Build sentences with pictograms — an AAC tool for expressing complex thoughts with pictures."
+msgstr ""
+
+#. welcome.pictureDictionary.goal
+msgctxt "welcome.pictureDictionary.goal"
+msgid "Build vocabulary through visual connection between picture and word."
+msgstr ""
+
+#. welcome.pictureDictionary.how
+msgctxt "welcome.pictureDictionary.how"
+msgid "Choose a category, see pictures with words. Test yourself by matching words and pictures."
+msgstr ""
+
+#. welcome.pictureDictionary.purpose
+msgctxt "welcome.pictureDictionary.purpose"
+msgid "Browse, learn and test your knowledge of everyday words with pictures."
+msgstr ""
+
+#. welcome.pictureSchedule.goal
+msgctxt "welcome.pictureSchedule.goal"
+msgid "Increase independence through visual structure the child can follow on their own."
+msgstr ""
+
+#. welcome.pictureSchedule.how
+msgctxt "welcome.pictureSchedule.how"
+msgid "Choose pictures for the day's activities, arrange top to bottom. The child checks off each step."
+msgstr ""
+
+#. welcome.pictureSchedule.purpose
+msgctxt "welcome.pictureSchedule.purpose"
+msgid "Create visual daily schedules with pictures — basic TEACCH-inspired support."
+msgstr ""
+
+#. welcome.pointTalk.goal
+msgctxt "welcome.pointTalk.goal"
+msgid "Stimulate language development through structured pointing and naming."
+msgstr ""
+
+#. welcome.pointTalk.how
+msgctxt "welcome.pointTalk.how"
+msgid "Show pictures and name them. The child points, you confirm and expand."
+msgstr ""
+
+#. welcome.pointTalk.purpose
+msgctxt "welcome.pointTalk.purpose"
+msgid "Aided language stimulation — children learn to communicate by pointing at pictures."
+msgstr ""
+
+#. welcome.practiceBoard.goal
+msgctxt "welcome.practiceBoard.goal"
+msgid "Make progress visible and build motivation through clear visual feedback."
+msgstr ""
+
+#. welcome.practiceBoard.how
+msgctxt "welcome.practiceBoard.how"
+msgid "Add what you're practicing, mark each time you practice. Watch your progress grow."
+msgstr ""
+
+#. welcome.practiceBoard.purpose
+msgctxt "welcome.practiceBoard.purpose"
+msgid "Track practice sessions and progress visually."
+msgstr ""
+
+#. welcome.rewardChart.goal
+msgctxt "welcome.rewardChart.goal"
+msgid "Motivate through positive reinforcement and make progress toward goals visible."
+msgstr ""
+
+#. welcome.rewardChart.how
+msgctxt "welcome.rewardChart.how"
+msgid "Set goals, collect stars each time you achieve them. Reach the reward!"
+msgstr ""
+
+#. welcome.rewardChart.purpose
+msgctxt "welcome.rewardChart.purpose"
+msgid "Earn stars for good habits and achieved goals."
+msgstr ""
+
+#. welcome.routineBuddy.goal
+msgctxt "welcome.routineBuddy.goal"
+msgid "Build independence in daily routines through clear visual steps."
+msgstr ""
+
+#. welcome.routineBuddy.how
+msgctxt "welcome.routineBuddy.how"
+msgid "Choose a routine, follow the steps with pictures. Each step has a picture and brief instruction."
+msgstr ""
+
+#. welcome.routineBuddy.purpose
+msgctxt "welcome.routineBuddy.purpose"
+msgid "Step-by-step routines for everyday — morning, evening, school."
+msgstr ""
+
+#. welcome.sagostunden.goal
+msgctxt "welcome.sagostunden.goal"
+msgid "Practice reading and creativity through visual storytelling."
+msgstr ""
+
+#. welcome.sagostunden.how
+msgctxt "welcome.sagostunden.how"
+msgid "Choose a story template, pick words with pictograms, and a unique story is generated for you!"
+msgstr ""
+
+#. welcome.sagostunden.purpose
+msgctxt "welcome.sagostunden.purpose"
+msgid "Create fun stories by picking words and pictures."
+msgstr ""
+
+#. welcome.schoolDay.goal
+msgctxt "welcome.schoolDay.goal"
+msgid "Reduce stress about the school day through clear visual structure and predictability."
+msgstr ""
+
+#. welcome.schoolDay.how
+msgctxt "welcome.schoolDay.how"
+msgid "Add lessons and breaks. See what's happening now and what's coming next."
+msgstr ""
+
+#. welcome.schoolDay.purpose
+msgctxt "welcome.schoolDay.purpose"
+msgid "Follow your school schedule visually."
+msgstr ""
+
+#. welcome.sentenceBuilder.goal
+msgctxt "welcome.sentenceBuilder.goal"
+msgid "Strengthen sentence building and grammatical understanding through visual cues."
+msgstr ""
+
+#. welcome.sentenceBuilder.how
+msgctxt "welcome.sentenceBuilder.how"
+msgid "Choose words in the right order. Colors help: subject, verb, object. Hear the sentence read aloud."
+msgstr ""
+
+#. welcome.sentenceBuilder.purpose
+msgctxt "welcome.sentenceBuilder.purpose"
+msgid "Build sentences with color-coded words."
+msgstr ""
+
+#. welcome.sentenceStrip.goal
+msgctxt "welcome.sentenceStrip.goal"
+msgid "To develop sentence building and communication through visual support, aligned with the PECS methodology."
+msgstr ""
+
+#. welcome.sentenceStrip.how
+msgctxt "welcome.sentenceStrip.how"
+msgid "1. Select PECS phase (IV-VI). 2. Tap a starter phrase. 3. Choose a category and add words. 4. Tap 🔊 to hear the full sentence. 5. Save favorites!"
+msgstr ""
+
+#. welcome.sentenceStrip.purpose
+msgctxt "welcome.sentenceStrip.purpose"
+msgid "Sentence Strip Workshop helps children with autism build sentences step by step, based on PECS Phases IV-VI. The child selects a starter phrase like \"I want\" and adds words with pictograms."
+msgstr ""
+
+#. welcome.signDictionary.goal
+msgctxt "welcome.signDictionary.goal"
+msgid "Provide an additional communication method through visual signs complementing speech."
+msgstr ""
+
+#. welcome.signDictionary.how
+msgctxt "welcome.signDictionary.how"
+msgid "Search for words, watch the video showing the sign, and practice together."
+msgstr ""
+
+#. welcome.signDictionary.purpose
+msgctxt "welcome.signDictionary.purpose"
+msgid "Learn sign language (TAKK) — sign dictionary with video."
+msgstr ""
+
+#. welcome.situationCards.goal
+msgctxt "welcome.situationCards.goal"
+msgid "Facilitate communication in specific everyday situations through prepared visual supports."
+msgstr ""
+
+#. welcome.situationCards.how
+msgctxt "welcome.situationCards.how"
+msgid "Choose a situation (food, play, school) and use the picture cards to communicate."
+msgstr ""
+
+#. welcome.situationCards.purpose
+msgctxt "welcome.situationCards.purpose"
+msgid "Ready-made themed boards with pictures for common everyday situations."
+msgstr ""
+
+#. welcome.socialStories.goal
+msgctxt "welcome.socialStories.goal"
+msgid "Prepare the child for social situations and reduce anxiety through understanding and predictability."
+msgstr ""
+
+#. welcome.socialStories.how
+msgctxt "welcome.socialStories.how"
+msgid "Read the story together with the child. Pictures and simple text explain what happens and how to act."
+msgstr ""
+
+#. welcome.socialStories.purpose
+msgctxt "welcome.socialStories.purpose"
+msgid "Visual social stories explaining everyday situations step by step."
+msgstr ""
+
+#. welcome.soundChain.goal
+msgctxt "welcome.soundChain.goal"
+msgid "Build the ability to plan and execute sound sequences — the foundation for fluent speech."
+msgstr ""
+
+#. welcome.soundChain.how
+msgctxt "welcome.soundChain.how"
+msgid "Start with individual sounds, tap to hear them. Chain more sounds together until you form whole words."
+msgstr ""
+
+#. welcome.soundChain.purpose
+msgctxt "welcome.soundChain.purpose"
+msgid "Chain individual sounds into syllables and words. Support for children with neurodevelopmental conditions and childhood apraxia of speech (CAS)."
+msgstr ""
+
+#. welcome.soundLibrary.goal
+msgctxt "welcome.soundLibrary.goal"
+msgid "Stimulate auditory attention and the connection between sound and image."
+msgstr ""
+
+#. welcome.soundLibrary.how
+msgctxt "welcome.soundLibrary.how"
+msgid "Choose a category (animals, nature, instruments), tap to listen."
+msgstr ""
+
+#. welcome.soundLibrary.purpose
+msgctxt "welcome.soundLibrary.purpose"
+msgid "Explore fun sounds sorted by category."
+msgstr ""
+
+#. welcome.soundLottery.goal
+msgctxt "welcome.soundLottery.goal"
+msgid "Systematic practice of all Swedish sounds with motivating randomization."
+msgstr ""
+
+#. welcome.soundLottery.how
+msgctxt "welcome.soundLottery.how"
+msgid "Spin the wheel to get a sound. Practice it in isolation, then in syllables, words and sentences."
+msgstr ""
+
+#. welcome.soundLottery.purpose
+msgctxt "welcome.soundLottery.purpose"
+msgid "Randomized phoneme practice with hierarchical progression — from isolated sounds to full sentences."
+msgstr ""
+
+#. welcome.speechPractice.goal
+msgctxt "welcome.speechPractice.goal"
+msgid "Build speech motor automatization through systematic practice in the right order."
+msgstr ""
+
+#. welcome.speechPractice.how
+msgctxt "welcome.speechPractice.how"
+msgid "Listen to the model, imitate simultaneously, try with a delay, and finally independently. Repeat many times!"
+msgstr ""
+
+#. welcome.speechPractice.purpose
+msgctxt "welcome.speechPractice.purpose"
+msgid "Structured speech training inspired by the DTTC method. Support for children with neurodevelopmental conditions and childhood apraxia of speech."
+msgstr ""
+
+#. welcome.speechRhythm.goal
+msgctxt "welcome.speechRhythm.goal"
+msgid "Improve the natural rhythm and melody of speech — a key skill in CAS therapy."
+msgstr ""
+
+#. welcome.speechRhythm.how
+msgctxt "welcome.speechRhythm.how"
+msgid "Listen to the rhythm, tap along, and practice stress patterns. A visual metronome helps you keep time."
+msgstr ""
+
+#. welcome.speechRhythm.purpose
+msgctxt "welcome.speechRhythm.purpose"
+msgid "Prosody and rhythm training for children with CAS. Practices stress, tempo and intonation."
+msgstr ""
+
+#. welcome.stepGuide.goal
+msgctxt "welcome.stepGuide.goal"
+msgid "Make difficult tasks manageable by breaking them into small, clear steps."
+msgstr ""
+
+#. welcome.stepGuide.how
+msgctxt "welcome.stepGuide.how"
+msgid "Create a guide with steps, pictures and short instructions. Follow one step at a time."
+msgstr ""
+
+#. welcome.stepGuide.purpose
+msgctxt "welcome.stepGuide.purpose"
+msgid "Break complex tasks into clear visual steps."
+msgstr ""
+
+#. welcome.storyWorkshop.goal
+msgctxt "welcome.storyWorkshop.goal"
+msgid "Develop connected speech — from single words to complete narratives."
+msgstr ""
+
+#. welcome.storyWorkshop.how
+msgctxt "welcome.storyWorkshop.how"
+msgid "Choose pictures, arrange them into a story, listen to the model and practice telling it yourself."
+msgstr ""
+
+#. welcome.storyWorkshop.purpose
+msgctxt "welcome.storyWorkshop.purpose"
+msgid "Narrative speech practice for DTTC's 'connected speech' phase. Build stories with pictures."
+msgstr ""
+
+#. welcome.syllableJump.goal
+msgctxt "welcome.syllableJump.goal"
+msgid "Develop syllable awareness and rhythmic speech planning."
+msgstr ""
+
+#. welcome.syllableJump.how
+msgctxt "welcome.syllableJump.how"
+msgid "See the word, tap each syllable in order. Clap along! Hear the whole word when all syllables are done."
+msgstr ""
+
+#. welcome.syllableJump.purpose
+msgctxt "welcome.syllableJump.purpose"
+msgid "Break words into syllables with visual and rhythmic cues. Support for children with neurodevelopmental conditions and childhood apraxia of speech."
+msgstr ""
+
+#. welcome.symbolText.goal
+msgctxt "welcome.symbolText.goal"
+msgid "To support reading comprehension and communication by linking text to visual symbols."
+msgstr ""
+
+#. welcome.symbolText.how
+msgctxt "welcome.symbolText.how"
+msgid "1. Type a sentence in the text box. 2. Tap \"Show with symbols\". 3. Each word is shown with a symbol above it. 4. Tap 🔊 for speech."
+msgstr ""
+
+#. welcome.symbolText.purpose
+msgctxt "welcome.symbolText.purpose"
+msgid "Symbol Text automatically shows pictograms above each word you type — inspired by Widgit. Perfect as reading support for children with autism or intellectual disabilities."
+msgstr ""
+
+#. welcome.talkBoard.goal
+msgctxt "welcome.talkBoard.goal"
+msgid "Give the child a voice and ability to communicate independently through picture and symbol support."
+msgstr ""
+
+#. welcome.talkBoard.how
+msgctxt "welcome.talkBoard.how"
+msgid "Tap pictures to speak. Build sentences in the strip at the top. Buttons have fixed positions (LAMP) and Fitzgerald Key colors: yellow=people, green=verbs, orange=things, blue=descriptions."
+msgstr ""
+
+#. welcome.talkBoard.purpose
+msgctxt "welcome.talkBoard.purpose"
+msgid "A communication board (AAC) for children with neurodevelopmental conditions who need support to express themselves. Based on core vocabulary with LAMP principles."
+msgstr ""
+
+#. welcome.talkingMat.goal
+msgctxt "welcome.talkingMat.goal"
+msgid "Give children the ability to express opinions and preferences, even with limited speech."
+msgstr ""
+
+#. welcome.talkingMat.how
+msgctxt "welcome.talkingMat.how"
+msgid "Drag pictures to zones: green (like), yellow (neutral) or red (dislike)."
+msgstr ""
+
+#. welcome.talkingMat.purpose
+msgctxt "welcome.talkingMat.purpose"
+msgid "Digital talking mat — a proven tool for expressing opinions by sorting pictures into zones."
+msgstr ""
+
+#. welcome.theMimic.goal
+msgctxt "welcome.theMimic.goal"
+msgid "Build motor speech planning through systematic imitation."
+msgstr ""
+
+#. welcome.theMimic.how
+msgctxt "welcome.theMimic.how"
+msgid "Listen to the model, mimic it. Start with simple sounds and work up to full sentences."
+msgstr ""
+
+#. welcome.theMimic.purpose
+msgctxt "welcome.theMimic.purpose"
+msgid "Core DTTC technique — listen and repeat with increasing complexity."
+msgstr ""
+
+#. welcome.timeTracker.goal
+msgctxt "welcome.timeTracker.goal"
+msgid "Increase time awareness and help with planning and transitions."
+msgstr ""
+
+#. welcome.timeTracker.how
+msgctxt "welcome.timeTracker.how"
+msgid "Start the timer at the beginning of an activity, see time displayed visually."
+msgstr ""
+
+#. welcome.timeTracker.purpose
+msgctxt "welcome.timeTracker.purpose"
+msgid "Track how long activities take with a visual timer."
+msgstr ""
+
+#. welcome.visualSupport.goal
+msgctxt "welcome.visualSupport.goal"
+msgid "Provide visual support that increases predictability and reduces the need for verbal instructions."
+msgstr ""
+
+#. welcome.visualSupport.how
+msgctxt "welcome.visualSupport.how"
+msgid "Choose a ready-made routine or create your own. Follow steps with pictures and text."
+msgstr ""
+
+#. welcome.visualSupport.purpose
+msgctxt "welcome.visualSupport.purpose"
+msgid "Visual schedules with step-by-step routines for common activities."
+msgstr ""
+
+#. welcome.visualTimer.goal
+msgctxt "welcome.visualTimer.goal"
+msgid "Make abstract time concepts concrete and visual, reduce anxiety around transitions."
+msgstr ""
+
+#. welcome.visualTimer.how
+msgctxt "welcome.visualTimer.how"
+msgid "Set a time, watch it decrease visually. First-then shows what happens next."
+msgstr ""
+
+#. welcome.visualTimer.purpose
+msgctxt "welcome.visualTimer.purpose"
+msgid "Visual countdown timer with first-then support."
+msgstr ""
+
+#. welcome.whatIsThis
+msgctxt "welcome.whatIsThis"
+msgid "What is this?"
+msgstr ""
+
+#. welcome.wordBuilder.goal
+msgctxt "welcome.wordBuilder.goal"
+msgid "Develop literacy skills through playful, visual letter support."
+msgstr ""
+
+#. welcome.wordBuilder.how
+msgctxt "welcome.wordBuilder.how"
+msgid "See a picture, hear the word, drag letters in the right order to spell it."
+msgstr ""
+
+#. welcome.wordBuilder.purpose
+msgctxt "welcome.wordBuilder.purpose"
+msgid "Build words letter by letter with visual support."
+msgstr ""
+
+#. welcome.wordParade.goal
+msgctxt "welcome.wordParade.goal"
+msgid "Improve the ability to hear and produce sound differences between similar words."
+msgstr ""
+
+#. welcome.wordParade.how
+msgctxt "welcome.wordParade.how"
+msgid "Listen to word pairs, practice saying them, and guess which word is playing."
+msgstr ""
+
+#. welcome.wordParade.purpose
+msgctxt "welcome.wordParade.purpose"
+msgid "Minimal pair training — words that differ by just one sound. Critical for phonological awareness."
+msgstr ""
+
 #. wordBuilder.correct
 msgctxt "wordBuilder.correct"
 msgid "Correct"
@@ -5528,3 +10933,67 @@ msgctxt "wordBuilder.tryAgain"
 msgid "Try again!"
 msgstr ""
 
+#. wordParade.correct
+msgctxt "wordParade.correct"
+msgid "Correct! 🎉"
+msgstr ""
+
+#. wordParade.intro
+msgctxt "wordParade.intro"
+msgid "Hear the difference between similar words!"
+msgstr ""
+
+#. wordParade.listen1
+msgctxt "wordParade.listen1"
+msgid "Listen: word 1"
+msgstr ""
+
+#. wordParade.listen2
+msgctxt "wordParade.listen2"
+msgid "Listen: word 2"
+msgstr ""
+
+#. wordParade.listenBoth
+msgctxt "wordParade.listenBoth"
+msgid "Listen to both"
+msgstr ""
+
+#. wordParade.next
+msgctxt "wordParade.next"
+msgid "Next pair"
+msgstr ""
+
+#. wordParade.pair
+msgctxt "wordParade.pair"
+msgid "Pair"
+msgstr ""
+
+#. wordParade.practiceMode
+msgctxt "wordParade.practiceMode"
+msgid "Practice saying"
+msgstr ""
+
+#. wordParade.quizMode
+msgctxt "wordParade.quizMode"
+msgid "Guess correctly"
+msgstr ""
+
+#. wordParade.score
+msgctxt "wordParade.score"
+msgid "Score"
+msgstr ""
+
+#. wordParade.title
+msgctxt "wordParade.title"
+msgid "Word Parade"
+msgstr ""
+
+#. wordParade.tryAgain
+msgctxt "wordParade.tryAgain"
+msgid "Listen again!"
+msgstr ""
+
+#. wordParade.whichOne
+msgctxt "wordParade.whichOne"
+msgid "Which word did you hear?"
+msgstr ""

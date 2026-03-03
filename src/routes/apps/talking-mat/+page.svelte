@@ -1,20 +1,21 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
-  import { translateKeywords } from '$lib/arasaac/sv-lookup';
+
   import { locale } from '$lib/i18n';
   import { get } from 'svelte/store';
 
   interface MatItem { word: string; id: number; url: string; zone: 'positive' | 'neutral' | 'negative' | 'unplaced'; }
 
   const TOPICS = [
-    { id: 'food', label: 'mat.topic.food', emoji: '🍎', words: ['pizza', 'vegetables', 'fruit', 'candy', 'milk', 'water', 'bread', 'soup', 'rice', 'chicken'] },
-    { id: 'school', label: 'mat.topic.school', emoji: '🏫', words: ['reading', 'math', 'drawing', 'music', 'gym', 'recess', 'writing', 'computer', 'homework', 'group work'] },
-    { id: 'activities', label: 'mat.topic.activities', emoji: '⚽', words: ['swimming', 'football', 'drawing', 'music', 'dancing', 'cooking', 'reading', 'gaming', 'walking', 'cycling'] },
-    { id: 'feelings', label: 'mat.topic.feelings', emoji: '💭', words: ['school', 'home', 'friends', 'family', 'bedtime', 'morning', 'eating', 'homework', 'playing', 'shopping'] }
+    { id: 'food', label: 'mat.topic.food', emoji: '🍎', wordKeys: ['mat.pizza', 'mat.vegetables', 'mat.fruit', 'mat.candy', 'mat.milk', 'mat.water', 'mat.bread', 'mat.soup', 'mat.rice', 'mat.chicken'], englishWords: ['pizza', 'vegetables', 'fruit', 'candy', 'milk', 'water', 'bread', 'soup', 'rice', 'chicken'] },
+    { id: 'school', label: 'mat.topic.school', emoji: '🏫', wordKeys: ['mat.reading', 'mat.math', 'mat.drawing', 'mat.music', 'mat.gym', 'mat.recess', 'mat.writing', 'mat.computer', 'mat.homework', 'mat.group_work'], englishWords: ['reading', 'math', 'drawing', 'music', 'gym', 'recess', 'writing', 'computer', 'homework', 'group work'] },
+    { id: 'activities', label: 'mat.topic.activities', emoji: '⚽', wordKeys: ['mat.swimming', 'mat.football', 'mat.drawing', 'mat.music', 'mat.dancing', 'mat.cooking', 'mat.reading', 'mat.gaming', 'mat.walking', 'mat.cycling'], englishWords: ['swimming', 'football', 'drawing', 'music', 'dancing', 'cooking', 'reading', 'gaming', 'walking', 'cycling'] },
+    { id: 'feelings', label: 'mat.topic.feelings', emoji: '💭', wordKeys: ['mat.school', 'mat.home', 'mat.friends', 'mat.family', 'mat.bedtime', 'mat.morning', 'mat.eating', 'mat.homework', 'mat.playing', 'mat.shopping'], englishWords: ['school', 'home', 'friends', 'family', 'bedtime', 'morning', 'eating', 'homework', 'playing', 'shopping'] }
   ];
 
   let activeTopic = $state<typeof TOPICS[0] | null>(null);
@@ -27,12 +28,10 @@
     activeTopic = topic;
     loading = true;
     speak($t(topic.label));
-    const lang = get(locale);
-    const translated = lang === 'sv' ? await translateKeywords(topic.words) : null;
     const results = await Promise.all(
-      topic.words.map(async (w, i) => {
-        const res = await searchPictograms(w, 'en');
-        const displayWord = translated ? translated[i].sv : w;
+      topic.englishWords.map(async (englishWord, i) => {
+        const res = await searchPictograms(englishWord, 'en');
+        const displayWord = $t(topic.wordKeys[i]);
         return { word: displayWord, id: res[0]?.id || 0, url: res[0]?.url || '', zone: 'unplaced' as const };
       })
     );
@@ -71,7 +70,7 @@
 
 <div class="mat-page">
   <header class="app-header">
-    <button class="back-btn" onclick={() => activeTopic ? (activeTopic = null) : goto('/')} aria-label={$t('app.back')}>
+    <button class="back-btn" onclick={() => activeTopic ? (activeTopic = null) : goto(base + '/')} aria-label={$t('app.back')}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <h1>{$t('mat.title')}</h1>
@@ -148,9 +147,9 @@
                 {#if item.url}<img src={item.url} alt={item.word} width="56" height="56" />{/if}
                 <span class="unplaced-label">{item.word}</span>
                 <div class="place-buttons">
-                  <button class="place-btn pos" onclick={() => placeItem(item, 'positive')} aria-label="Positive">😊</button>
-                  <button class="place-btn neu" onclick={() => placeItem(item, 'neutral')} aria-label="Neutral">😐</button>
-                  <button class="place-btn neg" onclick={() => placeItem(item, 'negative')} aria-label="Negative">😟</button>
+                  <button class="place-btn pos" onclick={() => placeItem(item, 'positive')} aria-label={$t("mat.positive")}>😊</button>
+                  <button class="place-btn neu" onclick={() => placeItem(item, 'neutral')} aria-label={$t("mat.neutral")}>😐</button>
+                  <button class="place-btn neg" onclick={() => placeItem(item, 'negative')} aria-label={$t("mat.negative")}>😟</button>
                 </div>
               </div>
             {/each}

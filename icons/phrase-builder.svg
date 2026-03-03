@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Word block 1 -->
+  <rect x="3" y="14" width="12" height="10" rx="2.5" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="6" y1="19" x2="12" y2="19" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+  <!-- Connector 1-2 -->
+  <line x1="15" y1="19" x2="18" y2="19" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Word block 2 -->
+  <rect x="18" y="14" width="12" height="10" rx="2.5" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#E67E22" fill-opacity="0.15"/>
+  <line x1="21" y1="19" x2="27" y2="19" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+  <!-- Connector 2-3 -->
+  <line x1="30" y1="19" x2="33" y2="19" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Word block 3 -->
+  <rect x="33" y="14" width="12" height="10" rx="2.5" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="36" y1="19" x2="42" y2="19" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+  <!-- Bottom row - partial / building -->
+  <rect x="8" y="30" width="12" height="10" rx="2.5" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  <line x1="11" y1="35" x2="17" y2="35" stroke="#E67E22" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <!-- Plus sign indicating add -->
+  <line x1="30" y1="35" x2="38" y2="35" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="34" y1="31" x2="34" y2="39" stroke="#E67E22" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

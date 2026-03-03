@@ -1,7 +1,7 @@
 /**
  * TTS module — Piper WASM is the PRIMARY engine.
  * Web Speech API is fallback ONLY if Piper completely fails.
- * Default rate is 0.5x (slow for children with language disorders).
+ * Default rate is 0.25x (slow for children with language disorders).
  */
 import { get, writable } from 'svelte/store';
 import { ttsSpeed } from '$lib/a11y';
@@ -9,9 +9,10 @@ import { locale } from '$lib/i18n';
 import { browser } from '$app/environment';
 import { base } from '$app/paths';
 import { EXTRA_PATH_MAP, CUSTOM_VOICE_URLS } from './voices';
+import { preprocessText } from './pronunciation-map';
 import { isTauri, getLocalVoiceUrl, BUNDLED_VOICES } from './tauri-voices';
 
-const DEFAULT_RATE = 0.5;
+const DEFAULT_RATE = 0.25;
 
 // Selected voice IDs per language — persisted in localStorage
 // Default Swedish voice is Alma (custom-trained for these apps)
@@ -48,6 +49,8 @@ export const ttsStatus = writable<{
 	piperReady: boolean;
 	piperFailed: boolean;
 	voiceCached: boolean;
+	downloading: boolean;
+	downloadProgress: number;
 	lastSpoke: string;
 	lastError: string;
 }>({
@@ -55,6 +58,8 @@ export const ttsStatus = writable<{
 	piperReady: false,
 	piperFailed: false,
 	voiceCached: false,
+	downloading: false,
+	downloadProgress: 0,
 	lastSpoke: '',
 	lastError: '',
 });
@@ -253,17 +258,21 @@ export async function preloadVoice(lang?: string): Promise<void> {
 		try { stored = await piper.stored(); } catch { stored = []; }
 		if (!stored.includes(voiceId)) {
 			console.log(`[TTS] Downloading voice: ${voiceId}...`);
+			updateStatus({ downloading: true, downloadProgress: 0 });
 			if (voiceId in CUSTOM_VOICE_URLS) {
 				await downloadCustomVoice(voiceId, (progress) => {
 					const pct = progress.total ? Math.round((progress.loaded * 100) / progress.total) : 0;
+					updateStatus({ downloadProgress: pct });
 					console.log(`[TTS] Download ${voiceId}: ${pct}%`);
 				});
 			} else {
 				await piper.download(voiceId, (progress) => {
 					const pct = progress.total ? Math.round((progress.loaded * 100) / progress.total) : 0;
+					updateStatus({ downloadProgress: pct });
 					console.log(`[TTS] Download ${voiceId}: ${pct}%`);
 				});
 			}
+			updateStatus({ downloading: false, downloadProgress: 100, voiceCached: true });
 			console.log(`[TTS] ✅ Voice ${voiceId} ready`);
 		} else {
 			console.log(`[TTS] Voice ${voiceId} already cached`);
@@ -302,218 +311,13 @@ export async function removeVoice(voiceId: string): Promise<void> {
 }
 
 // Phonetic substitutions for words that TTS engines mispronounce
-// ~170 entries: app-specific + tech/IT + everyday loanwords + children's terms
 const PHONETIC_SV: Record<string, string> = {
-	// App-specific terms
 	'autismappar': 'auttism-appar',
 	'Autismappar': 'Auttism-appar',
 	'ARASAAC': 'arrasaak',
 	'TEACCH': 'tiitch',
 	'PECS': 'peks',
 	'LAMP': 'lamp',
-	// Tech / IT
-	'account': 'akkaunt',
-	'Account': 'Akkaunt',
-	'AI': 'ej-aj',
-	'audio': 'åådio',
-	'Audio': 'Åådio',
-	'backup': 'backapp',
-	'Backup': 'Backapp',
-	'bluetooth': 'bluutooth',
-	'Bluetooth': 'Bluutooth',
-	'bot': 'bått',
-	'Bot': 'Bått',
-	'browser': 'bråwser',
-	'Browser': 'Bråwser',
-	'buffer': 'baffer',
-	'Buffer': 'Baffer',
-	'cache': 'käsj',
-	'Cache': 'Käsj',
-	'cloud': 'klaud',
-	'Cloud': 'Klaud',
-	'cookie': 'kuuki',
-	'Cookie': 'Kuuki',
-	'cookies': 'kuukis',
-	'Cookies': 'Kuukis',
-	'dashboard': 'däsjbord',
-	'Dashboard': 'Däsjbord',
-	'debug': 'diibagg',
-	'Debug': 'Diibagg',
-	'delete': 'diliit',
-	'Delete': 'Diliit',
-	'download': 'daunlåd',
-	'Download': 'Daunlåd',
-	'email': 'iimejl',
-	'Email': 'Iimejl',
-	'e-mail': 'iimejl',
-	'feedback': 'fiidbäck',
-	'Feedback': 'Fiidbäck',
-	'file': 'fajl',
-	'File': 'Fajl',
-	'folder': 'fålder',
-	'Folder': 'Fålder',
-	'game': 'gejm',
-	'Game': 'Gejm',
-	'GPS': 'gee-pee-ess',
-	'guide': 'gajd',
-	'Guide': 'Gajd',
-	'HDMI': 'hå-dee-emm-ii',
-	'homepage': 'hoompeij',
-	'Homepage': 'Hoompeij',
-	'like': 'lajk',
-	'Like': 'Lajk',
-	'load': 'lood',
-	'Load': 'Lood',
-	'login': 'lågg-inn',
-	'Login': 'Lågg-inn',
-	'logout': 'lågg-aut',
-	'Logout': 'Lågg-aut',
-	'notification': 'nåttifikejsjon',
-	'Notification': 'Nåttifikejsjon',
-	'notifications': 'nåttifikejsjoner',
-	'Notifications': 'Nåttifikejsjoner',
-	'offline': 'åfflajn',
-	'Offline': 'Åfflajn',
-	'online': 'ånnlajn',
-	'Online': 'Ånnlajn',
-	'password': 'pässword',
-	'Password': 'Pässword',
-	'player': 'plejer',
-	'Player': 'Plejer',
-	'playlist': 'plejlist',
-	'Playlist': 'Plejlist',
-	'podcast': 'poddkast',
-	'Podcast': 'Poddkast',
-	'profile': 'proofil',
-	'Profile': 'Proofil',
-	'reset': 'riiset',
-	'Reset': 'Riiset',
-	'restart': 'riistaat',
-	'Restart': 'Riistaat',
-	'save': 'sejv',
-	'Save': 'Sejv',
-	'score': 'skåår',
-	'Score': 'Skåår',
-	'screenshot': 'skriinsjått',
-	'Screenshot': 'Skriinsjått',
-	'scroll': 'skråll',
-	'Scroll': 'Skråll',
-	'server': 'sörver',
-	'Server': 'Sörver',
-	'share': 'sjäär',
-	'Share': 'Sjäär',
-	'stream': 'striim',
-	'Stream': 'Striim',
-	'streaming': 'striiiming',
-	'Streaming': 'Striiiming',
-	'support': 'sapport',
-	'Support': 'Sapport',
-	'swipe': 'svajp',
-	'Swipe': 'Svajp',
-	'sync': 'synk',
-	'Sync': 'Synk',
-	'timer': 'tajmer',
-	'Timer': 'Tajmer',
-	'tutorial': 'tjuutårial',
-	'Tutorial': 'Tjuutårial',
-	'update': 'appdeijt',
-	'Update': 'Appdeijt',
-	'upgrade': 'appgrejd',
-	'Upgrade': 'Appgrejd',
-	'upload': 'applåd',
-	'Upload': 'Applåd',
-	'URL': 'u-err-ell',
-	'USB': 'u-ess-bee',
-	'username': 'juser-nejm',
-	'Username': 'Juser-nejm',
-	'video': 'viideo',
-	'Video': 'Viideo',
-	'VPN': 'vee-pee-enn',
-	'website': 'webbsajt',
-	'Website': 'Webbsajt',
-	'wifi': 'wajfaj',
-	'WiFi': 'wajfaj',
-	'Wi-Fi': 'wajfaj',
-	'zoom': 'zuum',
-	'Zoom': 'Zuum',
-	// Everyday English loanwords
-	'baby': 'bejbi',
-	'Baby': 'Bejbi',
-	'chat': 'tjatt',
-	'Chat': 'Tjatt',
-	'coach': 'kåtj',
-	'Coach': 'Kåtj',
-	'cool': 'kuul',
-	'Cool': 'Kuul',
-	'crazy': 'krejsi',
-	'Crazy': 'Krejsi',
-	'design': 'disajn',
-	'Design': 'Disajn',
-	'food': 'fuud',
-	'Food': 'Fuud',
-	'funny': 'fanni',
-	'Funny': 'Fanni',
-	'goal': 'gool',
-	'Goal': 'Gool',
-	'happy': 'häppi',
-	'Happy': 'Häppi',
-	'hoodie': 'huudi',
-	'Hoodie': 'Huudi',
-	'jeans': 'jiins',
-	'Jeans': 'Jiins',
-	'juice': 'juus',
-	'Juice': 'Juus',
-	'match': 'mätj',
-	'Match': 'Mätj',
-	'movie': 'muuvi',
-	'Movie': 'Muuvi',
-	'nice': 'najs',
-	'Nice': 'Najs',
-	'okay': 'åkej',
-	'Okay': 'Åkej',
-	'OK': 'åkej',
-	'party': 'paarti',
-	'Party': 'Paarti',
-	'please': 'pliis',
-	'Please': 'Pliis',
-	'popcorn': 'poppkårn',
-	'Popcorn': 'Poppkårn',
-	'sandwich': 'sändvitj',
-	'Sandwich': 'Sändvitj',
-	'shopping': 'sjåpping',
-	'Shopping': 'Sjåpping',
-	'smoothie': 'smuudi',
-	'Smoothie': 'Smuudi',
-	'sneakers': 'sniikers',
-	'Sneakers': 'Sniikers',
-	'sorry': 'sårri',
-	'Sorry': 'Sårri',
-	'story': 'ståri',
-	'Story': 'Ståri',
-	'style': 'stajl',
-	'Style': 'Stajl',
-	'team': 'tiim',
-	'Team': 'Tiim',
-	'thanks': 'tänks',
-	'Thanks': 'Tänks',
-	't-shirt': 'tii-sjört',
-	'T-shirt': 'Tii-sjört',
-	'weekend': 'wiikend',
-	'Weekend': 'Wiikend',
-	// Children-specific
-	'iPad': 'aj-pädd',
-	'Ipad': 'aj-pädd',
-	'playdough': 'plej-doo',
-	'Playdough': 'Plej-doo',
-	'puzzle': 'passel',
-	'Puzzle': 'Passel',
-	'teddy': 'teddi',
-	'Teddy': 'Teddi',
-	'TikTok': 'ticktock',
-	'tiktok': 'ticktock',
-	'YouTube': 'juutuub',
-	'Youtube': 'juutuub',
-	'youtube': 'juutuub',
 };
 
 function applyPhonetics(text: string, lang: string): string {
@@ -604,8 +408,8 @@ async function speakPiper(
 
 	const audio = new Audio();
 	audio.src = URL.createObjectURL(wav);
-	// Piper is much faster than Web Speech — halve the rate for Piper
-	audio.playbackRate = rate * 0.5;
+	// Piper is much faster than Web Speech — scale down rate for Piper (0.4x multiplier)
+	audio.playbackRate = rate * 0.4;
 
 	speaking = true;
 	currentAudio = audio;
@@ -635,10 +439,16 @@ async function speakPiper(
 
 function speakWebSpeech(text: string, lang: string, rate: number, opts: TTSOptions): void {
 	if (!('speechSynthesis' in window)) return;
+	// Preprocess for better Swedish pronunciation in Web Speech API
+	text = preprocessText(text, lang);
+
 
 	const utterance = new SpeechSynthesisUtterance(text);
 	utterance.lang = lang === 'sv' ? 'sv-SE' : lang === 'en' ? 'en-US' : lang;
-	utterance.rate = rate;
+	// Safari macOS handles low rates much slower than iOS — apply minimum
+	const isMacSafari = /Macintosh.*Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+	const minWebSpeechRate = isMacSafari ? 0.5 : 0.3;
+	utterance.rate = Math.max(rate, minWebSpeechRate);
 	utterance.pitch = 1.0;
 
 	const voices = speechSynthesis.getVoices();

@@ -25,23 +25,38 @@ export async function searchPictograms(
   // For Swedish: try local lookup first (Danne's arasaac-sv.po)
   if (lang === 'sv') {
     const lookup = await loadSvLookup();
-    // Search query might be in Swedish — find matching English key
     const queryLower = query.toLowerCase();
-    // First: exact match on Swedish value
+    // First: exact match on English key (e.g. query="happy" → lookup["happy"].sv="glad")
+    const exactEnKey = lookup[queryLower];
+    if (exactEnKey && exactEnKey.id) {
+      return [{ id: exactEnKey.id, keyword: exactEnKey.sv, url: getPictogramUrl(exactEnKey.id, false), urlBW: getPictogramUrl(exactEnKey.id, true) }];
+    }
+    // Second: exact match on Swedish value
     for (const [en, entry] of Object.entries(lookup)) {
       if (entry.sv.toLowerCase() === queryLower && entry.id) {
         return [{ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) }];
       }
     }
-    // Second: partial match on Swedish value
-    const partialSv: PictogramSearchResult[] = [];
+    // Third: partial match — Swedish values FIRST, then English keys
+    const svMatches: PictogramSearchResult[] = [];
+    const enMatches: PictogramSearchResult[] = [];
+    const seenIds = new Set<number>();
     for (const [en, entry] of Object.entries(lookup)) {
-      if (entry.sv.toLowerCase().includes(queryLower) && entry.id) {
-        partialSv.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
-        if (partialSv.length >= 50) break;
+      if (!entry.id) continue;
+      if (seenIds.has(entry.id)) continue;
+      const svLower = entry.sv.toLowerCase();
+      if (svLower.includes(queryLower)) {
+        // Prioritize exact Swedish matches
+        const item = { id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) };
+        if (svLower === queryLower) svMatches.unshift(item); else svMatches.push(item);
+        seenIds.add(entry.id);
+      } else if (en.includes(queryLower)) {
+        enMatches.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
+        seenIds.add(entry.id);
       }
     }
-    if (partialSv.length > 0) return partialSv;
+    const combined = [...svMatches, ...enMatches].slice(0, 50);
+    if (combined.length > 0) return combined;
   }
 
   // Fallback: ARASAAC API (English search works, Swedish not yet official)

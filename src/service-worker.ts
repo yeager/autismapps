@@ -3,7 +3,7 @@
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
-import { base, build, files, version } from '$service-worker';
+import { build, files, version } from '$service-worker';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 const CACHE = `cache-${version}`;
@@ -37,28 +37,29 @@ sw.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
 
-  // For same-origin navigations, inject COOP/COEP headers to enable SharedArrayBuffer
-  // (needed for ONNX/Piper WASM on GitHub Pages which doesn't support custom headers)
-  if (url.origin === location.origin && event.request.mode === 'navigate') {
+  // Navigation requests: let GitHub Pages 404.html SPA fallback work normally.
+  // Only intercept if truly offline.
+  if (event.request.mode === 'navigate') {
     event.respondWith(
       (async () => {
-        // For navigation requests, serve cached page or SPA fallback (index.html)
-        // SvelteKit's client-side router handles the actual routing
-        const cached = await caches.match(event.request);
-        if (cached) return addCoopCoep(cached);
-
-        // SPA fallback: serve the index page for any /launcher/* route
-        const indexResponse = await caches.match(`${base}/`);
-        if (indexResponse) return addCoopCoep(indexResponse);
-
-        // Last resort: try network
         try {
-          const networkResponse = await fetch(event.request);
-          if (networkResponse.ok) return addCoopCoep(networkResponse);
+          // Try network — GitHub Pages returns 404 with SPA HTML, which is fine
+          const response = await fetch(event.request);
+          // Accept any response that has HTML body (including 404 from GH Pages)
+          if (response.status < 500) {
+            return addCoopCoep(response);
+          }
         } catch {}
 
-        // Truly offline
-        return new Response('<html><body><h1>Offline</h1><p>Appen är inte tillgänglig offline ännu. Anslut till internet och försök igen.</p></body></html>', {
+        // Truly offline: serve cached index.html as SPA shell
+        const cached =
+          await caches.match('/launcher/index.html') ||
+          await caches.match('/launcher/') ||
+          await caches.match('/index.html') ||
+          await caches.match('/');
+        if (cached) return addCoopCoep(cached);
+
+        return new Response('<html><body><h1>Offline</h1><p>Anslut till internet och försök igen.</p></body></html>', {
           status: 503,
           headers: { 'Content-Type': 'text/html; charset=utf-8' }
         });
@@ -67,35 +68,60 @@ sw.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip external requests except ARASAAC API images
+  // Cache Piper TTS model files from HuggingFace (cache-first after first download)
+  if (url.hostname.includes('huggingface.co') && (url.pathname.endsWith('.onnx') || url.pathname.endsWith('.onnx.json') || url.pathname.endsWith('.wasm') || url.pathname.endsWith('.data'))) {
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        if (cached) return cached;
+        return fetch(event.request).then((response) => {
+          if (response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        });
+      })
+    );
+    return;
+  }
+
+  // Skip external requests except ARASAAC images
   if (url.origin !== location.origin && !url.hostname.includes('arasaac.org')) return;
 
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
+  const isAsset = ASSETS.includes(url.pathname);
 
-      return fetch(event.request).then((response) => {
+  if (isAsset) {
+    // Cache-first for static build assets
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        return cached || fetch(event.request).then((response) => {
+          if (response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        }).catch(() => new Response('Offline', { status: 503 }));
+      })
+    );
+  } else {
+    // Network-first for dynamic content (ARASAAC images etc)
+    event.respondWith(
+      fetch(event.request).then((response) => {
         if (response.status === 200) {
           const clone = response.clone();
-          caches.open(CACHE).then((cache) => {
-            cache.put(event.request, clone);
-          });
+          caches.open(CACHE).then((cache) => cache.put(event.request, clone));
         }
         return response;
       }).catch(() => {
-        return new Response('Offline', { status: 503 });
-      });
-    })
-  );
+        return caches.match(event.request).then((cached) => {
+          return cached || new Response('Offline', { status: 503 });
+        });
+      })
+    );
+  }
 });
 
 function addCoopCoep(response: Response): Response {
-  const headers = new Headers(response.headers);
-  headers.set('Cross-Origin-Opener-Policy', 'same-origin');
-  headers.set('Cross-Origin-Embedder-Policy', 'credentialless');
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers,
-  });
+  // Don't add COOP/COEP — it breaks cross-origin images (ARASAAC pictograms)
+  return response;
 }

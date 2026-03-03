@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#F1C40F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Letter A prominent -->
+  <text x="14" y="24" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#F1C40F" stroke="none">A</text>
+  <!-- Winding path/road from letter outward -->
+  <path d="M26 18 Q32 14 36 18 Q42 24 36 30 Q30 36 34 42" stroke-width="3" opacity="0.4" />
+  <path d="M26 18 Q32 14 36 18 Q42 24 36 30 Q30 36 34 42" stroke-width="2.5" stroke-dasharray="3 3" />
+  <!-- Small footprint dots along the path -->
+  <circle cx="30" cy="15.5" r="1.2" fill="#F1C40F" stroke="none" />
+  <circle cx="38" cy="21" r="1.2" fill="#F1C40F" stroke="none" />
+  <circle cx="34" cy="33" r="1.2" fill="#F1C40F" stroke="none" />
+</svg>

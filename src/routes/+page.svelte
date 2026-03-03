@@ -18,6 +18,7 @@
 
   let langOpen = $state(false);
   let langRef: HTMLDivElement | undefined = $state();
+  let aboutOpen = $state(false);
 
   function toggleLang() {
     langOpen = !langOpen;
@@ -32,6 +33,12 @@
   function handleClickOutside(e: MouseEvent) {
     if (langOpen && langRef && !langRef.contains(e.target as Node)) {
       langOpen = false;
+    }
+  }
+
+  function handleKeydown(e: KeyboardEvent) {
+    if (e.key === 'Escape' && aboutOpen) {
+      aboutOpen = false;
     }
   }
 
@@ -73,6 +80,9 @@
   }
 </script>
 
+<!-- svelte:window for keyboard events -->
+<svelte:window onkeydown={handleKeydown} />
+
 <div class="launcher" class:has-category={activeCategory !== null}>
   <!-- Hero image — always present, fades when category selected -->
   <div class="hero-wrapper" class:faded={activeCategory !== null}>
@@ -86,40 +96,19 @@
       <h2 class="hero-title">{$t('app.title.brand')}</h2>
       <p class="hero-subtitle">{$t('app.subtitle')}</p>
     </div>
-    {#if !activeCategory}
-      <div class="hero-overlay" transition:fade={{ duration: 300 }}>
-        <div class="hero-cta">
-          <p class="hero-tagline">{$t('app.choose_category')}</p>
-          <svg class="hero-arrow" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-          </svg>
-        </div>
-      </div>
-    {/if}
-  </div>
 
-  <!-- Top bar with settings -->
-  <header class="launcher-header">
-    <div class="brand">
-      <a href="https://autismappar.se/" class="back-to-site" aria-label="Tillbaka till autismappar.se">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M15 18l-6-6 6-6"/>
-        </svg>
-      </a>
-      <h1>{$t('app.title')}</h1>
-    </div>
-
-    <div class="header-actions">
+    <!-- Floating toolbar on hero -->
+    <div class="hero-toolbar">
       <!-- Language switcher -->
       <div class="lang-switcher" bind:this={langRef}>
         <button
-          class="lang-btn"
+          class="hero-btn"
           onclick={toggleLang}
           aria-label="Byt språk"
           aria-expanded={langOpen}
         >
           <span class="lang-flag">{currentFlag}</span>
-          <svg class="lang-chevron" class:open={langOpen} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="lang-chevron" class:open={langOpen} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 9l6 6 6-6"/>
           </svg>
         </button>
@@ -142,29 +131,84 @@
         {/if}
       </div>
 
+      <!-- Settings -->
       <button
-        class="settings-icon"
+        class="hero-btn"
         onclick={() => goto(base + '/settings')}
         aria-label={$t('app.settings')}
-        onfocus={() => speak($t('app.settings'))}
       >
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
           <circle cx="12" cy="12" r="3"/>
         </svg>
       </button>
+
+      <!-- About (popup) -->
       <button
-        class="about-icon"
-        onclick={() => goto(base + '/about')}
+        class="hero-btn"
+        onclick={() => aboutOpen = true}
         aria-label={$t('about.title')}
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 16v-4M12 8h.01"/>
         </svg>
       </button>
     </div>
-  </header>
+
+    {#if !activeCategory}
+      <div class="hero-overlay" transition:fade={{ duration: 300 }}>
+        <div class="hero-cta">
+          <p class="hero-tagline">{$t('app.choose_category')}</p>
+          <svg class="hero-arrow" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </div>
+      </div>
+    {/if}
+  </div>
+
+  <!-- About popup modal -->
+  {#if aboutOpen}
+    <div class="about-overlay" transition:fade={{ duration: 200 }} onclick={() => aboutOpen = false} role="presentation">
+      <div class="about-modal" onclick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-label={$t('about.title')}>
+        <button class="about-close" onclick={() => aboutOpen = false} aria-label="Stäng">✕</button>
+        <div class="about-icon">🧩</div>
+        <h2>{$t('about.title')}</h2>
+        <p class="about-tagline">{$t('about.tagline')}</p>
+
+        <div class="about-section">
+          <h3>{$t('about.whatIs')}</h3>
+          <p>{$t('about.description')}</p>
+        </div>
+
+        <div class="about-section">
+          <h3>{$t('about.forWhom')}</h3>
+          <ul>
+            <li>{$t('about.audience.children')}</li>
+            <li>{$t('about.audience.parents')}</li>
+            <li>{$t('about.audience.teachers')}</li>
+            <li>{$t('about.audience.therapists')}</li>
+          </ul>
+        </div>
+
+        <div class="about-section about-dev">
+          <h3>{$t('about.developer')}</h3>
+          <p><strong>Daniel Nylander</strong></p>
+          <div class="about-links">
+            <a href="mailto:daniel@danielnylander.se">✉️ daniel@danielnylander.se</a>
+            <a href="https://github.com/yeager" target="_blank" rel="noopener">🐙 github.com/yeager</a>
+            <a href="https://danielnylander.se" target="_blank" rel="noopener">🌐 danielnylander.se</a>
+          </div>
+        </div>
+
+        <div class="about-section about-credits">
+          <p><a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> · <a href="https://github.com/rhasspy/piper" target="_blank" rel="noopener">Piper</a></p>
+          <p class="about-license">🇸🇪 {$t('about.madeIn')} · CC BY-NC-SA 4.0</p>
+        </div>
+      </div>
+    </div>
+  {/if}
 
   <!-- Category buttons -->
   <nav class="categories" aria-label={$t('app.choose_category')}>
@@ -316,72 +360,144 @@
     50% { transform: translateY(8px); }
   }
 
-  /* Header */
-  .launcher-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .brand h1 {
-    font-size: 1.3em;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .back-to-site {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-sm);
-    transition: background var(--transition);
-    color: var(--text-secondary);
-    text-decoration: none;
-  }
-  .back-to-site:hover { background: var(--bg-hover); color: var(--text); }
-
-  .header-actions {
+  /* Floating toolbar on hero */
+  .hero-toolbar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
     display: flex;
     align-items: center;
     gap: 4px;
+    padding: 4px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
-  .settings-icon {
-    width: 44px;
-    height: 44px;
+  .hero-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-sm);
-    transition: background var(--transition);
-  }
-  .settings-icon:hover { background: var(--bg-hover); }
-
-  .about-icon {
+    gap: 4px;
     width: 44px;
     height: 44px;
+    border-radius: 10px;
+    color: white;
+    transition: background 0.15s;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .hero-btn:hover { background: rgba(255, 255, 255, 0.2); }
+
+  /* About modal */
+  .about-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-sm);
-    transition: background var(--transition);
-    color: var(--text-secondary);
+    z-index: 10000;
+    padding: 1rem;
   }
-  .about-icon:hover { background: var(--bg-hover); }
+
+  .about-modal {
+    background: var(--bg-card, white);
+    color: var(--text, #333);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    max-height: 85dvh;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .about-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--text-muted, #999);
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .about-close:hover { background: var(--bg-hover, #f0f0f0); }
+
+  .about-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+
+  .about-modal h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .about-tagline {
+    font-style: italic;
+    color: var(--text-secondary, #666);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-section {
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-section h3 {
+    font-size: 1rem;
+    margin: 0 0 0.4rem;
+  }
+
+  .about-section p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .about-section ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    line-height: 1.8;
+  }
+
+  .about-dev { text-align: center; }
+
+  .about-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+  .about-links a {
+    color: var(--text-secondary, #666);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .about-links a:hover { color: var(--text, #333); }
+
+  .about-credits {
+    text-align: center;
+    border-top: 1px solid var(--border, #eee);
+    padding-top: 1rem;
+  }
+  .about-credits a { color: var(--accent, #2196f3); }
+  .about-license {
+    font-size: 0.85rem;
+    color: var(--text-muted, #999);
+    margin-top: 0.5rem;
+  }
 
   /* Categories */
   .categories {
@@ -642,16 +758,19 @@
   }
 
   .lang-dropdown {
-    position: absolute;
-    top: calc(100% + 6px);
-    right: 0;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    position: fixed;
+    top: auto;
+    right: 12px;
+    margin-top: 6px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--radius);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     min-width: 160px;
     overflow: hidden;
-    z-index: 200;
+    z-index: 10001;
   }
 
   .lang-option {
@@ -662,14 +781,18 @@
     padding: 12px 16px;
     font-size: 0.95em;
     font-weight: 500;
-    transition: background var(--transition);
+    color: white;
+    transition: background 0.15s;
     min-height: 48px;
+    border: none;
+    background: none;
+    cursor: pointer;
   }
   .lang-option:hover {
-    background: var(--bg-hover);
+    background: rgba(255, 255, 255, 0.15);
   }
   .lang-option.active {
-    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    background: rgba(255, 255, 255, 0.2);
     font-weight: 600;
   }
 
@@ -683,7 +806,7 @@
   }
 
   .lang-check {
-    color: var(--accent);
+    color: #4FC3F7;
     flex-shrink: 0;
   }
 </style>

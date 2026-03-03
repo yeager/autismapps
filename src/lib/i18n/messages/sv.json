@@ -1661,9 +1661,9 @@
   "sagostunden.cat.food": "Mat",
   "sagostunden.cat.people": "Karaktärer",
   "sagostunden.cat.actions": "Handlingar",
-  "welcome.sagostunden.purpose": "Skapa roliga sagor genom att välja ord och bilder.",
-  "welcome.sagostunden.how": "Välj en sagomall, plocka ord med bildstöd, och en unik saga skapas åt dig!",
-  "welcome.sagostunden.goal": "Träna läsning och kreativitet genom visuellt berättande.",
+  "welcome.sagostunden.purpose": "Här skapar du dina egna sagor! Välj bland spännande mallar, plocka roliga ord med bilder, och en helt unik saga skapas bara för dig. 📖✨",
+  "welcome.sagostunden.how": "1️⃣ Välj en sagomall — det finns massor att välja mellan!\n2️⃣ Plocka ord genom att trycka på bilderna (eller låt appen överraska dig!)\n3️⃣ Din saga skapas automatiskt — tryck på 🔊 för att lyssna!",
+  "welcome.sagostunden.goal": "Träna läsning och väck fantasin genom att skapa berättelser med bildstöd. Varje saga blir unik — och du kan spara dina favoriter! ⭐",
   "talk.word.i": "jag",
   "talk.word.you": "du",
   "talk.word.want": "vill",
@@ -2201,5 +2201,6 @@
   "board.no_saved": "Inga sparade tavlor ännu",
   "board.untitled": "Namnlös",
   "board.saved": "Bräda sparad!",
-  "board.loaded": "Bräda laddad!"
+  "board.loaded": "Bräda laddad!",
+  "common.back": "Tillbaka"
 }

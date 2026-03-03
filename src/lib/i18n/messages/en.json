@@ -2200,5 +2200,6 @@
   "board.no_saved": "No saved boards yet",
   "board.untitled": "Untitled",
   "board.saved": "Board saved!",
-  "board.loaded": "Board loaded!"
+  "board.loaded": "Board loaded!",
+  "common.back": "Back"
 }

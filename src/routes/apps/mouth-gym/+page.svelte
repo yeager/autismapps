@@ -4,6 +4,7 @@
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { fade } from 'svelte/transition';
+  import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   // === MUNGYMNASTIKEN — Mouth Gym ===
   // Animated visual guides for oral motor exercises
@@ -101,6 +102,7 @@
   let holdTimer = $state(0);
   let holdInterval = $state<number | null>(null);
   let exerciseDone = $state(false);
+  let showStar = $state(false);
 
   const categoryExercises = $derived(selectedCategory ? EXERCISES.filter(e => e.category === selectedCategory) : []);
 
@@ -139,6 +141,7 @@
       if (step.holdSeconds > 0) startHold(step.holdSeconds);
     } else {
       exerciseDone = true;
+      awardStarAsync();
     }
   }
 
@@ -148,9 +151,17 @@
     else if (selectedCategory) { selectedCategory = null; }
     else { goto(base + '/'); }
   }
+
+  async function awardStarAsync() {
+    await awardStar('mouth-gym', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
+  }
 </script>
 
 <WelcomeDialog appId="mouth-gym" titleKey="app.mouth_gym" purposeKey="welcome.mouthGym.purpose" howKey="welcome.mouthGym.how" goalKey="welcome.mouthGym.goal" icon="💪" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="app" in:fade>
 

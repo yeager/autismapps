@@ -84,6 +84,7 @@
   let currentPhase = $state<Phase>('choose');
   let currentSceneIdx = $state(0);
   let isPlaying = $state(false);
+  let showStar = $state(false);
 
   async function playScene(scene: StoryScene) {
     if (isPlaying) return;
@@ -133,14 +134,19 @@
     }
   }
 
-  function selectStory(story: Story) {
+  async function selectStory(story: Story) {
     selectedStory = story;
     currentPhase = 'practice';
     currentSceneIdx = 0;
+    await awardStar('story-workshop', 'rewards.star.completed');
+    showStar = true;
+    setTimeout(() => showStar = false, 2000);
   }
 </script>
 
 <WelcomeDialog appId="story-workshop" titleKey="app.story_workshop" purposeKey="welcome.storyWorkshop.purpose" howKey="welcome.storyWorkshop.how" goalKey="welcome.storyWorkshop.goal" icon="📖" />
+
+<GoldStarBurst show={showStar} />
 
 <div class="app" in:fade>
 

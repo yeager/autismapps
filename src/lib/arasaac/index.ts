@@ -26,16 +26,17 @@ export async function searchPictograms(
   if (lang === 'sv') {
     const lookup = await loadSvLookup();
     const queryLower = query.toLowerCase();
-    // First: exact match on English key (e.g. query="happy" → lookup["happy"].sv="glad")
-    const exactEnKey = lookup[queryLower];
-    if (exactEnKey && exactEnKey.id) {
-      return [{ id: exactEnKey.id, keyword: exactEnKey.sv, url: getPictogramUrl(exactEnKey.id, false), urlBW: getPictogramUrl(exactEnKey.id, true) }];
-    }
-    // Second: exact match on Swedish value
+    // First: exact match on SWEDISH value (prioritize user's language)
+    // This prevents e.g. "barn" matching English "barn" (= ladugård)
     for (const [en, entry] of Object.entries(lookup)) {
       if (entry.sv.toLowerCase() === queryLower && entry.id) {
         return [{ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) }];
       }
+    }
+    // Second: exact match on English key (e.g. query="happy" → lookup["happy"].sv="glad")
+    const exactEnKey = lookup[queryLower];
+    if (exactEnKey && exactEnKey.id) {
+      return [{ id: exactEnKey.id, keyword: exactEnKey.sv, url: getPictogramUrl(exactEnKey.id, false), urlBW: getPictogramUrl(exactEnKey.id, true) }];
     }
     // Third: partial match — Swedish values FIRST, then English keys
     const svMatches: PictogramSearchResult[] = [];

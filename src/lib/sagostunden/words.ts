@@ -210,7 +210,9 @@ export const ALL_WORDS: Word[] = [
 ];
 
 export function pictogramUrl(arasaacId: number, size = 300): string {
-  return `https://static.arasaac.org/pictograms/${arasaacId}/${arasaacId}_${size}.png`;
+  // ARASAAC only supports sizes 300, 500, 2500
+  const validSize = size <= 300 ? 300 : size <= 500 ? 500 : 2500;
+  return `https://static.arasaac.org/pictograms/${arasaacId}/${arasaacId}_${validSize}.png`;
 }
 
 export function wordsByCategory(cat: WordCategory): Word[] {

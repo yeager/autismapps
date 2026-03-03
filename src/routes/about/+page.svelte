@@ -6,12 +6,15 @@
 </script>
 
 <div class="about" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={() => goto(base + '/')}>←</button>
-    <h1>🧩 {$t('about.title')}</h1>
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+
+    <h1>🧩 {$t('about.title')}</h1>
+
+  </div>
+
     <section class="hero-section">
       <p class="tagline">{$t('about.tagline')}</p>
     </section>
@@ -87,8 +90,6 @@
 
 <style>
   .about { min-height:100dvh; display:flex; flex-direction:column; background:var(--bg); color:var(--text); }
-  .hdr { position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:.75rem; padding:1rem; background:var(--bg-card); border-bottom:1px solid var(--border); }
-  .back { font-size:1.5rem; background:none; border:none; cursor:pointer; color:var(--text); min-width:48px; min-height:48px; display:flex; align-items:center; justify-content:center; }
   h1 { font-size:1.4rem; margin:0; }
   .cnt { flex:1; padding:1.5rem 1rem; max-width:640px; margin:0 auto; width:100%; }
   .tagline { font-size:1.2rem; text-align:center; color:var(--text-secondary); margin-bottom:1.5rem; font-style:italic; }

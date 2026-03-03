@@ -141,16 +141,13 @@
 <WelcomeDialog appId="visual-timer" titleKey="app.visual_timer" purposeKey="welcome.visualTimer.purpose" howKey="welcome.visualTimer.how" goalKey="welcome.visualTimer.goal" icon="⏳" />
 
 <div class="timer-page" class:fullscreen>
-  <header class="app-header">
-    <button class="back-btn" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+
     <h1>{$t('timer.title')}</h1>
-    <div class="header-actions">
-      <span class="star-count" aria-label="{stars} stars">⭐ {stars}</span>
-      <button class="icon-btn" onclick={toggleFullscreen}>⛶</button>
-    </div>
-  </header>
+
+    <button class="icon-btn" onclick={toggleFullscreen}>⛶</button>
+
+  </div>
 
   <div class="timer-body">
     <!-- First-Then Board -->
@@ -243,13 +240,7 @@
 <style>
   .timer-page { display: flex; flex-direction: column; min-height: 100dvh; }
   .timer-page.fullscreen { background: var(--bg); }
-  .app-header {
-    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
-    border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10;
-  }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .back-btn:hover { background: var(--bg-hover); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; flex: 1; }
   .header-actions { display: flex; align-items: center; gap: 8px; }
   .star-count { font-size: 1em; font-weight: 600; }
   .icon-btn { width: 40px; height: 40px; font-size: 1.2em; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }

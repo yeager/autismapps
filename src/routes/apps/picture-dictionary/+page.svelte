@@ -251,16 +251,11 @@
 <WelcomeDialog appId="picture-dictionary" titleKey="app.picture_dictionary" purposeKey="welcome.pictureDictionary.purpose" howKey="welcome.pictureDictionary.how" goalKey="welcome.pictureDictionary.goal" icon="📖" />
 
 <div class="dict-page">
-  <header class="app-header">
-    <button class="back-btn" onclick={goBack} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+    {#if mode !== 'categories'}<button class="sub-back" onclick={() => { mode = 'categories'; activeCategory = null }} aria-label="Tillbaka">←</button>{/if}
     <h1>{$t('dict.title')}</h1>
-    <div class="stats-bar">
-      <span class="stat">⭐ {stars}</span>
-      <span class="stat">{wordsLearned.length}/{WORDS.length}</span>
-    </div>
-  </header>
+
+  </div>
 
   {#if mode === 'categories'}
     <div class="cat-page" transition:fade>
@@ -370,13 +365,7 @@
 
 <style>
   .dict-page { display: flex; flex-direction: column; min-height: 100dvh; }
-  .app-header {
-    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
-    border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10;
-  }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .back-btn:hover { background: var(--bg-hover); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; flex: 1; }
   .stats-bar { display: flex; gap: 10px; }
   .stat { font-weight: 600; font-size: 0.9em; color: var(--text-muted); }
 

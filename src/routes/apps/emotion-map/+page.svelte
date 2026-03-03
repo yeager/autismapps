@@ -159,14 +159,15 @@
 <WelcomeDialog appId="emotion-map" titleKey="app.emotion_map" purposeKey="welcome.emotionMap.purpose" howKey="welcome.emotionMap.how" goalKey="welcome.emotionMap.goal" icon="🗺️" />
 
 <div class="emotion-page">
-  <header class="app-header">
-    <button class="back-btn" onclick={() => selectedEmotion ? (selectedEmotion = null) : goto(base + '/')} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+    {#if selectedEmotion}<button class="sub-back" onclick={() => { selectedEmotion = null }} aria-label="Tillbaka">←</button>{/if}
     <h1>{$t('emotion.title')}</h1>
+
     <button class="icon-btn" onclick={() => quizMode ? stopQuiz() : startQuiz()} aria-label={$t("emotion.quiz")}>{quizMode ? '🗺️' : '🎯'}</button>
+
     <button class="icon-btn" onclick={() => { showDiary = !showDiary; }}>📓</button>
-  </header>
+
+  </div>
 
   {#if quizMode}
     <div class="quiz-area" transition:fade>
@@ -280,13 +281,7 @@
 
 <style>
   .emotion-page { display: flex; flex-direction: column; min-height: 100dvh; }
-  .app-header {
-    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
-    border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10;
-  }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .back-btn:hover { background: var(--bg-hover); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; flex: 1; }
   .icon-btn { width: 40px; height: 40px; font-size: 1.2em; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
 
   .zones { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 16px; flex: 1; }

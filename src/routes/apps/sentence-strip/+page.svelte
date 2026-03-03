@@ -129,20 +129,15 @@
 <WelcomeDialog appId="sentence-strip" titleKey="app.sentence_strip" purposeKey="welcome.sentenceStrip.purpose" howKey="welcome.sentenceStrip.how" goalKey="welcome.sentenceStrip.goal" icon="📋" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>←</button>
-    <h1>📋 {$t('sentenceStrip.title')}</h1>
-    <div class="phase-select">
-      <label>{$t('sentenceStrip.phase')}:</label>
-      <select bind:value={currentPhase}>
-        <option value={4}>IV</option>
-        <option value={5}>V</option>
-        <option value={6}>VI</option>
-      </select>
-    </div>
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+
+    <h1>📋 {$t('sentenceStrip.title')}</h1>
+
+  </div>
+
     <section class="strip-area" aria-label={$t('sentenceStrip.strip')}>
       <div class="strip" role="list">
         {#if strip.length === 0}
@@ -229,8 +224,6 @@
 
 <style>
   .app { display: flex; flex-direction: column; min-height: 100dvh; background: var(--bg, #f5f5f5); color: var(--text, #1a1a2e); }
-  .hdr { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-card, #fff); border-bottom: 1px solid var(--border, #e0e0e0); flex-wrap: wrap; }
-  .back { background: none; border: none; font-size: 1.5em; cursor: pointer; padding: 4px 8px; }
   h1 { font-size: 1.3em; margin: 0; flex: 1; }
   h2 { font-size: 1em; margin: 0 0 8px; font-weight: 600; }
   .cnt { flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 20px; max-width: 800px; margin: 0 auto; width: 100%; }

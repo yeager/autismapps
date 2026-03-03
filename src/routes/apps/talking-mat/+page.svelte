@@ -69,18 +69,15 @@
 <WelcomeDialog appId="talking-mat" titleKey="app.talking_mat" purposeKey="welcome.talkingMat.purpose" howKey="welcome.talkingMat.how" goalKey="welcome.talkingMat.goal" icon="🟢" />
 
 <div class="mat-page">
-  <header class="app-header">
-    <button class="back-btn" onclick={() => activeTopic ? (activeTopic = null) : goto(base + '/')} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+    {#if activeTopic}<button class="sub-back" onclick={() => { activeTopic = null }} aria-label="Tillbaka">←</button>{/if}
     <h1>{$t('mat.title')}</h1>
-    {#if activeTopic}
-      <div class="header-actions">
-        <button class="icon-btn" onclick={saveSession} aria-label={$t('mat.save')}>💾</button>
-        <button class="icon-btn" onclick={resetMat} aria-label={$t('mat.reset')}>🔄</button>
-      </div>
-    {/if}
-  </header>
+
+    <button class="icon-btn" onclick={saveSession} aria-label={$t('mat.save')}>💾</button>
+
+    <button class="icon-btn" onclick={resetMat} aria-label={$t('mat.reset')}>🔄</button>
+
+  </div>
 
   {#if !activeTopic}
     <p class="intro">{$t('mat.choose_topic')}</p>
@@ -167,13 +164,7 @@
 
 <style>
   .mat-page { display: flex; flex-direction: column; min-height: 100dvh; }
-  .app-header {
-    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
-    border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10;
-  }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .back-btn:hover { background: var(--bg-hover); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; flex: 1; }
   .header-actions { display: flex; gap: 6px; }
   .icon-btn { width: 40px; height: 40px; font-size: 1.2em; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
   .icon-btn:hover { background: var(--bg-hover); }

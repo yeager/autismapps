@@ -153,12 +153,15 @@
 <WelcomeDialog appId="mouth-gym" titleKey="app.mouth_gym" purposeKey="welcome.mouthGym.purpose" howKey="welcome.mouthGym.how" goalKey="welcome.mouthGym.goal" icon="💪" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={goBack}>←</button>
-    <h1>💪 {$t('mouthGym.title')}</h1>
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+    {#if exerciseDone || selectedExercise}<button class="sub-back" onclick={goBack} aria-label="Tillbaka">←</button>{/if}
+    <h1>💪 {$t('mouthGym.title')}</h1>
+
+  </div>
+
     {#if !selectedCategory}
       <p class="intro">{$t('mouthGym.intro')}</p>
       <p class="mirror-hint">🪞 {$t('mouthGym.mirror')}</p>
@@ -227,8 +230,6 @@
 
 <style>
   .app{min-height:100dvh;display:flex;flex-direction:column;background:var(--bg);color:var(--text)}
-  .hdr{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:.75rem;padding:1rem;background:var(--bg-card);border-bottom:1px solid var(--border)}
-  .back{font-size:1.5rem;background:none;border:none;cursor:pointer;color:var(--text);min-width:48px;min-height:48px;display:flex;align-items:center;justify-content:center}
   h1{font-size:1.4rem;margin:0;flex:1}
   .cnt{flex:1;padding:1rem;max-width:600px;margin:0 auto;width:100%}
   .intro{text-align:center;color:var(--text-secondary);margin-bottom:.5rem;font-size:1.1rem}

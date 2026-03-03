@@ -67,13 +67,15 @@
 <WelcomeDialog appId="memory-game" titleKey="app.memory_game" purposeKey="welcome.memoryGame.purpose" howKey="welcome.memoryGame.how" goalKey="welcome.memoryGame.goal" icon="🃏" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={() => theme ? (theme = null) : goto(base + '/')}>←</button>
-    <h1>🧩 {$t('memoryGame.title')}</h1>
-    {#if theme}<span class="moves">{moves} {$t('memoryGame.moves')}</span>{/if}
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+    {#if theme}<button class="sub-back" onclick={() => { theme = null }} aria-label="Tillbaka">←</button>{/if}
+    <h1>🧩 {$t('memoryGame.title')}</h1>
+
+  </div>
+
     {#if !theme}
       <h2>{$t('memoryGame.pickTheme')}</h2>
       <div class="size-picker">
@@ -122,8 +124,6 @@
 
 <style>
   .app { min-height:100dvh; display:flex; flex-direction:column; background:var(--bg); color:var(--text); }
-  .hdr { position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:.75rem; padding:1rem; background:var(--bg-card); border-bottom:1px solid var(--border); }
-  .back { font-size:1.5rem; background:none; border:none; cursor:pointer; color:var(--text); min-width:48px; min-height:48px; display:flex; align-items:center; justify-content:center; }
   h1 { font-size:1.4rem; margin:0; flex:1; }
   .moves { font-size:.9rem; font-weight:600; background:#fff3e0; color:#e65100; padding:.25rem .75rem; border-radius:20px; }
   .cnt { flex:1; padding:1rem; max-width:600px; margin:0 auto; width:100%; }

@@ -164,12 +164,15 @@
 <WelcomeDialog appId="sign-dictionary" titleKey="app.sign_dictionary" purposeKey="welcome.signDictionary.purpose" howKey="welcome.signDictionary.how" goalKey="welcome.signDictionary.goal" icon="🤟" />
 
 <div class="app-container" in:fade>
-  <header class="sticky-header">
-    <button class="back-btn" onclick={back} aria-label={$t('common.back')}>←</button>
-    <h1>🤟 {$t('signDictionary.title')}</h1>
-  </header>
 
   <main class="content">
+
+  <div class="page-title">
+
+    <h1>🤟 {$t('signDictionary.title')}</h1>
+
+  </div>
+
     {#if view === 'categories'}
       <p class="intro">{$t('signDictionary.intro')}</p>
 
@@ -287,32 +290,6 @@
     flex-direction: column;
     background: var(--bg);
     color: var(--text);
-  }
-
-  .sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem;
-    background: var(--bg-card);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .back-btn {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text);
-    padding: 0.25rem 0.5rem;
-    min-width: 48px;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   h1 {

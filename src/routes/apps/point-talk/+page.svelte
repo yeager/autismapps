@@ -108,12 +108,11 @@
 <WelcomeDialog appId="point-talk" titleKey="app.point_talk" purposeKey="welcome.pointTalk.purpose" howKey="welcome.pointTalk.how" goalKey="welcome.pointTalk.goal" icon="👆" />
 
 <div class="point-page">
-  <header class="app-header">
-    <button class="back-btn" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+
     <h1>{$t('point.title')}</h1>
-  </header>
+
+  </div>
 
   <!-- Sentence strip -->
   <div class="sentence-strip">
@@ -171,13 +170,7 @@
 
 <style>
   .point-page { display: flex; flex-direction: column; min-height: 100dvh; }
-  .app-header {
-    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
-    border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10;
-  }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .back-btn:hover { background: var(--bg-hover); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; }
 
   .sentence-strip {
     display: flex; align-items: center; gap: 8px; padding: 10px 16px;

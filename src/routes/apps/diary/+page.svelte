@@ -83,15 +83,13 @@
 <WelcomeDialog appId="diary" titleKey="app.diary" purposeKey="welcome.diary.purpose" howKey="welcome.diary.how" goalKey="welcome.diary.goal" icon="📔" />
 
 <div class="diary-page">
-  <header class="app-header">
-    <button class="back-btn" onclick={() => view === 'list' ? goto(base + '/') : (view = 'list')} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+    {#if view !== 'list'}<button class="sub-back" onclick={() => { view = 'list' }} aria-label="Tillbaka">←</button>{/if}
     <h1>{$t('diary.title')}</h1>
-    {#if view === 'list'}
-      <button class="add-btn" onclick={() => (view = 'new')}>+ {$t('diary.new')}</button>
-    {/if}
-  </header>
+
+    <button class="add-btn" onclick={() => (view = 'new')}>+ {$t('diary.new')}</button>
+
+  </div>
 
   {#if view === 'new'}
     <div class="new-entry" transition:fade>
@@ -137,12 +135,6 @@
 
 <style>
   .diary-page { display: flex; flex-direction: column; min-height: 100dvh; }
-  .app-header {
-    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
-    border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10;
-  }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; flex: 1; }
   .add-btn { padding: 8px 16px; border-radius: 100px; border: 2px solid #3498DB; color: #3498DB; font-weight: 700; background: none; min-height: 40px; }
 
   .new-entry { padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 16px; }

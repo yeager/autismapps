@@ -66,13 +66,15 @@
 <WelcomeDialog appId="reward-chart" titleKey="app.reward_chart" purposeKey="welcome.rewardChart.purpose" howKey="welcome.rewardChart.how" goalKey="welcome.rewardChart.goal" icon="⭐" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={() => goto(base + '/')}>←</button>
-    <h1>⭐ {$t('rewardChart.title')}</h1>
-    <span class="star-count">{stars}/{goal}</span>
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+
+    <h1>⭐ {$t('rewardChart.title')}</h1>
+
+  </div>
+
     <div class="progress-bar">
       <div class="fill" style="width: {progress}%"></div>
       <span class="progress-text">{Math.round(progress)}%</span>
@@ -111,8 +113,6 @@
 
 <style>
   .app { min-height:100dvh; display:flex; flex-direction:column; background:var(--bg); color:var(--text); }
-  .hdr { position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:.75rem; padding:1rem; background:var(--bg-card); border-bottom:1px solid var(--border); }
-  .back { font-size:1.5rem; background:none; border:none; cursor:pointer; color:var(--text); min-width:48px; min-height:48px; display:flex; align-items:center; justify-content:center; }
   h1 { font-size:1.4rem; margin:0; flex:1; }
   h2 { text-align:center; margin:1.5rem 0 1rem; }
   .star-count { font-weight:700; font-size:1.1rem; background:#fff8e1; color:#f57f17; padding:.25rem .75rem; border-radius:20px; }

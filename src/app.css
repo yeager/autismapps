@@ -117,6 +117,29 @@ button {
   border-radius: 4px;
 }
 
+/* Page title bar (replaces per-app headers) */
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0 12px;
+}
+.page-title h1 {
+  flex: 1;
+  font-size: 1.3rem;
+  margin: 0;
+}
+.sub-back {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm, 8px);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
 /* Utility */
 .sr-only {
   position: absolute;

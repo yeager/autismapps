@@ -102,12 +102,15 @@
 <WelcomeDialog appId="clothes-chooser" titleKey="app.clothes_chooser" purposeKey="welcome.clothesChooser.purpose" howKey="welcome.clothesChooser.how" goalKey="welcome.clothesChooser.goal" icon="👕" />
 
 <div class="app-container" in:fade>
-  <header class="sticky-header">
-    <button class="back-btn" onclick={() => step > 0 ? (step === 0 ? goto(base + '/') : (step--, showFeedback = false)) : goto(base + '/')} aria-label={$t('common.back')}>←</button>
-    <h1>👔 {$t('clothesChooser.title')}</h1>
-  </header>
 
   <main class="content">
+
+  <div class="page-title">
+    {#if step > 0}<button class="sub-back" onclick={() => { step--; showFeedback = false }} aria-label="Tillbaka">←</button>{/if}
+    <h1>👔 {$t('clothesChooser.title')}</h1>
+
+  </div>
+
     {#if step === 0}
       <h2>{$t('clothesChooser.pickWeather')}</h2>
       <div class="weather-grid">
@@ -182,32 +185,6 @@
     flex-direction: column;
     background: var(--bg);
     color: var(--text);
-  }
-
-  .sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem;
-    background: var(--bg-card);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .back-btn {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text);
-    padding: 0.25rem 0.5rem;
-    min-width: 48px;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   h1 { font-size: 1.4rem; margin: 0; }

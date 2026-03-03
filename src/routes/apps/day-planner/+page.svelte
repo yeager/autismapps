@@ -73,13 +73,17 @@
 <WelcomeDialog appId="day-planner" titleKey="app.day_planner" purposeKey="welcome.dayPlanner.purpose" howKey="welcome.dayPlanner.how" goalKey="welcome.dayPlanner.goal" icon="📅" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={() => goto(base + '/')}>←</button>
-    <h1>📅 {$t('dayPlanner.title')}</h1>
-    <span class="counter">{doneCount}/{TIME_SLOTS.length}</span>
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+
+    <h1>📅 {$t('dayPlanner.title')}</h1>
+
+    <span class="counter">{doneCount}/{TIME_SLOTS.length}</span>
+
+  </div>
+
     <div class="timeline">
       {#each TIME_SLOTS as slot}
         <div class="slot" class:done={completed[slot.id]}>
@@ -110,8 +114,6 @@
 
 <style>
   .app { min-height:100dvh; display:flex; flex-direction:column; background:var(--bg); color:var(--text); }
-  .hdr { position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:.75rem; padding:1rem; background:var(--bg-card); border-bottom:1px solid var(--border); }
-  .back { font-size:1.5rem; background:none; border:none; cursor:pointer; color:var(--text); min-width:48px; min-height:48px; display:flex; align-items:center; justify-content:center; }
   h1 { font-size:1.4rem; margin:0; flex:1; }
   .counter { font-size:1rem; font-weight:600; background:#e8f5e9; color:#2e7d32; padding:.25rem .75rem; border-radius:20px; }
   .cnt { flex:1; padding:1rem; max-width:600px; margin:0 auto; width:100%; }

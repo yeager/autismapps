@@ -258,19 +258,21 @@
 <WelcomeDialog appId="comm-book" titleKey="app.comm_book" purposeKey="welcome.commBook.purpose" howKey="welcome.commBook.how" goalKey="welcome.commBook.goal" icon="📖" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>←</button>
-    <h1>📖 {$t('commBook.title')}</h1>
-    <div class="hdr-actions">
-      <button class="icon-btn" class:active={editMode} onclick={() => { editMode = !editMode; showAddCard = false; }} aria-label={$t('commBook.edit')}>✏️</button>
-      {#if editMode}
-        <button class="icon-btn" onclick={exportBook}>📤</button>
-        <button class="icon-btn" onclick={importBook}>📥</button>
-      {/if}
-    </div>
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+
+    <h1>📖 {$t('commBook.title')}</h1>
+
+    <button class="icon-btn" class:active={editMode} onclick={() => { editMode = !editMode; showAddCard = false; }} aria-label={$t('commBook.edit')}>✏️</button>
+
+    <button class="icon-btn" onclick={exportBook}>📤</button>
+
+    <button class="icon-btn" onclick={importBook}>📥</button>
+
+  </div>
+
     <!-- Sentence strip -->
     {#if sentenceStrip.length > 0}
       <section class="strip-area">
@@ -378,8 +380,6 @@
 
 <style>
   .app { display: flex; flex-direction: column; min-height: 100dvh; background: var(--bg, #f5f5f5); color: var(--text, #1a1a2e); }
-  .hdr { display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-card, #fff); border-bottom: 1px solid var(--border, #e0e0e0); }
-  .back { background: none; border: none; font-size: 1.5em; cursor: pointer; padding: 4px 8px; }
   h1 { font-size: 1.3em; margin: 0; flex: 1; }
   h2, h3, h4 { margin: 0 0 8px; font-weight: 600; }
   h3 { font-size: 1em; }

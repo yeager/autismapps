@@ -104,13 +104,17 @@
 <WelcomeDialog appId="word-parade" titleKey="app.word_parade" purposeKey="welcome.wordParade.purpose" howKey="welcome.wordParade.how" goalKey="welcome.wordParade.goal" icon="👯" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={goBack}>←</button>
-    <h1>👯 {$t('wordParade.title')}</h1>
-    {#if mode !== 'menu'}<span class="score-badge">{$t('wordParade.score')}: {score}</span>{/if}
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+    {#if mode !== 'menu'}<button class="sub-back" onclick={() => { mode = 'menu' }} aria-label="Tillbaka">←</button>{/if}
+    <h1>👯 {$t('wordParade.title')}</h1>
+
+    <span class="score-badge">{$t('wordParade.score')}: {score}</span>
+
+  </div>
+
     {#if mode === 'menu'}
       <p class="intro">{$t('wordParade.intro')}</p>
       <div class="modes">
@@ -174,8 +178,6 @@
 
 <style>
   .app{min-height:100dvh;display:flex;flex-direction:column;background:var(--bg);color:var(--text)}
-  .hdr{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:.75rem;padding:1rem;background:var(--bg-card);border-bottom:1px solid var(--border)}
-  .back{font-size:1.5rem;background:none;border:none;cursor:pointer;color:var(--text);min-width:48px;min-height:48px;display:flex;align-items:center;justify-content:center}
   h1{font-size:1.4rem;margin:0;flex:1}
   .score-badge{background:#E91E63;color:#fff;padding:.3rem .7rem;border-radius:12px;font-weight:700;font-size:.85rem}
   .cnt{flex:1;padding:1rem;max-width:600px;margin:0 auto;width:100%}

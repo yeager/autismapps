@@ -131,12 +131,15 @@
 <WelcomeDialog appId="syllable-jump" titleKey="app.syllable_jump" purposeKey="welcome.syllableJump.purpose" howKey="welcome.syllableJump.how" goalKey="welcome.syllableJump.goal" icon="🦘" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={() => selectedSetIdx !== null ? (selectedSetIdx = null, showCelebration = false) : goto(base + '/')}>←</button>
-    <h1>🦘 {$t('syllableJump.title')}</h1>
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+    {#if selectedSetIdx !== null}<button class="sub-back" onclick={() => { selectedSetIdx = null; showCelebration = false }} aria-label="Tillbaka">←</button>{/if}
+    <h1>🦘 {$t('syllableJump.title')}</h1>
+
+  </div>
+
     {#if selectedSetIdx === null}
       <p class="intro">{$t('syllableJump.intro')}</p>
       <div class="sets">
@@ -212,8 +215,6 @@
 
 <style>
   .app { min-height:100dvh; display:flex; flex-direction:column; background:var(--bg); color:var(--text); }
-  .hdr { position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:.75rem; padding:1rem; background:var(--bg-card); border-bottom:1px solid var(--border); }
-  .back { font-size:1.5rem; background:none; border:none; cursor:pointer; color:var(--text); min-width:48px; min-height:48px; display:flex; align-items:center; justify-content:center; }
   h1 { font-size:1.4rem; margin:0; }
   .cnt { flex:1; padding:1rem; max-width:600px; margin:0 auto; width:100%; }
   .intro { text-align:center; color:var(--text-secondary); margin-bottom:1rem; }

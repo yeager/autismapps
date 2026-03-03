@@ -148,15 +148,13 @@
 <WelcomeDialog appId="visual-support" titleKey="app.visual_support" purposeKey="welcome.visualSupport.purpose" howKey="welcome.visualSupport.how" goalKey="welcome.visualSupport.goal" icon="📸" />
 
 <div class="vs-page">
-  <header class="app-header">
-    <button class="back-btn" onclick={goBack} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+    {#if activeSchedule}<button class="sub-back" onclick={() => { activeSchedule = null; editMode = false }} aria-label="Tillbaka">←</button>{/if}
     <h1>{activeSchedule ? activeSchedule.name : $t('vs.title')}</h1>
-    {#if activeSchedule}
-      <span class="progress-badge">{completedCount()}/{activeSchedule.steps.length}</span>
-    {/if}
-  </header>
+
+    <span class="progress-badge">{completedCount()}/{activeSchedule.steps.length}</span>
+
+  </div>
 
   {#if !activeSchedule}
     <div class="home-page" transition:fade>
@@ -232,13 +230,7 @@
 
 <style>
   .vs-page { display: flex; flex-direction: column; min-height: 100dvh; }
-  .app-header {
-    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
-    border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10;
-  }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .back-btn:hover { background: var(--bg-hover); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; flex: 1; }
   .progress-badge { font-weight: 700; font-size: 0.9em; color: #27AE60; }
 
   .home-page { flex: 1; padding: 16px; }

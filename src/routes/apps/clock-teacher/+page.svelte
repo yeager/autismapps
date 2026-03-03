@@ -72,16 +72,15 @@
 <WelcomeDialog appId="clock-teacher" titleKey="app.clock_teacher" purposeKey="welcome.clockTeacher.purpose" howKey="welcome.clockTeacher.how" goalKey="welcome.clockTeacher.goal" icon="🕐" />
 
 <div class="clock-page">
-  <header class="app-header">
-    <button class="back-btn" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+
     <h1>{$t('clock.title')}</h1>
-    <div class="mode-toggle">
-      <button class="tab" class:active={mode === 'learn'} onclick={() => (mode = 'learn')}>{$t('clock.learn')}</button>
-      <button class="tab" class:active={mode === 'quiz'} onclick={() => { mode = 'quiz'; newQuiz(); }}>{$t('clock.quiz')}</button>
-    </div>
-  </header>
+
+    <button class="tab" class:active={mode === 'learn'} onclick={() => (mode = 'learn')}>{$t('clock.learn')}</button>
+
+    <button class="tab" class:active={mode === 'quiz'} onclick={() => { mode = 'quiz'; newQuiz(); }}>{$t('clock.quiz')}</button>
+
+  </div>
 
   <div class="content" transition:fade>
     <!-- SVG Clock -->
@@ -148,9 +147,6 @@
 
 <style>
   .clock-page { display: flex; flex-direction: column; min-height: 100dvh; }
-  .app-header { display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; flex: 1; }
   .mode-toggle { display: flex; gap: 4px; }
   .tab { padding: 6px 14px; border-radius: 100px; border: 1px solid var(--border); font-weight: 600; font-size: 0.8em; background: none; min-height: 36px; }
   .tab.active { background: #3498DB; color: white; border-color: #3498DB; }

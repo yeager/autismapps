@@ -71,12 +71,11 @@
 <WelcomeDialog appId="cooking-helper" titleKey="app.cooking_helper" purposeKey="welcome.cookingHelper.purpose" howKey="welcome.cookingHelper.how" goalKey="welcome.cookingHelper.goal" icon="👨‍🍳" />
 
 <div class="cook-page">
-  <header class="app-header">
-    <button class="back-btn" onclick={() => activeRecipe ? (activeRecipe = null) : goto(base + '/')} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+    {#if activeRecipe}<button class="sub-back" onclick={() => { activeRecipe = null }} aria-label="Tillbaka">←</button>{/if}
     <h1>{activeRecipe ? $t(activeRecipe.name) : $t('cook.title')}</h1>
-  </header>
+
+  </div>
 
   {#if !activeRecipe}
     <div class="recipe-list" transition:fade>
@@ -121,9 +120,6 @@
 
 <style>
   .cook-page { display: flex; flex-direction: column; min-height: 100dvh; }
-  .app-header { display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; flex: 1; }
   .instruction { text-align: center; padding: 16px; color: var(--text-muted); font-weight: 600; }
   .recipe-list { flex: 1; padding: 16px; }
   .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }

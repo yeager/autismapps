@@ -105,12 +105,15 @@
 <WelcomeDialog appId="oral-motor" titleKey="app.oral_motor" purposeKey="welcome.oralMotor.purpose" howKey="welcome.oralMotor.how" goalKey="welcome.oralMotor.goal" icon="👄" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={() => selectedExercise ? (selectedExercise = null) : goto(base + '/')}>←</button>
-    <h1>👄 {$t('oralMotor.title')}</h1>
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+    {#if selectedExercise}<button class="sub-back" onclick={() => { selectedExercise = null }} aria-label="Tillbaka">←</button>{/if}
+    <h1>👄 {$t('oralMotor.title')}</h1>
+
+  </div>
+
     {#if !selectedExercise}
       <p class="intro">{$t('oralMotor.intro')}</p>
       <div class="grid">
@@ -174,8 +177,6 @@
 
 <style>
   .app { min-height:100dvh; display:flex; flex-direction:column; background:var(--bg); color:var(--text); }
-  .hdr { position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:.75rem; padding:1rem; background:var(--bg-card); border-bottom:1px solid var(--border); }
-  .back { font-size:1.5rem; background:none; border:none; cursor:pointer; color:var(--text); min-width:48px; min-height:48px; display:flex; align-items:center; justify-content:center; }
   h1 { font-size:1.4rem; margin:0; }
   h2 { text-align:center; margin:.5rem 0 1rem; font-size:1.3rem; }
   .cnt { flex:1; padding:1rem; max-width:600px; margin:0 auto; width:100%; }

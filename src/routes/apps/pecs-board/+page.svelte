@@ -42,12 +42,15 @@
 <WelcomeDialog appId="pecs-board" titleKey="app.pecs_board" purposeKey="welcome.pecsBoard.purpose" howKey="welcome.pecsBoard.how" goalKey="welcome.pecsBoard.goal" icon="🖼️" />
 
 <div class="app" in:fade>
-  <header class="hdr">
-    <button class="back" onclick={() => board ? (board = null) : goto(base + '/')}>←</button>
-    <h1>🖼️ {$t('pecsBoard.title')}</h1>
-  </header>
 
   <main class="cnt">
+
+  <div class="page-title">
+    {#if board}<button class="sub-back" onclick={() => { board = null }} aria-label="Tillbaka">←</button>{/if}
+    <h1>🖼️ {$t('pecsBoard.title')}</h1>
+
+  </div>
+
     {#if strip.length > 0}
       <div class="strip">
         {#each strip as c}<span class="strip-item">{c.icon}</span>{/each}
@@ -82,8 +85,6 @@
 
 <style>
   .app { min-height:100dvh; display:flex; flex-direction:column; background:var(--bg); color:var(--text); }
-  .hdr { position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:.75rem; padding:1rem; background:var(--bg-card); border-bottom:1px solid var(--border); }
-  .back { font-size:1.5rem; background:none; border:none; cursor:pointer; color:var(--text); min-width:48px; min-height:48px; display:flex; align-items:center; justify-content:center; }
   h1 { font-size:1.4rem; margin:0; }
   h2 { text-align:center; margin:.5rem 0 1rem; }
   .cnt { flex:1; padding:1rem; max-width:600px; margin:0 auto; width:100%; }

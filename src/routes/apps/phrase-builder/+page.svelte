@@ -69,12 +69,11 @@
 <WelcomeDialog appId="phrase-builder" titleKey="app.phrase_builder" purposeKey="welcome.phraseBuilder.purpose" howKey="welcome.phraseBuilder.how" goalKey="welcome.phraseBuilder.goal" icon="📝" />
 
 <div class="phrase-page">
-  <header class="app-header">
-    <button class="back-btn" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
+  <div class="page-title">
+
     <h1>{$t('phrase.title')}</h1>
-  </header>
+
+  </div>
 
   <!-- Sentence preview -->
   <div class="sentence-preview">
@@ -179,13 +178,7 @@
 
 <style>
   .phrase-page { display: flex; flex-direction: column; min-height: 100dvh; }
-  .app-header {
-    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
-    border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10;
-  }
-  .back-btn { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .back-btn:hover { background: var(--bg-hover); }
-  .app-header h1 { font-size: 1.2em; font-weight: 700; }
 
   .sentence-preview {
     display: flex; align-items: center; gap: 12px; padding: 14px 16px;

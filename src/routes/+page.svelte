@@ -255,7 +255,7 @@
             <div class="card-icon">
               <img src={`${base}${app.icon}`} alt="" width="56" height="56" loading="lazy" onerror={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
             </div>
-            <span class="card-name">{$t(app.name)}</span>
+            <span class="card-name" lang={$locale}>{$t(app.name)}</span>
             <span class="card-desc">{$t(app.description)}</span>
             {#if !app.ready}
               <span class="card-badge">{$t('app.coming_soon')}</span>
@@ -695,6 +695,11 @@
     font-weight: 600;
     font-size: 0.8em;
     line-height: 1.15;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    lang: sv;
   }
 
   .card-desc {

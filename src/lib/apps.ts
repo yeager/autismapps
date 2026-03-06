@@ -96,4 +96,9 @@ export const ALL_APPS: AppDef[] = [
   { id: 'mouth-motor', name: 'app.mouth_motor', description: 'app.mouth_motor.desc', category: 'speech', icon: '/icons/mouth-motor.svg', route: '/apps/mouth-motor', ready: true },
   { id: 'tongue-viewer', name: 'app.tongue_viewer', description: 'app.tongue_viewer.desc', category: 'speech', icon: '/icons/tongue-viewer.svg', route: '/apps/tongue-viewer', ready: true },
   { id: 'prompt-guide', name: 'app.prompt_guide', description: 'app.prompt_guide.desc', category: 'speech', icon: '/icons/prompt-guide.svg', route: '/apps/prompt-guide', ready: true },
+  { id: 'perspective-taking', name: 'app.perspective_taking', description: 'app.perspective_taking.desc', category: 'social', icon: '/icons/perspective-taking.svg', route: '/apps/perspective-taking', ready: true },
+  { id: 'sequence-trainer', name: 'app.sequence_trainer', description: 'app.sequence_trainer.desc', category: 'learning', icon: '/icons/sequence-trainer.svg', route: '/apps/sequence-trainer', ready: true },
+  { id: 'category-sort', name: 'app.category_sort', description: 'app.category_sort.desc', category: 'learning', icon: '/icons/category-sort.svg', route: '/apps/category-sort', ready: true },
+  { id: 'sound-sensitivity', name: 'app.sound_sensitivity', description: 'app.sound_sensitivity.desc', category: 'emotions', icon: '/icons/sound-sensitivity.svg', route: '/apps/sound-sensitivity', ready: true },
+  { id: 'sensory-profile', name: 'app.sensory_profile', description: 'app.sensory_profile.desc', category: 'daily', icon: '/icons/sensory-profile.svg', route: '/apps/sensory-profile', ready: true },
 ];

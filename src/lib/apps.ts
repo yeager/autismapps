@@ -93,4 +93,7 @@ export const ALL_APPS: AppDef[] = [
   { id: 'rest-trainer', name: 'app.rest_trainer', description: 'app.rest_trainer.desc', category: 'speech', icon: '/icons/rest-trainer.svg', route: '/apps/rest-trainer', ready: true },
   { id: 'prosody-trainer', name: 'app.prosody_trainer', description: 'app.prosody_trainer.desc', category: 'speech', icon: '/icons/prosody-trainer.svg', route: '/apps/prosody-trainer', ready: true },
   { id: 'melody-therapy', name: 'app.melody_therapy', description: 'app.melody_therapy.desc', category: 'speech', icon: '/icons/melody-therapy.svg', route: '/apps/melody-therapy', ready: true },
+  { id: 'mouth-motor', name: 'app.mouth_motor', description: 'app.mouth_motor.desc', category: 'speech', icon: '/icons/mouth-motor.svg', route: '/apps/mouth-motor', ready: true },
+  { id: 'tongue-viewer', name: 'app.tongue_viewer', description: 'app.tongue_viewer.desc', category: 'speech', icon: '/icons/tongue-viewer.svg', route: '/apps/tongue-viewer', ready: true },
+  { id: 'prompt-guide', name: 'app.prompt_guide', description: 'app.prompt_guide.desc', category: 'speech', icon: '/icons/prompt-guide.svg', route: '/apps/prompt-guide', ready: true },
 ];

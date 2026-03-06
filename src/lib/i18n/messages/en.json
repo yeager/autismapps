@@ -3242,5 +3242,113 @@
   "fineMotor.drawing.spiral": "Draw a spiral",
   "fineMotor.drawing.free": "Free drawing",
   "fineMotor.drawing.clear": "Clear",
-  "fineMotor.drawing.done": "Done!"
+  "fineMotor.drawing.done": "Done!",
+  "traffic-safety": {
+    "title": "Traffic Safety",
+    "welcome": {
+      "purpose": "Learn important traffic safety rules and road skills.",
+      "how": "Tap on the activities to practice safe walking and crossing streets.",
+      "goal": "Become confident and safe around traffic and roads."
+    },
+    "activities": {
+      "traffic-lights": "Traffic Lights",
+      "traffic-lights-desc": "Learn when to stop, wait, and go",
+      "crosswalk": "Crosswalk",
+      "crosswalk-desc": "Practice crossing the street safely",
+      "road-signs": "Road Signs",
+      "road-signs-desc": "Learn important traffic signs",
+      "safe-places": "Safe Places",
+      "safe-places-desc": "Identify safe and dangerous places",
+      "reflectors": "Reflectors",
+      "reflectors-desc": "Learn about being visible",
+      "vehicles": "Vehicles",
+      "vehicles-desc": "Learn about cars, buses, and other vehicles"
+    },
+    "traffic-lights": {
+      "title": "Traffic Lights",
+      "red": "Red means STOP",
+      "yellow": "Yellow means WAIT",
+      "green": "Green means GO",
+      "what-do-you-do": "What do you do now?",
+      "quiz-red": "The light is red",
+      "quiz-yellow": "The light is yellow",
+      "quiz-green": "The light is green",
+      "correct": "Correct!",
+      "try-again": "Try again",
+      "tap-light": "Tap the light to change it"
+    },
+    "crosswalk": {
+      "title": "Crosswalk",
+      "step1": "1. Stop at the edge",
+      "step2": "2. Look left",
+      "step3": "3. Look right",
+      "step4": "4. Look left again",
+      "step5": "5. Walk if it's safe",
+      "practice": "Practice Mode",
+      "safe-to-cross": "Is it safe to cross?",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "road-signs": {
+      "title": "Road Signs",
+      "crosswalk": "Crosswalk",
+      "warning": "Warning",
+      "stop": "Stop",
+      "bicycle-path": "Bicycle Path",
+      "playground": "Playground",
+      "speed-limit": "Speed Limit 30",
+      "flashcard": "Flashcard Mode",
+      "match": "Match Game",
+      "what-does-this-mean": "What does this sign mean?"
+    },
+    "safe-places": {
+      "title": "Safe Places",
+      "sidewalk": "Sidewalk",
+      "road": "Road",
+      "parking": "Parking Lot",
+      "safe": "SAFE",
+      "dangerous": "DANGEROUS",
+      "drag-to-sort": "Drag items to SAFE or DANGEROUS zones"
+    },
+    "reflectors": {
+      "title": "Reflectors & Visibility",
+      "day": "Day",
+      "night": "Night",
+      "can-you-see": "Can you see in the dark?",
+      "before": "Before",
+      "after": "After reflectors",
+      "dress-character": "Dress the character with reflectors"
+    },
+    "vehicles": {
+      "title": "Vehicles",
+      "car": "Car",
+      "bus": "Bus",
+      "truck": "Truck",
+      "bicycle": "Bicycle",
+      "ambulance": "Ambulance",
+      "police": "Police Car",
+      "firetruck": "Fire Truck",
+      "what-should-you-do": "What should you do?",
+      "listen": "Listen to the sound"
+    },
+    "actions": {
+      "stop": "Stop",
+      "go": "Go",
+      "look": "Look",
+      "wait": "Wait",
+      "walk": "Walk",
+      "safe": "Safe",
+      "dangerous": "Dangerous"
+    },
+    "common": {
+      "next": "Next",
+      "back": "Back",
+      "start": "Start",
+      "good-job": "Good job!",
+      "excellent": "Excellent!",
+      "well-done": "Well done!"
+    }
+  },
+  "app.traffic_safety": "Traffic Safety",
+  "app.traffic_safety.desc": "Learn road safety with traffic lights, signs, and vehicles"
 }

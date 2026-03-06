@@ -3243,5 +3243,113 @@
   "fineMotor.drawing.spiral": "Rita en spiral",
   "fineMotor.drawing.free": "Fri ritning",
   "fineMotor.drawing.clear": "Rensa",
-  "fineMotor.drawing.done": "Klar!"
+  "fineMotor.drawing.done": "Klar!",
+  "traffic-safety": {
+    "title": "Trafiksäkerhet",
+    "welcome": {
+      "purpose": "Lär dig viktiga trafikregler och färdigheter för vägar.",
+      "how": "Tryck på aktiviteterna för att öva säker gång och gatuövergång.",
+      "goal": "Bli trygg och säker i närheten av trafik och vägar."
+    },
+    "activities": {
+      "traffic-lights": "Trafikljus",
+      "traffic-lights-desc": "Lär dig när du ska stanna, vänta och gå",
+      "crosswalk": "Övergångsställe",
+      "crosswalk-desc": "Öva att korsa gatan säkert",
+      "road-signs": "Trafikskyltar",
+      "road-signs-desc": "Lär dig viktiga trafikskyltar",
+      "safe-places": "Säkra platser",
+      "safe-places-desc": "Identifiera säkra och farliga platser",
+      "reflectors": "Reflexer",
+      "reflectors-desc": "Lär dig om att synas",
+      "vehicles": "Fordon",
+      "vehicles-desc": "Lär dig om bilar, bussar och andra fordon"
+    },
+    "traffic-lights": {
+      "title": "Trafikljus",
+      "red": "Rött betyder STANNA",
+      "yellow": "Gult betyder VÄNTA",
+      "green": "Grönt betyder GÅ",
+      "what-do-you-do": "Vad gör du nu?",
+      "quiz-red": "Ljuset är rött",
+      "quiz-yellow": "Ljuset är gult",
+      "quiz-green": "Ljuset är grönt",
+      "correct": "Rätt!",
+      "try-again": "Försök igen",
+      "tap-light": "Tryck på ljuset för att ändra det"
+    },
+    "crosswalk": {
+      "title": "Övergångsställe",
+      "step1": "1. Stanna vid kanten",
+      "step2": "2. Titta vänster",
+      "step3": "3. Titta höger",
+      "step4": "4. Titta vänster igen",
+      "step5": "5. Gå om det är fritt",
+      "practice": "Övningsläge",
+      "safe-to-cross": "Är det säkert att korsa?",
+      "yes": "Ja",
+      "no": "Nej"
+    },
+    "road-signs": {
+      "title": "Trafikskyltar",
+      "crosswalk": "Övergångsställe",
+      "warning": "Varning",
+      "stop": "Stopp",
+      "bicycle-path": "Cykelväg",
+      "playground": "Lekplats",
+      "speed-limit": "Hastighetsbegränsning 30",
+      "flashcard": "Flashcard-läge",
+      "match": "Matchningsspel",
+      "what-does-this-mean": "Vad betyder denna skylt?"
+    },
+    "safe-places": {
+      "title": "Säkra platser",
+      "sidewalk": "Trottoar",
+      "road": "Väg",
+      "parking": "Parkering",
+      "safe": "SÄKERT",
+      "dangerous": "FARLIGT",
+      "drag-to-sort": "Dra föremål till SÄKERT eller FARLIGT"
+    },
+    "reflectors": {
+      "title": "Reflexer och synlighet",
+      "day": "Dag",
+      "night": "Natt",
+      "can-you-see": "Syns du i mörkret?",
+      "before": "Före",
+      "after": "Efter reflexer",
+      "dress-character": "Klä karaktären med reflexer"
+    },
+    "vehicles": {
+      "title": "Fordon",
+      "car": "Bil",
+      "bus": "Buss",
+      "truck": "Lastbil",
+      "bicycle": "Cykel",
+      "ambulance": "Ambulans",
+      "police": "Polisbil",
+      "firetruck": "Brandbil",
+      "what-should-you-do": "Vad ska du göra?",
+      "listen": "Lyssna på ljudet"
+    },
+    "actions": {
+      "stop": "Stanna",
+      "go": "Gå",
+      "look": "Titta",
+      "wait": "Vänta",
+      "walk": "Gå",
+      "safe": "Säker",
+      "dangerous": "Farlig"
+    },
+    "common": {
+      "next": "Nästa",
+      "back": "Tillbaka",
+      "start": "Start",
+      "good-job": "Bra jobbat!",
+      "excellent": "Utmärkt!",
+      "well-done": "Välgjort!"
+    }
+  },
+  "app.traffic_safety": "Trafiksäkerhet",
+  "app.traffic_safety.desc": "Lär dig trafiksäkerhet med trafikljus, skyltar och fordon"
 }

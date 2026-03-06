@@ -90,4 +90,7 @@ export const ALL_APPS: AppDef[] = [
   { id: 'story-workshop', name: 'app.story_workshop', description: 'app.story_workshop.desc', category: 'speech', icon: '/icons/story-workshop.svg', route: '/apps/story-workshop', ready: true },
   { id: 'sagostunden', name: 'app.sagostunden', description: 'app.sagostunden.desc', category: 'play', icon: '/icons/sagostunden.svg', route: '/apps/sagostunden', ready: true },
   { id: 'the-mimic', name: 'app.the_mimic', description: 'app.the_mimic.desc', category: 'speech', icon: '/icons/the-mimic.svg', route: '/apps/the-mimic', ready: true },
+  { id: 'rest-trainer', name: 'app.rest_trainer', description: 'app.rest_trainer.desc', category: 'speech', icon: '/icons/rest-trainer.svg', route: '/apps/rest-trainer', ready: true },
+  { id: 'prosody-trainer', name: 'app.prosody_trainer', description: 'app.prosody_trainer.desc', category: 'speech', icon: '/icons/prosody-trainer.svg', route: '/apps/prosody-trainer', ready: true },
+  { id: 'melody-therapy', name: 'app.melody_therapy', description: 'app.melody_therapy.desc', category: 'speech', icon: '/icons/melody-therapy.svg', route: '/apps/melody-therapy', ready: true },
 ];

@@ -143,7 +143,7 @@ export const promptData = [
       'Hold until the sound finishes'
     ],
     exampleWord: 'mamma',
-    arasaacId: 6804,
+    arasaacId: 7777,
     videoPlaceholder: true,
   },
   {
@@ -195,7 +195,7 @@ export const promptData = [
       'Release quickly after the sound'
     ],
     exampleWord: 'pappa',
-    arasaacId: 6803,
+    arasaacId: 2497,
     videoPlaceholder: true,
   },
 
@@ -251,7 +251,7 @@ export const promptData = [
       'Hold until vibration is clear'
     ],
     exampleWord: 'vatten',
-    arasaacId: 5765,
+    arasaacId: 32464,
     videoPlaceholder: true,
   },
 
@@ -417,7 +417,7 @@ export const promptData = [
       'Release quickly after the sound'
     ],
     exampleWord: 'katt',
-    arasaacId: 2032,
+    arasaacId: 7114,
     videoPlaceholder: true,
   },
   {
@@ -471,7 +471,7 @@ export const promptData = [
       'Hold until nasality is clear'
     ],
     exampleWord: 'ring',
-    arasaacId: 4971,
+    arasaacId: 6900,
     videoPlaceholder: true,
   },
 
@@ -606,7 +606,7 @@ export const promptData = [
       'Release quickly'
     ],
     exampleWord: 'kort',
-    arasaacId: 16048,
+    arasaacId: 17208,
     videoPlaceholder: true,
   },
 ];

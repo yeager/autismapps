@@ -46,7 +46,7 @@ export const sounds = [
   {
     id: 'e', symbol: 'e', ipa: 'eː', type: 'vowels',
     voiced: true, exampleWord: 'ek', exampleWordEn: 'oak',
-    exampleArasaac: 7601,
+    exampleArasaac: 2919,
     lips: 'spread', tongue: 'front-high', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.35, tongueY: 0.42, tongueTipX: 0.28, tongueTipY: 0.48,
     lipRound: 0, lipOpen: 0.3,
@@ -54,7 +54,7 @@ export const sounds = [
   {
     id: 'i', symbol: 'i', ipa: 'iː', type: 'vowels',
     voiced: true, exampleWord: 'is', exampleWordEn: 'ice cream',
-    exampleArasaac: 5765,
+    exampleArasaac: 8115,
     lips: 'spread', tongue: 'front-high', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.32, tongueY: 0.35, tongueTipX: 0.25, tongueTipY: 0.42,
     lipRound: 0, lipOpen: 0.15,
@@ -70,7 +70,7 @@ export const sounds = [
   {
     id: 'u', symbol: 'u', ipa: 'ʉː', type: 'vowels',
     voiced: true, exampleWord: 'uggla', exampleWordEn: 'owl',
-    exampleArasaac: 2524,
+    exampleArasaac: 2671,
     lips: 'rounded', tongue: 'front-high', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.38, tongueY: 0.38, tongueTipX: 0.30, tongueTipY: 0.48,
     lipRound: 0.85, lipOpen: 0.2,
@@ -120,7 +120,7 @@ export const sounds = [
   {
     id: 'd', symbol: 'd', ipa: 'd', type: 'stops',
     voiced: true, exampleWord: 'dörr', exampleWordEn: 'door',
-    exampleArasaac: 6307,
+    exampleArasaac: 3244,
     lips: 'open', tongue: 'tip-alveolar', jaw: 'narrow', velum: 'closed', airflow: 'burst',
     tongueX: 0.38, tongueY: 0.48, tongueTipX: 0.25, tongueTipY: 0.32,
     lipRound: 0, lipOpen: 0.3,
@@ -232,7 +232,7 @@ export const sounds = [
   {
     id: 'l', symbol: 'l', ipa: 'l', type: 'liquids',
     voiced: true, exampleWord: 'lampa', exampleWordEn: 'lamp',
-    exampleArasaac: 2491,
+    exampleArasaac: 4936,
     lips: 'open', tongue: 'tip-alveolar', jaw: 'medium', velum: 'closed', airflow: 'lateral',
     tongueX: 0.38, tongueY: 0.45, tongueTipX: 0.25, tongueTipY: 0.30,
     lipRound: 0, lipOpen: 0.4,
@@ -240,7 +240,7 @@ export const sounds = [
   {
     id: 'r', symbol: 'r', ipa: 'r', type: 'liquids',
     voiced: true, exampleWord: 'robot', exampleWordEn: 'robot',
-    exampleArasaac: 9569,
+    exampleArasaac: 6208,
     lips: 'open', tongue: 'tip-alveolar', jaw: 'medium', velum: 'closed', airflow: 'trill',
     tongueX: 0.36, tongueY: 0.44, tongueTipX: 0.24, tongueTipY: 0.30,
     lipRound: 0, lipOpen: 0.4,

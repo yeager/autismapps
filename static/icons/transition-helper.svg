@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="24" fill="#3498DB"/>
+  <!-- First box -->
+  <rect x="12" y="30" width="38" height="38" rx="8" fill="white" opacity="0.9"/>
+  <text x="31" y="54" font-size="18" text-anchor="middle" fill="#3498DB" font-weight="700">1</text>
+  <!-- Arrow -->
+  <path d="M56 49h12M64 43l6 6-6 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Then box -->
+  <rect x="70" y="30" width="38" height="38" rx="8" fill="white" opacity="0.9"/>
+  <text x="89" y="54" font-size="18" text-anchor="middle" fill="#27AE60" font-weight="700">2</text>
+  <!-- Timer arc at bottom -->
+  <path d="M40 88 A20 20 0 1 1 80 88" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="60" cy="85" r="3" fill="white"/>
+  <!-- Clock hand -->
+  <line x1="60" y1="85" x2="68" y2="78" stroke="white" stroke-width="2" stroke-linecap="round"/>
+</svg>

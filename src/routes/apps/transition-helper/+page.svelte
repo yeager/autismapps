@@ -1,0 +1,654 @@
+<script lang="ts">
+  import { get } from 'svelte/store';
+  import { t, locale, setLocale } from '$lib/i18n';
+  import { speak, preloadVoice, getStoredVoices, removeVoice, getEngine, selectedVoiceSv, selectedVoiceEn, ttsStatus } from '$lib/tts';
+  import { voicesForLang, type VoiceOption } from '$lib/tts/voices';
+  import {
+    theme, textSize, ttsSpeed, phoneticEmphasis,
+    screenReaderEnabled, reducedMotion, simpleMode, arasaacBW,
+    type Theme, type TextSize
+  } from '$lib/a11y';
+  import { db } from '$lib/storage';
+  import { browser } from '$app/environment';
+
+  let advanced = $state(false);
+
+  const LANGUAGES: { code: string; label: string; flag: string; ready: boolean }[] = [
+    { code: 'sv', label: 'Svenska', flag: '🇸🇪', ready: true },
+    { code: 'en', label: 'English', flag: '🇬🇧', ready: true },
+    { code: 'da', label: 'Dansk', flag: '🇩🇰', ready: false },
+    { code: 'de', label: 'Deutsch', flag: '🇩🇪', ready: false },
+    { code: 'es', label: 'Español', flag: '🇪🇸', ready: false },
+    { code: 'fi', label: 'Suomi', flag: '🇫🇮', ready: false },
+    { code: 'fr', label: 'Français', flag: '🇫🇷', ready: false },
+    { code: 'it', label: 'Italiano', flag: '🇮🇹', ready: false },
+    { code: 'nb', label: 'Norsk bokmål', flag: '🇳🇴', ready: false },
+    { code: 'nl', label: 'Nederlands', flag: '🇳🇱', ready: false },
+    { code: 'pl', label: 'Polski', flag: '🇵🇱', ready: false },
+    { code: 'pt_BR', label: 'Português (BR)', flag: '🇧🇷', ready: false },
+  ];
+
+  const TEXT_SIZES: { value: TextSize; key: string }[] = [
+    { value: 'normal', key: 'settings.text_size.normal' },
+    { value: 'large', key: 'settings.text_size.large' },
+    { value: 'extra-large', key: 'settings.text_size.extra_large' }
+  ];
+
+  const THEMES: { value: Theme; key: string }[] = [
+    { value: 'light', key: 'settings.theme.light' },
+    { value: 'dark', key: 'settings.theme.dark' },
+    { value: 'high-contrast', key: 'settings.theme.high_contrast' }
+  ];
+
+  function changeLang(code: string) {
+    setLocale(code);
+    if (browser) localStorage.setItem('locale', code);
+    speak($t(`settings.language`));
+  }
+
+  let storedVoices = $state<string[]>([]);
+  let ttsEngine = $state('');
+  let downloadingVoice = $state('');
+
+  $effect(() => {
+    if (browser) {
+      getStoredVoices().then(v => storedVoices = v);
+      ttsEngine = getEngine();
+    }
+  });
+
+  function testVoice() {
+    speak($t('app.title') + '. ' + $t('app.subtitle'));
+  }
+
+  let webSpeechVoices = $state<VoiceOption[]>([]);
+
+  function loadWebSpeechVoices() {
+    if (typeof speechSynthesis === 'undefined') return;
+    const langPrefix = $locale === 'sv' ? 'sv' : 'en';
+    const sysVoices = speechSynthesis.getVoices()
+      .filter(v => v.lang.startsWith(langPrefix))
+      .map((v, i) => ({
+        id: `webspeech:${v.voiceURI}`,
+        name: v.name.replace(/^Microsoft /, '').replace(/^Google /, ''),
+        lang: langPrefix,
+        gender: 'neutral' as const,
+        quality: v.localService ? 'high' as const : 'medium' as const,
+        sizeMb: 0,
+      }));
+    webSpeechVoices = sysVoices;
+  }
+
+  // Load system voices (may be async on some browsers)
+  if (typeof speechSynthesis !== 'undefined') {
+    speechSynthesis.onvoiceschanged = loadWebSpeechVoices;
+    loadWebSpeechVoices();
+  }
+
+  function currentVoices(): VoiceOption[] {
+    if (ttsEngine === 'piper') return voicesForLang($locale);
+    return webSpeechVoices.length > 0 ? webSpeechVoices : voicesForLang($locale);
+  }
+
+  function selectedVoiceForLang(): string {
+    return $locale === 'sv' ? $selectedVoiceSv : $selectedVoiceEn;
+  }
+
+  async function selectVoice(v: VoiceOption) {
+    if (v.lang === 'sv') $selectedVoiceSv = v.id;
+    else $selectedVoiceEn = v.id;
+
+    // Download if Piper voice not cached
+    if (!v.id.startsWith('webspeech:') && !storedVoices.includes(v.id)) {
+      downloadingVoice = v.id;
+      await preloadVoice(v.lang);
+      storedVoices = await getStoredVoices();
+      downloadingVoice = '';
+    }
+
+    // Test the voice
+    speak(v.lang === 'sv' ? 'Hej, jag heter ' + v.name : 'Hello, my name is ' + v.name);
+  }
+
+  function handleSpeedChange(e: Event) {
+    const val = parseFloat((e.target as HTMLInputElement).value);
+    $ttsSpeed = val;
+  }
+
+  function getSpeedLabel(val: number): string {
+    if (val <= 0.5) return $t('settings.tts_speed.slow');
+    if (val >= 1.0) return $t('settings.tts_speed.fast');
+    return $t('settings.tts_speed.normal');
+  }
+
+  async function clearData() {
+    if (browser && confirm('Clear all data? This cannot be undone.')) {
+      await db.boards.clear();
+      await db.schedules.clear();
+      await db.settings.clear();
+      speak($t('settings.clear_data'));
+    }
+  }
+
+  async function exportData() {
+    const boards = await db.boards.toArray();
+    const schedules = await db.schedules.toArray();
+    const data = JSON.stringify({ boards, schedules }, null, 2);
+    const blob = new Blob([data], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'autismapps-data.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function importData() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = async () => {
+      const file = input.files?.[0];
+      if (!file) return;
+      const text = await file.text();
+      try {
+        const data = JSON.parse(text);
+        if (data.boards) {
+          for (const b of data.boards) {
+            delete b.id;
+            await db.boards.add(b);
+          }
+        }
+        if (data.schedules) {
+          for (const s of data.schedules) {
+            delete s.id;
+            await db.schedules.add(s);
+          }
+        }
+        speak($t('settings.import_data'));
+      } catch {
+        alert('Invalid file');
+      }
+    };
+    input.click();
+  }
+</script>
+
+<div class="settings-page">
+  <h1>{$t('settings.title')}</h1>
+
+  <!-- Mode toggle -->
+  <div class="mode-toggle">
+    <button
+      class="mode-btn"
+      class:active={!advanced}
+      onclick={() => advanced = false}
+    >{$t('settings.simple')}</button>
+    <button
+      class="mode-btn"
+      class:active={advanced}
+      onclick={() => advanced = true}
+    >{$t('settings.advanced')}</button>
+  </div>
+
+  <div class="settings-list">
+    <!-- SIMPLE MODE -->
+
+    <!-- Language -->
+    <div class="setting">
+      <span class="setting-label">{$t('settings.language')}</span>
+      <div class="setting-options">
+        {#each LANGUAGES as lang}
+          <button
+            class="lang-btn"
+            class:active={$locale === lang.code}
+            class:disabled={!lang.ready}
+            disabled={!lang.ready}
+            onclick={() => changeLang(lang.code)}
+            title={lang.ready ? lang.label : `${lang.label} — coming soon`}
+          >
+            <span class="lang-flag">{lang.flag}</span>
+            <span class="lang-name">{lang.label}</span>
+            {#if !lang.ready}<span class="lang-soon">⏳</span>{/if}
+          </button>
+        {/each}
+      </div>
+    </div>
+
+    <!-- Voice selection -->
+    <div class="setting setting-column">
+      <span class="setting-label">{$t('settings.voice')}</span>
+      <p class="setting-hint">
+        {$t('settings.tts_engine')}: <strong>{ttsEngine === 'piper' ? 'Piper WASM' : ttsEngine === 'webspeech' ? 'Web Speech API' : '—'}</strong>
+      </p>
+      <div class="voice-grid">
+        {#each currentVoices() as v}
+          {@const isSelected = selectedVoiceForLang() === v.id}
+          {@const isCached = storedVoices.includes(v.id)}
+          {@const isDownloading = downloadingVoice === v.id}
+          <button
+            class="voice-card"
+            class:active={isSelected}
+            class:downloading={isDownloading}
+            onclick={() => selectVoice(v)}
+          >
+            <span class="voice-name">{v.name}</span>
+            <span class="voice-desc">{v.description || ""}</span>
+            <span class="voice-meta">
+              {v.gender === 'female' ? '♀' : v.gender === 'male' ? '♂' : '⚬'}
+              {v.quality}
+              {#if !isCached && v.sizeMb > 0}· ⬇️ {v.sizeMb}MB{/if}
+            </span>
+            {#if isSelected}<span class="voice-check">✓</span>{/if}
+            {#if isDownloading}<span class="voice-dl">⏳</span>{/if}
+          </button>
+        {/each}
+      </div>
+      <button class="option-btn" onclick={testVoice} style="margin-top: 8px">🔊 {$t('settings.test_voice')}</button>
+    </div>
+
+    <!-- Text Size -->
+    <div class="setting">
+      <span class="setting-label">{$t('settings.text_size')}</span>
+      <div class="setting-options">
+        {#each TEXT_SIZES as size}
+          <button
+            class="option-btn"
+            class:active={$textSize === size.value}
+            onclick={() => $textSize = size.value}
+          >{$t(size.key)}</button>
+        {/each}
+      </div>
+    </div>
+
+    <!-- Theme -->
+    <div class="setting">
+      <span class="setting-label">{$t('settings.theme')}</span>
+      <div class="setting-options">
+        {#each THEMES as th}
+          <button
+            class="option-btn"
+            class:active={$theme === th.value}
+            onclick={() => $theme = th.value}
+          >{$t(th.key)}</button>
+        {/each}
+      </div>
+    </div>
+
+    <!-- ADVANCED MODE -->
+    {#if advanced}
+      <!-- TTS Speed Slider -->
+      <div class="setting setting-column">
+        <span class="setting-label">{$t('settings.tts_speed')}</span>
+        <div class="slider-row">
+          <span class="slider-label">{$t('settings.tts_speed.slow')}</span>
+          <input
+            type="range"
+            min="0.3"
+            max="1.5"
+            step="0.1"
+            value={$ttsSpeed}
+            oninput={handleSpeedChange}
+            class="speed-slider"
+            aria-label={$t('settings.tts_speed')}
+          />
+          <span class="slider-label">{$t('settings.tts_speed.fast')}</span>
+        </div>
+        <span class="slider-value">{$ttsSpeed.toFixed(1)}x — {getSpeedLabel($ttsSpeed)}</span>
+      </div>
+
+      <!-- Phonetic emphasis -->
+      <div class="setting">
+        <span class="setting-label">{$t('settings.phonetic')}</span>
+        <div class="setting-options">
+          <button
+            class="toggle-btn"
+            class:on={$phoneticEmphasis}
+            onclick={() => $phoneticEmphasis = !$phoneticEmphasis}
+          >{$phoneticEmphasis ? $t('settings.on') : $t('settings.off')}</button>
+        </div>
+      </div>
+
+      <!-- Screen reader -->
+      <div class="setting">
+        <span class="setting-label">{$t('settings.screen_reader')}</span>
+        <div class="setting-options">
+          <button
+            class="toggle-btn"
+            class:on={$screenReaderEnabled}
+            onclick={() => $screenReaderEnabled = !$screenReaderEnabled}
+          >{$screenReaderEnabled ? $t('settings.on') : $t('settings.off')}</button>
+        </div>
+      </div>
+
+      <!-- Animations -->
+      <div class="setting">
+        <span class="setting-label">{$t('settings.animations')}</span>
+        <div class="setting-options">
+          <button
+            class="toggle-btn"
+            class:on={!$reducedMotion}
+            onclick={() => $reducedMotion = !$reducedMotion}
+          >{!$reducedMotion ? $t('settings.on') : $t('settings.off')}</button>
+        </div>
+      </div>
+
+      <!-- ARASAAC B/W -->
+      <div class="setting">
+        <span class="setting-label">{$t('settings.arasaac_bw')}</span>
+        <div class="setting-options">
+          <button
+            class="toggle-btn"
+            class:on={$arasaacBW}
+            onclick={() => $arasaacBW = !$arasaacBW}
+          >{$arasaacBW ? $t('settings.on') : $t('settings.off')}</button>
+        </div>
+      </div>
+
+      <!-- Data management -->
+      <div class="setting">
+        <span class="setting-label">{$t('settings.export_data')}</span>
+        <div class="setting-options">
+          <button class="option-btn" onclick={exportData}>📦 {$t('settings.export_data')}</button>
+          <button class="option-btn" onclick={importData}>📥 {$t('settings.import_data')}</button>
+        </div>
+      </div>
+
+      <div class="setting">
+        <span class="setting-label">{$t('settings.clear_data')}</span>
+        <div class="setting-options">
+          <button class="option-btn danger" onclick={clearData}>🗑️ {$t('settings.clear_data')}</button>
+        </div>
+      </div>
+    {/if}
+
+    <!-- TTS Debug Panel -->
+    <div class="section">
+      <h2>🔍 TTS Diagnostik</h2>
+      <div class="debug-panel">
+        <div class="debug-row">
+          <span class="debug-label">Motor:</span>
+          <span class="debug-value" class:ok={$ttsStatus.engine === 'piper'} class:warn={$ttsStatus.engine === 'webspeech'} class:err={$ttsStatus.engine === 'none'}>
+            {$ttsStatus.engine === 'piper' ? '✅ Piper WASM' : $ttsStatus.engine === 'webspeech' ? '⚠️ Web Speech (fallback)' : '❌ Ingen'}
+          </span>
+        </div>
+        <div class="debug-row">
+          <span class="debug-label">Piper status:</span>
+          <span class="debug-value">
+            {$ttsStatus.piperReady ? '✅ Redo' : $ttsStatus.piperFailed ? '❌ Ej tillgänglig' : '⏳ Laddar...'}
+          </span>
+        </div>
+        {#if $ttsStatus.lastSpoke}
+          <div class="debug-row">
+            <span class="debug-label">Senaste:</span>
+            <span class="debug-value">"{$ttsStatus.lastSpoke.slice(0, 40)}"</span>
+          </div>
+        {/if}
+        {#if $ttsStatus.lastError}
+          <div class="debug-row">
+            <span class="debug-label">Fel:</span>
+            <span class="debug-value err">{$ttsStatus.lastError.slice(0, 80)}</span>
+          </div>
+        {/if}
+        <div class="debug-btns">
+          <button class="test-btn" onclick={() => speak('Hej! TTS-motorn testar.')}>
+            🔊 Testa TTS
+          </button>
+          {#if $ttsStatus.engine === 'piper'}
+            <button class="test-btn" onclick={async () => {
+              const stored = await getStoredVoices();
+              for (const v of stored) await removeVoice(v);
+              alert(`Rensade ${stored.length} cachade röster. Ladda om sidan.`);
+            }}>
+              🗑️ Rensa TTS-cache
+            </button>
+            <button class="test-btn" onclick={async () => {
+              await preloadVoice('sv');
+              await preloadVoice('en');
+            }}>
+              📥 Ladda ner röster
+            </button>
+          {/if}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .settings-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+    font-weight: 700;
+  }
+
+  .debug-panel { background:var(--bg-card); border:2px solid var(--border); border-radius:12px; padding:1rem; display:flex; flex-direction:column; gap:.5rem; }
+  .debug-row { display:flex; gap:.5rem; align-items:center; }
+  .debug-label { font-weight:600; min-width:100px; font-size:.9rem; }
+  .debug-value { font-size:.9rem; }
+  .debug-value.ok { color:#4caf50; }
+  .debug-value.warn { color:#ff9800; }
+  .debug-value.err { color:#f44336; }
+  .debug-btns { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.5rem; }
+  .test-btn { padding:.5rem 1rem; border:2px solid var(--border); border-radius:8px; background:var(--bg-card); cursor:pointer; min-height:44px; font-size:.85rem; }
+
+  .mode-toggle {
+    display: flex;
+    gap: 0;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .mode-btn {
+    flex: 1;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all var(--transition);
+    min-height: 48px;
+  }
+  .mode-btn:hover { background: var(--bg-hover); }
+  .mode-btn.active {
+    background: var(--accent);
+    color: white;
+  }
+
+  .settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+
+  .setting-column {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .setting-label {
+    font-weight: 600;
+    font-size: 0.95em;
+    flex-shrink: 0;
+  }
+
+  .setting-options {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .option-btn {
+    padding: 8px 16px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.85em;
+    transition: all var(--transition);
+    min-height: 40px;
+    white-space: nowrap;
+  }
+  .option-btn:hover { background: var(--bg-hover); border-color: var(--accent); }
+  .option-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  .option-btn.danger {
+    color: var(--danger);
+    border-color: var(--danger);
+  }
+  .option-btn.danger:hover {
+    background: var(--danger);
+    color: white;
+  }
+
+  .toggle-btn {
+    padding: 8px 20px;
+    border: 2px solid var(--border);
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.85em;
+    transition: all var(--transition);
+    min-height: 40px;
+    min-width: 60px;
+  }
+  .toggle-btn:hover { background: var(--bg-hover); }
+  .toggle-btn.on {
+    background: var(--success);
+    color: white;
+    border-color: var(--success);
+  }
+
+  /* TTS Speed slider */
+  .slider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .slider-label {
+    font-size: 0.8em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    min-width: 44px;
+  }
+  .slider-value {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .speed-slider {
+    flex: 1;
+    height: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--border);
+    border-radius: 4px;
+    outline: none;
+  }
+  .speed-slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 3px solid var(--bg-card);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .speed-slider::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 3px solid var(--bg-card);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 500px) {
+    .setting {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .setting-options {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+
+  /* Voice selection */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+  .voice-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 14px 10px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    position: relative;
+    min-height: 48px;
+    transition: all 0.15s;
+  }
+  .voice-card:hover { border-color: #3498DB; }
+  .voice-card.active { border-color: #27AE60; background: rgba(39,174,96,0.08); }
+  .voice-card.downloading { opacity: 0.7; }
+  .voice-name { font-weight: 700; font-size: 1em; }
+  .voice-desc { font-size: 0.75em; color: var(--text-muted); text-align: center; line-height: 1.3; min-height: 1.3em; }
+  .voice-meta { font-size: 0.75em; color: var(--text-muted); }
+  .voice-check { position: absolute; top: 4px; right: 6px; color: #27AE60; font-size: 0.85em; }
+  .voice-dl { position: absolute; top: 4px; left: 6px; }
+  .setting-hint { font-size: 0.8em; color: var(--text-muted); margin: 0; }
+
+  /* Language buttons */
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.85em;
+    transition: all var(--transition);
+    min-height: 40px;
+    white-space: nowrap;
+    background: var(--bg-card);
+  }
+  .lang-btn:hover:not(:disabled) { background: var(--bg-hover); border-color: var(--accent); }
+  .lang-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .lang-btn.disabled { opacity: 0.45; cursor: not-allowed; }
+  .lang-flag { font-size: 1.2em; }
+  .lang-name { font-size: 0.9em; }
+  .lang-soon { font-size: 0.75em; }
+</style>

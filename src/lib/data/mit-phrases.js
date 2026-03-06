@@ -104,7 +104,7 @@ export const phrases = [
       { note: 'C4', duration: 0.5 },
     ],
     category: 'wants',
-    arasaacId: 5526,
+    arasaacId: 5525,
   },
   {
     id: 'mer',
@@ -112,7 +112,7 @@ export const phrases = [
     syllables: ['mer'],
     melody: [{ note: 'G4', duration: 0.6 }],
     category: 'wants',
-    arasaacId: 7063,
+    arasaacId: 5508,
   },
   {
     id: 'jag-ar-hungrig',
@@ -135,7 +135,7 @@ export const phrases = [
     syllables: ['tack'],
     melody: [{ note: 'G4', duration: 0.5 }],
     category: 'social',
-    arasaacId: 25594,
+    arasaacId: 8129,
   },
   {
     id: 'tack-sa-mycket',
@@ -148,7 +148,7 @@ export const phrases = [
       { note: 'C4', duration: 0.5 },
     ],
     category: 'social',
-    arasaacId: 25594,
+    arasaacId: 8129,
   },
   {
     id: 'forlat',
@@ -159,7 +159,7 @@ export const phrases = [
       { note: 'C4', duration: 0.6 },
     ],
     category: 'social',
-    arasaacId: 6573,
+    arasaacId: 11625,
   },
   {
     id: 'snalla',
@@ -170,7 +170,7 @@ export const phrases = [
       { note: 'G4', duration: 0.5 },
     ],
     category: 'social',
-    arasaacId: 6022,
+    arasaacId: 8195,
   },
 
   // === Vardagsfraser (Everyday Phrases) ===

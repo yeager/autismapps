@@ -46,7 +46,7 @@ export const sounds = [
   {
     id: 'e', symbol: 'e', ipa: 'eː', type: 'vowels',
     voiced: true, exampleWord: 'ek', exampleWordEn: 'oak',
-    exampleArasaac: 2919,
+    exampleArasaac: 38268,
     lips: 'spread', tongue: 'front-high', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.35, tongueY: 0.42, tongueTipX: 0.28, tongueTipY: 0.48,
     lipRound: 0, lipOpen: 0.3,
@@ -54,7 +54,7 @@ export const sounds = [
   {
     id: 'i', symbol: 'i', ipa: 'iː', type: 'vowels',
     voiced: true, exampleWord: 'is', exampleWordEn: 'ice cream',
-    exampleArasaac: 8115,
+    exampleArasaac: 3348,
     lips: 'spread', tongue: 'front-high', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.32, tongueY: 0.35, tongueTipX: 0.25, tongueTipY: 0.42,
     lipRound: 0, lipOpen: 0.15,
@@ -86,7 +86,7 @@ export const sounds = [
   {
     id: 'å', symbol: 'å', ipa: 'oː', type: 'vowels',
     voiced: true, exampleWord: 'ål', exampleWordEn: 'eel',
-    exampleArasaac: 2629,
+    exampleArasaac: 5378,
     lips: 'rounded', tongue: 'back-high', jaw: 'medium', velum: 'closed', airflow: 'continuous',
     tongueX: 0.52, tongueY: 0.42, tongueTipX: 0.35, tongueTipY: 0.55,
     lipRound: 0.8, lipOpen: 0.35,
@@ -94,7 +94,7 @@ export const sounds = [
   {
     id: 'ä', symbol: 'ä', ipa: 'ɛː', type: 'vowels',
     voiced: true, exampleWord: 'äpple', exampleWordEn: 'apple',
-    exampleArasaac: 2432,
+    exampleArasaac: 2462,
     lips: 'spread', tongue: 'front-low', jaw: 'medium', velum: 'closed', airflow: 'continuous',
     tongueX: 0.35, tongueY: 0.55, tongueTipX: 0.28, tongueTipY: 0.58,
     lipRound: 0, lipOpen: 0.55,
@@ -112,7 +112,7 @@ export const sounds = [
   {
     id: 'b', symbol: 'b', ipa: 'b', type: 'stops',
     voiced: true, exampleWord: 'boll', exampleWordEn: 'ball',
-    exampleArasaac: 2456,
+    exampleArasaac: 3241,
     lips: 'closed', tongue: 'neutral', jaw: 'closed', velum: 'closed', airflow: 'burst',
     tongueX: 0.42, tongueY: 0.60, tongueTipX: 0.32, tongueTipY: 0.60,
     lipRound: 0, lipOpen: 0,
@@ -128,7 +128,7 @@ export const sounds = [
   {
     id: 'g', symbol: 'g', ipa: 'ɡ', type: 'stops',
     voiced: true, exampleWord: 'gris', exampleWordEn: 'pig',
-    exampleArasaac: 2519,
+    exampleArasaac: 24972,
     lips: 'open', tongue: 'back-high', jaw: 'narrow', velum: 'closed', airflow: 'burst',
     tongueX: 0.55, tongueY: 0.38, tongueTipX: 0.35, tongueTipY: 0.55,
     lipRound: 0, lipOpen: 0.3,
@@ -136,7 +136,7 @@ export const sounds = [
   {
     id: 'k', symbol: 'k', ipa: 'k', type: 'stops',
     voiced: false, exampleWord: 'katt', exampleWordEn: 'cat',
-    exampleArasaac: 2463,
+    exampleArasaac: 7114,
     lips: 'open', tongue: 'back-high', jaw: 'narrow', velum: 'closed', airflow: 'burst',
     tongueX: 0.55, tongueY: 0.36, tongueTipX: 0.35, tongueTipY: 0.55,
     lipRound: 0, lipOpen: 0.3,
@@ -144,7 +144,7 @@ export const sounds = [
   {
     id: 'p', symbol: 'p', ipa: 'p', type: 'stops',
     voiced: false, exampleWord: 'pappa', exampleWordEn: 'daddy',
-    exampleArasaac: 7029,
+    exampleArasaac: 31146,
     lips: 'closed', tongue: 'neutral', jaw: 'closed', velum: 'closed', airflow: 'burst',
     tongueX: 0.42, tongueY: 0.60, tongueTipX: 0.32, tongueTipY: 0.60,
     lipRound: 0, lipOpen: 0,
@@ -162,7 +162,7 @@ export const sounds = [
   {
     id: 'f', symbol: 'f', ipa: 'f', type: 'fricatives',
     voiced: false, exampleWord: 'fisk', exampleWordEn: 'fish',
-    exampleArasaac: 2476,
+    exampleArasaac: 2520,
     lips: 'open', tongue: 'neutral', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.42, tongueY: 0.58, tongueTipX: 0.32, tongueTipY: 0.58,
     lipRound: 0, lipOpen: 0.15,
@@ -171,7 +171,7 @@ export const sounds = [
   {
     id: 's', symbol: 's', ipa: 's', type: 'fricatives',
     voiced: false, exampleWord: 'sol', exampleWordEn: 'sun',
-    exampleArasaac: 2381,
+    exampleArasaac: 7252,
     lips: 'spread', tongue: 'tip-alveolar', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.36, tongueY: 0.42, tongueTipX: 0.24, tongueTipY: 0.34,
     lipRound: 0, lipOpen: 0.2,
@@ -179,7 +179,7 @@ export const sounds = [
   {
     id: 'h', symbol: 'h', ipa: 'h', type: 'fricatives',
     voiced: false, exampleWord: 'hund', exampleWordEn: 'dog',
-    exampleArasaac: 2478,
+    exampleArasaac: 7202,
     lips: 'open', tongue: 'neutral', jaw: 'medium', velum: 'closed', airflow: 'continuous',
     tongueX: 0.42, tongueY: 0.58, tongueTipX: 0.32, tongueTipY: 0.58,
     lipRound: 0, lipOpen: 0.5,
@@ -188,7 +188,7 @@ export const sounds = [
   {
     id: 'sj', symbol: 'sj', ipa: 'ɧ', type: 'fricatives',
     voiced: false, exampleWord: 'sjö', exampleWordEn: 'lake',
-    exampleArasaac: 2382,
+    exampleArasaac: 6022,
     lips: 'rounded', tongue: 'tip-postalveolar', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.40, tongueY: 0.42, tongueTipX: 0.27, tongueTipY: 0.36,
     lipRound: 0.6, lipOpen: 0.2,
@@ -206,7 +206,7 @@ export const sounds = [
   {
     id: 'm', symbol: 'm', ipa: 'm', type: 'nasals',
     voiced: true, exampleWord: 'mamma', exampleWordEn: 'mum',
-    exampleArasaac: 7028,
+    exampleArasaac: 2458,
     lips: 'closed', tongue: 'neutral', jaw: 'closed', velum: 'open', airflow: 'nasal',
     tongueX: 0.42, tongueY: 0.58, tongueTipX: 0.32, tongueTipY: 0.58,
     lipRound: 0, lipOpen: 0,
@@ -214,7 +214,7 @@ export const sounds = [
   {
     id: 'n', symbol: 'n', ipa: 'n', type: 'nasals',
     voiced: true, exampleWord: 'näsa', exampleWordEn: 'nose',
-    exampleArasaac: 2684,
+    exampleArasaac: 2887,
     lips: 'open', tongue: 'tip-alveolar', jaw: 'narrow', velum: 'open', airflow: 'nasal',
     tongueX: 0.38, tongueY: 0.48, tongueTipX: 0.25, tongueTipY: 0.32,
     lipRound: 0, lipOpen: 0.3,
@@ -222,7 +222,7 @@ export const sounds = [
   {
     id: 'ng', symbol: 'ng', ipa: 'ŋ', type: 'nasals',
     voiced: true, exampleWord: 'ring', exampleWordEn: 'ring',
-    exampleArasaac: 3221,
+    exampleArasaac: 6900,
     lips: 'open', tongue: 'back-high', jaw: 'narrow', velum: 'open', airflow: 'nasal',
     tongueX: 0.55, tongueY: 0.38, tongueTipX: 0.35, tongueTipY: 0.55,
     lipRound: 0, lipOpen: 0.3,
@@ -258,7 +258,7 @@ export const sounds = [
   {
     id: 'v', symbol: 'v', ipa: 'v', type: 'glides',
     voiced: true, exampleWord: 'vatten', exampleWordEn: 'water',
-    exampleArasaac: 4780,
+    exampleArasaac: 32464,
     lips: 'open', tongue: 'neutral', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.42, tongueY: 0.58, tongueTipX: 0.32, tongueTipY: 0.58,
     lipRound: 0, lipOpen: 0.15,

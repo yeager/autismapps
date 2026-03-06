@@ -143,7 +143,7 @@ export const promptData = [
       'Hold until the sound finishes'
     ],
     exampleWord: 'mamma',
-    arasaacId: 7777,
+    arasaacId: 2458,
     videoPlaceholder: true,
   },
   {
@@ -169,7 +169,7 @@ export const promptData = [
       'Release when sound is produced'
     ],
     exampleWord: 'boll',
-    arasaacId: 2456,
+    arasaacId: 3241,
     videoPlaceholder: true,
   },
   {
@@ -195,7 +195,7 @@ export const promptData = [
       'Release quickly after the sound'
     ],
     exampleWord: 'pappa',
-    arasaacId: 2497,
+    arasaacId: 31146,
     videoPlaceholder: true,
   },
 
@@ -225,7 +225,7 @@ export const promptData = [
       'Hold position while air flows'
     ],
     exampleWord: 'fisk',
-    arasaacId: 4637,
+    arasaacId: 2520,
     videoPlaceholder: true,
   },
   {
@@ -281,7 +281,7 @@ export const promptData = [
       'Release right after the sound'
     ],
     exampleWord: 'tak',
-    arasaacId: 36333,
+    arasaacId: 2584,
     videoPlaceholder: true,
   },
   {
@@ -307,7 +307,7 @@ export const promptData = [
       'Release after the sound'
     ],
     exampleWord: 'dörr',
-    arasaacId: 2331,
+    arasaacId: 3244,
     videoPlaceholder: true,
   },
   {
@@ -334,7 +334,7 @@ export const promptData = [
       'Hold position until nasal sound is heard'
     ],
     exampleWord: 'näsa',
-    arasaacId: 2457,
+    arasaacId: 2887,
     videoPlaceholder: true,
   },
   {
@@ -360,7 +360,7 @@ export const promptData = [
       'Hold while air passes at the sides'
     ],
     exampleWord: 'lampa',
-    arasaacId: 2592,
+    arasaacId: 4936,
     videoPlaceholder: true,
   },
   {
@@ -386,7 +386,7 @@ export const promptData = [
       'Hold while air hisses'
     ],
     exampleWord: 'sol',
-    arasaacId: 2330,
+    arasaacId: 7252,
     videoPlaceholder: true,
   },
 
@@ -444,7 +444,7 @@ export const promptData = [
       'Release quickly'
     ],
     exampleWord: 'gris',
-    arasaacId: 4571,
+    arasaacId: 24972,
     videoPlaceholder: true,
   },
   {
@@ -502,7 +502,7 @@ export const promptData = [
       'Hold while air flows'
     ],
     exampleWord: 'sjö',
-    arasaacId: 5409,
+    arasaacId: 6022,
     videoPlaceholder: true,
   },
   {
@@ -528,7 +528,7 @@ export const promptData = [
       'Hold while sound is produced'
     ],
     exampleWord: 'tjugo',
-    arasaacId: 37613,
+    arasaacId: 29550,
     videoPlaceholder: true,
   },
   {
@@ -554,7 +554,7 @@ export const promptData = [
       'Hold and repeat — this takes time!'
     ],
     exampleWord: 'resa',
-    arasaacId: 6451,
+    arasaacId: 28173,
     videoPlaceholder: true,
   },
   {
@@ -580,7 +580,7 @@ export const promptData = [
       'Release after the sound'
     ],
     exampleWord: 'bord',
-    arasaacId: 2612,
+    arasaacId: 3129,
     videoPlaceholder: true,
   },
   {

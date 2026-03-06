@@ -43,7 +43,7 @@ export const phrases = [
     syllables: ['hej'],
     melody: [{ note: 'E4', duration: 0.5 }],
     category: 'greetings',
-    arasaacId: 6106,
+    arasaacId: 6522,
   },
   {
     id: 'hejda',
@@ -54,7 +54,7 @@ export const phrases = [
       { note: 'C4', duration: 0.6 },
     ],
     category: 'greetings',
-    arasaacId: 6726,
+    arasaacId: 6028,
   },
   {
     id: 'god-morgon',
@@ -77,7 +77,7 @@ export const phrases = [
       { note: 'C4', duration: 0.6 },
     ],
     category: 'greetings',
-    arasaacId: 12269,
+    arasaacId: 6942,
   },
 
   // === Önskemål (Wants) ===
@@ -104,7 +104,7 @@ export const phrases = [
       { note: 'C4', duration: 0.5 },
     ],
     category: 'wants',
-    arasaacId: 5765,
+    arasaacId: 5526,
   },
   {
     id: 'mer',
@@ -183,7 +183,7 @@ export const phrases = [
       { note: 'E4', duration: 0.5 },
     ],
     category: 'everyday',
-    arasaacId: 8942,
+    arasaacId: 32669,
   },
   {
     id: 'titta-dar',
@@ -195,7 +195,7 @@ export const phrases = [
       { note: 'G4', duration: 0.5 },
     ],
     category: 'everyday',
-    arasaacId: 6790,
+    arasaacId: 6564,
   },
   {
     id: 'var-ar',
@@ -218,7 +218,7 @@ export const phrases = [
       { note: 'G4', duration: 0.5 },
     ],
     category: 'everyday',
-    arasaacId: 25608,
+    arasaacId: 22620,
   },
   {
     id: 'jag-heter',
@@ -230,7 +230,7 @@ export const phrases = [
       { note: 'G4', duration: 0.5 },
     ],
     category: 'everyday',
-    arasaacId: 9671,
+    arasaacId: 27357,
   },
 ];
 

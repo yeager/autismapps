@@ -37,7 +37,8 @@ export async function loadBildstod(): Promise<BildstodData> {
   // Try local copy first (bundled in build)
   try {
     const res = await fetch(`${base}/bildstod/pictograms.json`);
-    if (res.ok) {
+    const ct = res.headers.get('content-type') || '';
+    if (res.ok && ct.includes('json')) {
       cache = await res.json();
       return cache!;
     }
@@ -117,7 +118,7 @@ export async function searchBildstod(
     
     if (score > 0) {
       results.push({
-        id: p.id + 900000, // Offset to avoid ARASAAC ID collision
+        id: p.id >= 900000 ? p.id : p.id + 900000, // Offset only if not already offset
         keyword: matchedKeyword,
         url: `${BILDSTOD_BASE}/${p.files.png_500}`,
         slug: p.slug,

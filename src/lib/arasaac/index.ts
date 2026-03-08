@@ -23,94 +23,88 @@ export async function searchPictograms(
   query: string,
   lang: string = 'en'
 ): Promise<PictogramSearchResult[]> {
-  // For Swedish: try local lookup first (Danne's arasaac-sv.po)
-  if (lang === 'sv') {
-    const lookup = await loadSvLookup();
-    const queryLower = query.toLowerCase();
-    // First: exact match on SWEDISH value (prioritize user's language)
-    // This prevents e.g. "barn" matching English "barn" (= ladugård)
-    for (const [en, entry] of Object.entries(lookup)) {
-      if (entry.sv.toLowerCase() === queryLower && entry.id) {
-        return [{ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) }];
-      }
-    }
-    // Second: exact match on English key (e.g. query="happy" → lookup["happy"].sv="glad")
-    const exactEnKey = lookup[queryLower];
-    if (exactEnKey && exactEnKey.id) {
-      return [{ id: exactEnKey.id, keyword: exactEnKey.sv, url: getPictogramUrl(exactEnKey.id, false), urlBW: getPictogramUrl(exactEnKey.id, true) }];
-    }
-    // Third: partial match — Swedish values FIRST, then English keys
-    const svMatches: PictogramSearchResult[] = [];
-    const enMatches: PictogramSearchResult[] = [];
-    const seenIds = new Set<number>();
-    for (const [en, entry] of Object.entries(lookup)) {
-      if (!entry.id) continue;
-      if (seenIds.has(entry.id)) continue;
-      const svLower = entry.sv.toLowerCase();
-      if (svLower.includes(queryLower)) {
-        // Prioritize exact Swedish matches
-        const item = { id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) };
-        if (svLower === queryLower) svMatches.unshift(item); else svMatches.push(item);
-        seenIds.add(entry.id);
-      } else if (en.includes(queryLower)) {
-        enMatches.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
-        seenIds.add(entry.id);
-      }
-    }
-    const combined = [...svMatches, ...enMatches].slice(0, 50);
-    if (combined.length > 0) {
-      // Enrich with bildstöd results (Swedish/NPF concepts not in ARASAAC)
-      try {
-        const bildstodResults = await searchBildstod(query, lang);
-        const bildstodMapped = bildstodResults.map(b => ({
-          id: b.id,
-          keyword: b.keyword,
-          url: b.url,
-          urlBW: b.url // No B&W variant for bildstöd
-        }));
-        // Prepend bildstöd matches (they cover Swedish concepts ARASAAC doesn't have)
-        const existingIds = new Set(combined.map(c => c.id));
-        const uniqueBildstod = bildstodMapped.filter(b => !existingIds.has(b.id));
-        return [...uniqueBildstod, ...combined].slice(0, 50);
-      } catch {
-        return combined;
-      }
-    }
-  }
+  const queryLower = query.toLowerCase().trim();
+  const seenIds = new Set<number>();
+  const results: PictogramSearchResult[] = [];
 
-  // Try bildstöd before ARASAAC API (works offline, Swedish-first)
+  // === STEP 1: ALWAYS search bildstöd FIRST (140 Swedish/NPF pictograms) ===
+  // These are curated for Swedish culture and NPF — always prioritize
   try {
-    const bildstodResults = await searchBildstod(query, lang);
-    if (bildstodResults.length > 0) {
-      return bildstodResults.map(b => ({
-        id: b.id,
-        keyword: b.keyword,
-        url: b.url,
-        urlBW: b.url
-      }));
+    const bildstodResults = await searchBildstod(query, lang === '' ? 'sv' : lang);
+    for (const b of bildstodResults) {
+      if (!seenIds.has(b.id)) {
+        results.push({ id: b.id, keyword: b.keyword, url: b.url, urlBW: b.url });
+        seenIds.add(b.id);
+      }
     }
   } catch {}
 
-  // Fallback: ARASAAC API (English search works, Swedish not yet official)
+  // === STEP 2: Swedish ARASAAC lookup (15,607 translations) ===
+  if (lang === 'sv' || lang === '') {
+    const lookup = await loadSvLookup();
+
+    // 2a: Exact match on SWEDISH value (prevents "barn" → "ladugård")
+    for (const [en, entry] of Object.entries(lookup)) {
+      if (entry.sv.toLowerCase() === queryLower && entry.id && !seenIds.has(entry.id)) {
+        results.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
+        seenIds.add(entry.id);
+        break;
+      }
+    }
+
+    // 2b: Exact match on English key
+    const exactEnKey = lookup[queryLower];
+    if (exactEnKey?.id && !seenIds.has(exactEnKey.id)) {
+      results.push({ id: exactEnKey.id, keyword: exactEnKey.sv, url: getPictogramUrl(exactEnKey.id, false), urlBW: getPictogramUrl(exactEnKey.id, true) });
+      seenIds.add(exactEnKey.id);
+    }
+
+    // 2c: Partial matches — Swedish values first, then English keys
+    if (results.length < 50) {
+      const svPartial: PictogramSearchResult[] = [];
+      const enPartial: PictogramSearchResult[] = [];
+      for (const [en, entry] of Object.entries(lookup)) {
+        if (!entry.id || seenIds.has(entry.id)) continue;
+        const svLower = entry.sv.toLowerCase();
+        if (svLower.includes(queryLower)) {
+          const item = { id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) };
+          if (svLower === queryLower) svPartial.unshift(item); else svPartial.push(item);
+          seenIds.add(entry.id);
+        } else if (en.includes(queryLower) && !seenIds.has(entry.id)) {
+          enPartial.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
+          seenIds.add(entry.id);
+        }
+      }
+      results.push(...svPartial, ...enPartial);
+    }
+
+    if (results.length > 0) {
+      return results.slice(0, 50);
+    }
+  }
+
+  // === STEP 3: Fallback to ARASAAC API (if no local results) ===
   try {
-    const res = await fetch(`${API_BASE}/pictograms/en/search/${encodeURIComponent(query)}`);
-    if (!res.ok) return [];
+    const searchLang = lang === 'sv' ? 'en' : (lang || 'en');
+    const res = await fetch(`${API_BASE}/pictograms/${searchLang}/search/${encodeURIComponent(query)}`);
+    if (!res.ok) return results.slice(0, 50);
     const data: Pictogram[] = await res.json();
-    // If Swedish, enrich keywords from local lookup
     const lookup = lang === 'sv' ? await loadSvLookup() : null;
-    return data.slice(0, 50).map((p) => {
+    for (const p of data.slice(0, 50)) {
+      if (seenIds.has(p._id)) continue;
       const enKeyword = p.keywords[0]?.keyword || query;
       const keyword = lookup ? (lookup[enKeyword.toLowerCase()]?.sv || enKeyword) : enKeyword;
-      return {
+      results.push({
         id: p._id,
         keyword,
         url: getPictogramUrl(p._id, false),
         urlBW: getPictogramUrl(p._id, true)
-      };
-    });
-  } catch {
-    return [];
-  }
+      });
+      seenIds.add(p._id);
+    }
+  } catch {}
+
+  return results.slice(0, 50);
 }
 
 export function getPictogramUrl(

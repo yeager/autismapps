@@ -1,4 +1,5 @@
 import { loadSvLookup } from './sv-lookup';
+import { searchBildstod } from './bildstod';
 
 const API_BASE = 'https://api.arasaac.org/v1';
 const CACHE_NAME = 'arasaac-pictograms';
@@ -57,8 +58,38 @@ export async function searchPictograms(
       }
     }
     const combined = [...svMatches, ...enMatches].slice(0, 50);
-    if (combined.length > 0) return combined;
+    if (combined.length > 0) {
+      // Enrich with bildstöd results (Swedish/NPF concepts not in ARASAAC)
+      try {
+        const bildstodResults = await searchBildstod(query, lang);
+        const bildstodMapped = bildstodResults.map(b => ({
+          id: b.id,
+          keyword: b.keyword,
+          url: b.url,
+          urlBW: b.url // No B&W variant for bildstöd
+        }));
+        // Prepend bildstöd matches (they cover Swedish concepts ARASAAC doesn't have)
+        const existingIds = new Set(combined.map(c => c.id));
+        const uniqueBildstod = bildstodMapped.filter(b => !existingIds.has(b.id));
+        return [...uniqueBildstod, ...combined].slice(0, 50);
+      } catch {
+        return combined;
+      }
+    }
   }
+
+  // Try bildstöd before ARASAAC API (works offline, Swedish-first)
+  try {
+    const bildstodResults = await searchBildstod(query, lang);
+    if (bildstodResults.length > 0) {
+      return bildstodResults.map(b => ({
+        id: b.id,
+        keyword: b.keyword,
+        url: b.url,
+        urlBW: b.url
+      }));
+    }
+  } catch {}
 
   // Fallback: ARASAAC API (English search works, Swedish not yet official)
   try {
@@ -112,3 +143,6 @@ export const CATEGORY_PICTOGRAMS: Record<string, number[]> = {
   home: [3241, 3242, 3243, 3244, 3245],
   clothes: [2019, 2020, 2021, 2022, 2023]
 };
+
+// Re-export bildstöd for direct access
+export { searchBildstod, getBildstodBySlug, getBildstodUrl } from "./bildstod";

@@ -77,17 +77,17 @@
       
       <ActivityGrid 
         i18n={i18nData}
-        on:activitySelected={handleActivitySelected}
+        onactivitySelected={handleActivitySelected}
       />
     {:else if currentView === 'traffic-lights'}
       <TrafficLights 
         i18n={i18nData}
-        on:back={handleBack}
+        onback={handleBack}
       />
     {:else if currentView === 'vehicles'}
       <Vehicles 
         i18n={i18nData}
-        on:back={handleBack}
+        onback={handleBack}
       />
     {:else if currentView === 'crosswalk'}
       <!-- Placeholder for crosswalk component -->

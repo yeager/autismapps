@@ -2,7 +2,7 @@
   import { getPictogram } from '$lib/data/arasaac-data.js';
   import { speak } from '$lib/tts';
 
-  let { i18n = {} } = $props();
+  let { i18n = {}, onactivitySelected = () => {} } = $props();
   
   
   const activities = [
@@ -47,7 +47,7 @@
   function handleActivityClick(activity) {
     const title = getNestedValue(i18n, activity.titleKey) || activity.id;
     speak(title);
-    dispatch('activitySelected', { activity: activity.id });
+    onactivitySelected({ detail: { activity: activity.id } });
   }
   
   function getNestedValue(obj, path) {

@@ -3,7 +3,7 @@
   import { playSuccessSound, playErrorSound } from '$lib/audio.js';
   import { getPictogram } from '$lib/data/arasaac-data.js';
 
-  let { i18n = {} } = $props();
+  let { i18n = {}, onback = () => {} } = $props();
   
   
   let currentLight = $state('red'); // 'red', 'yellow', 'green'
@@ -75,7 +75,7 @@
 <div class="traffic-lights-container">
   <div class="header">
     <h2>{getNestedValue(i18n, 'traffic-lights.title') || 'Traffic Lights'}</h2>
-    <button class="back-button" onclick={() => dispatch('back')}>
+    <button class="back-button" onclick={() => onback()}>
       ← {getNestedValue(i18n, 'common.back') || 'Back'}
     </button>
   </div>

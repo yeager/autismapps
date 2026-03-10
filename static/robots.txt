@@ -1,3 +1,21 @@
-# allow crawling everything by default
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://autismappar.se/sitemap.xml
+
+# Allow indexing of main app
+Allow: /launcher/
+Allow: /launcher/apps/
+
+# Allow static resources
+Allow: /bildstod/
+Allow: /skriv/
+
+# Disallow admin/settings pages
+Disallow: /launcher/settings
+
+# Block common bot directories
+Disallow: /_app/
+Disallow: /static/
+Disallow: /build/

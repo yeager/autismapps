@@ -12,6 +12,13 @@ const config = {
 		}),
 		paths: {
 			base: dev || process.env.TAURI_ENV_PLATFORM ? '' : ('BASE_PATH' in process.env ? process.env.BASE_PATH : '/autismapps')
+		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// Ignore board-builder which is referenced but not yet implemented
+				if (path.includes('board-builder')) return;
+				console.warn(`Prerender warning: ${message}`);
+			}
 		}
 	}
 };

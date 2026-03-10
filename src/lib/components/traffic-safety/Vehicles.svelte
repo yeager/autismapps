@@ -3,7 +3,7 @@
   import { playVehicleSound } from '$lib/audio.js';
   import { getPictogram } from '$lib/data/arasaac-data.js';
 
-  let { i18n = {} } = $props();
+  let { i18n = {}, onback = () => {} } = $props();
   
   
   let selectedVehicle = $state(null);
@@ -60,7 +60,7 @@
 <div class="vehicles-container">
   <div class="header">
     <h2>{getNestedValue(i18n, 'vehicles.title') || 'Vehicles'}</h2>
-    <button class="back-button" onclick={() => dispatch('back')}>
+    <button class="back-button" onclick={() => onback()}>
       ← {getNestedValue(i18n, 'common.back') || 'Back'}
     </button>
   </div>

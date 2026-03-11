@@ -1,6 +1,7 @@
 <script lang="ts">
   import { get } from 'svelte/store';
   import { t, locale, setLocale } from '$lib/i18n';
+  import { flagSvg } from '$lib/flags';
   import { speak, preloadVoice, getStoredVoices, removeVoice, getEngine, selectedVoiceSv, selectedVoiceEn, ttsStatus } from '$lib/tts';
   import { voicesForLang, type VoiceOption } from '$lib/tts/voices';
   import {
@@ -214,7 +215,7 @@
             onclick={() => changeLang(lang.code)}
             title={lang.ready ? lang.label : `${lang.label} — coming soon`}
           >
-            <span class="lang-flag">{lang.flag}</span>
+            <span class="lang-flag">{@html flagSvg(lang.flag)}</span>
             <span class="lang-name">{lang.label}</span>
             {#if !lang.ready}<span class="lang-soon">⏳</span>{/if}
           </button>

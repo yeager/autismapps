@@ -2,6 +2,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import { t } from '$lib/i18n';
+  import { flagSvg } from '$lib/flags';
   import { fade } from 'svelte/transition';
 </script>
 
@@ -82,7 +83,7 @@
     </section>
 
     <section class="section">
-      <p class="made-in">🇸🇪 {$t('about.madeIn')}</p>
+      <p class="made-in">{@html flagSvg('🇸🇪')} {$t('about.madeIn')}</p>
       <p class="license">CC BY-NC-SA 4.0</p>
     </section>
   </main>

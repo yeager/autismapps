@@ -5,6 +5,7 @@
   import { browser } from '$app/environment';
   import { speak } from '$lib/tts';
   import { ALL_APPS, CATEGORY_META, type AppCategory } from '$lib/apps';
+  import { flagSvg } from '$lib/flags';
   import { fly, fade } from 'svelte/transition';
 
   let activeCategory = $state<AppCategory | null>(null);
@@ -107,7 +108,7 @@
           aria-label="Byt språk"
           aria-expanded={langOpen}
         >
-          <span class="lang-flag">{currentFlag}</span>
+          <span class="lang-flag">{@html flagSvg(currentFlag)}</span>
           <svg class="lang-chevron" class:open={langOpen} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 9l6 6 6-6"/>
           </svg>
@@ -120,7 +121,7 @@
                 class:active={$locale === lang.code}
                 onclick={() => pickLang(lang.code)}
               >
-                <span class="lang-option-flag">{lang.flag}</span>
+                <span class="lang-option-flag">{@html flagSvg(lang.flag)}</span>
                 <span class="lang-option-name">{lang.name}</span>
                 {#if $locale === lang.code}
                   <span class="lang-check">✓</span>
@@ -204,7 +205,7 @@
 
         <div class="about-section about-credits">
           <p><a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> · <a href="https://github.com/rhasspy/piper" target="_blank" rel="noopener">Piper</a></p>
-          <p class="about-license">🇸🇪 {$t('about.madeIn')} · CC BY-NC-SA 4.0</p>
+          <p class="about-license">{@html flagSvg('🇸🇪')} {$t('about.madeIn')} · CC BY-NC-SA 4.0</p>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { t } from '$lib/i18n';
+  import { flagSvg } from '$lib/flags';
 </script>
 
 <div class="material-page">
@@ -9,7 +10,7 @@
 
   <div class="cards">
     <a href="{base}/material/autismappar-handout-sv.pdf" class="card" download>
-      <span class="flag">🇸🇪</span>
+      <span class="flag">{@html flagSvg('🇸🇪')}</span>
       <div>
         <h2>{$t('material.handout_sv')}</h2>
         <p>{$t('material.handout_sv_desc')}</p>
@@ -18,7 +19,7 @@
     </a>
 
     <a href="{base}/material/autismappar-handout-en.pdf" class="card" download>
-      <span class="flag">🇬🇧</span>
+      <span class="flag">{@html flagSvg('🇬🇧')}</span>
       <div>
         <h2>{$t('material.handout_en')}</h2>
         <p>{$t('material.handout_en_desc')}</p>

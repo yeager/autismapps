@@ -191,7 +191,7 @@
 
   <footer class="credit">
     Pictograms: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
-    · Uses <a href="https://en.wikipedia.org/wiki/Fitzgerald_Key" target="_blank" rel="noopener">Fitzgerald Key</a> color coding
+    · Uses <a href="https://www.communicationcommunity.com/fitzgerald-key-for-aac/" target="_blank" rel="noopener">Fitzgerald Key</a> color coding
   </footer>
 </div>
 

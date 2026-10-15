@@ -1,5 +1,8 @@
-# Keep the launcher available without an automatic directory-slash redirect.
-DirectorySlash Off
+# Resolve extensionless app URLs through their static directory indexes.
+# Disable MultiViews so Apache does not prefer a colliding *.html alias.
+Options -MultiViews
+DirectoryIndex index.html
+DirectorySlash On
 
 # Never cache the live entry point, fallback, or service-worker script.
 <IfModule mod_headers.c>

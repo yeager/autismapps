@@ -6,10 +6,11 @@
   import { totalStars, rewardsSettings } from '$lib/rewards/store';
   import { activeProfileId } from '$lib/stores/profile';
   import { get } from 'svelte/store';
+  import { t } from '$lib/i18n';
 </script>
 
 {#if $activeProfileId && get(rewardsSettings).enabled}
-  <div class="star-counter" aria-label="{$totalStars} guldstjärnor">
+  <div class="star-counter" aria-label={$t('rewards.aria.stars', { n: String($totalStars) })}>
     <span class="star-icon">⭐</span>
     <span class="star-count">{$totalStars}</span>
   </div>

@@ -5,6 +5,8 @@
    * Notes go up/down matching pitch. Active note highlights during playback.
    */
 
+  import { t } from '$lib/i18n';
+
   type NoteEvent = { note: string; duration: number };
 
   export let melody: NoteEvent[] = [];
@@ -46,7 +48,7 @@
   }
 </script>
 
-<div class="melody-display" role="img" aria-label="Melodivisning">
+<div class="melody-display" role="img" aria-label={$t('melodyTherapy.melodyDisplay')}>
   <!-- Simplified staff lines -->
   <svg viewBox="0 0 {melody.length * 80 + 40} 160" class="staff">
     <!-- Staff lines -->

@@ -186,7 +186,8 @@
 
   .profile-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 200px));
+    justify-content: center;
     gap: 16px;
     max-width: 700px;
     width: 100%;

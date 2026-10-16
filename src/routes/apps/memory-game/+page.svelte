@@ -84,7 +84,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if theme}<button class="sub-back" onclick={() => { theme = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if theme}<button class="sub-back" onclick={() => { theme = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🧩 {$t('memoryGame.title')}</h1>
 
   </div>

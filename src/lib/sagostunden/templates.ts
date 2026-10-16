@@ -1,13 +1,14 @@
 /**
- * Sagostunden — 25 bilingual story templates (sv/en) with placeholders
- * Placeholders: {DJUR}, {PLATS}, {SAK}, {MAT}, {PERSON}, {VERB}
- * Article placeholders: {en_X} (sv: en/ett), {a_X} (en: a/an)
+ * Sagostunden — 25 story templates (sv/en/pt_BR) with placeholders
+ * Slots: {DJUR}, {PLATS}, {SAK}, {MAT}, {PERSON}, {VERB}
+ * sv: {en_X} (en/ett), {def_X} (definite) · en: {a_X} (a/an), {def_X} (the X)
+ * pt_BR: articles, contractions and gender choices — see grammar-pt.ts
  */
 
 export interface StoryTemplate {
   id: string;
-  title: string;
-  titleEn: string;
+  /** Per language, read with pick() (unknown locales fall back to en) */
+  title: Record<string, string>;
   titleKey: string;
   paragraphs: Record<string, string[]>;
   slots: string[];
@@ -16,8 +17,7 @@ export interface StoryTemplate {
 export const TEMPLATES: StoryTemplate[] = [
   {
     id: 'adventure-forest',
-    title: 'Äventyret i skogen',
-    titleEn: 'An Adventure in the Forest',
+    title: { sv: 'Äventyret i skogen', en: 'An Adventure in the Forest', pt_BR: 'A aventura na floresta' },
     titleKey: 'sagostunden.story.adventure_forest',
     slots: ['DJUR', 'PLATS', 'SAK', 'VERB'],
     paragraphs: {
@@ -34,13 +34,19 @@ export const TEMPLATES: StoryTemplate[] = [
         'One day {DJUR} found {a_SAK} that glittered in the sun.',
         '"{SAK}! What a wonderful thing!" shouted {DJUR} happily.',
         'And so {DJUR} lived happily ever after with the lovely {SAK}.'
+      ],
+      pt_BR: [
+        'Era uma vez {um_DJUR} que morava em {um_PLATS}.',
+        '{o_DJUR} adorava {VERB} todos os dias.',
+        'Um dia, {o_DJUR} encontrou {um_SAK} que brilhava ao sol.',
+        '"{um_SAK}! Que coisa incrível!", gritou {o_DJUR}, muito feliz.',
+        'E {o_DJUR} viveu feliz para sempre com {seu_SAK}.'
       ]
     }
   },
   {
     id: 'hungry-tale',
-    title: 'Den hungriga berättelsen',
-    titleEn: 'The Hungry Story',
+    title: { sv: 'Den hungriga berättelsen', en: 'The Hungry Story', pt_BR: 'Que fome!' },
     titleKey: 'sagostunden.story.hungry_tale',
     slots: ['DJUR', 'MAT', 'PLATS', 'PERSON'],
     paragraphs: {
@@ -57,13 +63,19 @@ export const TEMPLATES: StoryTemplate[] = [
         'There {DJUR} met {a_PERSON} who had {a_MAT}.',
         '"Would you like to share?" asked {DJUR} politely.',
         '{PERSON} smiled and gave {DJUR} some {MAT}. "Thank you!" said {DJUR} feeling full and happy.'
+      ],
+      pt_BR: [
+        '{um_DJUR} acordou com muita fome numa manhã de sol.',
+        '{o_DJUR} foi até {o_PLATS} procurar comida.',
+        'Lá, {o_DJUR} encontrou {um_PERSON} que tinha {um_MAT}.',
+        '"Você divide comigo?", perguntou {o_DJUR}, com educação.',
+        '{o_PERSON} sorriu e deu um pouco de {MAT} para {o_DJUR}. "{DJUR|Obrigado|Obrigada}!", disse {o_DJUR}, de barriga cheia.'
       ]
     }
   },
   {
     id: 'magic-item',
-    title: 'Den magiska saken',
-    titleEn: 'The Magic Thing',
+    title: { sv: 'Den magiska saken', en: 'The Magic Thing', pt_BR: 'O objeto mágico' },
     titleKey: 'sagostunden.story.magic_item',
     slots: ['PERSON', 'SAK', 'DJUR', 'VERB'],
     paragraphs: {
@@ -80,13 +92,19 @@ export const TEMPLATES: StoryTemplate[] = [
         'Suddenly {a_DJUR} appeared and wanted to look too.',
         'Together they decided to {VERB}.',
         'It turned out to be the best day ever!'
+      ],
+      pt_BR: [
+        '{um_PERSON} encontrou {um_SAK} que era {SAK|mágico|mágica} de verdade.',
+        'Toda vez que {o_PERSON} tocava {no_SAK}, {SAK|ele|ela} começava a brilhar.',
+        'De repente, {um_DJUR} apareceu e também quis ver.',
+        'Então resolveram {VERB} {PERSON+DJUR|juntos|juntas}.',
+        'Foi o melhor dia de todos!'
       ]
     }
   },
   {
     id: 'new-friend',
-    title: 'En ny kompis',
-    titleEn: 'A New Friend',
+    title: { sv: 'En ny kompis', en: 'A New Friend', pt_BR: 'Uma nova amizade' },
     titleKey: 'sagostunden.story.new_friend',
     slots: ['DJUR', 'PERSON', 'PLATS', 'VERB'],
     paragraphs: {
@@ -103,13 +121,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '"Hi! Would you like to {VERB} with me?" asked {PERSON}.',
         '{DJUR} nodded happily and they started to {VERB} together.',
         'From that day on they were the very best of friends.'
+      ],
+      pt_BR: [
+        '{um_DJUR} estava se sentindo {DJUR|sozinho|sozinha}.',
+        'Um dia, {o_DJUR} foi {ao_PLATS} e conheceu {um_PERSON}.',
+        '"Oi! Quer {VERB} comigo?", perguntou {o_PERSON}.',
+        '{o_DJUR} disse que sim, muito feliz, e começaram a {VERB} {DJUR+PERSON|juntos|juntas}.',
+        'Desde aquele dia, viraram {DJUR+PERSON|melhores amigos|melhores amigas}.'
       ]
     }
   },
   {
     id: 'birthday-party',
-    title: 'Födelsedagsfesten',
-    titleEn: 'The Birthday Party',
+    title: { sv: 'Födelsedagsfesten', en: 'The Birthday Party', pt_BR: 'A festa de aniversário' },
     titleKey: 'sagostunden.story.birthday_party',
     slots: ['PERSON', 'DJUR', 'MAT', 'SAK'],
     paragraphs: {
@@ -126,13 +150,19 @@ export const TEMPLATES: StoryTemplate[] = [
         'They ate lots of {MAT} and danced all day long.',
         '"{SAK} is the best gift I have ever received!" said {PERSON}.',
         'Everyone hugged each other and sang happy birthday one last time.'
+      ],
+      pt_BR: [
+        'Era aniversário {do_PERSON}, e todo mundo foi convidado para a festa.',
+        '{um_DJUR} chegou com {um_SAK} de presente.',
+        'Comeram {MAT|muito|muita} {MAT} e dançaram o dia inteiro.',
+        '"{este_SAK} foi o melhor presente que eu já ganhei!", disse {o_PERSON}.',
+        'Todos se abraçaram e cantaram "Parabéns pra você" mais uma vez.'
       ]
     }
   },
   {
     id: 'lost-treasure',
-    title: 'Den försvunna skatten',
-    titleEn: 'The Missing Treasure',
+    title: { sv: 'Den försvunna skatten', en: 'The Missing Treasure', pt_BR: 'O tesouro perdido' },
     titleKey: 'sagostunden.story.lost_treasure',
     slots: ['PERSON', 'SAK', 'PLATS', 'DJUR'],
     paragraphs: {
@@ -149,13 +179,19 @@ export const TEMPLATES: StoryTemplate[] = [
         'Along the way {PERSON} met {a_DJUR} who wanted to help.',
         'Together they searched everywhere until they found the {SAK}!',
         '"We did it!" cheered {PERSON} and hugged {DJUR}.'
+      ],
+      pt_BR: [
+        '{um_PERSON} ouviu falar de {um_SAK} {SAK|escondido|escondida} em {um_PLATS}.',
+        '{o_PERSON} arrumou a mochila e partiu em uma aventura.',
+        'No caminho, {o_PERSON} encontrou {um_DJUR} que queria ajudar.',
+        'Procuraram por toda parte até encontrar {o_SAK}!',
+        '"Conseguimos!", comemorou {o_PERSON}, dando um abraço {no_DJUR}.'
       ]
     }
   },
   {
     id: 'rainy-day',
-    title: 'En regnig dag',
-    titleEn: 'A Rainy Day',
+    title: { sv: 'En regnig dag', en: 'A Rainy Day', pt_BR: 'Um dia de chuva' },
     titleKey: 'sagostunden.story.rainy_day',
     slots: ['DJUR', 'SAK', 'VERB', 'PLATS'],
     paragraphs: {
@@ -172,13 +208,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '{DJUR} started to {VERB} and had a wonderful time.',
         'Soon the rain stopped and the sun came out.',
         '{DJUR} ran to {a_PLATS} with the {SAK} under one arm.'
+      ],
+      pt_BR: [
+        'Estava chovendo lá fora, e {um_DJUR} olhava pela janela de casa.',
+        '"Já sei! Vou {VERB}!", disse {o_DJUR}, pegando {um_SAK}.',
+        '{o_DJUR} começou a {VERB} e se divertiu muito.',
+        'Logo a chuva parou e o sol apareceu.',
+        '{o_DJUR} correu até {o_PLATS} levando {o_SAK} debaixo do braço.'
       ]
     }
   },
   {
     id: 'dream-journey',
-    title: 'Drömresan',
-    titleEn: 'The Dream Journey',
+    title: { sv: 'Drömresan', en: 'The Dream Journey', pt_BR: 'A viagem dos sonhos' },
     titleKey: 'sagostunden.story.dream_journey',
     slots: ['PERSON', 'PLATS', 'DJUR', 'SAK'],
     paragraphs: {
@@ -195,13 +237,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '{PERSON} landed and met {a_DJUR} who gave them {a_SAK}.',
         '"This {SAK} has magical powers," whispered {DJUR}.',
         'When {PERSON} woke up the {SAK} was on the pillow. Or was it a dream?'
+      ],
+      pt_BR: [
+        'Uma noite, {um_PERSON} sonhou com {um_PLATS} muito distante.',
+        'No sonho, {o_PERSON} voava por cima das nuvens.',
+        '{o_PERSON} pousou e conheceu {um_DJUR}, que lhe deu {um_SAK}.',
+        '"{este_SAK} tem poderes mágicos", cochichou {o_DJUR}.',
+        'Quando {o_PERSON} acordou, {o_SAK} estava em cima do travesseiro. Ou será que foi um sonho?'
       ]
     }
   },
   {
     id: 'cooking-together',
-    title: 'Vi lagar mat',
-    titleEn: 'Let’s Cook Together',
+    title: { sv: 'Vi lagar mat', en: 'Let’s Cook Together', pt_BR: 'Vamos cozinhar' },
     titleKey: 'sagostunden.story.cooking_together',
     slots: ['PERSON', 'DJUR', 'MAT', 'SAK'],
     paragraphs: {
@@ -218,13 +266,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '"We need more {MAT}!" said {DJUR} jumping up and down.',
         'Finally the food was ready and it smelled wonderful.',
         'They sat down and ate it all up. "Yummy!" they both said.'
+      ],
+      pt_BR: [
+        '{um_PERSON} e {um_DJUR} resolveram cozinhar.',
+        'Pegaram {um_SAK} e colocaram {o_MAT} dentro.',
+        '"Precisamos de mais {MAT}!", disse {o_DJUR}, pulando sem parar.',
+        'Finalmente a comida ficou pronta, e o cheiro estava maravilhoso.',
+        'Sentaram e comeram tudo. "Hummm, que delícia!", {PERSON+DJUR|disseram os dois|disseram as duas}.'
       ]
     }
   },
   {
     id: 'space-adventure',
-    title: 'Rymdäventyret',
-    titleEn: 'The Space Adventure',
+    title: { sv: 'Rymdäventyret', en: 'The Space Adventure', pt_BR: 'Aventura no espaço' },
     titleKey: 'sagostunden.story.space_adventure',
     slots: ['PERSON', 'DJUR', 'SAK', 'PLATS'],
     paragraphs: {
@@ -241,13 +295,19 @@ export const TEMPLATES: StoryTemplate[] = [
         'The rocket lifted off and they flew past stars and planets.',
         'They landed on {a_PLATS} where everything was upside down.',
         'After a fantastic adventure they flew back home just in time for dinner.'
+      ],
+      pt_BR: [
+        '{um_PERSON} construiu um foguete com {um_SAK}.',
+        '"Vamos voar até o espaço?", perguntou {o_PERSON} para {um_DJUR} {DJUR|amigo|amiga}.',
+        'O foguete decolou e passou por estrelas e planetas.',
+        'Pousaram em {um_PLATS} onde tudo era de cabeça para baixo.',
+        'Depois de uma aventura incrível, voltaram para casa bem na hora do jantar.'
       ]
     }
   },
   {
     id: 'hide-and-seek',
-    title: 'Kurragömma',
-    titleEn: 'Hide-and-Seek',
+    title: { sv: 'Kurragömma', en: 'Hide-and-Seek', pt_BR: 'Esconde-esconde' },
     titleKey: 'sagostunden.story.hide_and_seek',
     slots: ['DJUR', 'PERSON', 'PLATS', 'SAK'],
     paragraphs: {
@@ -264,13 +324,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '{PERSON} searched and searched but could not find {DJUR}.',
         '"Here I am!" shouted {DJUR} and jumped out.',
         'They laughed and played hide and seek all afternoon.'
+      ],
+      pt_BR: [
+        '{um_DJUR} e {um_PERSON} queriam brincar de esconde-esconde.',
+        '{o_DJUR} se escondeu atrás de {um_SAK}, em {um_PLATS}.',
+        '{o_PERSON} procurou, procurou, mas não achou {o_DJUR}.',
+        '"Estou aqui!", gritou {o_DJUR}, pulando para fora.',
+        'Riram muito e brincaram de esconde-esconde a tarde toda.'
       ]
     }
   },
   {
     id: 'music-show',
-    title: 'Musikshowen',
-    titleEn: 'The Music Show',
+    title: { sv: 'Musikshowen', en: 'The Music Show', pt_BR: 'O show de música' },
     titleKey: 'sagostunden.story.music_show',
     slots: ['PERSON', 'DJUR', 'SAK', 'VERB'],
     paragraphs: {
@@ -287,13 +353,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '"Can I {VERB} too?" asked {DJUR} hopefully.',
         'Together they played the most beautiful music.',
         'Everyone who listened started to {VERB} and clap their hands!'
+      ],
+      pt_BR: [
+        '{um_PERSON} quis tocar música e pegou {um_SAK}.',
+        '{um_DJUR} ouviu a música e veio escutar.',
+        '"Posso {VERB} também?", perguntou {o_DJUR}, {DJUR|cheio|cheia} de esperança.',
+        '{PERSON+DJUR|Juntos|Juntas}, tocaram a música mais bonita do mundo.',
+        'Todo mundo que ouvia começou a {VERB} e bater palmas!'
       ]
     }
   },
   {
     id: 'garden-surprise',
-    title: 'Överraskningen i trädgården',
-    titleEn: 'The Garden Surprise',
+    title: { sv: 'Överraskningen i trädgården', en: 'The Garden Surprise', pt_BR: 'Surpresa no jardim' },
     titleKey: 'sagostunden.story.garden_surprise',
     slots: ['PERSON', 'DJUR', 'SAK', 'MAT'],
     paragraphs: {
@@ -310,13 +382,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '"Oh, how cute you are!" said {PERSON} and sat down beside them.',
         '{DJUR} shared some of the {MAT}.',
         'They sat in the sun and enjoyed the lovely day together.'
+      ],
+      pt_BR: [
+        '{um_PERSON} foi ao jardim e encontrou {um_SAK}.',
+        'Embaixo {do_SAK} estava {um_DJUR} comendo {MAT}.',
+        '"Ah, que fofura!", disse {o_PERSON}, sentando ao lado.',
+        '{o_DJUR} dividiu um pouco de {MAT}.',
+        'Ficaram ao sol, aproveitando o dia lindo, {PERSON+DJUR|juntos|juntas}.'
       ]
     }
   },
   {
     id: 'winter-fun',
-    title: 'Vinterskoj',
-    titleEn: 'Winter Fun',
+    title: { sv: 'Vinterskoj', en: 'Winter Fun', pt_BR: 'Dia de praia' },
     titleKey: 'sagostunden.story.winter_fun',
     slots: ['DJUR', 'PERSON', 'SAK', 'VERB'],
     paragraphs: {
@@ -333,13 +411,19 @@ export const TEMPLATES: StoryTemplate[] = [
         'They built a big snowman with {a_SAK} for a nose.',
         'Then they started to {VERB} in the snow until they got tired.',
         'They went inside and drank hot chocolate. "Winter is the best!" they said.'
+      ],
+      pt_BR: [
+        'Fazia muito calor, e o mar estava azulzinho.',
+        '{um_DJUR} e {um_PERSON} correram para a areia.',
+        'Fizeram um castelo de areia enorme, com {um_SAK} lá no alto.',
+        'Depois começaram a {VERB} na praia até ficarem {DJUR+PERSON|cansados|cansadas}.',
+        'No fim do dia, tomaram um sorvete bem gelado. "Praia é a melhor coisa!", disseram.'
       ]
     }
   },
   {
     id: 'rescue-mission',
-    title: 'Räddningsuppdraget',
-    titleEn: 'The Rescue Mission',
+    title: { sv: 'Räddningsuppdraget', en: 'The Rescue Mission', pt_BR: 'Missão de resgate' },
     titleKey: 'sagostunden.story.rescue_mission',
     slots: ['PERSON', 'DJUR', 'PLATS', 'SAK'],
     paragraphs: {
@@ -356,13 +440,19 @@ export const TEMPLATES: StoryTemplate[] = [
         'With the help of {a_SAK} {PERSON} managed to find {DJUR}.',
         '"Thank you for rescuing me!" said {DJUR} gratefully.',
         '{PERSON} hugged {DJUR} and they walked home together.'
+      ],
+      pt_BR: [
+        '{um_DJUR} se perdeu em {um_PLATS} e ficou com medo.',
+        '{um_PERSON} ouviu um barulho e correu até lá.',
+        'Com a ajuda de {um_SAK}, {o_PERSON} conseguiu encontrar {o_DJUR}.',
+        '"{DJUR|Obrigado|Obrigada} por me salvar!", disse {o_DJUR}.',
+        '{o_PERSON} abraçou {o_DJUR}, e {PERSON+DJUR|os dois voltaram juntos|as duas voltaram juntas} para casa.'
       ]
     }
   },
   {
     id: 'painting-day',
-    title: 'Målardag',
-    titleEn: 'Painting Day',
+    title: { sv: 'Målardag', en: 'Painting Day', pt_BR: 'Dia de pintura' },
     titleKey: 'sagostunden.story.painting_day',
     slots: ['PERSON', 'DJUR', 'SAK', 'PLATS'],
     paragraphs: {
@@ -379,13 +469,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '{DJUR} dipped its tail in the paint and painted with it.',
         'The result was a lovely painting with {a_SAK} in the middle.',
         '"That is art!" laughed {PERSON} and hung the painting on the wall.'
+      ],
+      pt_BR: [
+        '{um_PERSON} queria pintar um quadro de {um_PLATS}.',
+        '{um_DJUR} chegou e quis ajudar.',
+        '{o_DJUR} molhou o rabo na tinta e pintou com ele.',
+        'O resultado foi um quadro lindo, com {um_SAK} bem no meio.',
+        '"Isso é arte!", riu {o_PERSON}, pendurando o quadro na parede.'
       ]
     }
   },
   {
     id: 'magic-garden',
-    title: 'Den magiska trädgården',
-    titleEn: 'The Magic Garden',
+    title: { sv: 'Den magiska trädgården', en: 'The Magic Garden', pt_BR: 'O jardim mágico' },
     titleKey: 'sagostunden.story.magic_garden',
     slots: ['PERSON', 'DJUR', 'MAT', 'SAK'],
     paragraphs: {
@@ -402,13 +498,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '{a_DJUR} came flying in and picked {MAT} from the tree.',
         '"This is a magic tree!" exclaimed {PERSON}.',
         'They shared the {MAT} with everyone in the village and everyone was happy.'
+      ],
+      pt_BR: [
+        '{um_PERSON} plantou {um_SAK} no jardim.',
+        'Na manhã seguinte, tinha nascido uma árvore cheia de {MAT}!',
+        '{um_DJUR} veio voando e colheu um pouco de {MAT} da árvore.',
+        '"Esta é uma árvore mágica!", exclamou {o_PERSON}.',
+        'Dividiram {o_MAT} com todo mundo da vila, e todos ficaram felizes.'
       ]
     }
   },
   {
     id: 'bedtime',
-    title: 'Godnatt',
-    titleEn: 'Goodnight',
+    title: { sv: 'Godnatt', en: 'Goodnight', pt_BR: 'Boa noite' },
     titleKey: 'sagostunden.story.bedtime',
     slots: ['DJUR', 'SAK', 'PERSON', 'PLATS'],
     paragraphs: {
@@ -425,13 +527,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '{a_PERSON} came and tucked {DJUR} in.',
         '"Good night, little {DJUR}," whispered {PERSON} and turned on the night light.',
         '{DJUR} fell asleep and dreamed of {a_PLATS} full of adventures.'
+      ],
+      pt_BR: [
+        'Era noite, e {um_DJUR} estava {DJUR|cansado|cansada} depois de um longo dia.',
+        '{o_DJUR} abraçou {seu_SAK} e se deitou na cama.',
+        '{um_PERSON} veio e cobriu {o_DJUR} com o cobertor.',
+        '"Boa noite, {DJUR} {DJUR|querido|querida}", cochichou {o_PERSON}, apagando a luz.',
+        '{o_DJUR} adormeceu e sonhou com {um_PLATS} {PLATS|cheio|cheia} de aventuras.'
       ]
     }
   },
   {
     id: 'circus-show',
-    title: 'Cirkusföreställningen',
-    titleEn: 'The Circus Show',
+    title: { sv: 'Cirkusföreställningen', en: 'The Circus Show', pt_BR: 'O espetáculo do circo' },
     titleKey: 'sagostunden.story.circus_show',
     slots: ['DJUR', 'PERSON', 'SAK', 'VERB'],
     paragraphs: {
@@ -448,13 +556,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '{DJUR} juggled with {a_SAK} and everyone cheered.',
         'In the end {DJUR} got to {VERB} on stage.',
         'The audience clapped and {DJUR} took a proud bow!'
+      ],
+      pt_BR: [
+        'O circo chegou à cidade, e {um_DJUR} queria se apresentar.',
+        '{um_PERSON} ajudou {o_DJUR} a ensaiar.',
+        '{o_DJUR} fez malabarismo com {um_SAK}, e todos aplaudiram.',
+        'No final, {o_DJUR} pôde {VERB} no palco.',
+        'A plateia bateu palmas, e {o_DJUR} fez uma reverência, {DJUR|todo orgulhoso|toda orgulhosa}!'
       ]
     }
   },
   {
     id: 'boat-trip',
-    title: 'Båtresan',
-    titleEn: 'The Boat Trip',
+    title: { sv: 'Båtresan', en: 'The Boat Trip', pt_BR: 'O passeio de barco' },
     titleKey: 'sagostunden.story.boat_trip',
     slots: ['PERSON', 'DJUR', 'PLATS', 'MAT'],
     paragraphs: {
@@ -471,13 +585,19 @@ export const TEMPLATES: StoryTemplate[] = [
         'For lunch they ate {MAT} on deck in the sunshine.',
         'They saw dolphins jumping in the water around the boat.',
         'When they arrived at the {PLATS} they were filled with joy.'
+      ],
+      pt_BR: [
+        '{um_PERSON} e {um_DJUR} subiram em um barco grande.',
+        'Navegaram em direção {ao_PLATS} enquanto as ondas balançavam.',
+        'No almoço, comeram {MAT} no convés, debaixo do sol.',
+        'Viram golfinhos pulando na água em volta do barco.',
+        'Quando chegaram {ao_PLATS}, estavam muito felizes.'
       ]
     }
   },
   {
     id: 'playground',
-    title: 'På lekplatsen',
-    titleEn: 'At the Playground',
+    title: { sv: 'På lekplatsen', en: 'At the Playground', pt_BR: 'No parquinho' },
     titleKey: 'sagostunden.story.playground',
     slots: ['DJUR', 'PERSON', 'SAK', 'VERB'],
     paragraphs: {
@@ -494,13 +614,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '"Shall we {VERB}?" asked {PERSON} with a big smile.',
         'They played all day and other children wanted to join in too.',
         'When the sun went down they promised to meet again tomorrow.'
+      ],
+      pt_BR: [
+        '{um_DJUR} correu para o parquinho numa tarde de sol.',
+        'Lá, {um_PERSON} estava esperando com {um_SAK}.',
+        '"Vamos {VERB}?", perguntou {o_PERSON}, com um sorrisão.',
+        'Brincaram o dia inteiro, e outras crianças quiseram brincar também.',
+        'Quando o sol se pôs, combinaram de se encontrar de novo amanhã.'
       ]
     }
   },
   {
     id: 'library-visit',
-    title: 'Besöket på biblioteket',
-    titleEn: 'A Visit to the Library',
+    title: { sv: 'Besöket på biblioteket', en: 'A Visit to the Library', pt_BR: 'Visita à biblioteca' },
     titleKey: 'sagostunden.story.library_visit',
     slots: ['PERSON', 'DJUR', 'SAK', 'PLATS'],
     paragraphs: {
@@ -517,13 +643,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '"Look! This book has a picture of {a_SAK}!" said {DJUR}.',
         'They read the book together and imagined adventures.',
         'Before going home they each borrowed three books.'
+      ],
+      pt_BR: [
+        '{um_PERSON} foi à biblioteca procurar um livro.',
+        'Lá estava {um_DJUR}, lendo sobre {um_PLATS}.',
+        '"Olha! Este livro tem uma figura de {um_SAK}!", disse {o_DJUR}.',
+        'Leram o livro {PERSON+DJUR|juntos|juntas} e imaginaram mil aventuras.',
+        'Antes de ir embora, {PERSON+DJUR|cada um|cada uma} pegou três livros emprestados.'
       ]
     }
   },
   {
     id: 'superhero',
-    title: 'Superhjälten',
-    titleEn: 'The Superhero',
+    title: { sv: 'Superhjälten', en: 'The Superhero', pt_BR: 'Superpoderes' },
     titleKey: 'sagostunden.story.superhero',
     slots: ['PERSON', 'SAK', 'DJUR', 'PLATS'],
     paragraphs: {
@@ -540,13 +672,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '{a_DJUR} in {a_PLATS} needed help.',
         '{PERSON} flew there quickly and rescued {DJUR}.',
         '"You are my hero!" said {DJUR} and everyone in the {PLATS} cheered.'
+      ],
+      pt_BR: [
+        '{um_PERSON} encontrou {um_SAK} que dava superpoderes!',
+        'Agora {o_PERSON} conseguia voar bem alto, por cima das casas.',
+        '{um_DJUR} em {um_PLATS} precisava de ajuda.',
+        '{o_PERSON} voou rapidinho até lá e salvou {o_DJUR}.',
+        '"Você é {PERSON|meu herói|minha heroína}!", disse {o_DJUR}, e todo mundo {no_PLATS} comemorou.'
       ]
     }
   },
   {
     id: 'market-day',
-    title: 'Marknadsdagen',
-    titleEn: 'Market Day',
+    title: { sv: 'Marknadsdagen', en: 'Market Day', pt_BR: 'Dia de feira' },
     titleKey: 'sagostunden.story.market_day',
     slots: ['PERSON', 'DJUR', 'MAT', 'SAK'],
     paragraphs: {
@@ -563,13 +701,19 @@ export const TEMPLATES: StoryTemplate[] = [
         '{DJUR} wanted {a_SAK} that sparkled at a stall.',
         '{PERSON} bought the {SAK} for {DJUR} and some {MAT} to eat.',
         'They went home happy with their finds and full tummies.'
+      ],
+      pt_BR: [
+        'Era dia de feira, e {um_PERSON} foi até lá com {um_DJUR}.',
+        'Tinha {MAT} de todas as cores!',
+        '{o_DJUR} quis {um_SAK} que brilhava em uma barraca.',
+        '{o_PERSON} comprou {o_SAK} para {o_DJUR} e um pouco de {MAT} para comer.',
+        'Voltaram para casa felizes com as compras e de barriga cheia.'
       ]
     }
   },
   {
     id: 'night-sky',
-    title: 'Nattens himmel',
-    titleEn: 'The Night Sky',
+    title: { sv: 'Nattens himmel', en: 'The Night Sky', pt_BR: 'O céu à noite' },
     titleKey: 'sagostunden.story.night_sky',
     slots: ['PERSON', 'DJUR', 'SAK', 'PLATS'],
     paragraphs: {
@@ -586,6 +730,13 @@ export const TEMPLATES: StoryTemplate[] = [
         '"Look! I can see a constellation that looks like {a_PLATS}!" said {DJUR}.',
         '{PERSON} pointed at a star that twinkled extra brightly.',
         'They each made a wish and went inside and fell asleep with a smile.'
+      ],
+      pt_BR: [
+        'Numa noite estrelada, {um_PERSON} e {um_DJUR} saíram para olhar as estrelas.',
+        'Levaram {um_SAK} e se deitaram na grama.',
+        '"Olha! Aquelas estrelas parecem {um_PLATS}!", disse {o_DJUR}.',
+        '{o_PERSON} apontou para uma estrela que piscava mais forte que as outras.',
+        'Fizeram um pedido e foram dormir sorrindo.'
       ]
     }
   },

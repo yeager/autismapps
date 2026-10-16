@@ -109,7 +109,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if selectedExercise}<button class="sub-back" onclick={() => { selectedExercise = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if selectedExercise}<button class="sub-back" onclick={() => { selectedExercise = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>👄 {$t('oralMotor.title')}</h1>
 
   </div>

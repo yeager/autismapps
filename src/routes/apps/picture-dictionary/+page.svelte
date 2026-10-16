@@ -4,7 +4,7 @@
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
-  import { locale } from '$lib/i18n';
+  import { locale, pick } from '$lib/i18n';
   import { get } from 'svelte/store';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
   import { activeProfileId } from '$lib/stores/profile';
@@ -17,6 +17,7 @@
     category: string;
     sv: string;
     en: string;
+    pt_BR: string;
     emoji: string;
   }
 
@@ -31,84 +32,84 @@
 
   const WORDS: Word[] = [
     // Animals
-    { category: 'animals', sv: 'hund', en: 'dog', emoji: '🐕' },
-    { category: 'animals', sv: 'katt', en: 'cat', emoji: '🐈' },
-    { category: 'animals', sv: 'häst', en: 'horse', emoji: '🐴' },
-    { category: 'animals', sv: 'ko', en: 'cow', emoji: '🐄' },
-    { category: 'animals', sv: 'fågel', en: 'bird', emoji: '🐦' },
-    { category: 'animals', sv: 'fisk', en: 'fish', emoji: '🐟' },
-    { category: 'animals', sv: 'kanin', en: 'rabbit', emoji: '🐇' },
-    { category: 'animals', sv: 'gris', en: 'pig', emoji: '🐷' },
-    { category: 'animals', sv: 'anka', en: 'duck', emoji: '🦆' },
-    { category: 'animals', sv: 'fjäril', en: 'butterfly', emoji: '🦋' },
-    { category: 'animals', sv: 'björn', en: 'bear', emoji: '🐻' },
-    { category: 'animals', sv: 'lejon', en: 'lion', emoji: '🦁' },
-    { category: 'animals', sv: 'elefant', en: 'elephant', emoji: '🐘' },
-    { category: 'animals', sv: 'orm', en: 'snake', emoji: '🐍' },
-    { category: 'animals', sv: 'groda', en: 'frog', emoji: '🐸' },
+    { category: 'animals', sv: 'hund', en: 'dog', pt_BR: 'cachorro', emoji: '🐕' },
+    { category: 'animals', sv: 'katt', en: 'cat', pt_BR: 'gato', emoji: '🐈' },
+    { category: 'animals', sv: 'häst', en: 'horse', pt_BR: 'cavalo', emoji: '🐴' },
+    { category: 'animals', sv: 'ko', en: 'cow', pt_BR: 'vaca', emoji: '🐄' },
+    { category: 'animals', sv: 'fågel', en: 'bird', pt_BR: 'passarinho', emoji: '🐦' },
+    { category: 'animals', sv: 'fisk', en: 'fish', pt_BR: 'peixe', emoji: '🐟' },
+    { category: 'animals', sv: 'kanin', en: 'rabbit', pt_BR: 'coelho', emoji: '🐇' },
+    { category: 'animals', sv: 'gris', en: 'pig', pt_BR: 'porco', emoji: '🐷' },
+    { category: 'animals', sv: 'anka', en: 'duck', pt_BR: 'pato', emoji: '🦆' },
+    { category: 'animals', sv: 'fjäril', en: 'butterfly', pt_BR: 'borboleta', emoji: '🦋' },
+    { category: 'animals', sv: 'björn', en: 'bear', pt_BR: 'urso', emoji: '🐻' },
+    { category: 'animals', sv: 'lejon', en: 'lion', pt_BR: 'leão', emoji: '🦁' },
+    { category: 'animals', sv: 'elefant', en: 'elephant', pt_BR: 'elefante', emoji: '🐘' },
+    { category: 'animals', sv: 'orm', en: 'snake', pt_BR: 'cobra', emoji: '🐍' },
+    { category: 'animals', sv: 'groda', en: 'frog', pt_BR: 'sapo', emoji: '🐸' },
     // Food
-    { category: 'food', sv: 'äpple', en: 'apple', emoji: '🍎' },
-    { category: 'food', sv: 'banan', en: 'banana', emoji: '🍌' },
-    { category: 'food', sv: 'bröd', en: 'bread', emoji: '🍞' },
-    { category: 'food', sv: 'mjölk', en: 'milk', emoji: '🥛' },
-    { category: 'food', sv: 'ost', en: 'cheese', emoji: '🧀' },
-    { category: 'food', sv: 'ägg', en: 'egg', emoji: '🥚' },
-    { category: 'food', sv: 'kött', en: 'meat', emoji: '🥩' },
-    { category: 'food', sv: 'ris', en: 'rice', emoji: '🍚' },
-    { category: 'food', sv: 'soppa', en: 'soup', emoji: '🍲' },
-    { category: 'food', sv: 'glass', en: 'ice cream', emoji: '🍦' },
-    { category: 'food', sv: 'morot', en: 'carrot', emoji: '🥕' },
-    { category: 'food', sv: 'tomat', en: 'tomato', emoji: '🍅' },
-    { category: 'food', sv: 'vatten', en: 'water', emoji: '💧' },
-    { category: 'food', sv: 'juice', en: 'juice', emoji: '🧃' },
+    { category: 'food', sv: 'äpple', en: 'apple', pt_BR: 'maçã', emoji: '🍎' },
+    { category: 'food', sv: 'banan', en: 'banana', pt_BR: 'banana', emoji: '🍌' },
+    { category: 'food', sv: 'bröd', en: 'bread', pt_BR: 'pão', emoji: '🍞' },
+    { category: 'food', sv: 'mjölk', en: 'milk', pt_BR: 'leite', emoji: '🥛' },
+    { category: 'food', sv: 'ost', en: 'cheese', pt_BR: 'queijo', emoji: '🧀' },
+    { category: 'food', sv: 'ägg', en: 'egg', pt_BR: 'ovo', emoji: '🥚' },
+    { category: 'food', sv: 'kött', en: 'meat', pt_BR: 'carne', emoji: '🥩' },
+    { category: 'food', sv: 'ris', en: 'rice', pt_BR: 'arroz', emoji: '🍚' },
+    { category: 'food', sv: 'soppa', en: 'soup', pt_BR: 'sopa', emoji: '🍲' },
+    { category: 'food', sv: 'glass', en: 'ice cream', pt_BR: 'sorvete', emoji: '🍦' },
+    { category: 'food', sv: 'morot', en: 'carrot', pt_BR: 'cenoura', emoji: '🥕' },
+    { category: 'food', sv: 'tomat', en: 'tomato', pt_BR: 'tomate', emoji: '🍅' },
+    { category: 'food', sv: 'vatten', en: 'water', pt_BR: 'água', emoji: '💧' },
+    { category: 'food', sv: 'juice', en: 'juice', pt_BR: 'suco', emoji: '🧃' },
     // Clothes
-    { category: 'clothes', sv: 'tröja', en: 'sweater', emoji: '🧥' },
-    { category: 'clothes', sv: 'byxor', en: 'pants', emoji: '👖' },
-    { category: 'clothes', sv: 'skor', en: 'shoes', emoji: '👟' },
-    { category: 'clothes', sv: 'mössa', en: 'hat', emoji: '🧢' },
-    { category: 'clothes', sv: 'vantar', en: 'mittens', emoji: '🧤' },
-    { category: 'clothes', sv: 'jacka', en: 'jacket', emoji: '🧥' },
-    { category: 'clothes', sv: 'strumpor', en: 'socks', emoji: '🧦' },
-    { category: 'clothes', sv: 'klänning', en: 'dress', emoji: '👗' },
-    { category: 'clothes', sv: 't-shirt', en: 't-shirt', emoji: '👕' },
-    { category: 'clothes', sv: 'stövlar', en: 'boots', emoji: '👢' },
+    { category: 'clothes', sv: 'tröja', en: 'sweater', pt_BR: 'casaco', emoji: '🧥' },
+    { category: 'clothes', sv: 'byxor', en: 'pants', pt_BR: 'calça', emoji: '👖' },
+    { category: 'clothes', sv: 'skor', en: 'shoes', pt_BR: 'sapatos', emoji: '👟' },
+    { category: 'clothes', sv: 'mössa', en: 'hat', pt_BR: 'boné', emoji: '🧢' },
+    { category: 'clothes', sv: 'vantar', en: 'mittens', pt_BR: 'luvas', emoji: '🧤' },
+    { category: 'clothes', sv: 'jacka', en: 'jacket', pt_BR: 'jaqueta', emoji: '🧥' },
+    { category: 'clothes', sv: 'strumpor', en: 'socks', pt_BR: 'meias', emoji: '🧦' },
+    { category: 'clothes', sv: 'klänning', en: 'dress', pt_BR: 'vestido', emoji: '👗' },
+    { category: 'clothes', sv: 't-shirt', en: 't-shirt', pt_BR: 'camiseta', emoji: '👕' },
+    { category: 'clothes', sv: 'stövlar', en: 'boots', pt_BR: 'botas', emoji: '👢' },
     // Body
-    { category: 'body', sv: 'huvud', en: 'head', emoji: '🗣️' },
-    { category: 'body', sv: 'öga', en: 'eye', emoji: '👁️' },
-    { category: 'body', sv: 'öra', en: 'ear', emoji: '👂' },
-    { category: 'body', sv: 'näsa', en: 'nose', emoji: '👃' },
-    { category: 'body', sv: 'mun', en: 'mouth', emoji: '👄' },
-    { category: 'body', sv: 'hand', en: 'hand', emoji: '✋' },
-    { category: 'body', sv: 'fot', en: 'foot', emoji: '🦶' },
-    { category: 'body', sv: 'arm', en: 'arm', emoji: '💪' },
-    { category: 'body', sv: 'ben', en: 'leg', emoji: '🦵' },
-    { category: 'body', sv: 'mage', en: 'stomach', emoji: '🫃' },
-    { category: 'body', sv: 'hjärta', en: 'heart', emoji: '❤️' },
-    { category: 'body', sv: 'tand', en: 'tooth', emoji: '🦷' },
+    { category: 'body', sv: 'huvud', en: 'head', pt_BR: 'cabeça', emoji: '🗣️' },
+    { category: 'body', sv: 'öga', en: 'eye', pt_BR: 'olho', emoji: '👁️' },
+    { category: 'body', sv: 'öra', en: 'ear', pt_BR: 'orelha', emoji: '👂' },
+    { category: 'body', sv: 'näsa', en: 'nose', pt_BR: 'nariz', emoji: '👃' },
+    { category: 'body', sv: 'mun', en: 'mouth', pt_BR: 'boca', emoji: '👄' },
+    { category: 'body', sv: 'hand', en: 'hand', pt_BR: 'mão', emoji: '✋' },
+    { category: 'body', sv: 'fot', en: 'foot', pt_BR: 'pé', emoji: '🦶' },
+    { category: 'body', sv: 'arm', en: 'arm', pt_BR: 'braço', emoji: '💪' },
+    { category: 'body', sv: 'ben', en: 'leg', pt_BR: 'perna', emoji: '🦵' },
+    { category: 'body', sv: 'mage', en: 'stomach', pt_BR: 'barriga', emoji: '🫃' },
+    { category: 'body', sv: 'hjärta', en: 'heart', pt_BR: 'coração', emoji: '❤️' },
+    { category: 'body', sv: 'tand', en: 'tooth', pt_BR: 'dente', emoji: '🦷' },
     // Home
-    { category: 'home', sv: 'hus', en: 'house', emoji: '🏠' },
-    { category: 'home', sv: 'dörr', en: 'door', emoji: '🚪' },
-    { category: 'home', sv: 'fönster', en: 'window', emoji: '🪟' },
-    { category: 'home', sv: 'stol', en: 'chair', emoji: '🪑' },
-    { category: 'home', sv: 'bord', en: 'table', emoji: '🍽️' },
-    { category: 'home', sv: 'säng', en: 'bed', emoji: '🛏️' },
-    { category: 'home', sv: 'lampa', en: 'lamp', emoji: '💡' },
-    { category: 'home', sv: 'tv', en: 'tv', emoji: '📺' },
-    { category: 'home', sv: 'kök', en: 'kitchen', emoji: '🍳' },
-    { category: 'home', sv: 'badrum', en: 'bathroom', emoji: '🛁' },
-    { category: 'home', sv: 'soffa', en: 'sofa', emoji: '🛋️' },
-    { category: 'home', sv: 'nyckel', en: 'key', emoji: '🔑' },
+    { category: 'home', sv: 'hus', en: 'house', pt_BR: 'casa', emoji: '🏠' },
+    { category: 'home', sv: 'dörr', en: 'door', pt_BR: 'porta', emoji: '🚪' },
+    { category: 'home', sv: 'fönster', en: 'window', pt_BR: 'janela', emoji: '🪟' },
+    { category: 'home', sv: 'stol', en: 'chair', pt_BR: 'cadeira', emoji: '🪑' },
+    { category: 'home', sv: 'bord', en: 'table', pt_BR: 'mesa', emoji: '🍽️' },
+    { category: 'home', sv: 'säng', en: 'bed', pt_BR: 'cama', emoji: '🛏️' },
+    { category: 'home', sv: 'lampa', en: 'lamp', pt_BR: 'lâmpada', emoji: '💡' },
+    { category: 'home', sv: 'tv', en: 'tv', pt_BR: 'televisão', emoji: '📺' },
+    { category: 'home', sv: 'kök', en: 'kitchen', pt_BR: 'cozinha', emoji: '🍳' },
+    { category: 'home', sv: 'badrum', en: 'bathroom', pt_BR: 'banheiro', emoji: '🛁' },
+    { category: 'home', sv: 'soffa', en: 'sofa', pt_BR: 'sofá', emoji: '🛋️' },
+    { category: 'home', sv: 'nyckel', en: 'key', pt_BR: 'chave', emoji: '🔑' },
     // School
-    { category: 'school', sv: 'bok', en: 'book', emoji: '📕' },
-    { category: 'school', sv: 'penna', en: 'pen', emoji: '✏️' },
-    { category: 'school', sv: 'lärare', en: 'teacher', emoji: '👩‍🏫' },
-    { category: 'school', sv: 'skola', en: 'school', emoji: '🏫' },
-    { category: 'school', sv: 'väska', en: 'bag', emoji: '🎒' },
-    { category: 'school', sv: 'papper', en: 'paper', emoji: '📄' },
-    { category: 'school', sv: 'sax', en: 'scissors', emoji: '✂️' },
-    { category: 'school', sv: 'linjal', en: 'ruler', emoji: '📏' },
-    { category: 'school', sv: 'dator', en: 'computer', emoji: '💻' },
-    { category: 'school', sv: 'klocka', en: 'clock', emoji: '🕐' },
+    { category: 'school', sv: 'bok', en: 'book', pt_BR: 'livro', emoji: '📕' },
+    { category: 'school', sv: 'penna', en: 'pen', pt_BR: 'lápis', emoji: '✏️' },
+    { category: 'school', sv: 'lärare', en: 'teacher', pt_BR: 'professora', emoji: '👩‍🏫' },
+    { category: 'school', sv: 'skola', en: 'school', pt_BR: 'escola', emoji: '🏫' },
+    { category: 'school', sv: 'väska', en: 'bag', pt_BR: 'mochila', emoji: '🎒' },
+    { category: 'school', sv: 'papper', en: 'paper', pt_BR: 'papel', emoji: '📄' },
+    { category: 'school', sv: 'sax', en: 'scissors', pt_BR: 'tesoura', emoji: '✂️' },
+    { category: 'school', sv: 'linjal', en: 'ruler', pt_BR: 'régua', emoji: '📏' },
+    { category: 'school', sv: 'dator', en: 'computer', pt_BR: 'computador', emoji: '💻' },
+    { category: 'school', sv: 'klocka', en: 'clock', pt_BR: 'relógio', emoji: '🕐' },
   ];
 
   const ENCOURAGEMENTS = ['dict.great', 'dict.fantastic', 'dict.star', 'dict.well_done'];
@@ -151,9 +152,11 @@
   }
 
   function wordText(w: Word): string {
-    const lang = get(locale);
-    return lang === 'sv' ? w.sv : w.en;
+    return pick({ sv: w.sv, en: w.en, pt_BR: w.pt_BR }, $locale);
   }
+
+  // TAKK signs come from Swedish Sign Language — only offered in sv/en (unchanged)
+  const takkEnabled = $derived($locale === 'sv' || $locale === 'en');
 
   function speakWord(w: Word) {
     speak(wordText(w));
@@ -252,7 +255,7 @@
 
 <div class="dict-page">
   <div class="page-title">
-    {#if mode !== 'categories'}<button class="sub-back" onclick={() => { mode = 'categories'; activeCategory = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if mode !== 'categories'}<button class="sub-back" onclick={() => { mode = 'categories'; activeCategory = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{$t('dict.title')}</h1>
 
   </div>
@@ -291,7 +294,7 @@
       <div class="word-grid">
         {#each categoryWords(activeCategory || '') as w}
           {@const learned = wordsLearned.includes(`${w.category}:${w.sv}`)}
-          {@const hasTakk = hasTakkSign(w.sv)}
+          {@const hasTakk = takkEnabled && hasTakkSign(w.sv)}
           <div class="word-card-wrap">
             <button class="word-card" class:learned class:has-takk={hasTakk} onclick={() => tapWord(w)}>
               <span class="word-emoji">{w.emoji}</span>

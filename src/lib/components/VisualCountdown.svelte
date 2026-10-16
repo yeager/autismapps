@@ -3,6 +3,7 @@
   import { speak } from '$lib/tts';
   import { TIMER_PRESETS } from '$lib/data/transition-helper';
   import { onDestroy } from 'svelte';
+  import { getAudioContext as sharedAudioContext } from '$lib/audio';
 
   let duration = $state(5); // minutes
   let remaining = $state(0); // seconds
@@ -68,7 +69,8 @@
 
   function playAlert() {
     try {
-      const ctx = new AudioContext();
+      const ctx = sharedAudioContext();
+      if (!ctx) return;
       // Gentle 3-note chime
       [523, 659, 784].forEach((freq, i) => {
         const osc = ctx.createOscillator();

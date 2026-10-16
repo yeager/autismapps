@@ -67,7 +67,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if mode !== 'menu'}<button class="sub-back" onclick={() => { mode = 'menu' }} aria-label="Tillbaka">←</button>{/if}
+    {#if mode !== 'menu'}<button class="sub-back" onclick={() => { mode = 'menu' }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🔢 {$t('mathAid.title')}</h1>
 
     <span class="score">{score}/{total}</span>

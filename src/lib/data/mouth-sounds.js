@@ -25,14 +25,7 @@ export const SOUND_TYPES = [
   { id: 'glides',     labelKey: 'mouthMotor.type.glides',     color: '#1ABC9C', icon: '🩵' },
 ];
 
-/** @type {Array<{
- *   id: string, symbol: string, ipa: string, type: string,
- *   voiced: boolean, exampleWord: string, exampleWordEn: string,
- *   exampleArasaac: number,
- *   lips: string, tongue: string, jaw: string, velum: string, airflow: string,
- *   tongueX: number, tongueY: number, tongueTipX: number, tongueTipY: number,
- *   lipRound: number, lipOpen: number, special?: string
- * }>} */
+/** @type {import('./speech-types').MouthSound[]} */
 export const sounds = [
   // ─── VOWELS ───
   {
@@ -250,7 +243,7 @@ export const sounds = [
   {
     id: 'j', symbol: 'j', ipa: 'j', type: 'glides',
     voiced: true, exampleWord: 'julgran', exampleWordEn: 'Christmas tree',
-    exampleArasaac: 5966,
+    exampleArasaac: 3058,
     lips: 'spread', tongue: 'body-palatal', jaw: 'narrow', velum: 'closed', airflow: 'continuous',
     tongueX: 0.38, tongueY: 0.35, tongueTipX: 0.28, tongueTipY: 0.45,
     lipRound: 0, lipOpen: 0.2,
@@ -269,6 +262,7 @@ export const sounds = [
 /**
  * Sound pairs for comparison view.
  * Each pair contrasts a minimal articulatory difference.
+ * @type {import('./speech-types').SoundPair[]}
  */
 export const SOUND_PAIRS = [
   { a: 'b', b: 'p', contrastKey: 'mouthMotor.pair.voicing' },   // voiced vs voiceless

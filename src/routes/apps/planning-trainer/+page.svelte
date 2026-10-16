@@ -726,6 +726,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
   }
@@ -857,6 +858,7 @@
 
   .custom-input {
     flex: 1;
+    min-width: 0;
     padding: 12px 16px;
     border: 2px solid var(--border);
     border-radius: var(--radius);

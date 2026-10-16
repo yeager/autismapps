@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fade, scale } from 'svelte/transition';
   import { onMount, onDestroy } from 'svelte';
+  import { getAudioContext as sharedAudioContext } from '$lib/audio';
 
   type Particle = { id: number; x: number; y: number; vx: number; vy: number; color: string; size: number; rotation: number; rotSpeed: number };
   let { children } = $props<{ children: import('svelte').Snippet }>();
@@ -44,9 +45,8 @@
 
     // Play celebration sound via Web Audio
     try {
-      const AudioContextClass = window.AudioContext ?? (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-      if (!AudioContextClass) return;
-      const ctx = new AudioContextClass();
+      const ctx = sharedAudioContext();
+      if (!ctx) return;
       const notes = [523, 659, 784, 1047];
       notes.forEach((freq, i) => {
         const osc = ctx.createOscillator();

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { t } from '$lib/i18n';
   import type { TonguePosition } from '$lib/data/tongue-positions';
 
   export let position: TonguePosition | null = null;
@@ -123,13 +124,13 @@
   function contactPoint(tp: TonguePosition) {
     if (!tp.contact) return null;
     switch (tp.contact) {
-      case 'alveolar': return { cx: 105, cy: 115, label: 'Alveolär' };
-      case 'velar': return { cx: 255, cy: 78, label: 'Velar' };
-      case 'bilabial': return { cx: 68, cy: 155, label: 'Bilabial' };
-      case 'labiodental': return { cx: 78, cy: 140, label: 'Labiodental' };
-      case 'palatal': return { cx: 180, cy: 62, label: 'Palatal' };
-      case 'retroflex': return { cx: 130, cy: 95, label: 'Retroflex' };
-      case 'postalveolar': return { cx: 145, cy: 80, label: 'Postalveolär' };
+      case 'alveolar': return { cx: 105, cy: 115, labelKey: 'tongueViewer.contact.alveolar' };
+      case 'velar': return { cx: 255, cy: 78, labelKey: 'tongueViewer.contact.velar' };
+      case 'bilabial': return { cx: 68, cy: 155, labelKey: 'tongueViewer.contact.bilabial' };
+      case 'labiodental': return { cx: 78, cy: 140, labelKey: 'tongueViewer.contact.labiodental' };
+      case 'palatal': return { cx: 180, cy: 62, labelKey: 'tongueViewer.contact.palatal' };
+      case 'retroflex': return { cx: 130, cy: 95, labelKey: 'tongueViewer.contact.retroflex' };
+      case 'postalveolar': return { cx: 145, cy: 80, labelKey: 'tongueViewer.contact.postalveolar' };
       default: return null;
     }
   }
@@ -232,7 +233,7 @@
   />
   <!-- Nasal cavity label -->
   <text x="185" y="45" text-anchor="middle" font-size="10" fill={darkMode ? '#888' : '#999'} font-style="italic">
-    Näshåla
+    {$t('tongueViewer.anatomy.nasalCavity')}
   </text>
 
   <!-- Pharynx wall -->
@@ -253,7 +254,7 @@
     stroke-linecap="round"
   />
   <text x="175" y="58" text-anchor="middle" font-size="9" fill={darkMode ? '#aaa' : '#888'}>
-    Hårda gommen
+    {$t('tongueViewer.anatomy.hardPalate')}
   </text>
 
   <!-- Soft palate (velum) — animated -->
@@ -266,7 +267,7 @@
     style="transition: d {animDuration}ms ease-in-out, stroke {animDuration}ms ease"
   />
   <text x="295" y="108" text-anchor="end" font-size="9" fill={darkMode ? '#aaa' : '#888'}>
-    {pos.velum === 'open' ? 'Gomsegel (öppet)' : 'Gomsegel'}
+    {$t(pos.velum === 'open' ? 'tongueViewer.anatomy.velumOpen' : 'tongueViewer.anatomy.velum')}
   </text>
 
   <!-- Upper teeth -->
@@ -339,7 +340,7 @@
       fill="#ffa500"
       font-weight="bold"
     >
-      {currentContact.label}
+      {$t(currentContact.labelKey)}
     </text>
   {/if}
 
@@ -438,20 +439,20 @@
         <animate attributeName="r" values="3;5;3" dur="0.3s" repeatCount="indefinite" />
       </circle>
       <text x={larynxX} y={larynxY + 20} text-anchor="middle" font-size="8" fill={darkMode ? '#cc8060' : '#cc6040'}>
-        Stämband vibrerar
+        {$t('tongueViewer.anatomy.vocalFoldsVibrating')}
       </text>
     </g>
   {:else}
     <circle cx={larynxX} cy={larynxY} r="4" fill={darkMode ? '#555' : '#ccc'} />
     <text x={larynxX} y={larynxY + 20} text-anchor="middle" font-size="8" fill={darkMode ? '#666' : '#aaa'}>
-      Stämband
+      {$t('tongueViewer.anatomy.vocalFolds')}
     </text>
   {/if}
 
   <!-- Labels overlay -->
-  <text x="70" y="170" font-size="9" fill={darkMode ? '#aaa' : '#888'}>Läppar</text>
-  <text x="85" y="125" font-size="8" fill={darkMode ? '#aaa' : '#999'}>Tänder</text>
-  <text x="315" y="240" font-size="9" fill={darkMode ? '#aaa' : '#888'} text-anchor="end">Svalg</text>
+  <text x="70" y="170" font-size="9" fill={darkMode ? '#aaa' : '#888'}>{$t('tongueViewer.anatomy.lips')}</text>
+  <text x="85" y="125" font-size="8" fill={darkMode ? '#aaa' : '#999'}>{$t('tongueViewer.anatomy.teeth')}</text>
+  <text x="315" y="240" font-size="9" fill={darkMode ? '#aaa' : '#888'} text-anchor="end">{$t('tongueViewer.anatomy.pharynx')}</text>
 
   <!-- Floor of mouth -->
   <line x1="80" y1="300" x2="310" y2="300" stroke={darkMode ? '#444' : '#ddd'} stroke-width="1" opacity="0.5" />

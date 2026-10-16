@@ -160,14 +160,14 @@
           <h2>{getI18nValue('reflectors.intro-title')}</h2>
           <p>{getI18nValue('reflectors.intro-copy')}</p>
         </div>
-        
+
         <div class="activity-buttons">
           <button class="activity-btn" onclick={startComparison}>
             <div class="btn-icon">🌞🌙</div>
             <h3>{getI18nValue('reflectors.day-vs-night')}</h3>
             <p>{getI18nValue('reflectors.day-vs-night-desc')}</p>
           </button>
-          
+
           <button class="activity-btn" onclick={startDressUp}>
             <div class="btn-icon">👕✨</div>
             <h3>{getI18nValue('reflectors.dress-title')}</h3>
@@ -222,7 +222,7 @@
             <div class="time-indicator">
               {isDaytime ? `☀️ ${getI18nValue('reflectors.day-label')}` : `🌙 ${getI18nValue('reflectors.night-label')}`}
             </div>
-            
+
             <div class="visibility-stats">
               {#if isDaytime}
                 <div class="stat good">
@@ -238,7 +238,7 @@
             </div>
           </div>
         </div>
-        
+
         <button class="back-demo-button" onclick={goBack}>
           {getI18nValue('reflectors.back-to-menu')}
         </button>
@@ -281,7 +281,7 @@
               {getI18nValue('reflectors.drop-reflectors-here')}
             </div>
           </div>
-          
+
           <div class="reflector-items">
             <h3>{getI18nValue('reflectors.available')}</h3>
             <div class="items-grid">
@@ -309,7 +309,7 @@
             {/if}
           </div>
         </div>
-        
+
         <button class="back-game-button" onclick={goBack}>
           {getI18nValue('common.back')}
         </button>
@@ -320,7 +320,7 @@
 
 <style>
   .reflectors-container {
-    min-height: 100vh;
+    min-height: calc(100dvh - var(--header-h));
     background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: white;

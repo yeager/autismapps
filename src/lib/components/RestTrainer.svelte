@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak, stop } from '$lib/tts';
-  import { LEVELS, STAR_THRESHOLDS, SPEED_INCREMENT, MIN_SPEED, MAX_SPEED, DEFAULT_SPEED } from '$lib/data/rest-syllables.js';
+  import { LEVELS as LEVELS_SV, STAR_THRESHOLDS, SPEED_INCREMENT, MIN_SPEED, MAX_SPEED, DEFAULT_SPEED } from '$lib/data/rest-syllables.js';
+  import type { RestLevel, SayMap } from '$lib/data/speech-types';
+  import { LEVELS_PT, SAY_PT } from '$lib/data/pt-br/rest-trainer';
   import { fade, scale } from 'svelte/transition';
 
   // === ReST-TRÄNAREN — Rapid Syllable Transition Training ===
@@ -10,6 +12,11 @@
   // DTTC-aligned: model → practice → evaluate
 
   type View = 'levels' | 'practice' | 'result';
+
+  // en keeps the Swedish sequences
+  const LEVELS = $derived(pick<RestLevel[]>({ sv: LEVELS_SV, en: LEVELS_SV, pt_BR: LEVELS_PT }, $locale));
+  const SAY = $derived(pick<SayMap>({ sv: {}, en: {}, pt_BR: SAY_PT }, $locale));
+  const say = (text: string) => SAY[text] ?? text;
 
   let view = $state<View>('levels');
   let currentLevelIdx = $state(0);
@@ -81,7 +88,7 @@
       const isStressed = currentSeq.stress[i] === 1;
       // Stressed syllables are spoken slightly slower/louder (simulated with lower rate)
       const syllableRate = isStressed ? speed * 0.8 : speed;
-      await speak(syllable, { rate: syllableRate });
+      await speak(say(syllable), { rate: syllableRate });
 
       beatActive = false;
 
@@ -95,7 +102,8 @@
     await new Promise(r => setTimeout(r, 300));
     activeSyllableIdx = -1;
 
-    const fullText = currentSeq.syllables.join(' ');
+    // pt-BR sequences carry their spoken form: one word, with the accent on the stressed syllable
+    const fullText = currentSeq.say ?? currentSeq.syllables.join(' ');
     await speak(fullText, { rate: speed });
 
     isPlaying = false;
@@ -169,7 +177,7 @@
     <!-- Practice View -->
     <div class="section" in:fade>
       <div class="practice-header">
-        <button class="back-btn" onclick={goBack} aria-label="Tillbaka">←</button>
+        <button class="back-btn" onclick={goBack} aria-label={$t('app.back')}>←</button>
         <span class="level-badge">{currentLevel.icon} {$t('restTrainer.level')} {currentLevel.id}</span>
         <span class="seq-counter">{currentSeqIdx + 1}/{levelTotal}</span>
       </div>

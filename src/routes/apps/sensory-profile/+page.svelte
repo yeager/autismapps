@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, getLocaleDef } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade, fly } from 'svelte/transition';
   import RadarChart from '$lib/components/RadarChart.svelte';
@@ -351,7 +351,7 @@
           <div class="print-content" id="print-content">
             <h1>{$t('sensory.export.summary')}</h1>
             <p>{$t('sensory.export.generatedFor', { name: currentProfile.name })}</p>
-            <p>{$t('sensory.export.date', { date: new Date().toLocaleDateString() })}</p>
+            <p>{$t('sensory.export.date', { date: new Date().toLocaleDateString(getLocaleDef($locale).bcp47) })}</p>
 
             <h2>{$t('sensory.chart.title')}</h2>
             <RadarChart ratings={currentProfile.ratings} size={280} />

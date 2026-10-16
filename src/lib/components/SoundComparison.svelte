@@ -1,19 +1,23 @@
 <script lang="ts">
   import { t } from '$lib/i18n';
   import SagittalView from './SagittalView.svelte';
-  import { tonguePositions } from '$lib/data/tongue-positions';
+  import type { TonguePosition } from '$lib/data/speech-types';
 
   export let darkMode = false;
   export let onClose = () => {};
   export let onSpeak = (text: string) => {};
-
-  const allSounds = Object.keys(tonguePositions);
+  /** Positions of the active locale (passed by TongueViewer) */
+  export let positions: Record<string, TonguePosition> = {};
 
   let leftSound = 'a';
   let rightSound = 'i';
 
-  $: leftPos = tonguePositions[leftSound];
-  $: rightPos = tonguePositions[rightSound];
+  $: allSounds = Object.keys(positions);
+  $: leftPos = positions[leftSound];
+  $: rightPos = positions[rightSound];
+  /** Translated articulation value ('—' when absent) */
+  $: label = (group: string, value: string | undefined) =>
+    value ? $t(`tongueViewer.${group}.${value}`) : '—';
 </script>
 
 <div class="comparison-overlay">
@@ -28,10 +32,10 @@
         <label for="left-sound">{$t('tongueViewer.comparison.sound')} 1:</label>
         <select id="left-sound" bind:value={leftSound}>
           {#each allSounds as s}
-            <option value={s}>{tonguePositions[s].label} ({tonguePositions[s].ipa})</option>
+            <option value={s}>{positions[s].label} ({positions[s].ipa})</option>
           {/each}
         </select>
-        <button class="speak-btn" on:click={() => onSpeak(tonguePositions[leftSound].example)} aria-label="Lyssna">
+        <button class="speak-btn" on:click={() => onSpeak(positions[leftSound].example)} aria-label={$t('tongueViewer.listen')}>
           🔊
         </button>
       </div>
@@ -40,10 +44,10 @@
         <label for="right-sound">{$t('tongueViewer.comparison.sound')} 2:</label>
         <select id="right-sound" bind:value={rightSound}>
           {#each allSounds as s}
-            <option value={s}>{tonguePositions[s].label} ({tonguePositions[s].ipa})</option>
+            <option value={s}>{positions[s].label} ({positions[s].ipa})</option>
           {/each}
         </select>
-        <button class="speak-btn" on:click={() => onSpeak(tonguePositions[rightSound].example)} aria-label="Lyssna">
+        <button class="speak-btn" on:click={() => onSpeak(positions[rightSound].example)} aria-label={$t('tongueViewer.listen')}>
           🔊
         </button>
       </div>
@@ -66,19 +70,19 @@
       <h3>🔍 {$t('tongueViewer.comparison.differences')}</h3>
       <ul>
         {#if leftPos.lips !== rightPos.lips}
-          <li>👄 {$t('tongueViewer.lips')}: <strong>{leftPos.lips}</strong> → <strong>{rightPos.lips}</strong></li>
+          <li>👄 {$t('tongueViewer.lips')}: <strong>{label('lips', leftPos.lips)}</strong> → <strong>{label('lips', rightPos.lips)}</strong></li>
         {/if}
         {#if leftPos.contact !== rightPos.contact}
-          <li>👆 {$t('tongueViewer.contact')}: <strong>{leftPos.contact || '—'}</strong> → <strong>{rightPos.contact || '—'}</strong></li>
+          <li>👆 {$t('tongueViewer.contact')}: <strong>{label('contact', leftPos.contact)}</strong> → <strong>{label('contact', rightPos.contact)}</strong></li>
         {/if}
         {#if leftPos.velum !== rightPos.velum}
-          <li>🫁 {$t('tongueViewer.velum')}: <strong>{leftPos.velum}</strong> → <strong>{rightPos.velum}</strong></li>
+          <li>🫁 {$t('tongueViewer.velum')}: <strong>{label('velum', leftPos.velum)}</strong> → <strong>{label('velum', rightPos.velum)}</strong></li>
         {/if}
         {#if leftPos.voiced !== rightPos.voiced}
           <li>🔔 {$t('tongueViewer.voicing')}: <strong>{leftPos.voiced ? '✓' : '✕'}</strong> → <strong>{rightPos.voiced ? '✓' : '✕'}</strong></li>
         {/if}
         {#if leftPos.airflow !== rightPos.airflow}
-          <li>💨 {$t('tongueViewer.airflow')}: <strong>{leftPos.airflow || '—'}</strong> → <strong>{rightPos.airflow || '—'}</strong></li>
+          <li>💨 {$t('tongueViewer.airflow')}: <strong>{label('airflow', leftPos.airflow)}</strong> → <strong>{label('airflow', rightPos.airflow)}</strong></li>
         {/if}
         {#if Math.abs(leftPos.tip[1] - rightPos.tip[1]) > 0.1 || Math.abs(leftPos.body[1] - rightPos.body[1]) > 0.1}
           <li>👅 {$t('tongueViewer.tongueHeight')}: {leftPos.body[1] < rightPos.body[1] ? $t('tongueViewer.higher') + ' → ' + $t('tongueViewer.lower') : $t('tongueViewer.lower') + ' → ' + $t('tongueViewer.higher')}</li>

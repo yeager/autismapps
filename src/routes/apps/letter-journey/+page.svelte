@@ -2,9 +2,11 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
-  import { locale } from '$lib/i18n';
+  import type { LetterDef, LetterWord, SayMap } from '$lib/data/speech-types';
+  import { PHONEME_SAY_PT } from '$lib/data/pt-br/phonemes';
+  import { LETTERS_PT, WORDS_PT, CV_CONSONANTS_PT, VC_CONSONANTS_PT, CV_VOWELS_PT, SAY_PT } from '$lib/data/pt-br/letter-journey';
   import { get } from 'svelte/store';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
   import { activeProfileId } from '$lib/stores/profile';
@@ -65,18 +67,18 @@
   const CONSONANTS_FOR_CV = ['B', 'D', 'F', 'G', 'H', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'V'];
   const VOWELS_FOR_CV = ['A', 'E', 'I', 'O', 'U', 'Å', 'Ä', 'Ö'];
 
-  function letterColor(ch: string): string {
-    return VOWELS.has(ch) ? '#E74C3C' : '#3498DB';
-  }
+  // Swedish letters in the shared shape (en keeps them: the app is not adapted to English)
+  const LETTERS_SV: LetterDef[] = Object.keys(LETTER_NAMES).map((letter) => ({
+    letter,
+    name: LETTER_NAMES[letter],
+    sound: LETTER_SOUNDS[letter],
+    cue: MOUTH_CUES[letter],
+    mouthKey: MOUTH_DESC[letter] ?? 'letter.mouth.default',
+    vowel: VOWELS.has(letter),
+    explore: `${letter}. ${LETTER_NAMES[letter]}. ${LETTER_SOUNDS[letter]}.`,
+  }));
 
-  interface WordEntry {
-    word: string;
-    hint: string;
-    syllables: string[];
-    stress: number;
-  }
-
-  const WORDS_L1: WordEntry[] = [
+  const WORDS_L1: LetterWord[] = [
     { word: 'SOL', hint: 'letter.word.sun', syllables: ['SOL'], stress: 0 },
     { word: 'KATT', hint: 'letter.word.cat', syllables: ['KATT'], stress: 0 },
     { word: 'HUS', hint: 'letter.word.house', syllables: ['HUS'], stress: 0 },
@@ -91,7 +93,7 @@
     { word: 'ÖRA', hint: 'letter.word.ear', syllables: ['Ö', 'RA'], stress: 0 },
   ];
 
-  const WORDS_L2: WordEntry[] = [
+  const WORDS_L2: LetterWord[] = [
     { word: 'BOLL', hint: 'letter.word.ball', syllables: ['BOLL'], stress: 0 },
     { word: 'FISK', hint: 'letter.word.fish', syllables: ['FISK'], stress: 0 },
     { word: 'HUND', hint: 'letter.word.dog', syllables: ['HUND'], stress: 0 },
@@ -104,7 +106,7 @@
     { word: 'LAMM', hint: 'letter.word.lamb', syllables: ['LAMM'], stress: 0 },
   ];
 
-  const WORDS_L3: WordEntry[] = [
+  const WORDS_L3: LetterWord[] = [
     { word: 'ÄPPLE', hint: 'letter.word.apple', syllables: ['ÄPP', 'LE'], stress: 0 },
     { word: 'SKOLA', hint: 'letter.word.school', syllables: ['SKO', 'LA'], stress: 0 },
     { word: 'BJÖRN', hint: 'letter.word.bear', syllables: ['BJÖRN'], stress: 0 },
@@ -115,7 +117,32 @@
     { word: 'BANANER', hint: 'letter.word.bananas', syllables: ['BA', 'NA', 'NER'], stress: 2 },
   ];
 
-  const LETTERS = Object.keys(LETTER_NAMES);
+  const WORDS_SV: Record<1 | 2 | 3, LetterWord[]> = { 1: WORDS_L1, 2: WORDS_L2, 3: WORDS_L3 };
+
+  // Content per locale
+  const LETTER_DEFS = $derived(pick<LetterDef[]>({ sv: LETTERS_SV, en: LETTERS_SV, pt_BR: LETTERS_PT }, $locale));
+  const L = $derived(Object.fromEntries(LETTER_DEFS.map((d) => [d.letter, d])) as Record<string, LetterDef>);
+  const LETTERS = $derived(LETTER_DEFS.map((d) => d.letter));
+  const WORDS = $derived(pick<Record<1 | 2 | 3, LetterWord[]>>({ sv: WORDS_SV, en: WORDS_SV, pt_BR: WORDS_PT }, $locale));
+  const CV_CONSONANTS = $derived(pick<string[]>({ sv: CONSONANTS_FOR_CV, en: CONSONANTS_FOR_CV, pt_BR: CV_CONSONANTS_PT }, $locale));
+  const VC_CONSONANTS = $derived(pick<string[]>({ sv: CONSONANTS_FOR_CV, en: CONSONANTS_FOR_CV, pt_BR: VC_CONSONANTS_PT }, $locale));
+  const CV_VOWELS = $derived(pick<string[]>({ sv: VOWELS_FOR_CV, en: VOWELS_FOR_CV, pt_BR: CV_VOWELS_PT }, $locale));
+  const PT_SAY: SayMap = { ...PHONEME_SAY_PT, ...SAY_PT };
+  // Spoken form: pt-BR content is looked up and spoken in lowercase (espeak may spell short words in capitals); sv/en unchanged
+  const say = $derived(pick<(text: string) => string>({
+    sv: (text) => text,
+    en: (text) => text,
+    pt_BR: (text) => PT_SAY[text.toLowerCase()] ?? text.toLowerCase(),
+  }, $locale));
+
+  function letterColor(ch: string): string {
+    return L[ch]?.vowel ? '#E74C3C' : '#3498DB';
+  }
+
+  function mouthText(ch: string): string {
+    const d = L[ch];
+    return d?.mouth ?? $t(d?.mouthKey ?? 'letter.mouth.default');
+  }
   const ENCOURAGEMENTS = ['letter.great', 'letter.fantastic', 'letter.star', 'letter.amazing', 'letter.well_done', 'letter.keep_going'];
   const TRY_AGAIN_MSGS = ['letter.almost', 'letter.so_close', 'letter.you_can', 'letter.dont_give_up'];
 
@@ -139,14 +166,14 @@
   let findRepeatCount = $state(0); // DTTC: track repeats
 
   // Sound-out mode
-  let currentWord = $state<WordEntry | null>(null);
+  let currentWord = $state<LetterWord | null>(null);
   let wordIdx = $state(0);
   let soundFeedback = $state('');
   let wordComplete = $state(false);
   let wordRepeatCount = $state(0);
 
   // Syllable mode
-  let syllableWord = $state<WordEntry | null>(null);
+  let syllableWord = $state<LetterWord | null>(null);
   let syllableIdx = $state(0);
   let syllableFeedback = $state('');
 
@@ -156,6 +183,7 @@
   let cvIdx = $state(0);
   let cvFeedback = $state('');
   let cvDirection = $state<'cv' | 'vc'>('cv'); // consonant-vowel or vowel-consonant
+  const pickerConsonants = $derived(cvDirection === 'vc' ? VC_CONSONANTS : CV_CONSONANTS);
 
   // Speed control (DTTC: start slow, increase gradually)
   let speechRate = $state(0.4); // Very slow default for dyspraxia
@@ -204,7 +232,12 @@
     setTimeout(() => { showCelebration = false; }, 1200);
   }
 
+  // Content (letters, sounds, words, syllables) goes through the spoken-form map; labels ($t) do not
   function speakSlow(text: string) {
+    speak(say(text), { rate: speechRate });
+  }
+
+  function speakLabel(text: string) {
     speak(text, { rate: speechRate });
   }
 
@@ -216,20 +249,28 @@
   function exploreLetter(letter: string) {
     selectedLetter = letter;
     showMouthCue = true;
-    speakSlow(`${letter}. ${LETTER_NAMES[letter]}. ${LETTER_SOUNDS[letter]}.`);
+    speakSlow(L[letter].explore);
     recordCorrect(letter);
   }
 
   // === FIND ===
+  // Wrong choices never share the target's sound (sv: C/S/Z all say "sss"; pt: C/K/Q all say "quê")
+  function findChoicesFor(target: string): string[] {
+    const sound = say(L[target].sound);
+    const others = LETTERS.filter((l) => l !== target && say(L[l].sound) !== sound)
+      .sort(() => Math.random() - 0.5).slice(0, 5);
+    return [...others, target].sort(() => Math.random() - 0.5);
+  }
+
   function startFindRound() {
     findAnswered = false;
     findFeedback = '';
     findRepeatCount = 0;
-    const target = LETTERS[Math.floor(Math.random() * LETTERS.length)];
+    const targets = LETTER_DEFS.filter((d) => !d.noTarget).map((d) => d.letter);
+    const target = targets[Math.floor(Math.random() * targets.length)];
     targetLetter = target;
-    const others = LETTERS.filter(l => l !== target).sort(() => Math.random() - 0.5).slice(0, 5);
-    findChoices = [...others, target].sort(() => Math.random() - 0.5);
-    setTimeout(() => speakSlow(LETTER_SOUNDS[target]), 400);
+    findChoices = findChoicesFor(target);
+    setTimeout(() => speakSlow(L[target].sound), 400);
   }
 
   function answerFind(letter: string) {
@@ -239,12 +280,13 @@
       findFeedback = $t(randomItem(ENCOURAGEMENTS));
       recordCorrect(letter);
       celebrate();
-      speakSlow($t('letter.correct'));
+      speakLabel($t('letter.correct'));
     } else {
       findFeedback = $t(randomItem(TRY_AGAIN_MSGS));
       recordWrong();
+      // Corrective model: the target's explore text (sv: letter, name, sound; pt: name and sound)
       setTimeout(() => {
-        if (targetLetter) speakSlow(targetLetter + '. ' + LETTER_SOUNDS[targetLetter]);
+        if (targetLetter) speakSlow(L[targetLetter].explore);
       }, 800);
     }
   }
@@ -255,9 +297,8 @@
     findAnswered = false;
     findFeedback = '';
     findRepeatCount++;
-    const others = LETTERS.filter(l => l !== targetLetter).sort(() => Math.random() - 0.5).slice(0, 5);
-    findChoices = [...others, targetLetter].sort(() => Math.random() - 0.5);
-    setTimeout(() => speakSlow(LETTER_SOUNDS[targetLetter!]), 400);
+    findChoices = findChoicesFor(targetLetter);
+    setTimeout(() => speakSlow(L[targetLetter!].sound), 400);
   }
 
   // === SOUND OUT ===
@@ -266,7 +307,7 @@
     wordIdx = 0;
     soundFeedback = '';
     wordRepeatCount = 0;
-    const words = level <= 1 ? WORDS_L1 : level <= 2 ? [...WORDS_L1, ...WORDS_L2] : [...WORDS_L1, ...WORDS_L2, ...WORDS_L3];
+    const words = level <= 1 ? WORDS[1] : level <= 2 ? [...WORDS[1], ...WORDS[2]] : [...WORDS[1], ...WORDS[2], ...WORDS[3]];
     currentWord = randomItem(words);
     setTimeout(() => speakSlow(currentWord!.word), 300);
   }
@@ -284,7 +325,7 @@
   function soundCurrentLetter() {
     if (!currentWord || wordIdx >= currentWord.word.length) return;
     const letter = currentWord.word[wordIdx];
-    const sound = LETTER_SOUNDS[letter] || letter;
+    const sound = L[letter]?.sound || letter;
     speakSlow(sound);
     soundFeedback = `"${letter}" → ${sound}`;
   }
@@ -302,8 +343,8 @@
         setTimeout(() => speakSlow(currentWord!.word), 300);
       } else {
         const nextLetter = currentWord.word[wordIdx];
-        setTimeout(() => speakSlow(LETTER_SOUNDS[nextLetter] || nextLetter), 200);
-        soundFeedback = `"${nextLetter}" → ${LETTER_SOUNDS[nextLetter] || nextLetter}`;
+        setTimeout(() => speakSlow(L[nextLetter]?.sound || nextLetter), 200);
+        soundFeedback = `"${nextLetter}" → ${L[nextLetter]?.sound || nextLetter}`;
       }
     }
   }
@@ -313,9 +354,9 @@
     syllableIdx = 0;
     syllableFeedback = '';
     const words = level <= 1
-      ? WORDS_L1.filter(w => w.syllables.length > 1)
-      : [...WORDS_L2, ...WORDS_L3].filter(w => w.syllables.length > 1);
-    syllableWord = words.length > 0 ? randomItem(words) : WORDS_L3[0];
+      ? WORDS[1].filter(w => w.syllables.length > 1)
+      : [...WORDS[2], ...WORDS[3]].filter(w => w.syllables.length > 1);
+    syllableWord = words.length > 0 ? randomItem(words) : WORDS[3][0];
     setTimeout(() => speakSlow(syllableWord!.word), 300);
   }
 
@@ -339,9 +380,9 @@
     cvFeedback = '';
     // Generate CV or VC pairs for current consonant
     if (cvDirection === 'cv') {
-      cvPairs = VOWELS_FOR_CV.map(v => cvConsonant + v);
+      cvPairs = CV_VOWELS.map(v => cvConsonant + v);
     } else {
-      cvPairs = VOWELS_FOR_CV.map(v => v + cvConsonant);
+      cvPairs = CV_VOWELS.map(v => v + cvConsonant);
     }
     setTimeout(() => speakSlow(cvPairs[0]), 400);
   }
@@ -376,7 +417,7 @@
 
 <div class="letter-page">
   <div class="page-title">
-    {#if mode !== 'menu'}<button class="sub-back" onclick={() => { mode = 'menu' }} aria-label="Tillbaka">←</button>{/if}
+    {#if mode !== 'menu'}<button class="sub-back" onclick={() => { mode = 'menu' }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{$t('letter.title')}</h1>
 
   </div>
@@ -386,7 +427,7 @@
       <div class="menu-hero">
         <h2>{$t('letter.title')}</h2>
         <p class="menu-subtitle">{$t('letter.choose_adventure')}</p>
-        <span class="level-badge">{$t('letter.level')} {level} · {lettersLearned.length}/29</span>
+        <span class="level-badge">{$t('letter.level')} {level} · {lettersLearned.filter((l) => L[l]).length}/{LETTERS.length}</span>
       </div>
 
       <div class="mode-grid">
@@ -439,23 +480,23 @@
           <div class="letter-info">
             <div class="info-row">
               <span class="info-label">{$t('letter.name')}:</span>
-              <span class="info-value">{LETTER_NAMES[selectedLetter]}</span>
+              <span class="info-value">{L[selectedLetter].name}</span>
             </div>
             <div class="info-row">
               <span class="info-label">{$t('letter.sound')}:</span>
-              <span class="info-value">{LETTER_SOUNDS[selectedLetter]}</span>
+              <span class="info-value">{L[selectedLetter].sound || '—'}</span>
             </div>
             {#if showMouthCue}
               <div class="mouth-cue">
-                <span class="mouth-emoji">{MOUTH_CUES[selectedLetter] || '👄'}</span>
-                <span class="mouth-text">{$t(MOUTH_DESC[selectedLetter] || 'letter.mouth.default')}</span>
+                <span class="mouth-emoji">{L[selectedLetter].cue || '👄'}</span>
+                <span class="mouth-text">{mouthText(selectedLetter)}</span>
               </div>
             {/if}
-            <span class="vowel-tag" class:vowel={VOWELS.has(selectedLetter)}>
-              {VOWELS.has(selectedLetter) ? $t('letter.vowel') : $t('letter.consonant')}
+            <span class="vowel-tag" class:vowel={L[selectedLetter].vowel}>
+              {L[selectedLetter].vowel ? $t('letter.vowel') : $t('letter.consonant')}
             </span>
           </div>
-          <button class="replay-btn" onclick={() => speakSlow(`${selectedLetter}. ${LETTER_NAMES[selectedLetter!]}. ${LETTER_SOUNDS[selectedLetter!]}.`)}>
+          <button class="replay-btn" onclick={() => speakSlow(L[selectedLetter!].explore)}>
             🔊 {$t('letter.hear_again')}
           </button>
         </div>
@@ -476,9 +517,9 @@
     <div class="find-page" transition:fade>
       <p class="instruction">{$t('letter.find_instruction')}</p>
       {#if targetLetter}
-        <p class="find-prompt">{$t('letter.which_says')} "{LETTER_SOUNDS[targetLetter]}"?</p>
+        <p class="find-prompt">{$t('letter.which_says')} "{L[targetLetter].sound}"?</p>
       {/if}
-      <button class="replay-btn" onclick={() => { if (targetLetter) speakSlow(LETTER_SOUNDS[targetLetter]); }}>🔊 {$t('letter.play_again')}</button>
+      <button class="replay-btn" onclick={() => { if (targetLetter) speakSlow(L[targetLetter].sound); }}>🔊 {$t('letter.play_again')}</button>
 
       {#if findFeedback}<p class="feedback">{findFeedback}</p>{/if}
 
@@ -517,7 +558,7 @@
             </span>
           {/each}
         </div>
-        <p class="word-hint">({$t(currentWord.hint)})</p>
+        <p class="word-hint">{currentWord.icon ?? `(${$t(currentWord.hint ?? '')})`}</p>
 
         {#if soundFeedback}<p class="feedback">{soundFeedback}</p>{/if}
 
@@ -529,8 +570,8 @@
           {#if currentWord.word[wordIdx]}
             {@const ch = currentWord.word[wordIdx]}
             <div class="mouth-cue-inline">
-              <span class="mouth-emoji">{MOUTH_CUES[ch] || '👄'}</span>
-              <span>{$t(MOUTH_DESC[ch] || 'letter.mouth.default')}</span>
+              <span class="mouth-emoji">{L[ch]?.cue || '👄'}</span>
+              <span>{mouthText(ch)}</span>
             </div>
           {/if}
         {:else}
@@ -562,7 +603,7 @@
             {/if}
           {/each}
         </div>
-        <p class="word-hint">({$t(syllableWord.hint)})</p>
+        <p class="word-hint">{syllableWord.icon ?? `(${$t(syllableWord.hint ?? '')})`}</p>
 
         {#if syllableFeedback}<p class="feedback">{syllableFeedback}</p>{/if}
 
@@ -581,15 +622,15 @@
       <!-- Pick consonant and direction -->
       <div class="cv-controls">
         <div class="cv-direction">
-          <button class="dir-btn" class:active={cvDirection === 'cv'} onclick={() => { cvDirection = 'cv'; startCoarticulation(); }}>
+          <button class="dir-btn" class:active={cvDirection === 'cv'} onclick={() => { cvDirection = 'cv'; if (!CV_CONSONANTS.includes(cvConsonant)) cvConsonant = CV_CONSONANTS[0]; startCoarticulation(); }}>
             {$t('letter.cv')} (BA, BE…)
           </button>
-          <button class="dir-btn" class:active={cvDirection === 'vc'} onclick={() => { cvDirection = 'vc'; startCoarticulation(); }}>
+          <button class="dir-btn" class:active={cvDirection === 'vc'} onclick={() => { cvDirection = 'vc'; if (!VC_CONSONANTS.includes(cvConsonant)) cvConsonant = VC_CONSONANTS[0]; startCoarticulation(); }}>
             {$t('letter.vc')} (AB, EB…)
           </button>
         </div>
         <div class="consonant-picker">
-          {#each CONSONANTS_FOR_CV as c}
+          {#each pickerConsonants as c}
             <button class="cons-btn" class:active={cvConsonant === c}
               onclick={() => { cvConsonant = c; startCoarticulation(); }}>
               {c}

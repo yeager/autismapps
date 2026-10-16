@@ -2,16 +2,17 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
 
   type BodyPart = 'head' | 'top' | 'bottom' | 'feet' | 'accessories';
-  type WeatherId = 'sunny' | 'rainy' | 'snowy' | 'windy' | 'warm' | 'cold';
+  type WeatherId = 'sunny' | 'rainy' | 'snowy' | 'windy' | 'warm' | 'cold' | 'cloudy';
   type Weather = { id: WeatherId; icon: string; temp: string };
-  type Clothing = { id: string; icon: string; sv: string; weather: WeatherId[] };
+  type Clothing = { id: string; icon: string; name: Partial<Record<string, string>>; weather: WeatherId[] };
 
-  const WEATHER_TYPES: Weather[] = [
+  // Nordic set (sv, en) — unchanged items; English names added (English UI used to show Swedish)
+  const NORDIC_WEATHER: Weather[] = [
     { id: 'sunny', icon: '☀️', temp: '25°' },
     { id: 'rainy', icon: '🌧️', temp: '12°' },
     { id: 'snowy', icon: '❄️', temp: '-5°' },
@@ -20,37 +21,81 @@
     { id: 'cold', icon: '🥶', temp: '0°' },
   ];
 
-  const CLOTHES: Record<BodyPart, Clothing[]> = {
+  const NORDIC_CLOTHES: Record<BodyPart, Clothing[]> = {
     head: [
-      { id: 'cap', icon: '🧢', sv: 'keps', weather: ['sunny', 'warm'] },
-      { id: 'beanie', icon: '🧶', sv: 'mössa', weather: ['snowy', 'cold', 'windy'] },
-      { id: 'hood', icon: '🪖', sv: 'huva', weather: ['rainy', 'windy'] },
+      { id: 'cap', icon: '🧢', name: { sv: 'keps', en: 'cap' }, weather: ['sunny', 'warm'] },
+      { id: 'beanie', icon: '🧶', name: { sv: 'mössa', en: 'beanie' }, weather: ['snowy', 'cold', 'windy'] },
+      { id: 'hood', icon: '🪖', name: { sv: 'huva', en: 'hood' }, weather: ['rainy', 'windy'] },
     ],
     top: [
-      { id: 'tshirt', icon: '👕', sv: 't-shirt', weather: ['sunny', 'warm'] },
-      { id: 'sweater', icon: '🧥', sv: 'tröja', weather: ['windy', 'cold', 'rainy'] },
-      { id: 'jacket', icon: '🧥', sv: 'jacka', weather: ['rainy', 'windy', 'cold'] },
-      { id: 'winter-coat', icon: '🧥', sv: 'vinterjacka', weather: ['snowy', 'cold'] },
+      { id: 'tshirt', icon: '👕', name: { sv: 't-shirt', en: 't-shirt' }, weather: ['sunny', 'warm'] },
+      { id: 'sweater', icon: '🧥', name: { sv: 'tröja', en: 'sweater' }, weather: ['windy', 'cold', 'rainy'] },
+      { id: 'jacket', icon: '🧥', name: { sv: 'jacka', en: 'jacket' }, weather: ['rainy', 'windy', 'cold'] },
+      { id: 'winter-coat', icon: '🧥', name: { sv: 'vinterjacka', en: 'winter coat' }, weather: ['snowy', 'cold'] },
     ],
     bottom: [
-      { id: 'shorts', icon: '🩳', sv: 'shorts', weather: ['sunny', 'warm'] },
-      { id: 'pants', icon: '👖', sv: 'byxor', weather: ['rainy', 'windy', 'cold'] },
-      { id: 'snow-pants', icon: '👖', sv: 'snöbyxor', weather: ['snowy', 'cold'] },
+      { id: 'shorts', icon: '🩳', name: { sv: 'shorts', en: 'shorts' }, weather: ['sunny', 'warm'] },
+      { id: 'pants', icon: '👖', name: { sv: 'byxor', en: 'trousers' }, weather: ['rainy', 'windy', 'cold'] },
+      { id: 'snow-pants', icon: '👖', name: { sv: 'snöbyxor', en: 'snow pants' }, weather: ['snowy', 'cold'] },
     ],
     feet: [
-      { id: 'sandals', icon: '🩴', sv: 'sandaler', weather: ['sunny', 'warm'] },
-      { id: 'sneakers', icon: '👟', sv: 'sneakers', weather: ['warm', 'windy'] },
-      { id: 'rain-boots', icon: '🥾', sv: 'gummistövlar', weather: ['rainy'] },
-      { id: 'winter-boots', icon: '🥾', sv: 'vinterstövlar', weather: ['snowy', 'cold'] },
+      { id: 'sandals', icon: '🩴', name: { sv: 'sandaler', en: 'sandals' }, weather: ['sunny', 'warm'] },
+      { id: 'sneakers', icon: '👟', name: { sv: 'sneakers', en: 'sneakers' }, weather: ['warm', 'windy'] },
+      { id: 'rain-boots', icon: '🥾', name: { sv: 'gummistövlar', en: 'rain boots' }, weather: ['rainy'] },
+      { id: 'winter-boots', icon: '🥾', name: { sv: 'vinterstövlar', en: 'winter boots' }, weather: ['snowy', 'cold'] },
     ],
     accessories: [
-      { id: 'sunglasses', icon: '🕶️', sv: 'solglasögon', weather: ['sunny'] },
-      { id: 'umbrella', icon: '☂️', sv: 'paraply', weather: ['rainy'] },
-      { id: 'gloves', icon: '🧤', sv: 'vantar', weather: ['snowy', 'cold'] },
-      { id: 'scarf', icon: '🧣', sv: 'halsduk', weather: ['snowy', 'cold', 'windy'] },
-      { id: 'sunscreen', icon: '🧴', sv: 'solkräm', weather: ['sunny', 'warm'] },
+      { id: 'sunglasses', icon: '🕶️', name: { sv: 'solglasögon', en: 'sunglasses' }, weather: ['sunny'] },
+      { id: 'umbrella', icon: '☂️', name: { sv: 'paraply', en: 'umbrella' }, weather: ['rainy'] },
+      { id: 'gloves', icon: '🧤', name: { sv: 'vantar', en: 'mittens' }, weather: ['snowy', 'cold'] },
+      { id: 'scarf', icon: '🧣', name: { sv: 'halsduk', en: 'scarf' }, weather: ['snowy', 'cold', 'windy'] },
+      { id: 'sunscreen', icon: '🧴', name: { sv: 'solkräm', en: 'sunscreen' }, weather: ['sunny', 'warm'] },
     ],
   };
+
+  // Brazilian set (pt_BR) — no snow; heat, rain and mild cold
+  const BRAZIL_WEATHER: Weather[] = [
+    { id: 'sunny', icon: '☀️', temp: '30°' },
+    { id: 'warm', icon: '🌤️', temp: '26°' },
+    { id: 'rainy', icon: '🌧️', temp: '22°' },
+    { id: 'cloudy', icon: '☁️', temp: '24°' },
+    { id: 'windy', icon: '💨', temp: '20°' },
+    { id: 'cold', icon: '🥶', temp: '12°' },
+  ];
+
+  const BRAZIL_CLOTHES: Record<BodyPart, Clothing[]> = {
+    head: [
+      { id: 'cap', icon: '🧢', name: { pt_BR: 'boné' }, weather: ['sunny', 'warm', 'cloudy'] },
+      { id: 'beanie', icon: '🧶', name: { pt_BR: 'gorro' }, weather: ['cold'] },
+      { id: 'hood', icon: '🪖', name: { pt_BR: 'capuz' }, weather: ['rainy', 'windy'] },
+    ],
+    top: [
+      { id: 'tshirt', icon: '👕', name: { pt_BR: 'camiseta' }, weather: ['sunny', 'warm', 'cloudy'] },
+      { id: 'sweater', icon: '🧥', name: { pt_BR: 'moletom' }, weather: ['cold', 'windy', 'cloudy'] },
+      { id: 'jacket', icon: '🧥', name: { pt_BR: 'casaco' }, weather: ['cold', 'windy'] },
+      { id: 'raincoat', icon: '🧥', name: { pt_BR: 'capa de chuva' }, weather: ['rainy'] },
+    ],
+    bottom: [
+      { id: 'shorts', icon: '🩳', name: { pt_BR: 'bermuda' }, weather: ['sunny', 'warm', 'cloudy'] },
+      { id: 'pants', icon: '👖', name: { pt_BR: 'calça' }, weather: ['rainy', 'windy', 'cold', 'cloudy'] },
+    ],
+    feet: [
+      { id: 'sandals', icon: '🩴', name: { pt_BR: 'chinelo' }, weather: ['sunny', 'warm'] },
+      { id: 'sneakers', icon: '👟', name: { pt_BR: 'tênis' }, weather: ['warm', 'cloudy', 'windy', 'cold'] },
+      { id: 'rain-boots', icon: '🥾', name: { pt_BR: 'galocha' }, weather: ['rainy'] },
+    ],
+    accessories: [
+      { id: 'sunglasses', icon: '🕶️', name: { pt_BR: 'óculos de sol' }, weather: ['sunny'] },
+      { id: 'umbrella', icon: '☂️', name: { pt_BR: 'guarda-chuva' }, weather: ['rainy'] },
+      { id: 'sunscreen', icon: '🧴', name: { pt_BR: 'protetor solar' }, weather: ['sunny', 'warm'] },
+      { id: 'scarf', icon: '🧣', name: { pt_BR: 'cachecol' }, weather: ['cold', 'windy'] },
+      { id: 'water-bottle', icon: '🥤', name: { pt_BR: 'garrafinha de água' }, weather: ['sunny', 'warm', 'cloudy'] },
+    ],
+  };
+
+  const WEATHER_TYPES = $derived(pick({ sv: NORDIC_WEATHER, en: NORDIC_WEATHER, pt_BR: BRAZIL_WEATHER }, $locale));
+  const CLOTHES = $derived(pick({ sv: NORDIC_CLOTHES, en: NORDIC_CLOTHES, pt_BR: BRAZIL_CLOTHES }, $locale));
+  const itemName = (item: Clothing) => pick(item.name, $locale);
 
   const BODY_PARTS: BodyPart[] = ['head', 'top', 'bottom', 'feet', 'accessories'];
 
@@ -83,7 +128,7 @@
     const correct = item.weather.includes(weather.id);
     feedbackCorrect = correct;
     showFeedback = true;
-    speak(correct ? `${item.sv}! ${$t('clothesChooser.goodChoice')}` : `${item.sv}. ${$t('clothesChooser.thinkAgain')}`);
+    speak(correct ? `${itemName(item)}! ${$t('clothesChooser.goodChoice')}` : `${itemName(item)}. ${$t('clothesChooser.thinkAgain')}`);
     if (correct) {
       setTimeout(() => {
         showFeedback = false;
@@ -101,8 +146,14 @@
     showFeedback = false;
   }
 
+  // Restart the flow when the language changes (not on first run)
+  let lastLocale = $locale;
+  $effect(() => {
+    if ($locale !== lastLocale) { lastLocale = $locale; restart(); }
+  });
+
   function speakSummary() {
-    const parts = Object.values(chosen).filter((item): item is Clothing => Boolean(item)).map(item => item.sv).join(', ');
+    const parts = Object.values(chosen).filter((item): item is Clothing => Boolean(item)).map(item => itemName(item)).join(', ');
     speak(`${$t('clothesChooser.youChose')}: ${parts}`);
   }
 </script>
@@ -114,7 +165,7 @@
   <main class="content">
 
   <div class="page-title">
-    {#if step > 0}<button class="sub-back" onclick={() => { step--; showFeedback = false }} aria-label="Tillbaka">←</button>{/if}
+    {#if step > 0}<button class="sub-back" onclick={() => { step--; showFeedback = false }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>👔 {$t('clothesChooser.title')}</h1>
 
   </div>
@@ -154,7 +205,7 @@
             disabled={showFeedback}
           >
             <span class="clothes-icon">{item.icon}</span>
-            <span class="clothes-name">{item.sv}</span>
+            <span class="clothes-name">{itemName(item)}</span>
           </button>
         {/each}
       </div>
@@ -168,7 +219,7 @@
             {#if item}
               <div class="outfit-item">
                 <span class="outfit-icon">{item.icon}</span>
-                <span class="outfit-label">{item.sv}</span>
+                <span class="outfit-label">{itemName(item)}</span>
               </div>
             {/if}
           {/each}

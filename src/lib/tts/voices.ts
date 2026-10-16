@@ -32,8 +32,26 @@ export const VOICES_EN: VoiceOption[] = [
 	{ id: 'en_US-lessac-high', name: 'Lessac (HD)', lang: 'en', gender: 'female', quality: 'high', sizeMb: 30 },
 ];
 
+export const DEFAULT_VOICE_PT = 'pt_BR-cadu-medium';
+
+// Brazilian Portuguese Piper voices (rhasspy/piper-voices, CC0 datasets). Gender: model cards don't state it —
+// set after listening (see plan Task 27).
+export const VOICES_PT: VoiceOption[] = [
+	{ id: 'pt_BR-faber-medium', name: 'Faber', lang: 'pt_BR', gender: 'neutral', quality: 'medium', sizeMb: 63 },
+	{ id: 'pt_BR-cadu-medium', name: 'Cadu', lang: 'pt_BR', gender: 'neutral', quality: 'medium', sizeMb: 63, description: 'Cadu — voz padrão em português do Brasil' },
+	{ id: 'pt_BR-jeff-medium', name: 'Jeff', lang: 'pt_BR', gender: 'neutral', quality: 'medium', sizeMb: 63 },
+];
+
+/**
+ * Voices taken out of the lists. pt_BR-edresson-low: its phoneme map has no nasal tilde (id 141), so every phrase
+ * with a nasal vowel failed in Piper and fell back to Web Speech. A stored choice falls back to the default and a
+ * downloaded copy is deleted on init (index.ts).
+ */
+export const RETIRED_VOICES = ['pt_BR-edresson-low'];
+
 export function voicesForLang(lang: string): VoiceOption[] {
 	if (lang === 'sv') return VOICES_SV;
+	if (lang === 'pt_BR') return VOICES_PT;
 	return VOICES_EN;
 }
 
@@ -45,6 +63,11 @@ export function voicesForLang(lang: string): VoiceOption[] {
 export const EXTRA_PATH_MAP: Record<string, string> = {
 	'sv_SE-lisa-medium': 'sv/sv_SE/lisa/medium/sv_SE-lisa-medium.onnx',
 	'sv_SE-alma-medium': 'sv/sv_SE/alma/medium/sv_SE-alma-medium.onnx',
+	'pt_BR-faber-medium': 'pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx',
+	// retired (RETIRED_VOICES): kept so a downloaded copy can still be found and deleted
+	'pt_BR-edresson-low': 'pt/pt_BR/edresson/low/pt_BR-edresson-low.onnx',
+	'pt_BR-cadu-medium': 'pt/pt_BR/cadu/medium/pt_BR-cadu-medium.onnx',
+	'pt_BR-jeff-medium': 'pt/pt_BR/jeff/medium/pt_BR-jeff-medium.onnx',
 };
 
 /**
@@ -61,5 +84,17 @@ export const CUSTOM_VOICE_URLS: Record<string, { model: string; config: string }
 	'sv_SE-lisa-medium': {
 		model: 'https://huggingface.co/rhasspy/piper-voices/resolve/main/sv/sv_SE/lisa/medium/sv_SE-lisa-medium.onnx',
 		config: 'https://huggingface.co/rhasspy/piper-voices/resolve/main/sv/sv_SE/lisa/medium/sv_SE-lisa-medium.onnx.json',
+	},
+	'pt_BR-faber-medium': {
+		model: 'https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx',
+		config: 'https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json',
+	},
+	'pt_BR-cadu-medium': {
+		model: 'https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/cadu/medium/pt_BR-cadu-medium.onnx',
+		config: 'https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/cadu/medium/pt_BR-cadu-medium.onnx.json',
+	},
+	'pt_BR-jeff-medium': {
+		model: 'https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/jeff/medium/pt_BR-jeff-medium.onnx',
+		config: 'https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/jeff/medium/pt_BR-jeff-medium.onnx.json',
 	},
 };

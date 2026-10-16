@@ -2,9 +2,12 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t, locale } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
-  import { get } from 'svelte/store';
+  import { getAudioContext as sharedAudioContext } from '$lib/audio';
+
+  /** sv / en / pt_BR text for the active locale (reactive in template and handlers) */
+  const L = (sv: string, en: string, pt: string): string => pick({ sv, en, pt_BR: pt }, $locale);
 
   // ── State ──
   let activeTab = $state<'duration' | 'estimation' | 'sequence' | 'vocabulary' | 'comparison' | 'daytimeline'>('duration');
@@ -15,21 +18,22 @@
     key: string;
     labelEn: string;
     labelSv: string;
+    labelPt: string;
     minutes: number;
     pictoId: number;
   }
 
   const DURATION_ACTIVITIES: DurationActivity[] = [
-    { key: 'brush_teeth', labelEn: 'Brush teeth', labelSv: 'Borsta tänderna', minutes: 2, pictoId: 2326 },
-    { key: 'wash_hands', labelEn: 'Wash hands', labelSv: 'Tvätta händerna', minutes: 1, pictoId: 34846 },
-    { key: 'eat_breakfast', labelEn: 'Eat breakfast', labelSv: 'Äta frukost', minutes: 15, pictoId: 4626 },
-    { key: 'eat_lunch', labelEn: 'Eat lunch', labelSv: 'Äta lunch', minutes: 30, pictoId: 4611 },
-    { key: 'shower', labelEn: 'Take a shower', labelSv: 'Duscha', minutes: 10, pictoId: 26803 },
-    { key: 'homework', labelEn: 'Do homework', labelSv: 'Göra läxor', minutes: 20, pictoId: 11228 },
-    { key: 'walk', labelEn: 'Take a walk', labelSv: 'Gå en promenad', minutes: 15, pictoId: 29951 },
-    { key: 'read_book', labelEn: 'Read a book', labelSv: 'Läsa en bok', minutes: 20, pictoId: 7141 },
-    { key: 'get_dressed', labelEn: 'Get dressed', labelSv: 'Klä på sig', minutes: 5, pictoId: 6627 },
-    { key: 'brush_hair', labelEn: 'Brush hair', labelSv: 'Borsta håret', minutes: 2, pictoId: 21529 },
+    { key: 'brush_teeth', labelEn: 'Brush teeth', labelSv: 'Borsta tänderna', labelPt: 'Escovar os dentes', minutes: 2, pictoId: 2326 },
+    { key: 'wash_hands', labelEn: 'Wash hands', labelSv: 'Tvätta händerna', labelPt: 'Lavar as mãos', minutes: 1, pictoId: 34846 },
+    { key: 'eat_breakfast', labelEn: 'Eat breakfast', labelSv: 'Äta frukost', labelPt: 'Tomar café da manhã', minutes: 15, pictoId: 4626 },
+    { key: 'eat_lunch', labelEn: 'Eat lunch', labelSv: 'Äta lunch', labelPt: 'Almoçar', minutes: 30, pictoId: 4611 },
+    { key: 'shower', labelEn: 'Take a shower', labelSv: 'Duscha', labelPt: 'Tomar banho', minutes: 10, pictoId: 26803 },
+    { key: 'homework', labelEn: 'Do homework', labelSv: 'Göra läxor', labelPt: 'Fazer a lição de casa', minutes: 20, pictoId: 11228 },
+    { key: 'walk', labelEn: 'Take a walk', labelSv: 'Gå en promenad', labelPt: 'Dar um passeio', minutes: 15, pictoId: 29951 },
+    { key: 'read_book', labelEn: 'Read a book', labelSv: 'Läsa en bok', labelPt: 'Ler um livro', minutes: 20, pictoId: 7141 },
+    { key: 'get_dressed', labelEn: 'Get dressed', labelSv: 'Klä på sig', labelPt: 'Se vestir', minutes: 5, pictoId: 6627 },
+    { key: 'brush_hair', labelEn: 'Brush hair', labelSv: 'Borsta håret', labelPt: 'Pentear o cabelo', minutes: 2, pictoId: 21529 },
   ];
 
   let durationSelected = $state<DurationActivity | null>(null);
@@ -48,7 +52,7 @@
   }
 
   function activityLabel(a: DurationActivity): string {
-    return get(locale) === 'sv' ? a.labelSv : a.labelEn;
+    return L(a.labelSv, a.labelEn, a.labelPt);
   }
 
   function startDuration(activity: DurationActivity) {
@@ -58,9 +62,10 @@
     durationRunning = true;
     durationFinished = false;
     const label = activityLabel(activity);
-    const minText = get(locale) === 'sv'
-      ? `${activity.minutes} minuter = lika lång tid som att ${label.toLowerCase()}`
-      : `${activity.minutes} minutes = the same time as ${label.toLowerCase()}`;
+    const minText = L(
+      `${activity.minutes} minuter = lika lång tid som att ${label.toLowerCase()}`,
+      `${activity.minutes} minutes = the same time as ${label.toLowerCase()}`,
+      `${activity.minutes} ${activity.minutes === 1 ? 'minuto' : 'minutos'} = o tempo de ${label.toLowerCase()}`);
     speak(minText);
     durationInterval = setInterval(() => {
       durationRemaining--;
@@ -71,7 +76,7 @@
         clearInterval(durationInterval!);
         playChime();
         stars++;
-        speak(get(locale) === 'sv' ? 'Tiden är slut! Bra jobbat!' : "Time's up! Great job!");
+        speak(L('Tiden är slut! Bra jobbat!', "Time's up! Great job!", 'O tempo acabou! Muito bem!'));
       }
     }, 1000);
   }
@@ -99,9 +104,10 @@
     estimationRunning = true;
     estimationStartTime = Date.now();
     estimationElapsed = 0;
-    speak(get(locale) === 'sv'
-      ? `Tryck stopp när du tror det har gått ${estimationTarget} sekunder`
-      : `Press stop when you think ${estimationTarget} seconds have passed`);
+    speak(L(
+      `Tryck stopp när du tror det har gått ${estimationTarget} sekunder`,
+      `Press stop when you think ${estimationTarget} seconds have passed`,
+      `Aperte PARAR quando achar que já passaram ${estimationTarget} segundos`));
     estimationInterval = setInterval(() => {
       estimationElapsed = Math.floor((Date.now() - estimationStartTime) / 1000);
     }, 100);
@@ -117,11 +123,11 @@
 
     if (diff <= 2) {
       stars++;
-      speak(get(locale) === 'sv' ? `Fantastiskt! Du gissade ${actual} sekunder. Nästan perfekt!` : `Amazing! You guessed ${actual} seconds. Almost perfect!`);
+      speak(L(`Fantastiskt! Du gissade ${actual} sekunder. Nästan perfekt!`, `Amazing! You guessed ${actual} seconds. Almost perfect!`, `Incrível! Você chutou ${actual} segundos. Quase perfeito!`));
     } else if (diff <= 5) {
-      speak(get(locale) === 'sv' ? `Bra försök! Du gissade ${actual} sekunder. Bara ${diff} sekunder fel.` : `Good try! You guessed ${actual} seconds. Only ${diff} seconds off.`);
+      speak(L(`Bra försök! Du gissade ${actual} sekunder. Bara ${diff} sekunder fel.`, `Good try! You guessed ${actual} seconds. Only ${diff} seconds off.`, `Boa tentativa! Você chutou ${actual} segundos. Errou por só ${diff} segundos.`));
     } else {
-      speak(get(locale) === 'sv' ? `Du gissade ${actual} sekunder. Det var ${diff} sekunder fel. Försök igen!` : `You guessed ${actual} seconds. That was ${diff} seconds off. Try again!`);
+      speak(L(`Du gissade ${actual} sekunder. Det var ${diff} sekunder fel. Försök igen!`, `You guessed ${actual} seconds. That was ${diff} seconds off. Try again!`, `Você chutou ${actual} segundos. Errou por ${diff} segundos. Tente de novo!`));
     }
   }
 
@@ -129,47 +135,52 @@
   interface SequenceItem {
     labelEn: string;
     labelSv: string;
+    labelPt: string;
     pictoId: number;
     order: number;
   }
 
-  type SequenceSet = { titleEn: string; titleSv: string; items: SequenceItem[] };
+  type SequenceSet = { titleEn: string; titleSv: string; titlePt: string; items: SequenceItem[] };
 
   const SEQUENCE_SETS: SequenceSet[] = [
     {
       titleEn: 'Yesterday, Today, Tomorrow',
       titleSv: 'Igår, Idag, Imorgon',
+      titlePt: 'Ontem, Hoje, Amanhã',
       items: [
-        { labelEn: 'Yesterday', labelSv: 'Igår', pictoId: 38279, order: 1 },
-        { labelEn: 'Today', labelSv: 'Idag', pictoId: 7131, order: 2 },
-        { labelEn: 'Tomorrow', labelSv: 'Imorgon', pictoId: 38278, order: 3 },
+        { labelEn: 'Yesterday', labelSv: 'Igår', labelPt: 'Ontem', pictoId: 38279, order: 1 },
+        { labelEn: 'Today', labelSv: 'Idag', labelPt: 'Hoje', pictoId: 7131, order: 2 },
+        { labelEn: 'Tomorrow', labelSv: 'Imorgon', labelPt: 'Amanhã', pictoId: 38278, order: 3 },
       ]
     },
     {
       titleEn: 'Morning, Afternoon, Evening',
       titleSv: 'Morgon, Eftermiddag, Kväll',
+      titlePt: 'Manhã, Tarde, Noite',
       items: [
-        { labelEn: 'Morning', labelSv: 'Morgon', pictoId: 25704, order: 1 },
-        { labelEn: 'Afternoon', labelSv: 'Eftermiddag', pictoId: 7268, order: 2 },
-        { labelEn: 'Evening', labelSv: 'Kväll', pictoId: 38567, order: 3 },
+        { labelEn: 'Morning', labelSv: 'Morgon', labelPt: 'Manhã', pictoId: 25704, order: 1 },
+        { labelEn: 'Afternoon', labelSv: 'Eftermiddag', labelPt: 'Tarde', pictoId: 7268, order: 2 },
+        { labelEn: 'Evening', labelSv: 'Kväll', labelPt: 'Noite', pictoId: 38567, order: 3 },
       ]
     },
     {
       titleEn: 'Before, Now, After',
       titleSv: 'Före, Nu, Efter',
+      titlePt: 'Antes, Agora, Depois',
       items: [
-        { labelEn: 'Before', labelSv: 'Före', pictoId: 32745, order: 1 },
-        { labelEn: 'Now', labelSv: 'Nu', pictoId: 32747, order: 2 },
-        { labelEn: 'After', labelSv: 'Efter', pictoId: 32749, order: 3 },
+        { labelEn: 'Before', labelSv: 'Före', labelPt: 'Antes', pictoId: 32745, order: 1 },
+        { labelEn: 'Now', labelSv: 'Nu', labelPt: 'Agora', pictoId: 32747, order: 2 },
+        { labelEn: 'After', labelSv: 'Efter', labelPt: 'Depois', pictoId: 32749, order: 3 },
       ]
     },
     {
       titleEn: 'Wake up → Get dressed → Eat breakfast',
       titleSv: 'Vakna → Klä på sig → Äta frukost',
+      titlePt: 'Acordar → Se vestir → Tomar café da manhã',
       items: [
-        { labelEn: 'Wake up', labelSv: 'Vakna', pictoId: 8989, order: 1 },
-        { labelEn: 'Get dressed', labelSv: 'Klä på sig', pictoId: 6627, order: 2 },
-        { labelEn: 'Eat breakfast', labelSv: 'Äta frukost', pictoId: 4626, order: 3 },
+        { labelEn: 'Wake up', labelSv: 'Vakna', labelPt: 'Acordar', pictoId: 8989, order: 1 },
+        { labelEn: 'Get dressed', labelSv: 'Klä på sig', labelPt: 'Se vestir', pictoId: 6627, order: 2 },
+        { labelEn: 'Eat breakfast', labelSv: 'Äta frukost', labelPt: 'Tomar café da manhã', pictoId: 4626, order: 3 },
       ]
     },
   ];
@@ -195,8 +206,8 @@
     seqShuffled = shuffleArray(currentSeqSet.items);
     seqPlaced = currentSeqSet.items.map(() => null);
     seqCompleted = false;
-    const title = get(locale) === 'sv' ? currentSeqSet.titleSv : currentSeqSet.titleEn;
-    speak(get(locale) === 'sv' ? `Sortera i rätt ordning: ${title}` : `Sort in the right order: ${title}`);
+    const title = L(currentSeqSet.titleSv, currentSeqSet.titleEn, currentSeqSet.titlePt);
+    speak(L(`Sortera i rätt ordning: ${title}`, `Sort in the right order: ${title}`, `Coloque na ordem certa: ${title}`));
   }
 
   function handleSeqDragStart(item: SequenceItem) {
@@ -220,7 +231,7 @@
       seqCompleted = true;
       stars++;
       playChime();
-      speak(get(locale) === 'sv' ? 'Rätt ordning! Bra jobbat!' : 'Correct order! Great job!');
+      speak(L('Rätt ordning! Bra jobbat!', 'Correct order! Great job!', 'Ordem certa! Muito bem!'));
     }
   }
 
@@ -230,7 +241,7 @@
       seqDragItem = null;
     } else {
       seqDragItem = item;
-      speak(get(locale) === 'sv' ? item.labelSv : item.labelEn);
+      speak(L(item.labelSv, item.labelEn, item.labelPt));
     }
   }
 
@@ -250,26 +261,28 @@
   interface VocabCard {
     wordEn: string;
     wordSv: string;
+    wordPt: string;
     descEn: string;
     descSv: string;
+    descPt: string;
     pictoId: number;
   }
 
   const VOCAB_CARDS: VocabCard[] = [
-    { wordEn: 'Soon', wordSv: 'Snart', descEn: 'Something will happen in a little while', descSv: 'Något händer om en liten stund', pictoId: 22633 },
-    { wordEn: 'Later', wordSv: 'Sedan', descEn: 'Something will happen after this', descSv: 'Något händer efter det här', pictoId: 32749 },
-    { wordEn: 'In a moment', wordSv: 'Strax', descEn: 'Very soon, almost now', descSv: 'Mycket snart, nästan nu', pictoId: 22633 },
-    { wordEn: 'In a while', wordSv: 'Om en stund', descEn: 'After some time has passed', descSv: 'Efter att en tid har gått', pictoId: 39843 },
-    { wordEn: 'Yesterday', wordSv: 'Igår', descEn: 'The day before today', descSv: 'Dagen före idag', pictoId: 38279 },
-    { wordEn: 'Tomorrow', wordSv: 'Imorgon', descEn: 'The day after today', descSv: 'Dagen efter idag', pictoId: 38278 },
-    { wordEn: 'Before', wordSv: 'Före', descEn: 'Something that happened first', descSv: 'Något som hände först', pictoId: 32745 },
-    { wordEn: 'After', wordSv: 'Efter', descEn: 'Something that happens next', descSv: 'Något som händer sedan', pictoId: 32749 },
-    { wordEn: 'Now', wordSv: 'Nu', descEn: 'Happening right at this moment', descSv: 'Händer just i detta ögonblick', pictoId: 32747 },
-    { wordEn: 'Fast', wordSv: 'Snabbt', descEn: 'When something takes a short time', descSv: 'När något tar kort tid', pictoId: 5306 },
-    { wordEn: 'Slow', wordSv: 'Långsamt', descEn: 'When something takes a long time', descSv: 'När något tar lång tid', pictoId: 4676 },
-    { wordEn: 'Wait', wordSv: 'Vänta', descEn: 'Stay here until it is time', descSv: 'Stanna här tills det är dags', pictoId: 36914 },
-    { wordEn: 'Long time', wordSv: 'Lång tid', descEn: 'Many minutes or hours', descSv: 'Många minuter eller timmar', pictoId: 37678 },
-    { wordEn: 'Short time', wordSv: 'Kort tid', descEn: 'Only a few minutes', descSv: 'Bara några minuter', pictoId: 37661 },
+    { wordEn: 'Soon', wordSv: 'Snart', wordPt: 'Daqui a pouco', descEn: 'Something will happen in a little while', descSv: 'Något händer om en liten stund', descPt: 'Algo vai acontecer em pouco tempo', pictoId: 22633 },
+    { wordEn: 'Later', wordSv: 'Sedan', wordPt: 'Depois', descEn: 'Something will happen after this', descSv: 'Något händer efter det här', descPt: 'Algo vai acontecer depois disso', pictoId: 32749 },
+    { wordEn: 'In a moment', wordSv: 'Strax', wordPt: 'Já já', descEn: 'Very soon, almost now', descSv: 'Mycket snart, nästan nu', descPt: 'Muito em breve, quase agora', pictoId: 22633 },
+    { wordEn: 'In a while', wordSv: 'Om en stund', wordPt: 'Mais tarde', descEn: 'After some time has passed', descSv: 'Efter att en tid har gått', descPt: 'Depois que passar um tempo', pictoId: 39843 },
+    { wordEn: 'Yesterday', wordSv: 'Igår', wordPt: 'Ontem', descEn: 'The day before today', descSv: 'Dagen före idag', descPt: 'O dia antes de hoje', pictoId: 38279 },
+    { wordEn: 'Tomorrow', wordSv: 'Imorgon', wordPt: 'Amanhã', descEn: 'The day after today', descSv: 'Dagen efter idag', descPt: 'O dia depois de hoje', pictoId: 38278 },
+    { wordEn: 'Before', wordSv: 'Före', wordPt: 'Antes', descEn: 'Something that happened first', descSv: 'Något som hände först', descPt: 'Algo que aconteceu primeiro', pictoId: 32745 },
+    { wordEn: 'After', wordSv: 'Efter', wordPt: 'Depois', descEn: 'Something that happens next', descSv: 'Något som händer sedan', descPt: 'Algo que acontece em seguida', pictoId: 32749 },
+    { wordEn: 'Now', wordSv: 'Nu', wordPt: 'Agora', descEn: 'Happening right at this moment', descSv: 'Händer just i detta ögonblick', descPt: 'Acontecendo neste momento', pictoId: 32747 },
+    { wordEn: 'Fast', wordSv: 'Snabbt', wordPt: 'Rápido', descEn: 'When something takes a short time', descSv: 'När något tar kort tid', descPt: 'Quando algo leva pouco tempo', pictoId: 5306 },
+    { wordEn: 'Slow', wordSv: 'Långsamt', wordPt: 'Devagar', descEn: 'When something takes a long time', descSv: 'När något tar lång tid', descPt: 'Quando algo leva muito tempo', pictoId: 4676 },
+    { wordEn: 'Wait', wordSv: 'Vänta', wordPt: 'Esperar', descEn: 'Stay here until it is time', descSv: 'Stanna här tills det är dags', descPt: 'Fique aqui até chegar a hora', pictoId: 36914 },
+    { wordEn: 'Long time', wordSv: 'Lång tid', wordPt: 'Muito tempo', descEn: 'Many minutes or hours', descSv: 'Många minuter eller timmar', descPt: 'Muitos minutos ou horas', pictoId: 37678 },
+    { wordEn: 'Short time', wordSv: 'Kort tid', wordPt: 'Pouco tempo', descEn: 'Only a few minutes', descSv: 'Bara några minuter', descPt: 'Só alguns minutos', pictoId: 37661 },
   ];
 
   let vocabIndex = $state(0);
@@ -280,53 +293,53 @@
     vocabFlipped = false;
     vocabIndex = (vocabIndex + 1) % VOCAB_CARDS.length;
     const card = VOCAB_CARDS[vocabIndex];
-    speak(get(locale) === 'sv' ? card.wordSv : card.wordEn);
+    speak(L(card.wordSv, card.wordEn, card.wordPt));
   }
 
   function prevVocab() {
     vocabFlipped = false;
     vocabIndex = (vocabIndex - 1 + VOCAB_CARDS.length) % VOCAB_CARDS.length;
     const card = VOCAB_CARDS[vocabIndex];
-    speak(get(locale) === 'sv' ? card.wordSv : card.wordEn);
+    speak(L(card.wordSv, card.wordEn, card.wordPt));
   }
 
   function flipVocab() {
     vocabFlipped = !vocabFlipped;
     if (vocabFlipped) {
-      speak(get(locale) === 'sv' ? currentVocab.descSv : currentVocab.descEn);
+      speak(L(currentVocab.descSv, currentVocab.descEn, currentVocab.descPt));
     }
   }
 
   // ── Tab 5: Duration Comparison ──
   interface ComparisonPair {
-    a: { labelEn: string; labelSv: string; minutes: number; pictoId: number };
-    b: { labelEn: string; labelSv: string; minutes: number; pictoId: number };
+    a: { labelEn: string; labelSv: string; labelPt: string; minutes: number; pictoId: number };
+    b: { labelEn: string; labelSv: string; labelPt: string; minutes: number; pictoId: number };
   }
 
   const COMPARISON_PAIRS: ComparisonPair[] = [
     {
-      a: { labelEn: 'Brush teeth', labelSv: 'Borsta tänderna', minutes: 2, pictoId: 2326 },
-      b: { labelEn: 'Eat dinner', labelSv: 'Äta middag', minutes: 30, pictoId: 4611 },
+      a: { labelEn: 'Brush teeth', labelSv: 'Borsta tänderna', labelPt: 'Escovar os dentes', minutes: 2, pictoId: 2326 },
+      b: { labelEn: 'Eat dinner', labelSv: 'Äta middag', labelPt: 'Jantar', minutes: 30, pictoId: 4611 },
     },
     {
-      a: { labelEn: 'Wash hands', labelSv: 'Tvätta händerna', minutes: 1, pictoId: 34846 },
-      b: { labelEn: 'Take a shower', labelSv: 'Duscha', minutes: 10, pictoId: 26803 },
+      a: { labelEn: 'Wash hands', labelSv: 'Tvätta händerna', labelPt: 'Lavar as mãos', minutes: 1, pictoId: 34846 },
+      b: { labelEn: 'Take a shower', labelSv: 'Duscha', labelPt: 'Tomar banho', minutes: 10, pictoId: 26803 },
     },
     {
-      a: { labelEn: 'Get dressed', labelSv: 'Klä på sig', minutes: 5, pictoId: 6627 },
-      b: { labelEn: 'Do homework', labelSv: 'Göra läxor', minutes: 20, pictoId: 11228 },
+      a: { labelEn: 'Get dressed', labelSv: 'Klä på sig', labelPt: 'Se vestir', minutes: 5, pictoId: 6627 },
+      b: { labelEn: 'Do homework', labelSv: 'Göra läxor', labelPt: 'Fazer a lição de casa', minutes: 20, pictoId: 11228 },
     },
     {
-      a: { labelEn: 'Eat a snack', labelSv: 'Äta mellanmål', minutes: 5, pictoId: 4694 },
-      b: { labelEn: 'Go for a walk', labelSv: 'Gå en promenad', minutes: 15, pictoId: 29951 },
+      a: { labelEn: 'Eat a snack', labelSv: 'Äta mellanmål', labelPt: 'Fazer um lanche', minutes: 5, pictoId: 4694 },
+      b: { labelEn: 'Go for a walk', labelSv: 'Gå en promenad', labelPt: 'Dar um passeio', minutes: 15, pictoId: 29951 },
     },
     {
-      a: { labelEn: 'Brush hair', labelSv: 'Borsta håret', minutes: 2, pictoId: 21529 },
-      b: { labelEn: 'Read a book', labelSv: 'Läsa en bok', minutes: 20, pictoId: 7141 },
+      a: { labelEn: 'Brush hair', labelSv: 'Borsta håret', labelPt: 'Pentear o cabelo', minutes: 2, pictoId: 21529 },
+      b: { labelEn: 'Read a book', labelSv: 'Läsa en bok', labelPt: 'Ler um livro', minutes: 20, pictoId: 7141 },
     },
     {
-      a: { labelEn: 'Sing a song', labelSv: 'Sjunga en sång', minutes: 3, pictoId: 6960 },
-      b: { labelEn: 'Cook food', labelSv: 'Laga mat', minutes: 30, pictoId: 30526 },
+      a: { labelEn: 'Sing a song', labelSv: 'Sjunga en sång', labelPt: 'Cantar uma música', minutes: 3, pictoId: 6960 },
+      b: { labelEn: 'Cook food', labelSv: 'Laga mat', labelPt: 'Cozinhar', minutes: 30, pictoId: 30526 },
     },
   ];
 
@@ -342,9 +355,9 @@
     if (compCorrect) {
       stars++;
       playChime();
-      speak(get(locale) === 'sv' ? 'Rätt! Bra jobbat!' : 'Correct! Great job!');
+      speak(L('Rätt! Bra jobbat!', 'Correct! Great job!', 'Certo! Muito bem!'));
     } else {
-      speak(get(locale) === 'sv' ? 'Inte riktigt. Försök igen!' : 'Not quite. Try again!');
+      speak(L('Inte riktigt. Försök igen!', 'Not quite. Try again!', 'Quase. Tente de novo!'));
     }
   }
 
@@ -353,9 +366,9 @@
     compCorrect = null;
     compIndex = (compIndex + 1) % COMPARISON_PAIRS.length;
     const pair = COMPARISON_PAIRS[compIndex];
-    const aLabel = get(locale) === 'sv' ? pair.a.labelSv : pair.a.labelEn;
-    const bLabel = get(locale) === 'sv' ? pair.b.labelSv : pair.b.labelEn;
-    speak(get(locale) === 'sv' ? `Vad tar längst tid? ${aLabel} eller ${bLabel}?` : `What takes longer? ${aLabel} or ${bLabel}?`);
+    const aLabel = L(pair.a.labelSv, pair.a.labelEn, pair.a.labelPt);
+    const bLabel = L(pair.b.labelSv, pair.b.labelEn, pair.b.labelPt);
+    speak(L(`Vad tar längst tid? ${aLabel} eller ${bLabel}?`, `What takes longer? ${aLabel} or ${bLabel}?`, `O que demora mais? ${aLabel} ou ${bLabel}?`));
   }
 
   // ── Tab 6: Progress Over Day ──
@@ -363,37 +376,39 @@
     hour: number;
     labelEn: string;
     labelSv: string;
+    labelPt: string;
     pictoId: number;
     color: string;
   }
 
   const DAY_EVENTS: DayEvent[] = [
-    { hour: 7, labelEn: 'Wake up', labelSv: 'Vakna', pictoId: 8989, color: '#F1C40F' },
-    { hour: 8, labelEn: 'Breakfast', labelSv: 'Frukost', pictoId: 4626, color: '#E67E22' },
-    { hour: 9, labelEn: 'School', labelSv: 'Skola', pictoId: 32446, color: '#3498DB' },
-    { hour: 12, labelEn: 'Lunch', labelSv: 'Lunch', pictoId: 4611, color: '#27AE60' },
-    { hour: 13, labelEn: 'Play', labelSv: 'Leka', pictoId: 23392, color: '#E74C3C' },
-    { hour: 15, labelEn: 'Snack', labelSv: 'Mellanmål', pictoId: 4694, color: '#E67E22' },
-    { hour: 16, labelEn: 'Homework', labelSv: 'Läxor', pictoId: 11228, color: '#9B59B6' },
-    { hour: 17, labelEn: 'Dinner', labelSv: 'Middag', pictoId: 4611, color: '#27AE60' },
-    { hour: 18, labelEn: 'TV / Play', labelSv: 'TV / Leka', pictoId: 25498, color: '#E74C3C' },
-    { hour: 19, labelEn: 'Bath', labelSv: 'Bad', pictoId: 2272, color: '#3498DB' },
-    { hour: 20, labelEn: 'Go to bed', labelSv: 'Lägga sig', pictoId: 6027, color: '#8E44AD' },
+    { hour: 7, labelEn: 'Wake up', labelSv: 'Vakna', labelPt: 'Acordar', pictoId: 8989, color: '#F1C40F' },
+    { hour: 8, labelEn: 'Breakfast', labelSv: 'Frukost', labelPt: 'Café da manhã', pictoId: 4626, color: '#E67E22' },
+    { hour: 9, labelEn: 'School', labelSv: 'Skola', labelPt: 'Escola', pictoId: 32446, color: '#3498DB' },
+    { hour: 12, labelEn: 'Lunch', labelSv: 'Lunch', labelPt: 'Almoço', pictoId: 4611, color: '#27AE60' },
+    { hour: 13, labelEn: 'Play', labelSv: 'Leka', labelPt: 'Brincar', pictoId: 23392, color: '#E74C3C' },
+    { hour: 15, labelEn: 'Snack', labelSv: 'Mellanmål', labelPt: 'Lanche', pictoId: 4694, color: '#E67E22' },
+    { hour: 16, labelEn: 'Homework', labelSv: 'Läxor', labelPt: 'Lição de casa', pictoId: 11228, color: '#9B59B6' },
+    { hour: 17, labelEn: 'Dinner', labelSv: 'Middag', labelPt: 'Jantar', pictoId: 4611, color: '#27AE60' },
+    { hour: 18, labelEn: 'TV / Play', labelSv: 'TV / Leka', labelPt: 'TV / Brincar', pictoId: 25498, color: '#E74C3C' },
+    { hour: 19, labelEn: 'Bath', labelSv: 'Bad', labelPt: 'Banho', pictoId: 2272, color: '#3498DB' },
+    { hour: 20, labelEn: 'Go to bed', labelSv: 'Lägga sig', labelPt: 'Ir dormir', pictoId: 6027, color: '#8E44AD' },
   ];
 
   let dayHighlight = $state<number | null>(null);
 
   function speakDayEvent(event: DayEvent) {
     dayHighlight = event.hour;
-    const label = get(locale) === 'sv' ? event.labelSv : event.labelEn;
+    const label = L(event.labelSv, event.labelEn, event.labelPt);
     const timeStr = `${event.hour}:00`;
-    speak(get(locale) === 'sv' ? `Klockan ${timeStr}: ${label}` : `At ${timeStr}: ${label}`);
+    speak(L(`Klockan ${timeStr}: ${label}`, `At ${timeStr}: ${label}`, `Às ${timeStr}: ${label}`));
   }
 
   // ── Shared ──
   function playChime() {
     try {
-      const ctx = new AudioContext();
+      const ctx = sharedAudioContext();
+      if (!ctx) return;
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.connect(gain);
@@ -585,7 +600,7 @@
         <div class="seq-picker">
           {#each SEQUENCE_SETS as set, i}
             <button class="preset-btn" class:active={seqSetIndex === i} onclick={() => { seqSetIndex = i; initSequence(); }}>
-              {get(locale) === 'sv' ? set.titleSv : set.titleEn}
+              {L(set.titleSv, set.titleEn, set.titlePt)}
             </button>
           {/each}
         </div>
@@ -602,8 +617,8 @@
               ondrop={() => handleSeqDrop(i)}
             >
               {#if item}
-                <img src={pictoUrl(item.pictoId)} alt={get(locale) === 'sv' ? item.labelSv : item.labelEn} width="64" height="64" />
-                <span>{get(locale) === 'sv' ? item.labelSv : item.labelEn}</span>
+                <img src={pictoUrl(item.pictoId)} alt={L(item.labelSv, item.labelEn, item.labelPt)} width="64" height="64" />
+                <span>{L(item.labelSv, item.labelEn, item.labelPt)}</span>
               {:else}
                 <span class="slot-number">{i + 1}</span>
               {/if}
@@ -622,8 +637,8 @@
                 ondragstart={() => handleSeqDragStart(item)}
                 onclick={() => handleSeqClick(item)}
               >
-                <img src={pictoUrl(item.pictoId)} alt={get(locale) === 'sv' ? item.labelSv : item.labelEn} width="56" height="56" />
-                <span>{get(locale) === 'sv' ? item.labelSv : item.labelEn}</span>
+                <img src={pictoUrl(item.pictoId)} alt={L(item.labelSv, item.labelEn, item.labelPt)} width="56" height="56" />
+                <span>{L(item.labelSv, item.labelEn, item.labelPt)}</span>
               </button>
             {/each}
           </div>
@@ -654,18 +669,18 @@
 
         <button class="vocab-card" class:flipped={vocabFlipped} onclick={flipVocab}>
           <div class="vocab-front">
-            <img src={pictoUrl(currentVocab.pictoId)} alt={get(locale) === 'sv' ? currentVocab.wordSv : currentVocab.wordEn} width="120" height="120" loading="lazy" />
-            <h3 class="vocab-word">{get(locale) === 'sv' ? currentVocab.wordSv : currentVocab.wordEn}</h3>
+            <img src={pictoUrl(currentVocab.pictoId)} alt={L(currentVocab.wordSv, currentVocab.wordEn, currentVocab.wordPt)} width="120" height="120" loading="lazy" />
+            <h3 class="vocab-word">{L(currentVocab.wordSv, currentVocab.wordEn, currentVocab.wordPt)}</h3>
             <p class="vocab-flip-hint">{$t('tp.vocab.tap_to_flip')}</p>
           </div>
           {#if vocabFlipped}
             <div class="vocab-back">
-              <p class="vocab-desc">{get(locale) === 'sv' ? currentVocab.descSv : currentVocab.descEn}</p>
+              <p class="vocab-desc">{L(currentVocab.descSv, currentVocab.descEn, currentVocab.descPt)}</p>
             </div>
           {/if}
         </button>
 
-        <button class="action-btn tts-btn" onclick={() => speak(get(locale) === 'sv' ? `${currentVocab.wordSv}. ${currentVocab.descSv}` : `${currentVocab.wordEn}. ${currentVocab.descEn}`)}>
+        <button class="action-btn tts-btn" onclick={() => speak(L(`${currentVocab.wordSv}. ${currentVocab.descSv}`, `${currentVocab.wordEn}. ${currentVocab.descEn}`, `${currentVocab.wordPt}. ${currentVocab.descPt}`))}>
           🔊 {$t('tp.listen')}
         </button>
       </div>
@@ -687,8 +702,8 @@
             onclick={() => answerComparison('a')}
             disabled={compAnswer !== null}
           >
-            <img src={pictoUrl(currentComp.a.pictoId)} alt={get(locale) === 'sv' ? currentComp.a.labelSv : currentComp.a.labelEn} width="80" height="80" loading="lazy" />
-            <span class="comp-label">{get(locale) === 'sv' ? currentComp.a.labelSv : currentComp.a.labelEn}</span>
+            <img src={pictoUrl(currentComp.a.pictoId)} alt={L(currentComp.a.labelSv, currentComp.a.labelEn, currentComp.a.labelPt)} width="80" height="80" loading="lazy" />
+            <span class="comp-label">{L(currentComp.a.labelSv, currentComp.a.labelEn, currentComp.a.labelPt)}</span>
             {#if compAnswer !== null}
               <span class="comp-time">{currentComp.a.minutes} {$t('tp.min')}</span>
             {/if}
@@ -704,8 +719,8 @@
             onclick={() => answerComparison('b')}
             disabled={compAnswer !== null}
           >
-            <img src={pictoUrl(currentComp.b.pictoId)} alt={get(locale) === 'sv' ? currentComp.b.labelSv : currentComp.b.labelEn} width="80" height="80" loading="lazy" />
-            <span class="comp-label">{get(locale) === 'sv' ? currentComp.b.labelSv : currentComp.b.labelEn}</span>
+            <img src={pictoUrl(currentComp.b.pictoId)} alt={L(currentComp.b.labelSv, currentComp.b.labelEn, currentComp.b.labelPt)} width="80" height="80" loading="lazy" />
+            <span class="comp-label">{L(currentComp.b.labelSv, currentComp.b.labelEn, currentComp.b.labelPt)}</span>
             {#if compAnswer !== null}
               <span class="comp-time">{currentComp.b.minutes} {$t('tp.min')}</span>
             {/if}
@@ -734,8 +749,8 @@
               <span class="day-hour">{event.hour}:00</span>
               <div class="day-dot"></div>
               <div class="day-content">
-                <img src={pictoUrl(event.pictoId)} alt={get(locale) === 'sv' ? event.labelSv : event.labelEn} width="48" height="48" loading="lazy" />
-                <span class="day-label">{get(locale) === 'sv' ? event.labelSv : event.labelEn}</span>
+                <img src={pictoUrl(event.pictoId)} alt={L(event.labelSv, event.labelEn, event.labelPt)} width="48" height="48" loading="lazy" />
+                <span class="day-label">{L(event.labelSv, event.labelEn, event.labelPt)}</span>
               </div>
             </button>
           {/each}
@@ -744,7 +759,7 @@
     {/if}
   </main>
 
-  <footer class="credit">Pictograms: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0</footer>
+  <footer class="credit">{$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0</footer>
 </div>
 
 <style>

@@ -2,22 +2,17 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import type { PracticeSet, SayMap } from '$lib/data/speech-types';
+  import { PRACTICE_SETS_PT, SAY_PT } from '$lib/data/pt-br/speech-practice';
 
   // === PRATPRAKTIKEN — Speech Practice ===
   // Structured repetition for CAS/dyspraxia therapy
   // DTTC-inspired: model → simultaneous → slightly delayed → independent
 
-  type PracticeItem = {
-    text: string;
-    icon: string;
-    labelKey: string;
-    difficulty: number; // 1-3
-  };
-
-  const PRACTICE_SETS: { id: string; labelKey: string; items: PracticeItem[] }[] = [
+  const PRACTICE_SETS_SV: PracticeSet[] = [
     {
       id: 'simple', labelKey: 'speechPractice.set.simple',
       items: [
@@ -55,11 +50,16 @@
     },
   ];
 
+  // en keeps the Swedish content
+  const PRACTICE_SETS = $derived(pick({ sv: PRACTICE_SETS_SV, en: PRACTICE_SETS_SV, pt_BR: PRACTICE_SETS_PT }, $locale));
+  const SAY = $derived(pick<SayMap>({ sv: {}, en: {}, pt_BR: SAY_PT }, $locale));
+  const say = (text: string) => SAY[text] ?? text;
+
   // DTTC stages
   const STAGES = ['model', 'simultaneous', 'delayed', 'independent'] as const;
   type Stage = typeof STAGES[number];
 
-  let selectedSet = $state<typeof PRACTICE_SETS[0] | null>(null);
+  let selectedSet = $state<PracticeSet | null>(null);
   let currentItemIdx = $state(0);
   let currentStage = $state<Stage>('model');
   let speechRate = $state(0.5);
@@ -70,7 +70,7 @@
   const currentItem = $derived(selectedSet ? selectedSet.items[currentItemIdx] : null);
   const stageIdx = $derived(STAGES.indexOf(currentStage));
 
-  function selectSet(set: typeof PRACTICE_SETS[0]) {
+  function selectSet(set: PracticeSet) {
     selectedSet = set;
     currentItemIdx = 0;
     currentStage = 'model';
@@ -82,7 +82,7 @@
   async function playModel() {
     if (!currentItem || isPlaying) return;
     isPlaying = true;
-    await speak(currentItem.text, { rate: speechRate });
+    await speak(say(currentItem.text), { rate: speechRate });
     repetitions++;
     stageCompleted = new Set([...stageCompleted, `${currentItemIdx}-${currentStage}`]);
     isPlaying = false;
@@ -92,9 +92,9 @@
     if (!currentItem || isPlaying) return;
     isPlaying = true;
     // Say it, pause, say again (DTTC repetition)
-    await speak(currentItem.text, { rate: speechRate });
+    await speak(say(currentItem.text), { rate: speechRate });
     await new Promise(r => setTimeout(r, 2000));
-    await speak(currentItem.text, { rate: speechRate });
+    await speak(say(currentItem.text), { rate: speechRate });
     repetitions += 2;
     stageCompleted = new Set([...stageCompleted, `${currentItemIdx}-${currentStage}`]);
     isPlaying = false;
@@ -103,7 +103,7 @@
   async function playSlow() {
     if (!currentItem || isPlaying) return;
     isPlaying = true;
-    await speak(currentItem.text, { rate: 0.4 });
+    await speak(say(currentItem.text), { rate: 0.4 });
     repetitions++;
     isPlaying = false;
   }
@@ -155,7 +155,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if selectedSet}<button class="sub-back" onclick={() => { selectedSet = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if selectedSet}<button class="sub-back" onclick={() => { selectedSet = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🗣️ {$t('speechPractice.title')}</h1>
 
   </div>

@@ -14,6 +14,8 @@
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "test": "node --experimental-strip-types --test \"scripts/tests/*.test.mjs\"",
+    "check:i18n": "node scripts/check-i18n.mjs",
     "postinstall": "npx patch-package",
     "tauri": "tauri"
   },

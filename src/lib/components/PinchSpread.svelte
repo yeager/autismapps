@@ -125,7 +125,7 @@
       ontouchmove={handleTouchMove}
       onwheel={handleWheel}
       role="application"
-      aria-label="Pinch and spread area"
+      aria-label={$t('fineMotor.aria.pinch_area')}
     >
       <div class="emoji-target" style="transform: scale({currentScale}); font-size: 6rem;">
         {current.emoji}

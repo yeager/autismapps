@@ -1,0 +1,246 @@
+{
+  "traffic-safety": {
+    "title": "Segurança no Trânsito",
+    "welcome": {
+      "purpose": "Aprenda regras importantes para andar com segurança no trânsito.",
+      "how": "Toque nas atividades para treinar como andar na calçada e atravessar a rua.",
+      "goal": "Ficar seguro e confiante perto de ruas e carros.",
+      "intro": "Aprenda sobre segurança no trânsito com atividades interativas.",
+      "start": "Começar!"
+    },
+    "activities": {
+      "traffic-lights": "Semáforo",
+      "traffic-lights-desc": "Aprenda quando parar, esperar e atravessar",
+      "crosswalk": "Faixa de pedestres",
+      "crosswalk-desc": "Olhe para os dois lados e atravesse com segurança",
+      "road-signs": "Placas de trânsito",
+      "road-signs-desc": "Aprenda placas importantes",
+      "safe-places": "Lugares seguros",
+      "safe-places-desc": "Descubra lugares seguros e perigosos",
+      "reflectors": "Ser visto",
+      "reflectors-desc": "Aprenda a ser visto pelos motoristas",
+      "vehicles": "Veículos",
+      "vehicles-desc": "Conheça carros, ônibus e outros veículos"
+    },
+    "traffic-lights": {
+      "title": "Semáforo",
+      "red": "Vermelho: PARE",
+      "yellow": "Amarelo: ATENÇÃO",
+      "green": "Verde: PODE IR",
+      "what-do-you-do": "O que você faz agora?",
+      "quiz-red": "O sinal está vermelho",
+      "quiz-yellow": "O sinal está amarelo",
+      "quiz-green": "O sinal está verde",
+      "correct": "Certo!",
+      "try-again": "Tente de novo",
+      "tap-light": "Toque no semáforo para mudar a luz"
+    },
+    "crosswalk": {
+      "title": "Faixa de pedestres",
+      "step1": "1. Pare na beira da calçada",
+      "step2": "2. Olhe para a esquerda",
+      "step3": "3. Olhe para a direita",
+      "step4": "4. Olhe para a esquerda de novo",
+      "step5": "5. Rua livre? Atravesse na faixa",
+      "practice": "Modo treino",
+      "safe-to-cross": "Pode atravessar agora?",
+      "yes": "Sim",
+      "no": "Não",
+      "how-title": "Como atravessar a rua com segurança:",
+      "step-count": "Passo {current} de {total}",
+      "next-step": "Próximo passo",
+      "done": "Pronto!",
+      "score": "Pontos: {score}",
+      "restart": "Recomeçar"
+    },
+    "road-signs": {
+      "title": "Placas de trânsito",
+      "crosswalk": "Passagem de pedestres",
+      "warning": "Atenção",
+      "stop": "Pare",
+      "bicycle-path": "Ciclovia",
+      "playground": "Parquinho",
+      "speed-limit": "Velocidade máxima 30",
+      "flashcard": "Modo cartões",
+      "match": "Jogo de combinar",
+      "what-does-this-mean": "O que esta placa quer dizer?",
+      "previous": "Anterior",
+      "back-to-overview": "Voltar para as placas",
+      "score": "Pontos: {score}",
+      "end-quiz": "Sair do jogo"
+    },
+    "safe-places": {
+      "title": "Lugares seguros",
+      "sidewalk": "Calçada",
+      "road": "Rua",
+      "parking": "Estacionamento",
+      "safe": "SEGURO",
+      "dangerous": "PERIGOSO",
+      "drag-to-sort": "Arraste para SEGURO ou PERIGOSO",
+      "intro-title": "Aprenda a reconhecer lugares seguros e perigosos",
+      "intro-before": "Neste jogo você vai ver vários lugares. Sua tarefa é decidir se o lugar é",
+      "intro-or": "ou",
+      "intro-after": "para crianças brincarem ou andarem.",
+      "safe-word": "SEGURO",
+      "dangerous-word": "PERIGOSO",
+      "safe-examples-title": "Lugares SEGUROS",
+      "safe-examples": [
+        "Calçada",
+        "Parquinho",
+        "Faixa de pedestres",
+        "Ponto de ônibus"
+      ],
+      "dangerous-examples-title": "Lugares PERIGOSOS",
+      "dangerous-examples": [
+        "Meio da rua",
+        "Estacionamento",
+        "Perto de carros parados",
+        "Obras"
+      ],
+      "start-game": "Começar o jogo",
+      "score": "Pontos: {score}/{total}",
+      "lives": "Vidas:",
+      "question-count": "Pergunta {current} de {total}",
+      "question": "Este lugar é seguro para crianças?",
+      "congrats": "Parabéns!",
+      "game-over": "Fim de jogo",
+      "result": "Você acertou {score} de {total} lugares!",
+      "result-perfect": "Perfeito! Você sabe mesmo quais lugares são seguros!",
+      "result-excellent": "Muito bem! Você entende de segurança no trânsito!",
+      "result-good": "Bom trabalho! Treine mais um pouco e vai ficar ainda melhor!",
+      "result-practice": "Continue treinando! Lembre: a calçada e o parquinho são seguros.",
+      "play-again": "Jogar de novo",
+      "back-to-start": "Voltar ao início",
+      "speak": {
+        "start": "Olhe a imagem e decida se o lugar é seguro ou perigoso.",
+        "game_over": "Fim de jogo. Você acertou {score} de {total}.",
+        "won": "Parabéns! Você terminou o jogo e acertou {score} de {total}!"
+      },
+      "scenarios": {
+        "sidewalk": {
+          "name": "Calçada",
+          "description": "A calçada ao lado da rua",
+          "explanation": "A calçada é segura para pedestres. Ela fica separada da rua e os carros não passam por ali."
+        },
+        "road": {
+          "name": "Meio da rua",
+          "description": "No meio da rua, com carros",
+          "explanation": "O meio da rua é perigoso para pedestres. Os carros passam ali e podem atropelar você."
+        },
+        "parking": {
+          "name": "Estacionamento",
+          "description": "Um estacionamento com carros",
+          "explanation": "O estacionamento é perigoso. Os carros entram e saem, e o motorista nem sempre vê uma criança perto de carros parados."
+        },
+        "playground": {
+          "name": "Parquinho",
+          "description": "Um parquinho cercado na praça",
+          "explanation": "O parquinho é seguro. Ele é cercado e os carros não entram ali."
+        },
+        "crosswalk": {
+          "name": "Faixa de pedestres",
+          "description": "Uma faixa de pedestres com semáforo",
+          "explanation": "A faixa de pedestres é segura quando o bonequinho fica verde e você olha para os dois lados."
+        },
+        "highway": {
+          "name": "Rodovia",
+          "description": "Uma estrada com carros muito rápidos",
+          "explanation": "A rodovia é muito perigosa. Os carros andam muito rápido e pedestres não podem ficar ali."
+        },
+        "school-zone": {
+          "name": "Frente da escola",
+          "description": "A calçada em frente à escola, com faixa de pedestres",
+          "explanation": "Na frente da escola, os carros devem ir devagar e tem faixa de pedestres. Fique sempre na calçada."
+        },
+        "construction": {
+          "name": "Obra",
+          "description": "Uma obra com máquinas",
+          "explanation": "A obra é perigosa. Máquinas grandes e caminhões trabalham ali."
+        }
+      }
+    },
+    "reflectors": {
+      "title": "Ser visto no trânsito",
+      "day": "Dia",
+      "night": "Noite",
+      "can-you-see": "Dá para ver você no escuro?",
+      "before": "Antes",
+      "after": "Com refletivo",
+      "dress-character": "Vista a pessoa com itens refletivos",
+      "why-title": "Por que é importante ser visto?",
+      "why-text": "À noite e na chuva, os motoristas enxergam pior. Roupas claras ajudam, e as faixas refletivas brilham com a luz dos faróis. Assim o motorista vê você de longe.",
+      "compare-btn": "Dia e noite",
+      "compare-btn-desc": "Veja a diferença entre o dia e a noite",
+      "dress-btn": "Vestir com refletivos",
+      "dress-btn-desc": "Arraste os refletivos para a pessoa",
+      "tips-title": "Dicas para ser visto:",
+      "compare-title": "Ser visto de dia e de noite",
+      "switch-to-night": "Mudar para noite",
+      "switch-to-day": "Mudar para dia",
+      "time-day": "DIA",
+      "time-night": "NOITE",
+      "visibility-good": "Visibilidade: boa",
+      "visibility-good-desc": "De dia, todos veem você bem",
+      "visibility-excellent": "Visibilidade: ótima com refletivo!",
+      "visibility-excellent-desc": "Com refletivo, o motorista vê você de longe!",
+      "visibility-poor": "Visibilidade: ruim sem refletivo",
+      "visibility-poor-desc": "Sem refletivo, o motorista só vê você bem de perto",
+      "back-to-menu": "Voltar ao menu",
+      "dress-title": "Vista a pessoa com refletivos",
+      "placed-count": "Refletivos colocados: {score}/{total}",
+      "restart": "Recomeçar",
+      "drop-here": "Arraste os refletivos para cá",
+      "available": "Refletivos para usar:",
+      "complete": "Incrível! Agora a pessoa aparece muito melhor no escuro!",
+      "items": {
+        "vest": "Colete refletivo",
+        "hat": "Boné refletivo",
+        "bag": "Mochila com faixa refletiva",
+        "shoes": "Tênis com refletivo",
+        "band": "Pulseira refletiva"
+      },
+      "tips": [
+        "À noite, use roupas claras ou com faixa refletiva",
+        "Ande sempre na calçada, longe da rua",
+        "Atravesse na faixa de pedestres e no sinal verde para o pedestre",
+        "Dê a mão para um adulto quando estiver perto da rua",
+        "Uma lanterna ajuda os motoristas a ver você no escuro"
+      ],
+      "speak": {
+        "compare": "Compare como uma pessoa é vista de dia e de noite",
+        "dress_up": "Vista a pessoa com refletivos para ela aparecer melhor no escuro",
+        "placed": "Muito bem! Você colocou: {item}",
+        "done": "Perfeito! Agora a pessoa aparece muito melhor no escuro. Ser visto salva vidas!"
+      }
+    },
+    "vehicles": {
+      "title": "Veículos",
+      "car": "Carro",
+      "bus": "Ônibus",
+      "truck": "Caminhão",
+      "bicycle": "Bicicleta",
+      "ambulance": "Ambulância",
+      "police": "Carro de polícia",
+      "firetruck": "Caminhão de bombeiros",
+      "what-should-you-do": "O que você deve fazer?",
+      "listen": "Ouça o som"
+    },
+    "actions": {
+      "stop": "Pare",
+      "go": "Pode ir",
+      "look": "Olhe",
+      "wait": "Espere",
+      "walk": "Ande",
+      "safe": "Seguro",
+      "dangerous": "Perigoso"
+    },
+    "common": {
+      "next": "Próximo",
+      "back": "Voltar",
+      "start": "Começar",
+      "good-job": "Bom trabalho!",
+      "excellent": "Excelente!",
+      "well-done": "Muito bem!"
+    }
+  }
+}

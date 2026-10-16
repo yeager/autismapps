@@ -67,7 +67,7 @@
               class="avatar-option"
               class:selected={selectedAvatar === avatar}
               onclick={() => selectedAvatar = avatar}
-              aria-label={`Välj avatar: ${avatar}`}
+              aria-label={$t('welcome.modal.choose_avatar', { avatar })}
             >
               {avatar}
             </button>
@@ -107,7 +107,7 @@
     color: var(--text, #333);
     border-radius: 1.5rem;
     padding: 2.5rem 2rem;
-    max-width: 400px;
+    max-width: 440px;
     width: 100%;
     text-align: center;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);

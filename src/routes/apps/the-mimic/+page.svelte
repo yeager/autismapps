@@ -2,9 +2,11 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import type { MimicItem, SayMap } from '$lib/data/speech-types';
+  import { LEVEL_DATA_PT, SAY_PT } from '$lib/data/pt-br/the-mimic';
 
   // === EFTERHÄRMAREN — The Mimic ===
   // Listen and repeat with increasing complexity
@@ -13,12 +15,7 @@
 
   type Level = 'sounds' | 'words' | 'phrases' | 'sentences';
 
-  interface MimicItem {
-    text: string;
-    icon: string;
-  }
-
-  const LEVEL_DATA: Record<Level, MimicItem[]> = {
+  const LEVEL_DATA_SV: Record<Level, MimicItem[]> = {
     sounds: [
       { text: 'aaa', icon: '😮' }, { text: 'ooo', icon: '😯' }, { text: 'eee', icon: '😊' },
       { text: 'iii', icon: '😁' }, { text: 'uuu', icon: '😗' }, { text: 'mmm', icon: '😶' },
@@ -55,6 +52,11 @@
     ],
   };
 
+  // en keeps the Swedish content
+  const LEVEL_DATA = $derived(pick({ sv: LEVEL_DATA_SV, en: LEVEL_DATA_SV, pt_BR: LEVEL_DATA_PT }, $locale));
+  const SAY = $derived(pick<SayMap>({ sv: {}, en: {}, pt_BR: SAY_PT }, $locale));
+  const say = (text: string) => SAY[text] ?? text;
+
   const LEVELS: Level[] = ['sounds', 'words', 'phrases', 'sentences'];
 
   let currentLevel = $state<Level>('sounds');
@@ -73,7 +75,7 @@
     if (isPlaying) return;
     isPlaying = true;
     showYourTurn = false;
-    await speak(currentItem.text, { rate: speechRate });
+    await speak(say(currentItem.text), { rate: speechRate });
     reps++;
     totalReps++;
 
@@ -87,7 +89,7 @@
     if (isPlaying) return;
     isPlaying = true;
     showYourTurn = false;
-    await speak(currentItem.text, { rate: Math.max(0.3, speechRate - 0.2) });
+    await speak(say(currentItem.text), { rate: Math.max(0.3, speechRate - 0.2) });
     reps++;
     totalReps++;
     showYourTurn = true;
@@ -98,9 +100,9 @@
     if (isPlaying) return;
     isPlaying = true;
     showYourTurn = false;
-    await speak(currentItem.text, { rate: speechRate });
+    await speak(say(currentItem.text), { rate: speechRate });
     await new Promise(r => setTimeout(r, 1500));
-    await speak(currentItem.text, { rate: speechRate });
+    await speak(say(currentItem.text), { rate: speechRate });
     reps += 2;
     totalReps += 2;
     showYourTurn = true;

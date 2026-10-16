@@ -14,3 +14,18 @@ arasaac-sv-plurals*
 deepl-*.json
 
 build-sv
+
+# IDE / agent tooling (local to each developer)
+/.idea/
+/.serena/
+/.claude/settings.local.json
+/.claude/skills/
+/docs/
+/CLAUDE.md
+
+# Vite leaves these behind when the config fails to load
+vite.config.*.timestamp-*
+
+
+
+/skills-lock.json

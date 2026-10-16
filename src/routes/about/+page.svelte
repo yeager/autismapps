@@ -1,5 +1,5 @@
 <script>
-  import { locale, t } from '$lib/i18n';
+  import { locale, t, READY_LOCALES } from '$lib/i18n';
   import { flagSvg } from '$lib/flags';
   import { fade } from 'svelte/transition';
   import { ALL_APPS } from '$lib/apps';
@@ -23,7 +23,7 @@
 
     <section class="stats">
       <div class="stat"><span class="stat-num">{readyAppCount}</span><span class="stat-label">{$t('about.apps')}</span></div>
-      <div class="stat"><span class="stat-num">2</span><span class="stat-label">{$t('about.languages')}</span></div>
+      <div class="stat"><span class="stat-num">{READY_LOCALES.length}</span><span class="stat-label">{$t('about.languages')}</span></div>
       <div class="stat"><span class="stat-num">100%</span><span class="stat-label">{$t('about.free')}</span></div>
     </section>
 
@@ -68,7 +68,7 @@
       <h2>{$t('about.credits')}</h2>
       <ul class="credits-list">
         <li><a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — {$t('about.credit.arasaac')}</li>
-        <li><a href="https://teckensprakslexikon.su.se" target="_blank" rel="noopener">Svenskt teckenspråkslexikon</a> — {$t('about.credit.signs')}</li>
+        <li><a href="https://teckensprakslexikon.su.se" target="_blank" rel="noopener">{$t('about.sign_lexicon')}</a> — {$t('about.credit.signs')}</li>
         <li><a href="https://github.com/rhasspy/piper" target="_blank" rel="noopener">Piper</a> — {$t('about.credit.piper')}</li>
       </ul>
     </section>

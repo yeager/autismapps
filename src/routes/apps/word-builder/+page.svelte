@@ -2,14 +2,16 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { untrack } from 'svelte';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
   import { awardStar, GoldStarBurst } from '$lib/rewards';
+  import { WORDS_PT } from '$lib/data/pt-br/word-builder';
 
   type Word = { word: string; hint: string };
   type Letter = { ch: string; id: number; used: boolean };
-  const WORDS: Word[] = [
+  const WORDS_SV: Word[] = [
     { word: 'SOL', hint: '☀️' },
     { word: 'BIL', hint: '🚗' },
     { word: 'HUS', hint: '🏠' },
@@ -23,6 +25,9 @@
     { word: 'ÄPPLE', hint: '🍎' },
     { word: 'VATTEN', hint: '💧' },
   ];
+
+  // en keeps the Swedish words
+  const WORDS = $derived(pick({ sv: WORDS_SV, en: WORDS_SV, pt_BR: WORDS_PT }, $locale));
 
   let wordIdx = $state(0);
   let letters = $state<Letter[]>([]);
@@ -48,6 +53,13 @@
   }
 
   loadWord();
+
+  // The locale switches right after mount (its dictionary loads asynchronously): rebuild the tiles
+  // when the word list changes, not on every word
+  $effect(() => {
+    WORDS;
+    untrack(loadWord);
+  });
 
   function placeLetter(letter: Letter) {
     if (letter.used) return;

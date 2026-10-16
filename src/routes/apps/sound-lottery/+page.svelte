@@ -2,24 +2,18 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
   import { awardStar, GoldStarBurst } from '$lib/rewards';
+  import type { PhonemeData, SayMap } from '$lib/data/speech-types';
+  import { PHONEMES_PT, SAY_PT } from '$lib/data/pt-br/sound-lottery';
 
   // === LJUDLOTTERIET — Sound Lottery ===
   // Randomized phoneme practice with hierarchy:
   // isolation → syllable → word → sentence
 
-  interface PhonemeData {
-    sound: string;
-    isolation: string;
-    syllables: string[];
-    words: { text: string; icon: string }[];
-    sentences: string[];
-  }
-
-  const PHONEMES: PhonemeData[] = [
+  const PHONEMES_SV: PhonemeData[] = [
     { sound: 'B', isolation: 'b', syllables: ['ba', 'be', 'bi', 'bo', 'bu', 'bå'], words: [{ text: 'boll', icon: '⚽' }, { text: 'banan', icon: '🍌' }, { text: 'bil', icon: '🚗' }, { text: 'bok', icon: '📖' }], sentences: ['Bollen är blå.', 'Bilen kör fort.', 'Barnet badar.'] },
     { sound: 'D', isolation: 'd', syllables: ['da', 'de', 'di', 'do', 'du', 'då'], words: [{ text: 'dörr', icon: '🚪' }, { text: 'docka', icon: '🧸' }, { text: 'drake', icon: '🐉' }, { text: 'duva', icon: '🕊️' }], sentences: ['Dörren är öppen.', 'Dockan dansar.', 'Draken flyger.'] },
     { sound: 'F', isolation: 'fff', syllables: ['fa', 'fe', 'fi', 'fo', 'fu', 'få'], words: [{ text: 'fisk', icon: '🐟' }, { text: 'fjäril', icon: '🦋' }, { text: 'fågel', icon: '🐦' }, { text: 'flaska', icon: '🍶' }], sentences: ['Fisken simmar.', 'Fjärilen flyger.', 'Fågeln sjunger.'] },
@@ -34,6 +28,11 @@
     { sound: 'T', isolation: 't', syllables: ['ta', 'te', 'ti', 'to', 'tu', 'tå'], words: [{ text: 'tåg', icon: '🚂' }, { text: 'tiger', icon: '🐯' }, { text: 'tomat', icon: '🍅' }, { text: 'träd', icon: '🌳' }], sentences: ['Tåget kommer.', 'Tigern smyger.', 'Trädet är grönt.'] },
     { sound: 'V', isolation: 'vvv', syllables: ['va', 've', 'vi', 'vo', 'vu', 'vå'], words: [{ text: 'val', icon: '🐳' }, { text: 'vatten', icon: '💧' }, { text: 'varg', icon: '🐺' }, { text: 'vind', icon: '💨' }], sentences: ['Valen simmar.', 'Vattnet rinner.', 'Vinden blåser.'] },
   ];
+
+  // en keeps the Swedish phonemes
+  const PHONEMES = $derived(pick({ sv: PHONEMES_SV, en: PHONEMES_SV, pt_BR: PHONEMES_PT }, $locale));
+  const SAY = $derived(pick<SayMap>({ sv: {}, en: {}, pt_BR: SAY_PT }, $locale));
+  const say = (text: string) => SAY[text] ?? text;
 
   type Level = 'isolation' | 'syllable' | 'word' | 'sentence';
   const LEVELS: Level[] = ['isolation', 'syllable', 'word', 'sentence'];
@@ -73,7 +72,7 @@
     spinning = false;
 
     // Auto-play the sound
-    await speak(selectedPhoneme.isolation, { rate: 0.6 });
+    await speak(say(selectedPhoneme.isolation), { rate: 0.6 });
   }
 
   async function playCurrentTarget() {
@@ -85,7 +84,7 @@
     else if (currentLevel === 'word') text = selectedPhoneme.words[currentWordIdx].text;
     else text = selectedPhoneme.sentences[currentSentenceIdx];
 
-    await speak(text, { rate: currentLevel === 'isolation' ? 0.5 : 0.7 });
+    await speak(say(text), { rate: currentLevel === 'isolation' ? 0.5 : 0.7 });
     reps++;
     totalReps++;
     isPlaying = false;
@@ -137,7 +136,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if selectedPhoneme}<button class="sub-back" onclick={() => { selectedPhoneme = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if selectedPhoneme}<button class="sub-back" onclick={() => { selectedPhoneme = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🎰 {$t('soundLottery.title')}</h1>
 
   </div>
@@ -201,7 +200,7 @@
 
         {#if reps >= 3}
           <button class="btn advance-btn" onclick={advanceLevel}>
-            {LEVELS.indexOf(currentLevel) < LEVELS.length - 1 ? `⬆️ ${$t('soundLottery.next')}` : '⭐ Bemästrad!'}
+            {LEVELS.indexOf(currentLevel) < LEVELS.length - 1 ? `⬆️ ${$t('soundLottery.next')}` : `⭐ ${$t('soundLottery.masteredButton')}`}
           </button>
         {/if}
       </div>

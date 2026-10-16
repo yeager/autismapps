@@ -4,6 +4,7 @@
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
+  import { getAudioContext as sharedAudioContext } from '$lib/audio';
   import { fade, fly, scale } from 'svelte/transition';
   import { flip } from 'svelte/animate';
   import { awardStar, GoldStarBurst } from '$lib/rewards';
@@ -303,7 +304,8 @@
 
   function playSound(type: 'correct' | 'wrong') {
     try {
-      const ctx = new window.AudioContext();
+      const ctx = sharedAudioContext();
+      if (!ctx) return;
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.connect(gain);
@@ -356,7 +358,7 @@
   <main class="cnt">
     <div class="page-title">
       {#if screen !== 'levels'}
-        <button class="sub-back" onclick={goBack} aria-label="Tillbaka">←</button>
+        <button class="sub-back" onclick={goBack} aria-label={$t('app.back')}>←</button>
       {/if}
       <h1>📦 {$t('categorySort.title')}</h1>
     </div>

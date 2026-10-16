@@ -70,7 +70,7 @@
 
 <div class="mat-page">
   <div class="page-title">
-    {#if activeTopic}<button class="sub-back" onclick={() => { activeTopic = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if activeTopic}<button class="sub-back" onclick={() => { activeTopic = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{$t('mat.title')}</h1>
 
     <button class="icon-btn" onclick={saveSession} aria-label={$t('mat.save')}>💾</button>
@@ -157,7 +157,7 @@
   {/if}
 
   <footer class="credit">
-    Pictograms: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
+    {$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
     · Inspired by <a href="https://www.talkingmats.com" target="_blank" rel="noopener">Talking Mats™</a> framework
   </footer>
 </div>
@@ -168,7 +168,7 @@
   .icon-btn:hover { background: var(--bg-hover); }
 
   .intro { text-align: center; padding: 20px; color: var(--text-muted); }
-  .topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; padding: 0 20px 20px; }
+  .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 200px)); justify-content: center; gap: 14px; padding: 0 20px 20px; }
   .topic-card {
     display: flex; flex-direction: column; align-items: center; gap: 8px;
     padding: 24px; background: var(--bg-card); border: 2px solid var(--border);

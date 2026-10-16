@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { t } from '$lib/i18n';
+  import { getAudioContext as sharedAudioContext } from '$lib/audio';
 
   /** Beat pattern: true = strong beat, false = weak */
   export let beats: boolean[] = [];
@@ -13,13 +15,11 @@
   export let activeBeat: number = -1;
 
   let intervalTimer: number | null = null;
-  let audioCtx: AudioContext | null = null;
-
-  function getAudioCtx() {
-    if (!audioCtx) {
-      audioCtx = new AudioContext();
-    }
-    return audioCtx;
+  // Shared app-wide context; a per-component one was never closed when leaving
+  function getAudioCtx(): AudioContext {
+    const ctx = sharedAudioContext();
+    if (!ctx) throw new Error('Web Audio not available');
+    return ctx;
   }
 
   function playClick(strong: boolean) {
@@ -101,7 +101,7 @@
   </div>
 
   <button class="play-btn" class:active={playing} onclick={toggle}>
-    {playing ? '⏹️ Stopp' : '▶️ Spela'}
+    {playing ? `⏹️ ${$t('prosody.rhythm.stop')}` : `▶️ ${$t('prosody.rhythm.play')}`}
   </button>
 </div>
 

@@ -4,6 +4,7 @@
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
+  import { onDestroy } from 'svelte';
   import { awardStar, GoldStarBurst } from '$lib/rewards';
 
   type Activity = 'breathing' | 'pressure' | 'sounds' | 'colors' | 'grounding' | 'relaxation' | 'stress' | null;
@@ -244,6 +245,8 @@
     soundNodes = [];
     if (audioCtx) { audioCtx.close(); audioCtx = null; }
   }
+  // Leaving the page while a sound plays used to keep its AudioContext (and the noise) running
+  onDestroy(stopSound);
 
   // Colors
   function startColors() {
@@ -291,7 +294,7 @@
 
 <div class="calm-page" style={activeActivity === 'colors' && colorRunning ? `background: hsl(${colorHue}, 60%, 85%)` : ''}>
   <div class="page-title">
-    {#if activeActivity}<button class="sub-back" onclick={() => { selectActivity(null) }} aria-label="Tillbaka">←</button>{/if}
+    {#if activeActivity}<button class="sub-back" onclick={() => { selectActivity(null) }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{$t('calm.title')}</h1>
 
   </div>
@@ -449,7 +452,7 @@
   {/if}
 
   <footer class="credit">
-    Pictograms: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
+    {$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
   </footer>
 </div>
 
@@ -461,7 +464,7 @@
 
   .activities-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 14px; padding: 20px; flex: 1;
+    align-content: start; gap: var(--space-4); padding: var(--space-2) var(--space-5) var(--space-6);
   }
   .activity-card {
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;

@@ -32,10 +32,14 @@ export async function getLocalVoiceUrl(filename: string): Promise<string | null>
 	}
 }
 
-/** Voice files bundled in the Tauri app */
+/** Voice files bundled in the Tauri app (default voice of each locale; see build-native.yml) */
 export const BUNDLED_VOICES: Record<string, { model: string; config: string }> = {
 	'sv_SE-alma-medium': {
 		model: 'sv_SE-alma-medium.onnx',
 		config: 'sv_SE-alma-medium.onnx.json',
+	},
+	'pt_BR-cadu-medium': {
+		model: 'pt_BR-cadu-medium.onnx',
+		config: 'pt_BR-cadu-medium.onnx.json',
 	},
 };

@@ -86,7 +86,7 @@
 
 <div class="situation-page">
   <div class="page-title">
-    {#if activeTheme}<button class="sub-back" onclick={() => { activeTheme = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if activeTheme}<button class="sub-back" onclick={() => { activeTheme = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{activeTheme ? $t(activeTheme.label) : $t('situation.title')}</h1>
 
   </div>
@@ -136,7 +136,7 @@
     {/if}
   {/if}
 
-  <footer class="credit">Pictograms: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0</footer>
+  <footer class="credit">{$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0</footer>
 </div>
 
 <style>

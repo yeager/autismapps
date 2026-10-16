@@ -64,7 +64,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if routine}<button class="sub-back" onclick={() => { routine = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if routine}<button class="sub-back" onclick={() => { routine = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🗓️ {$t('routineBuddy.title')}</h1>
 
   </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { locale, t } from '$lib/i18n';
+  import { locale, t, getLocaleDef } from '$lib/i18n';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import { speak } from '$lib/tts';
@@ -34,8 +34,7 @@
 
   function addDiaryEntry() {
     if (!newSound.trim()) return;
-    const dateLocale = $locale === 'sv' ? 'sv-SE' : 'en-US';
-    diaryEntries = [...diaryEntries, { sound: newSound.trim(), level: newLevel, date: new Date().toLocaleDateString(dateLocale) }];
+    diaryEntries = [...diaryEntries, { sound: newSound.trim(), level: newLevel, date: new Date().toLocaleDateString(getLocaleDef($locale).bcp47) }];
     newSound = '';
     newLevel = 3;
   }

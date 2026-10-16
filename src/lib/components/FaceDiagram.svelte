@@ -8,6 +8,7 @@
    * - Hand silhouette for finger placement
    * - Numbered step indicators
    */
+  import { t } from '$lib/i18n';
   import { TOUCH_ZONES, DIRECTION_ANGLES, PRESSURE_LEVELS } from '$lib/data/prompt-data.js';
 
   /** Currently selected sound data */
@@ -214,7 +215,7 @@
     <!-- ═══ NO SELECTION MESSAGE ═══ -->
     {#if !zone}
       <text x="100" y="250" text-anchor="middle" fill="#95A5A6" font-size="11" font-style="italic">
-        ← Välj ett ljud
+        {$t('promptGuide.chooseSound')}
       </text>
     {/if}
   </svg>

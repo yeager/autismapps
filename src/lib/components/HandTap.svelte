@@ -5,6 +5,8 @@
    * The hand taps in rhythm with the melody.
    */
 
+  import { t } from '$lib/i18n';
+
   export let isPlaying: boolean = false;
   export let tempo: number = 70; // BPM
   export let noteCount: number = 1;
@@ -14,7 +16,7 @@
   $: totalDuration = beatDuration * noteCount;
 </script>
 
-<div class="hand-tap" class:playing={isPlaying} aria-label="Handtappning" role="img">
+<div class="hand-tap" class:playing={isPlaying} aria-label={$t('melodyTherapy.handTap')} role="img">
   <div
     class="hand"
     class:tapping={isPlaying}

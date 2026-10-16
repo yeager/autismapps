@@ -2,21 +2,17 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade, fly } from 'svelte/transition';
+  import type { ChainLevel, SayMap } from '$lib/data/speech-types';
+  import { LEVELS_PT, SAY_PT } from '$lib/data/pt-br/sound-chain';
 
   // === LJUDKEDJAN — Sound Chaining ===
   // CAS/dyspraxia therapy: chain single sounds → syllables → words
   // Visual chain links connect as child succeeds
 
-  type ChainLevel = {
-    id: string;
-    labelKey: string;
-    chains: { sounds: string[]; word: string; wordKey: string; icon: string }[];
-  };
-
-  const LEVELS: ChainLevel[] = [
+  const LEVELS_SV: ChainLevel[] = [
     {
       id: 'vowels', labelKey: 'soundChain.level.vowels',
       chains: [
@@ -59,6 +55,11 @@
     },
   ];
 
+  // en keeps the Swedish chains
+  const LEVELS = $derived(pick({ sv: LEVELS_SV, en: LEVELS_SV, pt_BR: LEVELS_PT }, $locale));
+  const SAY = $derived(pick<SayMap>({ sv: {}, en: {}, pt_BR: SAY_PT }, $locale));
+  const say = (text: string) => SAY[text] ?? text;
+
   let selectedLevel = $state<ChainLevel | null>(null);
   let currentChainIdx = $state(0);
   let linkedCount = $state(0);
@@ -80,7 +81,7 @@
   async function playSound(idx: number) {
     if (!currentChain || isPlaying) return;
     isPlaying = true;
-    await speak(currentChain.sounds[idx], { rate: speechRate });
+    await speak(say(currentChain.sounds[idx]), { rate: speechRate });
     if (idx >= linkedCount) {
       linkedCount = idx + 1;
     }
@@ -92,12 +93,12 @@
     isPlaying = true;
     for (let i = 0; i < currentChain.sounds.length; i++) {
       linkedCount = i + 1;
-      await speak(currentChain.sounds[i], { rate: speechRate });
+      await speak(say(currentChain.sounds[i]), { rate: speechRate });
       await new Promise(r => setTimeout(r, 600));
     }
     // Now say the whole word
     await new Promise(r => setTimeout(r, 400));
-    await speak(currentChain.word, { rate: speechRate });
+    await speak(say(currentChain.word), { rate: speechRate });
     isPlaying = false;
   }
 
@@ -105,7 +106,7 @@
     if (!currentChain || isPlaying) return;
     isPlaying = true;
     linkedCount = currentChain.sounds.length;
-    await speak(currentChain.word, { rate: speechRate });
+    await speak(say(currentChain.word), { rate: speechRate });
     isPlaying = false;
   }
 
@@ -135,7 +136,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if selectedLevel}<button class="sub-back" onclick={() => { selectedLevel = null; showSuccess = false }} aria-label="Tillbaka">←</button>{/if}
+    {#if selectedLevel}<button class="sub-back" onclick={() => { selectedLevel = null; showSuccess = false }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🔗 {$t('soundChain.title')}</h1>
 
   </div>

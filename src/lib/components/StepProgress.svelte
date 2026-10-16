@@ -21,7 +21,7 @@
   export let onStepSelect: (index: number) => void = () => {};
 </script>
 
-<div class="step-progress" role="tablist" aria-label="MIT-steg">
+<div class="step-progress" role="tablist" aria-label={$t('melodyTherapy.stepsLabel')}>
   {#each steps as step, i}
     {@const stepKey = `${phraseId}-${step.id}`}
     {@const isActive = i === currentStepIndex}

@@ -7,22 +7,29 @@
 import { base } from '$app/paths';
 
 let cache: Record<string, { sv: string; id: number }> | null = null;
+let loading: Promise<Record<string, { sv: string; id: number }>> | null = null;
 
-export async function loadSvLookup(): Promise<Record<string, { sv: string; id: number }>> {
-  if (cache) return cache;
-  try {
-    const res = await fetch(`${base}/arasaac-sv.json`);
-    if (res.ok) {
-      const data: unknown = await res.json();
-      if (data && typeof data === 'object' && Object.keys(data).length > 0) {
-        cache = data as Record<string, { sv: string; id: number }>;
-        return cache;
+export function loadSvLookup(): Promise<Record<string, { sv: string; id: number }>> {
+  if (cache) return Promise.resolve(cache);
+  // Concurrent searches (apps look up a whole vocabulary at once) share one load of the 785 KB file
+  loading ??= (async () => {
+    try {
+      const res = await fetch(`${base}/arasaac-sv.json`);
+      if (res.ok) {
+        const data: unknown = await res.json();
+        if (data && typeof data === 'object' && Object.keys(data).length > 0) {
+          cache = data as Record<string, { sv: string; id: number }>;
+          return cache;
+        }
       }
-    }
-  } catch {}
-  // Do not memoize a failed fetch: a temporary offline or hosting error should
-  // not permanently disable Swedish pictogram search for this page session.
-  return {};
+    } catch {}
+    // Do not memoize a failed fetch: a temporary offline or hosting error should
+    // not permanently disable Swedish pictogram search for this page session.
+    return {};
+  })().finally(() => {
+    loading = null;
+  });
+  return loading;
 }
 
 /**

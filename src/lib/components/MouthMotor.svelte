@@ -4,16 +4,25 @@
   Also includes sound pair comparison mode.
 -->
 <script lang="ts">
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak, stop } from '$lib/tts';
   import { fade, fly } from 'svelte/transition';
   import MouthDiagram from './MouthDiagram.svelte';
   import LipView from './LipView.svelte';
-  import { sounds, SOUND_TYPES, SOUND_PAIRS, getSound, getSoundsByType } from '$lib/data/mouth-sounds';
+  import { sounds as SOUNDS_SV, SOUND_TYPES, SOUND_PAIRS as SOUND_PAIRS_SV } from '$lib/data/mouth-sounds';
+  import { SOUNDS_PT, SOUND_PAIRS_PT } from '$lib/data/pt-br/mouth-motor';
+  import { PHONEME_SAY_PT } from '$lib/data/pt-br/phonemes';
+  import type { MouthSound, SoundPair } from '$lib/data/speech-types';
 
-  type MouthSound = (typeof sounds)[number];
-  type SoundPair = (typeof SOUND_PAIRS)[number];
   type View = 'grid' | 'detail' | 'compare';
+
+  // Sounds per locale (en keeps the Swedish sounds)
+  const SOUNDS = $derived(pick<MouthSound[]>({ sv: SOUNDS_SV, en: SOUNDS_SV, pt_BR: SOUNDS_PT }, $locale));
+  const SOUND_PAIRS = $derived(pick<SoundPair[]>({ sv: SOUND_PAIRS_SV, en: SOUND_PAIRS_SV, pt_BR: SOUND_PAIRS_PT }, $locale));
+  const SAY = $derived(pick<Record<string, string>>({ sv: {}, en: {}, pt_BR: PHONEME_SAY_PT }, $locale));
+  const say = (s: string) => SAY[s] ?? s;
+  const getSound = (id: string) => SOUNDS.find((s) => s.id === id);
+  const getSoundsByType = (type: string) => SOUNDS.filter((s) => s.type === type);
 
   let view = $state<View>('grid');
 
@@ -32,14 +41,11 @@
 
   function playSound(sound: MouthSound) {
     // Speak the sound itself, then example word
-    const text = sound.symbol === sound.id
-      ? `${sound.symbol}. ${sound.exampleWord}.`
-      : `${sound.symbol}. ${sound.exampleWord}.`;
-    speak(text, { rate: 0.2 });
+    speak(`${say(sound.symbol)}. ${sound.exampleWord}.`, { rate: 0.2 });
   }
 
   function playSoundOnly(sound: MouthSound) {
-    speak(sound.symbol, { rate: 0.15 });
+    speak(say(sound.symbol), { rate: 0.15 });
   }
 
   function selectPair(pair: SoundPair) {
@@ -124,7 +130,7 @@
     <div class="detail-header">
       <span class="detail-symbol">{selectedSound.symbol}</span>
       <span class="detail-ipa">/{selectedSound.ipa}/</span>
-      <button class="play-btn" onclick={() => selectedSound && playSoundOnly(selectedSound)} aria-label="Play sound">
+      <button class="play-btn" onclick={() => selectedSound && playSoundOnly(selectedSound)} aria-label={$t('mouthMotor.listen')}>
         🔊
       </button>
     </div>

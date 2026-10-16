@@ -407,7 +407,8 @@
 
 <style>
   .schedule-app {
-    padding: 20px;
+    padding: 20px var(--page-pad);
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
     display: flex;

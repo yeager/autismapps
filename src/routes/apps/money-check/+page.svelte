@@ -2,38 +2,29 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale } from '$lib/i18n';
+  import { currencyFor } from '$lib/money';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
 
-  // Swedish coins and bills
-  const COINS = [
-    { value: 1, label: '1 kr', emoji: '🪙', color: '#C0C0C0' },
-    { value: 2, label: '2 kr', emoji: '🪙', color: '#C0C0C0' },
-    { value: 5, label: '5 kr', emoji: '🪙', color: '#C0C0C0' },
-    { value: 10, label: '10 kr', emoji: '🪙', color: '#FFD700' },
-  ];
-
-  const BILLS = [
-    { value: 20, label: '20 kr', emoji: '💵', color: '#9B59B6' },
-    { value: 50, label: '50 kr', emoji: '💵', color: '#E67E22' },
-    { value: 100, label: '100 kr', emoji: '💵', color: '#3498DB' },
-    { value: 200, label: '200 kr', emoji: '💵', color: '#27AE60' },
-    { value: 500, label: '500 kr', emoji: '💵', color: '#E74C3C' },
-  ];
+  const currency = $derived(currencyFor($locale));
+  const COINS = $derived(currency.coins);
+  const BILLS = $derived(currency.bills);
+  const unitFor = (n: number) => currency.unit(n) ?? $t('money.kr');
+  const sayAmount = (n: number) => currency.spoken(n) ?? `${n} ${$t('money.kr')}`;
 
   let wallet = $state<{ value: number; label: string }[]>([]);
   let total = $derived(wallet.reduce((sum, c) => sum + c.value, 0));
 
   function addMoney(item: { value: number; label: string }) {
     wallet = [...wallet, item];
-    speak(`${item.label}. ${$t('money.total')} ${total + item.value} ${$t('money.kr')}`);
+    speak(`${item.label}. ${$t('money.total')} ${sayAmount(total + item.value)}`);
   }
 
   function removeLast() {
     if (wallet.length > 0) {
       wallet = wallet.slice(0, -1);
-      speak(`${$t('money.total')} ${total} ${$t('money.kr')}`);
+      speak(`${$t('money.total')} ${sayAmount(total)}`);
     }
   }
 
@@ -41,8 +32,14 @@
     wallet = [];
   }
 
+  // Clear the wallet when the currency changes (not on first run)
+  let lastLocale = $locale;
+  $effect(() => {
+    if ($locale !== lastLocale) { lastLocale = $locale; wallet = []; }
+  });
+
   function speakTotal() {
-    speak(`${total} ${$t('money.kr')}`);
+    speak(sayAmount(total));
   }
 </script>
 
@@ -59,7 +56,7 @@
     <div class="total-display">
       <button class="total-btn" onclick={speakTotal}>
         <span class="total-num">{total}</span>
-        <span class="total-unit">{$t('money.kr')}</span>
+        <span class="total-unit">{unitFor(total)}</span>
       </button>
     </div>
 

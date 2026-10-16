@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, getLocaleDef } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
   import { activeProfileId } from '$lib/stores/profile';
@@ -167,7 +167,7 @@
 
 <div class="emotion-page">
   <div class="page-title">
-    {#if selectedEmotion}<button class="sub-back" onclick={() => { selectedEmotion = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if selectedEmotion}<button class="sub-back" onclick={() => { selectedEmotion = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{$t('emotion.title')}</h1>
 
     <button class="icon-btn" onclick={() => quizMode ? stopQuiz() : startQuiz()} aria-label={$t("emotion.quiz")}>{quizMode ? '🗺️' : '🎯'}</button>
@@ -206,7 +206,7 @@
           <span class="diary-emoji">{em?.emoji || '❓'}</span>
           <div>
             <strong>{em ? $t(em.label) : entry.emotion}</strong>
-            <span class="diary-time">{new Date(entry.time).toLocaleString()}</span>
+            <span class="diary-time">{new Date(entry.time).toLocaleString(getLocaleDef($locale).bcp47)}</span>
             {#if entry.note}<p class="diary-note">{entry.note}</p>{/if}
           </div>
         </div>
@@ -282,7 +282,7 @@
 
   <footer class="credit">
     Emotion zone concept inspired by evidence-based self-regulation frameworks.
-    Pictograms: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
+    {$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
   </footer>
 </div>
 
@@ -290,23 +290,24 @@
   .emotion-page { display: flex; flex-direction: column; min-height: 100dvh; }
   .icon-btn { width: 40px; height: 40px; font-size: 1.2em; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
 
-  .zones { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 16px; flex: 1; }
+  .zones { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); align-items: start; gap: var(--space-4); padding: var(--space-2) var(--space-5) var(--space-6); }
   .zone {
-    border: 2px solid var(--zc); border-radius: var(--radius); padding: 12px;
+    border: 2px solid var(--zc); border-radius: var(--radius); padding: var(--space-3);
     background: color-mix(in srgb, var(--zc) 5%, transparent);
   }
-  .zone-header { color: var(--zc); font-size: 0.9em; text-align: center; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .zone-emotions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .zone-header { color: var(--zc); font-size: 0.9em; line-height: 1.3; text-align: center; margin-bottom: var(--space-3); text-transform: uppercase; letter-spacing: 0.05em; }
+  .zone-emotions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
   .emotion-btn {
-    display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-1);
+    min-width: 0; min-height: 72px; padding: var(--space-2); text-align: center;
     background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);
     transition: all 0.15s; font-weight: 500;
   }
-  .emotion-btn:hover { border-color: var(--zc); transform: translateX(2px); }
+  .emotion-btn:hover { border-color: var(--zc); }
   .em-emoji { font-size: 1.5em; }
-  .em-label { font-size: 0.85em; }
+  .em-label { font-size: 0.85em; line-height: 1.2; max-width: 100%; overflow-wrap: break-word; hyphens: auto; }
 
-  .emotion-detail { flex: 1; padding: 16px; }
+  .emotion-detail { flex: 1; padding: var(--space-2) var(--space-5) var(--space-6); }
   .detail-header { text-align: center; padding: 20px; border-radius: var(--radius); margin-bottom: 16px; }
   .detail-emoji { font-size: 4em; }
   .detail-header h2 { font-size: 1.5em; margin: 8px 0; }

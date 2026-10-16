@@ -2,41 +2,41 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
 
-  type Sound = { icon: string; label: string; text: string };
+  type Sound = { icon: string; label: string; text: Partial<Record<string, string>> };
   type SoundCategory = { id: string; icon: string; sounds: Sound[] };
   const CATEGORIES: SoundCategory[] = [
     { id: 'animals', icon: '🐾', sounds: [
-      { icon: '🐶', label: 'soundLibrary.dog', text: 'Vov vov!' },
-      { icon: '🐱', label: 'soundLibrary.cat', text: 'Mjau!' },
-      { icon: '🐮', label: 'soundLibrary.cow', text: 'Muuu!' },
-      { icon: '🐷', label: 'soundLibrary.pig', text: 'Nöff nöff!' },
-      { icon: '🐸', label: 'soundLibrary.frog', text: 'Kvack kvack!' },
-      { icon: '🐓', label: 'soundLibrary.rooster', text: 'Kuckeliku!' },
-      { icon: '🐝', label: 'soundLibrary.bee', text: 'Bzzzzz!' },
-      { icon: '🦁', label: 'soundLibrary.lion', text: 'Raaarr!' },
+      { icon: '🐶', label: 'soundLibrary.dog', text: { sv: 'Vov vov!', pt_BR: 'Au au!' } },
+      { icon: '🐱', label: 'soundLibrary.cat', text: { sv: 'Mjau!', pt_BR: 'Miau!' } },
+      { icon: '🐮', label: 'soundLibrary.cow', text: { sv: 'Muuu!', pt_BR: 'Muuu!' } },
+      { icon: '🐷', label: 'soundLibrary.pig', text: { sv: 'Nöff nöff!', pt_BR: 'Oinc oinc!' } },
+      { icon: '🐸', label: 'soundLibrary.frog', text: { sv: 'Kvack kvack!', pt_BR: 'Croac croac!' } },
+      { icon: '🐓', label: 'soundLibrary.rooster', text: { sv: 'Kuckeliku!', pt_BR: 'Cocoricó!' } },
+      { icon: '🐝', label: 'soundLibrary.bee', text: { sv: 'Bzzzzz!', pt_BR: 'Zzzzzz!' } },
+      { icon: '🦁', label: 'soundLibrary.lion', text: { sv: 'Raaarr!', pt_BR: 'Roooar!' } },
     ]},
     { id: 'vehicles', icon: '🚗', sounds: [
-      { icon: '🚗', label: 'soundLibrary.car', text: 'Bruum bruum!' },
-      { icon: '🚂', label: 'soundLibrary.train', text: 'Tuut tuut!' },
-      { icon: '🚒', label: 'soundLibrary.firetruck', text: 'Tatü tata!' },
-      { icon: '✈️', label: 'soundLibrary.airplane', text: 'Vrooosh!' },
-      { icon: '🚌', label: 'soundLibrary.bus', text: 'Piiip!' },
+      { icon: '🚗', label: 'soundLibrary.car', text: { sv: 'Bruum bruum!', pt_BR: 'Vrum vrum!' } },
+      { icon: '🚂', label: 'soundLibrary.train', text: { sv: 'Tuut tuut!', pt_BR: 'Piuí piuí!' } },
+      { icon: '🚒', label: 'soundLibrary.firetruck', text: { sv: 'Tatü tata!', pt_BR: 'Uiu uiu uiu!' } },
+      { icon: '✈️', label: 'soundLibrary.airplane', text: { sv: 'Vrooosh!', pt_BR: 'Vuuuuum!' } },
+      { icon: '🚌', label: 'soundLibrary.bus', text: { sv: 'Piiip!', pt_BR: 'Fom fom!' } },
     ]},
     { id: 'nature', icon: '🌳', sounds: [
-      { icon: '🌧️', label: 'soundLibrary.rain', text: 'Pitter patter pitter patter' },
-      { icon: '⚡', label: 'soundLibrary.thunder', text: 'Krasch boom!' },
-      { icon: '💨', label: 'soundLibrary.wind', text: 'Vuuush!' },
-      { icon: '🌊', label: 'soundLibrary.waves', text: 'Skvaalp skvaalp' },
+      { icon: '🌧️', label: 'soundLibrary.rain', text: { sv: 'Pitter patter pitter patter', pt_BR: 'Plic ploc plic ploc' } },
+      { icon: '⚡', label: 'soundLibrary.thunder', text: { sv: 'Krasch boom!', pt_BR: 'Cabrum!' } },
+      { icon: '💨', label: 'soundLibrary.wind', text: { sv: 'Vuuush!', pt_BR: 'Fuuuuu!' } },
+      { icon: '🌊', label: 'soundLibrary.waves', text: { sv: 'Skvaalp skvaalp', pt_BR: 'Chuá chuá' } },
     ]},
     { id: 'music', icon: '🎵', sounds: [
-      { icon: '🥁', label: 'soundLibrary.drum', text: 'Bam bam bam!' },
-      { icon: '🎸', label: 'soundLibrary.guitar', text: 'Pling pling!' },
-      { icon: '🎹', label: 'soundLibrary.piano', text: 'Do re mi!' },
-      { icon: '🔔', label: 'soundLibrary.bell', text: 'Ding dong!' },
+      { icon: '🥁', label: 'soundLibrary.drum', text: { sv: 'Bam bam bam!', pt_BR: 'Tum tum tum!' } },
+      { icon: '🎸', label: 'soundLibrary.guitar', text: { sv: 'Pling pling!', pt_BR: 'Plim plim!' } },
+      { icon: '🎹', label: 'soundLibrary.piano', text: { sv: 'Do re mi!', pt_BR: 'Dó ré mi!' } },
+      { icon: '🔔', label: 'soundLibrary.bell', text: { sv: 'Ding dong!', pt_BR: 'Dim dom!' } },
     ]},
   ];
 
@@ -45,7 +45,7 @@
 
   function playSound(sound: Sound) {
     playing = sound.label;
-    speak(sound.text);
+    speak(pick(sound.text, $locale));
     setTimeout(() => { playing = null; }, 1500);
   }
 
@@ -62,7 +62,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if selectedCat}<button class="sub-back" onclick={() => { selectedCat = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if selectedCat}<button class="sub-back" onclick={() => { selectedCat = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🔊 {$t('soundLibrary.title')}</h1>
 
   </div>

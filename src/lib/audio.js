@@ -1,7 +1,22 @@
-const ctx = typeof AudioContext !== 'undefined' ? new AudioContext() : null;
+/** @type {AudioContext | null} */
+let ctx = null;
+
+/**
+ * The app-wide AudioContext. Every open context keeps its own audio rendering thread running, so creating
+ * one per sound (and never closing it) piles them up while navigating — audio starts crackling and sounding
+ * robotic. Always reuse this one; it is created lazily (needs a user gesture to start) and resumed on use.
+ * @returns {AudioContext | null}
+ */
+export function getAudioContext() {
+  if (typeof AudioContext === 'undefined') return null;
+  if (!ctx || ctx.state === 'closed') ctx = new AudioContext();
+  if (ctx.state === 'suspended') ctx.resume();
+  return ctx;
+}
 
 /** @param {number} freq @param {number} duration @param {OscillatorType} [type] */
 function beep(freq, duration, type = 'sine') {
+  const ctx = getAudioContext();
   if (!ctx) return;
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();

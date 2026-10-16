@@ -5,7 +5,7 @@
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
-  import { locale } from '$lib/i18n';
+  import { locale, pick } from '$lib/i18n';
   import { get } from 'svelte/store';
   import { fade } from 'svelte/transition';
 
@@ -24,11 +24,15 @@
   const FONT_SIZES = { small: '0.9em', medium: '1.1em', large: '1.4em' };
   const PICTO_SIZES = { small: 40, medium: 56, large: 72 };
 
-  // Common small words that don't need pictograms
-  const SKIP_WORDS = new Set(['a', 'an', 'the', 'is', 'are', 'was', 'were', 'am', 'be', 'been',
+  // Common small words that don't need pictograms (sv/en share the original mixed list — unchanged)
+  const SKIP_WORDS_SV_EN = new Set(['a', 'an', 'the', 'is', 'are', 'was', 'were', 'am', 'be', 'been',
     'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from', 'as',
     'it', 'this', 'that', 'en', 'ett', 'den', 'det', 'och', 'eller', 'men', 'i', 'på',
     'till', 'för', 'av', 'med', 'från', 'som', 'är', 'var', 'har', 'hade']);
+  const SKIP_WORDS_PT = new Set(['o', 'a', 'os', 'as', 'um', 'uma', 'uns', 'umas', 'de', 'do', 'da', 'dos', 'das',
+    'em', 'no', 'na', 'nos', 'nas', 'ao', 'aos', 'à', 'às', 'e', 'ou', 'mas', 'que', 'para', 'pra', 'com',
+    'por', 'pelo', 'pela', 'se', 'é', 'foi', 'era', 'são', 'tem']);
+  const SKIP_WORDS = $derived($locale === 'pt_BR' ? SKIP_WORDS_PT : SKIP_WORDS_SV_EN);
 
   function loadSaved(): { text: string; words: SymbolWord[] }[] {
     try {
@@ -61,7 +65,7 @@
           const results = await searchPictograms(clean, lang);
           if (results.length > 0) {
             symbolWords[i] = { ...sw, pictogramUrl: results[0].url, loading: false };
-          } else if (lang === 'sv') {
+          } else if (lang !== 'en') {
             // Fallback to English search
             const enResults = await searchPictograms(clean, 'en');
             symbolWords[i] = { ...sw, pictogramUrl: enResults[0]?.url || '', loading: false };
@@ -105,13 +109,14 @@
   // Example sentences
   const EXAMPLES_SV = ['Jag vill äta frukost', 'Vi ska gå till parken', 'Jag känner mig glad idag'];
   const EXAMPLES_EN = ['I want to eat breakfast', 'We are going to the park', 'I feel happy today'];
+  const EXAMPLES_PT = ['Eu quero tomar café da manhã', 'Nós vamos ao parque', 'Eu estou feliz hoje'];
 
   function loadExample(ex: string) {
     inputText = ex;
     processText();
   }
 
-  const examples = $derived(get(locale) === 'sv' ? EXAMPLES_SV : EXAMPLES_EN);
+  const examples = $derived(pick({ sv: EXAMPLES_SV, en: EXAMPLES_EN, pt_BR: EXAMPLES_PT }, $locale));
 </script>
 
 <WelcomeDialog appId="symbol-text" titleKey="app.symbol_text" purposeKey="welcome.symbolText.purpose" howKey="welcome.symbolText.how" goalKey="welcome.symbolText.goal" icon="🔤" />
@@ -194,7 +199,7 @@
     {/if}
   </main>
 
-  <footer class="cr"><p>Widgit-inspirerat · ARASAAC (CC BY-NC-SA) · {$t('app.title.brand')}</p></footer>
+  <footer class="cr"><p>{$t('symbolText.footer')} · {$t('app.title.brand')}</p></footer>
 </div>
 
 <style>

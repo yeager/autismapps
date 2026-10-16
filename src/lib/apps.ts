@@ -8,6 +8,8 @@ export interface AppDef {
   icon: string;           // path to SVG
   route: string;
   ready: boolean;
+  /** Locales whose content is not adapted yet — the app shows as "coming soon" there */
+  unavailableIn?: string[];
 }
 
 export const CATEGORY_META: Record<AppCategory, { color: string; label: string; emoji: string }> = {
@@ -21,7 +23,10 @@ export const CATEGORY_META: Record<AppCategory, { color: string; label: string; 
   social:        { color: '#55776A', label: 'app.category.social', emoji: '🤝' }
 };
 
-export const ALL_APPS: AppDef[] = [
+/** Apps whose content is Swedish-specific and awaits adaptation for pt_BR (none since cycle D; the mechanism stays for new apps) */
+export const NOT_ADAPTED_PT: string[] = [];
+
+const APP_LIST: AppDef[] = [
   // Communication (AAC)
   { id: 'board-builder', name: 'app.board_builder', description: 'app.board_builder.desc', category: 'communication', icon: '/icons/board-builder.svg', route: '/apps/board-builder', ready: true },
   { id: 'talk-board', name: 'app.talk_board', description: 'app.talk_board.desc', category: 'communication', icon: '/icons/talk-board.svg', route: '/apps/talk-board', ready: true },
@@ -107,3 +112,17 @@ export const ALL_APPS: AppDef[] = [
   { id: 'fine-motor', name: 'app.fine_motor', description: 'app.fine_motor.desc', category: 'play', icon: '/icons/fine-motor.svg', route: '/apps/fine-motor', ready: true },
   { id: 'traffic-safety', name: 'app.traffic_safety', description: 'app.traffic_safety.desc', category: 'daily', icon: '/icons/traffic-safety.svg', route: '/apps/traffic-safety', ready: true },
 ];
+
+export const ALL_APPS: AppDef[] = APP_LIST.map((app) =>
+  NOT_ADAPTED_PT.includes(app.id) ? { ...app, unavailableIn: ['pt_BR'] } : app
+);
+
+/** True when the app can be opened in the given locale */
+export function isAvailableIn(app: AppDef, code: string): boolean {
+  return app.ready && !(app.unavailableIn ?? []).includes(code);
+}
+
+/** True when the app is blocked only because it isn't adapted to the given locale (ignores `ready`) */
+export function isBlockedIn(app: AppDef, code: string): boolean {
+  return (app.unavailableIn ?? []).includes(code);
+}

@@ -12,8 +12,9 @@
    */
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
+  import { getAudioContext as sharedAudioContext } from '$lib/audio';
   import { fade, fly } from 'svelte/transition';
   import { browser } from '$app/environment';
 
@@ -21,13 +22,18 @@
   import StepProgress from './StepProgress.svelte';
   import HandTap from './HandTap.svelte';
   import {
-    phrases,
+    phrases as PHRASES_SV,
     CATEGORIES,
     MIT_STEPS,
     NOTE_FREQ,
-    getPhrasesByCategory,
     getArasaacUrl,
   } from '$lib/data/mit-phrases.js';
+  import { PHRASES_PT } from '$lib/data/pt-br/melody-therapy';
+  import type { MitPhrase } from '$lib/data/speech-types';
+
+  // Phrases per locale (en keeps the Swedish phrases)
+  const PHRASES = $derived(pick<MitPhrase[]>({ sv: PHRASES_SV, en: PHRASES_SV, pt_BR: PHRASES_PT }, $locale));
+  const getPhrasesByCategory = (id: string) => PHRASES.filter((p) => p.category === id);
 
   // ─── State ───
   let selectedCategory = $state<string | null>(null);
@@ -65,16 +71,11 @@
   const totalStars = $derived(completedSteps.size);
 
   // ─── Audio Context (Web Audio API) ───
-  let audioCtx: AudioContext | null = null;
-
+  // Shared app-wide context (resumed on use); a per-component one was never closed when leaving
   function getAudioContext(): AudioContext {
-    if (!audioCtx) {
-      audioCtx = new AudioContext();
-    }
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    return audioCtx;
+    const ctx = sharedAudioContext();
+    if (!ctx) throw new Error('Web Audio not available');
+    return ctx;
   }
 
   /**
@@ -229,9 +230,9 @@
 
 <div class="app" in:fade>
   <header class="hdr">
-    <button class="back" onclick={goBack} aria-label="Tillbaka">←</button>
+    <button class="back" onclick={goBack} aria-label={$t('app.back')}>←</button>
     <h1>🎵 {$t('melodyTherapy.title')}</h1>
-    <div class="star-count" aria-label="{totalStars} stjärnor">⭐ {totalStars}</div>
+    <div class="star-count" aria-label={$t('melodyTherapy.starsLabel', { count: String(totalStars) })}>⭐ {totalStars}</div>
   </header>
 
   <main class="cnt">
@@ -389,7 +390,10 @@
     {/if}
   </main>
 
-  <footer class="cr"><p>{$t('app.title.brand')} · CC BY-NC-SA 4.0</p></footer>
+  <footer class="cr">
+    <p>{$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0</p>
+    <p>{$t('app.title.brand')} · CC BY-NC-SA 4.0</p>
+  </footer>
 </div>
 
 <style>

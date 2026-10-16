@@ -3,6 +3,7 @@
  * Used by the Prosody Trainer app for stress, intonation, and rhythm exercises.
  */
 
+/** @type {import('./speech-types').ProsodyWord[]} */
 export const twoSyllableWords = [
   { word: 'mamma', stress: 0, syllables: ['mam', 'ma'], icon: '👩' },
   { word: 'banan', stress: 1, syllables: ['ba', 'nan'], icon: '🍌' },
@@ -16,6 +17,7 @@ export const twoSyllableWords = [
   { word: 'citron', stress: 1, syllables: ['ci', 'tron'], icon: '🍋' },
 ];
 
+/** @type {import('./speech-types').ProsodyWord[]} */
 export const threeSyllableWords = [
   { word: 'telefon', stress: 2, syllables: ['te', 'le', 'fon'], icon: '📞' },
   { word: 'elefant', stress: 2, syllables: ['e', 'le', 'fant'], icon: '🐘' },
@@ -29,6 +31,7 @@ export const threeSyllableWords = [
   { word: 'helikopter', stress: 2, syllables: ['he', 'li', 'kop', 'ter'], icon: '🚁' },
 ];
 
+/** @type {import('./speech-types').IntonationSentence[]} */
 export const intonationSentences = [
   // Statements (falling contour ↘)
   {
@@ -89,6 +92,7 @@ export const intonationSentences = [
   },
 ];
 
+/** @type {import('./speech-types').EmotionItem[]} */
 export const emotionData = [
   {
     emotion: 'glad',
@@ -120,6 +124,7 @@ export const emotionData = [
   },
 ];
 
+/** @type {import('./speech-types').RhythmPattern[]} */
 export const rhythmPatterns = [
   {
     text: 'Kom hem nu',
@@ -159,6 +164,7 @@ export const rhythmPatterns = [
   },
 ];
 
+/** @type {import('./speech-types').IntonationSentence[]} */
 export const fullSentences = [
   {
     text: 'Hej, jag heter Axel.',

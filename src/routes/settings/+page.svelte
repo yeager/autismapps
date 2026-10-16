@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { get } from 'svelte/store';
-  import { t, locale, setLocale } from '$lib/i18n';
+  import { t, locale, setLocale, LOCALES, getLocaleDef } from '$lib/i18n';
   import { flagSvg } from '$lib/flags';
-  import { speak, preloadVoice, getStoredVoices, removeVoice, getEngine, selectedVoiceSv, selectedVoiceEn, ttsStatus } from '$lib/tts';
+  import { speak, preloadVoice, getStoredVoices, removeVoice, getEngine, voiceStoreFor, ttsStatus } from '$lib/tts';
   import { voicesForLang, type VoiceOption } from '$lib/tts/voices';
   import {
     theme, textSize, ttsSpeed, phoneticEmphasis,
@@ -14,20 +13,7 @@
 
   let advanced = $state(false);
 
-  const LANGUAGES: { code: string; label: string; flag: string; ready: boolean }[] = [
-    { code: 'sv', label: 'Svenska', flag: '🇸🇪', ready: true },
-    { code: 'en', label: 'English', flag: '🇬🇧', ready: true },
-    { code: 'da', label: 'Dansk', flag: '🇩🇰', ready: false },
-    { code: 'de', label: 'Deutsch', flag: '🇩🇪', ready: false },
-    { code: 'es', label: 'Español', flag: '🇪🇸', ready: false },
-    { code: 'fi', label: 'Suomi', flag: '🇫🇮', ready: false },
-    { code: 'fr', label: 'Français', flag: '🇫🇷', ready: false },
-    { code: 'it', label: 'Italiano', flag: '🇮🇹', ready: false },
-    { code: 'nb', label: 'Norsk bokmål', flag: '🇳🇴', ready: false },
-    { code: 'nl', label: 'Nederlands', flag: '🇳🇱', ready: false },
-    { code: 'pl', label: 'Polski', flag: '🇵🇱', ready: false },
-    { code: 'pt_BR', label: 'Português (BR)', flag: '🇧🇷', ready: false },
-  ];
+  const LANGUAGES = LOCALES;
 
   const TEXT_SIZES: { value: TextSize; key: string }[] = [
     { value: 'normal', key: 'settings.text_size.normal' },
@@ -66,20 +52,26 @@
 
   function loadWebSpeechVoices() {
     if (typeof speechSynthesis === 'undefined') return;
-    const langPrefix = $locale === 'sv' ? 'sv' : 'en';
+    const bcp47 = getLocaleDef($locale).bcp47.toLowerCase();
+    const langPrefix = bcp47.split('-')[0];
+    const normLang = (l: string) => l.replace('_', '-').toLowerCase();
+    const allVoices = speechSynthesis.getVoices();
+    // If any system voice matches the full BCP-47 tag (e.g. pt-BR), list only exact matches
+    const hasExact = allVoices.some(v => normLang(v.lang) === bcp47);
+    const langMatches = (l: string) => hasExact ? normLang(l) === bcp47 : l.startsWith(langPrefix);
     const noveltyNames = new Set([
       'Albert','Bad News','Bahh','Bells','Boing','Bubbles','Cellos','Good News',
       'Jester','Organ','Trinoids','Whisper','Wobble','Zarvox','Ralph','Fred',
       'Hysterical','Deranged','Superstar','Junior','Kathy','Princess','Vicki',
       'Bruce','Agnes'
     ]);
-    const sysVoices = speechSynthesis.getVoices()
-      .filter(v => v.lang.startsWith(langPrefix) && !noveltyNames.has(v.name.split(' ')[0]))
+    const sysVoices = allVoices
+      .filter(v => langMatches(v.lang) && !noveltyNames.has(v.name.split(' ')[0]))
       .sort((a, b) => (b.localService ? 1 : 0) - (a.localService ? 1 : 0) || a.name.localeCompare(b.name))
       .map((v, i) => ({
         id: `webspeech:${v.voiceURI}`,
         name: v.name.replace(/^Microsoft /, '').replace(/^Google /, ''),
-        lang: langPrefix,
+        lang: $locale,
         gender: 'neutral' as const,
         quality: v.localService ? 'high' as const : 'medium' as const,
         sizeMb: 0,
@@ -98,13 +90,10 @@
     return webSpeechVoices.length > 0 ? webSpeechVoices : voicesForLang($locale);
   }
 
-  function selectedVoiceForLang(): string {
-    return $locale === 'sv' ? $selectedVoiceSv : $selectedVoiceEn;
-  }
+  const voiceStore = $derived(voiceStoreFor($locale));
 
   async function selectVoice(v: VoiceOption) {
-    if (v.lang === 'sv') $selectedVoiceSv = v.id;
-    else $selectedVoiceEn = v.id;
+    voiceStoreFor(v.lang).set(v.id);
 
     // Download if Piper voice not cached
     if (!v.id.startsWith('webspeech:') && !storedVoices.includes(v.id)) {
@@ -114,8 +103,8 @@
       downloadingVoice = '';
     }
 
-    // Test the voice
-    speak(v.lang === 'sv' ? 'Hej, jag heter ' + v.name : 'Hello, my name is ' + v.name);
+    // Test the voice in its own language
+    speak($t('settings.voice_intro', { name: v.name }), { lang: v.lang });
   }
 
   function handleSpeedChange(e: Event) {
@@ -241,7 +230,7 @@
     </div>
 
     <!-- Language -->
-    <div class="setting">
+    <div class="setting setting-column">
       <span class="setting-label">{$t('settings.language')}</span>
       <div class="setting-options">
         {#each LANGUAGES as lang}
@@ -251,7 +240,7 @@
             class:disabled={!lang.ready}
             disabled={!lang.ready}
             onclick={() => changeLang(lang.code)}
-            title={lang.ready ? lang.label : `${lang.label} — coming soon`}
+            title={lang.ready ? lang.label : `${lang.label} — ${$t('app.coming_soon')}`}
           >
             <span class="lang-flag">{@html flagSvg(lang.flag)}</span>
             <span class="lang-name">{lang.label}</span>
@@ -269,7 +258,7 @@
       </p>
       <div class="voice-grid">
         {#each currentVoices() as v}
-          {@const isSelected = selectedVoiceForLang() === v.id}
+          {@const isSelected = $voiceStore === v.id}
           {@const isCached = storedVoices.includes(v.id)}
           {@const isDownloading = downloadingVoice === v.id}
           <button
@@ -410,49 +399,48 @@
 
     <!-- TTS Debug Panel -->
     <div class="section">
-      <h2>🔍 TTS Diagnostik</h2>
+      <h2>{$t('settings.debug.title')}</h2>
       <div class="debug-panel">
         <div class="debug-row">
-          <span class="debug-label">Motor:</span>
+          <span class="debug-label">{$t('settings.debug.engine')}</span>
           <span class="debug-value" class:ok={$ttsStatus.engine === 'piper'} class:warn={$ttsStatus.engine === 'webspeech'} class:err={$ttsStatus.engine === 'none'}>
-            {$ttsStatus.engine === 'piper' ? '✅ Piper WASM' : $ttsStatus.engine === 'webspeech' ? '⚠️ Web Speech (fallback)' : '❌ Ingen'}
+            {$ttsStatus.engine === 'piper' ? '✅ Piper WASM' : $ttsStatus.engine === 'webspeech' ? '⚠️ Web Speech (fallback)' : $t('settings.debug.none')}
           </span>
         </div>
         <div class="debug-row">
-          <span class="debug-label">Piper status:</span>
+          <span class="debug-label">{$t('settings.debug.piper_status')}</span>
           <span class="debug-value">
-            {$ttsStatus.piperReady ? '✅ Redo' : $ttsStatus.piperFailed ? '❌ Ej tillgänglig' : '⏳ Laddar...'}
+            {$ttsStatus.piperReady ? $t('settings.debug.ready') : $ttsStatus.piperFailed ? $t('settings.debug.unavailable') : $t('settings.debug.loading')}
           </span>
         </div>
         {#if $ttsStatus.lastSpoke}
           <div class="debug-row">
-            <span class="debug-label">Senaste:</span>
+            <span class="debug-label">{$t('settings.debug.last')}</span>
             <span class="debug-value">"{$ttsStatus.lastSpoke.slice(0, 40)}"</span>
           </div>
         {/if}
         {#if $ttsStatus.lastError}
           <div class="debug-row">
-            <span class="debug-label">Fel:</span>
+            <span class="debug-label">{$t('settings.debug.error')}</span>
             <span class="debug-value err">{$ttsStatus.lastError.slice(0, 80)}</span>
           </div>
         {/if}
         <div class="debug-btns">
-          <button class="test-btn" onclick={() => speak('Hej! TTS-motorn testar.')}>
-            🔊 Testa TTS
+          <button class="test-btn" onclick={() => speak($t('settings.debug.test_phrase'))}>
+            {$t('settings.debug.test')}
           </button>
           {#if $ttsStatus.engine === 'piper'}
             <button class="test-btn" onclick={async () => {
               const stored = await getStoredVoices();
               for (const v of stored) await removeVoice(v);
-              alert(`Rensade ${stored.length} cachade röster. Ladda om sidan.`);
+              alert($t('settings.debug.cleared', { n: String(stored.length) }));
             }}>
-              🗑️ Rensa TTS-cache
+              {$t('settings.debug.clear_cache')}
             </button>
             <button class="test-btn" onclick={async () => {
-              await preloadVoice('sv');
-              await preloadVoice('en');
+              for (const l of new Set(['sv', 'en', $locale])) await preloadVoice(l);
             }}>
-              📥 Ladda ner röster
+              {$t('settings.debug.download_voices')}
             </button>
           {/if}
         </div>
@@ -463,9 +451,10 @@
 
 <style>
   .settings-page {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    padding: 24px 20px;
+    padding: var(--space-6) var(--page-pad) var(--space-8);
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -511,7 +500,7 @@
   .settings-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-3);
   }
 
   .setting {
@@ -519,17 +508,18 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 16px 18px;
+    padding: var(--space-4) var(--space-5);
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius);
   }
 
   .setting-column {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: var(--space-3);
   }
+  .setting-column .setting-options { justify-content: flex-start; }
 
   .setting-label {
     font-weight: 600;
@@ -551,7 +541,7 @@
     font-weight: 500;
     font-size: 0.85em;
     transition: all var(--transition);
-    min-height: 40px;
+    min-height: 48px;
     white-space: nowrap;
   }
   .option-btn:hover { background: var(--bg-hover); border-color: var(--accent); }
@@ -576,7 +566,7 @@
     font-weight: 600;
     font-size: 0.85em;
     transition: all var(--transition);
-    min-height: 40px;
+    min-height: 48px;
     min-width: 60px;
   }
   .toggle-btn:hover { background: var(--bg-hover); }
@@ -687,7 +677,7 @@
     font-weight: 500;
     font-size: 0.85em;
     transition: all var(--transition);
-    min-height: 40px;
+    min-height: 48px;
     white-space: nowrap;
     background: var(--bg-card);
   }
@@ -708,7 +698,7 @@
     background: var(--bg);
     color: var(--text);
     transition: border-color 0.2s ease;
-    min-height: 40px;
+    min-height: 48px;
     min-width: 200px;
     text-align: center;
   }

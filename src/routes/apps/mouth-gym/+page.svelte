@@ -18,75 +18,77 @@
   interface Exercise {
     id: string;
     category: Category;
-    name: string;
     icon: string;
-    steps: { instruction: string; animation: string; holdSeconds: number }[];
+    steps: { animation: string; holdSeconds: number }[];
     reps: number;
   }
 
   const EXERCISES: Exercise[] = [
     // Tongue exercises
-    { id: 'tongue-up', category: 'tongue', name: 'Tungan upp', icon: '👅', reps: 5, steps: [
-      { instruction: 'Öppna munnen stort', animation: '😮', holdSeconds: 0 },
-      { instruction: 'Lyft tungspetsen till gommen', animation: '👅⬆️', holdSeconds: 3 },
-      { instruction: 'Håll kvar! Räkna till 3', animation: '👅✨', holdSeconds: 3 },
-      { instruction: 'Släpp ner tungan. Bra!', animation: '😊', holdSeconds: 0 },
+    { id: 'tongue-up', category: 'tongue', icon: '👅', reps: 5, steps: [
+      { animation: '😮', holdSeconds: 0 },
+      { animation: '👅⬆️', holdSeconds: 3 },
+      { animation: '👅✨', holdSeconds: 3 },
+      { animation: '😊', holdSeconds: 0 },
     ]},
-    { id: 'tongue-side', category: 'tongue', name: 'Tungan åt sidan', icon: '👅', reps: 5, steps: [
-      { instruction: 'Öppna munnen lite', animation: '😮', holdSeconds: 0 },
-      { instruction: 'Rör tungan åt vänster', animation: '👅⬅️', holdSeconds: 2 },
-      { instruction: 'Nu åt höger!', animation: '👅➡️', holdSeconds: 2 },
-      { instruction: 'Snabbare! Vänster-höger', animation: '👅↔️', holdSeconds: 0 },
+    { id: 'tongue-side', category: 'tongue', icon: '👅', reps: 5, steps: [
+      { animation: '😮', holdSeconds: 0 },
+      { animation: '👅⬅️', holdSeconds: 2 },
+      { animation: '👅➡️', holdSeconds: 2 },
+      { animation: '👅↔️', holdSeconds: 0 },
     ]},
-    { id: 'tongue-circle', category: 'tongue', name: 'Tungcirkel', icon: '👅', reps: 3, steps: [
-      { instruction: 'Stäng munnen', animation: '😶', holdSeconds: 0 },
-      { instruction: 'Kör tungan runt innanför kinden', animation: '👅🔄', holdSeconds: 4 },
-      { instruction: 'Nu åt andra hållet!', animation: '👅🔃', holdSeconds: 4 },
+    { id: 'tongue-circle', category: 'tongue', icon: '👅', reps: 3, steps: [
+      { animation: '😶', holdSeconds: 0 },
+      { animation: '👅🔄', holdSeconds: 4 },
+      { animation: '👅🔃', holdSeconds: 4 },
     ]},
-    { id: 'tongue-click', category: 'tongue', name: 'Tungklick', icon: '👅', reps: 10, steps: [
-      { instruction: 'Tryck tungan mot gommen', animation: '👅⬆️', holdSeconds: 1 },
-      { instruction: 'Klicka! Dra ner snabbt', animation: '👅💥', holdSeconds: 0 },
-      { instruction: 'Lyssna på klicket!', animation: '👂✨', holdSeconds: 0 },
+    { id: 'tongue-click', category: 'tongue', icon: '👅', reps: 10, steps: [
+      { animation: '👅⬆️', holdSeconds: 1 },
+      { animation: '👅💥', holdSeconds: 0 },
+      { animation: '👂✨', holdSeconds: 0 },
     ]},
     // Lip exercises
-    { id: 'lip-round', category: 'lips', name: 'Runda läppar', icon: '👄', reps: 5, steps: [
-      { instruction: 'Gör läpparna runda som ett O', animation: '😗', holdSeconds: 3 },
-      { instruction: 'Dra ut läpparna brett', animation: '😁', holdSeconds: 3 },
-      { instruction: 'Runda igen!', animation: '😗', holdSeconds: 3 },
+    { id: 'lip-round', category: 'lips', icon: '👄', reps: 5, steps: [
+      { animation: '😗', holdSeconds: 3 },
+      { animation: '😁', holdSeconds: 3 },
+      { animation: '😗', holdSeconds: 3 },
     ]},
-    { id: 'lip-pop', category: 'lips', name: 'Läppsmäll', icon: '👄', reps: 8, steps: [
-      { instruction: 'Tryck ihop läpparna hårt', animation: '😶', holdSeconds: 1 },
-      { instruction: 'Smäll med läpparna!', animation: '👄💥', holdSeconds: 0 },
-      { instruction: 'Bra! En gång till', animation: '✨', holdSeconds: 0 },
+    { id: 'lip-pop', category: 'lips', icon: '👄', reps: 8, steps: [
+      { animation: '😶', holdSeconds: 1 },
+      { animation: '👄💥', holdSeconds: 0 },
+      { animation: '✨', holdSeconds: 0 },
     ]},
-    { id: 'lip-vibrate', category: 'lips', name: 'Brumma', icon: '👄', reps: 5, steps: [
-      { instruction: 'Slappna av läpparna', animation: '😌', holdSeconds: 0 },
-      { instruction: 'Blås luft — brrrrr!', animation: '👄💨', holdSeconds: 3 },
-      { instruction: 'Håll i gång brummandet!', animation: '👄🎵', holdSeconds: 3 },
+    { id: 'lip-vibrate', category: 'lips', icon: '👄', reps: 5, steps: [
+      { animation: '😌', holdSeconds: 0 },
+      { animation: '👄💨', holdSeconds: 3 },
+      { animation: '👄🎵', holdSeconds: 3 },
     ]},
     // Jaw exercises
-    { id: 'jaw-open', category: 'jaw', name: 'Gapa stort', icon: '😮', reps: 5, steps: [
-      { instruction: 'Öppna munnen så stort du kan', animation: '😮', holdSeconds: 3 },
-      { instruction: 'Stäng långsamt', animation: '😶', holdSeconds: 2 },
-      { instruction: 'Bra kontroll!', animation: '✨', holdSeconds: 0 },
+    { id: 'jaw-open', category: 'jaw', icon: '😮', reps: 5, steps: [
+      { animation: '😮', holdSeconds: 3 },
+      { animation: '😶', holdSeconds: 2 },
+      { animation: '✨', holdSeconds: 0 },
     ]},
-    { id: 'jaw-slide', category: 'jaw', name: 'Käken åt sidan', icon: '😮', reps: 5, steps: [
-      { instruction: 'Skjut käken åt vänster', animation: '😶⬅️', holdSeconds: 2 },
-      { instruction: 'Tillbaka till mitten', animation: '😶', holdSeconds: 1 },
-      { instruction: 'Nu åt höger', animation: '😶➡️', holdSeconds: 2 },
+    { id: 'jaw-slide', category: 'jaw', icon: '😮', reps: 5, steps: [
+      { animation: '😶⬅️', holdSeconds: 2 },
+      { animation: '😶', holdSeconds: 1 },
+      { animation: '😶➡️', holdSeconds: 2 },
     ]},
     // Breathing exercises
-    { id: 'breath-blow', category: 'breath', name: 'Blåsa', icon: '💨', reps: 5, steps: [
-      { instruction: 'Andas in djupt genom näsan', animation: '👃💨', holdSeconds: 3 },
-      { instruction: 'Blås ut långsamt genom munnen', animation: '😗💨', holdSeconds: 5 },
-      { instruction: 'Försök göra det jämnt', animation: '🌬️', holdSeconds: 0 },
+    { id: 'breath-blow', category: 'breath', icon: '💨', reps: 5, steps: [
+      { animation: '👃💨', holdSeconds: 3 },
+      { animation: '😗💨', holdSeconds: 5 },
+      { animation: '🌬️', holdSeconds: 0 },
     ]},
-    { id: 'breath-straw', category: 'breath', name: 'Sugrörspust', icon: '🥤', reps: 5, steps: [
-      { instruction: 'Runda läpparna som runt ett sugrör', animation: '😗', holdSeconds: 0 },
-      { instruction: 'Blås ut en tunn luftström', animation: '😗💨', holdSeconds: 4 },
-      { instruction: 'Försök blåsa ut ett ljus!', animation: '🕯️💨', holdSeconds: 0 },
+    { id: 'breath-straw', category: 'breath', icon: '🥤', reps: 5, steps: [
+      { animation: '😗', holdSeconds: 0 },
+      { animation: '😗💨', holdSeconds: 4 },
+      { animation: '🕯️💨', holdSeconds: 0 },
     ]},
   ];
+
+  const exName = (ex: Exercise) => $t(`mouthGym.ex.${ex.id}.name`);
+  const stepText = (ex: Exercise, i: number) => $t(`mouthGym.ex.${ex.id}.step${i + 1}`);
 
   const CATEGORIES: { id: Category; icon: string; color: string }[] = [
     { id: 'tongue', icon: '👅', color: '#E74C3C' },
@@ -168,7 +170,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if exerciseDone || selectedExercise}<button class="sub-back" onclick={goBack} aria-label="Tillbaka">←</button>{/if}
+    {#if exerciseDone || selectedExercise}<button class="sub-back" onclick={goBack} aria-label={$t('app.back')}>←</button>{/if}
     <h1>💪 {$t('mouthGym.title')}</h1>
 
   </div>
@@ -191,7 +193,7 @@
         {#each categoryExercises as ex}
           <button class="ex-card" onclick={() => selectExercise(ex)}>
             <span class="ex-icon">{ex.icon}</span>
-            <span class="ex-name">{ex.name}</span>
+            <span class="ex-name">{exName(ex)}</span>
             <span class="ex-reps">{ex.reps}x</span>
           </button>
         {/each}
@@ -209,7 +211,7 @@
     {:else}
       <div class="exercise-view">
         <div class="ex-header">
-          <span class="ex-title">{selectedExercise.name}</span>
+          <span class="ex-title">{exName(selectedExercise)}</span>
           <span class="ex-progress">{$t('mouthGym.reps')}: {currentRep}/{selectedExercise.reps}</span>
         </div>
 
@@ -217,7 +219,7 @@
           <div class="animation-area">
             <span class="anim">{selectedExercise.steps[currentStep].animation}</span>
           </div>
-          <p class="step-instruction">{selectedExercise.steps[currentStep].instruction}</p>
+          <p class="step-instruction">{stepText(selectedExercise, currentStep)}</p>
           <span class="step-num">{$t('mouthGym.step')} {currentStep + 1} {$t('mouthGym.of')} {selectedExercise.steps.length}</span>
         </div>
 
@@ -231,7 +233,7 @@
         {/if}
 
         <button class="btn next-step-btn" onclick={nextStep} disabled={holdTimer > 0}>
-          {currentStep < selectedExercise.steps.length - 1 ? `${$t('mouthGym.step')} →` : currentRep < selectedExercise.reps ? '🔁 Nästa rep' : '✅ Klar!'}
+          {currentStep < selectedExercise.steps.length - 1 ? `${$t('mouthGym.step')} →` : currentRep < selectedExercise.reps ? $t('mouthGym.next_rep') : $t('mouthGym.finish')}
         </button>
       </div>
     {/if}

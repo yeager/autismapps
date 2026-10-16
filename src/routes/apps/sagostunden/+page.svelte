@@ -2,10 +2,10 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import { t, locale } from '$lib/i18n';
+  import { t, locale, getLocaleDef, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
-  import { ALL_WORDS, WORD_CATEGORIES, pictogramUrl, type Word, type WordCategory } from '$lib/sagostunden/words';
+  import { ALL_WORDS, WORD_CATEGORIES, pictogramUrl, wordLabel, wordPicto, type Word, type WordCategory } from '$lib/sagostunden/words';
   import { TEMPLATES, type StoryTemplate } from '$lib/sagostunden/templates';
   import { generateStory, type GeneratedStory } from '$lib/sagostunden/engine';
   import { saveStory, getAllStories, deleteStory, toggleFavorite, type SavedStory } from '$lib/sagostunden/storage';
@@ -33,16 +33,21 @@
   let showPictograms = $state(true);
   let showStar = $state(false);
 
+  // Story language: en keeps the Swedish stories as before (switch to en: 'en' to enable the English templates)
+  const storyLang = $derived(pick({ sv: 'sv', en: 'sv', pt_BR: 'pt_BR' }, $locale));
+  const label = (word: Word) => wordLabel(word, storyLang);
+  const picto = (word: Word) => pictogramUrl(wordPicto(word, storyLang), 100);
+
   // Slots needed by current template
   let neededSlots = $derived(selectedTemplate?.slots ?? []);
 
-  const SLOT_LABELS: Record<string, { emoji: string; label: string }> = {
-    DJUR: { emoji: '🐾', label: 'Djur' },
-    PLATS: { emoji: '🏠', label: 'Plats' },
-    SAK: { emoji: '🎁', label: 'Sak' },
-    MAT: { emoji: '🍎', label: 'Mat' },
-    PERSON: { emoji: '👤', label: 'Person' },
-    VERB: { emoji: '⚡', label: 'Handling' },
+  const SLOT_LABELS: Record<string, { emoji: string; key: string }> = {
+    DJUR: { emoji: '🐾', key: 'sagostunden.slot.DJUR' },
+    PLATS: { emoji: '🏠', key: 'sagostunden.slot.PLATS' },
+    SAK: { emoji: '🎁', key: 'sagostunden.slot.SAK' },
+    MAT: { emoji: '🍎', key: 'sagostunden.slot.MAT' },
+    PERSON: { emoji: '👤', key: 'sagostunden.slot.PERSON' },
+    VERB: { emoji: '⚡', key: 'sagostunden.slot.VERB' },
   };
 
   const SLOT_TO_CAT: Record<string, WordCategory> = {
@@ -54,8 +59,9 @@
     VERB: 'verb',
   };
 
+  /** Template title in the UI language (sv / en / pt_BR; unknown locales fall back to en) */
   function templateTitle(template: StoryTemplate): string {
-    return $locale === 'sv' ? template.title : template.titleEn;
+    return pick(template.title, $locale);
   }
 
   function savedStoryTitle(story: SavedStory): string {
@@ -65,7 +71,7 @@
 
   function selectWord(slot: string, word: Word) {
     selectedWords = { ...selectedWords, [slot]: word };
-    speak(word.sv);
+    speak(label(word));
     // Auto-advance: scroll to next empty slot
     setTimeout(() => {
       const nextEmpty = neededSlots.find(s => s !== slot && !selectedWords[s]);
@@ -88,7 +94,7 @@
 
   async function createStory() {
     if (!selectedTemplate) return;
-    currentStory = generateStory(selectedTemplate, selectedWords);
+    currentStory = generateStory(selectedTemplate, selectedWords, storyLang);
     view = 'story';
     await awardStar('sagostunden', 'rewards.star.completed');
     showStar = true;
@@ -96,7 +102,7 @@
   }
 
   async function randomStory() {
-    currentStory = generateStory();
+    currentStory = generateStory(undefined, undefined, storyLang);
     view = 'story';
     await awardStar('sagostunden', 'rewards.star.completed');
     showStar = true;
@@ -108,7 +114,8 @@
     await saveStory({
       storyId: currentStory.id,
       title: templateTitle(currentStory.template),
-      paragraphs: currentStory.paragraphs,
+      // $state proxies can't be cloned into IndexedDB (DataCloneError): store a plain copy
+      paragraphs: $state.snapshot(currentStory.paragraphs),
       wordIds: Object.fromEntries(
         Object.entries(currentStory.words).map(([k, w]) => [k, w.id])
       ),
@@ -150,8 +157,7 @@
     const storedTemplate = TEMPLATES.find(template => template.id === story.templateId);
     const template: StoryTemplate = storedTemplate ?? {
       id: story.templateId,
-      title: story.title,
-      titleEn: story.title,
+      title: { en: story.title },
       titleKey: '',
       slots: Object.keys(story.wordIds),
       paragraphs: { sv: story.paragraphs, en: story.paragraphs },
@@ -243,19 +249,19 @@
 
           {#each neededSlots as slot}
             <div class="slot-section" id="slot-{slot}">
-              <h3>{SLOT_LABELS[slot]?.emoji} {SLOT_LABELS[slot]?.label}</h3>
+              <h3>{SLOT_LABELS[slot]?.emoji} {$t(SLOT_LABELS[slot]?.key)}</h3>
 
               {#if selectedWords[slot]}
                 <div class="selected-word">
                   {#if showPictograms}
                     <img
-                      src={pictogramUrl(selectedWords[slot].arasaac, 100)}
-                      alt={selectedWords[slot].sv}
+                      src={picto(selectedWords[slot])}
+                      alt={label(selectedWords[slot])}
                       class="picto-small"
                       loading="lazy"
                     />
                   {/if}
-                  <span>{selectedWords[slot].sv}</span>
+                  <span>{label(selectedWords[slot])}</span>
                   <button class="remove-btn" onclick={() => removeWord(slot)}>✕</button>
                 </div>
               {:else}
@@ -267,13 +273,13 @@
                     >
                       {#if showPictograms}
                         <img
-                          src={pictogramUrl(word.arasaac, 100)}
-                          alt={word.sv}
+                          src={picto(word)}
+                          alt={label(word)}
                           class="picto-thumb"
                           loading="lazy"
                         />
                       {/if}
-                      <span>{word.sv}</span>
+                      <span>{label(word)}</span>
                     </button>
                   {/each}
                 </div>
@@ -321,12 +327,12 @@
             {#each Object.entries(currentStory.words) as [slot, word]}
               <div class="story-word-badge">
                 <img
-                  src={pictogramUrl(word.arasaac, 100)}
-                  alt={word.sv}
+                  src={picto(word)}
+                  alt={label(word)}
                   class="picto-small"
                   loading="lazy"
                 />
-                <span>{word.sv}</span>
+                <span>{label(word)}</span>
               </div>
             {/each}
           </div>
@@ -366,7 +372,7 @@
               <div class="saved-header">
                 <h3>{savedStoryTitle(story)}</h3>
                 <span class="saved-date">
-                  {new Date(story.createdAt).toLocaleDateString('sv-SE')}
+                  {new Date(story.createdAt).toLocaleDateString(getLocaleDef($locale).bcp47)}
                 </span>
               </div>
               <p class="saved-preview">{story.paragraphs[0]}</p>

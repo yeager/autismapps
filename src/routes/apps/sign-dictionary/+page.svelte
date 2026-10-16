@@ -2,19 +2,21 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t, locale } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
+  import { SIGN_CATEGORIES_PT, signSearchUrlPt, matchesPt, SPREAD_THE_SIGN } from '$lib/data/pt-br/sign-dictionary';
   import { get } from 'svelte/store';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
 
   const BASE = 'https://teckensprakslexikon.su.se';
 
-  type Word = { sv: string; en: string; id: string; vf?: string };
+  // Swedish words carry the lexicon id; the pt-BR words (SIGN_CATEGORIES_PT) only carry `pt`
+  type Word = { sv?: string; en?: string; id?: string; vf?: string; pt?: string };
   type Category = { id: string; icon: string; color: string; words: Word[] };
   type View = 'categories' | 'words' | 'detail' | 'search';
 
   // Core vocabulary organized by category (Fitzgerald Key colors)
-  const CATEGORIES: Category[] = [
+  const CATEGORIES_SV: Category[] = [
     {
       id: 'people',
       icon: '👤',
@@ -90,6 +92,10 @@
     }
   ];
 
+  // pt-BR: no Libras source licenses its videos for use inside the app, so the sign opens on Spread The Sign (new tab)
+  const CATEGORIES = $derived(pick<Category[]>({ sv: CATEGORIES_SV, en: CATEGORIES_SV, pt_BR: SIGN_CATEGORIES_PT }, $locale));
+  const linkOnly = $derived(pick({ sv: false, en: false, pt_BR: true }, $locale));
+
   let view = $state<View>('categories');
   let selectedCategory = $state<Category | null>(null);
   let selectedWord = $state<Word | null>(null);
@@ -113,9 +119,8 @@
     view = 'words';
   }
 
-  function wordText(word: Word) {
-    const lang = get(locale);
-    return lang === 'sv' ? word.sv : word.en;
+  function wordText(word: Word): string {
+    return pick({ sv: word.sv, en: word.en, pt_BR: word.pt }, get(locale)) ?? '';
   }
 
   function selectWord(word: Word) {
@@ -138,6 +143,7 @@
 
   async function doSearch() {
     if (!searchQuery.trim()) return;
+    if (linkOnly) return searchPt();
     searching = true;
     searchResults = [];
     try {
@@ -158,6 +164,18 @@
       console.error('Search failed:', e);
     }
     searching = false;
+  }
+
+  // pt-BR: the external site's pages are not read (its terms forbid using the data); search the local words
+  function searchPt() {
+    const q = searchQuery.trim();
+    searchResults = CATEGORIES.flatMap((c) => c.words).filter((w) => matchesPt(w.pt ?? '', q));
+    selectedCategory = null;
+    view = 'search';
+  }
+
+  function openLibras(text: string) {
+    window.open(signSearchUrlPt(text), '_blank', 'noopener');
   }
 
   function openExternal(id: string) {
@@ -220,6 +238,11 @@
           {/each}
         </div>
       {/if}
+      {#if linkOnly}
+        <button class="link-btn libras-btn" onclick={() => openLibras(searchQuery)}>
+          🔗 {$t('signDictionary.searchExternal', { q: searchQuery.trim() })}
+        </button>
+      {/if}
 
     {:else if view === 'words' && selectedCategory}
       <h2>{selectedCategory.icon} {$t(`signDictionary.cat.${selectedCategory.id}`)}</h2>
@@ -240,6 +263,15 @@
       <div class="detail-view">
         <h2 class="detail-word">{wordText(selectedWord)}</h2>
 
+        {#if linkOnly}
+          <div class="libras-card">
+            <p class="libras-emoji">🤟</p>
+            <button class="link-btn libras-btn" onclick={() => openLibras(selectedWord?.pt ?? '')}>
+              {$t('signDictionary.watchOnSite')} ↗
+            </button>
+            <p class="libras-note">{$t('signDictionary.externalNote')}</p>
+          </div>
+        {:else}
         <div class="video-container">
           {#if !videoError}
             <!-- svelte-ignore a11y_media_has_caption -->
@@ -248,7 +280,7 @@
               autoplay
               loop
               playsinline
-              src={getVideoUrl(selectedWord.id, selectedWord.vf || selectedWord.sv)}
+              src={getVideoUrl(selectedWord.id ?? '', selectedWord.vf || selectedWord.sv || '')}
               onerror={() => videoError = true}
               class="sign-video"
             >
@@ -256,20 +288,23 @@
           {:else}
             <div class="video-fallback">
               <p>🤟</p>
-              <button class="link-btn" onclick={() => selectedWord && openExternal(selectedWord.id)}>
+              <button class="link-btn" onclick={() => selectedWord?.id && openExternal(selectedWord.id)}>
                 {$t('signDictionary.openExternal')}
               </button>
             </div>
           {/if}
         </div>
+        {/if}
 
         <div class="detail-actions">
-          <button class="action-btn speak-btn" onclick={() => selectedWord && speak(selectedWord.sv)}>
+          <button class="action-btn speak-btn" onclick={() => speak((linkOnly ? selectedWord?.pt : selectedWord?.sv) ?? '')}>
             🔊 {$t('signDictionary.listen')}
           </button>
-          <button class="action-btn external-btn" onclick={() => selectedWord && openExternal(selectedWord.id)}>
+          {#if !linkOnly}
+          <button class="action-btn external-btn" onclick={() => selectedWord?.id && openExternal(selectedWord.id)}>
             🔗 {$t('signDictionary.openExternal')}
           </button>
+          {/if}
         </div>
 
         <p class="detail-hint">{$t('signDictionary.hint')}</p>
@@ -278,12 +313,16 @@
   </main>
 
   <footer class="credit">
+    {#if linkOnly}
+      <p><a href={SPREAD_THE_SIGN} target="_blank" rel="noopener">{$t('signDictionary.creditPt')}</a></p>
+    {:else}
     <p>
       <a href="https://teckensprakslexikon.su.se" target="_blank" rel="noopener">
         Svenskt teckenspråkslexikon
       </a>
       © Stockholms universitet · CC BY-NC-SA 4.0
     </p>
+    {/if}
   </footer>
 </div>
 
@@ -504,6 +543,23 @@
   h2 {
     margin: 0 0 0.5rem;
   }
+
+  .libras-card {
+    margin: 1rem 0;
+    padding: 2rem 1rem;
+    border-radius: 16px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .libras-emoji { font-size: 4rem; margin: 0; }
+  .libras-btn { font-size: 1.15rem; font-weight: 700; }
+  .libras-note { color: var(--text-secondary); font-size: 0.9rem; margin: 0; }
 
   /* Credit footer */
   .credit {

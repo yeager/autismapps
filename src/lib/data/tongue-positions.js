@@ -16,21 +16,7 @@
 /** @typedef {'open-wide'|'open'|'neutral'|'rounded'|'spread'|'closed'} LipShape */
 /** @typedef {'alveolar'|'velar'|'bilabial'|'labiodental'|'palatal'|'retroflex'|'postalveolar'|null} ContactPoint */
 
-/**
- * @typedef {Object} TonguePosition
- * @property {[number,number]} tip - Tongue tip position [x, y]
- * @property {[number,number]} body - Tongue body position [x, y]
- * @property {[number,number]} root - Tongue root position [x, y]
- * @property {VelumState} velum - Velum (soft palate) state
- * @property {LipShape} lips - Lip shape
- * @property {ContactPoint} [contact] - Where tongue contacts roof of mouth
- * @property {string} [airflow] - Airflow pattern: 'groove', 'central', 'lateral'
- * @property {string} [vibrate] - What vibrates: 'tip', 'uvula'
- * @property {boolean} [voiced] - Whether vocal folds vibrate
- * @property {string} label - Display label
- * @property {string} ipa - IPA symbol
- * @property {string} example - Swedish example word
- */
+/** @typedef {import('./speech-types').TonguePosition} TonguePosition */
 
 /** @type {Record<string, TonguePosition>} */
 export const tonguePositions = {
@@ -212,6 +198,7 @@ export const tonguePositions = {
 
 /**
  * Sound categories organized by progressive difficulty levels.
+ * @type {import('./speech-types').SoundLevel[]}
  */
 export const soundLevels = [
   {
@@ -253,6 +240,7 @@ export const soundLevels = [
 
 /**
  * Practice sequences — common Swedish syllable patterns.
+ * @type {import('./speech-types').PracticeSequence[]}
  */
 export const practiceSequences = [
   { id: 'ba-da-ga', labelKey: 'tongueViewer.seq.badaga', sounds: ['b', 'a', 'd', 'a', 'g', 'a'], text: 'ba-da-ga' },

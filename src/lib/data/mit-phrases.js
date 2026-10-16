@@ -5,8 +5,8 @@
  * ARASAAC IDs use format: https://static.arasaac.org/pictograms/{id}/{id}_500.png
  */
 
-/** @typedef {{ note: string, duration: number }} NoteEvent */
-/** @typedef {{ id: string, text: string, syllables: string[], melody: NoteEvent[], category: string, arasaacId: number }} MITPhrase */
+/** @typedef {import('./speech-types').MitNote} NoteEvent */
+/** @typedef {import('./speech-types').MitPhrase} MITPhrase */
 
 // Note frequencies (Hz) for Web Audio API
 export const NOTE_FREQ = {
@@ -28,10 +28,10 @@ export const CATEGORIES = [
 
 // MIT 4-step protocol
 export const MIT_STEPS = [
-  { id: 'humming', labelKey: 'melodyTherapy.step.humming', icon: '🎵', descKey: 'melodyTherapy.stepDesc.humming', color: '#3498DB' },
-  { id: 'singing', labelKey: 'melodyTherapy.step.singing', icon: '🎤', descKey: 'melodyTherapy.stepDesc.singing', color: '#27AE60' },
+  { id: 'humming', labelKey: 'melodyTherapy.step.hum', icon: '🎵', descKey: 'melodyTherapy.stepDesc.humming', color: '#3498DB' },
+  { id: 'singing', labelKey: 'melodyTherapy.step.sing', icon: '🎤', descKey: 'melodyTherapy.stepDesc.singing', color: '#27AE60' },
   { id: 'sprechgesang', labelKey: 'melodyTherapy.step.sprechgesang', icon: '🗣️', descKey: 'melodyTherapy.stepDesc.sprechgesang', color: '#F39C12' },
-  { id: 'speaking', labelKey: 'melodyTherapy.step.speaking', icon: '💬', descKey: 'melodyTherapy.stepDesc.speaking', color: '#E74C3C' },
+  { id: 'speaking', labelKey: 'melodyTherapy.step.speak', icon: '💬', descKey: 'melodyTherapy.stepDesc.speaking', color: '#E74C3C' },
 ];
 
 /** @type {MITPhrase[]} */

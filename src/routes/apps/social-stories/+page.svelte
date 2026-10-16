@@ -100,7 +100,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if view === 'read'}<button class="sub-back" onclick={() => { view = 'list' }} aria-label="Tillbaka">←</button>{/if}
+    {#if view === 'read'}<button class="sub-back" onclick={() => { view = 'list' }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>📖 {$t('socialStories.title')}</h1>
 
   </div>

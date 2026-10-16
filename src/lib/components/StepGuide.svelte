@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '$lib/i18n';
   /**
    * StepGuide — Step-by-step PROMPT instructions for a sound
    *
@@ -24,7 +25,7 @@
   } = $props();
 
   const STEP_ICONS = ['🖐️', '👆', '➡️', '✅'];
-  const STEP_LABELS = ['Förbered', 'Beröringspunkt', 'Rörelseriktning', 'Släpp'];
+  const STEP_LABELS = ['promptGuide.phase.prepare', 'promptGuide.phase.touch', 'promptGuide.phase.direction', 'promptGuide.phase.release'];
 
   function nextStep() {
     if (currentStep < steps.length - 1) {
@@ -52,7 +53,7 @@
   <!-- Pressure & Duration indicators -->
   <div class="indicators">
     <div class="indicator">
-      <span class="indicator-label">Tryck:</span>
+      <span class="indicator-label">{$t('promptGuide.pressureLabel')}</span>
       <span class="pressure-bars" aria-label="{pressureLabel}">
         {#each Array(3) as _, i}
           <span
@@ -67,13 +68,13 @@
       <span class="indicator-text">{pressureLabel}</span>
     </div>
     <div class="indicator">
-      <span class="indicator-label">Längd:</span>
+      <span class="indicator-label">{$t('promptGuide.durationLabel')}</span>
       <span class="indicator-text">{durationLabel}</span>
     </div>
   </div>
 
   <!-- Step progress dots -->
-  <div class="step-dots" role="tablist" aria-label="Steg">
+  <div class="step-dots" role="tablist" aria-label={$t('promptGuide.steps')}>
     {#each steps as _, i}
       <button
         class="dot"
@@ -81,7 +82,7 @@
         class:completed={i < currentStep}
         role="tab"
         aria-selected={i === currentStep}
-        aria-label="Steg {i + 1}"
+        aria-label={$t('promptGuide.stepN', { n: String(i + 1) })}
         onclick={() => goToStep(i)}
       >
         {i + 1}
@@ -99,8 +100,8 @@
         <div class="step-card" in:fly={{ y: 20, duration: 250 }}>
           <div class="step-header">
             <span class="step-icon">{STEP_ICONS[i] || '📌'}</span>
-            <span class="step-number">Steg {i + 1}</span>
-            <span class="step-label">{STEP_LABELS[i] || ''}</span>
+            <span class="step-number">{$t('promptGuide.stepN', { n: String(i + 1) })}</span>
+            <span class="step-label">{STEP_LABELS[i] ? $t(STEP_LABELS[i]) : ''}</span>
           </div>
           <p class="step-text">{step}</p>
         </div>
@@ -114,18 +115,18 @@
       class="nav-btn"
       onclick={prevStep}
       disabled={currentStep === 0}
-      aria-label="Föregående steg"
+      aria-label={$t('promptGuide.prevStep')}
     >
-      ← Tillbaka
+      ← {$t('app.back')}
     </button>
     <span class="step-counter">{currentStep + 1} / {steps.length}</span>
     <button
       class="nav-btn primary"
       onclick={nextStep}
       disabled={currentStep >= steps.length - 1}
-      aria-label="Nästa steg"
+      aria-label={$t('promptGuide.nextStep')}
     >
-      Nästa →
+      {$t('promptGuide.next')} →
     </button>
   </div>
 </div>

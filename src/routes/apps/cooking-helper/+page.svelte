@@ -72,7 +72,7 @@
 
 <div class="cook-page">
   <div class="page-title">
-    {#if activeRecipe}<button class="sub-back" onclick={() => { activeRecipe = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if activeRecipe}<button class="sub-back" onclick={() => { activeRecipe = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{activeRecipe ? $t(activeRecipe.name) : $t('cook.title')}</h1>
 
   </div>
@@ -122,7 +122,7 @@
   .cook-page { display: flex; flex-direction: column; min-height: 100dvh; }
   .instruction { text-align: center; padding: 16px; color: var(--text-muted); font-weight: 600; }
   .recipe-list { flex: 1; padding: 16px; }
-  .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 200px)); justify-content: center; gap: 12px; }
   .recipe-card { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 24px; border: 2px solid var(--border); border-radius: var(--radius); background: var(--bg-card); min-height: 48px; }
   .recipe-card:hover { border-color: #E67E22; transform: translateY(-2px); }
   .recipe-icon { font-size: 3em; }

@@ -2,11 +2,11 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
 
-  const PERIODS = [
+  const PERIODS_SE = [
     { id: 'assembly', icon: '👋', time: '08:00' },
     { id: 'swedish', icon: '📖', time: '08:30' },
     { id: 'math', icon: '🔢', time: '09:15' },
@@ -19,6 +19,22 @@
     { id: 'pe', icon: '⚽', time: '14:15' },
     { id: 'home', icon: '🏠', time: '15:00' },
   ];
+
+  // Brazilian morning shift (turno da manhã)
+  const PERIODS_BR = [
+    { id: 'assembly', icon: '👋', time: '07:00' },
+    { id: 'portuguese', icon: '📖', time: '07:10' },
+    { id: 'math', icon: '🔢', time: '08:00' },
+    { id: 'science', icon: '🔬', time: '08:50' },
+    { id: 'snack', icon: '🍎', time: '09:40' },
+    { id: 'history_geography', icon: '🌎', time: '10:00' },
+    { id: 'english', icon: '🔤', time: '10:50' },
+    { id: 'art', icon: '🎨', time: '11:40' },
+    { id: 'pe', icon: '⚽', time: '12:20' },
+    { id: 'home', icon: '🏠', time: '13:00' },
+  ];
+
+  const PERIODS = $derived(pick({ sv: PERIODS_SE, en: PERIODS_SE, pt_BR: PERIODS_BR }, $locale));
 
   let completed = $state<Record<string, boolean>>({});
   let now = $state('');
@@ -62,7 +78,7 @@
           <span class="p-icon">{period.icon}</span>
           <span class="p-name">{$t(`schoolDay.period.${period.id}`)}</span>
           {#if completed[period.id]}<span class="check">✅</span>{/if}
-          {#if i === currentIdx}<span class="now-badge">NU</span>{/if}
+          {#if i === currentIdx}<span class="now-badge">{$t('schoolDay.now')}</span>{/if}
         </button>
       {/each}
     </div>

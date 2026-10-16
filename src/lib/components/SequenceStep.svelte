@@ -3,12 +3,12 @@
    * SequenceStep — A single draggable step card with ARASAAC pictogram.
    * Handles drag events for both mouse and touch.
    */
-  import { t, locale } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { getArasaacUrl } from '$lib/data/sequence-data.js';
 
   interface Props {
-    step: { description: { en: string; sv: string }; arasaacId: number; order: number };
+    step: { description: { en: string; sv: string; pt_BR?: string }; arasaacId: number; order: number };
     index: number;
     isDragging?: boolean;
     isCorrect?: boolean | null;
@@ -38,8 +38,8 @@
   }: Props = $props();
 
   const imgUrl = $derived(getArasaacUrl(step.arasaacId));
-  const lang = $derived($locale === 'sv' ? 'sv' : 'en');
-  const description = $derived(step.description[lang] || step.description.en);
+  const lang = $derived($locale);
+  const description = $derived(pick(step.description, lang));
 
   function handleTap() {
     speak(description, { lang });

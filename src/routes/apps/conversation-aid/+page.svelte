@@ -54,7 +54,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if selectedCat}<button class="sub-back" onclick={() => { selectedCat = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if selectedCat}<button class="sub-back" onclick={() => { selectedCat = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>💬 {$t('conversationAid.title')}</h1>
 
   </div>
@@ -89,8 +89,8 @@
   h1 { font-size:1.4rem; margin:0; }
   h2 { text-align:center; margin:.5rem 0 1rem; }
   .cnt { flex:1; padding:1rem; max-width:600px; margin:0 auto; width:100%; }
-  .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
-  .card { display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1.5rem; border:2px solid var(--border); border-radius:16px; background:var(--bg-card); cursor:pointer; min-height:48px; }
+  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+  .card { display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1.5rem; border:2px solid var(--border); border-radius:16px; background:var(--bg-card); cursor:pointer; min-height:48px; min-width:0; overflow-wrap:break-word; }
   .ico { font-size:2.5rem; }
   .nm { font-weight:600; }
   .phrases { display:flex; flex-direction:column; gap:.75rem; }

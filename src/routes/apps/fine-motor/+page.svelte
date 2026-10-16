@@ -3,6 +3,7 @@
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
+  import { getAudioContext as sharedAudioContext } from '$lib/audio';
   import { fade, fly } from 'svelte/transition';
 
   import FingerTapping from '$lib/components/FingerTapping.svelte';
@@ -69,7 +70,8 @@
   // Web Audio feedback
   function playSound(type: 'tap' | 'success' | 'error') {
     try {
-      const ctx = new window.AudioContext();
+      const ctx = sharedAudioContext();
+      if (!ctx) return;
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.connect(gain);

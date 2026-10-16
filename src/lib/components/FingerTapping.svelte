@@ -105,7 +105,7 @@
       <span class="hud-item">⏱️ {timeLeft}s</span>
       <span class="hud-item">📊 Lv.{level}</span>
     </div>
-    <div class="play-area" role="application" aria-label="Tapping area">
+    <div class="play-area" role="application" aria-label={$t('fineMotor.aria.tap_area')}>
       {#each circles as circle, idx (circle.id)}
         {#if circle.active}
           <button
@@ -113,7 +113,7 @@
             style="left:{circle.x}%;top:{circle.y}%;width:{circle.size}px;height:{circle.size}px;background:{circle.color}"
             onclick={() => tapCircle(circle, idx)}
             in:fade={{ duration: 200 }}
-            aria-label="Tap circle {idx + 1}"
+            aria-label={$t('fineMotor.aria.tap_circle', { n: String(idx + 1) })}
           >
             {circles.length > 1 ? idx + 1 : ''}
           </button>

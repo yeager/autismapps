@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { t } from '$lib/i18n';
+  import { t, locale, getLocaleDef } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
@@ -136,7 +136,7 @@
               <span class="star-emoji">⭐</span>
               <div class="star-info">
                 <span class="star-app">{star.appId}</span>
-                <span class="star-date">{new Date(star.earnedAt).toLocaleDateString('sv-SE')}</span>
+                <span class="star-date">{new Date(star.earnedAt).toLocaleDateString(getLocaleDef($locale).bcp47)}</span>
               </div>
             </li>
           {/each}

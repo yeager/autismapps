@@ -48,7 +48,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if board}<button class="sub-back" onclick={() => { board = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if board}<button class="sub-back" onclick={() => { board = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🖼️ {$t('pecsBoard.title')}</h1>
 
   </div>

@@ -134,7 +134,7 @@
                 {formatMessage('crosswalk.step-progress', { current: currentStep + 1, total: steps.length })}
               </div>
           </div>
-          
+
           <button class="next-button" onclick={nextStep}>
             {currentStep < steps.length - 1 ? getI18nValue('crosswalk.next-step') : getI18nValue('crosswalk.finish')}
           </button>
@@ -190,7 +190,7 @@
 
 <style>
   .crosswalk-container {
-    min-height: 100vh;
+    min-height: calc(100dvh - var(--header-h));
     background: linear-gradient(180deg, #87CEEB 0%, #98FB98 100%);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }

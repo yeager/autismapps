@@ -4,6 +4,7 @@
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
+  import { getAudioContext as sharedAudioContext } from '$lib/audio';
   import { searchPictograms } from '$lib/arasaac';
   import { locale } from '$lib/i18n';
   import { get } from 'svelte/store';
@@ -88,7 +89,8 @@
 
   function playChime() {
     try {
-      const ctx = new AudioContext();
+      const ctx = sharedAudioContext();
+      if (!ctx) return;
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.connect(gain);
@@ -246,7 +248,7 @@
     {/if}
   </div>
 
-  <footer class="credit">Pictograms: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0</footer>
+  <footer class="credit">{$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0</footer>
 </div>
 
 <style>

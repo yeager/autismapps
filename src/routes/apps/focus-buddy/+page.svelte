@@ -4,6 +4,7 @@
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { t } from '$lib/i18n';
   import { speak } from '$lib/tts';
+  import { getAudioContext as sharedAudioContext } from '$lib/audio';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
   import { activeProfileId } from '$lib/stores/profile';
   import { get } from 'svelte/store';
@@ -105,12 +106,14 @@
   function onTimerDone() {
     // Beep via Web Audio
     try {
-      const ctx = new AudioContext();
-      const osc = ctx.createOscillator();
-      osc.frequency.value = 800;
-      osc.connect(ctx.destination);
-      osc.start();
-      setTimeout(() => { osc.stop(); ctx.close(); }, 300);
+      const ctx = sharedAudioContext();
+      if (ctx) {
+        const osc = ctx.createOscillator();
+        osc.frequency.value = 800;
+        osc.connect(ctx.destination);
+        osc.start();
+        setTimeout(() => osc.stop(), 300);
+      }
     } catch {}
 
     if (timerState === 'work') {

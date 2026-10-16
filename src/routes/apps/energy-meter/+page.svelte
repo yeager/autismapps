@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, getLocaleDef } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
   import { activeProfileId } from '$lib/stores/profile';
@@ -51,7 +51,7 @@
     speak(`${$t(info.label)}`);
 
     // Add to history
-    history = [...history, { level: lvl, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }];
+    history = [...history, { level: lvl, time: new Date().toLocaleTimeString(getLocaleDef($locale).bcp47, { hour: '2-digit', minute: '2-digit' }) }];
     if (history.length > 20) history = history.slice(-20);
     save();
   }

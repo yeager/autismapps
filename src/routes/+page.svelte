@@ -1,10 +1,10 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import { t, locale, setLocale } from '$lib/i18n';
+  import { t, locale, setLocale, READY_LOCALES, getLocaleDef } from '$lib/i18n';
   import { browser } from '$app/environment';
   import { speak } from '$lib/tts';
-  import { ALL_APPS, CATEGORY_META, type AppCategory } from '$lib/apps';
+  import { ALL_APPS, CATEGORY_META, isAvailableIn, type AppCategory } from '$lib/apps';
   import { flagSvg } from '$lib/flags';
 
   let activeCategory = $state<AppCategory | null>(null);
@@ -17,17 +17,18 @@
   let langRef: HTMLDivElement | undefined = $state();
 
   const categories = Object.entries(CATEGORY_META) as [AppCategory, typeof CATEGORY_META[AppCategory]][];
-  const languages = [
-    { code: 'sv', flag: '🇸🇪', name: 'Svenska' },
-    { code: 'en', flag: '🇬🇧', name: 'English' },
-  ];
+  const languages = READY_LOCALES;
+  // Locales with their own production domain; the others (pt_BR) switch in place on either domain
+  const DOMAIN_HOSTS: Record<string, string> = { sv: 'autismappar.se', en: 'autismapps.online' };
   const featuredIds = new Set(['talk-board', 'picture-schedule', 'visual-timer', 'calm-room', 'emotion-map', 'word-builder', 'day-planner', 'chooser']);
-  const currentFlag = $derived(languages.find((language) => language.code === $locale)?.flag ?? '🇸🇪');
+  const currentFlag = $derived(getLocaleDef($locale).flag);
+  // toLocaleLowerCase needs a BCP-47 tag ('pt_BR' throws a RangeError)
+  const bcp47 = $derived(getLocaleDef($locale).bcp47);
   const visibleApps = $derived.by(() => {
-    const query = searchQuery.trim().toLocaleLowerCase($locale);
+    const query = searchQuery.trim().toLocaleLowerCase(bcp47);
     const matching = ALL_APPS.filter((app) => {
       const matchesCategory = !activeCategory || app.category === activeCategory;
-      const matchesQuery = !query || `${$t(app.name)} ${$t(app.description)}`.toLocaleLowerCase($locale).includes(query);
+      const matchesQuery = !query || `${$t(app.name)} ${$t(app.description)}`.toLocaleLowerCase(bcp47).includes(query);
       return matchesCategory && matchesQuery;
     });
 
@@ -61,8 +62,8 @@
         || hostname.endsWith('.autismappar.se')
         || hostname === 'autismapps.online'
         || hostname.endsWith('.autismapps.online');
-      const targetHost = code === 'sv' ? 'autismappar.se' : 'autismapps.online';
-      if (isProductionDomain && hostname !== targetHost) {
+      const targetHost = DOMAIN_HOSTS[code];
+      if (isProductionDomain && targetHost && hostname !== targetHost) {
         const target = new URL(window.location.href);
         target.protocol = 'https:';
         target.host = targetHost;
@@ -100,7 +101,7 @@
   }
 
   function openApp(app: (typeof ALL_APPS)[number]) {
-    if (!app.ready) {
+    if (!isAvailableIn(app, $locale)) {
       speak($t('app.coming_soon'));
       return;
     }
@@ -142,7 +143,7 @@
           <div class="lang-dropdown">
             {#each languages as language}
               <button class="lang-option" class:active={$locale === language.code} onclick={() => chooseLanguage(language.code)}>
-                <span>{@html flagSvg(language.flag)}</span><span>{language.name}</span>
+                <span>{@html flagSvg(language.flag)}</span><span>{language.label}</span>
                 {#if $locale === language.code}<span class="lang-check" aria-hidden="true">✓</span>{/if}
               </button>
             {/each}
@@ -215,11 +216,11 @@
       {#if visibleApps.length}
         <div class="app-grid">
           {#each visibleApps as app (app.id)}
-            <button class="app-card" class:coming-soon={!app.ready} onclick={() => openApp(app)} onfocus={() => speak($t(app.name) + '. ' + $t(app.description))} style={`--card-accent:${categoryColor(app.category)}`} aria-label={`${$t(app.name)}: ${$t(app.description)}`}>
+            <button class="app-card" class:coming-soon={!isAvailableIn(app, $locale)} onclick={() => openApp(app)} onfocus={() => speak($t(app.name) + '. ' + $t(app.description))} style={`--card-accent:${categoryColor(app.category)}`} aria-label={`${$t(app.name)}: ${$t(app.description)}`}>
               <span class="card-icon"><img src={`${base}${app.icon}`} alt="" width="42" height="42" loading="lazy" /></span>
-              <span class="card-content"><span class="card-name" lang={$locale}>{$t(app.name)}</span><span class="card-desc">{$t(app.description)}</span></span>
+              <span class="card-content"><span class="card-name" lang={bcp47}>{$t(app.name)}</span><span class="card-desc">{$t(app.description)}</span></span>
               <svg class="card-arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              {#if !app.ready}<span class="card-badge">{$t('app.coming_soon')}</span>{/if}
+              {#if !isAvailableIn(app, $locale)}<span class="card-badge">{$t('app.coming_soon')}</span>{/if}
             </button>
           {/each}
         </div>

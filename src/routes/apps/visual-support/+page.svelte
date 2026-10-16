@@ -149,7 +149,7 @@
 
 <div class="vs-page">
   <div class="page-title">
-    {#if activeSchedule}<button class="sub-back" onclick={() => { activeSchedule = null; editMode = false }} aria-label="Tillbaka">←</button>{/if}
+    {#if activeSchedule}<button class="sub-back" onclick={() => { activeSchedule = null; editMode = false }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{activeSchedule ? activeSchedule.name : $t('vs.title')}</h1>
 
     {#if activeSchedule}

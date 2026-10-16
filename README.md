@@ -128,6 +128,8 @@ npm run build:launcher
 ```
 Upload the **contents** of `build/` into the website's `/launcher/` directory. This build uses `/launcher` for its assets and keeps the prerendered home page in `index.html`; `fallback.html` handles unknown routes. It also emits directory indexes for extensionless routes such as `/launcher/about` so they continue to work if the host has an older directory at that path. Keep `.htaccess` enabled for the slash behavior and cache headers.
 
+Desktop app (Tauri 2) on Windows — prerequisites, bundled voices and local build: see [docs/build-desktop-windows.md](docs/build-desktop-windows.md).
+
 ## TTS Configuration
 
 - **Default engine:** Piper WASM (offline, ~5MB model download)

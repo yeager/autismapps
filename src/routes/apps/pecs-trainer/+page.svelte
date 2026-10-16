@@ -62,6 +62,8 @@
   async function loadItems() {
     loading = true;
     const lang = get(locale);
+    // English pivots: Swedish has a local en→sv lookup; other locales must search in English
+    const pivotLang = lang === 'sv' ? 'sv' : 'en';
     const words = phase === 6 ? COMMENT_WORDS : ITEM_WORDS;
     const wordKeys = phase === 6 ? COMMENT_WORD_KEYS : ITEM_WORD_KEYS;
     const sliced = words.slice(0, phase <= 2 ? 4 : phase <= 4 ? 8 : 12);
@@ -76,12 +78,12 @@
     items = results.filter(Boolean) as PictoItem[];
     // Load "I want" etc.
     if (phase >= 4) {
-      const iw = await searchPictograms('I want', lang);
+      const iw = await searchPictograms('I want', pivotLang);
       if (iw[0]) iWantPicto = { id: iw[0].id, url: iw[0].url, word: $t('pecs.i_want') };
     }
     if (phase === 6) {
-      const is = await searchPictograms('I see', lang);
-      const ih = await searchPictograms('I hear', lang);
+      const is = await searchPictograms('I see', pivotLang);
+      const ih = await searchPictograms('I hear', pivotLang);
       if (is[0]) iSeePicto = { id: is[0].id, url: is[0].url, word: $t('pecs.i_see') };
       if (ih[0]) iHearPicto = { id: ih[0].id, url: ih[0].url, word: $t('pecs.i_hear') };
     }
@@ -278,7 +280,7 @@
   {/if}
 
   <footer class="credit">
-    Pictograms: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
+    {$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
     · Based on PECS® methodology by Frost &amp; Bondy (1994). PECS® is a trademark of Pyramid Educational Consultants.
   </footer>
 </div>

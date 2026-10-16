@@ -5,3 +5,5 @@
 
 # Bundled voice files (downloaded during CI)
 /resources/voices/*.onnx
+# pt_BR voice config is downloaded too (sv_SE-alma-medium.onnx.json stays tracked)
+/resources/voices/pt_BR-*.onnx.json

@@ -1,5 +1,5 @@
 diff --git a/node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js b/node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js
-index 32767f4..fa4f21e 100644
+index 32767f4..e5356d2 100644
 --- a/node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js
 +++ b/node_modules/@mintplex-labs/piper-tts-web/dist/piper-tts-web.js
 @@ -10,7 +10,7 @@ var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot
@@ -20,3 +20,135 @@ index 32767f4..fa4f21e 100644
      __privateGet(this, _ort).env.wasm.wasmPaths = __privateGet(this, _wasmPaths).onnxWasm;
      const path = PATH_MAP[this.voiceId];
      const modelConfigBlob = await getBlob(`${HF_BASE}/${path}.json`);
+@@ -295,36 +295,78 @@ const _TtsSession = class _TtsSession {
+       await modelBlob.arrayBuffer()
+     ));
+   }
+-  async predict(text) {
+-    await this.waitReady;
+-    const input = JSON.stringify([{ text: text.trim() }]);
+-    const phonemeIds = await new Promise(async (resolve) => {
+-      const module = await __privateGet(this, _createPiperPhonemize).call(this, {
++  // Patched: one phonemizer module per session. The Emscripten build keeps its runtime alive
++  // (noExitRuntime), so callMain can run repeatedly; it is synchronous, so a single pending slot is enough.
++  // callMain pushes its argv onto the 64 KB wasm stack and never pops it (~400 bytes + ~3 per input
++  // character per call): a reused module traps after ~170 short phrases ("null function", "memory access
++  // out of bounds") and may corrupt memory before that. So each module gets a stack budget and is replaced
++  // before it runs out; a dropped module is garbage-collected.
++  getPhonemizer(input) {
++    const cost = 512 + 4 * input.length;
++    if (this._phonemizer && this._phonemizerStack + cost > 40000) this._phonemizer = null;
++    if (!this._phonemizer) {
++      this._phonemizerStack = 0;
++      const slot = { done: null };
++      this._phonemizer = __privateGet(this, _createPiperPhonemize).call(this, {
+         print: (data) => {
+-          resolve(JSON.parse(data).phoneme_ids);
++          const done = slot.done;
++          slot.done = null;
++          done == null ? void 0 : done(null, JSON.parse(data).phoneme_ids);
+         },
+         printErr: (message) => {
+-          throw new Error(message);
++          const done = slot.done;
++          slot.done = null;
++          done == null ? void 0 : done(new Error(message));
+         },
+         locateFile: (url) => {
+           if (url.endsWith(".wasm")) return __privateGet(this, _wasmPaths).piperWasm;
+           if (url.endsWith(".data")) return __privateGet(this, _wasmPaths).piperData;
+           return url;
+         }
+-      });
+-      module.callMain([
+-        "-l",
+-        __privateGet(this, _modelConfig).espeak.voice,
+-        "--input",
+-        input,
+-        "--espeak_data",
+-        "/espeak-ng-data"
+-      ]);
++      }).then((module) => ({ module, slot }));
++      this._phonemizer.catch(() => { this._phonemizer = null; });
++    }
++    this._phonemizerStack += cost;
++    return this._phonemizer;
++  }
++  async phonemize(input) {
++    const { module, slot } = await this.getPhonemizer(input);
++    return new Promise((resolve, reject) => {
++      slot.done = (err, ids) => err ? reject(err) : resolve(ids);
++      try {
++        module.callMain([
++          "-l",
++          __privateGet(this, _modelConfig).espeak.voice,
++          "--input",
++          input,
++          "--espeak_data",
++          "/espeak-ng-data"
++        ]);
++      } catch (e) {
++        slot.done = null;
++        reject(e);
++      }
++      if (slot.done) {
++        slot.done = null;
++        reject(new Error("piper_phonemize produced no output"));
++      }
+     });
++  }
++  async predict(text, options = {}) {
++    await this.waitReady;
++    const input = JSON.stringify([{ text: text.trim() }]);
++    let phonemeIds;
++    try {
++      phonemeIds = await this.phonemize(input);
++    } catch (e) {
++      // A trapped module is unusable: retry once on a fresh one
++      this._phonemizer = null;
++      phonemeIds = await this.phonemize(input);
++    }
+     const speakerId = 0;
+     const sampleRate = __privateGet(this, _modelConfig).audio.sample_rate;
+     const noiseScale = __privateGet(this, _modelConfig).inference.noise_scale;
+-    const lengthScale = __privateGet(this, _modelConfig).inference.length_scale;
++    const lengthScale = __privateGet(this, _modelConfig).inference.length_scale * (options.lengthScale ?? 1);
+     const noiseW = __privateGet(this, _modelConfig).inference.noise_w;
+     const session = __privateGet(this, _ortSession);
+     const feeds = {
+@@ -336,7 +378,7 @@ const _TtsSession = class _TtsSession {
+         noiseW
+       ])
+     };
+-    if (Object.keys(__privateGet(this, _modelConfig).speaker_id_map).length) {
++    if (Object.keys(__privateGet(this, _modelConfig).speaker_id_map ?? {}).length) {
+       Object.assign(feeds, {
+         sid: new (__privateGet(this, _ort)).Tensor("int64", [speakerId])
+       });
+@@ -358,13 +400,25 @@ _wasmPaths = new WeakMap();
+ _logger = new WeakMap();
+ __publicField(_TtsSession, "WASM_LOCATIONS", DEFAULT_WASM_PATHS);
+ __publicField(_TtsSession, "_instance", null);
++// Patched: drop the singleton and free its ONNX session (the model stays in WASM memory otherwise)
++_TtsSession.reset = async function () {
++  const inst = _TtsSession._instance;
++  _TtsSession._instance = null;
++  if (!inst) return;
++  try {
++    await inst.waitReady;
++    const session = __privateGet(inst, _ortSession);
++    if (session && session.release) await session.release();
++  } catch (e) {
++  }
++};
+ let TtsSession = _TtsSession;
+ async function predict(config, callback) {
+   const session = new TtsSession({
+     voiceId: config.voiceId,
+     progress: callback
+   });
+-  return session.predict(config.text);
++  return session.predict(config.text, { lengthScale: config.lengthScale });
+ }
+ async function getBlob(url, callback) {
+   let blob = await readBlob(url);

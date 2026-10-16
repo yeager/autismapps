@@ -79,7 +79,7 @@
 
 <div class="guide-page">
   <div class="page-title">
-    {#if activeGuide}<button class="sub-back" onclick={() => { activeGuide = null }} aria-label="Tillbaka">←</button>{/if}
+    {#if activeGuide}<button class="sub-back" onclick={() => { activeGuide = null }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{activeGuide ? $t(activeGuide.name) : $t('guide.title')}</h1>
 
   </div>
@@ -131,7 +131,7 @@
   .guide-page { display: flex; flex-direction: column; min-height: 100dvh; }
   .instruction { text-align: center; padding: 16px; color: var(--text-muted); font-weight: 600; }
   .guide-list { flex: 1; padding: 16px; }
-  .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 200px)); justify-content: center; gap: 12px; }
   .guide-card { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px; border: 2px solid var(--border); border-radius: var(--radius); background: var(--bg-card); min-height: 48px; }
   .guide-card:hover { border-color: #3498DB; transform: translateY(-2px); }
   .guide-emoji { font-size: 2.5em; }

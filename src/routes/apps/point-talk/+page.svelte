@@ -163,7 +163,7 @@
   {/if}
 
   <footer class="credit">
-    Pictograms: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
+    {$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
     · Inspired by core vocabulary research (Cross et al., 2006; Banajee et al., 2003)
   </footer>
 </div>

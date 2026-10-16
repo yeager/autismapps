@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, getLocaleDef } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
   import { activeProfileId } from '$lib/stores/profile';
@@ -59,7 +59,7 @@
     if (!newMood) return;
     const entry: DiaryEntry = {
       id: crypto.randomUUID(),
-      date: new Date().toLocaleDateString(),
+      date: new Date().toLocaleDateString(getLocaleDef($locale).bcp47),
       mood: newMood,
       text: newText,
       emoji: newEmoji,
@@ -84,7 +84,7 @@
 
 <div class="diary-page">
   <div class="page-title">
-    {#if view !== 'list'}<button class="sub-back" onclick={() => { view = 'list' }} aria-label="Tillbaka">←</button>{/if}
+    {#if view !== 'list'}<button class="sub-back" onclick={() => { view = 'list' }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{$t('diary.title')}</h1>
 
     <button class="add-btn" onclick={() => (view = 'new')}>+ {$t('diary.new')}</button>

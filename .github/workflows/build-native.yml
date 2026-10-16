@@ -91,6 +91,15 @@ jobs:
           curl -L "https://huggingface.co/yeagersthlm/piper-voice-sv-alma/resolve/main/sv_SE-alma-medium.onnx.json" -o src-tauri/resources/voices/sv_SE-alma-medium.onnx.json
           ls -la src-tauri/resources/voices/
 
+      - name: Download Brazilian Portuguese voice for bundling
+        shell: bash
+        run: |
+          mkdir -p src-tauri/resources/voices
+          BASE="https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/cadu/medium"
+          curl -fL "$BASE/pt_BR-cadu-medium.onnx" -o src-tauri/resources/voices/pt_BR-cadu-medium.onnx
+          curl -fL "$BASE/pt_BR-cadu-medium.onnx.json" -o src-tauri/resources/voices/pt_BR-cadu-medium.onnx.json
+          ls -la src-tauri/resources/voices/
+
       - name: Build Tauri app
         uses: tauri-apps/tauri-action@v0
         env:

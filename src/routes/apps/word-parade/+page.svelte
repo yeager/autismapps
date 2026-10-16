@@ -2,24 +2,18 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import type { MinimalPair } from '$lib/data/speech-types';
+  import { MINIMAL_PAIRS_PT } from '$lib/data/pt-br/word-parade';
 
   // === ORDPARADEN — Word Parade ===
   // Minimal pair practice — words differing by one phoneme
   // Critical for phonological therapy in CAS/dyspraxia
   // Two modes: Practice (hear both) and Quiz (identify which)
 
-  interface MinimalPair {
-    word1: string;
-    word2: string;
-    icon1: string;
-    icon2: string;
-    contrastType: string; // e.g. 'voicing', 'place', 'manner'
-  }
-
-  const MINIMAL_PAIRS: MinimalPair[] = [
+  const MINIMAL_PAIRS_SV: MinimalPair[] = [
     // Voicing contrasts
     { word1: 'bil', word2: 'pil', icon1: '🚗', icon2: '➡️', contrastType: 'voicing' },
     { word1: 'boll', word2: 'poll', icon1: '⚽', icon2: '📊', contrastType: 'voicing' },
@@ -43,6 +37,9 @@
     { word1: 'sol', word2: 'sal', icon1: '☀️', icon2: '🏛️', contrastType: 'vowel' },
     { word1: 'bok', word2: 'bak', icon1: '📖', icon2: '🍞', contrastType: 'vowel' },
   ];
+
+  // en keeps the Swedish pairs
+  const MINIMAL_PAIRS = $derived(pick({ sv: MINIMAL_PAIRS_SV, en: MINIMAL_PAIRS_SV, pt_BR: MINIMAL_PAIRS_PT }, $locale));
 
   type AppMode = 'menu' | 'practice' | 'quiz';
 
@@ -108,7 +105,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if mode !== 'menu'}<button class="sub-back" onclick={() => { mode = 'menu' }} aria-label="Tillbaka">←</button>{/if}
+    {#if mode !== 'menu'}<button class="sub-back" onclick={() => { mode = 'menu' }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>👯 {$t('wordParade.title')}</h1>
 
     <span class="score-badge">{$t('wordParade.score')}: {score}</span>

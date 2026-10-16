@@ -4,7 +4,9 @@
     "welcome": {
       "purpose": "Lär dig viktiga trafikregler och färdigheter för vägar.",
       "how": "Tryck på aktiviteterna för att öva säker gång och gatuövergång.",
-      "goal": "Bli trygg och säker i närheten av trafik och vägar."
+      "goal": "Bli trygg och säker i närheten av trafik och vägar.",
+      "intro": "Lär dig om trafiksäkerhet med interaktiva övningar.",
+      "start": "Börja!"
     },
     "activities": {
       "traffic-lights": "Trafikljus",
@@ -43,7 +45,13 @@
       "practice": "Övningsläge",
       "safe-to-cross": "Är det säkert att korsa?",
       "yes": "Ja",
-      "no": "Nej"
+      "no": "Nej",
+      "how-title": "Så här korsar du gatan säkert:",
+      "step-count": "Steg {current} av {total}",
+      "next-step": "Nästa steg",
+      "done": "Klar!",
+      "score": "Poäng: {score}",
+      "restart": "Börja om"
     },
     "road-signs": {
       "title": "Trafikskyltar",
@@ -55,7 +63,11 @@
       "speed-limit": "Hastighetsbegränsning 30",
       "flashcard": "Flashcard-läge",
       "match": "Matchningsspel",
-      "what-does-this-mean": "Vad betyder denna skylt?"
+      "what-does-this-mean": "Vad betyder denna skylt?",
+      "previous": "Föregående",
+      "back-to-overview": "Tillbaka till översikt",
+      "score": "Poäng: {score}",
+      "end-quiz": "Avsluta quiz"
     },
     "safe-places": {
       "title": "Säkra platser",
@@ -64,7 +76,88 @@
       "parking": "Parkering",
       "safe": "SÄKERT",
       "dangerous": "FARLIGT",
-      "drag-to-sort": "Dra föremål till SÄKERT eller FARLIGT"
+      "drag-to-sort": "Dra föremål till SÄKERT eller FARLIGT",
+      "intro-title": "Lär dig identifiera säkra och farliga platser",
+      "intro-before": "I det här spelet kommer du att se olika platser. Din uppgift är att bestämma om platsen är",
+      "intro-or": "eller",
+      "intro-after": "för barn att leka eller gå på.",
+      "safe-word": "SÄKER",
+      "dangerous-word": "FARLIG",
+      "safe-examples-title": "SÄKRA platser",
+      "safe-examples": [
+        "Trottoarer",
+        "Lekplatser",
+        "Skolområden",
+        "Parker"
+      ],
+      "dangerous-examples-title": "FARLIGA platser",
+      "dangerous-examples": [
+        "Vägar",
+        "Parkeringsplatser",
+        "Motorvägar",
+        "Byggarbetsplatser"
+      ],
+      "start-game": "Starta spelet",
+      "score": "Poäng: {score}/{total}",
+      "lives": "Liv:",
+      "question-count": "Fråga {current} av {total}",
+      "question": "Är denna plats säker för barn?",
+      "congrats": "Grattis!",
+      "game-over": "Spelet är över",
+      "result": "Du identifierade {score} av {total} platser korrekt!",
+      "result-perfect": "Perfekt! Du vet verkligen vilka platser som är säkra!",
+      "result-excellent": "Mycket bra! Du förstår trafiksäkerhet väl!",
+      "result-good": "Bra jobbat! Öva lite mer så blir du ännu bättre!",
+      "result-practice": "Fortsätt öva! Kom ihåg att trottoarer och lekplatser är säkra.",
+      "play-again": "Spela igen",
+      "back-to-start": "Tillbaka till start",
+      "speak": {
+        "start": "Titta på bilden och bestäm om det är en säker plats eller en farlig plats.",
+        "game_over": "Spelet är över. Du fick {score} poäng av {total} möjliga.",
+        "won": "Grattis! Du klarade spelet med {score} poäng av {total} möjliga!"
+      },
+      "scenarios": {
+        "sidewalk": {
+          "name": "Trottoar",
+          "description": "En trottoar vid sidan av vägen",
+          "explanation": "Trottoaren är säker för fotgängare. Den är skild från vägen och bilar kör inte här."
+        },
+        "road": {
+          "name": "Väg",
+          "description": "Mitt på en bilväg",
+          "explanation": "Vägen är farlig för fotgängare. Bilar kör här och du kan bli påkörd."
+        },
+        "parking": {
+          "name": "Parkeringsplats",
+          "description": "En parkeringsplats med bilar",
+          "explanation": "Parkeringsplatser är farliga. Bilar rör sig och förare ser inte alltid fotgängare."
+        },
+        "playground": {
+          "name": "Lekplats",
+          "description": "En inhägnad lekplats i parken",
+          "explanation": "Lekplatsen är säker. Den är inhägnad och bilar får inte köra här."
+        },
+        "crosswalk": {
+          "name": "Övergångsställe",
+          "description": "Ett övergångsställe med trafikljus",
+          "explanation": "Övergångsstället är säkert när ljuset är grönt och du tittar åt båda hållen."
+        },
+        "highway": {
+          "name": "Motorväg",
+          "description": "En motorväg med snabb trafik",
+          "explanation": "Motorvägen är mycket farlig. Bilar kör mycket fort och fotgängare får inte vistas här."
+        },
+        "school-zone": {
+          "name": "Skolområde",
+          "description": "Utanför en skola med övergångsställe",
+          "explanation": "Skolområden är säkra. Bilar måste köra långsamt här och det finns övergångsställen."
+        },
+        "construction": {
+          "name": "Byggarbetsplats",
+          "description": "En byggarbetsplats med maskiner",
+          "explanation": "Byggarbetsplatser är farliga. Stora maskiner och lastbilar arbetar här."
+        }
+      }
     },
     "reflectors": {
       "title": "Reflexer och synlighet",
@@ -73,7 +166,52 @@
       "can-you-see": "Syns du i mörkret?",
       "before": "Före",
       "after": "Efter reflexer",
-      "dress-character": "Klä karaktären med reflexer"
+      "dress-character": "Klä karaktären med reflexer",
+      "why-title": "Varför är reflexer viktiga?",
+      "why-text": "Reflexer hjälper dig att synas i mörkret. När billjus träffar reflexer lyser de upp och gör dig synlig för förare på långt håll.",
+      "compare-btn": "Dag vs Natt",
+      "compare-btn-desc": "Se skillnaden i synlighet",
+      "dress-btn": "Klä med reflexer",
+      "dress-btn-desc": "Dra reflexer till rätt plats",
+      "tips-title": "Bra att veta om reflexer:",
+      "compare-title": "Synlighet på dagen och natten",
+      "switch-to-night": "Växla till natt",
+      "switch-to-day": "Växla till dag",
+      "time-day": "DAG",
+      "time-night": "NATT",
+      "visibility-good": "Synlighet: Bra",
+      "visibility-good-desc": "Du syns tydligt i dagsljus",
+      "visibility-excellent": "Synlighet: Utmärkt med reflexer!",
+      "visibility-excellent-desc": "Reflexer gör dig synlig på 200m avstånd!",
+      "visibility-poor": "Synlighet: Dålig utan reflexer",
+      "visibility-poor-desc": "Utan reflexer syns du bara på 20-30m avstånd",
+      "back-to-menu": "Tillbaka till meny",
+      "dress-title": "Klä personen med reflexer",
+      "placed-count": "Reflexer på plats: {score}/{total}",
+      "restart": "Börja om",
+      "drop-here": "Dra reflexer hit",
+      "available": "Tillgängliga reflexer:",
+      "complete": "Fantastiskt! Nu syns personen mycket bättre i mörkret!",
+      "items": {
+        "vest": "Reflexväst",
+        "hat": "Reflexmössa",
+        "bag": "Reflexer på väska",
+        "shoes": "Reflexer på skor",
+        "band": "Reflexband"
+      },
+      "tips": [
+        "Reflexer ökar synligheten med upp till 200 meter",
+        "Bär alltid reflexer när du går ute i mörkret",
+        "Sätt reflexer på både framsida och baksida",
+        "Reflexer fungerar bäst på rörliga delar som armar och ben",
+        "Tvätta reflexer försiktigt så de inte tappar sin effekt"
+      ],
+      "speak": {
+        "compare": "Jämför hur synlig en person är på dagen och på natten",
+        "dress_up": "Klä personen med reflexer så att den syns bättre i mörkret",
+        "placed": "Bra! Du satte på {item}",
+        "done": "Perfekt! Nu syns personen mycket bättre i mörkret. Reflexer räddar liv!"
+      }
     },
     "vehicles": {
       "title": "Fordon",

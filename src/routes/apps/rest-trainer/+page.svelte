@@ -23,7 +23,7 @@
 <div class="app" in:fade>
   <main class="cnt">
     <div class="page-title">
-      <button class="sub-back" onclick={() => goto(base + '/')} aria-label="Tillbaka">←</button>
+      <button class="sub-back" onclick={() => goto(base + '/')} aria-label={$t('app.back')}>←</button>
       <h1>🗣️ {$t('restTrainer.title')}</h1>
     </div>
 

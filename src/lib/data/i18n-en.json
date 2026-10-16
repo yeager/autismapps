@@ -4,7 +4,9 @@
     "welcome": {
       "purpose": "Learn important traffic safety rules and road skills.",
       "how": "Tap on the activities to practice safe walking and crossing streets.",
-      "goal": "Become confident and safe around traffic and roads."
+      "goal": "Become confident and safe around traffic and roads.",
+      "intro": "Learn about traffic safety with interactive exercises.",
+      "start": "Start!"
     },
     "activities": {
       "traffic-lights": "Traffic Lights",
@@ -43,7 +45,13 @@
       "practice": "Practice Mode",
       "safe-to-cross": "Is it safe to cross?",
       "yes": "Yes",
-      "no": "No"
+      "no": "No",
+      "how-title": "How to cross the street safely:",
+      "step-count": "Step {current} of {total}",
+      "next-step": "Next step",
+      "done": "Done!",
+      "score": "Points: {score}",
+      "restart": "Start over"
     },
     "road-signs": {
       "title": "Road Signs",
@@ -55,7 +63,11 @@
       "speed-limit": "Speed Limit 30",
       "flashcard": "Flashcard Mode",
       "match": "Match Game",
-      "what-does-this-mean": "What does this sign mean?"
+      "what-does-this-mean": "What does this sign mean?",
+      "previous": "Previous",
+      "back-to-overview": "Back to overview",
+      "score": "Points: {score}",
+      "end-quiz": "End quiz"
     },
     "safe-places": {
       "title": "Safe Places",
@@ -64,7 +76,88 @@
       "parking": "Parking Lot",
       "safe": "SAFE",
       "dangerous": "DANGEROUS",
-      "drag-to-sort": "Drag items to SAFE or DANGEROUS zones"
+      "drag-to-sort": "Drag items to SAFE or DANGEROUS zones",
+      "intro-title": "Learn to tell safe places from dangerous places",
+      "intro-before": "In this game you will see different places. Your task is to decide if the place is",
+      "intro-or": "or",
+      "intro-after": "for children to play or walk.",
+      "safe-word": "SAFE",
+      "dangerous-word": "DANGEROUS",
+      "safe-examples-title": "SAFE places",
+      "safe-examples": [
+        "Sidewalks",
+        "Playgrounds",
+        "School zones",
+        "Parks"
+      ],
+      "dangerous-examples-title": "DANGEROUS places",
+      "dangerous-examples": [
+        "Roads",
+        "Parking lots",
+        "Highways",
+        "Construction sites"
+      ],
+      "start-game": "Start the game",
+      "score": "Points: {score}/{total}",
+      "lives": "Lives:",
+      "question-count": "Question {current} of {total}",
+      "question": "Is this place safe for children?",
+      "congrats": "Congratulations!",
+      "game-over": "Game over",
+      "result": "You identified {score} of {total} places correctly!",
+      "result-perfect": "Perfect! You really know which places are safe!",
+      "result-excellent": "Very good! You understand traffic safety well!",
+      "result-good": "Good job! Practice a little more and you will get even better!",
+      "result-practice": "Keep practicing! Remember that sidewalks and playgrounds are safe.",
+      "play-again": "Play again",
+      "back-to-start": "Back to start",
+      "speak": {
+        "start": "Look at the picture and decide if it is a safe place or a dangerous place.",
+        "game_over": "The game is over. You got {score} out of {total}.",
+        "won": "Congratulations! You finished the game with {score} out of {total}!"
+      },
+      "scenarios": {
+        "sidewalk": {
+          "name": "Sidewalk",
+          "description": "A sidewalk next to the road",
+          "explanation": "The sidewalk is safe for pedestrians. It is separate from the road and cars do not drive here."
+        },
+        "road": {
+          "name": "Road",
+          "description": "In the middle of a road",
+          "explanation": "The road is dangerous for pedestrians. Cars drive here and you can be hit."
+        },
+        "parking": {
+          "name": "Parking lot",
+          "description": "A parking lot with cars",
+          "explanation": "Parking lots are dangerous. Cars move around and drivers do not always see pedestrians."
+        },
+        "playground": {
+          "name": "Playground",
+          "description": "A fenced playground in the park",
+          "explanation": "The playground is safe. It is fenced in and cars are not allowed here."
+        },
+        "crosswalk": {
+          "name": "Crosswalk",
+          "description": "A crosswalk with traffic lights",
+          "explanation": "The crosswalk is safe when the light is green and you look both ways."
+        },
+        "highway": {
+          "name": "Highway",
+          "description": "A highway with fast traffic",
+          "explanation": "The highway is very dangerous. Cars drive very fast and pedestrians are not allowed here."
+        },
+        "school-zone": {
+          "name": "School zone",
+          "description": "Outside a school with a crosswalk",
+          "explanation": "School zones are safe. Cars must drive slowly here and there are crosswalks."
+        },
+        "construction": {
+          "name": "Construction site",
+          "description": "A construction site with machines",
+          "explanation": "Construction sites are dangerous. Big machines and trucks work here."
+        }
+      }
     },
     "reflectors": {
       "title": "Reflectors & Visibility",
@@ -73,7 +166,52 @@
       "can-you-see": "Can you see in the dark?",
       "before": "Before",
       "after": "After reflectors",
-      "dress-character": "Dress the character with reflectors"
+      "dress-character": "Dress the character with reflectors",
+      "why-title": "Why are reflectors important?",
+      "why-text": "Reflectors help you be seen in the dark. When car headlights hit reflectors, they light up and make you visible to drivers from far away.",
+      "compare-btn": "Day vs Night",
+      "compare-btn-desc": "See the difference in visibility",
+      "dress-btn": "Dress with reflectors",
+      "dress-btn-desc": "Drag reflectors to the right place",
+      "tips-title": "Good to know about reflectors:",
+      "compare-title": "Visibility by day and by night",
+      "switch-to-night": "Switch to night",
+      "switch-to-day": "Switch to day",
+      "time-day": "DAY",
+      "time-night": "NIGHT",
+      "visibility-good": "Visibility: Good",
+      "visibility-good-desc": "You are clearly visible in daylight",
+      "visibility-excellent": "Visibility: Excellent with reflectors!",
+      "visibility-excellent-desc": "Reflectors make you visible from 200 m away!",
+      "visibility-poor": "Visibility: Poor without reflectors",
+      "visibility-poor-desc": "Without reflectors you can only be seen from 20-30 m away",
+      "back-to-menu": "Back to menu",
+      "dress-title": "Dress the person with reflectors",
+      "placed-count": "Reflectors placed: {score}/{total}",
+      "restart": "Start over",
+      "drop-here": "Drag reflectors here",
+      "available": "Available reflectors:",
+      "complete": "Fantastic! Now the person is much easier to see in the dark!",
+      "items": {
+        "vest": "Reflective vest",
+        "hat": "Reflective hat",
+        "bag": "Reflectors on the bag",
+        "shoes": "Reflectors on the shoes",
+        "band": "Reflective band"
+      },
+      "tips": [
+        "Reflectors make you visible up to 200 meters away",
+        "Always wear reflectors when you walk outside in the dark",
+        "Put reflectors on both the front and the back",
+        "Reflectors work best on moving parts like arms and legs",
+        "Wash reflectors gently so they keep working"
+      ],
+      "speak": {
+        "compare": "Compare how visible a person is during the day and at night",
+        "dress_up": "Dress the person with reflectors so they can be seen better in the dark",
+        "placed": "Good! {item} is on!",
+        "done": "Perfect! Now the person is much easier to see in the dark. Reflectors save lives!"
+      }
     },
     "vehicles": {
       "title": "Vehicles",

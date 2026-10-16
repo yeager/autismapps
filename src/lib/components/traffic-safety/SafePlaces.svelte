@@ -295,7 +295,7 @@
 
 <style>
   .safe-places-container {
-    min-height: 100vh;
+    min-height: calc(100dvh - var(--header-h));
     background: linear-gradient(135deg, #E8F5E8 0%, #FFF3E0 50%, #E3F2FD 100%);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }

@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
   import { activeProfileId } from '$lib/stores/profile';
@@ -10,7 +10,7 @@
   import { get } from 'svelte/store';
   import { awardStar, GoldStarBurst } from '$lib/rewards';
 
-  const TIME_SLOTS = [
+  const TIME_SLOTS_SE = [
     { id: 'morning', icon: '🌅', time: '07:00' },
     { id: 'breakfast', icon: '🥣', time: '08:00' },
     { id: 'school_start', icon: '🏫', time: '09:00' },
@@ -22,6 +22,22 @@
     { id: 'evening', icon: '🛁', time: '19:00' },
     { id: 'bedtime', icon: '🛏️', time: '20:00' },
   ];
+
+  // Brazilian routine: morning school shift, lunch after school, later dinner
+  const TIME_SLOTS_BR = [
+    { id: 'morning', icon: '🌅', time: '06:00' },
+    { id: 'breakfast', icon: '🥣', time: '06:30' },
+    { id: 'school_start', icon: '🏫', time: '07:00' },
+    { id: 'school_end', icon: '🎒', time: '13:00' },
+    { id: 'lunch', icon: '🍽️', time: '13:10' },
+    { id: 'snack', icon: '🍎', time: '15:30' },
+    { id: 'play', icon: '🎮', time: '16:00' },
+    { id: 'evening', icon: '🛁', time: '18:30' },
+    { id: 'dinner', icon: '🍝', time: '19:00' },
+    { id: 'bedtime', icon: '🛏️', time: '21:00' },
+  ];
+
+  const TIME_SLOTS = $derived(pick({ sv: TIME_SLOTS_SE, en: TIME_SLOTS_SE, pt_BR: TIME_SLOTS_BR }, $locale));
 
   const ACTIVITY_ICONS = ['📚','🎨','🎮','⚽','🎵','🧩','📺','🍳','🧹','🚶','🏊','🚴','🎭','✏️','🧘'];
 

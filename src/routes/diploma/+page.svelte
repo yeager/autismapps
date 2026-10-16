@@ -4,7 +4,7 @@
   Accessible from the header when stars > 0.
 -->
 <script lang="ts">
-  import { t } from '$lib/i18n';
+  import { t, locale, getLocaleDef } from '$lib/i18n';
   import { totalStars } from '$lib/rewards/store';
   import { activeProfileId } from '$lib/stores/profile';
   import { getProfile } from '$lib/storage';
@@ -30,7 +30,7 @@
   });
 
   $effect(() => {
-    today = new Date().toLocaleDateString('sv-SE', {
+    today = new Date().toLocaleDateString(getLocaleDef($locale).bcp47, {
       year: 'numeric', month: 'long', day: 'numeric'
     });
   });

@@ -153,7 +153,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if selectedStory}<button class="sub-back" onclick={goBack} aria-label="Tillbaka">←</button>{/if}
+    {#if selectedStory}<button class="sub-back" onclick={goBack} aria-label={$t('app.back')}>←</button>{/if}
     <h1>📖 {$t('storyWorkshop.title')}</h1>
 
   </div>

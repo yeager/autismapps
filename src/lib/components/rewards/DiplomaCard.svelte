@@ -3,14 +3,14 @@
   Can be printed via window.print() or saved as image.
 -->
 <script lang="ts">
-  import { t } from '$lib/i18n';
+  import { t, locale, getLocaleDef } from '$lib/i18n';
   import { ACHIEVEMENT_DEFS } from '$lib/rewards/types';
   import type { Diploma } from '$lib/rewards/types';
 
   let { diploma }: { diploma: Diploma } = $props();
 
   const def = $derived(ACHIEVEMENT_DEFS.find(d => d.key === diploma.achievementKey));
-  const dateStr = $derived(new Date(diploma.earnedAt).toLocaleDateString('sv-SE', {
+  const dateStr = $derived(new Date(diploma.earnedAt).toLocaleDateString(getLocaleDef($locale).bcp47, {
     year: 'numeric', month: 'long', day: 'numeric'
   }));
 

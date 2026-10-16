@@ -27,7 +27,10 @@
     <MouthMotor />
   </main>
 
-  <footer class="cr"><p>{$t('app.title.brand')} · CC BY-NC-SA 4.0</p></footer>
+  <footer class="cr">
+    <p>{$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0</p>
+    <p>{$t('app.title.brand')} · CC BY-NC-SA 4.0</p>
+  </footer>
 </div>
 
 <style>

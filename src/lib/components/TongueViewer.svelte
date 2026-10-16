@@ -1,12 +1,26 @@
 <script lang="ts">
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak, stop as stopTTS } from '$lib/tts';
   import { fade, fly } from 'svelte/transition';
   import SagittalView from './SagittalView.svelte';
   import SoundComparison from './SoundComparison.svelte';
-  import { tonguePositions, soundLevels, practiceSequences } from '$lib/data/tongue-positions';
+  import {
+    tonguePositions as POSITIONS_SV,
+    soundLevels as LEVELS_SV,
+    practiceSequences as SEQUENCES_SV,
+  } from '$lib/data/tongue-positions';
+  import { TONGUE_POSITIONS_PT, SOUND_LEVELS_PT, PRACTICE_SEQUENCES_PT } from '$lib/data/pt-br/tongue-viewer';
+  import type { PracticeSequence, SoundLevel, TonguePosition } from '$lib/data/speech-types';
 
-  type Sequence = (typeof practiceSequences)[number];
+  type Sequence = PracticeSequence;
+
+  // Content per locale (en keeps the Swedish sounds)
+  let tonguePositions: Record<string, TonguePosition>;
+  let soundLevels: SoundLevel[];
+  let practiceSequences: Sequence[];
+  $: tonguePositions = pick({ sv: POSITIONS_SV, en: POSITIONS_SV, pt_BR: TONGUE_POSITIONS_PT }, $locale);
+  $: soundLevels = pick({ sv: LEVELS_SV, en: LEVELS_SV, pt_BR: SOUND_LEVELS_PT }, $locale);
+  $: practiceSequences = pick({ sv: SEQUENCES_SV, en: SEQUENCES_SV, pt_BR: PRACTICE_SEQUENCES_PT }, $locale);
 
   // ─── STATE ───
   let currentSound = 'a';
@@ -77,9 +91,10 @@
       // Wait for animation
       await sleep(animDuration + 100);
 
-      // Speak sound
+      // Speak: the sequence's spoken step when it has one (pt: whole syllables), else the sound's label
       if (pos && playingSequence) {
-        await speakText(pos.label.toLowerCase());
+        const text = seq.say ? seq.say[i] : pos.label.toLowerCase();
+        if (text) await speakText(text);
         await sleep(slowMotion ? 800 : 300);
       }
     }
@@ -162,7 +177,7 @@
         <div class="sound-ipa">[{currentPos.ipa}]</div>
         <div class="sound-example">
           "{currentPos.example}"
-          <button class="speak-inline" on:click={() => speakText(currentPos.example)} aria-label="Lyssna">
+          <button class="speak-inline" on:click={() => speakText(currentPos.example)} aria-label={$t('tongueViewer.listen')}>
             🔊
           </button>
         </div>
@@ -173,10 +188,10 @@
             <span class="feature voiceless">🔕 {$t('tongueViewer.voiceless')}</span>
           {/if}
           {#if currentPos.contact}
-            <span class="feature contact">👆 {currentPos.contact}</span>
+            <span class="feature contact">👆 {$t(`tongueViewer.contact.${currentPos.contact}`)}</span>
           {/if}
           {#if currentPos.airflow}
-            <span class="feature airflow">💨 {currentPos.airflow}</span>
+            <span class="feature airflow">💨 {$t(`tongueViewer.airflow.${currentPos.airflow}`)}</span>
           {/if}
           {#if currentPos.velum === 'open'}
             <span class="feature nasal">👃 {$t('tongueViewer.nasal')}</span>
@@ -295,6 +310,7 @@
   <!-- Comparison modal -->
   {#if showComparison}
     <SoundComparison
+      positions={tonguePositions}
       {darkMode}
       onClose={() => showComparison = false}
       onSpeak={speakText}

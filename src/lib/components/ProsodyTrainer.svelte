@@ -16,6 +16,13 @@
     rhythmPatterns,
     LEVELS,
   } from '$lib/data/prosody-data.js';
+  import { locale, pick } from '$lib/i18n';
+  import { PROSODY_PT } from '$lib/data/pt-br/prosody-trainer';
+  import type { ProsodyContent } from '$lib/data/speech-types';
+
+  const PROSODY_SV: ProsodyContent = { twoSyllableWords, threeSyllableWords, intonationSentences, emotionData, rhythmPatterns, fullSentences };
+  // Content per locale (en keeps the Swedish words and sentences)
+  $: content = pick<ProsodyContent>({ sv: PROSODY_SV, en: PROSODY_SV, pt_BR: PROSODY_PT }, $locale);
 
   export let t: (key: string, params?: Record<string, string>) => string = (k) => k;
   export let speak: (text: string, opts?: { rate?: number }) => Promise<void> = async () => {};
@@ -40,28 +47,28 @@
   let rhythmRef: RhythmBeats;
 
   // Get current data for level
-  $: levelData = getLevelData(currentLevel, currentIndex);
+  $: levelData = getLevelData(content, currentLevel, currentIndex);
 
-  function getLevelData(level: number, idx: number) {
+  function getLevelData(c: ProsodyContent, level: number, idx: number) {
     switch (level) {
       case 1: {
-        const w = twoSyllableWords[idx % twoSyllableWords.length];
+        const w = c.twoSyllableWords[idx % c.twoSyllableWords.length];
         return { ...w, kind: 'stress' as const };
       }
       case 2: {
-        const w = threeSyllableWords[idx % threeSyllableWords.length];
+        const w = c.threeSyllableWords[idx % c.threeSyllableWords.length];
         return { ...w, kind: 'stress' as const };
       }
       case 3: {
-        const s = intonationSentences[idx % intonationSentences.length];
+        const s = c.intonationSentences[idx % c.intonationSentences.length];
         return { ...s, kind: 'intonation' as const };
       }
       case 4: {
-        const e = emotionData[idx % emotionData.length];
+        const e = c.emotionData[idx % c.emotionData.length];
         return { ...e, kind: 'emotion' as const, text: e.sentence };
       }
       case 5: {
-        const f = fullSentences[idx % fullSentences.length];
+        const f = c.fullSentences[idx % c.fullSentences.length];
         return { ...f, kind: 'fullSentence' as const };
       }
       default:
@@ -69,13 +76,13 @@
     }
   }
 
-  function getItemCount(level: number) {
+  function getItemCount(c: ProsodyContent, level: number) {
     switch (level) {
-      case 1: return twoSyllableWords.length;
-      case 2: return threeSyllableWords.length;
-      case 3: return intonationSentences.length;
-      case 4: return emotionData.length;
-      case 5: return fullSentences.length;
+      case 1: return c.twoSyllableWords.length;
+      case 2: return c.threeSyllableWords.length;
+      case 3: return c.intonationSentences.length;
+      case 4: return c.emotionData.length;
+      case 5: return c.fullSentences.length;
       default: return 0;
     }
   }
@@ -120,7 +127,7 @@
   }
 
   function nextItem() {
-    const count = getItemCount(currentLevel);
+    const count = getItemCount(content, currentLevel);
     currentIndex = (currentIndex + 1) % count;
     showAnswer = false;
     selectedStress = -1;
@@ -128,7 +135,7 @@
   }
 
   function nextRhythm() {
-    rhythmIndex = (rhythmIndex + 1) % rhythmPatterns.length;
+    rhythmIndex = (rhythmIndex + 1) % content.rhythmPatterns.length;
     if (rhythmRef) rhythmRef.stop();
   }
 
@@ -192,7 +199,7 @@
 
     {:else if view === 'rhythm'}
       <!-- Rhythm exercise -->
-      {@const rp = rhythmPatterns[rhythmIndex]}
+      {@const rp = content.rhythmPatterns[rhythmIndex]}
       <div class="exercise-card">
         <div class="exercise-header">
           <span class="ex-icon">{rp.icon}</span>
@@ -216,7 +223,7 @@
       <!-- Exercise view based on level -->
       <div class="progress-row">
         <span class="progress-text">
-          {t('prosody.level')} {currentLevel} · {currentIndex + 1}/{getItemCount(currentLevel)}
+          {t('prosody.level')} {currentLevel} · {currentIndex + 1}/{getItemCount(content, currentLevel)}
         </span>
         {#if streak >= 3}
           <span class="streak-badge">🔥 {streak}</span>

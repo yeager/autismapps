@@ -130,7 +130,7 @@
 
 <div class="break-page">
   <div class="page-title">
-    {#if view === 'exercise'}<button class="sub-back" onclick={goBack} aria-label="Tillbaka">←</button>{/if}
+    {#if view === 'exercise'}<button class="sub-back" onclick={goBack} aria-label={$t('app.back')}>←</button>{/if}
     <h1>{$t('break.title')}</h1>
 
   </div>

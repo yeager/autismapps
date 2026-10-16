@@ -2,9 +2,11 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade } from 'svelte/transition';
+  import type { IntonationPattern, RhythmWord } from '$lib/data/speech-types';
+  import { INTONATION_PATTERNS_PT, RHYTHM_WORDS_PT } from '$lib/data/pt-br/speech-rhythm';
 
   // === TALRYTMEN — Speech Rhythm ===
   // Prosody/rhythm training for CAS
@@ -13,14 +15,7 @@
 
   type Mode = 'menu' | 'tap' | 'stress' | 'intonation';
 
-  interface RhythmWord {
-    text: string;
-    syllables: string[];
-    stressIndex: number;
-    icon: string;
-  }
-
-  const RHYTHM_WORDS: RhythmWord[] = [
+  const RHYTHM_WORDS_SV: RhythmWord[] = [
     { text: 'mamma', syllables: ['MAM', 'ma'], stressIndex: 0, icon: '👩' },
     { text: 'pappa', syllables: ['PAP', 'pa'], stressIndex: 0, icon: '👨' },
     { text: 'banan', syllables: ['ba', 'NAN'], stressIndex: 1, icon: '🍌' },
@@ -38,14 +33,7 @@
     { text: 'fotboll', syllables: ['FOT', 'boll'], stressIndex: 0, icon: '⚽' },
   ];
 
-  interface IntonationPattern {
-    text: string;
-    icon: string;
-    contour: number[];
-    type: 'statement' | 'question' | 'exclamation';
-  }
-
-  const INTONATION_PATTERNS: IntonationPattern[] = [
+  const INTONATION_PATTERNS_SV: IntonationPattern[] = [
     { text: 'Det är en katt.', icon: '🐱', contour: [3, 3, 2, 3, 2], type: 'statement' },
     { text: 'Är det en katt?', icon: '🐱', contour: [3, 3, 2, 3, 5], type: 'question' },
     { text: 'Vilken fin katt!', icon: '🐱', contour: [4, 3, 4, 5, 3], type: 'exclamation' },
@@ -53,6 +41,12 @@
     { text: 'Vill du ha glass?', icon: '🍦', contour: [3, 2, 2, 3, 5], type: 'question' },
     { text: 'Vad god glass!', icon: '🍦', contour: [4, 4, 5, 3], type: 'exclamation' },
   ];
+
+  // en keeps the Swedish content
+  const RHYTHM_WORDS = $derived(pick({ sv: RHYTHM_WORDS_SV, en: RHYTHM_WORDS_SV, pt_BR: RHYTHM_WORDS_PT }, $locale));
+  const INTONATION_PATTERNS = $derived(
+    pick({ sv: INTONATION_PATTERNS_SV, en: INTONATION_PATTERNS_SV, pt_BR: INTONATION_PATTERNS_PT }, $locale)
+  );
 
   let mode = $state<Mode>('menu');
   let currentWordIdx = $state(0);
@@ -129,7 +123,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if mode !== 'menu'}<button class="sub-back" onclick={() => { stopMetronome(); mode = 'menu' }} aria-label="Tillbaka">←</button>{/if}
+    {#if mode !== 'menu'}<button class="sub-back" onclick={() => { stopMetronome(); mode = 'menu' }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🎵 {$t('speechRhythm.title')}</h1>
 
     <span class="score-badge">{$t('speechRhythm.score')}: {score}</span>
@@ -179,10 +173,10 @@
             {/each}
           </div>
           <button class="btn metro-btn" onclick={() => metronomeActive ? stopMetronome() : startMetronome()}>
-            {metronomeActive ? '⏹️ Stop' : '▶️ Start'}
+            {metronomeActive ? `⏹️ ${$t('speechRhythm.stop')}` : `▶️ ${$t('speechRhythm.start')}`}
           </button>
         </div>
-        <button class="tap-area" onclick={handleTap}>🥁<span class="tap-count">{taps.length} tapp{taps.length !== 1 ? 'ar' : ''}</span></button>
+        <button class="tap-area" onclick={handleTap}>🥁<span class="tap-count">{taps.length} {taps.length === 1 ? $t('speechRhythm.tapOne') : $t('speechRhythm.tapMany')}</span></button>
         <button class="btn next-btn" onclick={nextWord}>{$t('speechRhythm.next')} →</button>
       </div>
 

@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, getLocaleDef } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { saveAppProgress, getAppProgress } from '$lib/storage';
   import { activeProfileId } from '$lib/stores/profile';
@@ -45,7 +45,7 @@
 
   function addStar(reason: GoalPreset) {
     stars++;
-    history = [...history, { reason: $t(reason.key), time: new Date().toLocaleString(), icon: reason.icon }];
+    history = [...history, { reason: $t(reason.key), time: new Date().toLocaleString(getLocaleDef($locale).bcp47), icon: reason.icon }];
     speak(`${reason.icon} ${$t(reason.key)}! ⭐`);
     if (stars >= goal) {
       showCelebration = true;

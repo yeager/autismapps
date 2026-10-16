@@ -8,7 +8,7 @@
    */
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import { t, locale } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { browser } from '$app/environment';
   import { fade, fly, slide } from 'svelte/transition';
@@ -17,12 +17,28 @@
   import StepGuide from './StepGuide.svelte';
   import {
     promptData,
-    CATEGORIES,
+    CATEGORIES as CATEGORIES_SV,
     PRESSURE_LEVELS,
     DURATION_TYPES,
-    getSoundsByCategory,
     getArasaacUrl,
   } from '$lib/data/prompt-data.js';
+  import { PROMPT_PT, CATEGORIES_PT } from '$lib/data/pt-br/prompt-guide';
+  import { PHONEME_SAY_PT } from '$lib/data/pt-br/phonemes';
+  import type { PromptCategoryDef, PromptSound, SayMap } from '$lib/data/speech-types';
+
+  // Swedish sounds with Swedish or English texts (en keeps the Swedish sounds); pt-BR has its own sounds
+  const resolved = (lang: 'sv' | 'en'): PromptSound[] =>
+    promptData.map(({ description_sv, description_en, steps_sv, steps_en, ...s }) => ({
+      ...s,
+      description: lang === 'sv' ? description_sv : description_en,
+      steps: lang === 'sv' ? steps_sv : steps_en,
+    }) as PromptSound);
+  const SOUNDS_SV = resolved('sv');
+  const SOUNDS_EN = resolved('en');
+  const SOUNDS = $derived(pick<PromptSound[]>({ sv: SOUNDS_SV, en: SOUNDS_EN, pt_BR: PROMPT_PT }, $locale));
+  const CATEGORIES = $derived(pick<PromptCategoryDef[]>({ sv: CATEGORIES_SV as PromptCategoryDef[], en: CATEGORIES_SV as PromptCategoryDef[], pt_BR: CATEGORIES_PT }, $locale));
+  const SAY = $derived(pick<SayMap>({ sv: {}, en: {}, pt_BR: PHONEME_SAY_PT }, $locale));
+  const getSoundsByCategory = (id: string) => SOUNDS.filter((s) => s.category === id);
 
   // ─── State ───
   let selectedCategory = $state<string | null>(null);
@@ -63,9 +79,6 @@
     CATEGORIES.find(c => c.id === selectedCategory) ?? null
   );
 
-  // i18n-aware labels
-  const lang = $derived($locale?.startsWith('en') ? 'en' : 'sv');
-
   const pressureLabel = $derived(
     currentSound
       ? $t(PRESSURE_LEVELS[currentSound.pressure as keyof typeof PRESSURE_LEVELS]?.labelKey ?? '')
@@ -76,16 +89,8 @@
       ? $t(DURATION_TYPES[currentSound.duration as keyof typeof DURATION_TYPES]?.labelKey ?? '')
       : ''
   );
-  const steps = $derived(
-    currentSound
-      ? (lang === 'en' ? currentSound.steps_en : currentSound.steps_sv)
-      : []
-  );
-  const description = $derived(
-    currentSound
-      ? (lang === 'en' ? currentSound.description_en : currentSound.description_sv)
-      : ''
-  );
+  const steps = $derived(currentSound ? currentSound.steps : []);
+  const description = $derived(currentSound ? currentSound.description : '');
 
   // ─── Actions ───
   function selectCategory(catId: string) {
@@ -115,7 +120,7 @@
     isSpeaking = true;
     try {
       // Speak the sound itself, then the example word
-      await speak(currentSound.sound, { rate: 0.3 });
+      await speak(SAY[currentSound.sound] ?? currentSound.sound, { rate: 0.3 });
       await new Promise(r => setTimeout(r, 400));
       await speak(currentSound.exampleWord, { rate: 0.4 });
     } catch (e) {
@@ -188,7 +193,7 @@
         class="tts-btn"
         onclick={playSound}
         disabled={isSpeaking}
-        aria-label="Lyssna på ljudet"
+        aria-label={$t('promptGuide.listenSound')}
       >
         {isSpeaking ? '⏳' : '🔊'}
       </button>
@@ -286,7 +291,7 @@
           <div class="example-info">
             <span class="example-label">{$t('promptGuide.exampleWord')}</span>
             <span class="example-text">{currentSound.exampleWord}</span>
-            <span class="example-sound">/{currentSound.ipa}/ i "{currentSound.exampleWord}"</span>
+            <span class="example-sound">{$t('promptGuide.inWord', { ipa: currentSound.ipa, word: currentSound.exampleWord })}</span>
           </div>
           <span class="play-icon" class:speaking={isSpeaking}>🔊</span>
         </div>
@@ -306,10 +311,15 @@
       {/if}
     </section>
   {/if}
+
+  <footer class="credit">
+    {$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
+  </footer>
 </div>
 
 <style>
   /* ═══ GLOBAL ═══ */
+  .credit { text-align: center; padding: 0.75rem; font-size: 0.75rem; color: var(--text-secondary); }
   .prompt-guide {
     max-width: 900px;
     margin: 0 auto;

@@ -2,22 +2,18 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade, scale } from 'svelte/transition';
   import { awardStar, GoldStarBurst } from '$lib/rewards';
+  import type { SayMap, SyllableWordSet } from '$lib/data/speech-types';
+  import { SAY_PT, WORD_SETS_PT } from '$lib/data/pt-br/syllable-jump';
 
   // === STAVELSEHOPPET — Syllable Jumping Game ===
   // Break words into syllables with visual/rhythmic cues
   // Tap along with syllable beats — motor planning for CAS
 
-  type WordEntry = {
-    word: string;
-    syllables: string[];
-    icon: string;
-  };
-
-  const WORD_SETS: { labelKey: string; words: WordEntry[] }[] = [
+  const WORD_SETS_SV: SyllableWordSet[] = [
     {
       labelKey: 'syllableJump.set.easy',
       words: [
@@ -59,6 +55,11 @@
     },
   ];
 
+  // en keeps the Swedish words
+  const WORD_SETS = $derived(pick({ sv: WORD_SETS_SV, en: WORD_SETS_SV, pt_BR: WORD_SETS_PT }, $locale));
+  const SAY = $derived(pick<SayMap>({ sv: {}, en: {}, pt_BR: SAY_PT }, $locale));
+  const say = (text: string) => SAY[text] ?? text;
+
   let selectedSetIdx = $state<number | null>(null);
   let currentWordIdx = $state(0);
   let tappedSyllables = $state<number[]>([]);
@@ -86,7 +87,7 @@
     isPlaying = true;
     bounceIdx = idx;
     tappedSyllables = [...tappedSyllables, idx];
-    await speak(currentWord.syllables[idx], { rate: speechRate });
+    await speak(say(currentWord.syllables[idx]), { rate: speechRate });
     setTimeout(() => { bounceIdx = -1; }, 400);
     isPlaying = false;
 
@@ -94,7 +95,7 @@
     if (tappedSyllables.length >= currentWord.syllables.length) {
       await new Promise(r => setTimeout(r, 500));
       isPlaying = true;
-      await speak(currentWord.word, { rate: Math.min(speechRate + 0.2, 1.0) });
+      await speak(say(currentWord.word), { rate: Math.min(speechRate + 0.2, 1.0) });
       isPlaying = false;
     }
   }
@@ -106,12 +107,12 @@
     for (let i = 0; i < currentWord.syllables.length; i++) {
       bounceIdx = i;
       tappedSyllables = currentWord.syllables.map((_, j) => j).filter(j => j <= i);
-      await speak(currentWord.syllables[i], { rate: speechRate });
+      await speak(say(currentWord.syllables[i]), { rate: speechRate });
       await new Promise(r => setTimeout(r, 300));
     }
     bounceIdx = -1;
     await new Promise(r => setTimeout(r, 400));
-    await speak(currentWord.word, { rate: Math.min(speechRate + 0.2, 1.0) });
+    await speak(say(currentWord.word), { rate: Math.min(speechRate + 0.2, 1.0) });
     isPlaying = false;
   }
 
@@ -142,7 +143,7 @@
   <main class="cnt">
 
   <div class="page-title">
-    {#if selectedSetIdx !== null}<button class="sub-back" onclick={() => { selectedSetIdx = null; showCelebration = false }} aria-label="Tillbaka">←</button>{/if}
+    {#if selectedSetIdx !== null}<button class="sub-back" onclick={() => { selectedSetIdx = null; showCelebration = false }} aria-label={$t('app.back')}>←</button>{/if}
     <h1>🦘 {$t('syllableJump.title')}</h1>
 
   </div>

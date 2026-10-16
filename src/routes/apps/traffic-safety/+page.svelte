@@ -2,10 +2,11 @@
   import TrafficSafetyApp from '$lib/components/traffic-safety/TrafficSafetyApp.svelte';
   import { locale, t } from '$lib/i18n';
   
-  let preferredLanguage = $state<'sv' | 'en'>($locale === 'sv' ? 'sv' : 'en');
+  // Follows the app locale (sv, en, pt_BR…); the app falls back to en for unknown locales
+  let preferredLanguage = $state<string>($locale);
   
   $effect(() => {
-    preferredLanguage = $locale === 'sv' ? 'sv' : 'en';
+    preferredLanguage = $locale;
   });
 </script>
 

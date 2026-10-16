@@ -1,9 +1,10 @@
 /**
- * Sagostunden — Story generation engine (bilingual)
+ * Sagostunden — Story generation engine (sv, en, pt_BR)
  */
 
 import { ALL_WORDS, type Word, type WordCategory } from './words';
 import { TEMPLATES, type StoryTemplate } from './templates';
+import { fillPt } from './grammar-pt';
 
 export interface GeneratedStory {
   id: string;
@@ -60,47 +61,45 @@ function capitalize(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-/**
- * Fill a template with selected words, locale-aware.
- * Swedish: {en_X} → "en katt" / "ett lejon", {X} → "katt"
- * English: {a_X} → "a cat" / "an owl", {X} → "cat"
- */
-export function fillTemplate(
-  template: StoryTemplate,
-  wordMap: Record<string, { sv: string; en: string; gender: string }>,
-  locale: string
-): string[] {
-  const lang = locale.startsWith('en') ? 'en' : 'sv';
-  const paragraphs = template.paragraphs[lang] || template.paragraphs['sv'];
+type Filler = (paragraph: string, words: Record<string, Word>) => string;
 
-  return paragraphs.map(p => {
-    let text = p;
-    for (const [key, word] of Object.entries(wordMap)) {
-      const name = lang === 'en' ? word.en : word.sv;
+/** Swedish: {en_X} → "en katt" / "ett lejon", {def_X} → "katten", {X} → "katt" */
+function fillSv(p: string, words: Record<string, Word>): string {
+  let text = p;
+  for (const [key, word] of Object.entries(words)) {
+    const article = word.gender === 'ett' ? 'ett' : 'en';
+    text = text.replace(new RegExp(`\\{en_${key}\\}`, 'g'), `${article} ${word.sv}`);
+    text = text.replace(new RegExp(`\\{def_${key}\\}`, 'g'), definiteSv(word.sv, word.gender));
+    text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), word.sv);
+  }
+  return capitalize(text);
+}
 
-      if (lang === 'sv') {
-        // Swedish: {en_X} → "en katt" / "ett lejon" (indefinite)
-        const article = word.gender === 'ett' ? 'ett' : 'en';
-        text = text.replace(new RegExp(`\\{en_${key}\\}`, 'g'), `${article} ${name}`);
-        // Swedish: {def_X} → "katten" / "lejonet" (definite, explicit)
-        const def = definiteSv(name, word.gender);
-        text = text.replace(new RegExp(`\\{def_${key}\\}`, 'g'), def);
-        // Swedish: {X} → base form (use {def_X} for explicit definite)
-        text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), name);
-      } else {
-        // English: {a_X} → "a cat" / "an elephant"
-        const article = articleEn(name);
-        text = text.replace(new RegExp(`\\{a_${key}\\}`, 'g'), `${article} ${name}`);
-        text = text.replace(new RegExp(`\\{en_${key}\\}`, 'g'), `${article} ${name}`);
-        // English: {def_X} → "the cat"
-        text = text.replace(new RegExp(`\\{def_${key}\\}`, 'g'), `the ${name}`);
-        // English: {X} → base form (use {def_X} for explicit "the X")
-        text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), name);
-      }
-    }
-    // Capitalize first character of each paragraph
-    return capitalize(text);
-  });
+/** English: {a_X} → "a cat" / "an owl", {def_X} → "the cat", {X} → "cat" */
+function fillEn(p: string, words: Record<string, Word>): string {
+  let text = p;
+  for (const [key, word] of Object.entries(words)) {
+    const article = articleEn(word.en);
+    text = text.replace(new RegExp(`\\{a_${key}\\}`, 'g'), `${article} ${word.en}`);
+    text = text.replace(new RegExp(`\\{en_${key}\\}`, 'g'), `${article} ${word.en}`);
+    text = text.replace(new RegExp(`\\{def_${key}\\}`, 'g'), `the ${word.en}`);
+    text = text.replace(new RegExp(`\\{${key}\\}`, 'g'), word.en);
+  }
+  return capitalize(text);
+}
+
+const FILLERS: Record<string, Filler> = {
+  sv: fillSv,
+  en: fillEn,
+  pt_BR: (p, words) =>
+    fillPt(p, Object.fromEntries(Object.entries(words).map(([k, w]) => [k, { text: w.pt_BR.text, gender: w.pt_BR.gender }]))),
+};
+
+/** Fill a template for the story language (unknown languages fall back to English) */
+export function fillTemplate(template: StoryTemplate, words: Record<string, Word>, lang: string): string[] {
+  const fill = FILLERS[lang] ?? FILLERS.en;
+  const paragraphs = template.paragraphs[lang] ?? template.paragraphs.en ?? template.paragraphs.sv;
+  return paragraphs.map((p) => fill(p, words));
 }
 
 /**
@@ -126,11 +125,7 @@ export function generateStory(
     }
   }
 
-  const wordMap = Object.fromEntries(
-    Object.entries(words).map(([k, w]) => [k, { sv: w.sv, en: w.en, gender: w.gender }])
-  );
-
-  const paragraphs = fillTemplate(tmpl, wordMap, locale);
+  const paragraphs = fillTemplate(tmpl, words, locale);
 
   return {
     id: uid(),

@@ -4,6 +4,8 @@
  * Hosted at autismappar.se/bildstod
  */
 
+import { createJsonCache } from './cache';
+
 const DEFAULT_BILDSTOD_BASE = 'https://autismappar.se/bildstod/bildstod-service';
 
 function getBildstodBase(): string {
@@ -38,7 +40,12 @@ interface BildstodData {
   categories: { id: string; name: { sv: string; en: string } }[];
 }
 
+// Cached like the ARASAAC answers (./cache.ts), with a short timeout: Bildstöd is searched
+// before ARASAAC, so a slow service must not hold the pictogram search up
+const bildstodJson = createJsonCache({ timeoutMs: 1500 }).get;
+
 let cache: BildstodData | null = null;
+let loading: Promise<BildstodData> | null = null;
 
 function isBildstodData(value: unknown): value is BildstodData {
   if (!value || typeof value !== 'object') return false;
@@ -55,37 +62,26 @@ function isBildstodData(value: unknown): value is BildstodData {
   });
 }
 
-async function fetchWithTimeout(url: string, timeoutMs = 1500): Promise<Response> {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    return await fetch(url, { signal: controller.signal });
-  } finally {
-    clearTimeout(timeout);
-  }
-}
-
 /**
- * Load the bildstöd pictogram catalog.
- * Loads the catalog from the matching remote API.
+ * Load the bildstöd pictogram catalog from the matching remote API.
+ * Concurrent searches (apps look up a whole vocabulary at once) share one load;
+ * a failed load is not memoized, so the next search retries.
  */
-export async function loadBildstod(): Promise<BildstodData> {
-  if (cache) return cache;
-  
-  try {
-    const res = await fetchWithTimeout(`${getBildstodBase()}/api/pictograms.json`);
-    const ct = res.headers.get('content-type') || '';
-    if (res.ok && ct.includes('json')) {
-      const data: unknown = await res.json();
+export function loadBildstod(): Promise<BildstodData> {
+  if (cache) return Promise.resolve(cache);
+  loading ??= (async () => {
+    try {
+      const data = await bildstodJson<unknown>(`${getBildstodBase()}/api/pictograms.json`);
       if (isBildstodData(data)) {
         cache = data;
         return cache;
       }
-    }
-  } catch {}
-  
-  cache = { version: '0.0.0', pictograms: [], categories: [] };
-  return cache;
+    } catch {}
+    return { version: '0.0.0', pictograms: [], categories: [] };
+  })().finally(() => {
+    loading = null;
+  });
+  return loading;
 }
 
 /**

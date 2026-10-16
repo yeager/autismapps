@@ -1,9 +1,10 @@
 <script lang="ts">
   // TTS uses app locale automatically
   import WelcomeDialog from './WelcomeDialog.svelte';
-  import { setLocale } from '$lib/i18n';
+  import { setLocale, pick } from '$lib/i18n';
   import en from '$lib/i18n/messages/en.json';
   import sv from '$lib/i18n/messages/sv.json';
+  import ptBR from '$lib/i18n/messages/pt_BR.json';
   import ActivityGrid from './ActivityGrid.svelte';
   import TrafficLights from './TrafficLights.svelte';
   import Vehicles from './Vehicles.svelte';
@@ -12,22 +13,20 @@
   import SafePlaces from './SafePlaces.svelte';
   import Reflectors from './Reflectors.svelte';
   
-  let { lang = $bindable<'sv' | 'en'>('sv') } = $props<{ lang?: 'sv' | 'en' }>();
+  let { lang = $bindable('en') } = $props<{ lang?: string }>();
 
-  const trafficSafetyTranslations: Record<'sv' | 'en', Record<string, any>> = {
+  const trafficSafetyTranslations: Record<string, Record<string, any>> = {
     sv: sv['traffic-safety'],
-    en: en['traffic-safety']
+    en: en['traffic-safety'],
+    pt_BR: ptBR['traffic-safety']
   };
-  
+
   let showWelcome = $state(true);
   let currentView = $state('grid'); // 'grid', 'traffic-lights', 'crosswalk', etc.
-  let i18nData: Record<string, any> = $state(lang === 'sv' ? trafficSafetyTranslations.sv : trafficSafetyTranslations.en);
+  // Unknown locales fall back to English (pick: code → en → sv)
+  let i18nData: Record<string, any> = $derived(pick(trafficSafetyTranslations, lang));
 
-  $effect(() => {
-    i18nData = lang === 'sv' ? trafficSafetyTranslations.sv : trafficSafetyTranslations.en;
-  });
-
-  function chooseLanguage(language: 'sv' | 'en') {
+  function chooseLanguage(language: string) {
     lang = language;
     setLocale(language);
     if (typeof localStorage !== 'undefined') localStorage.setItem('locale', language);
@@ -72,6 +71,12 @@
           >
             🇺🇸 EN
           </button>
+          <button
+            class="lang-btn {lang === 'pt_BR' ? 'active' : ''}"
+            onclick={() => chooseLanguage('pt_BR')}
+          >
+            🇧🇷 PT
+          </button>
         </div>
       </div>
       
@@ -95,8 +100,9 @@
         onback={handleBack}
       />
     {:else if currentView === 'road-signs'}
-      <RoadSigns 
+      <RoadSigns
         i18n={i18nData}
+        {lang}
         onback={handleBack}
       />
     {:else if currentView === 'safe-places'}

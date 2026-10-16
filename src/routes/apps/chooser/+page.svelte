@@ -129,7 +129,7 @@
   .choice-row { display: flex; align-items: center; gap: 10px; }
   .choice-emoji { font-size: 1.5em; width: 40px; text-align: center; }
   .choice-input {
-    flex: 1; padding: 14px 16px; border: 2px solid var(--border); border-radius: 14px;
+    flex: 1; min-width: 0; padding: 14px 16px; border: 2px solid var(--border); border-radius: 14px;
     font-size: 1.1em; font-weight: 600; background: var(--bg-card);
   }
   .choice-input:focus { border-color: #3498DB; }

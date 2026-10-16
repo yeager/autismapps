@@ -3,40 +3,65 @@
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import { t, locale, setLocale } from '$lib/i18n';
+  import { t, locale, setLocale, detectLocale, isReadyLocale, getLocaleDef } from '$lib/i18n';
   import { theme, textSize, reducedMotion, themeClass, textSizeClass } from '$lib/a11y';
   import { speak, preloadVoice } from '$lib/tts';
   import { browser } from '$app/environment';
   import AchievementPopup from '$lib/components/rewards/AchievementPopup.svelte';
   import StarCounter from '$lib/components/rewards/StarCounter.svelte';
+  import { ALL_APPS, isBlockedIn } from '$lib/apps';
+  import ComingSoonNotice from '$lib/components/ComingSoonNotice.svelte';
 
   let { children } = $props();
 
   // The production build is served below /launcher; pathname therefore
   // includes the configured base while the route id remains the root route.
   const isHome = $derived($page.route.id === '/');
+  const currentApp = $derived(ALL_APPS.find((a) => a.route === $page.route.id));
   // Remember whether the page itself supplied a title before the layout sets
   // its localized fallback. Otherwise the fallback would be mistaken for a
   // page title on the next locale change and remain in the previous language.
   let hasPageSpecificTitle = false;
+
+  // Each production domain is one language (autismappar.se = sv, autismapps.online = en)
+  // and wins over a saved choice — except for ready locales without a domain of their
+  // own (pt_BR), which can only be reached by choosing them on one of those domains.
+  const DOMAIN_LOCALES = ['sv', 'en'];
+  function domainLocale(): string | null {
+    const hostname = window.location.hostname.toLowerCase();
+    if (hostname === 'autismappar.se' || hostname.endsWith('.autismappar.se')) return 'sv';
+    if (hostname === 'autismapps.online' || hostname.endsWith('.autismapps.online')) return 'en';
+    return null;
+  }
+  // Locale decided at startup ('' on the server). Until its dictionary loads the store still says 'en',
+  // so a direct URL to an app blocked in that locale must already be treated as blocked.
+  const saved = browser ? localStorage.getItem('locale') : null;
+  const savedReady = saved && isReadyLocale(saved) ? saved : null;
+  const initial = browser
+    ? (savedReady && !DOMAIN_LOCALES.includes(savedReady) ? savedReady : null) ||
+      domainLocale() ||
+      savedReady ||
+      detectLocale(navigator.language)
+    : '';
+  let localeReady = $state(false);
+  const blockedApp = $derived(
+    currentApp &&
+      (isBlockedIn(currentApp, $locale) || (!localeReady && initial && isBlockedIn(currentApp, initial)))
+      ? currentApp
+      : null
+  );
+
   function goSettings() {
     goto(base + '/settings');
   }
 
-  // Initialize locale + preload Piper TTS voice
+  // Initialize locale (see `initial`) + preload that locale's Piper voice
   if (browser) {
     hasPageSpecificTitle = Boolean(document.querySelector('head > title')?.textContent?.trim());
-    const saved = localStorage.getItem('locale');
-    const hostname = window.location.hostname.toLowerCase();
-    const forcedDomainLocale = hostname === 'autismappar.se' || hostname.endsWith('.autismappar.se')
-      ? 'sv'
-      : hostname === 'autismapps.online' || hostname.endsWith('.autismapps.online')
-        ? 'en'
-        : null;
-    const browserLocale = navigator.language.toLowerCase().startsWith('sv') ? 'sv' : 'en';
-    setLocale(forcedDomainLocale || saved || browserLocale);
-    // Preload Piper WASM voice on first load
-    preloadVoice();
+    setLocale(initial).then((code) => {
+      localeReady = true;
+      preloadVoice(code);
+    });
   }
 
   function setMeta(selector: string, content: string) {
@@ -46,19 +71,21 @@
   $effect(() => {
     if (!browser) return;
 
+    const def = getLocaleDef($locale);
+    // Only sv and en have their own manifest (one per production domain)
     const language = $locale === 'sv' ? 'sv' : 'en';
     const brand = $t('app.title.brand');
     const description = $t('home.intro');
     const canonicalUrl = window.location.origin + window.location.pathname;
 
-    document.documentElement.lang = language;
+    document.documentElement.lang = def.bcp47;
     if ($page.route.id === '/' || !hasPageSpecificTitle) {
       document.title = `${brand} — ${$t('app.subtitle')}`;
     }
     setMeta('meta[name="description"]', description);
     setMeta('meta[property="og:title"]', `${brand} — ${$t('home.headline')}`);
     setMeta('meta[property="og:description"]', description);
-    setMeta('meta[property="og:locale"]', language === 'sv' ? 'sv_SE' : 'en_US');
+    setMeta('meta[property="og:locale"]', def.bcp47.replace('-', '_'));
     setMeta('meta[property="og:site_name"]', brand);
     setMeta('meta[name="twitter:title"]', `${brand} — ${$t('home.headline')}`);
     setMeta('meta[name="twitter:description"]', description);
@@ -120,7 +147,11 @@
   {/if}
 
   <main class="app-main" class:has-header={!isHome}>
-    {@render children()}
+    {#if blockedApp}
+      <ComingSoonNotice app={blockedApp} />
+    {:else}
+      {@render children()}
+    {/if}
   </main>
 
   <AchievementPopup />

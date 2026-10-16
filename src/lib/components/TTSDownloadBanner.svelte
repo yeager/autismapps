@@ -12,7 +12,7 @@
     <div class="banner-content">
       <span class="icon">🔊</span>
       <div class="info">
-        <span class="label">{$t('tts.downloading') || 'Laddar ner röst...'}</span>
+        <span class="label">{$t('tts.downloading')}</span>
         <div class="progress-bar">
           <div class="progress-fill" style="width: {progress}%"></div>
         </div>

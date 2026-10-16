@@ -168,7 +168,7 @@
     padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    min-height: 100vh;
+    min-height: calc(100dvh - var(--header-h));
     background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
   }
 

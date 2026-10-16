@@ -13,7 +13,7 @@
    */
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import { t, locale } from '$lib/i18n';
+  import { t, locale, pick } from '$lib/i18n';
   import { speak } from '$lib/tts';
   import { fade, fly, scale } from 'svelte/transition';
   import { browser } from '$app/environment';
@@ -219,10 +219,10 @@
 
       // Read celebration text
       const lang = $locale;
-      speak(lang === 'sv' ? 'Rätt! Bra jobbat!' : 'Correct! Well done!', { lang });
+      speak($t('seq.say.correct'), { lang });
     } else {
       const lang = $locale;
-      speak(lang === 'sv' ? 'Inte riktigt rätt. Försök igen!' : 'Not quite right. Try again!', { lang });
+      speak($t('seq.say.try_again'), { lang });
     }
   }
 
@@ -250,12 +250,7 @@
 
         hintedSlot = i;
         const lang = $locale;
-        speak(
-          lang === 'sv'
-            ? `Ledtråd: Steg ${i + 1} visas`
-            : `Hint: Step ${i + 1} is shown`,
-          { lang }
-        );
+        speak($t('seq.say.hint', { n: String(i + 1) }), { lang });
         break;
       }
     }
@@ -296,12 +291,7 @@
       if (step) {
         const lang = $locale;
         const desc = step.description[lang] || step.description.en;
-        speak(
-          lang === 'sv'
-            ? `Vad händer om vi hoppar över: ${desc}?`
-            : `What happens if we skip: ${desc}?`,
-          { lang }
-        );
+        speak($t('seq.say.skip', { step: desc }), { lang });
       }
     }
   }
@@ -420,7 +410,7 @@
                 alt=""
                 class="seq-preview"
               />
-              <span class="seq-title">{seq.title[$locale === 'sv' ? 'sv' : 'en']}</span>
+              <span class="seq-title">{pick(seq.title, $locale)}</span>
               <span class="seq-steps">{seq.steps.length} {$t('seq.step')}</span>
             </button>
           {/each}

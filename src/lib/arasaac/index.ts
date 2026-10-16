@@ -1,18 +1,9 @@
 import { loadSvLookup } from './sv-lookup';
 import { searchBildstod } from './bildstod';
+import { cachedJson } from './cache';
+import { getLocaleDef } from '$lib/i18n/locales';
 
 const API_BASE = 'https://api.arasaac.org/v1';
-const CACHE_NAME = 'arasaac-pictograms';
-
-async function fetchWithTimeout(url: string, timeoutMs = 5000): Promise<Response> {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    return await fetch(url, { signal: controller.signal });
-  } finally {
-    clearTimeout(timeout);
-  }
-}
 
 export interface Pictogram {
   _id: number;
@@ -38,16 +29,18 @@ export async function searchPictograms(
   const results: PictogramSearchResult[] = [];
 
   // === STEP 1: ALWAYS search bildstöd FIRST (140 Swedish/NPF pictograms) ===
-  // These are curated for Swedish culture and NPF — always prioritize
-  try {
-    const bildstodResults = await searchBildstod(query, lang === '' ? 'sv' : lang);
-    for (const b of bildstodResults) {
-      if (!seenIds.has(b.id)) {
-        results.push({ id: b.id, keyword: b.keyword, url: b.url, urlBW: b.url });
-        seenIds.add(b.id);
+  // Swedish-labelled; only for sv/en (unchanged behaviour) — other locales go straight to ARASAAC
+  if (lang === 'sv' || lang === 'en' || lang === '') {
+    try {
+      const bildstodResults = await searchBildstod(query, lang === '' ? 'sv' : lang);
+      for (const b of bildstodResults) {
+        if (!seenIds.has(b.id)) {
+          results.push({ id: b.id, keyword: b.keyword, url: b.url, urlBW: b.url });
+          seenIds.add(b.id);
+        }
       }
-    }
-  } catch {}
+    } catch {}
+  }
 
   // === STEP 2: Swedish ARASAAC lookup (15,607 translations) ===
   if (lang === 'sv' || lang === '') {
@@ -95,10 +88,9 @@ export async function searchPictograms(
 
   // === STEP 3: Fallback to ARASAAC API (if no local results) ===
   try {
-    const searchLang = lang === 'sv' ? 'en' : (lang || 'en');
-    const res = await fetchWithTimeout(`${API_BASE}/pictograms/${searchLang}/search/${encodeURIComponent(query)}`);
-    if (!res.ok) return results.slice(0, 50);
-    const data: Pictogram[] = await res.json();
+    const searchLang = lang === 'sv' ? 'en' : getLocaleDef(lang || 'en').arasaac;
+    // Cached: the API answers without caching headers (see ./cache.ts); a "no results" 404 rejects
+    const data = await cachedJson<Pictogram[]>(`${API_BASE}/pictograms/${searchLang}/search/${encodeURIComponent(query)}`);
     const lookup = lang === 'sv' ? await loadSvLookup() : null;
     for (const p of data) {
       if (seenIds.has(p._id)) continue;
@@ -135,10 +127,8 @@ export function getPictogramUrl(
 
 export async function getPictogramById(id: number, lang: string = 'en'): Promise<Pictogram | null> {
   try {
-    const locale = lang === 'sv' ? 'sv' : 'en';
-    const res = await fetch(`${API_BASE}/pictograms/${locale}/${id}`);
-    if (!res.ok) return null;
-    return await res.json();
+    const locale = lang === 'sv' ? 'sv' : getLocaleDef(lang).arasaac;
+    return await cachedJson<Pictogram>(`${API_BASE}/pictograms/${locale}/${id}`);
   } catch {
     return null;
   }

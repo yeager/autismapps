@@ -1,23 +1,38 @@
 import { base } from '$app/paths';
+import manifest from '../../../static/piktali-pictograms/manifest.json';
 
 /**
  * Stable paths for the internally shared Piktali pictogram export.
- * The static manifest carries the per-image review status and provenance.
+ * File formats and review metadata come from the shared manifest, so SVG and
+ * WebP pictures are both usable by consuming applications.
  */
-export function piktaliPictogramUrl(symbol: string): string {
-  return `${base}/piktali-pictograms/assets/${symbol}.webp`;
+type SharedPictogram = {
+  symbol: string;
+  file: string;
+};
+
+const fileBySymbol = new Map(
+  (manifest.pictograms as SharedPictogram[]).map(({ symbol, file }) => [symbol, file])
+);
+
+export function piktaliPictogramUrl(symbol: string): string | null {
+  const file = fileBySymbol.get(symbol);
+  return file ? `${base}/piktali-pictograms/${file}` : null;
 }
 
-const dictionarySymbols: Record<string, string> = {
-  dog: 'dog', cat: 'cat', horse: 'horse', cow: 'cow', bird: 'bird', fish: 'fish', rabbit: 'rabbit', pig: 'pig', lion: 'lion', elephant: 'elephant',
-  apple: 'apple', carrot: 'carrot', tomato: 'tomato',
-  sweater: 'sweater', pants: 'pants', shoes: 'shoes', hat: 'hat', gloves: 'gloves', dress: 'dress', boots: 'boots', socks: 'sock',
-  head: 'head', eye: 'eye', ear: 'ear', nose: 'nose', mouth: 'mouth', hand: 'hand', foot: 'foot', arm: 'arm', leg: 'leg',
-  house: 'house', door: 'door', window: 'window', chair: 'chair', table: 'table', bed: 'bed', lamp: 'lamp', kitchen: 'kitchen', bathroom: 'bathroom', key: 'key',
-  book: 'book', pencil: 'pencil', school: 'school', backpack: 'backpack', paper: 'paper', scissors: 'scissors', ruler: 'ruler', computer: 'computer', clock: 'clock'
+/**
+ * The picture dictionary uses English lookup keys. Most are canonical catalog
+ * symbols; only terms with a deliberately different catalog key need aliases.
+ */
+const dictionarySymbolAliases: Record<string, string> = {
+  'ice cream': 'icecream',
+  jacket: 'coat',
+  socks: 'sock',
+  't-shirt': 'shirt',
+  tv: 'television',
+  pen: 'pencil'
 };
 
 export function piktaliDictionaryPictogramUrl(englishWord: string): string | null {
-  const symbol = dictionarySymbols[englishWord];
-  return symbol ? piktaliPictogramUrl(symbol) : null;
+  return piktaliPictogramUrl(dictionarySymbolAliases[englishWord] ?? englishWord);
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:13:10.048Z",
+  "exportedAt": "2026-10-20T17:15:01.978Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -4155,8 +4155,8 @@
         "people-relations"
       ],
       "file": "assets/baby.webp",
-      "bytes": 7234,
-      "sha256": "82c89a24361e61361d49fc487d09192291da35b2e389a56677bd94e0d2bf58c7",
+      "bytes": 7106,
+      "sha256": "52c2edbb5194d5736cc77010d24bd4cf6248b2aa8d5e3090829d327bb03e8a84",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13436,9 +13436,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/child.svg",
-      "bytes": 584,
-      "sha256": "e408e524b57681ef85e6dd186bc967b4f1903f919427b251645ba8e564d26822",
+      "file": "assets/child.webp",
+      "bytes": 6866,
+      "sha256": "ef4468ec039e5e9171d0d2b47ebc26c34366f0db046039ff32b862fc57ace3b5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21480,8 +21480,8 @@
         "people-relations"
       ],
       "file": "assets/doctor.webp",
-      "bytes": 7354,
-      "sha256": "2883bc3c16f4fc7537da719d1f91423d0742d7022684fa801ac389bd1fb2aa7e",
+      "bytes": 7286,
+      "sha256": "843285f62926b4f02776d74e9ff051d76001e7356e73de4e64ae3d8deacb3ca0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29649,8 +29649,8 @@
         "people-relations"
       ],
       "file": "assets/friend.webp",
-      "bytes": 9452,
-      "sha256": "8b774ee0887d44b879e764fca3a0a3244aec9add662c2ce94afaa76f5497a790",
+      "bytes": 11326,
+      "sha256": "3334552eec38d334cce55a7071dcc9fe03506e0f0bdaba6380b2a9347deb6f64",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31854,8 +31854,8 @@
         "people-relations"
       ],
       "file": "assets/grandfather.webp",
-      "bytes": 14004,
-      "sha256": "e406d90055458c0ee7d562fa1fff115490dc32f8f62d8ff75285888575da2b88",
+      "bytes": 7828,
+      "sha256": "4bfaa70851a12f811c8a3816c4c333cc58bb348f57f888a69a1dd3f7839bf712",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31875,8 +31875,8 @@
         "people-relations"
       ],
       "file": "assets/grandmother.webp",
-      "bytes": 15196,
-      "sha256": "797f711c55f7c1515a1b732306750ef5c9278e7281c377a727ff6002163e7143",
+      "bytes": 8132,
+      "sha256": "18fde70458c4ae07576a373f836426910d0ffa5db0845cc9b7e592db37888b7a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71397,8 +71397,8 @@
         "people-relations"
       ],
       "file": "assets/sibling.webp",
-      "bytes": 9740,
-      "sha256": "143d0f25d6db426c11d6a160362db5ccd660d5b20fa8da6b49ed99456dd63fe9",
+      "bytes": 10784,
+      "sha256": "7ba9e3e5fb547fe562e4d24289d9c939489cfc0aa92215245baf0b70f92832e4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80154,8 +80154,8 @@
         "people-relations"
       ],
       "file": "assets/teacher.webp",
-      "bytes": 9638,
-      "sha256": "3a3459394e224fb9c44271a9a3c1ecc9843fa1592ca991ed7045f3a8d9f7cb62",
+      "bytes": 10684,
+      "sha256": "c8df09457fb7bd312bc50e9a63b5b03841c29404427b3e3e1078354bf635be60",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80279,9 +80279,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/teenager.svg",
-      "bytes": 587,
-      "sha256": "441f03ce29bc18c122c5d73fff91b7a1d78c4913a2de8483ecf2d4a5fee023bc",
+      "file": "assets/teenager.webp",
+      "bytes": 8806,
+      "sha256": "2ecade3c5e437c1eca61eeae6b1d6c7e7e319648ee368b0eeee69f6d1ff05b9e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

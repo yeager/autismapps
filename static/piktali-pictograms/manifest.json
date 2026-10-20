@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:23:01.689Z",
+  "exportedAt": "2026-10-20T17:24:09.532Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -5856,8 +5856,8 @@
         "home-objects"
       ],
       "file": "assets/bed.webp",
-      "bytes": 5158,
-      "sha256": "6ecf544e6d5bb76110d66e3fb411edaae464f745723ae21bfa29cb6c78830beb",
+      "bytes": 3694,
+      "sha256": "564c436170c559ac59ca5a48b5c57d2d1acfe9127a6cd99aacf8a1619c891707",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12282,8 +12282,8 @@
         "home-objects"
       ],
       "file": "assets/chair.webp",
-      "bytes": 4998,
-      "sha256": "45bd014efc9d7987bed4f9dd1ce9cbdfb44165072b4da3c73e486962c0dc14d8",
+      "bytes": 5396,
+      "sha256": "567ca4552a6cf5e0f7b9604c1219f2975ffca5b6ab2481d7e8375e5893ba0389",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21753,8 +21753,8 @@
         "home-objects"
       ],
       "file": "assets/door.webp",
-      "bytes": 2590,
-      "sha256": "b22167fa3bff20cb2a9253b70ecaa28bc77a7acd4cffda41ee7651314bc93b60",
+      "bytes": 2076,
+      "sha256": "6e0de16688385991e5c13bf80bc61c38448bed8f26c2353c6f1c9c7598818cba",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29628,8 +29628,8 @@
         "home-objects"
       ],
       "file": "assets/fridge.webp",
-      "bytes": 2774,
-      "sha256": "1142f3ee815f2734f39fd29b6928195469e88aa0b7635871360779889c4b3b01",
+      "bytes": 1912,
+      "sha256": "c8fce88d6c013c05194026c216e29cc0a0420fb6d878c774186da97d92bf40b2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39897,8 +39897,8 @@
         "home-objects"
       ],
       "file": "assets/lamp.webp",
-      "bytes": 2718,
-      "sha256": "885e38feb706194c2f90503880ca3aefa8fda23b36079617c8144f4792c9e898",
+      "bytes": 2652,
+      "sha256": "40ff4d6d8f5a9d703fac6680c4295ed1c29111d7b4877585dcb867fb8eb20071",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54345,8 +54345,8 @@
         "home-objects"
       ],
       "file": "assets/oven.webp",
-      "bytes": 2872,
-      "sha256": "326cf0fd4b2d7fc35ec65925da4ba4dfd081c0128326f6ee897f02776489ed66",
+      "bytes": 4322,
+      "sha256": "35351fc5b920a226103dffc2581b1eece2e8e78d260b7727fda83da055618868",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73497,8 +73497,8 @@
         "home-objects"
       ],
       "file": "assets/sofa.webp",
-      "bytes": 4842,
-      "sha256": "d233b9222260c4178ab6c9ef70dab7ba50a8129a765303ef4700144f84af32eb",
+      "bytes": 3994,
+      "sha256": "76b38233ba03c5e66179f80d73f71ab1a8263f9cdded8178a604d83f02ef15e3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -78936,8 +78936,8 @@
         "home-objects"
       ],
       "file": "assets/table.webp",
-      "bytes": 2596,
-      "sha256": "5074e343eaac6903660c38cc541b940bf1dcb881dc06b306bc87dedf922dc9fd",
+      "bytes": 4376,
+      "sha256": "2f9911a1298ed855c160577e5d756e87d6e713feba2b5d39908b49050f223692",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90486,8 +90486,8 @@
         "home-objects"
       ],
       "file": "assets/window.webp",
-      "bytes": 4968,
-      "sha256": "dadcc60ea3110589e4f381fc0ed3dc94ff542d3f6a08b840038f068688174c6e",
+      "bytes": 5694,
+      "sha256": "147802dee0a461f89327ca1892af825251c141e613b7ae5d6e6162eb0928a7e8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

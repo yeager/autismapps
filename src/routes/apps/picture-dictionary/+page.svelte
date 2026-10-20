@@ -10,6 +10,7 @@
   import { activeProfileId } from '$lib/stores/profile';
   import { fade } from 'svelte/transition';
   import { hasTakkSign, getTakkSign, openSignVideo } from '$lib/takk';
+  import { piktaliDictionaryPictogramUrl } from '$lib/piktali/pictograms';
 
   type Mode = 'categories' | 'browse' | 'flashcard' | 'quiz';
 
@@ -297,7 +298,11 @@
           {@const hasTakk = takkEnabled && hasTakkSign(w.sv)}
           <div class="word-card-wrap">
             <button class="word-card" class:learned class:has-takk={hasTakk} onclick={() => tapWord(w)}>
-              <span class="word-emoji">{w.emoji}</span>
+              {#if piktaliDictionaryPictogramUrl(w.en)}
+                <img class="word-pictogram" src={piktaliDictionaryPictogramUrl(w.en)!} alt="" />
+              {:else}
+                <span class="word-emoji">{w.emoji}</span>
+              {/if}
               <span class="word-text">{wordText(w)}</span>
               {#if learned}<span class="learned-check">✓</span>{/if}
             </button>
@@ -317,7 +322,11 @@
         <p class="flash-counter">{flashIdx + 1} / {flashCards.length}</p>
 
         <button class="flash-card" class:revealed={flashRevealed} onclick={() => !flashRevealed ? revealFlash() : nextFlash()}>
-          <span class="flash-emoji">{flashCards[flashIdx].emoji}</span>
+          {#if piktaliDictionaryPictogramUrl(flashCards[flashIdx].en)}
+            <img class="flash-pictogram" src={piktaliDictionaryPictogramUrl(flashCards[flashIdx].en)!} alt="" />
+          {:else}
+            <span class="flash-emoji">{flashCards[flashIdx].emoji}</span>
+          {/if}
           {#if flashRevealed}
             <span class="flash-word">{wordText(flashCards[flashIdx])}</span>
           {:else}
@@ -351,7 +360,11 @@
               class:wrong={quizAnswered && w.sv !== quizWord?.sv}
               onclick={() => answerQuiz(w)}
               disabled={quizAnswered}>
-              <span class="choice-emoji">{w.emoji}</span>
+              {#if piktaliDictionaryPictogramUrl(w.en)}
+                <img class="choice-pictogram" src={piktaliDictionaryPictogramUrl(w.en)!} alt="" />
+              {:else}
+                <span class="choice-emoji">{w.emoji}</span>
+              {/if}
             </button>
           {/each}
         </div>
@@ -410,6 +423,7 @@
   .word-card.learned { border-color: #27AE60; }
   .word-card.has-takk { border-left: 4px solid #9B59B6; }
   .word-emoji { font-size: 2.5em; }
+  .word-pictogram { width: 72px; height: 72px; object-fit: contain; }
   .word-text { font-weight: 700; font-size: 1em; }
   .learned-check { position: absolute; top: 4px; right: 6px; color: #27AE60; font-size: 0.8em; }
 
@@ -424,6 +438,7 @@
   .flash-card:hover { transform: scale(1.02); }
   .flash-card.revealed { border-color: #27AE60; }
   .flash-emoji { font-size: 5em; }
+  .flash-pictogram { width: 184px; height: 184px; object-fit: contain; }
   .flash-word { font-size: 2em; font-weight: 800; }
   .flash-hint { font-size: 0.9em; color: var(--text-muted); }
   .flash-actions { display: flex; gap: 12px; }
@@ -452,6 +467,7 @@
   .quiz-choice.correct { border-color: #27AE60; background: rgba(39,174,96,0.15); }
   .quiz-choice.wrong { opacity: 0.4; }
   .choice-emoji { font-size: 3.5em; }
+  .choice-pictogram { width: 100px; height: 100px; object-fit: contain; }
 
   .word-card-wrap { position: relative; }
   .takk-btn {

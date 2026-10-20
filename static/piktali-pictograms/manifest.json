@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:54:13.061Z",
+  "exportedAt": "2026-10-20T16:56:00.306Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -10917,8 +10917,8 @@
         "home-objects"
       ],
       "file": "assets/camera.webp",
-      "bytes": 6522,
-      "sha256": "ba555a8c10c8ab53fa0564d7f0ac8bd87562cbf97fb7e95e8c393caf4fa0ed7d",
+      "bytes": 5498,
+      "sha256": "3cf9f4eddd8d5cb03f012e1c8dcc6c7cc4b87ed2f9719d34d4bfe50be6067aa9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -16377,8 +16377,8 @@
         "school-work-play"
       ],
       "file": "assets/computer.webp",
-      "bytes": 6462,
-      "sha256": "54ed84db50b9c1f6c0c87c0f00015e3c211e877d5a3b9f4d6e1d7597809f8c1c",
+      "bytes": 6474,
+      "sha256": "2910d817b3e2d4e1e24224de47fd3fe05ff1d7507b3376ba6147884b2b69d26e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33849,8 +33849,8 @@
         "school-work-play"
       ],
       "file": "assets/headphones.webp",
-      "bytes": 5706,
-      "sha256": "4687c0d42616ea5eb897043d91b2f7bcb4567a22644b5920d35308953ed21ba9",
+      "bytes": 5280,
+      "sha256": "d3e719fc08ef617f0c4707f171da06d2bc97f6ad44522d876ab8ece3212dee27",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38909,9 +38909,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/keyboard.svg",
-      "bytes": 869,
-      "sha256": "9935cbf2d3b7a49f0c6e242587916d4beaba2512320fa1a95508cb18adb5d65d",
+      "file": "assets/keyboard.webp",
+      "bytes": 6518,
+      "sha256": "a4eea2a641eac8f05315a234731965bab7ce787e4f5ed9968b96b5fd671fe98a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47184,8 +47184,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/mouse.webp",
-      "bytes": 3936,
-      "sha256": "8238fa4c2263458411194a9d4272bee7f138d29b1771b5868715f7569f3a407d",
+      "bytes": 3324,
+      "sha256": "7fa9fcb935805043ad0381b2f566524edef98c497effe5ce31f86ff77e4b96e7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57726,8 +57726,8 @@
         "home-objects"
       ],
       "file": "assets/phone.webp",
-      "bytes": 2946,
-      "sha256": "2ae85d24663ccd6addd5ab524dba2524868b2bdf94bd941f9ba73fd24c239aad",
+      "bytes": 6378,
+      "sha256": "e66f479e23cd9bef56f3103446743f1bddc3bd7d31e8d2b208ba9986b8e6d404",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -60687,8 +60687,8 @@
         "school-work-play"
       ],
       "file": "assets/printer.webp",
-      "bytes": 2680,
-      "sha256": "9033dd7bf717939fe3c59b5c65273b8674095e16b92630352711adf4c20ff06f",
+      "bytes": 4506,
+      "sha256": "6e3bb77743322ff3c5f44a2125a6554c58fe6a8a47838f3f100761aa15203214",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -64194,8 +64194,8 @@
         "home-objects"
       ],
       "file": "assets/remotecontrol.webp",
-      "bytes": 5588,
-      "sha256": "eb4cc8251ce61a58e37f73e0237ef2a8c1571b5994185fc227b92a05d4cbfbad",
+      "bytes": 4996,
+      "sha256": "7ad9632dc3168187ac332a7cddce0db209a9553cbdb11f69b4027535b3eed647",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79020,8 +79020,8 @@
         "school-work-play"
       ],
       "file": "assets/tablet.webp",
-      "bytes": 4006,
-      "sha256": "4eda7d874aef60870649b347554479e70d0f37f6cd6e404cc6b4cbc246489bf9",
+      "bytes": 4496,
+      "sha256": "21c96b050f18dc78436587857ca4f2c8393d7058b68acb70d650bcaa1ed68c97",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

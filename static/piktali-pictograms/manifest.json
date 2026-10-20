@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:37:52.580Z",
+  "exportedAt": "2026-10-20T17:38:48.755Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4698,
+  "count": 4793,
   "pictograms": [
     {
       "id": "abbotsford",
@@ -615,6 +615,27 @@
       }
     },
     {
+      "id": "adelaide",
+      "symbol": "adelaide",
+      "labels": {
+        "sv-SE": "Adelaide",
+        "en-US": "Adelaide",
+        "es-ES": "Adelaide",
+        "es-MX": "Adelaide"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/adelaide.svg",
+      "bytes": 658,
+      "sha256": "91937a72bbf29e40fc387735521109c4f84b4c3b6ba31bd21a9ad4cbcfd5d65d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "adopted-child",
       "symbol": "adoptedchild",
       "labels": {
@@ -846,6 +867,27 @@
       }
     },
     {
+      "id": "agra",
+      "symbol": "agra",
+      "labels": {
+        "sv-SE": "Agra",
+        "en-US": "Agra",
+        "es-ES": "Agra",
+        "es-MX": "Agra"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/agra.svg",
+      "bytes": 659,
+      "sha256": "e8fcd5ad4027f37a6ac44a501323e8b83bc2d98309ccb61e965e619d038d3fa2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "agree",
       "symbol": "agree",
       "labels": {
@@ -944,6 +986,27 @@
       "file": "assets/aha.svg",
       "bytes": 831,
       "sha256": "69ec72d572a1ff212a9184324baf4ddb07d43363f6772d5d48ad752d4f6530ad",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ahmedabad",
+      "symbol": "ahmedabad",
+      "labels": {
+        "sv-SE": "Ahmedabad",
+        "en-US": "Ahmedabad",
+        "es-ES": "Ahmedabad",
+        "es-MX": "Ahmedabad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ahmedabad.svg",
+      "bytes": 657,
+      "sha256": "e5b234ea1b9164a1be0ba40490179336d9bbce7b7e694245ef9412b19d4022bf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4311,6 +4374,27 @@
       }
     },
     {
+      "id": "auckland",
+      "symbol": "auckland",
+      "labels": {
+        "sv-SE": "Auckland",
+        "en-US": "Auckland",
+        "es-ES": "Auckland",
+        "es-MX": "Auckland"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/auckland.svg",
+      "bytes": 658,
+      "sha256": "882d3a5d7ea0214b06d5349c9b80fe3edead908eb9c10ff710af04be6d239426",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "audio-description",
       "symbol": "audio-description",
       "labels": {
@@ -5312,6 +5396,48 @@
       "file": "assets/bandar-seri-begawan.svg",
       "bytes": 606,
       "sha256": "20ce6890b2b701a6f01f91d308700b0bbf838e47d289b7448ac2e9781a003898",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bandung",
+      "symbol": "bandung",
+      "labels": {
+        "sv-SE": "Bandung",
+        "en-US": "Bandung",
+        "es-ES": "Bandung",
+        "es-MX": "Bandung"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bandung.svg",
+      "bytes": 657,
+      "sha256": "ccdf9f8f0d5baf3dcbd4dfcc985e98325219e8106f86a64969590b8700d023e7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bangalore",
+      "symbol": "bangalore",
+      "labels": {
+        "sv-SE": "Bangalore",
+        "en-US": "Bangalore",
+        "es-ES": "Bangalore",
+        "es-MX": "Bangalore"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bangalore.svg",
+      "bytes": 659,
+      "sha256": "205a90f64d41d4f3d1dea95834b178f6996d38adf8af930a4cadddd8adef62a4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7160,6 +7286,27 @@
       "file": "assets/between.svg",
       "bytes": 348,
       "sha256": "f6b483df4b0934b6d0b5b9e7edf69322541626520830a9a00ad33976f0a7b37d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bhopal",
+      "symbol": "bhopal",
+      "labels": {
+        "sv-SE": "Bhopal",
+        "en-US": "Bhopal",
+        "es-ES": "Bhopal",
+        "es-MX": "Bhopal"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bhopal.svg",
+      "bytes": 658,
+      "sha256": "a1fce93513be024b4d15848b05d5991bee8730d3ef340a8a0bb661c525645035",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9806,6 +9953,27 @@
       "file": "assets/bring.webp",
       "bytes": 8310,
       "sha256": "85096873eca7cbd6ee9ceddf61a00e9b94163a0426b812d9dec5ea9b0dc06c2c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "brisbane",
+      "symbol": "brisbane",
+      "labels": {
+        "sv-SE": "Brisbane",
+        "en-US": "Brisbane",
+        "es-ES": "Brisbane",
+        "es-MX": "Brisbane"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/brisbane.svg",
+      "bytes": 659,
+      "sha256": "ae6c5d66ad5b2f3bdfb0c2aa934d88a9e57f9e55da7afdde891ea2728e6d821a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12963,6 +13131,27 @@
       }
     },
     {
+      "id": "cebu-city",
+      "symbol": "cebu-city",
+      "labels": {
+        "sv-SE": "Cebu City",
+        "en-US": "Cebu City",
+        "es-ES": "Cebu City",
+        "es-MX": "Cebu City"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cebu-city.svg",
+      "bytes": 657,
+      "sha256": "a25d0272b2d029bb8ffaa26b38c74feb6309732d16e7b611c154ac93db772d74",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "ceiling",
       "symbol": "ceiling",
       "labels": {
@@ -13614,6 +13803,27 @@
       }
     },
     {
+      "id": "changsha",
+      "symbol": "changsha",
+      "labels": {
+        "sv-SE": "Changsha",
+        "en-US": "Changsha",
+        "es-ES": "Changsha",
+        "es-MX": "Changsha"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/changsha.svg",
+      "bytes": 657,
+      "sha256": "038e3eafa037435a151fcaa6330d7b35dd9f1c3f004b0ef6913835c55ab3e5be",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "chapter",
       "symbol": "chapter",
       "labels": {
@@ -14097,6 +14307,48 @@
       }
     },
     {
+      "id": "chengdu",
+      "symbol": "chengdu",
+      "labels": {
+        "sv-SE": "Chengdu",
+        "en-US": "Chengdu",
+        "es-ES": "Chengdu",
+        "es-MX": "Chengdu"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chengdu.svg",
+      "bytes": 659,
+      "sha256": "a6548291c229e855b63eae54f11d0756fb8bc760e83c66ce382b5d896b4c9ffe",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "chennai",
+      "symbol": "chennai",
+      "labels": {
+        "sv-SE": "Chennai",
+        "en-US": "Chennai",
+        "es-ES": "Chennai",
+        "es-MX": "Chennai"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chennai.svg",
+      "bytes": 658,
+      "sha256": "05f1f05ab707eb43f38a188e49e15de5712efe681c83fc2f1f9f3ebff16fe049",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "cherry",
       "symbol": "cherry",
       "labels": {
@@ -14258,6 +14510,48 @@
       "file": "assets/chia-seeds.svg",
       "bytes": 721,
       "sha256": "fc6dd037b90cc192c6973ea1f3b9140092a46344d2a57794c70f675b343d7ab7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "chiang-mai",
+      "symbol": "chiang-mai",
+      "labels": {
+        "sv-SE": "Chiang Mai",
+        "en-US": "Chiang Mai",
+        "es-ES": "Chiang Mai",
+        "es-MX": "Chiang Mai"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chiang-mai.svg",
+      "bytes": 659,
+      "sha256": "f89c55e9b18614ab2d3164c5a4b1650c9ef038ada8794f926f5841e3e4de0364",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "chiba",
+      "symbol": "chiba",
+      "labels": {
+        "sv-SE": "Chiba",
+        "en-US": "Chiba",
+        "es-ES": "Chiba",
+        "es-MX": "Chiba"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chiba.svg",
+      "bytes": 658,
+      "sha256": "0a2640a894a48cd5a36f36bcd3ec3914cc733db70e39da9dca8f1cbc467f3085",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -14580,6 +14874,27 @@
       }
     },
     {
+      "id": "chittagong",
+      "symbol": "chittagong",
+      "labels": {
+        "sv-SE": "Chittagong",
+        "en-US": "Chittagong",
+        "es-ES": "Chittagong",
+        "es-MX": "Chittagong"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chittagong.svg",
+      "bytes": 659,
+      "sha256": "6914e284cc69542a05748405498270ba8b4eb32cdc4a47b02e66a40fcb8d70b5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "chocolate",
       "symbol": "chocolate",
       "labels": {
@@ -14636,6 +14951,27 @@
       "file": "assets/choir.svg",
       "bytes": 670,
       "sha256": "e7d9de1b1d1927bccdcffa1bbd2d3d204d7b5f20573208d1ce60c1db242d0744",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "chongqing",
+      "symbol": "chongqing",
+      "labels": {
+        "sv-SE": "Chongqing",
+        "en-US": "Chongqing",
+        "es-ES": "Chongqing",
+        "es-MX": "Chongqing"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chongqing.svg",
+      "bytes": 659,
+      "sha256": "62ca4710d99fd679d45a7a047eb12701fa5962e6cd0555b51ba18a3130b0ad8c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -14783,6 +15119,27 @@
       "file": "assets/chopsticks.svg",
       "bytes": 503,
       "sha256": "1c8a452d87f9044265c6502d6d155a8074f22916f14da4ae8d5c336a20eb8ab8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "christchurch",
+      "symbol": "christchurch",
+      "labels": {
+        "sv-SE": "Christchurch",
+        "en-US": "Christchurch",
+        "es-ES": "Christchurch",
+        "es-MX": "Christchurch"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/christchurch.svg",
+      "bytes": 659,
+      "sha256": "744276cfc41cacf73f7fa1efc60293ec1e444a1d2bfec09ce18064f5ab211725",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20460,6 +20817,27 @@
       }
     },
     {
+      "id": "da-nang",
+      "symbol": "da-nang",
+      "labels": {
+        "sv-SE": "Da Nang",
+        "en-US": "Da Nang",
+        "es-ES": "Da Nang",
+        "es-MX": "Da Nang"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/da-nang.svg",
+      "bytes": 659,
+      "sha256": "13ad1817edd25c82d02c33bda52a12e0acb0d51d4c948f9fa4c2841508a66526",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "dad",
       "symbol": "dad",
       "labels": {
@@ -20474,6 +20852,27 @@
       "file": "assets/dad.webp",
       "bytes": 9614,
       "sha256": "72e18c3010bdfea6194fdf238b21701467a1b7413246f9bbc66c96c98bceeb0c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "daegu",
+      "symbol": "daegu",
+      "labels": {
+        "sv-SE": "Daegu",
+        "en-US": "Daegu",
+        "es-ES": "Daegu",
+        "es-MX": "Daegu"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/daegu.svg",
+      "bytes": 658,
+      "sha256": "f547274fe1887106701d6c80776cdaf61cd20db1951e5a9ce75f417cb62e8729",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20558,6 +20957,27 @@
       "file": "assets/dakar.svg",
       "bytes": 579,
       "sha256": "ff613ea3a763eb8e321180a93c7da21bb149d03b958f49969a4d14cf5fcda7a5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "dalian",
+      "symbol": "dalian",
+      "labels": {
+        "sv-SE": "Dalian",
+        "en-US": "Dalian",
+        "es-ES": "Dalian",
+        "es-MX": "Dalian"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/dalian.svg",
+      "bytes": 659,
+      "sha256": "a2e739b066b4ab719cf68629b666e4dd873e2aca83168ffa1e7ae0a1f97ab6ca",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20852,6 +21272,27 @@
       "file": "assets/daughter-in-law.webp",
       "bytes": 14156,
       "sha256": "9640a1c327635e4885f344770d2cd9e8e0d09769e809727a20deab67d6129d23",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "davao",
+      "symbol": "davao",
+      "labels": {
+        "sv-SE": "Davao",
+        "en-US": "Davao",
+        "es-ES": "Davao",
+        "es-MX": "Davao"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/davao.svg",
+      "bytes": 658,
+      "sha256": "7cf392279388f31610505681fef750a7db31543910e8c936ddffdaeb8a3ab0ee",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -24387,6 +24828,27 @@
       }
     },
     {
+      "id": "dunedin",
+      "symbol": "dunedin",
+      "labels": {
+        "sv-SE": "Dunedin",
+        "en-US": "Dunedin",
+        "es-ES": "Dunedin",
+        "es-MX": "Dunedin"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/dunedin.svg",
+      "bytes": 658,
+      "sha256": "010073bfff134d771a9430455cce7d05effd3c15ddfb0c03c6bbaa3f8343ca28",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "duration",
       "symbol": "duration",
       "labels": {
@@ -27705,6 +28167,27 @@
       }
     },
     {
+      "id": "faisalabad",
+      "symbol": "faisalabad",
+      "labels": {
+        "sv-SE": "Faisalabad",
+        "en-US": "Faisalabad",
+        "es-ES": "Faisalabad",
+        "es-MX": "Faisalabad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/faisalabad.svg",
+      "bytes": 658,
+      "sha256": "fe03f3160339b6e43beee5aea7ca82ed13c0cf459b8c90b466ebc0c4e0edd8ec",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "falafel",
       "symbol": "falafel",
       "labels": {
@@ -27971,6 +28454,27 @@
       "file": "assets/farewell.svg",
       "bytes": 717,
       "sha256": "f9b86b26a983dbe86c9152ce5473107a8b3fb764f5252412f937ac927238646f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "faridabad",
+      "symbol": "faridabad",
+      "labels": {
+        "sv-SE": "Faridabad",
+        "en-US": "Faridabad",
+        "es-ES": "Faridabad",
+        "es-MX": "Faridabad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/faridabad.svg",
+      "bytes": 658,
+      "sha256": "d1f7664ef130ddb24a69a6705c490a6f551eca32d305259437a222d9b5be8141",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31590,6 +32094,27 @@
       }
     },
     {
+      "id": "fukuoka",
+      "symbol": "fukuoka",
+      "labels": {
+        "sv-SE": "Fukuoka",
+        "en-US": "Fukuoka",
+        "es-ES": "Fukuoka",
+        "es-MX": "Fukuoka"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/fukuoka.svg",
+      "bytes": 658,
+      "sha256": "2dead70a756155e97bb43b5f266572d4b6a49b422a3555bd338a58681b32b466",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "full",
       "symbol": "full",
       "labels": {
@@ -31772,6 +32297,27 @@
       "file": "assets/fuse.svg",
       "bytes": 512,
       "sha256": "14d8634a122fecce4476d01bde5bd71b7511310895013bfb196716cd7bc0f174",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "fuzhou",
+      "symbol": "fuzhou",
+      "labels": {
+        "sv-SE": "Fuzhou",
+        "en-US": "Fuzhou",
+        "es-ES": "Fuzhou",
+        "es-MX": "Fuzhou"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/fuzhou.svg",
+      "bytes": 659,
+      "sha256": "9aa536ba7650f1754ffb41fac361651ea2af1c3801e3cebaff24159c28b145ee",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -32409,6 +32955,27 @@
       }
     },
     {
+      "id": "george-town",
+      "symbol": "george-town",
+      "labels": {
+        "sv-SE": "George Town",
+        "en-US": "George Town",
+        "es-ES": "George Town",
+        "es-MX": "George Town"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/george-town.svg",
+      "bytes": 659,
+      "sha256": "ca2d3384eb56c6921a1195025d641c02380316404f5fab93026c1d91a90007b4",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "georgetown",
       "symbol": "georgetown",
       "labels": {
@@ -32717,6 +33284,27 @@
       "file": "assets/ghana.svg",
       "bytes": 605,
       "sha256": "563a91f9d8472516aaf9028c867970b3f20ba81f470377c6ac43c65c49815be2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ghaziabad",
+      "symbol": "ghaziabad",
+      "labels": {
+        "sv-SE": "Ghaziabad",
+        "en-US": "Ghaziabad",
+        "es-ES": "Ghaziabad",
+        "es-MX": "Ghaziabad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ghaziabad.svg",
+      "bytes": 657,
+      "sha256": "a83c1a04a84e4b049bd89ca6c53e8dc3f902d39675810ae088d72f157dbf1cf8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33305,6 +33893,27 @@
       "file": "assets/goat-kid.svg",
       "bytes": 664,
       "sha256": "f503f008808faa1ccff54d9e843c22e0019b24c0c031d07331a5a40e20c8804e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "gold-coast",
+      "symbol": "gold-coast",
+      "labels": {
+        "sv-SE": "Gold Coast",
+        "en-US": "Gold Coast",
+        "es-ES": "Gold Coast",
+        "es-MX": "Gold Coast"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/gold-coast.svg",
+      "bytes": 657,
+      "sha256": "ecdecb9c7ed2c7288d549747c59a18b20cdb35eca311cd5fef5c9a86aed73955",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34257,6 +34866,27 @@
       }
     },
     {
+      "id": "guangzhou",
+      "symbol": "guangzhou",
+      "labels": {
+        "sv-SE": "Guangzhou",
+        "en-US": "Guangzhou",
+        "es-ES": "Guangzhou",
+        "es-MX": "Guangzhou"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/guangzhou.svg",
+      "bytes": 658,
+      "sha256": "a8cdb423a0706220bc2691f089b3f7c41a0da8eb1ea3861528d812fe95d5067a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "guardian",
       "symbol": "guardian",
       "labels": {
@@ -34565,6 +35195,27 @@
       "file": "assets/gymnastics-mat.svg",
       "bytes": 628,
       "sha256": "f5f58431b1ad018a2708df81993947cb8b2416329b0ea163e75950bfa0ead47d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "hai-phong",
+      "symbol": "hai-phong",
+      "labels": {
+        "sv-SE": "Hải Phòng",
+        "en-US": "Hải Phòng",
+        "es-ES": "Hải Phòng",
+        "es-MX": "Hải Phòng"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hai-phong.svg",
+      "bytes": 659,
+      "sha256": "91be93a1b469365243b83741d9771097f4b22da84c817f961df3d344aea772af",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34922,6 +35573,27 @@
       "file": "assets/ham.svg",
       "bytes": 442,
       "sha256": "fe93103ffab35fc24ea8508c9bb481ab35d2c379e45efec461178b229d0a60fc",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "hamamatsu",
+      "symbol": "hamamatsu",
+      "labels": {
+        "sv-SE": "Hamamatsu",
+        "en-US": "Hamamatsu",
+        "es-ES": "Hamamatsu",
+        "es-MX": "Hamamatsu"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hamamatsu.svg",
+      "bytes": 659,
+      "sha256": "5b88383e628d29e2f0f1070fbc6390c0b85cae8e5ae8cb816f0e179dbf44de63",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -35307,6 +35979,27 @@
       }
     },
     {
+      "id": "hangzhou",
+      "symbol": "hangzhou",
+      "labels": {
+        "sv-SE": "Hangzhou",
+        "en-US": "Hangzhou",
+        "es-ES": "Hangzhou",
+        "es-MX": "Hangzhou"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hangzhou.svg",
+      "bytes": 658,
+      "sha256": "5797ab0c7c9f4599d82fb805b7b0c183c72dbc581d2336a6f6bb2e534e8faf95",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "haninge",
       "symbol": "haninge",
       "labels": {
@@ -35426,6 +36119,27 @@
       "file": "assets/harare.svg",
       "bytes": 558,
       "sha256": "5678f5e69abb26176bef9a42540f53e8a03ecd233db5c58e006351eee0564179",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "harbin",
+      "symbol": "harbin",
+      "labels": {
+        "sv-SE": "Harbin",
+        "en-US": "Harbin",
+        "es-ES": "Harbin",
+        "es-MX": "Harbin"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/harbin.svg",
+      "bytes": 658,
+      "sha256": "c21e28a198228fe099c54c7ffdd5adaf303699491d81742d7232084a4410a42d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -36777,6 +37491,27 @@
       }
     },
     {
+      "id": "hiroshima",
+      "symbol": "hiroshima",
+      "labels": {
+        "sv-SE": "Hiroshima",
+        "en-US": "Hiroshima",
+        "es-ES": "Hiroshima",
+        "es-MX": "Hiroshima"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hiroshima.svg",
+      "bytes": 658,
+      "sha256": "c8243067ca10f8b1a8c82a41a82540802357f1ad7057982ee5d1918ed6a1ce84",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "history",
       "symbol": "history",
       "labels": {
@@ -36833,6 +37568,27 @@
       "file": "assets/hmm.svg",
       "bytes": 846,
       "sha256": "85af8832e1af1257b12b992a26739253b64b643c9591f85f67246baf5cd5587c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ho-chi-minh-city",
+      "symbol": "ho-chi-minh-city",
+      "labels": {
+        "sv-SE": "Ho Chi Minh City",
+        "en-US": "Ho Chi Minh City",
+        "es-ES": "Ho Chi Minh City",
+        "es-MX": "Ho Chi Minh City"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ho-chi-minh-city.svg",
+      "bytes": 659,
+      "sha256": "f5393d76f455021362508e3db3f5b7f27272323d10da95f705d583702ffa2601",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38100,6 +38856,27 @@
       }
     },
     {
+      "id": "hyderabad",
+      "symbol": "hyderabad",
+      "labels": {
+        "sv-SE": "Hyderabad",
+        "en-US": "Hyderabad",
+        "es-ES": "Hyderabad",
+        "es-MX": "Hyderabad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hyderabad.svg",
+      "bytes": 657,
+      "sha256": "1cb6af74a01e8c142b8ec833b42e2e6090bcab9cdd017b3da83762397c80d8cf",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "hyena",
       "symbol": "hyena",
       "labels": {
@@ -38814,6 +39591,27 @@
       }
     },
     {
+      "id": "incheon",
+      "symbol": "incheon",
+      "labels": {
+        "sv-SE": "Incheon",
+        "en-US": "Incheon",
+        "es-ES": "Incheon",
+        "es-MX": "Incheon"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/incheon.svg",
+      "bytes": 658,
+      "sha256": "fe5ebdf0cae75f1055afba633f0e848ade403a7c19a02f17b888d4fc95116427",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "include-someone",
       "symbol": "include-someone",
       "labels": {
@@ -39101,6 +39899,27 @@
       "file": "assets/indoor-playground.svg",
       "bytes": 544,
       "sha256": "a6f18bbd3044ec69914936a98bc1c8a7bceee4e13e8a7e473ce2245cb19fe55b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "indore",
+      "symbol": "indore",
+      "labels": {
+        "sv-SE": "Indore",
+        "en-US": "Indore",
+        "es-ES": "Indore",
+        "es-MX": "Indore"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/indore.svg",
+      "bytes": 659,
+      "sha256": "3d6752423e9cf285a966147fdb58bf2d3e16715956d1d0b8d8405c131bd2be08",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40284,6 +41103,27 @@
       }
     },
     {
+      "id": "jaipur",
+      "symbol": "jaipur",
+      "labels": {
+        "sv-SE": "Jaipur",
+        "en-US": "Jaipur",
+        "es-ES": "Jaipur",
+        "es-MX": "Jaipur"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/jaipur.svg",
+      "bytes": 659,
+      "sha256": "538a6790ce265a357753ba776c03b6ce3c04355520b0c98506c4c8331c2d8117",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "jakarta",
       "symbol": "jakarta",
       "labels": {
@@ -40557,6 +41397,27 @@
       }
     },
     {
+      "id": "jinan",
+      "symbol": "jinan",
+      "labels": {
+        "sv-SE": "Jinan",
+        "en-US": "Jinan",
+        "es-ES": "Jinan",
+        "es-MX": "Jinan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/jinan.svg",
+      "bytes": 658,
+      "sha256": "4f638fd060e6470a30053ba7b19484908b1b7d98ce12dcdde4a117fdae4ac05f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "job",
       "symbol": "job",
       "labels": {
@@ -40676,6 +41537,27 @@
       "file": "assets/jog.svg",
       "bytes": 560,
       "sha256": "647b7d0cbce9d5daebb307eb40a7d33bae236074a2c58f26420d577e26c3612c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "johor-bahru",
+      "symbol": "johor-bahru",
+      "labels": {
+        "sv-SE": "Johor Bahru",
+        "en-US": "Johor Bahru",
+        "es-ES": "Johor Bahru",
+        "es-MX": "Johor Bahru"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/johor-bahru.svg",
+      "bytes": 658,
+      "sha256": "fd2d3ffa9ff77fa202b72a5e07a45371a0a29a59d00c8eb2688e3c200ab109bf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41124,6 +42006,27 @@
       }
     },
     {
+      "id": "kanpur",
+      "symbol": "kanpur",
+      "labels": {
+        "sv-SE": "Kanpur",
+        "en-US": "Kanpur",
+        "es-ES": "Kanpur",
+        "es-MX": "Kanpur"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kanpur.svg",
+      "bytes": 657,
+      "sha256": "0db4878e89eac016fa98873295c05c5e1ba6b1a3af12e367d98abe3e265b4024",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kansas",
       "symbol": "kansas",
       "labels": {
@@ -41159,6 +42062,27 @@
       "file": "assets/kansas-city.svg",
       "bytes": 613,
       "sha256": "5543b90ad083509a737c4a51ad184427478306dc020a2c38d7546dcbe4b861a1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "karachi",
+      "symbol": "karachi",
+      "labels": {
+        "sv-SE": "Karachi",
+        "en-US": "Karachi",
+        "es-ES": "Karachi",
+        "es-MX": "Karachi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/karachi.svg",
+      "bytes": 658,
+      "sha256": "00b8b97f6701b59c044baae5cc5b399ffbc084c1c41d93f3f776de8a5b2d383f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41243,6 +42167,27 @@
       "file": "assets/katrineholm.svg",
       "bytes": 612,
       "sha256": "0ffbadeebaf805a527821b13b2f265806b447ddbcc17eec268dc0d8cbc74cdae",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kawasaki",
+      "symbol": "kawasaki",
+      "labels": {
+        "sv-SE": "Kawasaki",
+        "en-US": "Kawasaki",
+        "es-ES": "Kawasaki",
+        "es-MX": "Kawasaki"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kawasaki.svg",
+      "bytes": 659,
+      "sha256": "d944e516d14705e8f492e129118540923820dbdb2e36ad75699635bf06bec98d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41523,6 +42468,27 @@
       }
     },
     {
+      "id": "khulna",
+      "symbol": "khulna",
+      "labels": {
+        "sv-SE": "Khulna",
+        "en-US": "Khulna",
+        "es-ES": "Khulna",
+        "es-MX": "Khulna"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/khulna.svg",
+      "bytes": 659,
+      "sha256": "15521ad1d4e644f88ca9a92dfe77b0620ec00b6ad09e6eab2324d292342112fd",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kick",
       "symbol": "kick",
       "labels": {
@@ -41768,6 +42734,27 @@
       "file": "assets/kiss.webp",
       "bytes": 8668,
       "sha256": "b8694ab47435faccbb1bd46daf69f5aec8466245bae79dcf4a3ca49abda35e7b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kitakyushu",
+      "symbol": "kitakyushu",
+      "labels": {
+        "sv-SE": "Kitakyushu",
+        "en-US": "Kitakyushu",
+        "es-ES": "Kitakyushu",
+        "es-MX": "Kitakyushu"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kitakyushu.svg",
+      "bytes": 658,
+      "sha256": "b9b1e7e7d3d671d4d8f360bd8db2d8c3646750e5dbb59fcb09c2d3ce8b04dce5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -42132,6 +43119,48 @@
       }
     },
     {
+      "id": "kobe",
+      "symbol": "kobe",
+      "labels": {
+        "sv-SE": "Kobe",
+        "en-US": "Kobe",
+        "es-ES": "Kobe",
+        "es-MX": "Kobe"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kobe.svg",
+      "bytes": 659,
+      "sha256": "8ebc98ea725dabb3d7740da3191d70a51728adc9f8fd901afd9067b47842069b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kolkata",
+      "symbol": "kolkata",
+      "labels": {
+        "sv-SE": "Kolkata",
+        "en-US": "Kolkata",
+        "es-ES": "Kolkata",
+        "es-MX": "Kolkata"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kolkata.svg",
+      "bytes": 658,
+      "sha256": "5d8dfbe540ed092be30f8468b74352a9ab2eacd132c70fe5196796ff18f5883b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "koping",
       "symbol": "koping",
       "labels": {
@@ -42258,6 +43287,27 @@
       }
     },
     {
+      "id": "kunming",
+      "symbol": "kunming",
+      "labels": {
+        "sv-SE": "Kunming",
+        "en-US": "Kunming",
+        "es-ES": "Kunming",
+        "es-MX": "Kunming"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kunming.svg",
+      "bytes": 659,
+      "sha256": "06d8713cb79e4f8bb76f7e34d56aa345811a55379efcb6382965accf3fe42a3e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kuwait",
       "symbol": "kuwait",
       "labels": {
@@ -42314,6 +43364,27 @@
       "file": "assets/kyiv.svg",
       "bytes": 600,
       "sha256": "e8c4e18bb6898aad55a4e07cca48044ad416f158574cd37274b772d280b993ba",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kyoto",
+      "symbol": "kyoto",
+      "labels": {
+        "sv-SE": "Kyoto",
+        "en-US": "Kyoto",
+        "es-ES": "Kyoto",
+        "es-MX": "Kyoto"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kyoto.svg",
+      "bytes": 657,
+      "sha256": "653778dbe827359748c7cead0481f24a6d0cbfa44fdabe64e8b1b40012748c1f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -42566,6 +43637,27 @@
       "file": "assets/lagoon.svg",
       "bytes": 537,
       "sha256": "07495667f06089a266af90c1728b93b3dc83466f5645beefe1577036d79a67a7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lahore",
+      "symbol": "lahore",
+      "labels": {
+        "sv-SE": "Lahore",
+        "en-US": "Lahore",
+        "es-ES": "Lahore",
+        "es-MX": "Lahore"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lahore.svg",
+      "bytes": 658,
+      "sha256": "9c340dc2aa48b2ba955eac92e46afdaa3615ecefafdbd5e56d00ad51ea8356ff",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45912,6 +47004,48 @@
       }
     },
     {
+      "id": "lucknow",
+      "symbol": "lucknow",
+      "labels": {
+        "sv-SE": "Lucknow",
+        "en-US": "Lucknow",
+        "es-ES": "Lucknow",
+        "es-MX": "Lucknow"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lucknow.svg",
+      "bytes": 658,
+      "sha256": "2f0611a99db63f5a279f7065b3e24fc0d388b5453f2f8ebd5bf71c9f64eeb7ab",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ludhiana",
+      "symbol": "ludhiana",
+      "labels": {
+        "sv-SE": "Ludhiana",
+        "en-US": "Ludhiana",
+        "es-ES": "Ludhiana",
+        "es-MX": "Ludhiana"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ludhiana.svg",
+      "bytes": 659,
+      "sha256": "bf02c813060285b8be2b448e634fa6f208ed277e431096379f08541bd8dbcc7c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "ludvika",
       "symbol": "ludvika",
       "labels": {
@@ -46451,6 +47585,27 @@
       "file": "assets/majuro.svg",
       "bytes": 605,
       "sha256": "ad957c4036dd9055ebf0777e119a1bf192e9d0fe3a9ff92428782ba6885f4089",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "makassar",
+      "symbol": "makassar",
+      "labels": {
+        "sv-SE": "Makassar",
+        "en-US": "Makassar",
+        "es-ES": "Makassar",
+        "es-MX": "Makassar"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/makassar.svg",
+      "bytes": 659,
+      "sha256": "6c6ea1cd66206f382252520beb18660aeb22f7c9d24a81b1e1b967ca7bba3381",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48173,6 +49328,27 @@
       "file": "assets/meerkat.svg",
       "bytes": 794,
       "sha256": "8f7674c9befc61a08a46ad7d2980a7fb01ea3ee8d4aadd8e2f07c31fd809a39d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "meerut",
+      "symbol": "meerut",
+      "labels": {
+        "sv-SE": "Meerut",
+        "en-US": "Meerut",
+        "es-ES": "Meerut",
+        "es-MX": "Meerut"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/meerut.svg",
+      "bytes": 658,
+      "sha256": "a8a080d5166532be7696e8e2c5b701ae9ae903f83bee10df524a6a5316254213",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -51225,6 +52401,27 @@
       }
     },
     {
+      "id": "multan",
+      "symbol": "multan",
+      "labels": {
+        "sv-SE": "Multan",
+        "en-US": "Multan",
+        "es-ES": "Multan",
+        "es-MX": "Multan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/multan.svg",
+      "bytes": 659,
+      "sha256": "df2063989a378de98a0db8dff34d8fb5a6205311d96ca58356aff225fb412362",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "multicolored",
       "symbol": "multicolored",
       "labels": {
@@ -51750,6 +52947,48 @@
       }
     },
     {
+      "id": "nagoya",
+      "symbol": "nagoya",
+      "labels": {
+        "sv-SE": "Nagoya",
+        "en-US": "Nagoya",
+        "es-ES": "Nagoya",
+        "es-MX": "Nagoya"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nagoya.svg",
+      "bytes": 657,
+      "sha256": "b8984f9ca18fc62aa5022b954d816c3ec98c792a4de77f51d59bd258d992eaa4",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "nagpur",
+      "symbol": "nagpur",
+      "labels": {
+        "sv-SE": "Nagpur",
+        "en-US": "Nagpur",
+        "es-ES": "Nagpur",
+        "es-MX": "Nagpur"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nagpur.svg",
+      "bytes": 658,
+      "sha256": "4eeeaa6542446a764ff592ae9c1a168f2693a7b08fdf811256f08088988bf4cb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "nail",
       "symbol": "nail",
       "labels": {
@@ -51897,6 +53136,27 @@
       }
     },
     {
+      "id": "nanjing",
+      "symbol": "nanjing",
+      "labels": {
+        "sv-SE": "Nanjing",
+        "en-US": "Nanjing",
+        "es-ES": "Nanjing",
+        "es-MX": "Nanjing"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nanjing.svg",
+      "bytes": 658,
+      "sha256": "968c631f2394d47ab4eb174af8b250362726983440c713378174ba92f7f6be7a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "nape",
       "symbol": "nape",
       "labels": {
@@ -51974,6 +53234,27 @@
       "file": "assets/nasal-spray.svg",
       "bytes": 563,
       "sha256": "07a0fb19574a1222abf5c6a65026351ba41db83ab5ee788cf8d59d2069720002",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "nashik",
+      "symbol": "nashik",
+      "labels": {
+        "sv-SE": "Nashik",
+        "en-US": "Nashik",
+        "es-ES": "Nashik",
+        "es-MX": "Nashik"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nashik.svg",
+      "bytes": 658,
+      "sha256": "c1c7d84f81c996bd409804ec0cf4335c73ec3df6b46e3059d0e04398b275b444",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -53444,6 +54725,27 @@
       "file": "assets/nightstand.svg",
       "bytes": 500,
       "sha256": "a47699888004b791a3e193959fa44b812d7d043b6d152ad83ffde909c76107b2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "niigata",
+      "symbol": "niigata",
+      "labels": {
+        "sv-SE": "Niigata",
+        "en-US": "Niigata",
+        "es-ES": "Niigata",
+        "es-MX": "Niigata"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/niigata.svg",
+      "bytes": 658,
+      "sha256": "9c6827a33fdfa9627626a247c02c459138f2353bea0c8ba088a9dee806cba5d0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59436,6 +60738,27 @@
       }
     },
     {
+      "id": "palembang",
+      "symbol": "palembang",
+      "labels": {
+        "sv-SE": "Palembang",
+        "en-US": "Palembang",
+        "es-ES": "Palembang",
+        "es-MX": "Palembang"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/palembang.svg",
+      "bytes": 659,
+      "sha256": "cd2b5e463025cd67bf92a3f2844ac7b1887720ba7a8b5721c6cbf140a7867ae0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "palikir",
       "symbol": "palikir",
       "labels": {
@@ -60626,6 +61949,48 @@
       "file": "assets/patient.svg",
       "bytes": 574,
       "sha256": "b756a41b9bc4b1176795a3172ee4598488232ef03496674df7a691a86b0dfaea",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "patna",
+      "symbol": "patna",
+      "labels": {
+        "sv-SE": "Patna",
+        "en-US": "Patna",
+        "es-ES": "Patna",
+        "es-MX": "Patna"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/patna.svg",
+      "bytes": 658,
+      "sha256": "80ae7300afc24e85c40fa1b0d6cc7fb160b0fbbf502e0d5b8129fd30f892f750",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "pattaya",
+      "symbol": "pattaya",
+      "labels": {
+        "sv-SE": "Pattaya",
+        "en-US": "Pattaya",
+        "es-ES": "Pattaya",
+        "es-MX": "Pattaya"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/pattaya.svg",
+      "bytes": 656,
+      "sha256": "20566bdef1ee46e2c1d45e21a2b4a35d408ef20b4f5dd150d78a53faeb3c2eff",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61851,6 +63216,27 @@
       }
     },
     {
+      "id": "perth",
+      "symbol": "perth",
+      "labels": {
+        "sv-SE": "Perth",
+        "en-US": "Perth",
+        "es-ES": "Perth",
+        "es-MX": "Perth"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/perth.svg",
+      "bytes": 659,
+      "sha256": "832cc66907a4e4990fc2d574972d7c129cd0e4b907496b26dd46c911a65c5383",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "peru",
       "symbol": "peru",
       "labels": {
@@ -61865,6 +63251,27 @@
       "file": "assets/peru.svg",
       "bytes": 651,
       "sha256": "cf9f8cb98371e2a958085e718eda2d117c7ff8d253bdc990e34dfd3c698b8a94",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "peshawar",
+      "symbol": "peshawar",
+      "labels": {
+        "sv-SE": "Peshawar",
+        "en-US": "Peshawar",
+        "es-ES": "Peshawar",
+        "es-MX": "Peshawar"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/peshawar.svg",
+      "bytes": 657,
+      "sha256": "e2c5bdb7d21c7ef8f9be3b0b76debd9642d34742b90cc7a744ffb6b5df0486f9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -65988,6 +67395,27 @@
       }
     },
     {
+      "id": "pune",
+      "symbol": "pune",
+      "labels": {
+        "sv-SE": "Pune",
+        "en-US": "Pune",
+        "es-ES": "Pune",
+        "es-MX": "Pune"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/pune.svg",
+      "bytes": 659,
+      "sha256": "f59fc381d2b0c4b1c749eaf0929d7b09428fb593cf119d58b697f977f7e6b210",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "pupil",
       "symbol": "pupil",
       "labels": {
@@ -66660,6 +68088,27 @@
       }
     },
     {
+      "id": "qingdao",
+      "symbol": "qingdao",
+      "labels": {
+        "sv-SE": "Qingdao",
+        "en-US": "Qingdao",
+        "es-ES": "Qingdao",
+        "es-MX": "Qingdao"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/qingdao.svg",
+      "bytes": 658,
+      "sha256": "3521a0ce289545e6e3baee5cbd8b9d5df5de460689f9f241035e50de9cdea8a9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "quarter",
       "symbol": "quarter",
       "labels": {
@@ -66744,6 +68193,27 @@
       }
     },
     {
+      "id": "quetta",
+      "symbol": "quetta",
+      "labels": {
+        "sv-SE": "Quetta",
+        "en-US": "Quetta",
+        "es-ES": "Quetta",
+        "es-MX": "Quetta"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/quetta.svg",
+      "bytes": 657,
+      "sha256": "c9594eb7489dcbddd1cefb86559fecd078d80b98305dd07fff770a0d8365a20c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "queue",
       "symbol": "queue",
       "labels": {
@@ -66758,6 +68228,27 @@
       "file": "assets/queue.svg",
       "bytes": 427,
       "sha256": "0ed28ba3b990baec27d98c45df624923b593f3f127f38b8e4cd821c5f955f3a8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "quezon-city",
+      "symbol": "quezon-city",
+      "labels": {
+        "sv-SE": "Quezon City",
+        "en-US": "Quezon City",
+        "es-ES": "Quezon City",
+        "es-MX": "Quezon City"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/quezon-city.svg",
+      "bytes": 658,
+      "sha256": "d926f7e0190c6275123be907553aad05f98e1e03257fe8708855ccebfb694ed2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -67332,6 +68823,48 @@
       }
     },
     {
+      "id": "rajkot",
+      "symbol": "rajkot",
+      "labels": {
+        "sv-SE": "Rajkot",
+        "en-US": "Rajkot",
+        "es-ES": "Rajkot",
+        "es-MX": "Rajkot"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/rajkot.svg",
+      "bytes": 658,
+      "sha256": "abfb532aa9361f940bcc2770e32ad0ba7926bee6af5da5d209f2a65e958649e2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "rajshahi",
+      "symbol": "rajshahi",
+      "labels": {
+        "sv-SE": "Rajshahi",
+        "en-US": "Rajshahi",
+        "es-ES": "Rajshahi",
+        "es-MX": "Rajshahi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/rajshahi.svg",
+      "bytes": 659,
+      "sha256": "7901e4f34e4eeeeccfea6623b08721a6321a58666dd2aed7cfcdd32d0d2ebb9b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "rake",
       "symbol": "rake",
       "labels": {
@@ -67514,6 +69047,27 @@
       "file": "assets/raw.svg",
       "bytes": 544,
       "sha256": "ed68ad2d79b7fb5a010f95718e79f102c591bfa41d8093cfa37484af89c6f603",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "rawalpindi",
+      "symbol": "rawalpindi",
+      "labels": {
+        "sv-SE": "Rawalpindi",
+        "en-US": "Rawalpindi",
+        "es-ES": "Rawalpindi",
+        "es-MX": "Rawalpindi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/rawalpindi.svg",
+      "bytes": 659,
+      "sha256": "66609f7cdcd3bedf343211cc619fc08ddd91d948267f1caad2d9a6b47347d771",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71532,6 +73086,27 @@
       }
     },
     {
+      "id": "sakai",
+      "symbol": "sakai",
+      "labels": {
+        "sv-SE": "Sakai",
+        "en-US": "Sakai",
+        "es-ES": "Sakai",
+        "es-MX": "Sakai"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sakai.svg",
+      "bytes": 658,
+      "sha256": "904f3e0706721ca44e40234027dcc32b1cd025d2602aa26f7ee1f4d94e996310",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "salad",
       "symbol": "salad",
       "labels": {
@@ -72176,6 +73751,27 @@
       "file": "assets/sapling.svg",
       "bytes": 595,
       "sha256": "77ab0c2cea632158bc90f1301da9ad4277b2f927e5410129d83b26e33a5a5304",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sapporo",
+      "symbol": "sapporo",
+      "labels": {
+        "sv-SE": "Sapporo",
+        "en-US": "Sapporo",
+        "es-ES": "Sapporo",
+        "es-MX": "Sapporo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sapporo.svg",
+      "bytes": 658,
+      "sha256": "51350ffea3cba987df8e02a22b9a277ff3c464e60b8e65472b438c6a9a2c1de5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -74178,6 +75774,27 @@
       }
     },
     {
+      "id": "semarang",
+      "symbol": "semarang",
+      "labels": {
+        "sv-SE": "Semarang",
+        "en-US": "Semarang",
+        "es-ES": "Semarang",
+        "es-MX": "Semarang"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/semarang.svg",
+      "bytes": 659,
+      "sha256": "5998134e1a735402542ef504347fe399ef68a6b9d376196b2ec95a9ce08a16a7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "send",
       "symbol": "send",
       "labels": {
@@ -74213,6 +75830,27 @@
       "file": "assets/send-file.svg",
       "bytes": 520,
       "sha256": "50b9cb1a78124ce5226cff56667711a91f347b6d48b23021350a50fe71ac08cd",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sendai",
+      "symbol": "sendai",
+      "labels": {
+        "sv-SE": "Sendai",
+        "en-US": "Sendai",
+        "es-ES": "Sendai",
+        "es-MX": "Sendai"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sendai.svg",
+      "bytes": 658,
+      "sha256": "5f14a9c629b7a4b7c817d8d90dedb5fff0d3b953fb27d59770af62095fad8196",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75018,6 +76656,27 @@
       }
     },
     {
+      "id": "shanghai",
+      "symbol": "shanghai",
+      "labels": {
+        "sv-SE": "Shanghai",
+        "en-US": "Shanghai",
+        "es-ES": "Shanghai",
+        "es-MX": "Shanghai"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/shanghai.svg",
+      "bytes": 658,
+      "sha256": "6b6d837182c4094f5e328550ec6580e89d98a1a9a892d903dc1245a69465ec28",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "share",
       "symbol": "share",
       "labels": {
@@ -75389,6 +77048,27 @@
       "file": "assets/shelter.svg",
       "bytes": 476,
       "sha256": "d0dcf2b292486d7697e156b02abaf059f7b3f25710722336ec8dbd2c13d25989",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "shenzhen",
+      "symbol": "shenzhen",
+      "labels": {
+        "sv-SE": "Shenzhen",
+        "en-US": "Shenzhen",
+        "es-ES": "Shenzhen",
+        "es-MX": "Shenzhen"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/shenzhen.svg",
+      "bytes": 658,
+      "sha256": "c1c27f627f574f40c283b53d1e36ace4656fa952d56181a48a13df8e37d9fcc1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76376,6 +78056,27 @@
       "file": "assets/shy.svg",
       "bytes": 526,
       "sha256": "eae9dcc36e8050511cb7fc6eb8e8bebeb4a11c830cf54a1cf6c3b17a55a22b8f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sialkot",
+      "symbol": "sialkot",
+      "labels": {
+        "sv-SE": "Sialkot",
+        "en-US": "Sialkot",
+        "es-ES": "Sialkot",
+        "es-MX": "Sialkot"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sialkot.svg",
+      "bytes": 658,
+      "sha256": "20060ede1d7142cb3289a3e761de29a484aa5f03f95546565b293b93177758e3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -83523,6 +85224,48 @@
       }
     },
     {
+      "id": "surabaya",
+      "symbol": "surabaya",
+      "labels": {
+        "sv-SE": "Surabaya",
+        "en-US": "Surabaya",
+        "es-ES": "Surabaya",
+        "es-MX": "Surabaya"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/surabaya.svg",
+      "bytes": 658,
+      "sha256": "8ec36136475f646dc8dcc3c2af774bc14580786e9beb3d82a6810ea94f62ff8e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "surat",
+      "symbol": "surat",
+      "labels": {
+        "sv-SE": "Surat",
+        "en-US": "Surat",
+        "es-ES": "Surat",
+        "es-MX": "Surat"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/surat.svg",
+      "bytes": 659,
+      "sha256": "2551217f69541551e679ab83c61cef6c9ac3d1d5399d25cde7c058593eb652ca",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "surgeon",
       "symbol": "surgeon",
       "labels": {
@@ -83684,6 +85427,27 @@
       "file": "assets/suva.svg",
       "bytes": 606,
       "sha256": "66bc6b011215b8ca07e4998dca34961e95ec131753be8ffc65d303f591912150",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "suzhou",
+      "symbol": "suzhou",
+      "labels": {
+        "sv-SE": "Suzhou",
+        "en-US": "Suzhou",
+        "es-ES": "Suzhou",
+        "es-MX": "Suzhou"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/suzhou.svg",
+      "bytes": 658,
+      "sha256": "8d549c13e8a00b5b5e631a3cc38cbe1a86b432d653acfc0665977ec7be3acfcc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84251,6 +86015,27 @@
       "file": "assets/sydney.svg",
       "bytes": 620,
       "sha256": "029d0d5842ce1b56f44a9cb85a94a8583b088f104f7b5fd17a0811716bd5856a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sylhet",
+      "symbol": "sylhet",
+      "labels": {
+        "sv-SE": "Sylhet",
+        "en-US": "Sylhet",
+        "es-ES": "Sylhet",
+        "es-MX": "Sylhet"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sylhet.svg",
+      "bytes": 659,
+      "sha256": "8b6949990087023f0141fe196c4ab8802d792c8ae4bfbd878ab781dc5bbe7dcc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -86211,6 +87996,27 @@
       }
     },
     {
+      "id": "thane",
+      "symbol": "thane",
+      "labels": {
+        "sv-SE": "Thane",
+        "en-US": "Thane",
+        "es-ES": "Thane",
+        "es-MX": "Thane"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/thane.svg",
+      "bytes": 658,
+      "sha256": "d6330fdd3723e420d6dbdabdd4959e9e6425224fa69b05c6e5b8a4dc795e5980",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "thank",
       "symbol": "thank",
       "labels": {
@@ -87149,6 +88955,27 @@
       "file": "assets/thyroid.svg",
       "bytes": 351,
       "sha256": "186a9cbef63de582fd57e6f6dca0f3f623f1f412f54e833e4bf036639c023f56",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "tianjin",
+      "symbol": "tianjin",
+      "labels": {
+        "sv-SE": "Tianjin",
+        "en-US": "Tianjin",
+        "es-ES": "Tianjin",
+        "es-MX": "Tianjin"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/tianjin.svg",
+      "bytes": 658,
+      "sha256": "a7497e6d547ef21dfd10a5fc5693fb0273a33b909bef7c40d14e8f9fd24a37f8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -92889,6 +94716,27 @@
       }
     },
     {
+      "id": "vadodara",
+      "symbol": "vadodara",
+      "labels": {
+        "sv-SE": "Vadodara",
+        "en-US": "Vadodara",
+        "es-ES": "Vadodara",
+        "es-MX": "Vadodara"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/vadodara.svg",
+      "bytes": 658,
+      "sha256": "78aa465e7c5767473a545ba66b54d25286087c8bebbe338fe0a2e0835cd4e72d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "vaduz",
       "symbol": "vaduz",
       "labels": {
@@ -93659,6 +95507,27 @@
       "file": "assets/visa.svg",
       "bytes": 533,
       "sha256": "0fb685393f15eb0567371f36d3bd496cc3680318c58c5523efcb68878b257f52",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "visakhapatnam",
+      "symbol": "visakhapatnam",
+      "labels": {
+        "sv-SE": "Visakhapatnam",
+        "en-US": "Visakhapatnam",
+        "es-ES": "Visakhapatnam",
+        "es-MX": "Visakhapatnam"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/visakhapatnam.svg",
+      "bytes": 658,
+      "sha256": "9e35f0960858a58e89f212db0286cd37b90c7a3379737105b382e603d814c456",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -97824,6 +99693,48 @@
       }
     },
     {
+      "id": "wuhan",
+      "symbol": "wuhan",
+      "labels": {
+        "sv-SE": "Wuhan",
+        "en-US": "Wuhan",
+        "es-ES": "Wuhan",
+        "es-MX": "Wuhan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/wuhan.svg",
+      "bytes": 658,
+      "sha256": "241b3a4b5e87231922bea3c56e92bfd9497bb3b1f52d2bc12bdff18ab69a608d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "wuxi",
+      "symbol": "wuxi",
+      "labels": {
+        "sv-SE": "Wuxi",
+        "en-US": "Wuxi",
+        "es-ES": "Wuxi",
+        "es-MX": "Wuxi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/wuxi.svg",
+      "bytes": 659,
+      "sha256": "9f49b47a9fc24fbab5a56086b260860fd5171b36221d96ad0cd9e329afab5bd0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "wyoming",
       "symbol": "wyoming",
       "labels": {
@@ -97859,6 +99770,48 @@
       "file": "assets/x-ray.svg",
       "bytes": 501,
       "sha256": "a070b7a5d582bd8a8da05604348d00351a09d2e4fcd6a3c0d5924e588c53f516",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "xiamen",
+      "symbol": "xiamen",
+      "labels": {
+        "sv-SE": "Xiamen",
+        "en-US": "Xiamen",
+        "es-ES": "Xiamen",
+        "es-MX": "Xiamen"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/xiamen.svg",
+      "bytes": 659,
+      "sha256": "8231cce810b413c016a2eb607d6919118e8009fe1b0b827b5cd85b9bc60cdcd1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "xian",
+      "symbol": "xian",
+      "labels": {
+        "sv-SE": "Xi'an",
+        "en-US": "Xi'an",
+        "es-ES": "Xi'an",
+        "es-MX": "Xi'an"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/xian.svg",
+      "bytes": 658,
+      "sha256": "af93286a183dd517a0f3a04801c1fdb4c23b8b7f21635198df6e38a3374ea7f3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -98195,6 +100148,48 @@
       "file": "assets/yogurt-drink.svg",
       "bytes": 510,
       "sha256": "7789286280edb99d45fe9fe83e3b8f88a3e04270003aa65f604657dc6921afa0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "yogyakarta",
+      "symbol": "yogyakarta",
+      "labels": {
+        "sv-SE": "Yogyakarta",
+        "en-US": "Yogyakarta",
+        "es-ES": "Yogyakarta",
+        "es-MX": "Yogyakarta"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/yogyakarta.svg",
+      "bytes": 659,
+      "sha256": "067bc68d90f904cba313c9a09b9bcd15ac487168205df3b903efca8d70731ceb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "yokohama",
+      "symbol": "yokohama",
+      "labels": {
+        "sv-SE": "Yokohama",
+        "en-US": "Yokohama",
+        "es-ES": "Yokohama",
+        "es-MX": "Yokohama"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/yokohama.svg",
+      "bytes": 658,
+      "sha256": "f466797435ecd7f07abdc1bb43322950ddd715e0c8d54d6c6f210fbbf222a038",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

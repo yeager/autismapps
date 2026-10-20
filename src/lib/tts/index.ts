@@ -12,6 +12,7 @@ import { EXTRA_PATH_MAP, CUSTOM_VOICE_URLS, DEFAULT_VOICE_PT, RETIRED_VOICES } f
 import { getLocaleDef } from '$lib/i18n/locales';
 import { preprocessText } from './pronunciation-map';
 import { isTauri, getLocalVoiceUrl, BUNDLED_VOICES } from './tauri-voices';
+import { createSerialQueue } from './serial';
 
 const DEFAULT_RATE = 0.25;
 type TTSStatus = {
@@ -78,6 +79,9 @@ let speakGeneration = 0;
 const MAX_LENGTH_SCALE = 3;
 let piperReady = false;
 let piperFailed = false;
+// onnxruntime-web runs one inference at a time per WASM module and throws "Session already started" on a
+// second one; stop() cannot cancel a synthesis in flight, so a phrase spoken during it waits its turn here.
+const enqueuePiper = createSerialQueue();
 
 // Diagnostic store for settings debug panel
 export const ttsStatus = writable<TTSStatus>({
@@ -461,20 +465,25 @@ async function speakPiper(
 		_instance?: { voiceId?: string } | null;
 		reset?: () => Promise<void>;
 	};
-	if (TS._instance && TS._instance.voiceId !== voiceId) {
-		if (TS.reset) await TS.reset();
-		else TS._instance = undefined;
-	}
 
 	// Piper is much faster than Web Speech: the effective speed is rate × 0.4 (≈0.28 at the default 0.7).
 	// Slow speech is synthesized by Piper (lengthScale, up to MAX_LENGTH_SCALE) and only the remainder is
 	// done with playbackRate — browser time-stretching at low rates is what made the voice sound robotic.
 	const slowdown = 1 / (rate * 0.4);
 	const lengthScale = Math.min(Math.max(slowdown, 1), MAX_LENGTH_SCALE);
-	const wav = await piper.predict({ text, voiceId, lengthScale } as Parameters<typeof piper.predict>[0]);
-	if (!wav || wav.size === 0) throw new Error('Piper returned empty WAV');
+	// The voice reset is queued too: releasing the ONNX session while a synthesis runs on it breaks that run.
+	const wav = await enqueuePiper(async () => {
+		// Superseded while waiting for the previous synthesis: skip it
+		if (generation !== speakGeneration) return null;
+		if (TS._instance && TS._instance.voiceId !== voiceId) {
+			if (TS.reset) await TS.reset();
+			else TS._instance = undefined;
+		}
+		return piper.predict({ text, voiceId, lengthScale } as Parameters<typeof piper.predict>[0]);
+	});
 	// A newer speak()/stop() happened while this phrase was being synthesized: drop it instead of playing late.
 	if (generation !== speakGeneration) return;
+	if (!wav || wav.size === 0) throw new Error('Piper returned empty WAV');
 
 	const audio = new Audio();
 	const url = URL.createObjectURL(wav);

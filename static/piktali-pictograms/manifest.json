@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:35:27.369Z",
+  "exportedAt": "2026-10-20T17:36:27.797Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4606,
+  "count": 4679,
   "pictograms": [
     {
       "id": "abdomen",
@@ -1119,6 +1119,27 @@
       }
     },
     {
+      "id": "albuquerque",
+      "symbol": "albuquerque",
+      "labels": {
+        "sv-SE": "Albuquerque",
+        "en-US": "Albuquerque",
+        "es-ES": "Albuquerque",
+        "es-MX": "Albuquerque"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/albuquerque.svg",
+      "bytes": 613,
+      "sha256": "39372126c559856fba772c7f3ccde7b9f41d74a94fc7cb4750e36a50b23692fe",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "alert",
       "symbol": "alert",
       "labels": {
@@ -1959,6 +1980,27 @@
       }
     },
     {
+      "id": "anaheim",
+      "symbol": "anaheim",
+      "labels": {
+        "sv-SE": "Anaheim",
+        "en-US": "Anaheim",
+        "es-ES": "Anaheim",
+        "es-MX": "Anaheim"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/anaheim.svg",
+      "bytes": 613,
+      "sha256": "647a4b461fe5ec4971cc5da29f8dc9bf5b8ac82f4d3e10449bbbdfd6ce9348c9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "analyze",
       "symbol": "analyze",
       "labels": {
@@ -1994,6 +2036,27 @@
       "file": "assets/ancestor.svg",
       "bytes": 927,
       "sha256": "72d319cb1f3400c2dfee1af36006f0a6d630793d580602bc4d7d2e386700f8da",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "anchorage",
+      "symbol": "anchorage",
+      "labels": {
+        "sv-SE": "Anchorage",
+        "en-US": "Anchorage",
+        "es-ES": "Anchorage",
+        "es-MX": "Anchorage"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/anchorage.svg",
+      "bytes": 612,
+      "sha256": "9251d22944dca99db9ea42850209a315c43242cd7f6cd90461069f8cf95e5bcb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3219,6 +3282,27 @@
       }
     },
     {
+      "id": "arlington",
+      "symbol": "arlington",
+      "labels": {
+        "sv-SE": "Arlington",
+        "en-US": "Arlington",
+        "es-ES": "Arlington",
+        "es-MX": "Arlington"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/arlington.svg",
+      "bytes": 611,
+      "sha256": "25d514eb465f2924461745b783f72c4900beeb6026686a763580a83aa986a3bb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "arm",
       "symbol": "arm",
       "labels": {
@@ -4038,6 +4122,27 @@
       }
     },
     {
+      "id": "atlanta",
+      "symbol": "atlanta",
+      "labels": {
+        "sv-SE": "Atlanta",
+        "en-US": "Atlanta",
+        "es-ES": "Atlanta",
+        "es-MX": "Atlanta"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/atlanta.svg",
+      "bytes": 613,
+      "sha256": "0c379b5df09cab397e797d22f7e80bbbf58bd0a5ad643f0274a6a7fb6eb9e703",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "atlas",
       "symbol": "atlas",
       "labels": {
@@ -4241,6 +4346,48 @@
       "file": "assets/aunt.webp",
       "bytes": 15246,
       "sha256": "d22ad926750ed71f484fcdf45515e8233519c902d07d502f7b5a17865f4eccca",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "aurora",
+      "symbol": "aurora",
+      "labels": {
+        "sv-SE": "Aurora",
+        "en-US": "Aurora",
+        "es-ES": "Aurora",
+        "es-MX": "Aurora"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/aurora.svg",
+      "bytes": 613,
+      "sha256": "5a437553cc5fe19bbae9f2f74750a0b0e112ac361f955fcc0f44f1dc9e5b76cc",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "austin",
+      "symbol": "austin",
+      "labels": {
+        "sv-SE": "Austin",
+        "en-US": "Austin",
+        "es-ES": "Austin",
+        "es-MX": "Austin"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/austin.svg",
+      "bytes": 613,
+      "sha256": "2d51be68ba9606193634b43fab85b7e3d5ac1fd1119bad97d5debefab00b8588",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4857,6 +5004,27 @@
       }
     },
     {
+      "id": "bakersfield",
+      "symbol": "bakersfield",
+      "labels": {
+        "sv-SE": "Bakersfield",
+        "en-US": "Bakersfield",
+        "es-ES": "Bakersfield",
+        "es-MX": "Bakersfield"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bakersfield.svg",
+      "bytes": 613,
+      "sha256": "7e86eaa5ba76126853428a5d22a4f77739c19843e552f6f10c71df103cefc062",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "bakery",
       "symbol": "bakery",
       "labels": {
@@ -5018,6 +5186,27 @@
       "file": "assets/ball.webp",
       "bytes": 5150,
       "sha256": "cc9c31ad0121c57712b7b1d610da1fada1e803d18ff878b51922a11775ed304e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "baltimore",
+      "symbol": "baltimore",
+      "labels": {
+        "sv-SE": "Baltimore",
+        "en-US": "Baltimore",
+        "es-ES": "Baltimore",
+        "es-MX": "Baltimore"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/baltimore.svg",
+      "bytes": 612,
+      "sha256": "69dc2fec44426d87bdc96623b6ab750b93ed9db3197108795959bfd9e5b2eaf6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8679,6 +8868,27 @@
       }
     },
     {
+      "id": "boston",
+      "symbol": "boston",
+      "labels": {
+        "sv-SE": "Boston",
+        "en-US": "Boston",
+        "es-ES": "Boston",
+        "es-MX": "Boston"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/boston.svg",
+      "bytes": 612,
+      "sha256": "4e8a59d7fcd90584c73faccb8885b75347c6ff87a54711a7b3f618871848286b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "both",
       "symbol": "both",
       "labels": {
@@ -10100,6 +10310,27 @@
       "file": "assets/buenos-aires.svg",
       "bytes": 438,
       "sha256": "d7c59558ac16f56847ff211b1631eb41cde608acde48f72b077abcb1cde7ab22",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "buffalo",
+      "symbol": "buffalo",
+      "labels": {
+        "sv-SE": "Buffalo",
+        "en-US": "Buffalo",
+        "es-ES": "Buffalo",
+        "es-MX": "Buffalo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/buffalo.svg",
+      "bytes": 611,
+      "sha256": "46a60d42d686fa0f3cea18b712f9143fba44882454598732aec9acaf6e8f8ac3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12963,6 +13194,27 @@
       }
     },
     {
+      "id": "chandler",
+      "symbol": "chandler",
+      "labels": {
+        "sv-SE": "Chandler",
+        "en-US": "Chandler",
+        "es-ES": "Chandler",
+        "es-MX": "Chandler"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chandler.svg",
+      "bytes": 613,
+      "sha256": "859feaa746f4f238e91c9dc44afc73e51c6427c092f0b7154dfebad44f3a4be0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "change",
       "symbol": "change",
       "labels": {
@@ -13439,6 +13691,27 @@
       "file": "assets/charging-station.svg",
       "bytes": 617,
       "sha256": "45674c52397c351141eed9f2144cdece9f55c514056488f91218ba3e30f03ce6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "charlotte",
+      "symbol": "charlotte",
+      "labels": {
+        "sv-SE": "Charlotte",
+        "en-US": "Charlotte",
+        "es-ES": "Charlotte",
+        "es-MX": "Charlotte"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/charlotte.svg",
+      "bytes": 613,
+      "sha256": "e47c427e85e1f117d66a3f1a91766151713714fb33a5c3a9d3604787e5a27645",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -14454,6 +14727,27 @@
       }
     },
     {
+      "id": "chula-vista",
+      "symbol": "chula-vista",
+      "labels": {
+        "sv-SE": "Chula Vista",
+        "en-US": "Chula Vista",
+        "es-ES": "Chula Vista",
+        "es-MX": "Chula Vista"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chula-vista.svg",
+      "bytes": 612,
+      "sha256": "8b7b4947dcea01467348100f42495e3543110a1de432000d37d0bfbc1445edf7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "church",
       "symbol": "church",
       "labels": {
@@ -14510,6 +14804,27 @@
       "file": "assets/cicada.svg",
       "bytes": 841,
       "sha256": "35a1f1253452f47f1f059940eac0272eb0e51bc015acc34b05034c0f3292bdda",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "cincinnati",
+      "symbol": "cincinnati",
+      "labels": {
+        "sv-SE": "Cincinnati",
+        "en-US": "Cincinnati",
+        "es-ES": "Cincinnati",
+        "es-MX": "Cincinnati"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cincinnati.svg",
+      "bytes": 612,
+      "sha256": "d737af5f5ad7cf46ed1638d9920146f47c9ba83d215f6a8dba85799d92f8573e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15203,6 +15518,27 @@
       "file": "assets/cleartable.webp",
       "bytes": 7072,
       "sha256": "721e678fdccf2748a7b72de76e98186e82d12b8a3e3e466f3c87620e02dc147e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "cleveland",
+      "symbol": "cleveland",
+      "labels": {
+        "sv-SE": "Cleveland",
+        "en-US": "Cleveland",
+        "es-ES": "Cleveland",
+        "es-MX": "Cleveland"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cleveland.svg",
+      "bytes": 612,
+      "sha256": "c2f5ccdb06fa7394da29b7de65dba3da8c864a330dc4f67310da4f3303b9c9ae",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -16218,6 +16554,27 @@
       }
     },
     {
+      "id": "colorado-springs",
+      "symbol": "colorado-springs",
+      "labels": {
+        "sv-SE": "Colorado Springs",
+        "en-US": "Colorado Springs",
+        "es-ES": "Colorado Springs",
+        "es-MX": "Colorado Springs"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/colorado-springs.svg",
+      "bytes": 612,
+      "sha256": "8d1e7408a1ef1796a05882772579e503243c48a467218248fe5691d1b25bfdf0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "colored-pencil",
       "symbol": "coloredpencil",
       "labels": {
@@ -16295,6 +16652,27 @@
       "file": "assets/coloringpage.svg",
       "bytes": 459,
       "sha256": "19a73419b62e5a5c2185bc02fd3e992673ed5e47b0b274b142efa7f4d79e00de",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "columbus",
+      "symbol": "columbus",
+      "labels": {
+        "sv-SE": "Columbus",
+        "en-US": "Columbus",
+        "es-ES": "Columbus",
+        "es-MX": "Columbus"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/columbus.svg",
+      "bytes": 613,
+      "sha256": "00cc5616fc95d2e1f9641d392a5b2380946bf3a2f84e1fcf833b55f2e7a13fe1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18038,6 +18416,27 @@
       "file": "assets/corner.svg",
       "bytes": 419,
       "sha256": "05b62500b2c21710b35d0c7720ccc7435e9c6b13c7abc32b97ce09e559b89005",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "corpus-christi",
+      "symbol": "corpus-christi",
+      "labels": {
+        "sv-SE": "Corpus Christi",
+        "en-US": "Corpus Christi",
+        "es-ES": "Corpus Christi",
+        "es-MX": "Corpus Christi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/corpus-christi.svg",
+      "bytes": 613,
+      "sha256": "cc19728fb4ec6f6379ea9d6aedda3ec8d923083e0f90ed876b1aadad0561303c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20103,6 +20502,27 @@
       }
     },
     {
+      "id": "dallas",
+      "symbol": "dallas",
+      "labels": {
+        "sv-SE": "Dallas",
+        "en-US": "Dallas",
+        "es-ES": "Dallas",
+        "es-MX": "Dallas"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/dallas.svg",
+      "bytes": 613,
+      "sha256": "14c464ed5607e99dc0115491194771f113310e9abd25fd5864cdb8eda181b74c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "damascus",
       "symbol": "damascus",
       "labels": {
@@ -21027,6 +21447,27 @@
       }
     },
     {
+      "id": "denver",
+      "symbol": "denver",
+      "labels": {
+        "sv-SE": "Denver",
+        "en-US": "Denver",
+        "es-ES": "Denver",
+        "es-MX": "Denver"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/denver.svg",
+      "bytes": 612,
+      "sha256": "4db7cd5bce67b5e0611852cc34a5d46c605bf22a3cc9be2ef780c64ec6e6f30e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "deodorant",
       "symbol": "deodorant",
       "labels": {
@@ -21314,6 +21755,27 @@
       "file": "assets/detach.svg",
       "bytes": 659,
       "sha256": "6aec5a38fda994dab19d0ce54018429d4eac84290525709af8e96d8857ca0f7e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "detroit",
+      "symbol": "detroit",
+      "labels": {
+        "sv-SE": "Detroit",
+        "en-US": "Detroit",
+        "es-ES": "Detroit",
+        "es-MX": "Detroit"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/detroit.svg",
+      "bytes": 612,
+      "sha256": "e36a1e2db7121b7acde5e2499dcf32f045c833e7e5a6273efa27122881e6e818",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -23883,6 +24345,27 @@
       }
     },
     {
+      "id": "durham",
+      "symbol": "durham",
+      "labels": {
+        "sv-SE": "Durham",
+        "en-US": "Durham",
+        "es-ES": "Durham",
+        "es-MX": "Durham"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/durham.svg",
+      "bytes": 613,
+      "sha256": "244331f163e915e77d962a9a92aa4b81e73fdae2993789476d77919cb39cf308",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "during",
       "symbol": "during",
       "labels": {
@@ -24674,6 +25157,27 @@
       "file": "assets/either.svg",
       "bytes": 465,
       "sha256": "03998245aaf298ce176e97fb57ccfa1c8ba9276b40f030ee185bb9d422373533",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "el-paso",
+      "symbol": "el-paso",
+      "labels": {
+        "sv-SE": "El Paso",
+        "en-US": "El Paso",
+        "es-ES": "El Paso",
+        "es-MX": "El Paso"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/el-paso.svg",
+      "bytes": 613,
+      "sha256": "4bc44b1f7e2c40d58f444864663762b8dfcacda2b52f9ca50fa66a32001ffbd7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -30351,6 +30855,48 @@
       }
     },
     {
+      "id": "fort-wayne",
+      "symbol": "fort-wayne",
+      "labels": {
+        "sv-SE": "Fort Wayne",
+        "en-US": "Fort Wayne",
+        "es-ES": "Fort Wayne",
+        "es-MX": "Fort Wayne"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/fort-wayne.svg",
+      "bytes": 611,
+      "sha256": "7da307d041cbccdc79696224af021d03658187b7916c69316bb3631c5bb2132b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "fort-worth",
+      "symbol": "fort-worth",
+      "labels": {
+        "sv-SE": "Fort Worth",
+        "en-US": "Fort Worth",
+        "es-ES": "Fort Worth",
+        "es-MX": "Fort Worth"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/fort-worth.svg",
+      "bytes": 612,
+      "sha256": "f54ddb1fbd58b67f912045bca73d65e6c3cffebd951ae35575144b13233b3c5d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "forward",
       "symbol": "forward",
       "labels": {
@@ -30638,6 +31184,27 @@
       "file": "assets/fresh.svg",
       "bytes": 575,
       "sha256": "689e9dec065caa4b638eb22033ea007c854cdd093362171e39019ccd48ed7869",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "fresno",
+      "symbol": "fresno",
+      "labels": {
+        "sv-SE": "Fresno",
+        "en-US": "Fresno",
+        "es-ES": "Fresno",
+        "es-MX": "Fresno"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/fresno.svg",
+      "bytes": 612,
+      "sha256": "e5fae84a959711cef20fa776451d204a25d9e060c6faa89957c790b52e6b7ab2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33375,6 +33942,27 @@
       }
     },
     {
+      "id": "greensboro",
+      "symbol": "greensboro",
+      "labels": {
+        "sv-SE": "Greensboro",
+        "en-US": "Greensboro",
+        "es-ES": "Greensboro",
+        "es-MX": "Greensboro"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/greensboro.svg",
+      "bytes": 613,
+      "sha256": "f2fe2ff14fad41c4901fddb8dce562c83e12f363820eeacb72276ef7704ad247",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "greet",
       "symbol": "greet",
       "labels": {
@@ -35664,6 +36252,27 @@
       }
     },
     {
+      "id": "henderson",
+      "symbol": "henderson",
+      "labels": {
+        "sv-SE": "Henderson",
+        "en-US": "Henderson",
+        "es-ES": "Henderson",
+        "es-MX": "Henderson"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/henderson.svg",
+      "bytes": 612,
+      "sha256": "7e79c3ba931814955a23b340c5e0288919981db1b69e63778c4eb0b2a8a26d4d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "her-pronoun",
       "symbol": "herpronoun",
       "labels": {
@@ -36483,6 +37092,27 @@
       }
     },
     {
+      "id": "honolulu",
+      "symbol": "honolulu",
+      "labels": {
+        "sv-SE": "Honolulu",
+        "en-US": "Honolulu",
+        "es-ES": "Honolulu",
+        "es-MX": "Honolulu"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/honolulu.svg",
+      "bytes": 612,
+      "sha256": "c1836cf9f1e156c7719e6c61dea4b286655fe5b52cc622157502a73ad76a98d5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "hood",
       "symbol": "hood",
       "labels": {
@@ -36980,6 +37610,27 @@
       "file": "assets/housemate.svg",
       "bytes": 681,
       "sha256": "6f58f1bf933f3c459469e33d38c526af06722ae80e00d91c36adb26fe24692b5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "houston",
+      "symbol": "houston",
+      "labels": {
+        "sv-SE": "Houston",
+        "en-US": "Houston",
+        "es-ES": "Houston",
+        "es-MX": "Houston"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/houston.svg",
+      "bytes": 612,
+      "sha256": "e0787fbaf09ca52d187f043442beb127d0f7c88f9dd13af4ce3208cfc1e4990b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38247,6 +38898,27 @@
       }
     },
     {
+      "id": "indianapolis",
+      "symbol": "indianapolis",
+      "labels": {
+        "sv-SE": "Indianapolis",
+        "en-US": "Indianapolis",
+        "es-ES": "Indianapolis",
+        "es-MX": "Indianapolis"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/indianapolis.svg",
+      "bytes": 613,
+      "sha256": "b16d316b1c7195489fa6e770c7d8489419f02fc9b27d19d82f3725936c780bc6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "indifferent",
       "symbol": "indifferent",
       "labels": {
@@ -39192,6 +39864,27 @@
       }
     },
     {
+      "id": "irvine",
+      "symbol": "irvine",
+      "labels": {
+        "sv-SE": "Irvine",
+        "en-US": "Irvine",
+        "es-ES": "Irvine",
+        "es-MX": "Irvine"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/irvine.svg",
+      "bytes": 613,
+      "sha256": "2052749dc618d36383b9f8fe451da44afc3092fa8b47cf0b03d7c2b3ac39b9ab",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "islamabad",
       "symbol": "islamabad",
       "labels": {
@@ -39416,6 +40109,27 @@
       "file": "assets/itchyclothes.svg",
       "bytes": 299,
       "sha256": "5ff0a61e7d519ec98ce5e93d8a1221552b74b497053d4b07a140e19a4179c2ff",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "jacksonville",
+      "symbol": "jacksonville",
+      "labels": {
+        "sv-SE": "Jacksonville",
+        "en-US": "Jacksonville",
+        "es-ES": "Jacksonville",
+        "es-MX": "Jacksonville"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/jacksonville.svg",
+      "bytes": 611,
+      "sha256": "773fdf68bb8867d5d79064a6c94b4006bd9aac25827871eae6ed2d41c82e7c98",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39668,6 +40382,27 @@
       "file": "assets/jellyfish.svg",
       "bytes": 577,
       "sha256": "13accc65fb02644c80c5ac8f2b127db00b35bfa420fa37cb36bf19412b07776a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "jersey-city",
+      "symbol": "jersey-city",
+      "labels": {
+        "sv-SE": "Jersey City",
+        "en-US": "Jersey City",
+        "es-ES": "Jersey City",
+        "es-MX": "Jersey City"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/jersey-city.svg",
+      "bytes": 613,
+      "sha256": "4fec154c67d892a606b93eb46073a8291a50c0216735127cd73032d050647620",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40277,6 +41012,27 @@
       "file": "assets/kansas.svg",
       "bytes": 449,
       "sha256": "e2ad7619e7a1d7db46e774be12dcca4c6fe2b4aef01839fbc8319addd541fe60",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kansas-city",
+      "symbol": "kansas-city",
+      "labels": {
+        "sv-SE": "Kansas City",
+        "en-US": "Kansas City",
+        "es-ES": "Kansas City",
+        "es-MX": "Kansas City"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kansas-city.svg",
+      "bytes": 613,
+      "sha256": "5543b90ad083509a737c4a51ad184427478306dc020a2c38d7546dcbe4b861a1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41859,6 +42615,27 @@
       }
     },
     {
+      "id": "laredo",
+      "symbol": "laredo",
+      "labels": {
+        "sv-SE": "Laredo",
+        "en-US": "Laredo",
+        "es-ES": "Laredo",
+        "es-MX": "Laredo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/laredo.svg",
+      "bytes": 612,
+      "sha256": "c4d8860576894d23441eeaac78926874a83f549b2e928c434e8ef971ca8c2c70",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "large-print",
       "symbol": "large-print",
       "labels": {
@@ -41873,6 +42650,27 @@
       "file": "assets/large-print.svg",
       "bytes": 658,
       "sha256": "a4e101205ae6ff563ffc86eff21257e83342371f692b72257e25e0bf7d75fbae",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "las-vegas",
+      "symbol": "las-vegas",
+      "labels": {
+        "sv-SE": "Las Vegas",
+        "en-US": "Las Vegas",
+        "es-ES": "Las Vegas",
+        "es-MX": "Las Vegas"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/las-vegas.svg",
+      "bytes": 613,
+      "sha256": "714ec66ff56525433eb43dba90947822c4feb1ea5908df85767719c5463573ae",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43035,6 +43833,27 @@
       }
     },
     {
+      "id": "lexington",
+      "symbol": "lexington",
+      "labels": {
+        "sv-SE": "Lexington",
+        "en-US": "Lexington",
+        "es-ES": "Lexington",
+        "es-MX": "Lexington"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lexington.svg",
+      "bytes": 613,
+      "sha256": "ae5a3e398664fc12b4e5ee818b2b3475e674ca4f7705d68bb6e59544458b1226",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "liberia",
       "symbol": "liberia",
       "labels": {
@@ -43679,6 +44498,27 @@
       "file": "assets/limp.svg",
       "bytes": 599,
       "sha256": "f37f6f91b4b9d9a0b5d57e40855d1a38885c788598d98297966fd07fce824af7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lincoln",
+      "symbol": "lincoln",
+      "labels": {
+        "sv-SE": "Lincoln",
+        "en-US": "Lincoln",
+        "es-ES": "Lincoln",
+        "es-MX": "Lincoln"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lincoln.svg",
+      "bytes": 612,
+      "sha256": "25dad7cf13fb4283d68b681df8baee1c6cc6e6ab770834b3d84db5cfde806399",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44379,6 +45219,27 @@
       }
     },
     {
+      "id": "long-beach",
+      "symbol": "long-beach",
+      "labels": {
+        "sv-SE": "Long Beach",
+        "en-US": "Long Beach",
+        "es-ES": "Long Beach",
+        "es-MX": "Long Beach"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/long-beach.svg",
+      "bytes": 613,
+      "sha256": "97ab41cc9ffdfc5d79299a4673e5bc7312b6db862a4bb1818bc6707f6d28e0d9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "long-press",
       "symbol": "long-press",
       "labels": {
@@ -44729,6 +45590,27 @@
       "file": "assets/louisiana.svg",
       "bytes": 449,
       "sha256": "83095c9f9ca30b3c9c14d71e1d336ffb0d2f70a53aef13637f72c57721a58f2f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "louisville",
+      "symbol": "louisville",
+      "labels": {
+        "sv-SE": "Louisville",
+        "en-US": "Louisville",
+        "es-ES": "Louisville",
+        "es-MX": "Louisville"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/louisville.svg",
+      "bytes": 612,
+      "sha256": "c28623cb6bf9f5cadab5351558896f1e182ba9a07fd04335150a9daa868fe654",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45212,6 +46094,27 @@
       "file": "assets/madagascar.svg",
       "bytes": 503,
       "sha256": "2ce0e253b3dbbdcf488e935da6056a0e402b555d76744d6d02583dae54111059",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "madison",
+      "symbol": "madison",
+      "labels": {
+        "sv-SE": "Madison",
+        "en-US": "Madison",
+        "es-ES": "Madison",
+        "es-MX": "Madison"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/madison.svg",
+      "bytes": 613,
+      "sha256": "9ed7667e3122e37c574b096556d37a56893074f3592d40a8b2ff5754ff57c79a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47277,6 +48180,27 @@
       }
     },
     {
+      "id": "memphis",
+      "symbol": "memphis",
+      "labels": {
+        "sv-SE": "Memphis",
+        "en-US": "Memphis",
+        "es-ES": "Memphis",
+        "es-MX": "Memphis"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/memphis.svg",
+      "bytes": 611,
+      "sha256": "67f78a400dda44003b94f69a98b029cc068c89d99d56904347305d71237e79ae",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "menstrual-cup",
       "symbol": "menstrual-cup",
       "labels": {
@@ -47585,6 +48509,27 @@
       "file": "assets/mexico-city.svg",
       "bytes": 536,
       "sha256": "9c3a22a85ee3e9fca6c23d5d72c7477167b7f138fc92c6906b92197fb9822299",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "miami",
+      "symbol": "miami",
+      "labels": {
+        "sv-SE": "Miami",
+        "en-US": "Miami",
+        "es-ES": "Miami",
+        "es-MX": "Miami"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/miami.svg",
+      "bytes": 612,
+      "sha256": "e29c1d4dd325765d0f12dca9e40e4414c35b45d0038f02d05947557692bd8560",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47970,6 +48915,27 @@
       }
     },
     {
+      "id": "milwaukee",
+      "symbol": "milwaukee",
+      "labels": {
+        "sv-SE": "Milwaukee",
+        "en-US": "Milwaukee",
+        "es-ES": "Milwaukee",
+        "es-MX": "Milwaukee"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/milwaukee.svg",
+      "bytes": 613,
+      "sha256": "a50f0b7a2fc20a92c29a7c9eb4a30636c5d5cbbc3b1e6eb6e15dbe0d608a05b3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "mince",
       "symbol": "mince",
       "labels": {
@@ -48005,6 +48971,27 @@
       "file": "assets/mine.svg",
       "bytes": 620,
       "sha256": "1b1073a3b6ad4b4a334575cd3cad6967380b863a97c1c83606ad5864102a48ca",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "minneapolis",
+      "symbol": "minneapolis",
+      "labels": {
+        "sv-SE": "Minneapolis",
+        "en-US": "Minneapolis",
+        "es-ES": "Minneapolis",
+        "es-MX": "Minneapolis"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/minneapolis.svg",
+      "bytes": 613,
+      "sha256": "1950a1ed91129e1bb8eaa14beec574857ed3a9c7c199428d444e09f37fcd5c89",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50805,6 +51792,27 @@
       }
     },
     {
+      "id": "nashville",
+      "symbol": "nashville",
+      "labels": {
+        "sv-SE": "Nashville",
+        "en-US": "Nashville",
+        "es-ES": "Nashville",
+        "es-MX": "Nashville"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nashville.svg",
+      "bytes": 611,
+      "sha256": "d95f9cd6fb9eedcd8e4f460a830417d18e0293e2a436fee318de93ea15fd777e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "nassau",
       "symbol": "nassau",
       "labels": {
@@ -51876,6 +52884,27 @@
       }
     },
     {
+      "id": "new-orleans",
+      "symbol": "new-orleans",
+      "labels": {
+        "sv-SE": "New Orleans",
+        "en-US": "New Orleans",
+        "es-ES": "New Orleans",
+        "es-MX": "New Orleans"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/new-orleans.svg",
+      "bytes": 612,
+      "sha256": "515fea788307af6c944b8efe7d35eabc5ec0953f508f17fc4a6998f53b784381",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "new-york-city",
       "symbol": "new-york-city",
       "labels": {
@@ -51911,6 +52940,27 @@
       "file": "assets/new-zealand.svg",
       "bytes": 970,
       "sha256": "8a7672d08bded832e0edcfc1ad161ae63e4d10497dba9fca37070f357c26fcdb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "newark",
+      "symbol": "newark",
+      "labels": {
+        "sv-SE": "Newark",
+        "en-US": "Newark",
+        "es-ES": "Newark",
+        "es-MX": "Newark"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/newark.svg",
+      "bytes": 612,
+      "sha256": "3aa17547f96d966d48101760b0ff35faacc9be04116596a593ecacf44935bcf0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55866,6 +56916,27 @@
       }
     },
     {
+      "id": "oklahoma-city",
+      "symbol": "oklahoma-city",
+      "labels": {
+        "sv-SE": "Oklahoma City",
+        "en-US": "Oklahoma City",
+        "es-ES": "Oklahoma City",
+        "es-MX": "Oklahoma City"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/oklahoma-city.svg",
+      "bytes": 612,
+      "sha256": "874a65744c4077c20963d3e27230581288f8180bff0f83481322845ce1711d09",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "old",
       "symbol": "old",
       "labels": {
@@ -55901,6 +56972,27 @@
       "file": "assets/older-person.svg",
       "bytes": 647,
       "sha256": "4d59e8791668bb2880383d27c96533d0504c6929aa47e2d9b382486cff977ff6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "omaha",
+      "symbol": "omaha",
+      "labels": {
+        "sv-SE": "Omaha",
+        "en-US": "Omaha",
+        "es-ES": "Omaha",
+        "es-MX": "Omaha"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/omaha.svg",
+      "bytes": 612,
+      "sha256": "bfbf4c109fe70cf4a55b84d0edcedc4d66611e3816706cae1c68f2034240ec91",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -56720,6 +57812,27 @@
       "file": "assets/organize.svg",
       "bytes": 510,
       "sha256": "9ad1cce4f1470a56d54d0894af33566607a5f16d9f99d0178e26208179c45a4d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "orlando",
+      "symbol": "orlando",
+      "labels": {
+        "sv-SE": "Orlando",
+        "en-US": "Orlando",
+        "es-ES": "Orlando",
+        "es-MX": "Orlando"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/orlando.svg",
+      "bytes": 612,
+      "sha256": "41aa1b88840ead3d26e95095771741820a293497643db200f0141a82ffd883c9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -60654,6 +61767,27 @@
       }
     },
     {
+      "id": "philadelphia",
+      "symbol": "philadelphia",
+      "labels": {
+        "sv-SE": "Philadelphia",
+        "en-US": "Philadelphia",
+        "es-ES": "Philadelphia",
+        "es-MX": "Philadelphia"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/philadelphia.svg",
+      "bytes": 611,
+      "sha256": "c0ff0cf159b5cf6f2c50a60b32158bf6cb4a7c7608dbbe8f8fffbc7c62d5a74e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "philippines",
       "symbol": "philippines",
       "labels": {
@@ -60689,6 +61823,27 @@
       "file": "assets/phnom-penh.svg",
       "bytes": 606,
       "sha256": "7f53234c25c9d883127a82df70361e3951afb767d691b8e339f9471748947b8f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "phoenix",
+      "symbol": "phoenix",
+      "labels": {
+        "sv-SE": "Phoenix",
+        "en-US": "Phoenix",
+        "es-ES": "Phoenix",
+        "es-MX": "Phoenix"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/phoenix.svg",
+      "bytes": 612,
+      "sha256": "6e6ffaac30030e2033b679b56d6cc0c18af8e8177dd2d6cc979fb08996d808a8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61550,6 +62705,27 @@
       "file": "assets/pitea.svg",
       "bytes": 611,
       "sha256": "4179643d31d9ea8a029f68aa412ca3cd51cbd8dad888ba789d92ccf9a54d8b93",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "pittsburgh",
+      "symbol": "pittsburgh",
+      "labels": {
+        "sv-SE": "Pittsburgh",
+        "en-US": "Pittsburgh",
+        "es-ES": "Pittsburgh",
+        "es-MX": "Pittsburgh"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/pittsburgh.svg",
+      "bytes": 612,
+      "sha256": "2a3e288d836328176554b6233236bebc1815c7592e964cfe640bd85627248bc0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62810,6 +63986,27 @@
       "file": "assets/portion.svg",
       "bytes": 595,
       "sha256": "39f60725f382ea90c5be67c01369de28e9b9674fb6b0331a5b8ae521be1f6bae",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "portland",
+      "symbol": "portland",
+      "labels": {
+        "sv-SE": "Portland",
+        "en-US": "Portland",
+        "es-ES": "Portland",
+        "es-MX": "Portland"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/portland.svg",
+      "bytes": 613,
+      "sha256": "aa37de97bd8e9f057f0cc84de0c0843ba4bdb7ef16010d252fafbf9f9b8f445c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -65946,6 +67143,27 @@
       }
     },
     {
+      "id": "raleigh",
+      "symbol": "raleigh",
+      "labels": {
+        "sv-SE": "Raleigh",
+        "en-US": "Raleigh",
+        "es-ES": "Raleigh",
+        "es-MX": "Raleigh"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/raleigh.svg",
+      "bytes": 612,
+      "sha256": "aa7f2a1ba0c2f03083e7854f9110166385ef19fc64db41b3c53b0acb13619b8b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "ramp",
       "symbol": "ramp",
       "labels": {
@@ -68823,6 +70041,27 @@
       }
     },
     {
+      "id": "riverside",
+      "symbol": "riverside",
+      "labels": {
+        "sv-SE": "Riverside",
+        "en-US": "Riverside",
+        "es-ES": "Riverside",
+        "es-MX": "Riverside"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/riverside.svg",
+      "bytes": 612,
+      "sha256": "3658b990a859de1a7788efe5b857bbf51e5684ac8b8a8434bacba74b35d7361f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "riyadh",
       "symbol": "riyadh",
       "labels": {
@@ -69726,6 +70965,27 @@
       }
     },
     {
+      "id": "sacramento",
+      "symbol": "sacramento",
+      "labels": {
+        "sv-SE": "Sacramento",
+        "en-US": "Sacramento",
+        "es-ES": "Sacramento",
+        "es-MX": "Sacramento"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sacramento.svg",
+      "bytes": 611,
+      "sha256": "1b5002fc27f859d656c685560024aefe94549e2410534077c070f900cd7fa170",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "sad",
       "symbol": "sad",
       "labels": {
@@ -69950,6 +71210,27 @@
       "file": "assets/sailor.svg",
       "bytes": 685,
       "sha256": "2feb21f8bb0a645c0d65049dbd4a8f787d8d743dda1752eb398dd1037cb07678",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "saint-paul",
+      "symbol": "saint-paul",
+      "labels": {
+        "sv-SE": "Saint Paul",
+        "en-US": "Saint Paul",
+        "es-ES": "Saint Paul",
+        "es-MX": "Saint Paul"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/saint-paul.svg",
+      "bytes": 612,
+      "sha256": "104f74dd633a96760dd8ad0bc47d4215844d4af8eaadfeff93da33d06ed2070b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -70230,6 +71511,48 @@
       }
     },
     {
+      "id": "san-antonio",
+      "symbol": "san-antonio",
+      "labels": {
+        "sv-SE": "San Antonio",
+        "en-US": "San Antonio",
+        "es-ES": "San Antonio",
+        "es-MX": "San Antonio"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/san-antonio.svg",
+      "bytes": 612,
+      "sha256": "53fd6bb9e14bd0d862d516b3de9d1fb09b1138ea9b75dd24a7026ebc888c64cd",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "san-diego",
+      "symbol": "san-diego",
+      "labels": {
+        "sv-SE": "San Diego",
+        "en-US": "San Diego",
+        "es-ES": "San Diego",
+        "es-MX": "San Diego"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/san-diego.svg",
+      "bytes": 612,
+      "sha256": "895209b420b9ca962004cef01bdf3ae7f8f7cdc2990cd8e85bca2021b8914fe6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "san-jose",
       "symbol": "san-jose",
       "labels": {
@@ -70433,6 +71756,27 @@
       "file": "assets/sandwich.webp",
       "bytes": 9202,
       "sha256": "326970150cb6ed318df4678cc4cab80c985c4a7394b53e11af68e07fa1450249",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "santa-ana",
+      "symbol": "santa-ana",
+      "labels": {
+        "sv-SE": "Santa Ana",
+        "en-US": "Santa Ana",
+        "es-ES": "Santa Ana",
+        "es-MX": "Santa Ana"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/santa-ana.svg",
+      "bytes": 612,
+      "sha256": "0654363c922d91e1189d3141f121916c4ec16bd331a2d577fabde3fc849e0f83",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72218,6 +73562,27 @@
       "file": "assets/seatbelt.svg",
       "bytes": 471,
       "sha256": "8e25db275ad325a7cc830a0f2fa7ad9389180ad553f99da6dd90ae69ca833c92",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "seattle",
+      "symbol": "seattle",
+      "labels": {
+        "sv-SE": "Seattle",
+        "en-US": "Seattle",
+        "es-ES": "Seattle",
+        "es-MX": "Seattle"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/seattle.svg",
+      "bytes": 613,
+      "sha256": "42e2ec464330795e4f41136aa982434a2568d63ed9066a249a8ed9d471a532be",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79071,6 +80436,48 @@
       }
     },
     {
+      "id": "st-louis",
+      "symbol": "st-louis",
+      "labels": {
+        "sv-SE": "St. Louis",
+        "en-US": "St. Louis",
+        "es-ES": "St. Louis",
+        "es-MX": "St. Louis"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/st-louis.svg",
+      "bytes": 613,
+      "sha256": "f1a4d76349423989091ae2b8b566f236bc8ee1090a3aa3b316134fca0971b5ae",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "st-petersburg",
+      "symbol": "st-petersburg",
+      "labels": {
+        "sv-SE": "St. Petersburg",
+        "en-US": "St. Petersburg",
+        "es-ES": "St. Petersburg",
+        "es-MX": "St. Petersburg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/st-petersburg.svg",
+      "bytes": 613,
+      "sha256": "897522ee43f6c4546daa86a95c2db8f5dbe11d4896aec8425836a41128428950",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "stack",
       "symbol": "stack",
       "labels": {
@@ -80156,6 +81563,27 @@
       "file": "assets/stockings.svg",
       "bytes": 389,
       "sha256": "949970bceaf0fc3b0a6f00cd586e162c988c1ef4c75185c94f0dd69dfcf7f041",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "stockton",
+      "symbol": "stockton",
+      "labels": {
+        "sv-SE": "Stockton",
+        "en-US": "Stockton",
+        "es-ES": "Stockton",
+        "es-MX": "Stockton"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/stockton.svg",
+      "bytes": 612,
+      "sha256": "5ae42af892192ba89e70154f45b2f4a0a2d23893db446b5c44c503cf34299a9b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -83418,6 +84846,27 @@
       }
     },
     {
+      "id": "tampa",
+      "symbol": "tampa",
+      "labels": {
+        "sv-SE": "Tampa",
+        "en-US": "Tampa",
+        "es-ES": "Tampa",
+        "es-MX": "Tampa"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/tampa.svg",
+      "bytes": 613,
+      "sha256": "3bf206f15639f8093a53c8f5d8623c46801febbe0cd4404f1c727580db591175",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "tampon",
       "symbol": "tampon",
       "labels": {
@@ -86421,6 +87870,27 @@
       }
     },
     {
+      "id": "toledo",
+      "symbol": "toledo",
+      "labels": {
+        "sv-SE": "Toledo",
+        "en-US": "Toledo",
+        "es-ES": "Toledo",
+        "es-MX": "Toledo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/toledo.svg",
+      "bytes": 613,
+      "sha256": "cfc0c0ea7c5ed476bea03b7190577f5f89af7f3388f5364ea011873384f88f44",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "tomato",
       "symbol": "tomato",
       "labels": {
@@ -88500,6 +89970,27 @@
       }
     },
     {
+      "id": "tucson",
+      "symbol": "tucson",
+      "labels": {
+        "sv-SE": "Tucson",
+        "en-US": "Tucson",
+        "es-ES": "Tucson",
+        "es-MX": "Tucson"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/tucson.svg",
+      "bytes": 613,
+      "sha256": "11b6801e7fd81d023569b13608d3bb18fd28493f10b65ed59bc7f0e5eeef4b1a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "tuesday",
       "symbol": "tuesday",
       "labels": {
@@ -88535,6 +90026,27 @@
       "file": "assets/tulip.svg",
       "bytes": 539,
       "sha256": "3ec79692280d433a46ca123aa845e1ffe76b99e79d11752ac132c593db6c0173",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "tulsa",
+      "symbol": "tulsa",
+      "labels": {
+        "sv-SE": "Tulsa",
+        "en-US": "Tulsa",
+        "es-ES": "Tulsa",
+        "es-MX": "Tulsa"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/tulsa.svg",
+      "bytes": 612,
+      "sha256": "9f4c32bce133de5f40742c1a5a38f9a1638c8ae4bab9a4e22424b1c6da4e7ed2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -94541,6 +96053,27 @@
       "file": "assets/why.svg",
       "bytes": 265,
       "sha256": "d655260f5555940ffd475fc44e643b38468044fd7f982330d4c0f21f0da179df",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "wichita",
+      "symbol": "wichita",
+      "labels": {
+        "sv-SE": "Wichita",
+        "en-US": "Wichita",
+        "es-ES": "Wichita",
+        "es-MX": "Wichita"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/wichita.svg",
+      "bytes": 611,
+      "sha256": "ce1bf7de93c5249f8857a76469779f20ec742c5a714625d2eaddb186f1c69491",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

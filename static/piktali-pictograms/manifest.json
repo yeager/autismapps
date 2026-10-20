@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:59:28.562Z",
+  "exportedAt": "2026-10-20T17:01:02.414Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -19925,9 +19925,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/deer.svg",
-      "bytes": 894,
-      "sha256": "60c601eda7a8d870e2a4b64f4da0aa53775b5b9bdd0410ab4967f06ebd7c63be",
+      "file": "assets/deer.webp",
+      "bytes": 7176,
+      "sha256": "19ad1acedfbe2be264435dd8d51fc708fc2d80e4fea24a2907418dfc822f52fd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34226,9 +34226,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/hedgehog.svg",
-      "bytes": 726,
-      "sha256": "99139c419885eca0840c97c67cccffb92a9d3b02c5b6e848ded96052a20093f7",
+      "file": "assets/hedgehog.webp",
+      "bytes": 10302,
+      "sha256": "dc31986f92364f8d5e38cc758221449912b77237f86f526a6b109f80b64fb698",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39812,9 +39812,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/ladybug.svg",
-      "bytes": 812,
-      "sha256": "c4811f58388f9e69933abcef9b665671a1c4b6f0f8ac4759d9bb689e72d3fd2b",
+      "file": "assets/ladybug.webp",
+      "bytes": 7782,
+      "sha256": "72570e739ad5e5222688e181f99ba4581e04682f4ca14dffbc7af03199864f13",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47709,8 +47709,8 @@
         "food-drink"
       ],
       "file": "assets/mushroom.webp",
-      "bytes": 9606,
-      "sha256": "51e5c384eca49c37ef26eedd900630057600d11bd061bb28952b50482ecdbf16",
+      "bytes": 7796,
+      "sha256": "2c9331c4735abaac770306f7b29fb497ce1164f78e31451c31451ca7bf1949a2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54596,9 +54596,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/owl.svg",
-      "bytes": 1101,
-      "sha256": "ea179d57acf0f7aa4230c278a9355c1255766715c6e74db9fd5a13b79eb154bf",
+      "file": "assets/owl.webp",
+      "bytes": 9304,
+      "sha256": "70178423d50b4515c1bb6427990cbc624e6f02a59908dc9defbbea890a99b195",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58355,9 +58355,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/pine-tree.svg",
-      "bytes": 408,
-      "sha256": "1084eef0ed384e94f4779695cd8ca62c28c62f82d3aabc7842db61aed3c99c88",
+      "file": "assets/pine-tree.webp",
+      "bytes": 6944,
+      "sha256": "67efd10b609628406da93083febb4aec86a312cce4df8c39d8b9aa867a1263f1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62640,8 +62640,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/rainbow.webp",
-      "bytes": 5884,
-      "sha256": "4c99020ebbf27ae4a9172aeebb4d107e0f530a3b463550c0521062dd17c382a2",
+      "bytes": 5642,
+      "sha256": "0b003019d2152cdf90c41e874b33416a91613047705d7a2ac166385f641e4091",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72908,9 +72908,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/snail.svg",
-      "bytes": 1012,
-      "sha256": "f13d2fd2e12786bec5d37a92a42eafe44a4ed89e897a3de1a094cbf7deb97e34",
+      "file": "assets/snail.webp",
+      "bytes": 7014,
+      "sha256": "724b7fe92a20c377fb84669e902f2267b9b67bd37a368d3dfa9343046daf0f15",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75491,9 +75491,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/squirrel.svg",
-      "bytes": 1041,
-      "sha256": "dab193844458e0fec2972222143c8d2d93f09cb315c11102ce09fc9b151af342",
+      "file": "assets/squirrel.webp",
+      "bytes": 7956,
+      "sha256": "1a072f5b64fee8cbd53d64b88836b30ff8e62e83007ce168e68f4760b27d91d4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

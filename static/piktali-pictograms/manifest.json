@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:19:29.316Z",
+  "exportedAt": "2026-10-20T17:20:37.318Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -10601,9 +10601,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/calendar.svg",
-      "bytes": 584,
-      "sha256": "f3286d5a71eb182dea0bbb629c1f1e11999c577126475ef6aaf13034fd723ff9",
+      "file": "assets/calendar.webp",
+      "bytes": 2874,
+      "sha256": "eb375e0445777b3e10f412192fe5034a3b7e0883fddb0dc6fcf066f78deee9a6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11168,9 +11168,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/candle.svg",
-      "bytes": 512,
-      "sha256": "2c59c39a119db84bc7785b71608d29234e5ec98725ac2d652c172c0fd70c099d",
+      "file": "assets/candle.webp",
+      "bytes": 1952,
+      "sha256": "9de800c356ca78f1927eee08f52ce9448fc355adb04f354d2c804edd9713af09",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -14781,8 +14781,8 @@
         "home-objects"
       ],
       "file": "assets/clock.webp",
-      "bytes": 6038,
-      "sha256": "ae9c787bb45157c6c76a92da94a5247fa581c5e4e6fe20543deac2d0b57d3243",
+      "bytes": 6782,
+      "sha256": "74fb205589e2797799da1e447ab907e2cbcf60da09e118c151024fa146916ca4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38889,8 +38889,8 @@
         "home-objects"
       ],
       "file": "assets/key.webp",
-      "bytes": 4302,
-      "sha256": "e6d55a9064f1bb4a3c505ef038bbcc49511ca44b18c85f71cdb3e03d61b5232c",
+      "bytes": 4482,
+      "sha256": "55532f99298b3c3121300176e92c1deec89679a72a5a2c72da2df1aba32a16ae",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43782,8 +43782,8 @@
         "school-work-play"
       ],
       "file": "assets/map.webp",
-      "bytes": 6898,
-      "sha256": "fc4608e02e9f9127951f2540eeae128442ec582ac374a1df8d28bec855c766e7",
+      "bytes": 4354,
+      "sha256": "f40ae28035a4d5763fff9a77697d304b8e775b30b0b109a7bb75c542de01dc1d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

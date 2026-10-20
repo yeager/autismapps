@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T15:18:22.758Z",
+  "exportedAt": "2026-10-20T15:21:17.418Z",
   "source": "piktali",
   "includePending": true,
   "count": 4395,
@@ -9131,9 +9131,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/brother-in-law.svg",
-      "bytes": 754,
-      "sha256": "354293e0741ad6150d6773cb8db73fc90ff21f724f522400b8a42f97f00308e1",
+      "file": "assets/brother-in-law.webp",
+      "bytes": 14426,
+      "sha256": "90c5a8f7c5707b7cc2e68d755179f24d47df467385438226d2a4b34579b2cf7d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -19547,9 +19547,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/daughter-in-law.svg",
-      "bytes": 670,
-      "sha256": "06d4983ba643f76ae64e59e819872fe74210f20548e777c9a56d48daa6e1b565",
+      "file": "assets/daughter-in-law.webp",
+      "bytes": 14156,
+      "sha256": "9640a1c327635e4885f344770d2cd9e8e0d09769e809727a20deab67d6129d23",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26582,9 +26582,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/father-in-law.svg",
-      "bytes": 585,
-      "sha256": "09bfa0d00adaed45a2dd096a3243e638a6437b09897ce1439144788d816fcc6a",
+      "file": "assets/father-in-law.webp",
+      "bytes": 13372,
+      "sha256": "7e787e3b1459f4c0c7a1f20ea8c1394f7026caeaf717e984780d1f9fcfe68b59",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47015,9 +47015,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/mother-in-law.svg",
-      "bytes": 585,
-      "sha256": "09bfa0d00adaed45a2dd096a3243e638a6437b09897ce1439144788d816fcc6a",
+      "file": "assets/mother-in-law.webp",
+      "bytes": 14774,
+      "sha256": "5420c2c61342d471973ac26b7c983a79b7430531d7e8e0afae574bcd8e642680",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49115,9 +49115,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/nephew.svg",
-      "bytes": 639,
-      "sha256": "7cc0e6a8ea36c48174059b7bc656c8f5e3dbf0a7a8353c3003ada3571fdd8bd9",
+      "file": "assets/nephew.webp",
+      "bytes": 13078,
+      "sha256": "f02fb1a9670151123a52905467ef948ddd7ab2e22a9e396f688ba2dd71e1f782",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49430,9 +49430,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/niece.svg",
-      "bytes": 696,
-      "sha256": "42cbf7f5a80b08b4e4d687f235aef616ef0c495273c04d9b94f0d1885b3ef3df",
+      "file": "assets/niece.webp",
+      "bytes": 14854,
+      "sha256": "e3ec6ca053c3168cc282f821c9cfa192f536b7668a3fe82f3974ab8dc529a142",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63920,9 +63920,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/relative.svg",
-      "bytes": 913,
-      "sha256": "a6e90d0ea68790c1a3c07f306c3747649965e6618777495e1531b55ac4d2950c",
+      "file": "assets/relative.webp",
+      "bytes": 18846,
+      "sha256": "287eb225fbcfd09f61af4773a8b601e236077caa993f1391c040738e00a7001f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72005,9 +72005,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/sister-in-law.svg",
-      "bytes": 676,
-      "sha256": "516293ff6268e393b4da9bcd501c6cff0c10a53471dfbdb9613b7fff81e6487e",
+      "file": "assets/sister-in-law.webp",
+      "bytes": 16004,
+      "sha256": "66aeb63d4e9ef58881c6f855cc6d17c6424d0a42523a39275864f479f7c734b0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73874,9 +73874,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/son-in-law.svg",
-      "bytes": 748,
-      "sha256": "5c9275d331402827771841d5de5cad67be145e225bfa008cc83a95973bacbb78",
+      "file": "assets/son-in-law.webp",
+      "bytes": 14624,
+      "sha256": "e98fdbfd6d06ec98f8163a2df7e87100f734fa2a19c0d0ed41b91d73f87eb693",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

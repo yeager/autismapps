@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:52:48.629Z",
+  "exportedAt": "2026-10-20T16:54:13.061Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -4764,8 +4764,8 @@
         "body-health-routines"
       ],
       "file": "assets/bandage.webp",
-      "bytes": 3126,
-      "sha256": "76d584acbbe30d28c4bdec8b9456a9727401ff09bd613155295c2cdc9de390e7",
+      "bytes": 5296,
+      "sha256": "a8aec207974978b3c9574c0027492ff79af6cae864530c4db20ca499960b3b13",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -32946,8 +32946,8 @@
         "home-objects"
       ],
       "file": "assets/hairbrush.webp",
-      "bytes": 7990,
-      "sha256": "3fd3e9c434992a327509c1c0858a315072b2a369964d5a934cbdfac6985487c6",
+      "bytes": 8234,
+      "sha256": "52c56a11d9a8fd321e781ef41471324a26ba1b218b3932c29fd9efcdc6e44a17",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44769,8 +44769,8 @@
         "body-health-routines"
       ],
       "file": "assets/medicine.webp",
-      "bytes": 2324,
-      "sha256": "8fcfb3bad92617450b401ae3860a49d9910a53a9d28e9e6cbf9ad171d44610f9",
+      "bytes": 5082,
+      "sha256": "37d8c5a0e10ef962ca045db4a2622c77b9e5f3607de4fbd4e0fbd57e6c748a5a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -70032,8 +70032,8 @@
         "body-health-routines"
       ],
       "file": "assets/shampoo.webp",
-      "bytes": 1900,
-      "sha256": "131182597d26ac5e7f881367f587875300194a42b01ff19ec9cc80e8fa8a21e1",
+      "bytes": 3886,
+      "sha256": "762f741a64c60b4b145a396cd13aa48700d9bdc3bd2484519c6c76ecd17a3620",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73287,8 +73287,8 @@
         "body-health-routines"
       ],
       "file": "assets/soap.webp",
-      "bytes": 2644,
-      "sha256": "d6b02b650e3cb6abc46b6a1e51327173fd266e834d185585612910c336015a28",
+      "bytes": 4070,
+      "sha256": "8d4adac4ddeb98da52e151952ddd8d4522f441c8b94d203d41b4ab86c1314384",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80931,8 +80931,8 @@
         "body-health-routines"
       ],
       "file": "assets/thermometer.webp",
-      "bytes": 3706,
-      "sha256": "c11401d61be3c42a6ec2b835129f121fc01c2b0355a26296e4b7620275727664",
+      "bytes": 3920,
+      "sha256": "4ad2d6816f62981f12cf722881ba8685792160c9f2ba9343253f666f336a16d7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82190,9 +82190,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/tissue-box.svg",
-      "bytes": 437,
-      "sha256": "fd6dc37d17f42bb2d142b0752aed1374a3b8ee7d5cbb20e261f6359170974428",
+      "file": "assets/tissue-box.webp",
+      "bytes": 4904,
+      "sha256": "311ff50a4778a1c4b7f6acfba5d28119a246b4e5050f79b5ddb7cc3325f9ce2e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -83178,8 +83178,8 @@
         "body-health-routines"
       ],
       "file": "assets/toothbrush.webp",
-      "bytes": 3790,
-      "sha256": "5fe9fd3a60759f104263f5cb086a5c23f362b91efa323932276972329521f020",
+      "bytes": 5424,
+      "sha256": "d2579cf1f9e6fbc9625e0654d22fc09e330097a677de01f6c285081cd2d6fc9c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

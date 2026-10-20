@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:21:51.443Z",
+  "exportedAt": "2026-10-20T17:23:01.689Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -4764,8 +4764,8 @@
         "body-health-routines"
       ],
       "file": "assets/bandage.webp",
-      "bytes": 5296,
-      "sha256": "a8aec207974978b3c9574c0027492ff79af6cae864530c4db20ca499960b3b13",
+      "bytes": 5410,
+      "sha256": "38e3d4f8fde2473092bd07943071cdc33f20f875b63be19279c69476504656e7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -19421,9 +19421,9 @@
       "categories": [
         "safety-boundaries"
       ],
-      "file": "assets/danger.svg",
-      "bytes": 331,
-      "sha256": "2a65ef44fed16bfc996901581489f7f76a497d8071ba4e9ba3055d128644bae6",
+      "file": "assets/danger.webp",
+      "bytes": 4458,
+      "sha256": "4bc28024e9b4fdc94ad3449fdd3eaf10d3cc85869016d52aa2851c60fa7a42cb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -27569,9 +27569,9 @@
       "categories": [
         "safety-boundaries"
       ],
-      "file": "assets/fire.svg",
-      "bytes": 489,
-      "sha256": "487464a17035b7ecc3491ecf9758b911438edd7106ccdae22c1aa36ed53864d9",
+      "file": "assets/fire.webp",
+      "bytes": 4922,
+      "sha256": "3887a08b6d9bf315dc3a491a6e4785911c2638e1614788333df748dc6b7ba17e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34332,8 +34332,8 @@
         "needs-actions"
       ],
       "file": "assets/help.webp",
-      "bytes": 7916,
-      "sha256": "25f404b0a276458078c3af7f739c9c3a1928edb950b28a16bb581471a3515087",
+      "bytes": 10880,
+      "sha256": "6c8baf4cd8f26369b5b6407ad267282eb7d5bd1ab6ad57bbaec3ccda008b2e18",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44769,8 +44769,8 @@
         "body-health-routines"
       ],
       "file": "assets/medicine.webp",
-      "bytes": 5082,
-      "sha256": "37d8c5a0e10ef962ca045db4a2622c77b9e5f3607de4fbd4e0fbd57e6c748a5a",
+      "bytes": 4588,
+      "sha256": "ee6f2a71b0baf11a7f6ee9a92402bf078cea7a7df00a00d96638052b6655a3bc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76710,8 +76710,8 @@
         "safety-boundaries"
       ],
       "file": "assets/stop.webp",
-      "bytes": 3866,
-      "sha256": "aea263aee2d847f841e1ff5ecb5a8a300b58d861446cd2b21a6247da13bf8a8b",
+      "bytes": 8326,
+      "sha256": "9e5466e9d4fe3098aeba83c7d59e3f206f56217dabcfe1bc01eeab1f77ae654b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -87882,8 +87882,8 @@
         "quantity-time"
       ],
       "file": "assets/wait.webp",
-      "bytes": 4388,
-      "sha256": "1dba2e711b665496bddb69859098df93b884599be4db1711d8afbe4adb83071c",
+      "bytes": 8504,
+      "sha256": "7b83bfbdd6eddc356a47ae8b9fd13859705e80c4fc413db7f84d8a5c3cb64e11",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

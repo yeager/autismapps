@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:07:11.764Z",
+  "exportedAt": "2026-10-20T17:09:09.672Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -4344,8 +4344,8 @@
         "home-objects"
       ],
       "file": "assets/bag.webp",
-      "bytes": 4194,
-      "sha256": "6fb3e24b3a360cca8c79668ed6748463d5b234b24e7b7849a3c15062278d1879",
+      "bytes": 4368,
+      "sha256": "cde469ec7be1f42d90222368750896bfa9cbbb3e2459c1c357b930c13a29271c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11756,9 +11756,9 @@
       "categories": [
         "money-finance"
       ],
-      "file": "assets/cash-register.svg",
-      "bytes": 628,
-      "sha256": "7e19ec4156309de4c84c5d774d555397fae8615eda4291f57622bf82dc3b50e6",
+      "file": "assets/cash-register.webp",
+      "bytes": 5622,
+      "sha256": "8047c38a29442e6659704cad01f9433520edf81b1250e9deaefe731e21bcec08",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18182,9 +18182,9 @@
       "categories": [
         "money-finance"
       ],
-      "file": "assets/credit-card.svg",
-      "bytes": 498,
-      "sha256": "884bc3bb777d8a772fa552c4051adb0141a7aecd03cbf9e41af4ecb53c0a6020",
+      "file": "assets/credit-card.webp",
+      "bytes": 4022,
+      "sha256": "6965a6b41434bac641b6d4467dbd7e7e0352af0bbcefb62f40642bbf146a2b5a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43319,9 +43319,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/mailbox.svg",
-      "bytes": 515,
-      "sha256": "0ab0519654cb1d94bf2bbe087dc410102ff2fe3a28f103e6668f1357ece8deb0",
+      "file": "assets/mailbox.webp",
+      "bytes": 5010,
+      "sha256": "04f8505433ce303196280b83b980508b289527d279b4a66d41ad7184e08c2080",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58166,9 +58166,9 @@
       "categories": [
         "money-finance"
       ],
-      "file": "assets/piggy-bank.svg",
-      "bytes": 748,
-      "sha256": "3f5726f73b217ffd2bcccfe804b7dedbf1e95057e09304370db021aa8df2ddff",
+      "file": "assets/piggy-bank.webp",
+      "bytes": 4078,
+      "sha256": "25bb3910aa12d2cec7d43cf1fa71588e1fb9e9b32a397b2bbd944398d544dfde",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63248,9 +63248,9 @@
       "categories": [
         "money-finance"
       ],
-      "file": "assets/receipt.svg",
-      "bytes": 440,
-      "sha256": "3f196d4fa51d00653d8b9eff973d36829cee9500f32fe97e1ff1c93e703be472",
+      "file": "assets/receipt.webp",
+      "bytes": 2804,
+      "sha256": "388c86dccd0d789d75564cc41f1b4ee14d59cc6329d567a3c5987804166a158f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -70829,9 +70829,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/shopping-cart.svg",
-      "bytes": 577,
-      "sha256": "40a9f0ca7d87abf29184fc22414fe38714a94f4e2628f586514200f1d4417041",
+      "file": "assets/shopping-cart.webp",
+      "bytes": 9650,
+      "sha256": "1508b32d79697b7b4bb135e6cfe8043bfa285062c9b857a5a8251ad5b433a1aa",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88344,8 +88344,8 @@
         "clothing"
       ],
       "file": "assets/wallet.webp",
-      "bytes": 4204,
-      "sha256": "eac6abf012672df5390589fef44e1d0655799e5151154220a7fe46f600a44580",
+      "bytes": 6116,
+      "sha256": "b0f39e97cd39940395633b38980e6921712a2632cceccbe54c42a1b74565a198",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

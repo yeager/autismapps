@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:09:09.672Z",
+  "exportedAt": "2026-10-20T17:10:54.006Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -9090,8 +9090,8 @@
         "home-objects"
       ],
       "file": "assets/broom.webp",
-      "bytes": 5000,
-      "sha256": "00616867c46410c070621f700d229f8e1cbef3e00e2e17465885a5e794e31a89",
+      "bytes": 7922,
+      "sha256": "6c57cd88bd3edb8f041ad51bcf5dbab4ee8ac8990bc0b3cb8a4846d2bed49369",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31266,8 +31266,8 @@
         "school-work-play"
       ],
       "file": "assets/glue.webp",
-      "bytes": 1866,
-      "sha256": "0c02819d88c8b4ed0deb3437782bbf628f39d23ca7f24ff132a6c099315e14c7",
+      "bytes": 2244,
+      "sha256": "e2190798b9240b1df5f077e41a34e4acf8b67e6b5bb1cd6d140b88952361d65a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33135,8 +33135,8 @@
         "home-objects"
       ],
       "file": "assets/hammer.webp",
-      "bytes": 4532,
-      "sha256": "32a48b506a2434183e0985beaf494ef16d75026d1ee831fd62a552bd96fceada",
+      "bytes": 4316,
+      "sha256": "f11dc74bc36e47512af9c1724c23b1cb16d2f6d0f020ee032c80068af1e3a9d4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44579,9 +44579,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/measuring-tape.svg",
-      "bytes": 545,
-      "sha256": "e88429e551f9e1a6a7698218ad46f30188369efe07e81f2a045577f66f2bfe1c",
+      "file": "assets/measuring-tape.webp",
+      "bytes": 6178,
+      "sha256": "c3ffdbb6fc9be8ec9733fe1d61f8014636931ea93f0ef6001d90d7f1df4835e9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55101,8 +55101,8 @@
         "school-work-play"
       ],
       "file": "assets/paintbrush.webp",
-      "bytes": 3832,
-      "sha256": "3f6a036bc8c5444329f4216c77793cc4934c45074e8fec10d5857e97e596c8cb",
+      "bytes": 8118,
+      "sha256": "0b95f066fe769cb785a9b2a058951d2eeb2b1867c2a16415b84056a3ada6d0fd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62807,9 +62807,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/rake.svg",
-      "bytes": 419,
-      "sha256": "d2913f1f0e9219d33bb8bda07c87f6d4f0e651438f571d5cbb9b36cc28847bf8",
+      "file": "assets/rake.webp",
+      "bytes": 6032,
+      "sha256": "29429f37fff88b08aebac8ca3f5528d68c986b25a641df9d1534211c69d27fbf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68688,8 +68688,8 @@
         "home-objects"
       ],
       "file": "assets/screwdriver.webp",
-      "bytes": 4658,
-      "sha256": "2f598c5522ecf7ae4b6a3f45438ab6e18c0f0da15275a7d44cf13e363c5be12a",
+      "bytes": 4276,
+      "sha256": "4a17389fb57fcfc64302e316cff6c7c7540e04fae7ea8e965955444aa8bd1d03",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89183,9 +89183,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/watering-can.svg",
-      "bytes": 491,
-      "sha256": "5ab41b3e22a19c7fe95614a59341806c372b88486acf83ef01e718e75dbeb4d5",
+      "file": "assets/watering-can.webp",
+      "bytes": 5340,
+      "sha256": "57b8972199bef2a99051d8b437669bd7b2aaf4f221567fe373acdcf8c63ce1e6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -91473,8 +91473,8 @@
         "home-objects"
       ],
       "file": "assets/wrench.webp",
-      "bytes": 4780,
-      "sha256": "53d5b864c6acf113e098b737b73ff1bff40657faa1314c3f81651c993faf3772",
+      "bytes": 4814,
+      "sha256": "ea3e36af25058b7ab4d29f6b88f15a35b5a927bce6a0b7613c2b4dd8c08bcc52",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

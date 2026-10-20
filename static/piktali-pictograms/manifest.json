@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:56:00.306Z",
+  "exportedAt": "2026-10-20T16:57:42.536Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -2601,8 +2601,8 @@
         "food-drink"
       ],
       "file": "assets/apple.webp",
-      "bytes": 5356,
-      "sha256": "93a0235500c8d7b8d849fc2157683c96d924c5e6026d001743e6846b1b568333",
+      "bytes": 5964,
+      "sha256": "47713b75d113c424b14774905d452e055cf30356d6a22a15da287a5a7b5e88f1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9048,8 +9048,8 @@
         "food-drink"
       ],
       "file": "assets/broccoli.webp",
-      "bytes": 11372,
-      "sha256": "03220842c2ae474f5413e533bb6f90225676904ee3539233f1450612771b851b",
+      "bytes": 12572,
+      "sha256": "13d8349b6e065866201c2cb85b266297efe43035486d25cfc055c336b553104d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11652,8 +11652,8 @@
         "food-drink"
       ],
       "file": "assets/carrot.webp",
-      "bytes": 5932,
-      "sha256": "e8c298f948834037d008a6e8a2ef1f5ed43741f982458dcf785f935bb2fd4801",
+      "bytes": 7060,
+      "sha256": "4c10c2f1732bccf5ef445d88d1c44546cf3dc689a11384599dddf7ddc31d757e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18750,8 +18750,8 @@
         "food-drink"
       ],
       "file": "assets/cucumber.webp",
-      "bytes": 7062,
-      "sha256": "f609298869a7ed1b99ca150296c8c81700c49bf8a3d4a3a6e521bd9fdc9ea705",
+      "bytes": 5988,
+      "sha256": "7c49cd32904dd2b0bec7515c5c993b6de26e676e928a65b7c07b977f611dd115",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31938,8 +31938,8 @@
         "food-drink"
       ],
       "file": "assets/grape.webp",
-      "bytes": 8226,
-      "sha256": "81114ac044d732894104a08256442c7edfef6a31c1eff5c132634270cdd461ea",
+      "bytes": 7360,
+      "sha256": "03508f82914d44812b90d6c6a1c5f88822b74705f745849167b8f8049bc6c75d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -56907,8 +56907,8 @@
         "food-drink"
       ],
       "file": "assets/pear.webp",
-      "bytes": 5132,
-      "sha256": "f8eb8e6ac482dfc2ca34a92ee16233997c91360f7d5f1e7aeebf9f016dda9d72",
+      "bytes": 4446,
+      "sha256": "947cf5e752587b5af41eef8753acb3a746ac6d37df4fd1faee95bf27d7e90c51",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57306,8 +57306,8 @@
         "food-drink"
       ],
       "file": "assets/pepper.webp",
-      "bytes": 7070,
-      "sha256": "7a6b95bf2afe6d222a1f22552349fe9f745ae8b6e30d2b48c6a7e6d4ee3eccab",
+      "bytes": 4576,
+      "sha256": "26c40a990550402ccdab839201fc8eba0285176e433a075e3899357bc381b9a3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77067,8 +77067,8 @@
         "food-drink"
       ],
       "file": "assets/strawberry.webp",
-      "bytes": 9070,
-      "sha256": "e9b4cff76580d01b6156fda6bd78b99cdc13a31891ee7f74fb592e41219c882f",
+      "bytes": 9330,
+      "sha256": "b731e9fa98d4c94135079772350ff1b5fffe5d8988ee835aee3553e0f2fcbe36",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82632,8 +82632,8 @@
         "food-drink"
       ],
       "file": "assets/tomato.webp",
-      "bytes": 5402,
-      "sha256": "d58a18e03289fdfc7b434b96638b2daea91ab7aeac0a06c5ce55b4b1b709e45b",
+      "bytes": 5356,
+      "sha256": "948bd0ae2a92dd68500f689138c5143448bef622b8e4390f340f78c1231d9cae",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

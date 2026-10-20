@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:24:09.532Z",
+  "exportedAt": "2026-10-20T17:25:08.778Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -14948,9 +14948,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/clotheshanger.svg",
-      "bytes": 282,
-      "sha256": "eaafff3b796eb3404dd26b84745b018db7998f17dee4f208785daab276d04fde",
+      "file": "assets/clotheshanger.webp",
+      "bytes": 3802,
+      "sha256": "21a00627c3054f383891cfe39e9eb45df6ab7438c84d1bfbb85ec10d9d989aca",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40358,9 +40358,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/laundry.svg",
-      "bytes": 461,
-      "sha256": "b2e03b18b948a03352ade5cb2d93ee022e89b03b97f2d22294f2a3cd547894f5",
+      "file": "assets/laundry.webp",
+      "bytes": 11740,
+      "sha256": "6e094657bf581ef57d7c106b205e5e76dc893f411f50f231de10f2f102375e0a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55185,8 +55185,8 @@
         "clothing"
       ],
       "file": "assets/pajamas.webp",
-      "bytes": 7800,
-      "sha256": "114b3915530d9148925c718752f2ed44597c0a38464fd0906bc219e555848abc",
+      "bytes": 8038,
+      "sha256": "154156b961ca5134c18b415a69ad229fa498a7af796dc6b8e35a6676635526e1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88533,8 +88533,8 @@
         "home-objects"
       ],
       "file": "assets/wardrobe.webp",
-      "bytes": 3164,
-      "sha256": "304a18cb6b60c13e11e206784821222abb5f1b5787eab430505e8781f4d53370",
+      "bytes": 3746,
+      "sha256": "c8e3b35ee24960fb33dc970ce389c7334ab44cd4f9f2b081907d538c144c2b0b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

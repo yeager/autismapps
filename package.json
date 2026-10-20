@@ -19,7 +19,8 @@
     "test": "node --experimental-strip-types --test \"scripts/tests/*.test.mjs\"",
     "check:i18n": "node scripts/check-i18n.mjs",
     "postinstall": "npx patch-package",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "generate:piktali-dictionary-index": "node scripts/generate-piktali-dictionary-index.mjs"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^7.0.0",

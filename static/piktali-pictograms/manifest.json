@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T15:23:58.326Z",
+  "exportedAt": "2026-10-20T15:27:22.508Z",
   "source": "piktali",
   "includePending": true,
   "count": 4395,
@@ -10769,9 +10769,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/callsomeone.svg",
-      "bytes": 653,
-      "sha256": "e6a73303e04ad029f6c1c03bc3da963a07d14eb03fd065c34acfdc0b68edb030",
+      "file": "assets/callsomeone.webp",
+      "bytes": 8942,
+      "sha256": "46193095006f986cf2274425ec13f90492525e25fe52a9e396ca2a6284b7d875",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12722,9 +12722,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/charge-device.svg",
-      "bytes": 533,
-      "sha256": "016c940a2387dfd64ea5db73fe95f62bdd824046fbb27566b5477f600a9673bb",
+      "file": "assets/charge-device.webp",
+      "bytes": 4370,
+      "sha256": "6f707f9afda76f35d02970ea9d033e9266106e3340bcc7972548ffa498ed7d70",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -23957,9 +23957,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/email.svg",
-      "bytes": 746,
-      "sha256": "ef2e23690ad334d40516b3f80a6536d511daee77b6ed7ed0e7fe36478ebf9e9e",
+      "file": "assets/email.webp",
+      "bytes": 7896,
+      "sha256": "2c1eeb14c9e921dee6d45454ecca438f629f20327337aa5a6b56eb23a7dbb681",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37397,9 +37397,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/internet.svg",
-      "bytes": 513,
-      "sha256": "e196bf3a4417989f4ba07f7b378e6c54ae4caf6049340aa28226835d1a49b059",
+      "file": "assets/internet.webp",
+      "bytes": 4752,
+      "sha256": "ef0681915022eefd47b8a8bece1be4be1cdde96b6b904f19513c530b67f25b04",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59048,9 +59048,9 @@
       "categories": [
         "needs-actions"
       ],
-      "file": "assets/plugin.svg",
-      "bytes": 683,
-      "sha256": "8c8d9875ab25b6f05c4b23ae2e09d282a98c07f8953b81ed3d045ad4676a81d4",
+      "file": "assets/plugin.webp",
+      "bytes": 5156,
+      "sha256": "b1241595c5e9db336def539f2345c3ab290b461700a7d68904e793f3685e45c3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -64193,9 +64193,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/repair.svg",
-      "bytes": 445,
-      "sha256": "b05ea186b0dd8bbf8e44dfda2a84c10df3a7d64ef89d647269e92e051f155ff3",
+      "file": "assets/repair.webp",
+      "bytes": 10986,
+      "sha256": "1f86c3610268b62cf7e65afc2c711401deca046a0bdd8f431344b007440cdc00",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79502,9 +79502,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/take-photo.svg",
-      "bytes": 510,
-      "sha256": "383ca02f6ab0de73acc53934f712581ababb29bd73d99348830e09bad5b12173",
+      "file": "assets/take-photo.webp",
+      "bytes": 9616,
+      "sha256": "591da1ba845b03a55ac39a01a1b34a28a77945a5b90baf7b551b79d45f50dd5e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84878,9 +84878,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/turn-off.svg",
-      "bytes": 659,
-      "sha256": "45a6f5059de45dfba1c103d72bb31cabd9bb7d28fb9fd06ccb99faa6705d3960",
+      "file": "assets/turn-off.webp",
+      "bytes": 4354,
+      "sha256": "24e57e6c61267ac7c9a22c0d3c89f4fcb03f4d059e43960d25a24f19b3579e21",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84920,9 +84920,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/turn-on.svg",
-      "bytes": 680,
-      "sha256": "597c4d81ba6a4801d01d44831b912a21c03d3d373f459c673a863f8e8e3fec96",
+      "file": "assets/turn-on.webp",
+      "bytes": 3440,
+      "sha256": "b923324656e36de9d520d96719d9f571e92c4198151ffaaaa976f1f7e8b09b59",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

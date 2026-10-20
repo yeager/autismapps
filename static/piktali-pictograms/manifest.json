@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:49:31.019Z",
+  "exportedAt": "2026-10-20T16:51:18.207Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -4218,8 +4218,8 @@
         "school-work-play"
       ],
       "file": "assets/backpack.webp",
-      "bytes": 6638,
-      "sha256": "37e7de6a59f37a8b6a6c30547fe715592604390937014502321a84d7d1f69057",
+      "bytes": 9936,
+      "sha256": "72e5ecdee380f57b3050d388691dc3b95ba6a778604faff3a822bbe1fc3b1895",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5246,9 +5246,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/basketball-hoop.svg",
-      "bytes": 486,
-      "sha256": "bd7c312dfe0f8882814ca7f2ccd4b3a37771490ee77456969c2a6a0356882741",
+      "file": "assets/basketball-hoop.webp",
+      "bytes": 10306,
+      "sha256": "c8c0b651ea221d17361ff44b7963fa2f7d4afa02b46f6a9823d025a7d3f90ac6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7662,8 +7662,8 @@
         "school-work-play"
       ],
       "file": "assets/boardgame.webp",
-      "bytes": 9120,
-      "sha256": "3319606e02d2a4260bbadb0415d70e4933f2fac5c2065bd026334548405ede3c",
+      "bytes": 9922,
+      "sha256": "5e8d37e37cc7d371328ecf515d498e25ec864dacb24458ec2ff21b30b990b1ed",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20388,8 +20388,8 @@
         "school-work-play"
       ],
       "file": "assets/desk.webp",
-      "bytes": 4556,
-      "sha256": "c4db872c098394b45a2ff620f6c68f1fb688719c46e71976b93118364002d52d",
+      "bytes": 8226,
+      "sha256": "9c24472e414d068046df20ce49dfbd9416cd7249e8cdc68f2c4e9e9a5644c484",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -23474,9 +23474,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/easel.svg",
-      "bytes": 442,
-      "sha256": "be91b8120672af23da38e6ef51cda40175e6f9fe1c46c3d26bf7ac15b48f8558",
+      "file": "assets/easel.webp",
+      "bytes": 10654,
+      "sha256": "6b79d19218d3f577211924484817eb5887df02e07f9fd476da6a38407e51c529",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41262,8 +41262,8 @@
         "places"
       ],
       "file": "assets/library.webp",
-      "bytes": 6326,
-      "sha256": "6ce4d6e09f524d8967933785483d15e3d4198805008800f4d9663998eb7412b3",
+      "bytes": 12148,
+      "sha256": "75b0e0846bfc9399cdfadea10747da3d38bf71675382c3de25ccd2df9110c603",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68372,9 +68372,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/scissorscase.svg",
-      "bytes": 546,
-      "sha256": "32bbf035a5078038e8e8275782e19e850f669bf856f4a6677744168a24c61617",
+      "file": "assets/scissorscase.webp",
+      "bytes": 8212,
+      "sha256": "c4f94ab5f94f15bc1bf8720ea470b351a6926fdfe5058a1563412fe6d4530b74",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73370,9 +73370,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/soccer-goal.svg",
-      "bytes": 408,
-      "sha256": "40149a6730391ad9d19f567524eb3a701e142f6a272c0a6b2df422232b3a2eee",
+      "file": "assets/soccer-goal.webp",
+      "bytes": 11452,
+      "sha256": "a6d412aa04538688f485ca5a8d18de6784ce50674648a3b154dc2b79e1eefcca",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -78683,9 +78683,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/swing.svg",
-      "bytes": 370,
-      "sha256": "594d0dec9aaa5ff9e776fd43a03bf832b051f32752524b8771d0d3a00b9d179a",
+      "file": "assets/swing.webp",
+      "bytes": 10622,
+      "sha256": "bd05152f0438692559aedf09c7f020541097bcab759b59a8552980ed484b4043",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

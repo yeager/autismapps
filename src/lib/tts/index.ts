@@ -295,6 +295,8 @@ export interface TTSOptions {
 	lang?: string;
 	rate?: number;
 	onWord?: (charIndex: number, charLength: number) => void;
+	/** When the sound actually starts (after synthesis); the duration is NaN when unknown (Web Speech) */
+	onStart?: (durationMs: number) => void;
 	onEnd?: () => void;
 }
 
@@ -434,7 +436,7 @@ export async function speak(text: string, opts: TTSOptions = {}): Promise<void> 
 	if (generation !== speakGeneration) return;
 	console.warn('[TTS] Using Web Speech API fallback');
 	updateStatus({ engine: 'webspeech', lastSpoke: text });
-	speakWebSpeech(text, lang, rate, opts);
+	await speakWebSpeech(text, lang, rate, opts);
 }
 
 async function speakPiper(
@@ -509,6 +511,12 @@ async function speakPiper(
 			resolve();
 		};
 		finishCurrent = finish;
+		let started = false;
+		audio.onplaying = () => {
+			if (started) return;
+			started = true;
+			opts.onStart?.((audio.duration * 1000) / audio.playbackRate);
+		};
 		audio.onended = () => {
 			finish();
 			opts.onEnd?.();
@@ -526,8 +534,9 @@ async function speakPiper(
 	});
 }
 
-function speakWebSpeech(text: string, lang: string, rate: number, opts: TTSOptions): void {
-	if (!('speechSynthesis' in window)) return;
+/** Resolves when the utterance ends or is interrupted by stop(), like Piper (callers await the whole phrase) */
+function speakWebSpeech(text: string, lang: string, rate: number, opts: TTSOptions): Promise<void> {
+	if (!('speechSynthesis' in window)) return Promise.resolve();
 	// Preprocess for better Swedish pronunciation in Web Speech API
 	text = preprocessText(text, lang);
 
@@ -569,10 +578,27 @@ function speakWebSpeech(text: string, lang: string, rate: number, opts: TTSOptio
 		});
 	}
 
-	utterance.onend = () => { speaking = false; currentUtterance = null; opts.onEnd?.(); };
+	utterance.onstart = () => opts.onStart?.(NaN);
 	speaking = true;
 	currentUtterance = utterance;
-	speechSynthesis.speak(utterance);
+	return new Promise<void>((resolve) => {
+		let finished = false;
+		const finish = () => {
+			if (finished) return;
+			finished = true;
+			if (currentUtterance === utterance) {
+				speaking = false;
+				currentUtterance = null;
+			}
+			if (finishCurrent === finish) finishCurrent = null;
+			resolve();
+		};
+		finishCurrent = finish;
+		utterance.onend = () => { finish(); opts.onEnd?.(); };
+		// cancel() fires 'interrupted'/'canceled' here; stop() has already settled the promise through finishCurrent
+		utterance.onerror = () => finish();
+		speechSynthesis.speak(utterance);
+	});
 }
 
 export function stop(): void {

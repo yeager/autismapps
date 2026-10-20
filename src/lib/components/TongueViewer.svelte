@@ -11,6 +11,7 @@
   } from '$lib/data/tongue-positions';
   import { TONGUE_POSITIONS_PT, SOUND_LEVELS_PT, PRACTICE_SEQUENCES_PT } from '$lib/data/pt-br/tongue-viewer';
   import type { PracticeSequence, SoundLevel, TonguePosition } from '$lib/data/speech-types';
+  import { speechChunks, stepOffsets } from '$lib/data/tongue-sync';
 
   type Sequence = PracticeSequence;
 
@@ -64,15 +65,20 @@
     targetSound = sound;
   }
 
-  async function speakText(text: string) {
+  async function speakText(text: string, onStart?: (durationMs: number) => void) {
     try {
-      await speak(text);
+      await speak(text, { onStart });
     } catch (e) {
       console.warn('TTS failed:', e);
     }
   }
 
   // ─── SEQUENCE PLAYBACK ───
+  function showStep(seq: Sequence, i: number) {
+    sequenceIndex = i;
+    currentSound = seq.sounds[i];
+  }
+
   async function playSequence(seq: Sequence) {
     if (playingSequence) {
       stopSequence();
@@ -82,21 +88,28 @@
     playingSequence = true;
     sequenceIndex = 0;
 
-    for (let i = 0; i < seq.sounds.length; i++) {
+    // Sounds grouped by what is spoken at once: the sound's label, or in pt a whole syllable ("bá" = b + a)
+    const chunks = speechChunks(seq.sounds, seq.say, (s) => tonguePositions[s]?.label.toLowerCase() ?? '');
+    for (const chunk of chunks) {
       if (!playingSequence) break;
-      sequenceIndex = i;
-      currentSound = seq.sounds[i];
-      const pos = tonguePositions[seq.sounds[i]];
-
-      // Wait for animation
+      showStep(seq, chunk.start);
+      // Let the tongue reach the chunk's first sound before its audio starts
       await sleep(animDuration + 100);
+      if (!playingSequence) break;
 
-      // Speak: the sequence's spoken step when it has one (pt: whole syllables), else the sound's label
-      if (pos && playingSequence) {
-        const text = seq.say ? seq.say[i] : pos.label.toLowerCase();
-        if (text) await speakText(text);
-        await sleep(slowMotion ? 800 : 300);
+      if (chunk.text) {
+        // The chunk's other sounds follow the audio from when it really starts (synthesis takes a moment)
+        const timers: ReturnType<typeof setTimeout>[] = [];
+        await speakText(chunk.text, (durationMs) => {
+          stepOffsets(chunk.sounds.length, durationMs).forEach((ms, k) => {
+            timers.push(setTimeout(() => { if (playingSequence) showStep(seq, chunk.start + k + 1); }, ms));
+          });
+        });
+        timers.forEach(clearTimeout);
       }
+      if (!playingSequence) break;
+      showStep(seq, chunk.start + chunk.sounds.length - 1);
+      await sleep(slowMotion ? 800 : 300);
     }
 
     playingSequence = false;

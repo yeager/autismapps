@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T15:04:37.052Z",
+  "exportedAt": "2026-10-20T15:07:57.555Z",
   "source": "piktali",
   "includePending": true,
   "count": 4395,
@@ -8501,9 +8501,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/boyfriend.svg",
-      "bytes": 723,
-      "sha256": "c18d0c21dc14e90d392d5921402d1532054e7fa5b5dc9fce9fc5b09c5c81e0b4",
+      "file": "assets/boyfriend.webp",
+      "bytes": 10942,
+      "sha256": "fe50d5652263885c6ef3fe6d2383900dc92ee4fb8475904de129de955a7df569",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -19233,8 +19233,8 @@
         "people-relations"
       ],
       "file": "assets/dad.webp",
-      "bytes": 6930,
-      "sha256": "de6b3286d187c9480036fb75ecf4d379b44f4e4c5ef20369275ad044feb5b466",
+      "bytes": 9614,
+      "sha256": "72e18c3010bdfea6194fdf238b21701467a1b7413246f9bbc66c96c98bceeb0c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26561,9 +26561,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/father.svg",
-      "bytes": 376,
-      "sha256": "39d998569faa75cd64fa8bfb41183aed642bced98dc6aa38410a8794f2674380",
+      "file": "assets/father.webp",
+      "bytes": 10578,
+      "sha256": "ddc07b432f32227e0fbbd92cea267e97d3050a5e589532449d4f14af056b61df",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31034,9 +31034,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/girlfriend.svg",
-      "bytes": 723,
-      "sha256": "c18d0c21dc14e90d392d5921402d1532054e7fa5b5dc9fce9fc5b09c5c81e0b4",
+      "file": "assets/girlfriend.webp",
+      "bytes": 9914,
+      "sha256": "b38335cc8033922b9ebad0d97a6b03efec862fa07afce46903071feaedc19fe2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -36012,8 +36012,8 @@
         "people-relations"
       ],
       "file": "assets/person.webp",
-      "bytes": 6504,
-      "sha256": "c2d2161a065ff2c96f00d56ec4a2ad27aa514dce19a62f6791aa8775b2beb38c",
+      "bytes": 6258,
+      "sha256": "0b6601cb8164b512fd679dd810bc2ec711071149648eb4f62dc55625aa4fe7d2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44264,9 +44264,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/me.svg",
-      "bytes": 666,
-      "sha256": "ee818bad8c809a24b2004e6f6a738847879c93b9ee3a8e0c6beca9a04c6b2a5a",
+      "file": "assets/me.webp",
+      "bytes": 6416,
+      "sha256": "87e778f0f7a8543f4f5adac6e9c23a6545a10d3395f6090b5855ae51c979e1f1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -46092,8 +46092,8 @@
         "people-relations"
       ],
       "file": "assets/mom.webp",
-      "bytes": 8372,
-      "sha256": "f720550db3b9dada02878caf0c4c220590a4d58d8fecbf277af5e71f7b5e976c",
+      "bytes": 9086,
+      "sha256": "7a260662403d7480b478cba86ad160474b1a0dee935aacb2d70842395f0b06ad",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -46994,9 +46994,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/mother.svg",
-      "bytes": 376,
-      "sha256": "39d998569faa75cd64fa8bfb41183aed642bced98dc6aa38410a8794f2674380",
+      "file": "assets/mother.webp",
+      "bytes": 9112,
+      "sha256": "4c0a4e09f603e9187429fcec6bf592b325bc0219f366f381c5a5e149976b0e08",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71355,8 +71355,8 @@
         "people-relations"
       ],
       "file": "assets/sibling.webp",
-      "bytes": 8524,
-      "sha256": "7253e716b2edee0517198cd64e033dfdd2681b328363bd42f5546d40205c31c9",
+      "bytes": 9740,
+      "sha256": "143d0f25d6db426c11d6a160362db5ccd660d5b20fa8da6b49ed99456dd63fe9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

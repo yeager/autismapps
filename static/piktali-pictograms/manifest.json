@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-20T14:32:07.853Z",
+  "exportedAt": "2026-10-20T14:34:12.866Z",
   "source": "piktali",
   "includePending": true,
-  "count": 551,
+  "count": 552,
   "pictograms": [
     {
       "id": "abdomen",
@@ -947,8 +947,8 @@
       },
       "categories": [],
       "file": "assets/blender.webp",
-      "bytes": 5048,
-      "sha256": "56ad3ca2989ab724342e8faa7389eadaf74eaf43c37902d813947aeddf2a6123",
+      "bytes": 5836,
+      "sha256": "364d81d17f9e5214f67e8d348f4b08ff632600d61c255bbf4479e45a81874b55",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1101,6 +1101,25 @@
       "file": "assets/bored.webp",
       "bytes": 10448,
       "sha256": "4e99ee86bc4f5961cbe6eb1489aa3ca37444a8cd2ef8f3cc0ded6ccfd53e3ae9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bowl",
+      "symbol": "bowl",
+      "labels": {
+        "sv-SE": "Skål",
+        "en-US": "Bowl",
+        "es-ES": "Cuenco",
+        "es-MX": "Tazón"
+      },
+      "categories": [],
+      "file": "assets/bowl.webp",
+      "bytes": 2848,
+      "sha256": "ecd224e60021b1a31384359f8b6f4dfb94db24a8e3c3255e6ff6d64433f540cf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2429,8 +2448,8 @@
       },
       "categories": [],
       "file": "assets/cup.webp",
-      "bytes": 4224,
-      "sha256": "17671cd02ae8d130a5fa1175dc9cb69c5359f132842ebc34c57a0f92825aaede",
+      "bytes": 3342,
+      "sha256": "874f94d4071b21a9fee565c944e500c8fb15684810b6249abefbccaa2def7b49",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3683,8 +3702,8 @@
       },
       "categories": [],
       "file": "assets/fork.webp",
-      "bytes": 4022,
-      "sha256": "f5b6894d7b52da27d25e4ae8e12c5743ef1d4ae5c5a7051a605b4b7c0458eac4",
+      "bytes": 3184,
+      "sha256": "87acaaf07d102da98384ee51174e3c8ff1b085bfb4b966d05758a87eda86a21d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3702,8 +3721,8 @@
       },
       "categories": [],
       "file": "assets/fridge.webp",
-      "bytes": 1854,
-      "sha256": "38f73c6f103459c483a899a9da74cbcc7560b7908af43ab6900b2f95e3c13616",
+      "bytes": 2774,
+      "sha256": "1142f3ee815f2734f39fd29b6928195469e88aa0b7635871360779889c4b3b01",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4880,8 +4899,8 @@
       },
       "categories": [],
       "file": "assets/kettle.webp",
-      "bytes": 5602,
-      "sha256": "2eedde2b339a19e8f286a4cbe826e122724e87a2170d5d40193580737ea5acdb",
+      "bytes": 5350,
+      "sha256": "dd4453b6568883c57218ba380cd06f6e0222cb8672c7c6f3d48954a2aff59af1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4994,8 +5013,8 @@
       },
       "categories": [],
       "file": "assets/knife.webp",
-      "bytes": 2530,
-      "sha256": "4bd74aaeae4a71b5eee9cea42d1125c46ec3c6d3b8dfd84c2754f28c6c10b9a9",
+      "bytes": 2854,
+      "sha256": "f1318a594bde940a2f2230d58a5c56e4fe89452315adc5850079b93f9e02bfb5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5621,8 +5640,8 @@
       },
       "categories": [],
       "file": "assets/microwave.webp",
-      "bytes": 4712,
-      "sha256": "cf4a9c4f413a79d28931a617f1adedd62dbcb9e7888f26c00656dc2d1a70f0c7",
+      "bytes": 3002,
+      "sha256": "cf48d52e9d17d1ec17cb038fd048db79144d70904a2e2d9d7ce13c6a5bc71216",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6685,8 +6704,8 @@
       },
       "categories": [],
       "file": "assets/plate.webp",
-      "bytes": 5782,
-      "sha256": "8befc6f8fe73652414f87f7dd7863570df31e0ce667b06accb91ed29f9ac0cdd",
+      "bytes": 4144,
+      "sha256": "9970b8d6f48353d092d3b3cd917a205db7e96d776639c82eeacb6ea3332a9ae5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8319,8 +8338,8 @@
       },
       "categories": [],
       "file": "assets/spoon.webp",
-      "bytes": 3508,
-      "sha256": "65e542bc7acb7863c593ee31acadeaa3c2250ff51b985ff9ca502eb88a755f39",
+      "bytes": 2968,
+      "sha256": "a05a01c1fadf59f0f743b20683ffdd71b960a61a30de48d9d0abe73574f8f909",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9136,8 +9155,8 @@
       },
       "categories": [],
       "file": "assets/toaster.webp",
-      "bytes": 5982,
-      "sha256": "4e3f6efb05812689f1b183bab4e95d970a980dbdf215a3dccbd0e38b7d6c892f",
+      "bytes": 4108,
+      "sha256": "33e0c2dc94e04886dd34b6c8577b9bde30e957a62635cbaf0b7f6233a00ab008",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9991,8 +10010,8 @@
       },
       "categories": [],
       "file": "assets/water-bottle.webp",
-      "bytes": 2010,
-      "sha256": "30833e8eae7a80fdf3002e58067bb2c798e40722a6ac2d3eba4959e7670b6fc9",
+      "bytes": 2576,
+      "sha256": "f70f20a0a75de079cef645b98c53ff1fd66be3e966dd1688e1d785261d702c81",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

@@ -216,6 +216,8 @@
 
 <WelcomeDialog appId="board-builder" titleKey="app.board_builder" purposeKey="welcome.boardBuilder.purpose" howKey="welcome.boardBuilder.how" goalKey="welcome.boardBuilder.goal" icon="🧩" />
 
+<h1 class="sr-only">{$t('app.board_builder')}</h1>
+
 <div class="board-builder">
   <div class="builder-sidebar">
     <!-- Toolbar -->

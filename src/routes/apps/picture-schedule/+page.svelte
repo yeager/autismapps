@@ -252,6 +252,8 @@
 
 <WelcomeDialog appId="picture-schedule" titleKey="app.picture_schedule" purposeKey="welcome.pictureSchedule.purpose" howKey="welcome.pictureSchedule.how" goalKey="welcome.pictureSchedule.goal" icon="🖼️" />
 
+<h1 class="sr-only">{$t('app.picture_schedule')}</h1>
+
 <div class="schedule-app">
   <!-- Toolbar -->
   <div class="schedule-toolbar no-print">

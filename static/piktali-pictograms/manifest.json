@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:20:37.318Z",
+  "exportedAt": "2026-10-20T17:21:51.443Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -7032,8 +7032,8 @@
         "school-work-play"
       ],
       "file": "assets/black.webp",
-      "bytes": 3532,
-      "sha256": "67409d80b052e9e18176e4786782534c11efed777e8ab44a69ac3a789c4c9dcb",
+      "bytes": 3638,
+      "sha256": "678918a6f32f87418e41a435986ae0e51393782712b65d7c705d498626d3da09",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7578,8 +7578,8 @@
         "school-work-play"
       ],
       "file": "assets/blue.webp",
-      "bytes": 5038,
-      "sha256": "db0a40285de8e2cfe9f341b23ea428f9ea244324994110e12538195f4d9be11c",
+      "bytes": 4966,
+      "sha256": "78405745306ea92f0d66d43c992e636a257e76ae81a275965255f0494be36904",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -32232,8 +32232,8 @@
         "school-work-play"
       ],
       "file": "assets/green.webp",
-      "bytes": 4118,
-      "sha256": "86779ef83e43b6d76795bebcbbb863a3be9d44ec6dfee2b4e4966c73db66a92f",
+      "bytes": 4672,
+      "sha256": "1b0f7fe0128b7782b21de6f4c32e20ff806fc397a8b43d5c2b4734e7c30a286d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58419,8 +58419,8 @@
         "school-work-play"
       ],
       "file": "assets/pink.webp",
-      "bytes": 3790,
-      "sha256": "fbbd88a943a1a39f5da0dc906919a9069f36e0d275f2536b4e0e26eaeb4a2191",
+      "bytes": 3638,
+      "sha256": "678918a6f32f87418e41a435986ae0e51393782712b65d7c705d498626d3da09",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61590,8 +61590,8 @@
         "school-work-play"
       ],
       "file": "assets/purple.webp",
-      "bytes": 4354,
-      "sha256": "a995253c1813afa74bb7446996da9fbdb2582a3d40e293961694fc600b670bec",
+      "bytes": 4084,
+      "sha256": "3cd6f7106cca44c965c1ea46318d05d37c5849816049e1d62f9f45b35d3c4482",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63669,8 +63669,8 @@
         "school-work-play"
       ],
       "file": "assets/red.webp",
-      "bytes": 4622,
-      "sha256": "4e8d9bf5130d350bdbbc154d8230a9ee866ef9359686793d221ac013d58cac62",
+      "bytes": 5108,
+      "sha256": "edb31d194f26bed2144d76cc12d00fe0a8cf3357356f4ddf741c5b6a507c59df",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90171,8 +90171,8 @@
         "school-work-play"
       ],
       "file": "assets/white.webp",
-      "bytes": 1906,
-      "sha256": "620025c0d59b873893d4fe2887c2fcd08ad2ad752ab9cbafa77b7b42bf8828fc",
+      "bytes": 3256,
+      "sha256": "67c8a8b26a2b7354f817b85ac43e79b6592f14a31faadcb96d0eb6c663a5d26a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -91788,8 +91788,8 @@
         "school-work-play"
       ],
       "file": "assets/yellow.webp",
-      "bytes": 3726,
-      "sha256": "f666f25c7654033283147422c37ffe6eb385443c19d67be457132e635ab74aeb",
+      "bytes": 3970,
+      "sha256": "9316a73f49827538d036d638fbeb4305a99b0ff8272b483a7e744abb2a6b5287",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

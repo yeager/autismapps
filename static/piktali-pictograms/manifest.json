@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-20T14:18:13.988Z",
+  "exportedAt": "2026-10-20T14:20:47.739Z",
   "source": "piktali",
   "includePending": true,
-  "count": 542,
+  "count": 544,
   "pictograms": [
     {
       "id": "abdomen",
@@ -1887,6 +1887,25 @@
       }
     },
     {
+      "id": "clap",
+      "symbol": "clap",
+      "labels": {
+        "sv-SE": "Klappa händerna",
+        "en-US": "Clap",
+        "es-ES": "Aplaudir",
+        "es-MX": "Aplaudir"
+      },
+      "categories": [],
+      "file": "assets/clap.webp",
+      "bytes": 6418,
+      "sha256": "1a918d2905b52a6e9263bc43a3f5871ff058e163f96f08030945895acc9414e7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "classroom",
       "symbol": "classroom",
       "labels": {
@@ -2486,8 +2505,8 @@
       },
       "categories": [],
       "file": "assets/dance.webp",
-      "bytes": 7410,
-      "sha256": "64e7ee4e4056cf6901153a8a7481e6fcae339ce4c218640f106b4fd0c34e545f",
+      "bytes": 5792,
+      "sha256": "6988cbc9ea8e06ea82a8254fad416eae4cd072bb1fef0141b63c7f17407349ee",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2695,8 +2714,8 @@
       },
       "categories": [],
       "file": "assets/draw.webp",
-      "bytes": 4246,
-      "sha256": "5a49a19f377db5efcfe9d205489c9535f61fc637d9f6eadf8081b1754e695c42",
+      "bytes": 7454,
+      "sha256": "c21ce00858dc6845c7c33ef5ada77954a723a0cf7bea3291b6ea9f6a96ec311b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4623,6 +4642,25 @@
       }
     },
     {
+      "id": "hug",
+      "symbol": "hug",
+      "labels": {
+        "sv-SE": "Kramas",
+        "en-US": "Hug",
+        "es-ES": "Abrazar",
+        "es-MX": "Abrazar"
+      },
+      "categories": [],
+      "file": "assets/hug.webp",
+      "bytes": 7384,
+      "sha256": "5299d37b54dbabbf6ebdfa2bce4457336fbda7a7c4b0f717a3e25f7624d72298",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "i",
       "symbol": "person",
       "labels": {
@@ -4747,8 +4785,8 @@
       },
       "categories": [],
       "file": "assets/jump.webp",
-      "bytes": 6884,
-      "sha256": "089cf95a022462c5d7d1de2ba3fba44c941e728594cfe8a4bcdf17f3595c69b7",
+      "bytes": 5052,
+      "sha256": "be5bdf68f620ed6b352b98107bd5619d73062b879c1d2d34b0c93f7c2c920fe2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7027,8 +7065,8 @@
       },
       "categories": [],
       "file": "assets/read.webp",
-      "bytes": 11986,
-      "sha256": "797881ed401ce3f6807108b1860920537058a5df678141e588c63c91ab94a8e8",
+      "bytes": 6546,
+      "sha256": "8e077092d707eb7aff982cb194760b8bc8ddbb313db048f7e2916cff57986a1a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7293,8 +7331,8 @@
       },
       "categories": [],
       "file": "assets/run.webp",
-      "bytes": 8104,
-      "sha256": "fabfbd4c391f876dd4339ca12fef27da0b9e8a3b984dd50bd0e5675da530320c",
+      "bytes": 5692,
+      "sha256": "ff903386207024a7b8480d84b03ca40c00f08f6217141e3a2d282d39d95717f0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7825,8 +7863,8 @@
       },
       "categories": [],
       "file": "assets/sing.webp",
-      "bytes": 7472,
-      "sha256": "aada0033f2648b174d52ece0d39b8ae3778433bab0ef697353b0ad6fbe54c8ab",
+      "bytes": 7116,
+      "sha256": "b025ae27c3a4e19faf1f71f09b918acb736db3f1aec09caaeb916f26f75d5607",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7863,8 +7901,8 @@
       },
       "categories": [],
       "file": "assets/sit.webp",
-      "bytes": 6272,
-      "sha256": "92fa7f82f1cae6c9bab8ebdba1517bf81977a72cb8313c36fe4e87a485ec9511",
+      "bytes": 5244,
+      "sha256": "71301e03ed377da690b4aec739712779535446d363924452644b832f6ddf5c0f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8224,8 +8262,8 @@
       },
       "categories": [],
       "file": "assets/stand.webp",
-      "bytes": 4304,
-      "sha256": "d1d123d5e12a1e6d4a33c21613fb6c1b22e26d3fd9092b2483d57513b66a91f4",
+      "bytes": 3838,
+      "sha256": "7bd8bbfa71df9b3fb46a12a05a858f8ec19aa5884046d43da305ae0054d2e608",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9592,8 +9630,8 @@
       },
       "categories": [],
       "file": "assets/walk.webp",
-      "bytes": 6928,
-      "sha256": "d35a2327a5623cee0da617bc5f1d0c3922cd6c9cc1d177eb129d94b4c6cf2b51",
+      "bytes": 4708,
+      "sha256": "fe83fef610747f3c279bbb2a0e72f6acfe84311ec8b29db20f6ad30d2b5433b1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10181,8 +10219,8 @@
       },
       "categories": [],
       "file": "assets/write.webp",
-      "bytes": 4682,
-      "sha256": "d5ef0f506a09409d2feb7f057978653e7afe71f138f5dae580b3bfdea7820189",
+      "bytes": 6414,
+      "sha256": "d2184761ba63006c888f6896c3954a5cee75ad031f866e79c71915e7517229e4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

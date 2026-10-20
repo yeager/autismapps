@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:08:56.332Z",
+  "exportedAt": "2026-10-20T16:18:21.160Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -2495,9 +2495,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/apologize.svg",
-      "bytes": 409,
-      "sha256": "d8526f41634d457c56cb47a14dba8b2356ac2bf5dae150777a8957380862d121",
+      "file": "assets/apologize.webp",
+      "bytes": 8022,
+      "sha256": "d76b12fda55733b907daaa7fcb6dd1ea6b97eceb83d953bee6e3a3bc7620fb13",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6401,9 +6401,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/bend.svg",
-      "bytes": 601,
-      "sha256": "0254c2a4a3a159e7ee976c1cbe6222ff75d251e555f36684d9edf77b8c28a251",
+      "file": "assets/bend.webp",
+      "bytes": 6098,
+      "sha256": "d761f1d63dad25dc32474bba7615dec6a451c6fe46b5e8bc29ea742fe94d696b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7283,9 +7283,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/blink.svg",
-      "bytes": 525,
-      "sha256": "9adaf29c893956a92f4201a1ff00843188baddb895326649cc7961d11ed36a6c",
+      "file": "assets/blink.webp",
+      "bytes": 8856,
+      "sha256": "557a2d3f7675161fc26b7d411af2518bed5b0fe6d684359291558d6532f9e6ea",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8879,9 +8879,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/breathe.svg",
-      "bytes": 696,
-      "sha256": "c10937bd8c8457932684de1dc6436953eecdbec2cb524954144f4cb32ef1289b",
+      "file": "assets/breathe.webp",
+      "bytes": 7190,
+      "sha256": "d2b004a7bdbc7d60669f206490a3aa47274354b03820e2ff6e04df044a408e68",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9278,9 +9278,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/brush.svg",
-      "bytes": 932,
-      "sha256": "9ba0e4d4352c237e6c3e0c0fafa78f95a09ed69d7d5e47d8ef496141f92ad306",
+      "file": "assets/brush.webp",
+      "bytes": 8362,
+      "sha256": "c596534539a791d7bab4b53fee1ec37bdd6338ef0b388bc14e60d33ec550ec29",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10223,9 +10223,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/button.svg",
-      "bytes": 636,
-      "sha256": "89edeb1ae66920b987ff531afca6a1f5a99690238573cbee70b66e5b407af40a",
+      "file": "assets/button.webp",
+      "bytes": 8204,
+      "sha256": "d030aa519c454c811842bfa0b78cf479c2e9e4a1e5278e2c47daf47b03f6eb09",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15662,9 +15662,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/comb.svg",
-      "bytes": 852,
-      "sha256": "272f2c2847eff198cc9deed473b63d963fc245b47814f01905895c1c15c34e3f",
+      "file": "assets/comb.webp",
+      "bytes": 10036,
+      "sha256": "6c28bba34aecd9e7c5c1d2b8047c28f48a602488bb2a5431139e1d300b9ec606",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -17573,9 +17573,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/cough.svg",
-      "bytes": 716,
-      "sha256": "445e8eff25733d1e45f1e40bf9762644cc1588d923e3046da3b2c063ca205dca",
+      "file": "assets/cough.webp",
+      "bytes": 6166,
+      "sha256": "4cd629ef21aa946bf30893d12010e4736282a836fe6240ee247620ff5993e619",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20723,9 +20723,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/dig.svg",
-      "bytes": 627,
-      "sha256": "2fe1e6d110d10e6dbc6e359db40f5ba5903397e328740dcac9652f992b39103e",
+      "file": "assets/dig.webp",
+      "bytes": 9936,
+      "sha256": "0f5ede2a79529f46ec2a804b02c44bf7fef825b1b0f2d88a3b196773c17f5a7d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22634,9 +22634,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/dry.svg",
-      "bytes": 750,
-      "sha256": "ebcf59ac3d59f17ba44cc8d396d9ac166c991725ea5ca855406faf31ed470e5d",
+      "file": "assets/dry.webp",
+      "bytes": 8252,
+      "sha256": "c1a1e16d5997d2084ae84fa7075922ab83f82648243ea76f2c30c7f22302d073",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -23033,9 +23033,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/dust.svg",
-      "bytes": 665,
-      "sha256": "ee1d5814c648708b18102409848071c9d3ebc83c900c8e6a9c80020a116c4bb0",
+      "file": "assets/dust.webp",
+      "bytes": 10082,
+      "sha256": "4177998edcdc99fc330c03534d09ddb7bff301da8c4db9149061c97d2b812f55",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26750,9 +26750,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/feed.svg",
-      "bytes": 1011,
-      "sha256": "b7e56ac95d2cc4ab7123406d55f47071c6fb0b83721531c8f5acf57bfeb25580",
+      "file": "assets/feed.webp",
+      "bytes": 9732,
+      "sha256": "5e23dcf91858efd1906b21e721806e916be67ab28630bb3a15f44672f71808a1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -28619,9 +28619,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/fold.svg",
-      "bytes": 603,
-      "sha256": "6a556b75307fbdf3746043f58b587e436f2222566175641310aa968e415a0810",
+      "file": "assets/fold.webp",
+      "bytes": 7602,
+      "sha256": "e7b15f2a77d6ea32243e7bb9fe09913c491de3c78ed6fa2e16260b64a35ffea9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -32273,9 +32273,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/greet.svg",
-      "bytes": 427,
-      "sha256": "b4df3cbabf1e6ae6bdcafbad50035fffb806c1b669adfd7f9f5698e2a9dc7832",
+      "file": "assets/greet.webp",
+      "bytes": 8888,
+      "sha256": "9c1f7427fd5c70b450c2ee11da565d0e28577ad2d95c14820296ba99d8c70e35",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33323,9 +33323,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/hang.svg",
-      "bytes": 540,
-      "sha256": "0f530db43d50afc1118fa9063abb762822db005eb612fe514f7a1f07da15c8c6",
+      "file": "assets/hang.webp",
+      "bytes": 7994,
+      "sha256": "c64e20250c4e4463dc0e785dc3a700e424f4b1c1f3e596806a8a21f44d105f73",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37565,9 +37565,9 @@
       "categories": [
         "feelings-social"
       ],
-      "file": "assets/invite.svg",
-      "bytes": 388,
-      "sha256": "027bf470a421356ebde3a21a182b7a1e3690153ceb4e52b32fde4143d659815d",
+      "file": "assets/invite.webp",
+      "bytes": 8798,
+      "sha256": "b8813903e8445ec3f29349fcdd379e044d9eff7309d622e7fb025f233d3a3314",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39161,9 +39161,9 @@
       "categories": [
         "feelings-social"
       ],
-      "file": "assets/kiss.svg",
-      "bytes": 370,
-      "sha256": "c44229d7e0c3e8e3303e1dc085578fdb3b5276f6973f130f666de1ef069269de",
+      "file": "assets/kiss.webp",
+      "bytes": 8668,
+      "sha256": "b8694ab47435faccbb1bd46daf69f5aec8466245bae79dcf4a3ca49abda35e7b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39371,9 +39371,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/kneel.svg",
-      "bytes": 543,
-      "sha256": "1ea0de79a40cc91dd4de4b8db164d074bb1ce77f33f86a0def8bbf4726a1dc0b",
+      "file": "assets/kneel.webp",
+      "bytes": 5376,
+      "sha256": "cef1fb39cbf3a193f69069fa8f3dfaf8ae65108f40e0bc52f1cef5bf4cbf79c9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39413,9 +39413,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/knit.svg",
-      "bytes": 711,
-      "sha256": "e800e68bb52fbd9e0c89d910d86e5ff76aeecb44010e406d8df102bd124d8a1d",
+      "file": "assets/knit.webp",
+      "bytes": 8704,
+      "sha256": "b418925c6128a7e7ac24331cb3a65f20f6c2bf75880cf0ac46e6e9c5d6e111cd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41471,9 +41471,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/lift.svg",
-      "bytes": 670,
-      "sha256": "4e15e9d9f29c148692d82af17baadb76a9e39fde761994d7367fb94ac2aa967c",
+      "file": "assets/lift.webp",
+      "bytes": 6084,
+      "sha256": "4fb58829edb4988cb7f48dc1684f9002ff0cf10a2dcb9a22f7b46f62d84d56c3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -42878,9 +42878,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/lower.svg",
-      "bytes": 492,
-      "sha256": "225e6a44ab7f867e030c27dbbf8e86128fb4aaf09bcf7d718e2fe16358e54a1e",
+      "file": "assets/lower.webp",
+      "bytes": 6562,
+      "sha256": "d4d45e7c853a0010b2da53885f578b4b604fccc8478fbb140f10b0d2dd165333",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49724,9 +49724,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/nod.svg",
-      "bytes": 867,
-      "sha256": "74816b4a29cf32cc0c0b1d4ab1b2cd1d49cd042ee5e0b8756155d48ae32bd709",
+      "file": "assets/nod.webp",
+      "bytes": 6884,
+      "sha256": "a1a3b5649b4ab5d6e2ac51673be092034f3e2c9e20de6a84b95d049f59c86b28",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54722,9 +54722,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/pack.svg",
-      "bytes": 606,
-      "sha256": "1f43e946e1b3519c86fbf729dd6b5e390846809516c81b953cc6d69e2af08ace",
+      "file": "assets/pack.webp",
+      "bytes": 7162,
+      "sha256": "d230c954001500b3234ba29e88abc3d73e869e06df9693a32e9e2f5f53efc76e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57599,9 +57599,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/pet.svg",
-      "bytes": 880,
-      "sha256": "219e319b51e2813f7b642509afe9f409951222a70f2122d3d89c472fe7872ff4",
+      "file": "assets/pet.webp",
+      "bytes": 8826,
+      "sha256": "d0a28dfc5a3d31e4b3bafcb0abbd5346957205fbd887f5dcfbdfe1b5333f2f68",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57914,9 +57914,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/pickup.svg",
-      "bytes": 612,
-      "sha256": "f9b5c3453f784f0f9f87bc3e2d5c1bb0383ebce3004d9cd5e27389f01de0ef58",
+      "file": "assets/pickup.webp",
+      "bytes": 7610,
+      "sha256": "d126360ad037de0f6a7c7844e9a2c6da9ebdff6b8d4f5b6be52e0993bfa300e8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58712,9 +58712,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/plant.svg",
-      "bytes": 878,
-      "sha256": "935583aebbe6313b66860345347224826ea099e6da5ff4b1bb4e982e2310d2be",
+      "file": "assets/plant.webp",
+      "bytes": 9132,
+      "sha256": "1679389e50ad07b6dcfffc051547bc1a6e2aeba93d9efb1b081ee10d677a0aa5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59237,9 +59237,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/point.svg",
-      "bytes": 588,
-      "sha256": "4bd5f2fc26f64cea22b81f1656a1ac619f56c7f81d26ff3196bc144bf9177786",
+      "file": "assets/point.webp",
+      "bytes": 6350,
+      "sha256": "45952f2cadde4ac9153692b55a96bfb8b67e581c51f1ae65ea267d637f424b05",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61820,9 +61820,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/putdown.svg",
-      "bytes": 492,
-      "sha256": "07aee77dd7e69330c6d98a872da8e76fa5c5d9011926c07fc10bf24aed9a8b93",
+      "file": "assets/putdown.webp",
+      "bytes": 7274,
+      "sha256": "9b061016ba927d7ebc328b520d41bcfcdd8a9260ed930aaefb91750bd924f8b0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62996,9 +62996,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/reach.svg",
-      "bytes": 742,
-      "sha256": "5bdee57afc4e9148064934d0e0d8145c82d3012fca7472dabb491543fc56f082",
+      "file": "assets/reach.webp",
+      "bytes": 8526,
+      "sha256": "2853e2e78516b9629e05b17f098b980ea1370a4603bb8269d2800f33b945c303",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -65432,9 +65432,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/rinse.svg",
-      "bytes": 764,
-      "sha256": "6121a07aa745cbf2a56febf1ecb9038aff55aa9c28aa297918a7d4b87a38d021",
+      "file": "assets/rinse.webp",
+      "bytes": 8044,
+      "sha256": "30afef5248d674947395cabe34024523c85c79e01abf825be41a640b20a6b9d0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66230,9 +66230,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/rub.svg",
-      "bytes": 568,
-      "sha256": "23a37f6bc0ac3349008869be4c6649927448cfd97a1330d648648b8575ef0b9d",
+      "file": "assets/rub.webp",
+      "bytes": 8102,
+      "sha256": "1b93b0fe386b955e59ac7d971921e5d2bad5fbc54e295e566af65f8f25ed41df",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68540,9 +68540,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/scratch.svg",
-      "bytes": 708,
-      "sha256": "e2193272ca65dd790a343e147126c16a2f09fc26a03d98e46359fee4a8ad93fa",
+      "file": "assets/scratch.webp",
+      "bytes": 7186,
+      "sha256": "e38b10648ded542eded192b0376a76d0d9f63fd843780032ddab4b942d01816f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -69758,9 +69758,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/sew.svg",
-      "bytes": 693,
-      "sha256": "0c063b4206ff5d0af0177fd0be5e0716a61c8f10ba7755420179fb54eaaa062e",
+      "file": "assets/sew.webp",
+      "bytes": 8876,
+      "sha256": "53b06f17a4483ea3e7ec1348141b9c1392c27d8283629a8fed57d925c2e241eb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -69968,9 +69968,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/shakehead.svg",
-      "bytes": 879,
-      "sha256": "d50101e7238f921aec6daf3445e0d97f5bba9df886472dc33efc4af37422c804",
+      "file": "assets/shakehead.webp",
+      "bytes": 8426,
+      "sha256": "956d4e68b4d5b0ba7a48ec4eba592f76fd626e5e570fcee4088ec8f904492121",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -70262,9 +70262,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/shave.svg",
-      "bytes": 447,
-      "sha256": "626eab34b340adb66d67afd38be23674a2169767298830a0e4fd2c47ecf09e51",
+      "file": "assets/shave.webp",
+      "bytes": 8168,
+      "sha256": "ce5218841d703f1ef46d77a038665d7ced44e5deaae7de75c9b3f3927e2051db",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73034,9 +73034,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/sneeze.svg",
-      "bytes": 708,
-      "sha256": "bf97738488f2db1a879ba4fb225e519d723f595d161e0c158529ee3ea2205078",
+      "file": "assets/sneeze.webp",
+      "bytes": 8198,
+      "sha256": "0585d138bfc552c8366498ad4cff49ee0ceca09d347a9c2ff3027add9488e362",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75449,9 +75449,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/squeeze.svg",
-      "bytes": 655,
-      "sha256": "50cd712e810c032a0fdace2c308ea723806d4b13239524a6ae2711963602b21f",
+      "file": "assets/squeeze.webp",
+      "bytes": 7636,
+      "sha256": "24362c6fb5d62af82c5a0498b6ca8f604cd0be8b6b179aafcbb74ca099e884cb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77150,9 +77150,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/stretch.svg",
-      "bytes": 585,
-      "sha256": "2d5079365b4ad38a373170d5ba7b3b6285de0af550904e8058cb7d6de57708de",
+      "file": "assets/stretch.webp",
+      "bytes": 4064,
+      "sha256": "cc7c00e22936650ec11180368a4453f7e9842b9ec976780bdb898754fa83d38c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79838,9 +79838,9 @@
       "categories": [
         "movement"
       ],
-      "file": "assets/tap.svg",
-      "bytes": 646,
-      "sha256": "f1737750f8093f405533cf02e020272462190234e075b823835ee16b4e475319",
+      "file": "assets/tap.webp",
+      "bytes": 6240,
+      "sha256": "46a4fc971fb1d72adab705e5fc9524234718bbc8196aa8183ad12249ebd9334d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80678,9 +80678,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/thank.svg",
-      "bytes": 408,
-      "sha256": "51ccb1a31dec59926015ea3ba90821151d244b88af38fe19910b0a637acb074e",
+      "file": "assets/thank.webp",
+      "bytes": 8094,
+      "sha256": "118049faa53d0daea070e74c5d2412bcf23814e26f8a3157124871b5ab01c389",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -81770,9 +81770,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/tie.svg",
-      "bytes": 625,
-      "sha256": "38feac790417417c250600887a626e3dfcecc6743e343252206af7153bf91ff6",
+      "file": "assets/tie.webp",
+      "bytes": 8282,
+      "sha256": "eaf5586ec4a40472b4c385a975568b39e105ec38ad3895dcd3963496bf13bf24",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -85802,9 +85802,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/undress.svg",
-      "bytes": 684,
-      "sha256": "4f289e04fb79194b39ad56ff7dd9c97b54629bac3a84663da788b99fe83d3991",
+      "file": "assets/undress.webp",
+      "bytes": 6694,
+      "sha256": "e8dfa03142c15bd83973e3f64613ced0228311584dd10a20d61560894651449b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -86201,9 +86201,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/unpack.svg",
-      "bytes": 579,
-      "sha256": "e9a30d4e42fbd3737fdcb55a06d909e4c9cf0a32afbb9524ba6fc8a5f56cb627",
+      "file": "assets/unpack.webp",
+      "bytes": 7680,
+      "sha256": "fc856780007ccb7a9550ede0cb36cfefefad1ba554a9f94c8e64192e28fde316",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -86390,9 +86390,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/untie.svg",
-      "bytes": 577,
-      "sha256": "a22091ce607b9c90e3c96e0ecb1ba9306414a72cb59cabbc1707c62738edacca",
+      "file": "assets/untie.webp",
+      "bytes": 8722,
+      "sha256": "69006e108088368ec6028b202c189e2e9bb9ee2fb0538a2dfa6bc1fa4d1774a9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89120,9 +89120,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/waterplants.svg",
-      "bytes": 781,
-      "sha256": "528e1b1a075456dc4ebbabe03ee415b61dc9e8758aff426fed63c41f6a6b5439",
+      "file": "assets/waterplants.webp",
+      "bytes": 9856,
+      "sha256": "b61b4f886f28eade25c058c690695ef1f4f9b50c0fd51d4d72b39121b62a1b55",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89246,9 +89246,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/wave.svg",
-      "bytes": 670,
-      "sha256": "bfeeddd827aca77bae9c9a9f0f8c4e80cb5265afcffa16cca8d9120a982244ac",
+      "file": "assets/wave.webp",
+      "bytes": 6576,
+      "sha256": "3f95d80f320a063685af6f17b6bcec1cad9957ec4d8aa3cd27853a253042f40b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90590,9 +90590,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/wink.svg",
-      "bytes": 697,
-      "sha256": "c0f064241940467a6b6c86a5554ca0aa021f3c2b86a7e799c742a208d4cd1e04",
+      "file": "assets/wink.webp",
+      "bytes": 8444,
+      "sha256": "d7368465650e11a1a814de4ed3d3817659948f9acad033300403b1744ad9a9d8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90632,9 +90632,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/wipe.svg",
-      "bytes": 710,
-      "sha256": "5c963d9238570033b69247486cf7ecdca31dd712dc7ccfb8065c4d7bc622f787",
+      "file": "assets/wipe.webp",
+      "bytes": 8008,
+      "sha256": "caf487a14242bdac58b45ec37e2673286dfed348879a0b39c006fdabb65b6570",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -91724,9 +91724,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/yawn.svg",
-      "bytes": 690,
-      "sha256": "a051db30dcd6d511330612bc63d3c73a2b6d705aba0d3d64a1270dab175ea005",
+      "file": "assets/yawn.webp",
+      "bytes": 6790,
+      "sha256": "64aceb6a0c2618ac4eb0961b026c1bb542b51584dbc7f873617897c499007c71",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -92228,9 +92228,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/zip.svg",
-      "bytes": 588,
-      "sha256": "950a4116f6428675066b20ccb97f819fddc2fa4d9677015ce6d8855a9c285943",
+      "file": "assets/zip.webp",
+      "bytes": 8128,
+      "sha256": "6333fa8263a9d8a99ff960230c2733d9f5cb42f5beb9fd5f0941aabe3157471b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

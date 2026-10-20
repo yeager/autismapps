@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:17:43.130Z",
+  "exportedAt": "2026-10-20T17:19:29.316Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -8838,8 +8838,8 @@
         "food-drink"
       ],
       "file": "assets/breakfast.webp",
-      "bytes": 9412,
-      "sha256": "cc66f5d2a440a73c48131804c452cb1b97e8cb64ecf459b2e3dda13b61542487",
+      "bytes": 9818,
+      "sha256": "81ed66f146aaa1d2f703e15a54d716c094bf26a122513d9b9e0cd7f5fa07d95d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9321,8 +9321,8 @@
         "body-health-routines"
       ],
       "file": "assets/brushteeth.webp",
-      "bytes": 8334,
-      "sha256": "d5ac36aeb247d8db14468e2a6e936381bb643a780b3c28c1f42711646ded24d6",
+      "bytes": 9256,
+      "sha256": "718388466a571285bf60946468a26af081f76a56ff6f85f112fced0ff64ec22e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54723,8 +54723,8 @@
         "school-work-play"
       ],
       "file": "assets/pack.webp",
-      "bytes": 7162,
-      "sha256": "d230c954001500b3234ba29e88abc3d73e869e06df9693a32e9e2f5f53efc76e",
+      "bytes": 9014,
+      "sha256": "e9213bfc6968032b5c14482412b13e999c14370ee034b43e16de580ae7477a53",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61863,8 +61863,8 @@
         "body-health-routines"
       ],
       "file": "assets/puton.webp",
-      "bytes": 6908,
-      "sha256": "0b58adec7ec7f9a521a8c3e936a8d7650b61b4f393270109033e84511b5a2670",
+      "bytes": 7978,
+      "sha256": "580b37dc421ff8a23f635764c130384c83cb0e3bf6f7f91bb95947e93a5dba43",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63060,8 +63060,8 @@
         "school-work-play"
       ],
       "file": "assets/read.webp",
-      "bytes": 6546,
-      "sha256": "8e077092d707eb7aff982cb194760b8bc8ddbb313db048f7e2916cff57986a1a",
+      "bytes": 10258,
+      "sha256": "4f9ec663af6685f890c3ab94eaf751990ab6d38f46d0fb727f95d14c01787060",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72363,8 +72363,8 @@
         "body-health-routines"
       ],
       "file": "assets/sleep.webp",
-      "bytes": 8512,
-      "sha256": "0dd4ff27c8bc9e5c8a4c7e974f1d35e8441fde6bc0d4677894b77faee884197b",
+      "bytes": 8174,
+      "sha256": "a344ef3447b4da62ffdf7182d457e4d35480e41b59692e28ddbf5c8bd8cc81a4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -81728,9 +81728,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/tidy.svg",
-      "bytes": 531,
-      "sha256": "3d5bef5c83a601eb938ccd7f37bc3f39870632ff72e6351d369ec0c850e5de44",
+      "file": "assets/tidy.webp",
+      "bytes": 9330,
+      "sha256": "7381687c7ce3bb6f23688cf6f7489e0d725c79aac306b5c9a09ea2555c9d8499",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88848,8 +88848,8 @@
         "body-health-routines"
       ],
       "file": "assets/washhands.webp",
-      "bytes": 8926,
-      "sha256": "b74d13a80b95b9f459e88265df31e4c6e6eec261fcb7254233b3539723fd0c99",
+      "bytes": 7476,
+      "sha256": "adafe614209c247223748025776504270dc054b8bf27e682aeb6ff873d82bbc4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

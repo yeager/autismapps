@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-20T14:37:08.092Z",
+  "exportedAt": "2026-10-20T14:40:07.088Z",
   "source": "piktali",
   "includePending": true,
-  "count": 554,
+  "count": 559,
   "pictograms": [
     {
       "id": "abdomen",
@@ -548,8 +548,8 @@
       },
       "categories": [],
       "file": "assets/bandage.webp",
-      "bytes": 4492,
-      "sha256": "ef22b2a09c949904c09559166ecb840f525f61230dda9b890ca9c3694e456cc8",
+      "bytes": 3126,
+      "sha256": "76d584acbbe30d28c4bdec8b9456a9727401ff09bd613155295c2cdc9de390e7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1507,6 +1507,25 @@
       }
     },
     {
+      "id": "cane",
+      "symbol": "cane",
+      "labels": {
+        "sv-SE": "Käpp",
+        "en-US": "Cane",
+        "es-ES": "Bastón",
+        "es-MX": "Bastón"
+      },
+      "categories": [],
+      "file": "assets/cane.webp",
+      "bytes": 2442,
+      "sha256": "5df674f1a95290450a29102114de66dad9d23dc71fa94fd922657b3ac14e3e02",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "cap",
       "symbol": "cap",
       "labels": {
@@ -2412,6 +2431,25 @@
       "file": "assets/crosswalk.webp",
       "bytes": 5736,
       "sha256": "9302fa0c66df4216e4069d2ee48dbf0ebb6924595aabac8e008b808b32e8f249",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "crutch",
+      "symbol": "crutch",
+      "labels": {
+        "sv-SE": "Krycka",
+        "en-US": "Crutch",
+        "es-ES": "Muleta",
+        "es-MX": "Muleta"
+      },
+      "categories": [],
+      "file": "assets/crutch.webp",
+      "bytes": 4146,
+      "sha256": "abb8dab5ca50c4a8c2686455eb33b4490098c44947353ee418997e584f49087b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5621,8 +5659,8 @@
       },
       "categories": [],
       "file": "assets/medicine.webp",
-      "bytes": 4126,
-      "sha256": "e8bc982dc89373e63f4a65c83c68fa0e0d72eed0f09ed081aef2064fb1455ff9",
+      "bytes": 2324,
+      "sha256": "8fcfb3bad92617450b401ae3860a49d9910a53a9d28e9e6cbf9ad171d44610f9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6649,6 +6687,25 @@
       "file": "assets/pig.webp",
       "bytes": 5294,
       "sha256": "9aceb9a9cd945feadcff20d604f86221ed5df12edf7148c499ac3ddc6192aa93",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "pill",
+      "symbol": "pill",
+      "labels": {
+        "sv-SE": "Tablett",
+        "en-US": "Pill",
+        "es-ES": "Pastilla",
+        "es-MX": "Pastilla"
+      },
+      "categories": [],
+      "file": "assets/pill.webp",
+      "bytes": 1190,
+      "sha256": "c304d1acae0f1d88fdb990c20a9f333456be5497b9d1396ee40a842f566f9326",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8480,6 +8537,25 @@
       }
     },
     {
+      "id": "stethoscope",
+      "symbol": "stethoscope",
+      "labels": {
+        "sv-SE": "Stetoskop",
+        "en-US": "Stethoscope",
+        "es-ES": "Estetoscopio",
+        "es-MX": "Estetoscopio"
+      },
+      "categories": [],
+      "file": "assets/stethoscope.webp",
+      "bytes": 4804,
+      "sha256": "b8e86d648ea5fc1f8446eb8ea3812e35220a50ffb341c834f44f9b94059ff9c8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "stop",
       "symbol": "stop",
       "labels": {
@@ -8841,6 +8917,25 @@
       }
     },
     {
+      "id": "syrup",
+      "symbol": "syrup",
+      "labels": {
+        "sv-SE": "Flytande medicin",
+        "en-US": "Syrup",
+        "es-ES": "Jarabe",
+        "es-MX": "Jarabe"
+      },
+      "categories": [],
+      "file": "assets/syrup.webp",
+      "bytes": 2982,
+      "sha256": "14eea9c87f89365ed57b9c517df478092b3a1c6ec69c8fc302da70f1ca5ae32f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "table",
       "symbol": "table",
       "labels": {
@@ -9041,8 +9136,8 @@
       },
       "categories": [],
       "file": "assets/thermometer.webp",
-      "bytes": 1394,
-      "sha256": "384c7c8b44ca776e12b961a234477ead734ca3c5211ac330d28096cf55aee558",
+      "bytes": 3706,
+      "sha256": "c11401d61be3c42a6ec2b835129f121fc01c2b0355a26296e4b7620275727664",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10181,8 +10276,8 @@
       },
       "categories": [],
       "file": "assets/wheelchair.webp",
-      "bytes": 3108,
-      "sha256": "607c8f960df474d00d92dbc1c6f50032a8ae04c35c5ead10523c3c81f3622aaa",
+      "bytes": 8566,
+      "sha256": "bee94eb6b8cd72c6907ad880dc93c79468e85be43bf6321e802ebcfab947d8cb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

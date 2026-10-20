@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T15:27:22.508Z",
+  "exportedAt": "2026-10-20T15:30:51.063Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4395,
+  "count": 4399,
   "pictograms": [
     {
       "id": "abdomen",
@@ -6782,6 +6782,27 @@
       "file": "assets/binder-clip.svg",
       "bytes": 491,
       "sha256": "357bd357b82833cd7ae6732f1aa0fa489368d4e3db3b6145d8c5574f0d009d58",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "binoculars",
+      "symbol": "binoculars",
+      "labels": {
+        "sv-SE": "Kikare",
+        "en-US": "Binoculars",
+        "es-ES": "Prismáticos",
+        "es-MX": "Binoculares"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/binoculars.webp",
+      "bytes": 5176,
+      "sha256": "d3e4131f3bd250a5164adbe91782e8f43fe418befa9f0d7fd804fdd6f6821203",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43217,6 +43238,27 @@
       "file": "assets/madrid.svg",
       "bytes": 493,
       "sha256": "752995187a6f0ac5644ad33c757b79f6a069709d2e0877f65e33778ac6ffa8b5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "magnifying-glass",
+      "symbol": "magnifying-glass",
+      "labels": {
+        "sv-SE": "Förstoringsglas",
+        "en-US": "Magnifying glass",
+        "es-ES": "Lupa",
+        "es-MX": "Lupa"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/magnifying-glass.webp",
+      "bytes": 4836,
+      "sha256": "e142d4e01a2b783287020c241a5470bb04bfb5563596698729eba663a990083f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79869,6 +79911,27 @@
       }
     },
     {
+      "id": "tape-measure",
+      "symbol": "tape-measure",
+      "labels": {
+        "sv-SE": "Måttband",
+        "en-US": "Tape measure",
+        "es-ES": "Cinta métrica",
+        "es-MX": "Cinta de medir"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/tape-measure.webp",
+      "bytes": 5384,
+      "sha256": "81448cff6822436f786412b830e099852a48d381e5193903cae106c637e8ddd8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "taste",
       "symbol": "taste",
       "labels": {
@@ -90068,6 +90131,27 @@
       "file": "assets/whisper.svg",
       "bytes": 690,
       "sha256": "f43005e05d68eff40b0be15e2521af5393fbd2251017ff3579c508e40deecd62",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "whistle",
+      "symbol": "whistle",
+      "labels": {
+        "sv-SE": "Visselpipa",
+        "en-US": "Whistle",
+        "es-ES": "Silbato",
+        "es-MX": "Silbato"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/whistle.webp",
+      "bytes": 5520,
+      "sha256": "a2d04e1b8ae9aa5e87e6ae0199e0da3c3f49fbd5a2353a4ae04702b090bdcfa4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

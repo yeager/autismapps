@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:34:39.955Z",
+  "exportedAt": "2026-10-20T17:35:27.369Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4558,
+  "count": 4606,
   "pictograms": [
     {
       "id": "abdomen",
@@ -1035,6 +1035,27 @@
       }
     },
     {
+      "id": "alabama",
+      "symbol": "alabama",
+      "labels": {
+        "sv-SE": "Alabama",
+        "en-US": "Alabama",
+        "es-ES": "Alabama",
+        "es-MX": "Alabama"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/alabama.svg",
+      "bytes": 449,
+      "sha256": "920276f04847ab0b04dc55770fa16b0c3d7894a047fb3d530057ec0beca21756",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "alarm-clock",
       "symbol": "alarm-clock",
       "labels": {
@@ -1049,6 +1070,27 @@
       "file": "assets/alarm-clock.webp",
       "bytes": 7434,
       "sha256": "246c0c1fef2aadfafe4242fe8b51481653c2f7423e4b8c937425aec376bf7db1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "alaska",
+      "symbol": "alaska",
+      "labels": {
+        "sv-SE": "Alaska",
+        "en-US": "Alaska",
+        "es-ES": "Alaska",
+        "es-MX": "Alaska"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/alaska.svg",
+      "bytes": 449,
+      "sha256": "3ac20dfa1e223deddbfa8e98085885ea2da9d86a4e59a83b82a824afa7806cd6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3128,6 +3170,48 @@
       "file": "assets/argument.svg",
       "bytes": 634,
       "sha256": "71530cee1081462e873dc51da3cdcea6dabdd486b6587963b8b471a52579ed67",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "arizona",
+      "symbol": "arizona",
+      "labels": {
+        "sv-SE": "Arizona",
+        "en-US": "Arizona",
+        "es-ES": "Arizona",
+        "es-MX": "Arizona"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/arizona.svg",
+      "bytes": 449,
+      "sha256": "6a09f8ccb9edd07299bf7c777030f7495734d718dbae6081adec662681e76b87",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "arkansas",
+      "symbol": "arkansas",
+      "labels": {
+        "sv-SE": "Arkansas",
+        "en-US": "Arkansas",
+        "es-ES": "Arkansas",
+        "es-MX": "Arkansas"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/arkansas.svg",
+      "bytes": 449,
+      "sha256": "3aff3aeeab080c4c800d3238710aa9c76d579a860e07bed2c968c79c6c405f5e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11199,6 +11283,27 @@
       }
     },
     {
+      "id": "california",
+      "symbol": "california",
+      "labels": {
+        "sv-SE": "Kalifornien",
+        "en-US": "California",
+        "es-ES": "California",
+        "es-MX": "California"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/california.svg",
+      "bytes": 449,
+      "sha256": "93e1ed9d137a1f254f529518ce43cef1df12741d2d78e53a18e447c11cd6c400",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "call",
       "symbol": "call",
       "labels": {
@@ -16092,6 +16197,27 @@
       }
     },
     {
+      "id": "colorado",
+      "symbol": "colorado",
+      "labels": {
+        "sv-SE": "Colorado",
+        "en-US": "Colorado",
+        "es-ES": "Colorado",
+        "es-MX": "Colorado"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/colorado.svg",
+      "bytes": 449,
+      "sha256": "bce1d33ba94e6551c57f4953ee8250be019a9484e61ab70da363f2e2580f29aa",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "colored-pencil",
       "symbol": "coloredpencil",
       "labels": {
@@ -17261,6 +17387,27 @@
       "file": "assets/connect-wifi.svg",
       "bytes": 592,
       "sha256": "3903b0da5dbe3a128c3d0b0ca01396e57795e0dc912388d718115761757ce925",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "connecticut",
+      "symbol": "connecticut",
+      "labels": {
+        "sv-SE": "Connecticut",
+        "en-US": "Connecticut",
+        "es-ES": "Connecticut",
+        "es-MX": "Connecticut"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/connecticut.svg",
+      "bytes": 449,
+      "sha256": "9c253c315db4cb97cceecaf5f0c17f1246ff5de2d5fea53ad0987d89457e321b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20579,6 +20726,27 @@
       "file": "assets/deer.webp",
       "bytes": 7176,
       "sha256": "19ad1acedfbe2be264435dd8d51fc708fc2d80e4fea24a2907418dfc822f52fd",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "delaware",
+      "symbol": "delaware",
+      "labels": {
+        "sv-SE": "Delaware",
+        "en-US": "Delaware",
+        "es-ES": "Delaware",
+        "es-MX": "Delaware"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/delaware.svg",
+      "bytes": 449,
+      "sha256": "161be4441bf2549bf4b046ed0ac92e1cebec46c83a69497be9a8b4f7c3ece101",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29175,6 +29343,27 @@
       }
     },
     {
+      "id": "florida",
+      "symbol": "florida",
+      "labels": {
+        "sv-SE": "Florida",
+        "en-US": "Florida",
+        "es-ES": "Florida",
+        "es-MX": "Florida"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/florida.svg",
+      "bytes": 449,
+      "sha256": "58b566860c07344ac5803df4cb811d4c2aa2c2bbd91aafeac7fb879b59880840",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "floss",
       "symbol": "floss",
       "labels": {
@@ -34719,6 +34908,27 @@
       }
     },
     {
+      "id": "hawaii",
+      "symbol": "hawaii",
+      "labels": {
+        "sv-SE": "Hawaii",
+        "en-US": "Hawái",
+        "es-ES": "Hawái",
+        "es-MX": "Hawái"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hawaii.svg",
+      "bytes": 449,
+      "sha256": "cbebf224103fb3d40c4865b9cbc54b0eaad01994732e7d07ec96e735209898f9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "hawk",
       "symbol": "hawk",
       "labels": {
@@ -37323,6 +37533,27 @@
       }
     },
     {
+      "id": "idaho",
+      "symbol": "idaho",
+      "labels": {
+        "sv-SE": "Idaho",
+        "en-US": "Idaho",
+        "es-ES": "Idaho",
+        "es-MX": "Idaho"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/idaho.svg",
+      "bytes": 449,
+      "sha256": "fc0ef933252e20284d60cb77dd6665da79222cc352c7376d2b3d2afd1ccd4b9b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "identify",
       "symbol": "identify",
       "labels": {
@@ -37400,6 +37631,27 @@
       "file": "assets/iguana.svg",
       "bytes": 685,
       "sha256": "51afec782c4d50b48219cac0431e2efdd2b6548a0e63791193a5d8c4a01174c3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "illinois",
+      "symbol": "illinois",
+      "labels": {
+        "sv-SE": "Illinois",
+        "en-US": "Illinois",
+        "es-ES": "Illinois",
+        "es-MX": "Illinois"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/illinois.svg",
+      "bytes": 449,
+      "sha256": "9190759145a09bd1b99b7a6aca2c93b9f06824482ea8dcf05211c61db1aa057d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37967,6 +38219,27 @@
       "file": "assets/india.svg",
       "bytes": 860,
       "sha256": "e61ba3f9c3cec333526f4f56c73d78e742db417f039d04cefe882acd232add09",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "indiana",
+      "symbol": "indiana",
+      "labels": {
+        "sv-SE": "Indiana",
+        "en-US": "Indiana",
+        "es-ES": "Indiana",
+        "es-MX": "Indiana"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/indiana.svg",
+      "bytes": 449,
+      "sha256": "b3f9373c6d93e72ffed9d4edf4472f4172d09188e050d92b0517ac01d7f4fe2d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38744,6 +39017,27 @@
       "file": "assets/invoice.svg",
       "bytes": 608,
       "sha256": "06380d5a5b0c5d94cc07f4ab3e16c550c0769fd372fccc6b0ea417830ed7d9a4",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "iowa",
+      "symbol": "iowa",
+      "labels": {
+        "sv-SE": "Iowa",
+        "en-US": "Iowa",
+        "es-ES": "Iowa",
+        "es-MX": "Iowa"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/iowa.svg",
+      "bytes": 449,
+      "sha256": "bba261769509c81a68e3778d7ba68d70762cb1e349a4b057a6b602a08998511d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39969,6 +40263,27 @@
       }
     },
     {
+      "id": "kansas",
+      "symbol": "kansas",
+      "labels": {
+        "sv-SE": "Kansas",
+        "en-US": "Kansas",
+        "es-ES": "Kansas",
+        "es-MX": "Kansas"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kansas.svg",
+      "bytes": 449,
+      "sha256": "e2ad7619e7a1d7db46e774be12dcca4c6fe2b4aef01839fbc8319addd541fe60",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "karlskrona",
       "symbol": "karlskrona",
       "labels": {
@@ -40130,6 +40445,27 @@
       "file": "assets/keep-promise.svg",
       "bytes": 613,
       "sha256": "d7d6fda7414cc44366a92594624fa7781d55ca4119facf5f295ea120ecd49fc8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kentucky",
+      "symbol": "kentucky",
+      "labels": {
+        "sv-SE": "Kentucky",
+        "en-US": "Kentucky",
+        "es-ES": "Kentucky",
+        "es-MX": "Kentucky"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kentucky.svg",
+      "bytes": 449,
+      "sha256": "788bea6030bf851edd32f0e8c0f1c4340d612af244e834d4bd3946d59b361b89",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44379,6 +44715,27 @@
       }
     },
     {
+      "id": "louisiana",
+      "symbol": "louisiana",
+      "labels": {
+        "sv-SE": "Louisiana",
+        "en-US": "Luisiana",
+        "es-ES": "Luisiana",
+        "es-MX": "Luisiana"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/louisiana.svg",
+      "bytes": 449,
+      "sha256": "83095c9f9ca30b3c9c14d71e1d336ffb0d2f70a53aef13637f72c57721a58f2f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "louse",
       "symbol": "louse",
       "labels": {
@@ -44981,6 +45338,27 @@
       "file": "assets/main-course.svg",
       "bytes": 447,
       "sha256": "5e5a9d632e80c961271b2b38d353a14c2a7b1bda5f474bcbfab9bc8839243f50",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "maine",
+      "symbol": "maine",
+      "labels": {
+        "sv-SE": "Maine",
+        "en-US": "Maine",
+        "es-ES": "Maine",
+        "es-MX": "Maine"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/maine.svg",
+      "bytes": 449,
+      "sha256": "2262564380b08ecad3529411a02603f0d4a6292a565ba4c13459ad3ccd7a39bd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45786,6 +46164,27 @@
       }
     },
     {
+      "id": "maryland",
+      "symbol": "maryland",
+      "labels": {
+        "sv-SE": "Maryland",
+        "en-US": "Maryland",
+        "es-ES": "Maryland",
+        "es-MX": "Maryland"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/maryland.svg",
+      "bytes": 449,
+      "sha256": "546d067904e69c8640eadcb65e0eaef2c22d67a765a01e06158883a6e0e0f7c1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "maseru",
       "symbol": "maseru",
       "labels": {
@@ -45863,6 +46262,27 @@
       "file": "assets/mask.svg",
       "bytes": 830,
       "sha256": "14981817027607fd79dbe85882acd261c29f7c33cce9ef1aa46f1f32bd280003",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "massachusetts",
+      "symbol": "massachusetts",
+      "labels": {
+        "sv-SE": "Massachusetts",
+        "en-US": "Massachusetts",
+        "es-ES": "Massachusetts",
+        "es-MX": "Massachusetts"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/massachusetts.svg",
+      "bytes": 449,
+      "sha256": "f6aa0b04cabf9a904969cccce9cd8744d8649a8cb28415d0bb06f02c98413aa1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47172,6 +47592,27 @@
       }
     },
     {
+      "id": "michigan",
+      "symbol": "michigan",
+      "labels": {
+        "sv-SE": "Michigan",
+        "en-US": "Míchigan",
+        "es-ES": "Míchigan",
+        "es-MX": "Míchigan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/michigan.svg",
+      "bytes": 449,
+      "sha256": "e8be0d26cf0b50a28a987edfa8a368d7fb5861ab644b78ea506b0789389e5fba",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "microphone",
       "symbol": "microphone",
       "labels": {
@@ -47571,6 +48012,27 @@
       }
     },
     {
+      "id": "minnesota",
+      "symbol": "minnesota",
+      "labels": {
+        "sv-SE": "Minnesota",
+        "en-US": "Minnesota",
+        "es-ES": "Minnesota",
+        "es-MX": "Minnesota"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/minnesota.svg",
+      "bytes": 449,
+      "sha256": "6d9a8a03cba74bd19a025ec8e7eb7ce658d3b9939f413ee0a5a0fd5f207d3d43",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "minsk",
       "symbol": "minsk",
       "labels": {
@@ -47732,6 +48194,48 @@
       "file": "assets/missing.svg",
       "bytes": 675,
       "sha256": "3cb24c4f45dabef2c8d0250419d9f333c8396b14fc936790fa10406fc7f4cab2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "mississippi",
+      "symbol": "mississippi",
+      "labels": {
+        "sv-SE": "Mississippi",
+        "en-US": "Misisipi",
+        "es-ES": "Misisipi",
+        "es-MX": "Misisipi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/mississippi.svg",
+      "bytes": 449,
+      "sha256": "08a91a535f91df429dc914dd55a0a00b88dfb1963201c6d1e5316773d95f50a0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "missouri",
+      "symbol": "missouri",
+      "labels": {
+        "sv-SE": "Missouri",
+        "en-US": "Misuri",
+        "es-ES": "Misuri",
+        "es-MX": "Misuri"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/missouri.svg",
+      "bytes": 449,
+      "sha256": "7e5286223e6485497c35fe6d71c09a44fff4908e1f46c02d5908c11fed8786eb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48152,6 +48656,27 @@
       "file": "assets/monrovia.svg",
       "bytes": 606,
       "sha256": "70c5ac206f326dd9d4774fe54d97d0dda09fce716599cca26416b23960282951",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "montana",
+      "symbol": "montana",
+      "labels": {
+        "sv-SE": "Montana",
+        "en-US": "Montana",
+        "es-ES": "Montana",
+        "es-MX": "Montana"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/montana.svg",
+      "bytes": 449,
+      "sha256": "a806e7c580b19e5ab7d8ac4bd87338c454355f53073f9b0d8f8143d38f23a3c9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50364,6 +50889,27 @@
       }
     },
     {
+      "id": "nebraska",
+      "symbol": "nebraska",
+      "labels": {
+        "sv-SE": "Nebraska",
+        "en-US": "Nebraska",
+        "es-ES": "Nebraska",
+        "es-MX": "Nebraska"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nebraska.svg",
+      "bytes": 449,
+      "sha256": "ee6228c477c94f60fb3f24ab27b69dd92bfbfcf9219845fdd78190edc1d73efa",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "nebulizer",
       "symbol": "nebulizer",
       "labels": {
@@ -51183,6 +51729,27 @@
       }
     },
     {
+      "id": "nevada",
+      "symbol": "nevada",
+      "labels": {
+        "sv-SE": "Nevada",
+        "en-US": "Nevada",
+        "es-ES": "Nevada",
+        "es-MX": "Nevada"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nevada.svg",
+      "bytes": 449,
+      "sha256": "e1026c40856d65d804cd9d522c2cd584193c6ef1a1f9400877de078b97ec0dc3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "never",
       "symbol": "never",
       "labels": {
@@ -51239,6 +51806,69 @@
       "file": "assets/new-delhi.svg",
       "bytes": 464,
       "sha256": "b6ad788691f171ef8d84e15a3c59aa0a31a849c53b0316c63176c5701401480a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "new-hampshire",
+      "symbol": "new-hampshire",
+      "labels": {
+        "sv-SE": "New Hampshire",
+        "en-US": "New Hampshire",
+        "es-ES": "Nuevo Hampshire",
+        "es-MX": "Nuevo Hampshire"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/new-hampshire.svg",
+      "bytes": 449,
+      "sha256": "c1a96c2abcbc7c7edc5be9edf4eab8cf328f84ffdb9d4942c671f1ef4f0d4a59",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "new-jersey",
+      "symbol": "new-jersey",
+      "labels": {
+        "sv-SE": "New Jersey",
+        "en-US": "New Jersey",
+        "es-ES": "Nueva Jersey",
+        "es-MX": "Nueva Jersey"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/new-jersey.svg",
+      "bytes": 449,
+      "sha256": "7b8f80e86123b3749974a12a403b85146c19c2d0ca1fa66141e598caa969d402",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "new-mexico",
+      "symbol": "new-mexico",
+      "labels": {
+        "sv-SE": "New Mexico",
+        "en-US": "New Mexico",
+        "es-ES": "Nuevo México",
+        "es-MX": "Nuevo México"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/new-mexico.svg",
+      "bytes": 449,
+      "sha256": "2d1ae74c8f3abc976d331d7a23f6a250b99f7e5a3c8235385261e7fa256450d4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -51848,6 +52478,48 @@
       "file": "assets/norrkoping.svg",
       "bytes": 613,
       "sha256": "d0ff9fb3e12a6e08b4d4ea18eadc980ea63d1a13e0b19ce1eaf2ba10c325461e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "north-carolina",
+      "symbol": "north-carolina",
+      "labels": {
+        "sv-SE": "Nordkarolina",
+        "en-US": "North Carolina",
+        "es-ES": "Carolina del Norte",
+        "es-MX": "Carolina del Norte"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/north-carolina.svg",
+      "bytes": 449,
+      "sha256": "9b309eda73e93894ae9ea8e62848f1ab15b8af143a8c6fb0dfcb36ad67620ddc",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "north-dakota",
+      "symbol": "north-dakota",
+      "labels": {
+        "sv-SE": "Norddakota",
+        "en-US": "North Dakota",
+        "es-ES": "Dakota del Norte",
+        "es-MX": "Dakota del Norte"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/north-dakota.svg",
+      "bytes": 449,
+      "sha256": "8af355b435bfe67d092f64c0aea6e3a9174d9583327cf182cd7880b2682a2709",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55110,6 +55782,27 @@
       }
     },
     {
+      "id": "ohio",
+      "symbol": "ohio",
+      "labels": {
+        "sv-SE": "Ohio",
+        "en-US": "Ohio",
+        "es-ES": "Ohio",
+        "es-MX": "Ohio"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ohio.svg",
+      "bytes": 449,
+      "sha256": "fa6755f6f06d9067393da4be1039c3c7ef060543c3788058feeb9958fabaeb2c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "oil",
       "symbol": "oil",
       "labels": {
@@ -55145,6 +55838,27 @@
       "file": "assets/ointment.svg",
       "bytes": 582,
       "sha256": "5f0568dc78bd6818f48cff8d3f87470eb496c046816ec34c5cef5d5d85e7b8b9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "oklahoma",
+      "symbol": "oklahoma",
+      "labels": {
+        "sv-SE": "Oklahoma",
+        "en-US": "Oklahoma",
+        "es-ES": "Oklahoma",
+        "es-MX": "Oklahoma"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/oklahoma.svg",
+      "bytes": 449,
+      "sha256": "efc12a29c601aac286cc2d2ab571a38b5ada52049b0a4f28c5268d08067d29d8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55964,6 +56678,27 @@
       "file": "assets/orebro.svg",
       "bytes": 613,
       "sha256": "6dfe73bedf3f1ed45d124e0b26773ba162696446f1d12d7da42cb0b8aab814e7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "oregon",
+      "symbol": "oregon",
+      "labels": {
+        "sv-SE": "Oregon",
+        "en-US": "Oregón",
+        "es-ES": "Oregón",
+        "es-MX": "Oregón"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/oregon.svg",
+      "bytes": 449,
+      "sha256": "f43998b323963eaa984e4478bd04dcef5f436cd45940c11bb7d6588e1720bff8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59450,6 +60185,27 @@
       "file": "assets/peninsula.svg",
       "bytes": 475,
       "sha256": "b3c960a871f0357fb2ff0cb75288780da6a35a20f5cde9164205fd2552ef8558",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "pennsylvania",
+      "symbol": "pennsylvania",
+      "labels": {
+        "sv-SE": "Pennsylvania",
+        "en-US": "Pennsylvania",
+        "es-ES": "Pensilvania",
+        "es-MX": "Pensilvania"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/pennsylvania.svg",
+      "bytes": 449,
+      "sha256": "e054f8408c926f90f41dc22bd05ce83dd2eca49b14af3c0ae31535d0afe3a7a2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -67619,6 +68375,27 @@
       "file": "assets/rhino.svg",
       "bytes": 751,
       "sha256": "d375bebd0fd46fac75b64c8eff240ad248d4b17c5b68a7b9cc8d8a43350e4913",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "rhode-island",
+      "symbol": "rhode-island",
+      "labels": {
+        "sv-SE": "Rhode Island",
+        "en-US": "Rhode Island",
+        "es-ES": "Rhode Island",
+        "es-MX": "Rhode Island"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/rhode-island.svg",
+      "bytes": 449,
+      "sha256": "a9001f29f8515859c3c9f55e9cdae9dd5b972169b9a00043aa7cbc19e7d3bd87",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76929,6 +77706,48 @@
       }
     },
     {
+      "id": "south-carolina",
+      "symbol": "south-carolina",
+      "labels": {
+        "sv-SE": "Sydkarolina",
+        "en-US": "South Carolina",
+        "es-ES": "Carolina del Sur",
+        "es-MX": "Carolina del Sur"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/south-carolina.svg",
+      "bytes": 449,
+      "sha256": "20cf6773b122c991a83eca517622f1a11d415e6a5d508da556dcec5751143a62",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "south-dakota",
+      "symbol": "south-dakota",
+      "labels": {
+        "sv-SE": "Syddakota",
+        "en-US": "South Dakota",
+        "es-ES": "Dakota del Sur",
+        "es-MX": "Dakota del Sur"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/south-dakota.svg",
+      "bytes": 449,
+      "sha256": "78b82f0adefd38676ea897e74696372fcce8efb1d2340cdf3acc5b3396e919a3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "south-korea",
       "symbol": "south-korea",
       "labels": {
@@ -83355,6 +84174,27 @@
       }
     },
     {
+      "id": "tennessee",
+      "symbol": "tennessee",
+      "labels": {
+        "sv-SE": "Tennessee",
+        "en-US": "Tennessee",
+        "es-ES": "Tennessee",
+        "es-MX": "Tennessee"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/tennessee.svg",
+      "bytes": 449,
+      "sha256": "27b05c66009b48cf75960f31d9f1e49aaffc703ef84a739f71b29091e736d510",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "tennis-ball",
       "symbol": "tennis-ball",
       "labels": {
@@ -83474,6 +84314,27 @@
       "file": "assets/test.svg",
       "bytes": 492,
       "sha256": "ac26321ed23784a94ae1dbbbcf7647173356c306ede3bb298364438fed9a76e0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "texas",
+      "symbol": "texas",
+      "labels": {
+        "sv-SE": "Texas",
+        "en-US": "Texas",
+        "es-ES": "Texas",
+        "es-MX": "Texas"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/texas.svg",
+      "bytes": 449,
+      "sha256": "8fa7d5d706412ae09dbfa459e045f0becb6f7e3bba0c978df81dc434ec06ee41",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90012,6 +90873,27 @@
       }
     },
     {
+      "id": "utah",
+      "symbol": "utah",
+      "labels": {
+        "sv-SE": "Utah",
+        "en-US": "Utah",
+        "es-ES": "Utah",
+        "es-MX": "Utah"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/utah.svg",
+      "bytes": 449,
+      "sha256": "5a31d30b5852f4fb637cb81e8488cf117e63dc0644ae3996a9ebc9549841aa09",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "uzbekistan",
       "symbol": "uzbekistan",
       "labels": {
@@ -90537,6 +91419,27 @@
       }
     },
     {
+      "id": "vermont",
+      "symbol": "vermont",
+      "labels": {
+        "sv-SE": "Vermont",
+        "en-US": "Vermont",
+        "es-ES": "Vermont",
+        "es-MX": "Vermont"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/vermont.svg",
+      "bytes": 449,
+      "sha256": "415dd9b8e3448458ec7afb60edae41094066c17123ef73941aa239ea454e0bc7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "vertical",
       "symbol": "vertical",
       "labels": {
@@ -90845,6 +91748,27 @@
       "file": "assets/violin.svg",
       "bytes": 491,
       "sha256": "73c10326e53bd371bc8d073e9b3c0049016fd2462c27aa8e14b16dfac4206e6d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "virginia",
+      "symbol": "virginia",
+      "labels": {
+        "sv-SE": "Virginia",
+        "en-US": "Virginia",
+        "es-ES": "Virginia",
+        "es-MX": "Virginia"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/virginia.svg",
+      "bytes": 449,
+      "sha256": "1959b33164d7fc8ea9a6d81f506ffaee6445aa3b44c48f45d0ce0d77bdc0989b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -92196,6 +93120,27 @@
       }
     },
     {
+      "id": "washington",
+      "symbol": "washington",
+      "labels": {
+        "sv-SE": "Washington",
+        "en-US": "Washington",
+        "es-ES": "Washington",
+        "es-MX": "Washington"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/washington.svg",
+      "bytes": 449,
+      "sha256": "e84c514368acd909dc61107d816ee11300c242469235c3987ac6ac17addcc498",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "washington-dc",
       "symbol": "washington-dc",
       "labels": {
@@ -92840,6 +93785,27 @@
       "file": "assets/wellington.svg",
       "bytes": 504,
       "sha256": "871735d74e1ad280aa8bd9990ff89669a174c12630784f9e9a4a2079ceea92d6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "west-virginia",
+      "symbol": "west-virginia",
+      "labels": {
+        "sv-SE": "West Virginia",
+        "en-US": "West Virginia",
+        "es-ES": "Virginia Occidental",
+        "es-MX": "Virginia Occidental"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/west-virginia.svg",
+      "bytes": 449,
+      "sha256": "430bc5f620b040fc782f213b678909c562e04860fcc472e28dc4ae041239bfa9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -93939,6 +94905,27 @@
       }
     },
     {
+      "id": "wisconsin",
+      "symbol": "wisconsin",
+      "labels": {
+        "sv-SE": "Wisconsin",
+        "en-US": "Wisconsin",
+        "es-ES": "Wisconsin",
+        "es-MX": "Wisconsin"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/wisconsin.svg",
+      "bytes": 449,
+      "sha256": "c6b3e79cbc8da49e5189b3de235a945c0945d2c3145b7bb3c08db56135601755",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "wisdom-tooth",
       "symbol": "wisdomtooth",
       "labels": {
@@ -94898,6 +95885,27 @@
       "file": "assets/writing.svg",
       "bytes": 600,
       "sha256": "ce99678b1579bedfb1a5df4e6c8dca3257601c6d2b06ede5902a7dc08a5c2e9c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "wyoming",
+      "symbol": "wyoming",
+      "labels": {
+        "sv-SE": "Wyoming",
+        "en-US": "Wyoming",
+        "es-ES": "Wyoming",
+        "es-MX": "Wyoming"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/wyoming.svg",
+      "bytes": 449,
+      "sha256": "ff35d14399d70e2b6a869b6a1d712c5421a51cfcda5ee3416388fc6dfa4e61d6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

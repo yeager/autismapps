@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:47:56.990Z",
+  "exportedAt": "2026-10-20T16:49:31.019Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -12071,9 +12071,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/ceiling.svg",
-      "bytes": 545,
-      "sha256": "857ac066ffd9cec7548aebaed4cd53b9a65392e4d67c1a6de1201718ceaba078",
+      "file": "assets/ceiling.webp",
+      "bytes": 2614,
+      "sha256": "5a8f65ced2187700ae109a9718d18136311ab0463e3e037b40e65350a9904a83",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21248,9 +21248,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/dishwasher.svg",
-      "bytes": 515,
-      "sha256": "e44103357e19ed7d55e0c0f7f8f3ccbdd1cab64ebee5575da46ab0c65ead8466",
+      "file": "assets/dishwasher.webp",
+      "bytes": 10598,
+      "sha256": "4d114b7c7b1e62fda57fcb261333986e6e25db30345080f6e438e753316d78cb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22845,8 +22845,8 @@
         "home-objects"
       ],
       "file": "assets/dryer.webp",
-      "bytes": 3866,
-      "sha256": "d2a0b82b64543aefb4c35d4b0a1707c2ea430a1b2463f2a214138c5388a61718",
+      "bytes": 6926,
+      "sha256": "80d822651dddf7ba897ead32cc019ec53dc6edbffc75c7d7edea082335a9da7d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37712,9 +37712,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/ironing-board.svg",
-      "bytes": 600,
-      "sha256": "1a77d0d308c544040eb45b6b86d005e0f61d9a47753b9b954a4d5ff33f7482a4",
+      "file": "assets/ironing-board.webp",
+      "bytes": 5022,
+      "sha256": "486786522a13d92e08947ea362348a9ec7121532cf53b75b72285402ce061ff4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40400,9 +40400,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/laundrybasket.svg",
-      "bytes": 494,
-      "sha256": "ef800276541be6ad8c2607f460408e78f190cf49c389ee0ef8a19826234c67dc",
+      "file": "assets/laundrybasket.webp",
+      "bytes": 9280,
+      "sha256": "03e7b2d5558782e66d045eb0b3077d4dc2c1bb72923d1276e086664cb6dc6169",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62492,9 +62492,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/radiator.svg",
-      "bytes": 574,
-      "sha256": "cc88cd5b1ffea28392ba009a9fa45fe4a84ce5d4cab8cb2051bd571d8da628a0",
+      "file": "assets/radiator.webp",
+      "bytes": 4170,
+      "sha256": "953604947fc3b362ca06a606721215b64ecc17e94aced84400a0de25112f0fba",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -69843,8 +69843,8 @@
         "clothing"
       ],
       "file": "assets/sewing-machine.webp",
-      "bytes": 4830,
-      "sha256": "12233473c2a92c438b1c0e30b697e03ce2cc01ca9a12a60f6aea6e0236204700",
+      "bytes": 3732,
+      "sha256": "c843a970bcd6a22746ea85cad01a473770f87ffe380fd033494bc4ef4feec076",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -87000,8 +87000,8 @@
         "home-objects"
       ],
       "file": "assets/vacuumcleaner.webp",
-      "bytes": 7126,
-      "sha256": "eb02a01b4dbdaec37634fe23e6638f33cd83c8357941cf6d1892b2f07bcb4d72",
+      "bytes": 6198,
+      "sha256": "16a70b7ef387d30accce2c741ab529051746e6958773038b871bff8458e3545f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88911,8 +88911,8 @@
         "home-objects"
       ],
       "file": "assets/washingmachine.webp",
-      "bytes": 5710,
-      "sha256": "c9c40077aeb28308f9b78c1a17c91f08006a72efe3d29ac7d675128d69c8fed6",
+      "bytes": 6828,
+      "sha256": "35388954b636eaf4d57b9646a28596a9f079712e2ca27037802c809319399db0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

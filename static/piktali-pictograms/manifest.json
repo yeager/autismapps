@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:31:47.849Z",
+  "exportedAt": "2026-10-20T17:32:41.769Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4417,
+  "count": 4426,
   "pictograms": [
     {
       "id": "abdomen",
@@ -16631,6 +16631,27 @@
       "file": "assets/conductor.svg",
       "bytes": 579,
       "sha256": "cd00ad49bf20d0a13bdf2b9ab6b0d5b98530663f47fed068bc3948eedaa218a2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "conference",
+      "symbol": "conference",
+      "labels": {
+        "sv-SE": "Konferens",
+        "en-US": "Conference",
+        "es-ES": "Conferencia",
+        "es-MX": "Conferencia"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/conference.svg",
+      "bytes": 674,
+      "sha256": "d1a1de073868c739851726618a315873d4fac900d87ae2143376e12c32f5e32d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37176,6 +37197,27 @@
       }
     },
     {
+      "id": "information-desk",
+      "symbol": "information-desk",
+      "labels": {
+        "sv-SE": "Informationsdisk",
+        "en-US": "Information desk",
+        "es-ES": "Mostrador de información",
+        "es-MX": "Módulo de información"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/information-desk.svg",
+      "bytes": 537,
+      "sha256": "a6c9c9a1fea0a77751251070a32e972a9211d4651c17e970e0fc9971a2bda8df",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "ingredient",
       "symbol": "ingredient",
       "labels": {
@@ -37673,6 +37715,27 @@
       "file": "assets/internet-bill.svg",
       "bytes": 613,
       "sha256": "1c1b4b646a1f4c51b5d9ca1e57868916dfcc21d0818eb91f9422b87df82557fa",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "internship",
+      "symbol": "internship",
+      "labels": {
+        "sv-SE": "Praktik",
+        "en-US": "Internship",
+        "es-ES": "Prácticas",
+        "es-MX": "Prácticas"
+      },
+      "categories": [
+        "school-work-play"
+      ],
+      "file": "assets/internship.svg",
+      "bytes": 640,
+      "sha256": "87c1bfc3f9d4b2fff40678a9a4ee7165a7bfdd6f7a9aff6bb86fc517bcd7ebe9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45107,6 +45170,27 @@
       "file": "assets/meet-someone.svg",
       "bytes": 644,
       "sha256": "594799ee505e5746c98d9a729d6dc9863ed91986cef6dca8e951a40cc301e483",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "meeting-room",
+      "symbol": "meeting-room",
+      "labels": {
+        "sv-SE": "Mötesrum",
+        "en-US": "Meeting room",
+        "es-ES": "Sala de reuniones",
+        "es-MX": "Sala de reuniones"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/meeting-room.svg",
+      "bytes": 762,
+      "sha256": "0e9b86c78bbdfad14dbf1598d3f3b9adb525d0988b4e47e1757fcf763de65e2a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58197,6 +58281,27 @@
       }
     },
     {
+      "id": "pickup-point",
+      "symbol": "pickup-point",
+      "labels": {
+        "sv-SE": "Utlämningsställe",
+        "en-US": "Pickup point",
+        "es-ES": "Punto de recogida",
+        "es-MX": "Punto de recolección"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/pickup-point.svg",
+      "bytes": 500,
+      "sha256": "e506c8db167a2c9808558e9d9bdc9811f9dc0699b88ecc91b1952a34b68f81c6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "picnic",
       "symbol": "picnic",
       "labels": {
@@ -63545,6 +63650,27 @@
       "file": "assets/recently.svg",
       "bytes": 590,
       "sha256": "f6ab7a2851e9c90869a235e1f1de3e1a28536f78469b89a491b398e3c4ba6495",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "reception",
+      "symbol": "reception",
+      "labels": {
+        "sv-SE": "Reception",
+        "en-US": "Reception",
+        "es-ES": "Recepción",
+        "es-MX": "Recepción"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/reception.svg",
+      "bytes": 573,
+      "sha256": "1e0a798544a643fe4ed5822d56d0fca1d6167becd360c80b9ddd6153e17d6bf8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -69866,6 +69992,27 @@
       "file": "assets/serve-the-ball.svg",
       "bytes": 702,
       "sha256": "a34879d0136c35e476ea4b15d61dbee90b1576a4b30ab712d8b9b15c634d4f1b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "service-counter",
+      "symbol": "service-counter",
+      "labels": {
+        "sv-SE": "Servicedisk",
+        "en-US": "Service counter",
+        "es-ES": "Mostrador de atención",
+        "es-MX": "Mostrador de atención"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/service-counter.svg",
+      "bytes": 488,
+      "sha256": "08cb914926d00f8872c68424fbc9db5e9d48aeb7c7299b499671c5d54cdc95df",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84153,6 +84300,27 @@
       }
     },
     {
+      "id": "training",
+      "symbol": "training",
+      "labels": {
+        "sv-SE": "Utbildning",
+        "en-US": "Training",
+        "es-ES": "Formación",
+        "es-MX": "Capacitación"
+      },
+      "categories": [
+        "school-work-play"
+      ],
+      "file": "assets/training.svg",
+      "bytes": 522,
+      "sha256": "f7bc787b90ac1c481a3bfa59eb75677ae30859d8b82fa6653140f1fc6c5f5fa7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "tram",
       "symbol": "tram",
       "labels": {
@@ -91685,6 +91853,27 @@
       "file": "assets/worksheet.svg",
       "bytes": 744,
       "sha256": "c9ed60de3a40300a25f263f8a07cb1d63256a54272afba33c568c7a95438db21",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "workshop",
+      "symbol": "workshop",
+      "labels": {
+        "sv-SE": "Verkstad",
+        "en-US": "Workshop",
+        "es-ES": "Taller",
+        "es-MX": "Taller"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/workshop.svg",
+      "bytes": 551,
+      "sha256": "af4daf0ec94860fd6032dffb7b72252de278b5322a6470353bb064a180fe4b31",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:46:37.176Z",
+  "exportedAt": "2026-10-20T16:47:56.990Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -2831,9 +2831,9 @@
       "categories": [
         "places"
       ],
-      "file": "assets/aquarium.svg",
-      "bytes": 659,
-      "sha256": "eb6c88bb5da2fbdee6ed58f2e06f671d51173a42decfa51f60a2e8b29d41f2c9",
+      "file": "assets/aquarium.webp",
+      "bytes": 11998,
+      "sha256": "7fb70672405ba63037b5764f65aa866f2c1404ffae5f8482776fd44071ebd8f8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5918,9 +5918,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/bee.svg",
-      "bytes": 919,
-      "sha256": "b7bb01e1be4af9ef3c6a2e5f6bdfa03ba853851632cb6fcadfa02a438bc00a7f",
+      "file": "assets/bee.webp",
+      "bytes": 7286,
+      "sha256": "60c45d8fe0725529288e4e79aa44787d652b183d0e99216979d04652f2a01163",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10181,9 +10181,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/butterfly.svg",
-      "bytes": 788,
-      "sha256": "eac31bff096a74e9844656e8a0cf2f231d8f18441ed0f7b0851de5971f6c2c2d",
+      "file": "assets/butterfly.webp",
+      "bytes": 13688,
+      "sha256": "153272fd65dddb4a9b17cfda9099a0b1a4c28470caf5482fd065c31fb2bbea31",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10979,9 +10979,9 @@
       "categories": [
         "places"
       ],
-      "file": "assets/campsite.svg",
-      "bytes": 380,
-      "sha256": "d6f0297a1097530f77461d87b2bd6c850cb0c78cb507f13574b04582e6981590",
+      "file": "assets/campsite.webp",
+      "bytes": 16142,
+      "sha256": "19c8403b4fd79bd8eb6f2b3456df9a428074c758057c4d93b972901387efcc7b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29690,9 +29690,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/frog.svg",
-      "bytes": 794,
-      "sha256": "e4bb390fccdcc990e749d48cb973ed5550aec010388fc0bd31187e448760a984",
+      "file": "assets/frog.webp",
+      "bytes": 11876,
+      "sha256": "a343c804f5f32dd5cef8542422983c0f785859428f914b9be33686554e4e3483",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55982,9 +55982,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/parrot.svg",
-      "bytes": 860,
-      "sha256": "fdfcacedaa90d69b8bfae7807f7bf569451086a70efaa0496960a3cc749c8bf2",
+      "file": "assets/parrot.webp",
+      "bytes": 9780,
+      "sha256": "42a71204fe0753f9afe81eaa49ea41a1a39b300bd3d3f4191bf32b0be4579ddb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62451,8 +62451,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/rabbit.webp",
-      "bytes": 5756,
-      "sha256": "d183b68a1ebfecccd1ca8bc53f092b70329e1dac6e60afe598fa1b3b0c994eaa",
+      "bytes": 6598,
+      "sha256": "f9dc8a7ad3ac30a2706bd4a22e54ac821186b255a194d0105e02f44bd70cff6a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -85173,8 +85173,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/turtle.webp",
-      "bytes": 7158,
-      "sha256": "2763d8d8be1c42e384ec1d214e00555d75825ba3b2bdf449afda8be8c585c637",
+      "bytes": 8166,
+      "sha256": "fd162320f0afdd1e557cc6952395d57c3fc031f2125bdb7b1ad528b2a92e9c8d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -92312,9 +92312,9 @@
       "categories": [
         "places"
       ],
-      "file": "assets/zoo.svg",
-      "bytes": 794,
-      "sha256": "46b13d5ceb8d46ac74c6200ce289ed01e85cd4cd7cafeeb52e9b426505e0c5ee",
+      "file": "assets/zoo.webp",
+      "bytes": 17600,
+      "sha256": "90d646a6f90209b92218d43a42b50bb22a0fc2886cfacae93eef31f541c27b05",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

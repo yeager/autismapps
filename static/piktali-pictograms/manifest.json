@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:51:18.207Z",
+  "exportedAt": "2026-10-20T16:52:48.629Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -4218,8 +4218,8 @@
         "school-work-play"
       ],
       "file": "assets/backpack.webp",
-      "bytes": 9936,
-      "sha256": "72e5ecdee380f57b3050d388691dc3b95ba6a778604faff3a822bbe1fc3b1895",
+      "bytes": 7662,
+      "sha256": "b2a97a175b120f67a8789df84e052e4698d8acf97e3809ea74ddaf7b92152e39",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5687,9 +5687,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/beanie.svg",
-      "bytes": 477,
-      "sha256": "a06c404fb9a175d3970185cfca7215d9902de7bbd5fc9e15c22092c456dc6da0",
+      "file": "assets/beanie.webp",
+      "bytes": 10076,
+      "sha256": "5df605b759190ed56a4c4e62f0e245dddb87c1b867cfc793e0d0c1c07109dbbb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15159,8 +15159,8 @@
         "clothing"
       ],
       "file": "assets/coat.webp",
-      "bytes": 7518,
-      "sha256": "bd16a223bb8c9c389177418c4108c12205ece7522ce2b239fa7d2be8bff40917",
+      "bytes": 6748,
+      "sha256": "23f4f10d309a8be60cf625fd8919a6c9d606e286e7d90fe927dcd42410fd4213",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45923,9 +45923,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/mittens.svg",
-      "bytes": 256,
-      "sha256": "fc667102052373aa18b326f3f48e03ba120300e0b3390d37306e6247b902beac",
+      "file": "assets/mittens.webp",
+      "bytes": 11700,
+      "sha256": "c1a2ccaafaa9d6d35ebc3ff6bdb98428a8071f29ca8c2bdde92e607ac68cf9a1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62597,9 +62597,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/rainboots.svg",
-      "bytes": 626,
-      "sha256": "ce3e513cd5e045fa1e0b9ed4e572822b73b99185e8d51f9fe343da9facf08021",
+      "file": "assets/rainboots.webp",
+      "bytes": 5656,
+      "sha256": "41251c5c6b0f9e59f0f5d1cd7227de6b51a0430378125005019e6774cc8968b7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62661,8 +62661,8 @@
         "clothing"
       ],
       "file": "assets/raincoat.webp",
-      "bytes": 5056,
-      "sha256": "c8680c02f6da00e3881757946d13cff442034b69bdffdc9b6aa9d29393756148",
+      "bytes": 6604,
+      "sha256": "1a98ca0194e17567808213a895c463822aa9ece63915b5a2c50540deef29768f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -67764,8 +67764,8 @@
         "clothing"
       ],
       "file": "assets/scarf.webp",
-      "bytes": 10404,
-      "sha256": "7b29421786ceaf0691bb041e8c793fa90c99d268d12157f424258ff8d3e38ef9",
+      "bytes": 9418,
+      "sha256": "adc3632cc2e6c06a43dc16f563cc66d61ef6feedc4e9d434e16f93204bdf6842",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73013,9 +73013,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/sneakers.svg",
-      "bytes": 410,
-      "sha256": "525a0fc9eb377e8f6658ee42c190c46768880c63abddc22f5e006adea01f84aa",
+      "file": "assets/sneakers.webp",
+      "bytes": 7316,
+      "sha256": "270ad85fc47e2f308799e37d0f0aa40424611522d858f45e9f2574aa464d4e8e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77928,8 +77928,8 @@
         "clothing"
       ],
       "file": "assets/sunglasses.webp",
-      "bytes": 3702,
-      "sha256": "d2a3fea50fd63e459594d9a22a2143bd1c719345ef120591bf8a9918dee94233",
+      "bytes": 4580,
+      "sha256": "2c22c89359f298512c490b265728780124e03c464946b2cc1d469c8b1d7115cc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

@@ -3,11 +3,14 @@
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
-import { base, build, files, prerendered, version } from '$service-worker';
+import { build, files, prerendered, version } from '$service-worker';
 import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
 import { detectLocale, pick } from '$lib/i18n/locales';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
+// Not imported from $service-worker: SvelteKit's dev module doesn't export `base` (only the build does),
+// so the import was a SyntaxError under `npm run dev`. The scope is the base path ("/autismapps/" on Pages).
+const base = new URL(sw.registration.scope).pathname.replace(/\/$/, '');
 const CACHE = `cache-${version}`;
 // Pictograms never change for a given id, so they live in a cache that survives deploys
 // (the page keeps ARASAAC API answers in `arasaac-api-v1`, see src/lib/arasaac/cache.ts)

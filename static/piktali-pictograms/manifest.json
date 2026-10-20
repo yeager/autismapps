@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:05:06.241Z",
+  "exportedAt": "2026-10-20T17:07:11.764Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -5478,8 +5478,8 @@
         "body-health-routines"
       ],
       "file": "assets/bathtub.webp",
-      "bytes": 4090,
-      "sha256": "8563968558fb6710d9c41a2a7e22b7fe99a147c466984de2e380d49c166dc498",
+      "bytes": 4654,
+      "sha256": "e4029ec6b2018638c7bc5414c4fa7b57f2181d9e98588345dba1c38f2146e675",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15663,8 +15663,8 @@
         "body-health-routines"
       ],
       "file": "assets/comb.webp",
-      "bytes": 10036,
-      "sha256": "6c28bba34aecd9e7c5c1d2b8047c28f48a602488bb2a5431139e1d300b9ec606",
+      "bytes": 6598,
+      "sha256": "9e0f2318164472606469fa728bb870c9ef4150ed7f4e1b6a197410f3184cc204",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -42752,9 +42752,9 @@
       "categories": [
         "body-health-routines"
       ],
-      "file": "assets/lotion.svg",
-      "bytes": 498,
-      "sha256": "0ef6aab3ee4879e830c6b3d349b86b37624e4965eb0149ae26175184419d23da",
+      "file": "assets/lotion.webp",
+      "bytes": 2308,
+      "sha256": "167923dd1fa29e509514179d08677794cea31d484b9de11abc557a3e8f611cb8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48107,9 +48107,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/nail-clipper.svg",
-      "bytes": 445,
-      "sha256": "8795dfdf39b49aeb1b97ff9d0594e98befa6b5a0cce404374546b1c918c1d8c0",
+      "file": "assets/nail-clipper.webp",
+      "bytes": 5558,
+      "sha256": "6667d9365ab1a41f19d8dd7f0deab4447998f1fa03d67ae250ffc803851dc5b1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71166,8 +71166,8 @@
         "body-health-routines"
       ],
       "file": "assets/shower.webp",
-      "bytes": 11810,
-      "sha256": "39fa0295b113a0eeadda68a8f3ecb961d4a1be6096a8307a90b1b0d381150906",
+      "bytes": 7730,
+      "sha256": "b79e6e8a760e445b831f4ad021ae405e0039edd8945b99fa8f8d99ba0bd4d8c4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71922,8 +71922,8 @@
         "home-objects"
       ],
       "file": "assets/sink.webp",
-      "bytes": 2840,
-      "sha256": "1bb107a73cd9815ef18c768dca6213763b85d47f417bff24bb50e23c48e8df46",
+      "bytes": 4268,
+      "sha256": "d2e4888bdb3e5cb09935469c994309d88a9c97a078c1a1a64b2c25d8065ff024",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82485,8 +82485,8 @@
         "body-health-routines"
       ],
       "file": "assets/toilet.webp",
-      "bytes": 2666,
-      "sha256": "0c542fdb102a49683f512505c4ba5369e0986cbeab686f292416be0374e540a0",
+      "bytes": 3530,
+      "sha256": "f0a184c37d729118ae539a9b580f5d93c93ecbb0e6261097283c188f00c65e7e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82548,8 +82548,8 @@
         "body-health-routines"
       ],
       "file": "assets/toiletpaper.webp",
-      "bytes": 2860,
-      "sha256": "bb35210f30470574f230b2cbf65c4ff5b7deb249fe8c67740ab8d428c2b5ed3a",
+      "bytes": 5098,
+      "sha256": "6d9d12353a6f13327d5a70b04f7fece01c7d62e1b637f413bcf8b0a69622a361",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -83514,8 +83514,8 @@
         "body-health-routines"
       ],
       "file": "assets/towel.webp",
-      "bytes": 8412,
-      "sha256": "356b91fd2776b2d093aaa439240df81144d8c39e2daa7c3a9b6c375aa5fec2ad",
+      "bytes": 11990,
+      "sha256": "f72b10cb40ffcc9c89404ec10089b286c453f4f98f37dc21623ad3824711dca4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

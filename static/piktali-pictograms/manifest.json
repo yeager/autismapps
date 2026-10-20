@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T15:30:51.063Z",
+  "exportedAt": "2026-10-20T16:08:56.332Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -3209,9 +3209,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/artichoke.svg",
-      "bytes": 479,
-      "sha256": "621b43835ce78851c72bb9ad13ce4bde68907a99803bbc1fe481c93f0df43648",
+      "file": "assets/artichoke.webp",
+      "bytes": 9500,
+      "sha256": "8d40b1a38138f343cb57b078bd370a22f6e3aa125ff7592f3b45bd8207783686",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3482,9 +3482,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/asparagus.svg",
-      "bytes": 466,
-      "sha256": "14dd84606ca7b1785f1a199206435ec2cbfa983224043e61b1676fe650d66730",
+      "file": "assets/asparagus.webp",
+      "bytes": 9164,
+      "sha256": "ae95a14501c037f80139bb6fac1d95e90b488ff13438ef467fe4d7217f59a07c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4427,9 +4427,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/baguette.svg",
-      "bytes": 381,
-      "sha256": "f37e2193c9ad6975078c42bd2561271c413044fe0face432a7fdc052818eaa6d",
+      "file": "assets/baguette.webp",
+      "bytes": 9656,
+      "sha256": "3901fbefe5f9578b6b15fdea18890b44bde1ce47a6b5113e4cb82e3785f68bb8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5183,9 +5183,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/basil.svg",
-      "bytes": 476,
-      "sha256": "ffd3790de46a60e5efef82a5e8d3e57daa8e58318652c4eddd39284bc63e7b99",
+      "file": "assets/basil.webp",
+      "bytes": 10068,
+      "sha256": "ff8803ae806d1dda9fc00976b3aa3cc73b560ad73f1e3db0e6ffb0624d4ede5c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6002,9 +6002,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/beetroot.svg",
-      "bytes": 485,
-      "sha256": "0150fdfe98a669dd3499b826abc6e8c81a54ba19c0ed5e2cb02584aed57e0ad0",
+      "file": "assets/beetroot.webp",
+      "bytes": 9002,
+      "sha256": "46294c065ee8afec33f3cc929dfa0e6589742d89f0b3e99e4a58a2a608f9e96f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9803,9 +9803,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/bun.svg",
-      "bytes": 528,
-      "sha256": "a6981761faf32af34d726a6f68bade75d54a7e00a8ce214c9ede515b356d171f",
+      "file": "assets/bun.webp",
+      "bytes": 8724,
+      "sha256": "b2bbdf933a88cb329606d4792c7b2984600d39dd34fe727c7e4b2ca8a972801b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11189,9 +11189,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/candy.svg",
-      "bytes": 480,
-      "sha256": "bedc19986c7a64a7764adf5b0235ce1226216fe0d44a1521a9939bb26ec07994",
+      "file": "assets/candy.webp",
+      "bytes": 4600,
+      "sha256": "7a5d553b6a386097721d002e110d13f1d3b4ca58dc7c8a44cae5cb00d28ab591",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11798,9 +11798,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/cashew.svg",
-      "bytes": 455,
-      "sha256": "72671c9ed8998a6d78d986be69384faa1fb28f4c2a37c95a46f625d19d31d118",
+      "file": "assets/cashew.webp",
+      "bytes": 6142,
+      "sha256": "4bd12d70c36aac6c43e6f2cdc53a2345444ab88cbd842066c3281177ac6fdaa4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12113,9 +12113,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/celery.svg",
-      "bytes": 586,
-      "sha256": "8ef9376414da552252bf6ff86c812e50094ac050335ff4645bcef0fb63090e2f",
+      "file": "assets/celery.webp",
+      "bytes": 8090,
+      "sha256": "ced7da6fd53e5ca8ab9e911092c0be58edee44c0c93b1db0f64d798bd53cb004",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12218,9 +12218,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/cerealbar.svg",
-      "bytes": 732,
-      "sha256": "337979a9d68e88bbad091a06252b5d377b50e855544ae5d53b93984a92540619",
+      "file": "assets/cerealbar.webp",
+      "bytes": 10440,
+      "sha256": "5f78172dd87728f6faeac2482154ca90e8029bd8ac266a1d6938688f17a3fbbf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13373,9 +13373,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/chickpea.svg",
-      "bytes": 419,
-      "sha256": "777a5e421a55d11dfec8af4296e65178b3daf69a248d6e85f40021add5a732ad",
+      "file": "assets/chickpea.webp",
+      "bytes": 7772,
+      "sha256": "566b3924097dee9cb1c87be2e1fc39626bbe29729dbb3f7d2aca78b99a35a1d7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13940,9 +13940,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/cinnamon.svg",
-      "bytes": 541,
-      "sha256": "8817463674b9c32158d8dd651a0cd321391ea833cd1366ddf633cadc29e0d411",
+      "file": "assets/cinnamon.webp",
+      "bytes": 7524,
+      "sha256": "10f10065120bf95a53079bde40fe7c5b44e528d737b511f4a68f08116b40eb8e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -17720,9 +17720,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/couscous.svg",
-      "bytes": 640,
-      "sha256": "712aee1823b5cee21526585323f3ac06fdff5e4f60265078abe2cfad280cd26e",
+      "file": "assets/couscous.webp",
+      "bytes": 8604,
+      "sha256": "af2db3f3b573ef9c571f2d08985f324a465c7e8974964ec2aa45c26f525aaada",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -17930,9 +17930,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/cracker.svg",
-      "bytes": 526,
-      "sha256": "8ea4dc22f563b270dcb61f6e2f3dc85e4fda56fe03ad3c3ff4cdd1dc454e4aef",
+      "file": "assets/cracker.webp",
+      "bytes": 6860,
+      "sha256": "c570a0ceed27bae6bcae218293b1dddc236d7ce7c7ee7fd8469724394438d55a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18014,9 +18014,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/cranberry.svg",
-      "bytes": 724,
-      "sha256": "0ec169402be06b916c327ffb05ec6c24d43c50c30d41f4597defbd8833344b79",
+      "file": "assets/cranberry.webp",
+      "bytes": 7224,
+      "sha256": "a8b3e9671dab90baaed14903f92c6e71e6f8419d9eda5d16cd8406e25b280019",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18875,9 +18875,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/currant.svg",
-      "bytes": 926,
-      "sha256": "f67b3da0b7ffafb2b77be33f43767e244f6bcedb04ee5000003a144738e80ab2",
+      "file": "assets/currant.webp",
+      "bytes": 8586,
+      "sha256": "42e48b519290d8ef48cbb9ed525ae39988544b7004da518ef72cd2a4f5de6c4a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18917,9 +18917,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/curry.svg",
-      "bytes": 778,
-      "sha256": "b8c4df1a1c7f04a46a37231a86929b5f30c6da28cc55bf0a5347e6b3ea5fb6a1",
+      "file": "assets/curry.webp",
+      "bytes": 8938,
+      "sha256": "0230ea6325bf19bec9d70eec0b109a46ee823cc73479211bfa3ad223e7d55b0c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22403,9 +22403,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/driedfruit.svg",
-      "bytes": 560,
-      "sha256": "4b8e4c8196d124f41ac8d1734b8adb7ceec280549bc029c677ca0f0a35f42374",
+      "file": "assets/driedfruit.webp",
+      "bytes": 9712,
+      "sha256": "17ab697613fae1bb197ba24bc296fdc2ae73d1ec191df643b60882c551378442",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29543,9 +29543,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/frenchfries.svg",
-      "bytes": 450,
-      "sha256": "c60c0206faa11a63bbfb5d6d03aa44c529b6afad208a79cc6954d843f59eb3b4",
+      "file": "assets/frenchfries.webp",
+      "bytes": 6032,
+      "sha256": "e44ca3f5f9b1e30d9bebc486c61e692e450705c603e33a9d74bf17f57785a21f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31958,9 +31958,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/grapefruit.svg",
-      "bytes": 662,
-      "sha256": "fd0ca32d5d75bcca8a6b5e66fa77a2aa1002ea9d1e6976c02b687d68ba54f437",
+      "file": "assets/grapefruit.webp",
+      "bytes": 10366,
+      "sha256": "eb84672b36ca4b84ba2c483fad6e96d7ffe3f1bb336b00fa91c7b8bedc140c2c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33113,9 +33113,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/hamburger.svg",
-      "bytes": 699,
-      "sha256": "e16bae19276a281a61e72e43a4c526a7a618ca96f1ef6db159174a0fbf04dc77",
+      "file": "assets/hamburger.webp",
+      "bytes": 10758,
+      "sha256": "c82c7696be344c6aec2edcf69e673301bcf61b031c0436dd998c4b4f180bcf5f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38657,9 +38657,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/kale.svg",
-      "bytes": 364,
-      "sha256": "380df5529b6da6c0d362fc3d3e89ad368cef8915f5e458e4c4d4e3d1e52f42c8",
+      "file": "assets/kale.webp",
+      "bytes": 15846,
+      "sha256": "739337221788189fcbeedec2eac2dc2c954c7294ec6308d08e23ba731faceefb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38846,9 +38846,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/ketchup.svg",
-      "bytes": 534,
-      "sha256": "93efcc0761c5e4a969772feda4f849a28aa8b5fd6e1d42f45d77aecb0f51aa1b",
+      "file": "assets/ketchup.webp",
+      "bytes": 4278,
+      "sha256": "f626594a75b5ac23e634087224f1ad958a328413d98362c4656fd484aec9483d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40736,9 +40736,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/leek.svg",
-      "bytes": 582,
-      "sha256": "2eb0413bebea1ee17792453ac30037510253808cbc76fe35201481b8378e84c7",
+      "file": "assets/leek.webp",
+      "bytes": 5092,
+      "sha256": "f232aa7b4afca6d66697075019c4ab36e85528cabda6f5a7e4733f887987e3cc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40925,9 +40925,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/lentil.svg",
-      "bytes": 685,
-      "sha256": "3add22062d26195f1b588871522082a2f9788770b4925748bba1a20abe772729",
+      "file": "assets/lentil.webp",
+      "bytes": 9748,
+      "sha256": "227ff7a5285ce259214997b3bd2aed734a0cf82fca4f3bd54b76f82fc9e08c47",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43655,9 +43655,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/mandarin.svg",
-      "bytes": 511,
-      "sha256": "0232c30ceb7315e3d29e54b3e8473cdc53b0f5996b3b67e68457d9f2a0aeee64",
+      "file": "assets/mandarin.webp",
+      "bytes": 7468,
+      "sha256": "0a977a3b45bec9fafccc1f0c7bb08642ab5687041ccbaa93c606790d98e55c3d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44285,9 +44285,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/mayonnaise.svg",
-      "bytes": 563,
-      "sha256": "db169971289ec2ec14980b3b87f1be6f32d99bdc00fc36500f96aa06601ce8e3",
+      "file": "assets/mayonnaise.webp",
+      "bytes": 3292,
+      "sha256": "db4be0a655d04b388211bf037fc54b1ff3afad82fb5d00e6a5d0f210a9828753",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47918,9 +47918,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/mustard.svg",
-      "bytes": 550,
-      "sha256": "754b9038ae089d623f7b9ff74ce9f75a4ded167ed886d2796baa710fe14716ba",
+      "file": "assets/mustard.webp",
+      "bytes": 2876,
+      "sha256": "4b4ffc6c2e5f4c7a312715547c2b7c82309257479d33aecea80d29c38c3aa574",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49850,9 +49850,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/noodles.svg",
-      "bytes": 656,
-      "sha256": "856da02160c82da84073f27d3a82299043da7804cad21b4140d4bb08257879c6",
+      "file": "assets/noodles.webp",
+      "bytes": 7916,
+      "sha256": "d151dc875ab3be208cd10419fc7988ccccd395329cd71f69bc4e687520046df9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55331,9 +55331,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/pancake.svg",
-      "bytes": 620,
-      "sha256": "b5b23b6b00f44d2644a1b4e643cb59702a0d4e3396539f4802f39100f2459706",
+      "file": "assets/pancake.webp",
+      "bytes": 10372,
+      "sha256": "5d3e97c3481265d902b2266dce96e42a6f12a5d7e723314e3405a6c195d994b5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -56003,9 +56003,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/parsley.svg",
-      "bytes": 555,
-      "sha256": "0d66207ff87f3358d5afa61082c8da88e57fe7814f72ccc41de4a7229bf6495a",
+      "file": "assets/parsley.webp",
+      "bytes": 13046,
+      "sha256": "3ecb2972aa980657be1e1aced113db7eef6c077e3c342da78462235fab5c0263",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58040,9 +58040,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/pie.svg",
-      "bytes": 557,
-      "sha256": "60fe230e573b9ca789d30d84c3fd2ae9c3047ff21c69408b476ea1059a7ee204",
+      "file": "assets/pie.webp",
+      "bytes": 10236,
+      "sha256": "23c733b24c5932d54dad87a68918df080947a4705aee0b0dab3714146045112b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58460,9 +58460,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/pistachio.svg",
-      "bytes": 484,
-      "sha256": "808da05edbbcf7e8a6181e3d8c89a346b8f2aa4956f8de9df2a114f4768b30fa",
+      "file": "assets/pistachio.webp",
+      "bytes": 7606,
+      "sha256": "eb0ccea8488240a6a513987b9876e3082bd86b5f3784e6ad20f66b5fdc9faa0c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59447,9 +59447,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/pomegranate.svg",
-      "bytes": 535,
-      "sha256": "d9f70323860c212b1a1d9684bcc4c91eb846915ee6214c6c8bd3a2d3b6b3d45d",
+      "file": "assets/pomegranate.webp",
+      "bytes": 12654,
+      "sha256": "de98b31ad0bb872683f3014ea21032dbcc01a295aa018f8165c01c31c6c87e43",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59552,9 +59552,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/popcorn.svg",
-      "bytes": 569,
-      "sha256": "e4a21e2f9feb173eeccd5f2096d78ece175a86d044cf193e67f04ccba0b22773",
+      "file": "assets/popcorn.webp",
+      "bytes": 6638,
+      "sha256": "de4dddec6428c8841bd1c3ff2d5e48cf8afbc2120546f0b2e6aaa967f2c466c6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59972,9 +59972,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/potatochips.svg",
-      "bytes": 584,
-      "sha256": "cbcc255d88df8186f39c2c8e5fb440d4b911e117d4d918afd3bd173fa40e217a",
+      "file": "assets/potatochips.webp",
+      "bytes": 8926,
+      "sha256": "2c71c1883c6f3d3e5aba6cf7b374fdbab25b037e488437d9fd989da6014d9d9d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61442,9 +61442,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/pumpkin.svg",
-      "bytes": 503,
-      "sha256": "672e854f95259cc1c841b1caf540ee63f7b1090b78d22a54949e97dbe3fc5254",
+      "file": "assets/pumpkin.webp",
+      "bytes": 6744,
+      "sha256": "3e2b9ee2465cbb9ca7ede9281cb7a38fdbd2fb15928d696b572cf0f01378a7d5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62366,9 +62366,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/quinoa.svg",
-      "bytes": 718,
-      "sha256": "6e41af7842e281a76150de27b8e35070966e0e90ceb08edfe275ae8bf32b1016",
+      "file": "assets/quinoa.webp",
+      "bytes": 9722,
+      "sha256": "274054d6f411d0198b1029472dc78f4303937da9b49cfa22f35087f2586892ab",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62555,9 +62555,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/radish.svg",
-      "bytes": 581,
-      "sha256": "7d431aa0214a1b07f6d5f8a2d70324ce94dd18904508d6d1ba6c4015415a05bd",
+      "file": "assets/radish.webp",
+      "bytes": 6996,
+      "sha256": "1faf73c483013541bdefa0efa94892113a64d43fdf51417552a3bdad964364d4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -65285,9 +65285,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/ricecake.svg",
-      "bytes": 521,
-      "sha256": "52e0aed6c4e267383d57232c25f6c75c6aef9158b13fe4894deaacb62ba9ba01",
+      "file": "assets/ricecake.webp",
+      "bytes": 9578,
+      "sha256": "0aa6a05f94b00a4a6d3c085ad91ec5c81cedee9e3839f64267c7b359a240bc52",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66902,9 +66902,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/salmon.svg",
-      "bytes": 602,
-      "sha256": "f20a96187ba49c00c970db0e85c6b0c4e2f3911b25fbb4cf7fbc315d8a96959c",
+      "file": "assets/salmon.webp",
+      "bytes": 12872,
+      "sha256": "6e02c50aa2e4229eb732b0ebc34c2d047260773872e1bedb721930340365c8b8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -67406,9 +67406,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/sausage.svg",
-      "bytes": 517,
-      "sha256": "054aae16ea0336a04614e42cdb4a788be48bb67ce177457f812196ac20e73956",
+      "file": "assets/sausage.webp",
+      "bytes": 6976,
+      "sha256": "ace09cbbf18535b48eb3dba0b7e34a7c4e6f645732fd39db8295a08d2ed28ae8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71312,9 +71312,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/shrimp.svg",
-      "bytes": 621,
-      "sha256": "9fc9ab4666a912eb45a83b4a55c4f95e30e5cbe15718100894b195c5b7f9cc23",
+      "file": "assets/shrimp.webp",
+      "bytes": 6456,
+      "sha256": "6779e070aff5c896781c0cdc92c4953e75f479116b91779da7d6cfb696d79906",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75428,9 +75428,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/squash.svg",
-      "bytes": 519,
-      "sha256": "c94d0b3ccceab91d01b2c21380d6e0c11d75e46791f11ac3ab2ac41faa153045",
+      "file": "assets/squash.webp",
+      "bytes": 10934,
+      "sha256": "89b9296ff14b6ccd618fe53c3f5853dc17c9b1578c468b171328bca8d5cd8004",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -78515,9 +78515,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/sweetpotato.svg",
-      "bytes": 668,
-      "sha256": "fe0849b50b406217db573e10fefb502d4e4eb5b8d3b16e81c5af870a6286edf2",
+      "file": "assets/sweetpotato.webp",
+      "bytes": 6656,
+      "sha256": "b61aad59a949b1f899a86a9462acddbeda025c2ee3d44c360fa63ad542c16c49",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79775,9 +79775,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/tangerine.svg",
-      "bytes": 650,
-      "sha256": "5f7948e2e5a3a765bc09ff8381d6362baa70cce8bcbfe7056e328b13ae51eabf",
+      "file": "assets/tangerine.webp",
+      "bytes": 6550,
+      "sha256": "87857d44553716fd985991ae9d8aa4e9cda40ca89236a186ddc353190fa53992",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82295,9 +82295,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/toast.svg",
-      "bytes": 480,
-      "sha256": "4622c42de54de7b3d2667a5eaccdc8f2b31a34501991bb76d6f5baae9ff528f7",
+      "file": "assets/toast.webp",
+      "bytes": 15334,
+      "sha256": "648661f14d3d9a0f86749a05d3f19b651efe6a61d481e5841017405cb8308157",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84668,9 +84668,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/tuna.svg",
-      "bytes": 642,
-      "sha256": "a1be11cc357d8e9604f5c9312e927eaaa1febead21ee506ea6c17acfb1d1c948",
+      "file": "assets/tuna.webp",
+      "bytes": 8386,
+      "sha256": "abc2c893c6af98a1c66001a2ed40e6fd7edd088b5cb1747345f2660581b3e2b9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -87587,9 +87587,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/vinegar.svg",
-      "bytes": 553,
-      "sha256": "ae45375b488a7e701e9131db2376f6d0832cb56e53deec8009949bbc54b52b04",
+      "file": "assets/vinegar.webp",
+      "bytes": 5824,
+      "sha256": "21b317b39a4bba8a4eb42cee5c7f4a49794c65fb354f1b6e6a5a87d818f44cc6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -87839,9 +87839,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/waffle.svg",
-      "bytes": 412,
-      "sha256": "309684905540b3f9ab126212dc2bb51dfd10bb0a812e441ade82d4e42bffd0e1",
+      "file": "assets/waffle.webp",
+      "bytes": 7306,
+      "sha256": "d788a8220dafa6756b62a3d7a639f1b57c81c83e4c884df7c132a1f298463af8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

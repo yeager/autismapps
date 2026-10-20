@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:10:54.006Z",
+  "exportedAt": "2026-10-20T17:13:10.048Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -4008,8 +4008,8 @@
         "quantity-time"
       ],
       "file": "assets/autumn.webp",
-      "bytes": 7230,
-      "sha256": "0eb1443eabd08c39802005485a34833cfbffb800a1b795e81925812d54960f61",
+      "bytes": 6298,
+      "sha256": "e1f823a2fe999d754b8c02dc3c247cb14ad7327bfffd7278783928c432caa05a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15054,8 +15054,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/cloud.webp",
-      "bytes": 2228,
-      "sha256": "2f6c2c6d1e5253dbd4aa6a9deaacfb3df682a23de8b195df31e22fc94b3e7bd4",
+      "bytes": 1778,
+      "sha256": "32a774ec1cccd7ab140634cf75eb561c800011074162bd7cb0e4e2b601254ffa",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41640,8 +41640,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/lightning.webp",
-      "bytes": 3860,
-      "sha256": "7ee47cbb1810251f394dce67ab1085bf4eca2e85ef672e5488cb54046a8f38e3",
+      "bytes": 5078,
+      "sha256": "cc2f2ad3b72741a65c09a95097af4c167bb7865dcbe8d792eed04fc00bb377e9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62577,8 +62577,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/rain.webp",
-      "bytes": 4766,
-      "sha256": "3abfbd3cdaaa5140d3d0e3cf8d7dca5fdc9f4ee906de198c7ad5a8f2e7aa7824",
+      "bytes": 3872,
+      "sha256": "1e39f70e3ac7eba23b7174c71c5736db72a9ef20d5be58451b7408582f0061ba",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73140,8 +73140,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/snow.webp",
-      "bytes": 4624,
-      "sha256": "8e0832a6690db66d851f29268ab75f74b8120b4fa73f1ee7f0d1b5124f45ce54",
+      "bytes": 4898,
+      "sha256": "33366d4fd17b7d11de29d39169853baacb1702de008edefce63accc090e0b1e6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75303,8 +75303,8 @@
         "quantity-time"
       ],
       "file": "assets/spring.webp",
-      "bytes": 7302,
-      "sha256": "e305dedeb96022cb3cedc7d83ad3e9b81b1a61f55d8c79ab810705f80676f175",
+      "bytes": 6032,
+      "sha256": "31533a9f744412e22f07f23812abc3ad90dd31489dc059cf6b2dea1e295194b3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77844,8 +77844,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/sun.webp",
-      "bytes": 4616,
-      "sha256": "c7d580430517705337a6ed5373745d949e6f8ecab4aab2cd75a06a3573673f6f",
+      "bytes": 4778,
+      "sha256": "c15c4864800ecc47ccb8dffc8f79fc2caa23323ad9b7bff500568d66cab272c9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90444,8 +90444,8 @@
         "animals-nature-weather"
       ],
       "file": "assets/wind.webp",
-      "bytes": 5886,
-      "sha256": "3d5e7628289e656e4572eb1a2f828319d47ef63f2b64da434b3709833cf1bf0a",
+      "bytes": 6210,
+      "sha256": "e8993adcdf39af7cf8efc472cf9e2f94110d147707ebe1eca317cd6de28a47ac",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90612,8 +90612,8 @@
         "quantity-time"
       ],
       "file": "assets/winter.webp",
-      "bytes": 7434,
-      "sha256": "5e2fbe522ea56f9e8f892080f3d7f18d0621fdc7c56e8be89b74f50fe47a4704",
+      "bytes": 6742,
+      "sha256": "9436d48bc701bc1b433074d055db4bd14dffb7c4df29ecda6e278ce61f63c0e4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

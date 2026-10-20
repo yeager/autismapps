@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:30:45.635Z",
+  "exportedAt": "2026-10-20T17:31:47.849Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4408,
+  "count": 4417,
   "pictograms": [
     {
       "id": "abdomen",
@@ -2645,6 +2645,27 @@
       "file": "assets/apple.webp",
       "bytes": 5964,
       "sha256": "47713b75d113c424b14774905d452e055cf30356d6a22a15da287a5a7b5e88f1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "application",
+      "symbol": "application",
+      "labels": {
+        "sv-SE": "Ansökan",
+        "en-US": "Application",
+        "es-ES": "Solicitud",
+        "es-MX": "Solicitud"
+      },
+      "categories": [
+        "communication"
+      ],
+      "file": "assets/application.svg",
+      "bytes": 473,
+      "sha256": "8ef094106d34c9a886da7e76bd0ba6f23121069a91a150b3d867c4a06a01520a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11178,6 +11199,27 @@
       }
     },
     {
+      "id": "cancellation",
+      "symbol": "cancellation",
+      "labels": {
+        "sv-SE": "Avbokning",
+        "en-US": "Cancellation",
+        "es-ES": "Cancelación",
+        "es-MX": "Cancelación"
+      },
+      "categories": [
+        "quantity-time"
+      ],
+      "file": "assets/cancellation.svg",
+      "bytes": 475,
+      "sha256": "a31f46cc8742e4a7739825c42fcca48ca8f050078577ef5d56294e38394dee0f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "cancelled-trip",
       "symbol": "cancelled-trip",
       "labels": {
@@ -16302,6 +16344,27 @@
       }
     },
     {
+      "id": "complaint",
+      "symbol": "complaint",
+      "labels": {
+        "sv-SE": "Klagomål",
+        "en-US": "Complaint",
+        "es-ES": "Queja",
+        "es-MX": "Queja"
+      },
+      "categories": [
+        "communication"
+      ],
+      "file": "assets/complaint.svg",
+      "bytes": 529,
+      "sha256": "e49bac0c261450502abd52fbb555b4a4204dca4f497d351f2d3afb582518761f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "complex",
       "symbol": "complex",
       "labels": {
@@ -16946,6 +17009,27 @@
       "file": "assets/continue.svg",
       "bytes": 528,
       "sha256": "c20ab90613927e71f30a33acef0f94ba1f9788a68531e9b2de3cf607306c23a5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "contract",
+      "symbol": "contract",
+      "labels": {
+        "sv-SE": "Avtal",
+        "en-US": "Contract",
+        "es-ES": "Contrato",
+        "es-MX": "Contrato"
+      },
+      "categories": [
+        "communication"
+      ],
+      "file": "assets/contract.svg",
+      "bytes": 493,
+      "sha256": "265e1c07208bf92818cb0a13b09a087220e3bd2dc3e3218958498f96be63c42d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26879,6 +26963,27 @@
       "file": "assets/feed-pet.svg",
       "bytes": 697,
       "sha256": "e6f51dd15f4a06e90ec4c3c09031674feb3fb9cf957434c71a49089be1aada5f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "feedback",
+      "symbol": "feedback",
+      "labels": {
+        "sv-SE": "Återkoppling",
+        "en-US": "Feedback",
+        "es-ES": "Retroalimentación",
+        "es-MX": "Retroalimentación"
+      },
+      "categories": [
+        "communication"
+      ],
+      "file": "assets/feedback.svg",
+      "bytes": 532,
+      "sha256": "672bbd77570e71fd033779975c0c1877a435076bfd510136afb5c8a3ea36f3f4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45086,6 +45191,27 @@
       "file": "assets/melt.svg",
       "bytes": 391,
       "sha256": "e8f46a79c8eb87b405f734f39cda7816c60ade639db44861533bb3d2c933a82d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "membership",
+      "symbol": "membership",
+      "labels": {
+        "sv-SE": "Medlemskap",
+        "en-US": "Membership",
+        "es-ES": "Membresía",
+        "es-MX": "Membresía"
+      },
+      "categories": [
+        "people-relations"
+      ],
+      "file": "assets/membership.svg",
+      "bytes": 540,
+      "sha256": "1622d236a652927095b90ae9b2f15dce50e9633f22b08246d9b74e995e356bc9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63972,6 +64098,27 @@
       }
     },
     {
+      "id": "registration",
+      "symbol": "registration",
+      "labels": {
+        "sv-SE": "Registrering",
+        "en-US": "Registration",
+        "es-ES": "Registro",
+        "es-MX": "Registro"
+      },
+      "categories": [
+        "communication"
+      ],
+      "file": "assets/registration.svg",
+      "bytes": 518,
+      "sha256": "796a6161c34442671c057f5fb010ae5d1e102a542af43620db63041f96bb31f8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "regretful",
       "symbol": "regretful",
       "labels": {
@@ -64322,6 +64469,27 @@
       "file": "assets/remotecontrol.webp",
       "bytes": 4996,
       "sha256": "7ad9632dc3168187ac332a7cddce0db209a9553cbdb11f69b4027535b3eed647",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "renewal",
+      "symbol": "renewal",
+      "labels": {
+        "sv-SE": "Förnyelse",
+        "en-US": "Renewal",
+        "es-ES": "Renovación",
+        "es-MX": "Renovación"
+      },
+      "categories": [
+        "quantity-time"
+      ],
+      "file": "assets/renewal.svg",
+      "bytes": 442,
+      "sha256": "ef28d9a9132f9d12dc3f295b03c7de872fb729d296efcde9e513c04c7ccf51c3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -78392,6 +78560,27 @@
       "file": "assets/surprised.webp",
       "bytes": 8406,
       "sha256": "4bf08c836b8c89be6a5b87342cd0c466d146293c247ecc3c8168ef61e05969e0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "survey",
+      "symbol": "survey",
+      "labels": {
+        "sv-SE": "Enkät",
+        "en-US": "Survey",
+        "es-ES": "Encuesta",
+        "es-MX": "Encuesta"
+      },
+      "categories": [
+        "communication"
+      ],
+      "file": "assets/survey.svg",
+      "bytes": 550,
+      "sha256": "e00b3a1ee72f505aef8c7c4148281b8220170dff5b996ccfeb8d5ce703b0d86c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

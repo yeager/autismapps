@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-20T14:34:12.866Z",
+  "exportedAt": "2026-10-20T14:37:08.092Z",
   "source": "piktali",
   "includePending": true,
-  "count": 552,
+  "count": 554,
   "pictograms": [
     {
       "id": "abdomen",
@@ -510,8 +510,8 @@
       },
       "categories": [],
       "file": "assets/ball.webp",
-      "bytes": 6530,
-      "sha256": "ee09e3d182e993e9800a68d3e83cfe9c25c2294031ffdb1a882f4b5c469bef1d",
+      "bytes": 5150,
+      "sha256": "cc9c31ad0121c57712b7b1d610da1fada1e803d18ff878b51922a11775ed304e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -569,6 +569,25 @@
       "file": "assets/bank.webp",
       "bytes": 6454,
       "sha256": "17ba763270dd39ce17ae3ef0f8614d13dd488c0db976ed04b432730541a73554",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "baseball",
+      "symbol": "baseball",
+      "labels": {
+        "sv-SE": "Baseboll",
+        "en-US": "Baseball",
+        "es-ES": "Pelota de béisbol",
+        "es-MX": "Pelota de béisbol"
+      },
+      "categories": [],
+      "file": "assets/baseball.webp",
+      "bytes": 5848,
+      "sha256": "a6cefb4fc07aaa99f36bbedf5ff56678b82074a6da2049d4919bd7a278e0c1b9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -814,8 +833,8 @@
       },
       "categories": [],
       "file": "assets/bicycle.webp",
-      "bytes": 8570,
-      "sha256": "a98a6e732447757f8b74e8ba86612525eaacafad09762734aabbf06d8e3df81c",
+      "bytes": 9650,
+      "sha256": "35d81fb4da6b42dfcd7013d8148aeb59ff275b93e390c2fe2125adb874dfd993",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2011,8 +2030,8 @@
       },
       "categories": [],
       "file": "assets/climb.webp",
-      "bytes": 6422,
-      "sha256": "f8fe558a2044fafb45455598a5504061ea2886ad4674225ee0ab70d41962d9f8",
+      "bytes": 7896,
+      "sha256": "d8f92d872e83cac4b3bda71c46baa73b0c1434602eec66139a094496cfc3ff87",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3493,8 +3512,8 @@
       },
       "categories": [],
       "file": "assets/fishing-rod.webp",
-      "bytes": 5116,
-      "sha256": "810389d756eb08ee50520a81357d647dfcc37c8a457ca55ea3532bf4935351f0",
+      "bytes": 5820,
+      "sha256": "d167de623c1de629abbe2d10b191180451c0e871de55a5a1fc3f0a9fb2bec532",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3816,8 +3835,8 @@
       },
       "categories": [],
       "file": "assets/game.webp",
-      "bytes": 13378,
-      "sha256": "6506da0482bfbec20843a5a9a9595cf45875e57990e815aa880fe5a1a2cb6982",
+      "bytes": 8672,
+      "sha256": "cdcf10acd6649f070506ef2cf4f1d3e061d687f43ca0614f4e80113f03ea2528",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4500,8 +4519,8 @@
       },
       "categories": [],
       "file": "assets/helmet.webp",
-      "bytes": 5914,
-      "sha256": "3f7a992a9806f11e22140a8eb95f139463d12bf0a05a9856323443ed98115577",
+      "bytes": 6198,
+      "sha256": "61930607fc407f4b5a68083861bf2c148e733185a7e721df61fb597f87eab7b1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4880,8 +4899,8 @@
       },
       "categories": [],
       "file": "assets/jumprope.webp",
-      "bytes": 6896,
-      "sha256": "aaa0c845576b837074e5cb515f34fe38a2d97f06b9fe8ae2b71a456be6355a54",
+      "bytes": 6568,
+      "sha256": "61d1a4354ad2607cc7c2d8137fe24f1d33d57c62f7a95330e0cb843518d7387c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7350,8 +7369,8 @@
       },
       "categories": [],
       "file": "assets/roller-skates.webp",
-      "bytes": 7826,
-      "sha256": "ef39b781b08654c610d91f11694e20affc8f712eeff6ba3b2bee66b5cbc81296",
+      "bytes": 9022,
+      "sha256": "9f0fcdb51f9d374f157c64b14e787fb601b3c32e5baf8bf7566cea379588c226",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8205,8 +8224,8 @@
       },
       "categories": [],
       "file": "assets/soccer-ball.webp",
-      "bytes": 4030,
-      "sha256": "aa7c4cf5a8bb7889d879dd86bf310f2c6342dbc6a707a1017c6e6b3c86dfa5c2",
+      "bytes": 4076,
+      "sha256": "def7d7634fc1f4089f48814c65beb121a6e81c9099ed8a6f4894e7a724e2a17e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8984,8 +9003,8 @@
       },
       "categories": [],
       "file": "assets/tennis-ball.webp",
-      "bytes": 3976,
-      "sha256": "a47050a5b56e6f9c727cb97918f9b9810c251273f35ea5ba64a12b6951b58099",
+      "bytes": 5028,
+      "sha256": "e83cb5932bb7533de4d8ef9a13f2d97ccbddefbcd80bdf9625c794f2e8890fd0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9518,6 +9537,25 @@
       "file": "assets/tree.webp",
       "bytes": 7998,
       "sha256": "b8298c1e2fc7e18d3136b55136eb6a5a2b50786bdae3558b47b49b2fc472bd0a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "trophy",
+      "symbol": "trophy",
+      "labels": {
+        "sv-SE": "Pokal",
+        "en-US": "Trophy",
+        "es-ES": "Trofeo",
+        "es-MX": "Trofeo"
+      },
+      "categories": [],
+      "file": "assets/trophy.webp",
+      "bytes": 5314,
+      "sha256": "29408034456d7ac5718f19677273211e998cf4aeeaade8d14ebe04f480bb75d9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

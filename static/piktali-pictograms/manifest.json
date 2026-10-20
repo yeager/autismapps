@@ -1,10 +1,31 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:36:27.797Z",
+  "exportedAt": "2026-10-20T17:37:52.580Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4679,
+  "count": 4698,
   "pictograms": [
+    {
+      "id": "abbotsford",
+      "symbol": "abbotsford",
+      "labels": {
+        "sv-SE": "Abbotsford",
+        "en-US": "Abbotsford",
+        "es-ES": "Abbotsford",
+        "es-MX": "Abbotsford"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/abbotsford.svg",
+      "bytes": 659,
+      "sha256": "a7b9285d8d001ecf4275cd2498267ed1f92e07e2678ca6b93c3e4d94c0d53cb6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
     {
       "id": "abdomen",
       "symbol": "abdomen",
@@ -5606,6 +5627,27 @@
       "file": "assets/barley.svg",
       "bytes": 689,
       "sha256": "0159217f723968b7c1fea5972f63cf1328f3ddfcccba1560e346fc856af870c5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "barrie",
+      "symbol": "barrie",
+      "labels": {
+        "sv-SE": "Barrie",
+        "en-US": "Barrie",
+        "es-ES": "Barrie",
+        "es-MX": "Barrie"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/barrie.svg",
+      "bytes": 659,
+      "sha256": "dfd327482cd7f311fa2cce08d194a31221151ed1ef6758af971a41f706051e39",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11507,6 +11549,27 @@
       "file": "assets/calf-young.svg",
       "bytes": 642,
       "sha256": "36d6e9fb3046cc8f24b636528eebd284279727bb5243f6d21157b59fa5f2d745",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "calgary",
+      "symbol": "calgary",
+      "labels": {
+        "sv-SE": "Calgary",
+        "en-US": "Calgary",
+        "es-ES": "Calgary",
+        "es-MX": "Calgary"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/calgary.svg",
+      "bytes": 657,
+      "sha256": "43c1a006c721c5f7ef654f51e446119f425858819c2d738d282e8678ddfe5c0e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -25017,6 +25080,27 @@
       }
     },
     {
+      "id": "edmonton",
+      "symbol": "edmonton",
+      "labels": {
+        "sv-SE": "Edmonton",
+        "en-US": "Edmonton",
+        "es-ES": "Edmonton",
+        "es-MX": "Edmonton"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/edmonton.svg",
+      "bytes": 658,
+      "sha256": "3e210d0d86358f35b27e7b6054de55adefa978387e7d280c0912cb26ed788a27",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "egg",
       "symbol": "egg",
       "labels": {
@@ -34761,6 +34845,27 @@
       }
     },
     {
+      "id": "halifax",
+      "symbol": "halifax",
+      "labels": {
+        "sv-SE": "Halifax",
+        "en-US": "Halifax",
+        "es-ES": "Halifax",
+        "es-MX": "Halifax"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/halifax.svg",
+      "bytes": 659,
+      "sha256": "d91bc2d257a1c98b3b58eb86645299d49fde1e4497f4d8f7229f39b761b7a716",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "hallway",
       "symbol": "hallway",
       "labels": {
@@ -34838,6 +34943,27 @@
       "file": "assets/hamburger.webp",
       "bytes": 10758,
       "sha256": "c82c7696be344c6aec2edcf69e673301bcf61b031c0436dd998c4b4f180bcf5f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "hamilton",
+      "symbol": "hamilton",
+      "labels": {
+        "sv-SE": "Hamilton",
+        "en-US": "Hamilton",
+        "es-ES": "Hamilton",
+        "es-MX": "Hamilton"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hamilton.svg",
+      "bytes": 659,
+      "sha256": "f4caeb03f8d954f5905e43dddf786b6885751d52e53a76e8dd82ae21a7e008cb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41208,6 +41334,27 @@
       }
     },
     {
+      "id": "kelowna",
+      "symbol": "kelowna",
+      "labels": {
+        "sv-SE": "Kelowna",
+        "en-US": "Kelowna",
+        "es-ES": "Kelowna",
+        "es-MX": "Kelowna"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kelowna.svg",
+      "bytes": 658,
+      "sha256": "2c447c4d6f4bf090babaec66eaf367f885697bf8077965b41d4dc231d1e556c7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kentucky",
       "symbol": "kentucky",
       "labels": {
@@ -41684,6 +41831,27 @@
       "file": "assets/kitchen-timer.svg",
       "bytes": 563,
       "sha256": "c5ed48f63753534b1110980a6176102a349fe163272c0a1f2b8c4a9ba89972d3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kitchener",
+      "symbol": "kitchener",
+      "labels": {
+        "sv-SE": "Kitchener",
+        "en-US": "Kitchener",
+        "es-ES": "Kitchener",
+        "es-MX": "Kitchener"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kitchener.svg",
+      "bytes": 657,
+      "sha256": "2fd7f23deacbeae0f9640e639094ca87215b4d5660eacb9ea4c7bd7dcb8d2eb6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50070,6 +50238,27 @@
       }
     },
     {
+      "id": "montreal",
+      "symbol": "montreal",
+      "labels": {
+        "sv-SE": "Montréal",
+        "en-US": "Montréal",
+        "es-ES": "Montréal",
+        "es-MX": "Montréal"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/montreal.svg",
+      "bytes": 658,
+      "sha256": "f81317b83d57188cb7566d34e434d052afa681c4ac10c56eef0c2d89616180e9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "moon",
       "symbol": "moon",
       "labels": {
@@ -57896,6 +58085,27 @@
       "file": "assets/osaka.svg",
       "bytes": 710,
       "sha256": "d3c018d9f2709ed3dbe7b4c25fcd9bf1dabc70d074a3ab0187a85176cd977df0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "oshawa",
+      "symbol": "oshawa",
+      "labels": {
+        "sv-SE": "Oshawa",
+        "en-US": "Oshawa",
+        "es-ES": "Oshawa",
+        "es-MX": "Oshawa"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/oshawa.svg",
+      "bytes": 659,
+      "sha256": "06ccb5b2f18890d9bac2b8fa33716c2c7cbc86c410d71616b379bd5dfe19b815",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66471,6 +66681,27 @@
       }
     },
     {
+      "id": "quebec-city",
+      "symbol": "quebec-city",
+      "labels": {
+        "sv-SE": "Québec",
+        "en-US": "Québec",
+        "es-ES": "Québec",
+        "es-MX": "Québec"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/quebec-city.svg",
+      "bytes": 659,
+      "sha256": "731b52b6e01a90a802574942c4f2aa64dd5e2d0409ddc26eeb1ec483bbbea872",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "quesadilla",
       "symbol": "quesadilla",
       "labels": {
@@ -68186,6 +68417,27 @@
       "file": "assets/refuse.svg",
       "bytes": 997,
       "sha256": "0557f91d955d34004b54724f73533e471f28ad7f884e830d21528f6d06f43355",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "regina",
+      "symbol": "regina",
+      "labels": {
+        "sv-SE": "Regina",
+        "en-US": "Regina",
+        "es-ES": "Regina",
+        "es-MX": "Regina"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/regina.svg",
+      "bytes": 658,
+      "sha256": "de8b068789d981530d700c093014611acba2eb185ba2afe9518d7dd9b7461406",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71154,6 +71406,27 @@
       }
     },
     {
+      "id": "saguenay",
+      "symbol": "saguenay",
+      "labels": {
+        "sv-SE": "Saguenay",
+        "en-US": "Saguenay",
+        "es-ES": "Saguenay",
+        "es-MX": "Saguenay"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/saguenay.svg",
+      "bytes": 658,
+      "sha256": "83e063ac0dafb6b8d7cf8b7c91e2ce2521c1f4e9b5667d187dec56717e2a206a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "sail",
       "symbol": "sail",
       "labels": {
@@ -71924,6 +72197,27 @@
       "file": "assets/sarajevo.svg",
       "bytes": 506,
       "sha256": "a59f459baa2a7ea13d84dd8020bbc1d5b0b5be20875ec70f6b48e6c802c52914",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "saskatoon",
+      "symbol": "saskatoon",
+      "labels": {
+        "sv-SE": "Saskatoon",
+        "en-US": "Saskatoon",
+        "es-ES": "Saskatoon",
+        "es-MX": "Saskatoon"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/saskatoon.svg",
+      "bytes": 658,
+      "sha256": "fa8412fcb34173aaa8d61dcf9bbbd53c877a8a141a74e10a2f6469162124aeee",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75095,6 +75389,27 @@
       "file": "assets/shelter.svg",
       "bytes": 476,
       "sha256": "d0dcf2b292486d7697e156b02abaf059f7b3f25710722336ec8dbd2c13d25989",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sherbrooke",
+      "symbol": "sherbrooke",
+      "labels": {
+        "sv-SE": "Sherbrooke",
+        "en-US": "Sherbrooke",
+        "es-ES": "Sherbrooke",
+        "es-MX": "Sherbrooke"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sherbrooke.svg",
+      "bytes": 659,
+      "sha256": "f444c932bbb5388e0ec436c905be67a127a5f4bde58a70773f7763cba8812373",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80429,6 +80744,27 @@
       "file": "assets/sri-lanka.svg",
       "bytes": 572,
       "sha256": "f2b9858eeb5d8db79a6f683f65cd99d84c035d2f62c125e0c60d6ccb3ed91323",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "st-catharines",
+      "symbol": "st-catharines",
+      "labels": {
+        "sv-SE": "St. Catharines",
+        "en-US": "St. Catharines",
+        "es-ES": "St. Catharines",
+        "es-MX": "St. Catharines"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/st-catharines.svg",
+      "bytes": 657,
+      "sha256": "9d831af90602579fac1559f0853ac4db4683bb74ead9ab62d15feafdff07d2a2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89697,6 +90033,27 @@
       }
     },
     {
+      "id": "trois-rivieres",
+      "symbol": "trois-rivieres",
+      "labels": {
+        "sv-SE": "Trois-Rivières",
+        "en-US": "Trois-Rivières",
+        "es-ES": "Trois-Rivières",
+        "es-MX": "Trois-Rivières"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/trois-rivieres.svg",
+      "bytes": 657,
+      "sha256": "3d26e7948f93bc38df107eebc80b5a054fbf721e05294a2493056c2aa2b5b94f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "trollhattan",
       "symbol": "trollhattan",
       "labels": {
@@ -96291,6 +96648,27 @@
       }
     },
     {
+      "id": "windsor",
+      "symbol": "windsor",
+      "labels": {
+        "sv-SE": "Windsor",
+        "en-US": "Windsor",
+        "es-ES": "Windsor",
+        "es-MX": "Windsor"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/windsor.svg",
+      "bytes": 659,
+      "sha256": "1e711999c5580e719d7dfff06a3ca58bb260c6db9d6168af63ba4b7b35a8228c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "windy",
       "symbol": "windy",
       "labels": {
@@ -96347,6 +96725,27 @@
       "file": "assets/wink.webp",
       "bytes": 8444,
       "sha256": "d7368465650e11a1a814de4ed3d3817659948f9acad033300403b1744ad9a9d8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "winnipeg",
+      "symbol": "winnipeg",
+      "labels": {
+        "sv-SE": "Winnipeg",
+        "en-US": "Winnipeg",
+        "es-ES": "Winnipeg",
+        "es-MX": "Winnipeg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/winnipeg.svg",
+      "bytes": 658,
+      "sha256": "2c343167928fdd80857d35ecdacb71c7efd65ce3a47f113357cb6606f3f86f16",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

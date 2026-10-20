@@ -1,5 +1,6 @@
 import Dexie, { type EntityTable } from 'dexie';
 import { browser } from '$app/environment';
+import { plain } from './plain.svelte.js';
 
 export interface Board {
   id?: number;
@@ -113,7 +114,7 @@ export { db };
 export async function saveBoard(board: Board): Promise<number> {
   board.updatedAt = new Date();
   if (!board.createdAt) board.createdAt = new Date();
-  const id = await db.boards.put(board);
+  const id = await db.boards.put(plain(board));
   return id!;
 }
 
@@ -131,7 +132,7 @@ export async function deleteBoard(id: number): Promise<void> {
 
 export async function saveSchedule(schedule: Schedule): Promise<number> {
   if (!schedule.createdAt) schedule.createdAt = new Date();
-  const id = await db.schedules.put(schedule);
+  const id = await db.schedules.put(plain(schedule));
   return id!;
 }
 
@@ -174,7 +175,7 @@ export async function getProfile(id: number): Promise<Profile | undefined> {
 }
 
 export async function updateProfile(id: number, updates: Partial<Profile>): Promise<void> {
-  await db.profiles.update(id, { ...updates, updatedAt: new Date() });
+  await db.profiles.update(id, { ...plain(updates), updatedAt: new Date() });
 }
 
 export async function deleteProfile(id: number): Promise<void> {
@@ -196,6 +197,7 @@ export async function getAppProgress(profileId: number, appId: string): Promise<
 }
 
 export async function saveAppProgress(profileId: number, appId: string, data: Record<string, unknown>): Promise<void> {
+  data = plain(data);
   const existing = await db.appProgress.where('[profileId+appId]').equals([profileId, appId]).first();
   if (existing) {
     await db.appProgress.update(existing.id!, { data, updatedAt: new Date() });

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-20T14:27:20.003Z",
+  "exportedAt": "2026-10-20T14:29:56.044Z",
   "source": "piktali",
   "includePending": true,
-  "count": 546,
+  "count": 551,
   "pictograms": [
     {
       "id": "abdomen",
@@ -1555,8 +1555,8 @@
       },
       "categories": [],
       "file": "assets/cashier.webp",
-      "bytes": 9016,
-      "sha256": "a7b7a536197f4f8a6172b3231ca95301c05723791ee8388250259186c10bc2d6",
+      "bytes": 9360,
+      "sha256": "a9bbdce674726d306793ada74d3eb38b80b736daf988dc4374c882ae3f41300d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1745,8 +1745,8 @@
       },
       "categories": [],
       "file": "assets/chef.webp",
-      "bytes": 6660,
-      "sha256": "9a45c54c2922e2f7f91a6a58e7720a5672d54cc29b72649614815644e1fc22a1",
+      "bytes": 6834,
+      "sha256": "3f7136d0f5057779b3b348a81b7c937636ccea6236f591aecf9c37bbf7fcd1d6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1937,6 +1937,25 @@
       "file": "assets/classroom.webp",
       "bytes": 5806,
       "sha256": "f41262e0a0c18666c95f0a5868e4dad7fccb5dae77956ed3e8fa9ae97fb9779f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "cleaner",
+      "symbol": "cleaner",
+      "labels": {
+        "sv-SE": "Städare",
+        "en-US": "Cleaner",
+        "es-ES": "Personal de limpieza",
+        "es-MX": "Personal de limpieza"
+      },
+      "categories": [],
+      "file": "assets/cleaner.webp",
+      "bytes": 8444,
+      "sha256": "5dc21c434dd15bbaeb3d7efe8ebf9c5b6d275ba585c64c7b63001c530241ccb0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2543,8 +2562,8 @@
       },
       "categories": [],
       "file": "assets/dentist.webp",
-      "bytes": 6884,
-      "sha256": "e6da5e67eecb4c3d01814b08a62c0965a5e72b7d5c612ea93d0c586abfe1f0bb",
+      "bytes": 9510,
+      "sha256": "ed6e6cbb341a04c212f7bcd7f96a8349bb4124d72f816e2e3ca01e93eda8a9d4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3398,8 +3417,8 @@
       },
       "categories": [],
       "file": "assets/firefighter.webp",
-      "bytes": 12212,
-      "sha256": "c5fdbc319fa32e1ad5a6ef1ec62dca51ff2ca7e7a7e73313f916ff9b0fadb56e",
+      "bytes": 11372,
+      "sha256": "0f05e4a2300566e318b306bd965ac2ae5b1b667a9d1355370f2ac9b09d2eb1cc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3818,6 +3837,25 @@
       "file": "assets/garden.webp",
       "bytes": 15486,
       "sha256": "28ed8109f4c2c1d25471d68f983f336ddbe779892d03acd29ae723f0553842a9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "gardener",
+      "symbol": "gardener",
+      "labels": {
+        "sv-SE": "Trädgårdsmästare",
+        "en-US": "Gardener",
+        "es-ES": "Jardinero",
+        "es-MX": "Jardinero"
+      },
+      "categories": [],
+      "file": "assets/gardener.webp",
+      "bytes": 15354,
+      "sha256": "38012ab9db8b1e4abc2eff2ba62ea318225c789b52609dee1ca621b0afccc109",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5146,8 +5184,8 @@
       },
       "categories": [],
       "file": "assets/librarian.webp",
-      "bytes": 10904,
-      "sha256": "3b0658b58883d287d78a9a005029a75d207bf7ad56e210febab3ec5ecb5fcb8f",
+      "bytes": 11066,
+      "sha256": "1fed05dea16ca3e8d67053ec202dca5ba69e9ad782e41ee1b730e510d546449d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5402,6 +5440,25 @@
       }
     },
     {
+      "id": "mail-carrier",
+      "symbol": "mailcarrier",
+      "labels": {
+        "sv-SE": "Brevbärare",
+        "en-US": "Mail carrier",
+        "es-ES": "Cartero",
+        "es-MX": "Cartero"
+      },
+      "categories": [],
+      "file": "assets/mailcarrier.webp",
+      "bytes": 7900,
+      "sha256": "4dc63cf73c1189a001e2988ecac13746ba0e2da4b4c54dd968b920c8f9c84bfd",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "make-bed",
       "symbol": "make-bed",
       "labels": {
@@ -5490,6 +5547,25 @@
       "file": "assets/meat.webp",
       "bytes": 8236,
       "sha256": "467d3c8e3ef0ffc690999c18ab8377f684ba31ce978eae2346c8ea46cabe6552",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "mechanic",
+      "symbol": "mechanic",
+      "labels": {
+        "sv-SE": "Mekaniker",
+        "en-US": "Mechanic",
+        "es-ES": "Mecánico",
+        "es-MX": "Mecánico"
+      },
+      "categories": [],
+      "file": "assets/mechanic.webp",
+      "bytes": 12002,
+      "sha256": "71cbc49dceaec2675f0d9a34876ee3cff952f63ae76b8864f44ac847a502cc18",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6742,8 +6818,8 @@
       },
       "categories": [],
       "file": "assets/policeofficer.webp",
-      "bytes": 11698,
-      "sha256": "4f9e98af0ca342fe7c1216f24eba0a1b6ce524d145bc557929969ffcbe773301",
+      "bytes": 7450,
+      "sha256": "eee375f076d817ad16a7abb6d1801b3051dbc9b2f64eec36911e140bc10f2c24",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9630,8 +9706,8 @@
       },
       "categories": [],
       "file": "assets/veterinarian.webp",
-      "bytes": 7442,
-      "sha256": "d08788e201e055b52fb43062cab969e136724d8acdb9cab2871545be9c65589c",
+      "bytes": 11062,
+      "sha256": "f9d7c62258b42ab05fb6915e40d1966135b8ebdde976d3c4468a83ee8943ac1e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9651,6 +9727,25 @@
       "file": "assets/wait.webp",
       "bytes": 4388,
       "sha256": "1dba2e711b665496bddb69859098df93b884599be4db1711d8afbe4adb83071c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "waiter",
+      "symbol": "waiter",
+      "labels": {
+        "sv-SE": "Servitör",
+        "en-US": "Waiter",
+        "es-ES": "Camarero",
+        "es-MX": "Mesero"
+      },
+      "categories": [],
+      "file": "assets/waiter.webp",
+      "bytes": 6584,
+      "sha256": "0c84fb3392a7c83207517c9280dd27e8ab873569ec024ec297cc62f472997a46",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

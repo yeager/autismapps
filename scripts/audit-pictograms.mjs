@@ -5,6 +5,8 @@ const catalogUrl = 'https://api.arasaac.org/v1/pictograms/all/en';
 const lookupPath = new URL('../static/arasaac-sv.json', import.meta.url);
 const trafficPath = new URL('../static/pictograms/traffic-safety', import.meta.url);
 const pictogramSourcePath = new URL('../src/lib/data/arasaac-data.js', import.meta.url);
+const activityGridPath = new URL('../src/lib/components/traffic-safety/ActivityGrid.svelte', import.meta.url);
+const piktaliSymbols = ['trafficlight', 'crosswalk', 'safeplace', 'vest', 'car'];
 
 // Human-reviewed semantic overrides where the exact English catalog keyword is
 // misleading or the closest suitable ARASAAC image uses a different keyword.
@@ -20,10 +22,12 @@ function normalizeKeyword(value) {
   return value.trim().toLocaleLowerCase('en').replace(/^\\(["\\])$/, '$1');
 }
 
-const [lookupText, trafficFiles, pictogramSource, catalogResponse] = await Promise.all([
+const [lookupText, trafficFiles, pictogramSource, activityGrid, piktaliSvgs, catalogResponse] = await Promise.all([
   readFile(lookupPath, 'utf8'),
   readdir(trafficPath),
   readFile(pictogramSourcePath, 'utf8'),
+  readFile(activityGridPath, 'utf8'),
+  Promise.all(piktaliSymbols.map((name) => readFile(new URL(`../static/pictograms/traffic-safety/piktali-${name}.svg`, import.meta.url), 'utf8').catch(() => ''))),
   fetch(catalogUrl)
 ]);
 
@@ -51,14 +55,20 @@ const localPngIds = new Set(trafficFiles.filter((file) => file.endsWith('.png'))
 for (const [key, id] of Object.entries(pictogramIds)) {
   if (id !== null && !localPngIds.has(String(id))) errors.push(`ARASAAC_IDS.${key}: missing local PNG ${id}.png`);
 }
-for (const [key, id] of Object.entries({ trafficLight: 2567, crosswalk: 3430, warning: 25315, safePlace: 6964, reflector: 39534, car: 2339 })) {
-  if (pictogramIds[key] !== id) errors.push(`traffic-safety card ${key}: expected pictogram ${id}, got ${pictogramIds[key] ?? 'missing'}`);
+const expectedSymbols = { 'traffic-lights': 'trafficlight', crosswalk: 'crosswalk', 'safe-places': 'safeplace', reflectors: 'vest', vehicles: 'car' };
+if (pictogramIds.warning !== 25315 || !trafficFiles.includes('25315.png')) errors.push('road-signs tile: expected ARASAAC warning triangle 25315');
+if (!activityGrid.includes("getPictogram('warning')")) errors.push('road-signs tile: must use the warning pictogram');
+for (const [activity, symbol] of Object.entries(expectedSymbols)) {
+  if (!new RegExp(`[\\'\\\"]?${activity}[\\'\\\"]?:\\s*['\\\"]${symbol}['\\\"]`).test(activityGrid)) errors.push(`${activity} tile: expected Piktali ${symbol} mapping`);
+  if (!trafficFiles.includes(`piktali-${symbol}.svg`)) errors.push(`${activity} tile: missing Piktali ${symbol} SVG`);
 }
-
-// Keep the traffic-safety tile on the locally bundled house illustration.
-// The generic "safe" lookup is a strongbox, which is misleading for this app.
-if (!byId.has('6964')) errors.push('safe-place tile: ARASAAC house pictogram 6964 is missing from the catalog');
-if (!trafficFiles.includes('6964.png')) errors.push('safe-place tile: expected local house pictogram 6964.png');
+for (let index = 0; index < piktaliSvgs.length; index++) {
+  const svg = piktaliSvgs[index];
+  const symbol = piktaliSymbols[index];
+  if (!/<svg\b[^>]*viewBox="0 0 100 100"/.test(svg) || !new RegExp(`Piktali [^<]+ pictogram`).test(svg)) {
+    errors.push(`Piktali ${symbol} SVG is missing its viewBox or descriptive title`);
+  }
+}
 
 for (const [term, entry] of Object.entries(lookup)) {
   const pictogram = byId.get(String(entry.id));
@@ -90,7 +100,8 @@ for (const file of pngFiles) {
 
 console.log(`Checked ${Object.keys(lookup).length} Swedish lookup entries across ${uniqueIds.size} pictogram IDs.`);
 console.log(`Checked ${pngFiles.length} local traffic-safety PNGs against the catalog and PNG signature.`);
-console.log(`Checked ${Object.values(pictogramIds).filter((id) => id !== null).length} source ID assignments and six traffic-safety card mappings against the local PNG bundle.`);
+console.log(`Checked ${Object.values(pictogramIds).filter((id) => id !== null).length} source ID assignments and the traffic-safety card image mappings.`);
+console.log(`Checked five traffic-safety cards use Piktali pictograms (${piktaliSymbols.join(', ')}) and road signs use the ARASAAC warning triangle.`);
 console.log(`ARASAAC English catalog: ${catalog.length} pictograms.`);
 
 if (errors.length) {

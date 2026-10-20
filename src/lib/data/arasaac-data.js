@@ -36,7 +36,6 @@ export const ARASAAC_IDS = {
   // Time/visibility
   day: 26799,
   night: 26997,
-  reflector: 39534, // Vest (used as the high-visibility clothing cue)
   
   // Emotions/feedback
   good: null,

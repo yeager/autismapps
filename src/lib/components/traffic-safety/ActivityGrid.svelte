@@ -1,5 +1,7 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { getPictogram } from '$lib/data/arasaac-data.js';
+  import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
   import { speak } from '$lib/tts';
 
   type Activity = {
@@ -56,13 +58,22 @@
     }
   ];
 
-  // Activity cards use ARASAAC pictograms where the motif is clear. A house is
-  // a familiar safe-place cue; the vest represents being visible, not a claim
-  // that every vest is reflective.
+  // Use Piktali's original symbols where available, with a road-sign pictogram for this activity.
+  const piktaliSymbols: Record<string, string> = {
+    'traffic-lights': 'trafficlight',
+    crosswalk: 'crosswalk',
+    'safe-places': 'safeplace',
+    reflectors: 'vest',
+    vehicles: 'car'
+  };
+
   function pictogramFor(activity: Activity) {
-    if (activity.id === 'safe-places') return getPictogram('safePlace');
-    if (activity.id === 'reflectors') return getPictogram('reflector');
-    return getPictogram(activity.icon);
+    if (activity.id === 'road-signs') return getPictogram('warning');
+    const symbol = piktaliSymbols[activity.id];
+    return symbol ? {
+      key: `piktali-${symbol}`,
+      url: `${base}/pictograms/traffic-safety/piktali-${symbol}.svg?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`
+    } : undefined;
   }
   
   function handleActivityClick(activity: Activity) {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:01:02.414Z",
+  "exportedAt": "2026-10-20T17:03:00.865Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -29271,8 +29271,8 @@
         "food-drink"
       ],
       "file": "assets/fork.webp",
-      "bytes": 3184,
-      "sha256": "87acaaf07d102da98384ee51174e3c8ff1b085bfb4b966d05758a87eda86a21d",
+      "bytes": 3716,
+      "sha256": "17443eff3a37a87a9e0bf69a5abaa721f1e576af5fe360832d2a8886c9a288a8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29880,8 +29880,8 @@
         "food-drink"
       ],
       "file": "assets/fryingpan.webp",
-      "bytes": 3898,
-      "sha256": "e58c415807fe4b92536acaed1da495b5345348f92d4f2d34d52a5a5ea82f1163",
+      "bytes": 9998,
+      "sha256": "f5e446f0e805e7b1dd21699d76f179022f2f937236666410b2940ed3b2d7d78a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39393,8 +39393,8 @@
         "food-drink"
       ],
       "file": "assets/knife.webp",
-      "bytes": 2854,
-      "sha256": "f1318a594bde940a2f2230d58a5c56e4fe89452315adc5850079b93f9e02bfb5",
+      "bytes": 4968,
+      "sha256": "c0e4b02b4e4f154e7cd2a0d099922e4b5c3c617240625e9f3ed3c4adbfe62150",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43026,8 +43026,8 @@
         "food-drink"
       ],
       "file": "assets/lunchbox.webp",
-      "bytes": 6010,
-      "sha256": "043b5015bd775847940e694def559afbeeb8429f5e67aaf5eb55f8a14e7979ee",
+      "bytes": 9828,
+      "sha256": "5cd966870e6ea52cd78b1abe43824ca7f9b1e35ce70975cb1d29318be6a59003",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47582,9 +47582,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/mug.svg",
-      "bytes": 352,
-      "sha256": "c67d4c57f151c5b245d7368aceb72e73e5fbddd977cfb26b13dc5f79ba9798e2",
+      "file": "assets/mug.webp",
+      "bytes": 3486,
+      "sha256": "3020f6739b0cdea38e9f4ff7a51b06681a44d56bb0a60d09e624d6e310a18b62",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58776,8 +58776,8 @@
         "home-objects"
       ],
       "file": "assets/plate.webp",
-      "bytes": 4144,
-      "sha256": "9970b8d6f48353d092d3b3cd917a205db7e96d776639c82eeacb6ea3332a9ae5",
+      "bytes": 11248,
+      "sha256": "537435746827acf2170f50196163f31bb0e1a9f9dd47de4671f4a2cf60f09d84",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59889,8 +59889,8 @@
         "food-drink"
       ],
       "file": "assets/pot.webp",
-      "bytes": 5016,
-      "sha256": "304d7407bc92f22d10fd35c68983e80376353c002ca78bbb3043c49e6bd8a5ef",
+      "bytes": 5552,
+      "sha256": "6622de147e079fb4bcf533fd5a7961f488765773a3d72f0a6fbd6749ed394b7b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -74148,8 +74148,8 @@
         "food-drink"
       ],
       "file": "assets/soup.webp",
-      "bytes": 5782,
-      "sha256": "0f604c96f32a162a5e23873aef04a7564422f154450c5551a72ed6d1bdf00979",
+      "bytes": 4788,
+      "sha256": "124c8ba94dff66301a3c8973eaed30c2ea381095ecdd05f1392f40f5bbf544c5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89016,8 +89016,8 @@
         "food-drink"
       ],
       "file": "assets/water.webp",
-      "bytes": 6270,
-      "sha256": "10e969a825d0830ca02bf993d9d975b76f4ba3d091065dff3f62d042d46cbe6a",
+      "bytes": 3854,
+      "sha256": "2bf94a00f793963233bb05501b54b789bf5e3690f86b660bf00d278c7fa95814",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

@@ -1,10 +1,31 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:38:48.755Z",
+  "exportedAt": "2026-10-20T17:39:48.105Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4793,
+  "count": 4890,
   "pictograms": [
+    {
+      "id": "a-coruna",
+      "symbol": "a-coruna",
+      "labels": {
+        "sv-SE": "A Coruña",
+        "en-US": "A Coruña",
+        "es-ES": "A Coruña",
+        "es-MX": "A Coruña"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/a-coruna.svg",
+      "bytes": 676,
+      "sha256": "75c7feb2445dae8f42f7c790f9ffe5fbcfd2fbc9ff4eed27de46be59f79240cc",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
     {
       "id": "abbotsford",
       "symbol": "abbotsford",
@@ -1280,6 +1301,27 @@
       "file": "assets/algiers.svg",
       "bytes": 484,
       "sha256": "ae1c36d1185ce1548cbb0ff558207f1308a294cb0c8d26c5569ef60fcb22c0f9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "alicante",
+      "symbol": "alicante",
+      "labels": {
+        "sv-SE": "Alicante",
+        "en-US": "Alicante",
+        "es-ES": "Alicante",
+        "es-MX": "Alicante"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/alicante.svg",
+      "bytes": 676,
+      "sha256": "0c860fa2e5c5bbefa3cceb6cecc424e3dfd75e061608417631df33a666a48407",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2687,6 +2729,27 @@
       "file": "assets/antihistamine.svg",
       "bytes": 896,
       "sha256": "7faeef952d203ba14eb396f2277d58ab997cc2037cca98d638f0c687559ea83c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "antwerp",
+      "symbol": "antwerp",
+      "labels": {
+        "sv-SE": "Antwerp",
+        "en-US": "Antwerp",
+        "es-ES": "Antwerp",
+        "es-MX": "Antwerp"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/antwerp.svg",
+      "bytes": 677,
+      "sha256": "e7c0af7346542c006a9a8d4baf132fdbd54a17bb49abfb4a67915fe00666be75",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5718,6 +5781,27 @@
       }
     },
     {
+      "id": "bari",
+      "symbol": "bari",
+      "labels": {
+        "sv-SE": "Bari",
+        "en-US": "Bari",
+        "es-ES": "Bari",
+        "es-MX": "Bari"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bari.svg",
+      "bytes": 677,
+      "sha256": "7ed57b8a2da6350f1501be7cf2b7490347425b215b1bce781f47622e260497bc",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "barista",
       "symbol": "barista",
       "labels": {
@@ -5984,6 +6068,27 @@
       "file": "assets/bat.svg",
       "bytes": 812,
       "sha256": "9b62c33b22e07d1adde2db429cece1cd4a8a049c2506ebda93201ddf86acbfeb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bath",
+      "symbol": "bath",
+      "labels": {
+        "sv-SE": "Bath",
+        "en-US": "Bath",
+        "es-ES": "Bath",
+        "es-MX": "Bath"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bath.svg",
+      "bytes": 677,
+      "sha256": "7dddad9abec16faf254f11281d800073ad6d31e0a4b3735eeba22f781c616b60",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6873,6 +6978,27 @@
       }
     },
     {
+      "id": "belfast",
+      "symbol": "belfast",
+      "labels": {
+        "sv-SE": "Belfast",
+        "en-US": "Belfast",
+        "es-ES": "Belfast",
+        "es-MX": "Belfast"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/belfast.svg",
+      "bytes": 676,
+      "sha256": "bc10758379c1b8d27490ba7192ad4e0190f99e159afbbf01180d874ccc8d91ea",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "belgium",
       "symbol": "belgium",
       "labels": {
@@ -7335,6 +7461,27 @@
       }
     },
     {
+      "id": "bialystok",
+      "symbol": "bialystok",
+      "labels": {
+        "sv-SE": "Białystok",
+        "en-US": "Białystok",
+        "es-ES": "Białystok",
+        "es-MX": "Białystok"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bialystok.svg",
+      "bytes": 676,
+      "sha256": "1530a34b7d4789242b4ad8933734b782e68b5fa9f975a3292d31ee6ebb87dafb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "bib",
       "symbol": "bib",
       "labels": {
@@ -7475,6 +7622,27 @@
       "file": "assets/bikini.svg",
       "bytes": 347,
       "sha256": "c026c0d028ebb3d3d248dbac4be4ef50e44ebab820821011fc1c4f61fe1458b8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bilbao",
+      "symbol": "bilbao",
+      "labels": {
+        "sv-SE": "Bilbao",
+        "en-US": "Bilbao",
+        "es-ES": "Bilbao",
+        "es-MX": "Bilbao"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bilbao.svg",
+      "bytes": 677,
+      "sha256": "a93be869c2cf038dba6f92f801e4e0ea9f5e1bdebcf785f01ce6b68db40b56fc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7664,6 +7832,27 @@
       "file": "assets/birdhouse.svg",
       "bytes": 467,
       "sha256": "e4cd866fbbf277b18e7a7d27879f175091c1bbd64e47d2de40ab9266697d5ea0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "birmingham",
+      "symbol": "birmingham",
+      "labels": {
+        "sv-SE": "Birmingham",
+        "en-US": "Birmingham",
+        "es-ES": "Birmingham",
+        "es-MX": "Birmingham"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/birmingham.svg",
+      "bytes": 676,
+      "sha256": "495727660c7a0eb36ab272e15c226e8d87feecfe8c472adc28721205c71a7a3f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8784,6 +8973,27 @@
       }
     },
     {
+      "id": "bologna",
+      "symbol": "bologna",
+      "labels": {
+        "sv-SE": "Bologna",
+        "en-US": "Bologna",
+        "es-ES": "Bologna",
+        "es-MX": "Bologna"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bologna.svg",
+      "bytes": 677,
+      "sha256": "7e1b6bb42d7e412b09add97ac27c25490ed1c636d1e4f612e31d4f84de95c30c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "book",
       "symbol": "book",
       "labels": {
@@ -8903,6 +9113,27 @@
       "file": "assets/boras.svg",
       "bytes": 612,
       "sha256": "e8d636a00bf3a87f3729671f05e5a2fe09dc349a3ba6596b05132a0aceb862ca",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bordeaux",
+      "symbol": "bordeaux",
+      "labels": {
+        "sv-SE": "Bordeaux",
+        "en-US": "Bordeaux",
+        "es-ES": "Bordeaux",
+        "es-MX": "Bordeaux"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bordeaux.svg",
+      "bytes": 677,
+      "sha256": "2b957d4983d5764db7946ef922c545e98a5b903355a4981db61d9a88279b29d1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9477,6 +9708,27 @@
       }
     },
     {
+      "id": "braga",
+      "symbol": "braga",
+      "labels": {
+        "sv-SE": "Braga",
+        "en-US": "Braga",
+        "es-ES": "Braga",
+        "es-MX": "Braga"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/braga.svg",
+      "bytes": 674,
+      "sha256": "5a7270ac857ba2a786c3387f672319947ad98ba638bd9e2fc54924436061153a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "braille",
       "symbol": "braille",
       "labels": {
@@ -9855,6 +10107,27 @@
       }
     },
     {
+      "id": "brescia",
+      "symbol": "brescia",
+      "labels": {
+        "sv-SE": "Brescia",
+        "en-US": "Brescia",
+        "es-ES": "Brescia",
+        "es-MX": "Brescia"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/brescia.svg",
+      "bytes": 677,
+      "sha256": "3734c249a93e4ea080a5b4f266a1085dae8161e96383ce23d6fc499040f7f59c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "bridge",
       "symbol": "bridge",
       "labels": {
@@ -9939,6 +10212,27 @@
       }
     },
     {
+      "id": "brighton",
+      "symbol": "brighton",
+      "labels": {
+        "sv-SE": "Brighton",
+        "en-US": "Brighton",
+        "es-ES": "Brighton",
+        "es-MX": "Brighton"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/brighton.svg",
+      "bytes": 677,
+      "sha256": "bc9aa5e6ebfe17ccd52d1740b54a879467de26824603fa7dc061969de2f77cf5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "bring",
       "symbol": "bring",
       "labels": {
@@ -9981,6 +10275,27 @@
       }
     },
     {
+      "id": "bristol",
+      "symbol": "bristol",
+      "labels": {
+        "sv-SE": "Bristol",
+        "en-US": "Bristol",
+        "es-ES": "Bristol",
+        "es-MX": "Bristol"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bristol.svg",
+      "bytes": 676,
+      "sha256": "81cd6dd2c5672237f0543e34555535cdd88f69e35de6fe720b26e3f92a2d37a3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "british-virgin-islands",
       "symbol": "british-virgin-islands",
       "labels": {
@@ -9995,6 +10310,27 @@
       "file": "assets/british-virgin-islands.svg",
       "bytes": 651,
       "sha256": "945be1d9d46a288032ea8bd18c8ff41743cd1c17cee23363eae09f2803f4af27",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "brno",
+      "symbol": "brno",
+      "labels": {
+        "sv-SE": "Brno",
+        "en-US": "Brno",
+        "es-ES": "Brno",
+        "es-MX": "Brno"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/brno.svg",
+      "bytes": 676,
+      "sha256": "ebd48dff13bdb700b32fbf4734b58addeee68495427f942c8c0301ec19d4ec6f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10184,6 +10520,27 @@
       "file": "assets/brown.webp",
       "bytes": 3188,
       "sha256": "e8e84b9d34b145fb9961cf99db2ed3ad0387ff0ca715714ed9448626641d0540",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bruges",
+      "symbol": "bruges",
+      "labels": {
+        "sv-SE": "Bruges",
+        "en-US": "Bruges",
+        "es-ES": "Bruges",
+        "es-MX": "Bruges"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bruges.svg",
+      "bytes": 677,
+      "sha256": "e33a5a87026f273878abedf4156a3f5fec30b03a24d30841eb6298f96fba8696",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11934,6 +12291,27 @@
       }
     },
     {
+      "id": "cambridge",
+      "symbol": "cambridge",
+      "labels": {
+        "sv-SE": "Cambridge",
+        "en-US": "Cambridge",
+        "es-ES": "Cambridge",
+        "es-MX": "Cambridge"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cambridge.svg",
+      "bytes": 676,
+      "sha256": "66a8dd6d1e0b15ff2d69a9cc4ef73dd8a3602f56ba7ab889d8afb7a7a91440c8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "camel",
       "symbol": "camel",
       "labels": {
@@ -12543,6 +12921,27 @@
       }
     },
     {
+      "id": "cardiff",
+      "symbol": "cardiff",
+      "labels": {
+        "sv-SE": "Cardiff",
+        "en-US": "Cardiff",
+        "es-ES": "Cardiff",
+        "es-MX": "Cardiff"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cardiff.svg",
+      "bytes": 676,
+      "sha256": "ecbe40b79f9769a906e353f519bcc7471894e804dbf599865010d62418d8dfdf",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "cardigan",
       "symbol": "cardigan",
       "labels": {
@@ -12998,6 +13397,27 @@
       "file": "assets/catpurr.svg",
       "bytes": 990,
       "sha256": "89a11bbef1b83e6934a4d6363b9eb32d27561a4d4eca5418e1460ab9725a6c94",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "catania",
+      "symbol": "catania",
+      "labels": {
+        "sv-SE": "Catania",
+        "en-US": "Catania",
+        "es-ES": "Catania",
+        "es-MX": "Catania"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/catania.svg",
+      "bytes": 674,
+      "sha256": "2d7bfaa95101ade32feba0736f49d511ca0746db8c0d3dcdc34d41548d3eaf73",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13964,6 +14384,27 @@
       "file": "assets/charging-station.svg",
       "bytes": 617,
       "sha256": "45674c52397c351141eed9f2144cdece9f55c514056488f91218ba3e30f03ce6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "charleroi",
+      "symbol": "charleroi",
+      "labels": {
+        "sv-SE": "Charleroi",
+        "en-US": "Charleroi",
+        "es-ES": "Charleroi",
+        "es-MX": "Charleroi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/charleroi.svg",
+      "bytes": 677,
+      "sha256": "ed56e10cb46f962bde2fa4303b3b97c85cc431d23101076571bdf05483e9ff8f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15945,6 +16386,27 @@
       }
     },
     {
+      "id": "clermont-ferrand",
+      "symbol": "clermont-ferrand",
+      "labels": {
+        "sv-SE": "Clermont-Ferrand",
+        "en-US": "Clermont-Ferrand",
+        "es-ES": "Clermont-Ferrand",
+        "es-MX": "Clermont-Ferrand"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/clermont-ferrand.svg",
+      "bytes": 676,
+      "sha256": "f577cd13a6867c810ca0f9f53c7e33e7780531eafaee4de85f5cc46c20b50dab",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "cleveland",
       "symbol": "cleveland",
       "labels": {
@@ -16631,6 +17093,27 @@
       "file": "assets/coffee-table.svg",
       "bytes": 525,
       "sha256": "ad473eff30046d814bf6579f6bc5c284b155715d3bc6df58d9f703a09f27814d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "coimbra",
+      "symbol": "coimbra",
+      "labels": {
+        "sv-SE": "Coimbra",
+        "en-US": "Coimbra",
+        "es-ES": "Coimbra",
+        "es-MX": "Coimbra"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/coimbra.svg",
+      "bytes": 676,
+      "sha256": "85510e3fa118bdb4a08ba73cff5dc970c3f8b6cc4f88b6f55416f0d5863a57c6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18696,6 +19179,27 @@
       }
     },
     {
+      "id": "cordoba",
+      "symbol": "cordoba",
+      "labels": {
+        "sv-SE": "Córdoba",
+        "en-US": "Córdoba",
+        "es-ES": "Córdoba",
+        "es-MX": "Córdoba"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cordoba.svg",
+      "bytes": 675,
+      "sha256": "8517961f8b550ed662fbbd55a14e07b495e5737177af7a6179be63e2318c3c08",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "core",
       "symbol": "core",
       "labels": {
@@ -19298,6 +19802,27 @@
       "file": "assets/cousin.webp",
       "bytes": 19050,
       "sha256": "3b784e62b3fdd9905719fec170fbda96a1a330a9a110a7763b6ab7261cf8a22e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "coventry",
+      "symbol": "coventry",
+      "labels": {
+        "sv-SE": "Coventry",
+        "en-US": "Coventry",
+        "es-ES": "Coventry",
+        "es-MX": "Coventry"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/coventry.svg",
+      "bytes": 676,
+      "sha256": "a9e951811b11c7049eb6bc0b47258956924c8604dc04a85db6e9822863731831",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21510,6 +22035,27 @@
       }
     },
     {
+      "id": "debrecen",
+      "symbol": "debrecen",
+      "labels": {
+        "sv-SE": "Debrecen",
+        "en-US": "Debrecen",
+        "es-ES": "Debrecen",
+        "es-MX": "Debrecen"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/debrecen.svg",
+      "bytes": 676,
+      "sha256": "25cf72e17ad0e7f4321f9d5ec39f223d75805f469b2809bd3c3532278ec3b2ac",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "debt",
       "symbol": "debt",
       "labels": {
@@ -22532,6 +23078,27 @@
       "file": "assets/dig.webp",
       "bytes": 9936,
       "sha256": "0f5ede2a79529f46ec2a804b02c44bf7fef825b1b0f2d88a3b196773c17f5a7d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "dijon",
+      "symbol": "dijon",
+      "labels": {
+        "sv-SE": "Dijon",
+        "en-US": "Dijon",
+        "es-ES": "Dijon",
+        "es-MX": "Dijon"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/dijon.svg",
+      "bytes": 676,
+      "sha256": "28eb7b551f6c45991d646125a4d9261f8e6161635d4527f7ecca19f5ccf67f2f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -25521,6 +26088,27 @@
       }
     },
     {
+      "id": "edinburgh",
+      "symbol": "edinburgh",
+      "labels": {
+        "sv-SE": "Edinburgh",
+        "en-US": "Edinburgh",
+        "es-ES": "Edinburgh",
+        "es-MX": "Edinburgh"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/edinburgh.svg",
+      "bytes": 676,
+      "sha256": "12685a902ed6175bfdd0214ae67086df1aaa7f272c8e8e01ececd5bea99dd7d7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "edit-file",
       "symbol": "edit-file",
       "labels": {
@@ -25682,6 +26270,27 @@
       "file": "assets/egypt.svg",
       "bytes": 782,
       "sha256": "f0e9683d40d2cd6cc324626e87e829f6420aa3d3f4eca00a43c0d81e5f6eaaae",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "eindhoven",
+      "symbol": "eindhoven",
+      "labels": {
+        "sv-SE": "Eindhoven",
+        "en-US": "Eindhoven",
+        "es-ES": "Eindhoven",
+        "es-MX": "Eindhoven"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/eindhoven.svg",
+      "bytes": 675,
+      "sha256": "8ccb0c9ee95199ab4676d2bb5851a299c3a672768fd76a38e2495ca2ebeb82e7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -28524,6 +29133,27 @@
       }
     },
     {
+      "id": "faro",
+      "symbol": "faro",
+      "labels": {
+        "sv-SE": "Faro",
+        "en-US": "Faro",
+        "es-ES": "Faro",
+        "es-MX": "Faro"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/faro.svg",
+      "bytes": 676,
+      "sha256": "7bc0113b2a0c40d00af7597205f9a62d7eba043956fb26a3961148cc7cecf9af",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "faroe-islands",
       "symbol": "faroe-islands",
       "labels": {
@@ -30435,6 +31065,27 @@
       }
     },
     {
+      "id": "florence",
+      "symbol": "florence",
+      "labels": {
+        "sv-SE": "Florence",
+        "en-US": "Florence",
+        "es-ES": "Florence",
+        "es-MX": "Florence"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/florence.svg",
+      "bytes": 676,
+      "sha256": "779adce4e6aa0cabb07482c53996ec29f41ce08bbd06c2584ee05a8653c82373",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "florida",
       "symbol": "florida",
       "labels": {
@@ -32178,6 +32829,27 @@
       }
     },
     {
+      "id": "funchal",
+      "symbol": "funchal",
+      "labels": {
+        "sv-SE": "Funchal",
+        "en-US": "Funchal",
+        "es-ES": "Funchal",
+        "es-MX": "Funchal"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/funchal.svg",
+      "bytes": 677,
+      "sha256": "f5d08e30d854182a11b6abfd8e5a4207b52ff4181263254c7e2aa1bd6923eacc",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "funnel",
       "symbol": "funnel",
       "labels": {
@@ -32871,6 +33543,27 @@
       }
     },
     {
+      "id": "gdansk",
+      "symbol": "gdansk",
+      "labels": {
+        "sv-SE": "Gdańsk",
+        "en-US": "Gdańsk",
+        "es-ES": "Gdańsk",
+        "es-MX": "Gdańsk"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/gdansk.svg",
+      "bytes": 675,
+      "sha256": "f5401518fbd2658421117ec213c49ba3ce4e42bb07d6c87bff8c8711b5107ee4",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "generation",
       "symbol": "generation",
       "labels": {
@@ -32885,6 +33578,27 @@
       "file": "assets/generation.svg",
       "bytes": 807,
       "sha256": "e7857948d0154b5235fe9e9c13494b84ff36e93314e956dd18bae1da7ba59575",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "genoa",
+      "symbol": "genoa",
+      "labels": {
+        "sv-SE": "Genoa",
+        "en-US": "Genoa",
+        "es-ES": "Genoa",
+        "es-MX": "Genoa"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/genoa.svg",
+      "bytes": 677,
+      "sha256": "8b5a1f40b4af87cae70e8be17bdc2a3659377be962e57e8ce8f748fe2d988fdc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33312,6 +34026,27 @@
       }
     },
     {
+      "id": "ghent",
+      "symbol": "ghent",
+      "labels": {
+        "sv-SE": "Ghent",
+        "en-US": "Ghent",
+        "es-ES": "Ghent",
+        "es-MX": "Ghent"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ghent.svg",
+      "bytes": 677,
+      "sha256": "92b8dd9e4f896aedb20180b2ba01bb735c9c5429dae8db4fc327509108237a43",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "gift-card",
       "symbol": "giftcard",
       "labels": {
@@ -33347,6 +34082,27 @@
       "file": "assets/gift-receipt.svg",
       "bytes": 690,
       "sha256": "c0f5001b39b8ff0a5cb2b42c3a5fa1807c6880a0098e422ab4a001a68b4d03b3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "gijon",
+      "symbol": "gijon",
+      "labels": {
+        "sv-SE": "Gijón",
+        "en-US": "Gijón",
+        "es-ES": "Gijón",
+        "es-MX": "Gijón"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/gijon.svg",
+      "bytes": 677,
+      "sha256": "4017ba574bd2885a0f1ac0934512564b93f44cb45d36773456548e181c38c3aa",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33494,6 +34250,27 @@
       "file": "assets/glacier.svg",
       "bytes": 527,
       "sha256": "933ddb87d4255c4172736bed5c3b1ad08ceeb4ae4878c69b8ed12019e8935655",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "glasgow",
+      "symbol": "glasgow",
+      "labels": {
+        "sv-SE": "Glasgow",
+        "en-US": "Glasgow",
+        "es-ES": "Glasgow",
+        "es-MX": "Glasgow"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/glasgow.svg",
+      "bytes": 677,
+      "sha256": "a75ac98ee3dc9a91c325e8d8feaaf14e53a645aaa48c9617611c7925b69da858",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34677,6 +35454,27 @@
       }
     },
     {
+      "id": "grenoble",
+      "symbol": "grenoble",
+      "labels": {
+        "sv-SE": "Grenoble",
+        "en-US": "Grenoble",
+        "es-ES": "Grenoble",
+        "es-MX": "Grenoble"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/grenoble.svg",
+      "bytes": 677,
+      "sha256": "0e25ad6cf50134a7c9f3fbe1672c098d13ae54c1e7b0ae2ed2c0baa8c99f1598",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "grill",
       "symbol": "grill",
       "labels": {
@@ -34775,6 +35573,27 @@
       "file": "assets/grocery.svg",
       "bytes": 632,
       "sha256": "16adf40c2d0b724da60e5d082efec9d208a465fe741cdd91469ad15e62701eb8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "groningen",
+      "symbol": "groningen",
+      "labels": {
+        "sv-SE": "Groningen",
+        "en-US": "Groningen",
+        "es-ES": "Groningen",
+        "es-MX": "Groningen"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/groningen.svg",
+      "bytes": 676,
+      "sha256": "0e9baa5fd4f659f5d21fcb4fc1735fd38e595e794eec5aaa3c42d65b4ea1536c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -42153,6 +42972,27 @@
       }
     },
     {
+      "id": "katowice",
+      "symbol": "katowice",
+      "labels": {
+        "sv-SE": "Katowice",
+        "en-US": "Katowice",
+        "es-ES": "Katowice",
+        "es-MX": "Katowice"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/katowice.svg",
+      "bytes": 677,
+      "sha256": "8b7578fd315009dbb6c5abf789b2affee817776977746d4482000a4568662610",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "katrineholm",
       "symbol": "katrineholm",
       "labels": {
@@ -43175,6 +44015,48 @@
       "file": "assets/koping.svg",
       "bytes": 613,
       "sha256": "9a52019a4a1aca314323591b9e6f1098e7139f849c1d08c2d3bdd0bca9b185cf",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kosice",
+      "symbol": "kosice",
+      "labels": {
+        "sv-SE": "Košice",
+        "en-US": "Košice",
+        "es-ES": "Košice",
+        "es-MX": "Košice"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kosice.svg",
+      "bytes": 676,
+      "sha256": "126c72a4a4f3efd817011b46d9be27eec6bbf45b515c5b21dc5ad2edeece8e4a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "krakow",
+      "symbol": "krakow",
+      "labels": {
+        "sv-SE": "Kraków",
+        "en-US": "Kraków",
+        "es-ES": "Kraków",
+        "es-MX": "Kraków"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/krakow.svg",
+      "bytes": 676,
+      "sha256": "5d5d18c54d86d3fa5ed06b62b967f9403f3acc8262b2b7f3149eb3f28506083b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44610,6 +45492,27 @@
       }
     },
     {
+      "id": "leeds",
+      "symbol": "leeds",
+      "labels": {
+        "sv-SE": "Leeds",
+        "en-US": "Leeds",
+        "es-ES": "Leeds",
+        "es-MX": "Leeds"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/leeds.svg",
+      "bytes": 677,
+      "sha256": "5a85744a4835e78b025cc457b99a96685634be76c93d6b6445a4e7448cf54209",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "leek",
       "symbol": "leek",
       "labels": {
@@ -44708,6 +45611,27 @@
       "file": "assets/leggings.svg",
       "bytes": 321,
       "sha256": "5479e8b3c0c32188e00cad01a487783f6e0006d890adad52e07b53b8154cfdd0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "leicester",
+      "symbol": "leicester",
+      "labels": {
+        "sv-SE": "Leicester",
+        "en-US": "Leicester",
+        "es-ES": "Leicester",
+        "es-MX": "Leicester"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/leicester.svg",
+      "bytes": 677,
+      "sha256": "d9733c868b116a5837bd4eb7ac22b2a9f9ea12691631a14e2f400fe788227d6a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45387,6 +46311,27 @@
       }
     },
     {
+      "id": "liege",
+      "symbol": "liege",
+      "labels": {
+        "sv-SE": "Liège",
+        "en-US": "Liège",
+        "es-ES": "Liège",
+        "es-MX": "Liège"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/liege.svg",
+      "bytes": 675,
+      "sha256": "68978657e77cd2bd7e62627e8165ce4ce9f4cc0708c1916d9324ec6a16674115",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "life-jacket",
       "symbol": "lifejacket",
       "labels": {
@@ -45653,6 +46598,27 @@
       "file": "assets/likefood.svg",
       "bytes": 742,
       "sha256": "31732d2dfe9d82f5bfceb1a84180fc51c73ef1d28b4d4e238326f35c2a4ee412",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lille",
+      "symbol": "lille",
+      "labels": {
+        "sv-SE": "Lille",
+        "en-US": "Lille",
+        "es-ES": "Lille",
+        "es-MX": "Lille"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lille.svg",
+      "bytes": 676,
+      "sha256": "cceb158a440a61425c383800c67725a87cd65374dc6e292cd4964ae2fd4692e0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -46080,6 +47046,27 @@
       }
     },
     {
+      "id": "liverpool",
+      "symbol": "liverpool",
+      "labels": {
+        "sv-SE": "Liverpool",
+        "en-US": "Liverpool",
+        "es-ES": "Liverpool",
+        "es-MX": "Liverpool"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/liverpool.svg",
+      "bytes": 677,
+      "sha256": "23705a5e8bd11bd8f0b24c644fc4b20dab97100a92d8264356649d0c9c6e77c8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "living-room",
       "symbol": "livingroom",
       "labels": {
@@ -46346,6 +47333,27 @@
       "file": "assets/locker-room.svg",
       "bytes": 464,
       "sha256": "83c91327965437cea4ee0a607f618dbaeada9f2a5d0c7c07de4021a80ff88cd6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lodz",
+      "symbol": "lodz",
+      "labels": {
+        "sv-SE": "Łódź",
+        "en-US": "Łódź",
+        "es-ES": "Łódź",
+        "es-MX": "Łódź"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lodz.svg",
+      "bytes": 677,
+      "sha256": "a12a1cb07aac7a3b79ab144795d55af80f00f6809f83fbe829a00c487589b103",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47004,6 +48012,27 @@
       }
     },
     {
+      "id": "lublin",
+      "symbol": "lublin",
+      "labels": {
+        "sv-SE": "Lublin",
+        "en-US": "Lublin",
+        "es-ES": "Lublin",
+        "es-MX": "Lublin"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lublin.svg",
+      "bytes": 677,
+      "sha256": "fcaaee71e286ab8683cc8e6af4bd060ea1780efb05a9c957ccb8afdcab3fbfa7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "lucknow",
       "symbol": "lucknow",
       "labels": {
@@ -47354,6 +48383,48 @@
       "file": "assets/lynx.svg",
       "bytes": 801,
       "sha256": "01e42647710313689688d94c9bce2d9b2f4b758d20ffb17126b9baa3aa674a3c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lyon",
+      "symbol": "lyon",
+      "labels": {
+        "sv-SE": "Lyon",
+        "en-US": "Lyon",
+        "es-ES": "Lyon",
+        "es-MX": "Lyon"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lyon.svg",
+      "bytes": 677,
+      "sha256": "b90bb61a4403ab7c0d25b4af87e7843c9161c2856d8911a2fbe15451e34c9caf",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "maastricht",
+      "symbol": "maastricht",
+      "labels": {
+        "sv-SE": "Maastricht",
+        "en-US": "Maastricht",
+        "es-ES": "Maastricht",
+        "es-MX": "Maastricht"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/maastricht.svg",
+      "bytes": 676,
+      "sha256": "e733f3fbaa47bcfffe919ca20f90e899c0460326d614e7b52675c723ae2aa521",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48012,6 +49083,27 @@
       }
     },
     {
+      "id": "manchester",
+      "symbol": "manchester",
+      "labels": {
+        "sv-SE": "Manchester",
+        "en-US": "Manchester",
+        "es-ES": "Manchester",
+        "es-MX": "Manchester"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/manchester.svg",
+      "bytes": 675,
+      "sha256": "5163f08f1167c17a4940a286f0d30db476fae7beb5ab8287b2f22d4f9543f022",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "mandarin",
       "symbol": "mandarin",
       "labels": {
@@ -48341,6 +49433,27 @@
       "file": "assets/market.webp",
       "bytes": 14054,
       "sha256": "b0e8684226793f400f6db0f35f7cc12428af1339751a1e368d8fea158589c083",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "marseille",
+      "symbol": "marseille",
+      "labels": {
+        "sv-SE": "Marseille",
+        "en-US": "Marseille",
+        "es-ES": "Marseille",
+        "es-MX": "Marseille"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/marseille.svg",
+      "bytes": 676,
+      "sha256": "e385260ded3c3f0b0531aa70fae4d4f56dad2baffaaac26b1bcef5ee363f71ab",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49755,6 +50868,27 @@
       }
     },
     {
+      "id": "messina",
+      "symbol": "messina",
+      "labels": {
+        "sv-SE": "Messina",
+        "en-US": "Messina",
+        "es-ES": "Messina",
+        "es-MX": "Messina"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/messina.svg",
+      "bytes": 676,
+      "sha256": "2eb6f7680d9e41b9449a3337aa63bf2d82c37d4ae0bd5d8a30c5d1d4a19820c4",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "meteor-shower",
       "symbol": "meteor-shower",
       "labels": {
@@ -50112,6 +51246,27 @@
       }
     },
     {
+      "id": "milan",
+      "symbol": "milan",
+      "labels": {
+        "sv-SE": "Milan",
+        "en-US": "Milan",
+        "es-ES": "Milan",
+        "es-MX": "Milan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/milan.svg",
+      "bytes": 677,
+      "sha256": "e946aa71226cee5962a717e2da4ca8a765894ae95936bb3e6ba2b2e93932e148",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "mild-pain",
       "symbol": "mild-pain",
       "labels": {
@@ -50441,6 +51596,27 @@
       "file": "assets/mirror.webp",
       "bytes": 2476,
       "sha256": "c125bd7f1b7f8d8d9c99e067e9c4c4df7e3af82530bb42732cffbb657e20859b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "miskolc",
+      "symbol": "miskolc",
+      "labels": {
+        "sv-SE": "Miskolc",
+        "en-US": "Miskolc",
+        "es-ES": "Miskolc",
+        "es-MX": "Miskolc"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/miskolc.svg",
+      "bytes": 676,
+      "sha256": "1e622b23b6375c1b284ae25d0a07cd6640e8da64d402bbda8b39a92198ab6c97",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -51407,6 +52583,27 @@
       "file": "assets/monthly-salary.svg",
       "bytes": 735,
       "sha256": "99ae235eb94e063e5f00312d10bc5da1060a835902c278b2d4fbcd3167745f10",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "montpellier",
+      "symbol": "montpellier",
+      "labels": {
+        "sv-SE": "Montpellier",
+        "en-US": "Montpellier",
+        "es-ES": "Montpellier",
+        "es-MX": "Montpellier"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/montpellier.svg",
+      "bytes": 676,
+      "sha256": "c12454b3051309a4e099fead0b8683259472f932c3878b9fbe493afff6da321c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52485,6 +53682,27 @@
       }
     },
     {
+      "id": "murcia",
+      "symbol": "murcia",
+      "labels": {
+        "sv-SE": "Murcia",
+        "en-US": "Murcia",
+        "es-ES": "Murcia",
+        "es-MX": "Murcia"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/murcia.svg",
+      "bytes": 676,
+      "sha256": "eb71bf0ab3a5fa0ccb2580ca3219da1bd0c08b4b002b5117332baf7d4e9fa310",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "muscat",
       "symbol": "muscat",
       "labels": {
@@ -53157,6 +54375,27 @@
       }
     },
     {
+      "id": "nantes",
+      "symbol": "nantes",
+      "labels": {
+        "sv-SE": "Nantes",
+        "en-US": "Nantes",
+        "es-ES": "Nantes",
+        "es-MX": "Nantes"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nantes.svg",
+      "bytes": 675,
+      "sha256": "da128471c3681723e687e8299be9555f436a369ef9f762b7e84c53e2d8678697",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "nape",
       "symbol": "nape",
       "labels": {
@@ -53192,6 +54431,27 @@
       "file": "assets/napkin.svg",
       "bytes": 421,
       "sha256": "6addca238ce85bb15bae5756a3a5316420d8663d3c1da2a67f31f935138bcb75",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "naples",
+      "symbol": "naples",
+      "labels": {
+        "sv-SE": "Naples",
+        "en-US": "Naples",
+        "es-ES": "Naples",
+        "es-MX": "Naples"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/naples.svg",
+      "bytes": 677,
+      "sha256": "d515911f3a88409091b5cb112439fec48885288ef7b780e708f3bb9d5aabf4ab",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54438,6 +55698,27 @@
       }
     },
     {
+      "id": "newcastle",
+      "symbol": "newcastle",
+      "labels": {
+        "sv-SE": "Newcastle",
+        "en-US": "Newcastle",
+        "es-ES": "Newcastle",
+        "es-MX": "Newcastle"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/newcastle.svg",
+      "bytes": 675,
+      "sha256": "fe7d180c6e1ab74487a72ac06d8baf3d31c3c2759d48704960a3677080e87576",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "next-month",
       "symbol": "nextmonth",
       "labels": {
@@ -54557,6 +55838,27 @@
       "file": "assets/nicaragua.svg",
       "bytes": 534,
       "sha256": "c38567e16f0452ce0c8f1654b095986ccd876bc12c431e477581f19fe28ef663",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "nice",
+      "symbol": "nice",
+      "labels": {
+        "sv-SE": "Nice",
+        "en-US": "Nice",
+        "es-ES": "Nice",
+        "es-MX": "Nice"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nice.svg",
+      "bytes": 675,
+      "sha256": "a08b7f669c77383b482d69c1bc0fd80e9b55689577b8625c5876a093f0ae2263",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55439,6 +56741,27 @@
       "file": "assets/notification.svg",
       "bytes": 493,
       "sha256": "2df9ae9893f18bc41d3ee2e6e07792322ff504d84a434c72a74ab9d0684fef66",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "nottingham",
+      "symbol": "nottingham",
+      "labels": {
+        "sv-SE": "Nottingham",
+        "en-US": "Nottingham",
+        "es-ES": "Nottingham",
+        "es-MX": "Nottingham"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nottingham.svg",
+      "bytes": 676,
+      "sha256": "a32ba4060aad9c0722e97de663d81a8537ad952ddcfaab472d115b62c6ae72f9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59457,6 +60780,27 @@
       }
     },
     {
+      "id": "ostrava",
+      "symbol": "ostrava",
+      "labels": {
+        "sv-SE": "Ostrava",
+        "en-US": "Ostrava",
+        "es-ES": "Ostrava",
+        "es-MX": "Ostrava"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ostrava.svg",
+      "bytes": 677,
+      "sha256": "2961096d22d2cb03d762f17bf86619b51ca9bae7ae6e12567667d5c999ba567e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "ostrich",
       "symbol": "ostrich",
       "labels": {
@@ -60066,6 +61410,27 @@
       }
     },
     {
+      "id": "oviedo",
+      "symbol": "oviedo",
+      "labels": {
+        "sv-SE": "Oviedo",
+        "en-US": "Oviedo",
+        "es-ES": "Oviedo",
+        "es-MX": "Oviedo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/oviedo.svg",
+      "bytes": 676,
+      "sha256": "62f093116724dfee21fb464e651363f6fc0a1c1ba8c5b8f8c62d81c60b099684",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "owl",
       "symbol": "owl",
       "labels": {
@@ -60122,6 +61487,27 @@
       "file": "assets/oxelosund.svg",
       "bytes": 612,
       "sha256": "06a275779216bdf6d8f9ef55f48963654e9528bf0063b8119dfe99b7f88b7ac5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "oxford",
+      "symbol": "oxford",
+      "labels": {
+        "sv-SE": "Oxford",
+        "en-US": "Oxford",
+        "es-ES": "Oxford",
+        "es-MX": "Oxford"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/oxford.svg",
+      "bytes": 676,
+      "sha256": "a1e28a4087c80e6c3aa0d9ccb3221d9f778d1d4b5a5c7a1ab739422f6747416c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -60311,6 +61697,27 @@
       "file": "assets/packing-tape.svg",
       "bytes": 516,
       "sha256": "b8d88810b38bd0170250758e4c834789043bba834333cbb74092ca87a7e68a41",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "padua",
+      "symbol": "padua",
+      "labels": {
+        "sv-SE": "Padua",
+        "en-US": "Padua",
+        "es-ES": "Padua",
+        "es-MX": "Padua"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/padua.svg",
+      "bytes": 676,
+      "sha256": "5c7e06e690d885752addcb5196825e26fbfe52e1cd929765cdc41ef5fe3a2350",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -60759,6 +62166,27 @@
       }
     },
     {
+      "id": "palermo",
+      "symbol": "palermo",
+      "labels": {
+        "sv-SE": "Palermo",
+        "en-US": "Palermo",
+        "es-ES": "Palermo",
+        "es-MX": "Palermo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/palermo.svg",
+      "bytes": 676,
+      "sha256": "ba2296dc3ce260f7dd813b6832780037502eea82011ed84d789c4097805c60d0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "palikir",
       "symbol": "palikir",
       "labels": {
@@ -60815,6 +62243,48 @@
       "file": "assets/palm-tree.svg",
       "bytes": 519,
       "sha256": "08133fd0059ec20fcb2335a7fa1eaf44a373ec7a996f213b33819cf0228832a5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "palma",
+      "symbol": "palma",
+      "labels": {
+        "sv-SE": "Palma",
+        "en-US": "Palma",
+        "es-ES": "Palma",
+        "es-MX": "Palma"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/palma.svg",
+      "bytes": 677,
+      "sha256": "e3dbffb7feedacac886e6bb618fac3c7625e8098b0db2ad83aeb2c428832c126",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "pamplona",
+      "symbol": "pamplona",
+      "labels": {
+        "sv-SE": "Pamplona",
+        "en-US": "Pamplona",
+        "es-ES": "Pamplona",
+        "es-MX": "Pamplona"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/pamplona.svg",
+      "bytes": 677,
+      "sha256": "74356c755a610fe0851380dfd011873ee2a51c8fba29c4dba55941363a644712",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62558,6 +64028,27 @@
       "file": "assets/peas.webp",
       "bytes": 5876,
       "sha256": "7643f1aac89b0c7e19eceb98301d74cdf2e0c87465ae50b72b8a7b7aa10688e1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "pecs",
+      "symbol": "pecs",
+      "labels": {
+        "sv-SE": "Pécs",
+        "en-US": "Pécs",
+        "es-ES": "Pécs",
+        "es-MX": "Pécs"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/pecs.svg",
+      "bytes": 676,
+      "sha256": "d00d28c408b353f456fb4363daab31455c068ed04df42bfd26a497e15b0e4395",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -64980,6 +66471,27 @@
       }
     },
     {
+      "id": "plzen",
+      "symbol": "plzen",
+      "labels": {
+        "sv-SE": "Plzeň",
+        "en-US": "Plzeň",
+        "es-ES": "Plzeň",
+        "es-MX": "Plzeň"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/plzen.svg",
+      "bytes": 675,
+      "sha256": "b88b83011117ac3485127adc2e3416496d1b01c095f3d4b7693fbd079082a577",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "pocket",
       "symbol": "pocket",
       "labels": {
@@ -65631,6 +67143,27 @@
       }
     },
     {
+      "id": "porto",
+      "symbol": "porto",
+      "labels": {
+        "sv-SE": "Porto",
+        "en-US": "Porto",
+        "es-ES": "Porto",
+        "es-MX": "Porto"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/porto.svg",
+      "bytes": 676,
+      "sha256": "b481aac338888657c9cc30d7c53ca8fb02806f4c94c15694299f8df545970717",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "porto-novo",
       "symbol": "porto-novo",
       "labels": {
@@ -66023,6 +67556,27 @@
       "file": "assets/power-strip.svg",
       "bytes": 767,
       "sha256": "267d8c9014c8ba3960f39f7c3b5e07627f6b40b7829b9eeee33f9aa3db12549b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "poznan",
+      "symbol": "poznan",
+      "labels": {
+        "sv-SE": "Poznań",
+        "en-US": "Poznań",
+        "es-ES": "Poznań",
+        "es-MX": "Poznań"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/poznan.svg",
+      "bytes": 677,
+      "sha256": "b306c5f2fde5cf151db206123986de1be2462294c79694060d71809e60994209",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -70062,6 +71616,27 @@
       }
     },
     {
+      "id": "reims",
+      "symbol": "reims",
+      "labels": {
+        "sv-SE": "Reims",
+        "en-US": "Reims",
+        "es-ES": "Reims",
+        "es-MX": "Reims"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/reims.svg",
+      "bytes": 676,
+      "sha256": "cc1251878aeb03847f01f3d934b710dd669cbceea4ef9def65d30f9b8f015ac7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "reindeer",
       "symbol": "reindeer",
       "labels": {
@@ -70391,6 +71966,27 @@
       "file": "assets/renewal.svg",
       "bytes": 442,
       "sha256": "ef28d9a9132f9d12dc3f295b03c7de872fb729d296efcde9e513c04c7ccf51c3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "rennes",
+      "symbol": "rennes",
+      "labels": {
+        "sv-SE": "Rennes",
+        "en-US": "Rennes",
+        "es-ES": "Rennes",
+        "es-MX": "Rennes"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/rennes.svg",
+      "bytes": 676,
+      "sha256": "5206a55999f1aacc729f741feea3e42464cfeca93dc26d0a12b1ef148b786649",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72372,6 +73968,48 @@
       }
     },
     {
+      "id": "rotterdam",
+      "symbol": "rotterdam",
+      "labels": {
+        "sv-SE": "Rotterdam",
+        "en-US": "Rotterdam",
+        "es-ES": "Rotterdam",
+        "es-MX": "Rotterdam"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/rotterdam.svg",
+      "bytes": 676,
+      "sha256": "2ed753fe04e258117c725a1e3713d8df23560093d4a49b4abde7649d923260b3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "rouen",
+      "symbol": "rouen",
+      "labels": {
+        "sv-SE": "Rouen",
+        "en-US": "Rouen",
+        "es-ES": "Rouen",
+        "es-MX": "Rouen"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/rouen.svg",
+      "bytes": 677,
+      "sha256": "b7cae3c36624710b59019bda46ca17c0fb5113cef100e722a5e76fec3d03ea22",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "rough",
       "symbol": "rough",
       "labels": {
@@ -73149,6 +74787,27 @@
       }
     },
     {
+      "id": "salamanca",
+      "symbol": "salamanca",
+      "labels": {
+        "sv-SE": "Salamanca",
+        "en-US": "Salamanca",
+        "es-ES": "Salamanca",
+        "es-MX": "Salamanca"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/salamanca.svg",
+      "bytes": 676,
+      "sha256": "ce7e693b2e605260fc53346b3385e0f57524f5e38a023ced66ba1bd6bb7cbc2a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "salamander",
       "symbol": "salamander",
       "labels": {
@@ -73625,6 +75284,27 @@
       "file": "assets/santa-ana.svg",
       "bytes": 612,
       "sha256": "0654363c922d91e1189d3141f121916c4ec16bd331a2d577fabde3fc849e0f83",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "santander",
+      "symbol": "santander",
+      "labels": {
+        "sv-SE": "Santander",
+        "en-US": "Santander",
+        "es-ES": "Santander",
+        "es-MX": "Santander"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/santander.svg",
+      "bytes": 676,
+      "sha256": "50c4bd546c3882e73b3d8b938872c40b2ebdf7fca00ad827ccde2608361049ca",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76985,6 +78665,27 @@
       "file": "assets/sheet-music.svg",
       "bytes": 587,
       "sha256": "ee2f3987d4f2417ed56b923fe1ffe9b2ba98d7e15f818983a5eb3071e0ff77f5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sheffield",
+      "symbol": "sheffield",
+      "labels": {
+        "sv-SE": "Sheffield",
+        "en-US": "Sheffield",
+        "es-ES": "Sheffield",
+        "es-MX": "Sheffield"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sheffield.svg",
+      "bytes": 676,
+      "sha256": "e67280ff032d1b58807f75f5ff03f10800d9fd97d5a84ea8b6d268d10de096e8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84090,6 +85791,27 @@
       }
     },
     {
+      "id": "strasbourg",
+      "symbol": "strasbourg",
+      "labels": {
+        "sv-SE": "Strasbourg",
+        "en-US": "Strasbourg",
+        "es-ES": "Strasbourg",
+        "es-MX": "Strasbourg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/strasbourg.svg",
+      "bytes": 677,
+      "sha256": "9a12f2e1696a9eea5176707edcba9285e6bb9143c9a5a1254a708d0efa43fd5a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "strawberry",
       "symbol": "strawberry",
       "labels": {
@@ -86127,6 +87849,48 @@
       }
     },
     {
+      "id": "szczecin",
+      "symbol": "szczecin",
+      "labels": {
+        "sv-SE": "Szczecin",
+        "en-US": "Szczecin",
+        "es-ES": "Szczecin",
+        "es-MX": "Szczecin"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/szczecin.svg",
+      "bytes": 676,
+      "sha256": "893a257cb51e41931e54a892810f0cb7239b5383eec4ff3fc9a9fd7037690dc8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "szeged",
+      "symbol": "szeged",
+      "labels": {
+        "sv-SE": "Szeged",
+        "en-US": "Szeged",
+        "es-ES": "Szeged",
+        "es-MX": "Szeged"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/szeged.svg",
+      "bytes": 676,
+      "sha256": "60de5bc622d548aaf4f358237ae442c10a79064a0d199566b170d864d07394ec",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "table",
       "symbol": "table",
       "labels": {
@@ -87170,6 +88934,27 @@
       "file": "assets/tape-measure.webp",
       "bytes": 5384,
       "sha256": "81448cff6822436f786412b830e099852a48d381e5193903cae106c637e8ddd8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "taranto",
+      "symbol": "taranto",
+      "labels": {
+        "sv-SE": "Taranto",
+        "en-US": "Taranto",
+        "es-ES": "Taranto",
+        "es-MX": "Taranto"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/taranto.svg",
+      "bytes": 676,
+      "sha256": "9218675d3aa1c60e927b0ada74a2c10587e4bcd0eaa394aa2c64c8bb7c4b11b0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90852,6 +92637,27 @@
       }
     },
     {
+      "id": "toulouse",
+      "symbol": "toulouse",
+      "labels": {
+        "sv-SE": "Toulouse",
+        "en-US": "Toulouse",
+        "es-ES": "Toulouse",
+        "es-MX": "Toulouse"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/toulouse.svg",
+      "bytes": 676,
+      "sha256": "82c9cf78042b9e7be063adcc3ed1cce34eea7fda92dc2a6607e5d8e3ff93a5a5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "tour-guide",
       "symbol": "tour-guide",
       "labels": {
@@ -90887,6 +92693,27 @@
       "file": "assets/tourist.svg",
       "bytes": 681,
       "sha256": "9b83316c57c80e100153edfd3b05883aad560b7531f3a199fd1f125fe278e079",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "tours",
+      "symbol": "tours",
+      "labels": {
+        "sv-SE": "Tours",
+        "en-US": "Tours",
+        "es-ES": "Tours",
+        "es-MX": "Tours"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/tours.svg",
+      "bytes": 675,
+      "sha256": "dbb1f7a409910446751f5bc8293e179bb6d95b6587c73134bef1f138fbcca3b8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -91755,6 +93582,27 @@
       }
     },
     {
+      "id": "trieste",
+      "symbol": "trieste",
+      "labels": {
+        "sv-SE": "Trieste",
+        "en-US": "Trieste",
+        "es-ES": "Trieste",
+        "es-MX": "Trieste"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/trieste.svg",
+      "bytes": 676,
+      "sha256": "f06cd9d5a736791bbf33b319370e99a8c9ee1d73f0b3079b2b3886616496f257",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "trim-nails",
       "symbol": "trim-nails",
       "labels": {
@@ -92336,6 +94184,27 @@
       "file": "assets/tunnel.svg",
       "bytes": 402,
       "sha256": "f917b53c62b640dd9efc427f4d232feb039c0fc86a9ef176bbdaf743128c7783",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "turin",
+      "symbol": "turin",
+      "labels": {
+        "sv-SE": "Turin",
+        "en-US": "Turin",
+        "es-ES": "Turin",
+        "es-MX": "Turin"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/turin.svg",
+      "bytes": 676,
+      "sha256": "f466cd8b2feadb657eb319e0df7cdeb6b85ea29a88bc898386d2c383006df289",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -94590,6 +96459,27 @@
       }
     },
     {
+      "id": "utrecht",
+      "symbol": "utrecht",
+      "labels": {
+        "sv-SE": "Utrecht",
+        "en-US": "Utrecht",
+        "es-ES": "Utrecht",
+        "es-MX": "Utrecht"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/utrecht.svg",
+      "bytes": 677,
+      "sha256": "575abf09dc7afb8be92b04db088cf5fc99c63399ae8e53d4e26bd10827e90b8d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "uzbekistan",
       "symbol": "uzbekistan",
       "labels": {
@@ -94793,6 +96683,27 @@
       "file": "assets/validate-ticket.svg",
       "bytes": 609,
       "sha256": "ad4cc7df500e8b1ef6f8cab37cc4250cc32154fa0fc526eb958ed818b56945b6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "valladolid",
+      "symbol": "valladolid",
+      "labels": {
+        "sv-SE": "Valladolid",
+        "en-US": "Valladolid",
+        "es-ES": "Valladolid",
+        "es-MX": "Valladolid"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/valladolid.svg",
+      "bytes": 677,
+      "sha256": "d9f8bc0c95a2e14681a986acef98f8a2a6855d27363280d037780d14b75ff677",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -95115,6 +97026,27 @@
       }
     },
     {
+      "id": "venice",
+      "symbol": "venice",
+      "labels": {
+        "sv-SE": "Venice",
+        "en-US": "Venice",
+        "es-ES": "Venice",
+        "es-MX": "Venice"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/venice.svg",
+      "bytes": 676,
+      "sha256": "82247259f7e7be74f985c1e4e193ed1a6fcf9d0ff4e80efdc1a507e8f2aa6a09",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "ventilate",
       "symbol": "ventilate",
       "labels": {
@@ -95150,6 +97082,27 @@
       "file": "assets/vermont.svg",
       "bytes": 449,
       "sha256": "415dd9b8e3448458ec7afb60edae41094066c17123ef73941aa239ea454e0bc7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "verona",
+      "symbol": "verona",
+      "labels": {
+        "sv-SE": "Verona",
+        "en-US": "Verona",
+        "es-ES": "Verona",
+        "es-MX": "Verona"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/verona.svg",
+      "bytes": 676,
+      "sha256": "1036f83da37d6563c320ce1656c3103e16943cbd5f5ca528ad70ad7b5f2ee845",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -95360,6 +97313,27 @@
       "file": "assets/vietnam.svg",
       "bytes": 694,
       "sha256": "f29c1f6f65383ce9f8a1da4b5ec60d13adf45a9406a9cfd1328fd878db076391",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "vigo",
+      "symbol": "vigo",
+      "labels": {
+        "sv-SE": "Vigo",
+        "en-US": "Vigo",
+        "es-ES": "Vigo",
+        "es-MX": "Vigo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/vigo.svg",
+      "bytes": 676,
+      "sha256": "bad193e01b7f10f6b300b2586787871a78e83cb984d99e7adf137ad0da271ffa",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99693,6 +101667,27 @@
       }
     },
     {
+      "id": "wroclaw",
+      "symbol": "wroclaw",
+      "labels": {
+        "sv-SE": "Wrocław",
+        "en-US": "Wrocław",
+        "es-ES": "Wrocław",
+        "es-MX": "Wrocław"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/wroclaw.svg",
+      "bytes": 676,
+      "sha256": "fbbb533aea32a0e20c6ee5f0000cd4894b28b75309964652148fb99e0053ceae",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "wuhan",
       "symbol": "wuhan",
       "labels": {
@@ -100197,6 +102192,27 @@
       }
     },
     {
+      "id": "york",
+      "symbol": "york",
+      "labels": {
+        "sv-SE": "York",
+        "en-US": "York",
+        "es-ES": "York",
+        "es-MX": "York"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/york.svg",
+      "bytes": 676,
+      "sha256": "d6ead43652c4a02e1e8e57ce5fcf4bc92046aab3cc84c1c538db8454d489fc7e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "you",
       "symbol": "you",
       "labels": {
@@ -100421,6 +102437,27 @@
       "file": "assets/zambia.svg",
       "bytes": 677,
       "sha256": "e83c2d0e831111019600a617d2922365d03714cbb2f18ba1cc3d51401deedadb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "zaragoza",
+      "symbol": "zaragoza",
+      "labels": {
+        "sv-SE": "Zaragoza",
+        "en-US": "Zaragoza",
+        "es-ES": "Zaragoza",
+        "es-MX": "Zaragoza"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/zaragoza.svg",
+      "bytes": 676,
+      "sha256": "9fb599735b8064ccd65d988461f74bd48f8ffab1f5e97b08511747b64cc84158",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T14:46:16.431Z",
+  "exportedAt": "2026-10-20T14:47:36.643Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4374,
+  "count": 4384,
   "pictograms": [
     {
       "id": "abdomen",
@@ -9302,6 +9302,27 @@
       "file": "assets/bubble.svg",
       "bytes": 513,
       "sha256": "5201aaad53fa324226874fbce02bd23ceb91eae6230782448fd703f0d6b0304d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bubble-wrap",
+      "symbol": "bubble-wrap",
+      "labels": {
+        "sv-SE": "Bubbelplast",
+        "en-US": "Bubble wrap",
+        "es-ES": "Plástico de burbujas",
+        "es-MX": "Plástico burbuja"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/bubble-wrap.svg",
+      "bytes": 579,
+      "sha256": "db08b9aed7f9329fda6384fbea3a9153fa712832516bbf21f1ba9bda890506fc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20187,6 +20208,27 @@
       }
     },
     {
+      "id": "deposit-return",
+      "symbol": "deposit-return",
+      "labels": {
+        "sv-SE": "Pantautomat",
+        "en-US": "Deposit return machine",
+        "es-ES": "Máquina de devolución",
+        "es-MX": "Máquina de retorno"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/deposit-return.svg",
+      "bytes": 544,
+      "sha256": "469f6548241d2d1b51ea9cff7eaae818935da9a35a4d65db6efac87f2dc0b304",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "descendant",
       "symbol": "descendant",
       "labels": {
@@ -21566,6 +21608,27 @@
       "file": "assets/donation.svg",
       "bytes": 611,
       "sha256": "f20c1142f5fa95fc9aff846aca7699a4c636ec9e8a1d5ed7b052c2432aff2d4d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "donation-box",
+      "symbol": "donation-box",
+      "labels": {
+        "sv-SE": "Insamlingslåda",
+        "en-US": "Donation box",
+        "es-ES": "Caja de donaciones",
+        "es-MX": "Caja de donación"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/donation-box.svg",
+      "bytes": 478,
+      "sha256": "0dce05aba42b9b493f89af5b6b5c9451394689505c4bb36aef95b919e22e584c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -27096,6 +27159,27 @@
       }
     },
     {
+      "id": "filing-tray",
+      "symbol": "filing-tray",
+      "labels": {
+        "sv-SE": "Dokumentfack",
+        "en-US": "Document tray",
+        "es-ES": "Bandeja de documentos",
+        "es-MX": "Charola para documentos"
+      },
+      "categories": [
+        "school-work-play"
+      ],
+      "file": "assets/filing-tray.svg",
+      "bytes": 456,
+      "sha256": "00cf301496659d7d85353b439002670308023883701f06cef27817b21f40b766",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "fill",
       "symbol": "fill",
       "labels": {
@@ -28517,6 +28601,27 @@
       "file": "assets/folder.webp",
       "bytes": 2522,
       "sha256": "afb07b8f5e894757f6173e5d9f9448b87c1a2af56ce8b67b423123b5e83da8e3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "folder-label",
+      "symbol": "folder-label",
+      "labels": {
+        "sv-SE": "Mappetikett",
+        "en-US": "Folder label",
+        "es-ES": "Etiqueta de carpeta",
+        "es-MX": "Etiqueta de carpeta"
+      },
+      "categories": [
+        "school-work-play"
+      ],
+      "file": "assets/folder-label.svg",
+      "bytes": 427,
+      "sha256": "3959ac85d88c098d05215b14085197d247af81d991b048399ac4bb82070dea42",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -30911,6 +31016,27 @@
       "file": "assets/glacier.svg",
       "bytes": 527,
       "sha256": "933ddb87d4255c4172736bed5c3b1ad08ceeb4ae4878c69b8ed12019e8935655",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "glass-recycling-bin",
+      "symbol": "glass-recycling-bin",
+      "labels": {
+        "sv-SE": "Glasåtervinning",
+        "en-US": "Glass recycling bin",
+        "es-ES": "Contenedor de vidrio",
+        "es-MX": "Bote para vidrio"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/glass-recycling-bin.svg",
+      "bytes": 467,
+      "sha256": "53202b42fb57c2c226dad89346b536c1acadfbd70e3642188d83e895100a3ea1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39437,6 +39563,27 @@
       "file": "assets/label.svg",
       "bytes": 409,
       "sha256": "caf1aeca3b15fbe1b3cdd733052a45156ad6de43dedc24bd74923b2a489a3b79",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "label-maker",
+      "symbol": "label-maker",
+      "labels": {
+        "sv-SE": "Etikettskrivare",
+        "en-US": "Label maker",
+        "es-ES": "Impresora de etiquetas",
+        "es-MX": "Impresora de etiquetas"
+      },
+      "categories": [
+        "school-work-play"
+      ],
+      "file": "assets/label-maker.svg",
+      "bytes": 572,
+      "sha256": "9d2c05bb737e43c0ba8f8977ff3296d64fcc6e7470044be31bf10f0e8ad1b821",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54480,6 +54627,27 @@
       }
     },
     {
+      "id": "packing-tape",
+      "symbol": "packing-tape",
+      "labels": {
+        "sv-SE": "Packtejp",
+        "en-US": "Packing tape",
+        "es-ES": "Cinta de embalaje",
+        "es-MX": "Cinta para empacar"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/packing-tape.svg",
+      "bytes": 516,
+      "sha256": "b8d88810b38bd0170250758e4c834789043bba834333cbb74092ca87a7e68a41",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "paella",
       "symbol": "paella",
       "labels": {
@@ -55187,6 +55355,27 @@
       "file": "assets/paper-fastener.svg",
       "bytes": 544,
       "sha256": "92a42366e1feb161d8569bd2e88eda4f8cbf4fa42fefb620d996a530faa85f98",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "paper-recycling-bin",
+      "symbol": "paper-recycling-bin",
+      "labels": {
+        "sv-SE": "Pappersåtervinning",
+        "en-US": "Paper recycling bin",
+        "es-ES": "Contenedor de papel",
+        "es-MX": "Bote para papel"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/paper-recycling-bin.svg",
+      "bytes": 518,
+      "sha256": "53db5502419c2ac19b3614d0cb90a74cd89e5d4b39a604ef75f33dcf800f7e1c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -70076,6 +70265,27 @@
       "file": "assets/ship.webp",
       "bytes": 7684,
       "sha256": "fd70337ceb37f92e6f131cbe34b4010faa5eb19e8ef3d6a4a1e74894426a10db",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "shipping-label",
+      "symbol": "shipping-label",
+      "labels": {
+        "sv-SE": "Fraktetikett",
+        "en-US": "Shipping label",
+        "es-ES": "Etiqueta de envío",
+        "es-MX": "Etiqueta de envío"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/shipping-label.svg",
+      "bytes": 460,
+      "sha256": "6a002d37cf894107cbd0bedab5a06aca5fa5174a87d05f6c65474ee17dbeec1d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

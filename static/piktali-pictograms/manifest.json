@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:03:00.865Z",
+  "exportedAt": "2026-10-20T17:05:06.241Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -963,8 +963,8 @@
         "movement"
       ],
       "file": "assets/airplane.webp",
-      "bytes": 4478,
-      "sha256": "bad84c99b1b09b5332998f0009bc44666305fc1f159b9d797fbe37cb6722873c",
+      "bytes": 5380,
+      "sha256": "2621855e6ad6775f9a3fe9cd0ec5ea5161aced4235a29c520d79cc90e04ea6a9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6633,8 +6633,8 @@
         "movement"
       ],
       "file": "assets/bicycle.webp",
-      "bytes": 9650,
-      "sha256": "35d81fb4da6b42dfcd7013d8148aeb59ff275b93e390c2fe2125adb874dfd993",
+      "bytes": 10780,
+      "sha256": "b994540cdf60464312dc39f210c32b8270b07ec9e623d1d432172511420dc1b2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7788,8 +7788,8 @@
         "movement"
       ],
       "file": "assets/boat.webp",
-      "bytes": 4018,
-      "sha256": "63bb679560950dc3905fbb138f887db7c9b7b182d3a5c401dbda42e461ef0667",
+      "bytes": 7188,
+      "sha256": "5274397f67637ea507404677137eecf4ffb1e5031b082d43cf6dddd91f312d3b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9993,8 +9993,8 @@
         "movement"
       ],
       "file": "assets/bus.webp",
-      "bytes": 6962,
-      "sha256": "857ef172ef1e2bc936c03963f16ec6f7862df0340f997b88a4a0afbb4a8056ca",
+      "bytes": 7894,
+      "sha256": "07da4317b5d8b2219e61575d97e77d45753ff7a33593e821da5a704b1eb7e880",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68415,8 +68415,8 @@
         "movement"
       ],
       "file": "assets/scooter.webp",
-      "bytes": 4430,
-      "sha256": "10bd653fed2aa4411ab2ab54efc9bb820848bcd57596d455a46b5bcdbe808bbf",
+      "bytes": 5080,
+      "sha256": "ccca83072413a9da5adc3d2f2273bc01694fdb56d56e98734f967e9acdb21a13",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80049,8 +80049,8 @@
         "movement"
       ],
       "file": "assets/taxi.webp",
-      "bytes": 7140,
-      "sha256": "1f1007e756d2b5c4a19142bc397607954face7877cca909ed6e59e46674a3bf7",
+      "bytes": 8996,
+      "sha256": "0891aba10491f8c5e42c3c84a700eadcf8409158d7fd23e10945632aced3b4ff",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -83681,9 +83681,9 @@
       "categories": [
         "places"
       ],
-      "file": "assets/trafficlight.svg",
-      "bytes": 641,
-      "sha256": "fd91ed3bdb7e9c5f4d89189293a68b12c4d4cb83a733ba871dde46bba5494585",
+      "file": "assets/trafficlight.webp",
+      "bytes": 4602,
+      "sha256": "b90e2485662da42b9a43de6cb72052583b909a27c5cdfdb599c7f81108c47bf0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -83703,8 +83703,8 @@
         "movement"
       ],
       "file": "assets/train.webp",
-      "bytes": 10000,
-      "sha256": "9bc31b4c59268f25ecb63a13f7663f4cfdde253488b7de7acc2582896a93d5c2",
+      "bytes": 7516,
+      "sha256": "34353a5606eb3a749df8a4ce1f41fab414006c41055592290b17c135ad597a03",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89835,8 +89835,8 @@
         "body-health-routines"
       ],
       "file": "assets/wheelchair.webp",
-      "bytes": 8566,
-      "sha256": "bee94eb6b8cd72c6907ad880dc93c79468e85be43bf6321e802ebcfab947d8cb",
+      "bytes": 9516,
+      "sha256": "ac6029ffb45ea378f8bc5b69f529426ee0e307ad69f38e404086789599e77d9f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

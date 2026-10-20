@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:57:42.536Z",
+  "exportedAt": "2026-10-20T16:59:28.562Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -1992,8 +1992,8 @@
         "feelings-social"
       ],
       "file": "assets/angry.webp",
-      "bytes": 7846,
-      "sha256": "c699094586d2b01349a75eb218e69d4555cfa99f83a5b00dd0fc631eef39f536",
+      "bytes": 6748,
+      "sha256": "ddbc3dcfa8cf550a1a1f8e175a6b56a5dd17ec79a4091c315c6483108f605fe4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33513,8 +33513,8 @@
         "feelings-social"
       ],
       "file": "assets/happy.webp",
-      "bytes": 8882,
-      "sha256": "411090570f33219b35b92086e22b4c9d5305d7e9e8e1fd7a12b83cdfa18a8613",
+      "bytes": 7824,
+      "sha256": "54698614db25b38d73ea879dc93c44625efd990675ea0f971e5d85bc0f53da09",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34332,8 +34332,8 @@
         "needs-actions"
       ],
       "file": "assets/help.webp",
-      "bytes": 9854,
-      "sha256": "cdd134eeb6837ef628411b76721b79855255615e3140274d9778e8ec19ecd696",
+      "bytes": 7916,
+      "sha256": "25f404b0a276458078c3af7f739c9c3a1928edb950b28a16bb581471a3515087",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -35865,8 +35865,8 @@
         "feelings-social"
       ],
       "file": "assets/hug.webp",
-      "bytes": 7384,
-      "sha256": "5299d37b54dbabbf6ebdfa2bce4457336fbda7a7c4b0f717a3e25f7624d72298",
+      "bytes": 9782,
+      "sha256": "2ccd13d47317b1556b80a231a1b1fb43a27abfb1a608f6d4f199e1ed93edb9ae",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66525,8 +66525,8 @@
         "feelings-social"
       ],
       "file": "assets/sad.webp",
-      "bytes": 7584,
-      "sha256": "f87dacaf61639bc7cc0d2a68420209cb4fa27df5ea35b97b2e7b94198da47456",
+      "bytes": 7436,
+      "sha256": "d0e459d4f3766e15d420dba5fd2e99f00a64f2d75237ec1ae50f92337f680908",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -78222,8 +78222,8 @@
         "feelings-social"
       ],
       "file": "assets/surprised.webp",
-      "bytes": 9612,
-      "sha256": "c40aee1ff59cb337576fc4cea20afb225e1b1aa06749267e9804ad267d041b1e",
+      "bytes": 8406,
+      "sha256": "4bf08c836b8c89be6a5b87342cd0c466d146293c247ecc3c8168ef61e05969e0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79586,9 +79586,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/taketurns.svg",
-      "bytes": 668,
-      "sha256": "3bf8c118df283cc3b452b86ab0b6133d5eb4c40fca1c935984030bd3a66cb89f",
+      "file": "assets/taketurns.webp",
+      "bytes": 11194,
+      "sha256": "b120f2c402b0291444f069aa1a60340921458f225d9afd89da287571fc01d21a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82149,8 +82149,8 @@
         "body-health-routines"
       ],
       "file": "assets/tired.webp",
-      "bytes": 8650,
-      "sha256": "772fec881c09941ddec5dcabea094f3ec7ce3caa7d77fd56a729be2813a049b2",
+      "bytes": 8096,
+      "sha256": "e22236724125f41d04385306a759027b942a89dfe3c1d9f210f0cf3727437485",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -91347,8 +91347,8 @@
         "feelings-social"
       ],
       "file": "assets/worried.webp",
-      "bytes": 9562,
-      "sha256": "48c605ee16acfb43a2b28d5326fccc723029deab9b2c2bb9233b1aec22b0f508",
+      "bytes": 6984,
+      "sha256": "082c0f1ffaa1676a50a2d9ba6f157dfe86356882243fb3315cf655a7041a7a95",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

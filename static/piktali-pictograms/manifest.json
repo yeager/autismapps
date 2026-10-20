@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T15:21:17.418Z",
+  "exportedAt": "2026-10-20T15:23:58.326Z",
   "source": "piktali",
   "includePending": true,
   "count": 4395,
@@ -1005,8 +1005,8 @@
         "home-objects"
       ],
       "file": "assets/alarm-clock.webp",
-      "bytes": 8544,
-      "sha256": "c8a6794163a775d6b8d890c69219fc30fdf0c323923d4fd5bd3b7b4f1274a7c7",
+      "bytes": 7434,
+      "sha256": "246c0c1fef2aadfafe4242fe8b51481653c2f7423e4b8c937425aec376bf7db1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5519,9 +5519,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/battery.svg",
-      "bytes": 579,
-      "sha256": "b79acdf11e40633c9101c70bf8b89f89bfbb8533ba76df32852b05a037bab8ef",
+      "file": "assets/battery.webp",
+      "bytes": 2340,
+      "sha256": "a6acf3e512c0ea50056385b3aeac0d89cff3915e9d9fed18b182295b08c993c7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10560,8 +10560,8 @@
         "school-work-play"
       ],
       "file": "assets/calculator.webp",
-      "bytes": 5070,
-      "sha256": "54141cce69b0d30a650be4e4632ccc83f64266ecf51936ecd9ae281f4cadfec5",
+      "bytes": 6886,
+      "sha256": "fab94be4113150bf1114f0c888a9c2af32ab4a1a6301ec05b98f0e3026ade217",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10896,8 +10896,8 @@
         "home-objects"
       ],
       "file": "assets/camera.webp",
-      "bytes": 4470,
-      "sha256": "dea372ffd060862bd46e683da378f52cdb2f0177766f5308580eaf50d9e96420",
+      "bytes": 6522,
+      "sha256": "ba555a8c10c8ab53fa0564d7f0ac8bd87562cbf97fb7e95e8c393caf4fa0ed7d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21836,9 +21836,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/doorbell.svg",
-      "bytes": 447,
-      "sha256": "70fdb343a22f190068354857b6b1b13c0430ba7d2dcc403a7f634ed75855ce44",
+      "file": "assets/doorbell.webp",
+      "bytes": 2560,
+      "sha256": "bdfd487935f9f54c0184b5bec66ca2d9db3d5bc0c116adc72b357d3ce4a08102",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26330,9 +26330,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/fan.svg",
-      "bytes": 642,
-      "sha256": "96e4bdcb8cf89b691b26388ae8f3c1c33c9999d76a78a1a8724cf01158b53273",
+      "file": "assets/fan.webp",
+      "bytes": 8634,
+      "sha256": "60daf1ace6117c03ecfe279dd13ae3d4355bf385e5c6eaf596a490533a4f6b55",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -28116,8 +28116,8 @@
         "home-objects"
       ],
       "file": "assets/flashlight.webp",
-      "bytes": 4978,
-      "sha256": "930fa3550337ac690eec78cdfe34c476062265810523aea2b5070408b52a8872",
+      "bytes": 4124,
+      "sha256": "00c138aca451b1a1d8242de12bc1f68bec5ba788687a9ff03c0c9d971ba698f9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50124,8 +50124,8 @@
         "school-work-play"
       ],
       "file": "assets/notebook.webp",
-      "bytes": 3682,
-      "sha256": "7f41be96dd18f43bc54ed7a7850e4e3d2bb550f74ec4788480b7860f1811edab",
+      "bytes": 7658,
+      "sha256": "6e6177f1296c62f80abeb9405debdc3b3f3d52dfb1f7307d4b3b44f38278d84d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -64152,8 +64152,8 @@
         "home-objects"
       ],
       "file": "assets/remotecontrol.webp",
-      "bytes": 5782,
-      "sha256": "55f034e8822495424d3f4044958b02725d44f5aa6c3c45876d870545c769b8a3",
+      "bytes": 5588,
+      "sha256": "eb4cc8251ce61a58e37f73e0237ef2a8c1571b5994185fc227b92a05d4cbfbad",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

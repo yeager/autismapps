@@ -3835,5 +3835,6 @@
   "signDictionary.watchOnSite": "Se tecknet",
   "signDictionary.externalNote": "Teckenvideorna finns på en extern webbplats som öppnas i en ny flik. Internet behövs.",
   "signDictionary.searchExternal": "Sök \"{q}\" på Spread The Sign",
-  "signDictionary.creditPt": "Tecken på Libras: Spread The Sign (European Sign Language Centre) — extern länk"
+  "signDictionary.creditPt": "Tecken på Libras: Spread The Sign (European Sign Language Centre) — extern länk",
+  "common.doneSpeech": "{item} ✅"
 }

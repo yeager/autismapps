@@ -42,7 +42,7 @@
   function toggle(id: number) {
     items = items.map(i => i.id === id ? { ...i, done: !i.done } : i);
     const item = items.find(i => i.id === id);
-    if (item?.done) speak(`${item.text} ✅`);
+    if (item?.done) speak($t('common.doneSpeech', { item: item.text }));
     save();
   }
 

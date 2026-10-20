@@ -3835,5 +3835,6 @@
   "soundSensitivity.strategy.deepPressure.title": "Pressão profunda",
   "soundSensitivity.strategy.deepPressure.description": "Dê um abraço em você mesmo, use um colete com peso ou segure algo macio para ficar mais calmo.",
   "soundSensitivity.sound.dog": "Cachorro latindo",
-  "soundSensitivity.sound.alarm": "Alarme de incêndio"
+  "soundSensitivity.sound.alarm": "Alarme de incêndio",
+  "common.doneSpeech": "{item}... selecionado"
 }

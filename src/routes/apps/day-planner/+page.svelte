@@ -75,7 +75,7 @@
   async function toggle(id: string) {
     completed = { ...completed, [id]: !completed[id] };
     const slot = TIME_SLOTS.find(s => s.id === id);
-    if (completed[id] && slot) speak(`${$t(`dayPlanner.slot.${id}`)} ✅`);
+    if (completed[id] && slot) speak($t('common.doneSpeech', { item: $t(`dayPlanner.slot.${id}`) }));
     save();
     
     // Check if all tasks are completed

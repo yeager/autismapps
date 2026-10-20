@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:33:45.594Z",
+  "exportedAt": "2026-10-20T17:34:39.955Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4478,
+  "count": 4558,
   "pictograms": [
     {
       "id": "abdomen",
@@ -1140,6 +1140,27 @@
       }
     },
     {
+      "id": "alingsas",
+      "symbol": "alingsas",
+      "labels": {
+        "sv-SE": "Alingsås",
+        "en-US": "Alingsås",
+        "es-ES": "Alingsås",
+        "es-MX": "Alingsås"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/alingsas.svg",
+      "bytes": 612,
+      "sha256": "1b53ecc946af9f7342cd6d334276cefcbb86fa23ef46ceff957ff88f5962c28c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "all",
       "symbol": "all",
       "labels": {
@@ -1994,6 +2015,27 @@
       "file": "assets/andorra-la-vella.svg",
       "bytes": 604,
       "sha256": "4d625ee1140e174e61b0110428cdedf0c74c95d13d60c0a8507b5bb2b21f3996",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "angelholm",
+      "symbol": "angelholm",
+      "labels": {
+        "sv-SE": "Ängelholm",
+        "en-US": "Ängelholm",
+        "es-ES": "Ängelholm",
+        "es-MX": "Ängelholm"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/angelholm.svg",
+      "bytes": 613,
+      "sha256": "db881ce94a929e91a48e1ac2bb2cec52daeb69134ba41701a60a0a9419666662",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2946,6 +2988,27 @@
       }
     },
     {
+      "id": "arboga",
+      "symbol": "arboga",
+      "labels": {
+        "sv-SE": "Arboga",
+        "en-US": "Arboga",
+        "es-ES": "Arboga",
+        "es-MX": "Arboga"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/arboga.svg",
+      "bytes": 613,
+      "sha256": "5517c1c3a672a014d9e66d6a0ee6c8a290fed84cbe12bc4dcce72c6c5ff6d6b5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "archipelago",
       "symbol": "archipelago",
       "labels": {
@@ -2981,6 +3044,27 @@
       "file": "assets/architect.svg",
       "bytes": 590,
       "sha256": "8da1d4dd29983b0e88d2b07a44c834de06ee0459e975a16239b5fa796ecc3514",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "are",
+      "symbol": "are",
+      "labels": {
+        "sv-SE": "Åre",
+        "en-US": "Åre",
+        "es-ES": "Åre",
+        "es-MX": "Åre"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/are.svg",
+      "bytes": 613,
+      "sha256": "e6867d33a4e24e667fb1341569f8c89e9e0c13f143198f28f5e8cb97cc478f7c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4199,6 +4283,27 @@
       "file": "assets/avalanche.svg",
       "bytes": 529,
       "sha256": "2f51a4c8a3805cb98199653eb50f66e26479210327a63c12b25ed812d20d4aa0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "avesta",
+      "symbol": "avesta",
+      "labels": {
+        "sv-SE": "Avesta",
+        "en-US": "Avesta",
+        "es-ES": "Avesta",
+        "es-MX": "Avesta"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/avesta.svg",
+      "bytes": 612,
+      "sha256": "f8e860f0154eb3c2e420ba22aa561c4ee709d8312229949ac5db276d2d4000d8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8007,6 +8112,27 @@
       }
     },
     {
+      "id": "boden",
+      "symbol": "boden",
+      "labels": {
+        "sv-SE": "Boden",
+        "en-US": "Boden",
+        "es-ES": "Boden",
+        "es-MX": "Boden"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/boden.svg",
+      "bytes": 612,
+      "sha256": "283fd5bf4d8a43578d3ff154aa724d50ba33e4cd0bed0c070adccd4a89230368",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "bodily-autonomy",
       "symbol": "bodily-autonomy",
       "labels": {
@@ -8175,6 +8301,27 @@
       }
     },
     {
+      "id": "bollnas",
+      "symbol": "bollnas",
+      "labels": {
+        "sv-SE": "Bollnäs",
+        "en-US": "Bollnäs",
+        "es-ES": "Bollnäs",
+        "es-MX": "Bollnäs"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bollnas.svg",
+      "bytes": 613,
+      "sha256": "b63ca390c990c7a185258375df6bd8e73c6eb9370949c3581310568d70ae1b53",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "book",
       "symbol": "book",
       "labels": {
@@ -8280,6 +8427,27 @@
       }
     },
     {
+      "id": "boras",
+      "symbol": "boras",
+      "labels": {
+        "sv-SE": "Borås",
+        "en-US": "Borås",
+        "es-ES": "Borås",
+        "es-MX": "Borås"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/boras.svg",
+      "bytes": 612,
+      "sha256": "e8d636a00bf3a87f3729671f05e5a2fe09dc349a3ba6596b05132a0aceb862ca",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "bored",
       "symbol": "bored",
       "labels": {
@@ -8315,6 +8483,27 @@
       "file": "assets/boring.svg",
       "bytes": 654,
       "sha256": "f1220081f6bb99c284cd0353f0bfb5b12e921f192abcabc7ec90eb52a42d2bf0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "borlange",
+      "symbol": "borlange",
+      "labels": {
+        "sv-SE": "Borlänge",
+        "en-US": "Borlänge",
+        "es-ES": "Borlänge",
+        "es-MX": "Borlänge"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/borlange.svg",
+      "bytes": 612,
+      "sha256": "733e1743b491f6b3fab4d35eb0db49e81de0e5c2aa2c3432b0500864412dd0ff",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8441,6 +8630,27 @@
       "file": "assets/both-and.svg",
       "bytes": 714,
       "sha256": "ff699b5dbdfd4e9868952e78eb56151c434f24ab5c37feba8835f36a639d3e0a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "botkyrka",
+      "symbol": "botkyrka",
+      "labels": {
+        "sv-SE": "Botkyrka",
+        "en-US": "Botkyrka",
+        "es-ES": "Botkyrka",
+        "es-MX": "Botkyrka"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/botkyrka.svg",
+      "bytes": 611,
+      "sha256": "e3a5924712f38de3f362af17ef488ab66ce53c854e9c8d1ecd8a84c0782f8a1f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -24996,6 +25206,27 @@
       }
     },
     {
+      "id": "enkoping",
+      "symbol": "enkoping",
+      "labels": {
+        "sv-SE": "Enköping",
+        "en-US": "Enköping",
+        "es-ES": "Enköping",
+        "es-MX": "Enköping"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/enkoping.svg",
+      "bytes": 612,
+      "sha256": "923875b20aedc3451a61a7b323d4233c7acecf587c87d7a413ca86ca5ea928a0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "enough",
       "symbol": "enough",
       "labels": {
@@ -25262,6 +25493,27 @@
       "file": "assets/escape.svg",
       "bytes": 447,
       "sha256": "1ad5817b267f478ad99e47207c350097ec906bddfffbaff8074e4d0451fb882f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "eskilstuna",
+      "symbol": "eskilstuna",
+      "labels": {
+        "sv-SE": "Eskilstuna",
+        "en-US": "Eskilstuna",
+        "es-ES": "Eskilstuna",
+        "es-MX": "Eskilstuna"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/eskilstuna.svg",
+      "bytes": 612,
+      "sha256": "90775afb4f06871882fbd7d4d3b1b71b9724305bc7d13bb35eb90aa8d7c7f594",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26592,6 +26844,27 @@
       }
     },
     {
+      "id": "fagersta",
+      "symbol": "fagersta",
+      "labels": {
+        "sv-SE": "Fagersta",
+        "en-US": "Fagersta",
+        "es-ES": "Fagersta",
+        "es-MX": "Fagersta"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/fagersta.svg",
+      "bytes": 612,
+      "sha256": "b7500be26d594e35fe3bc879969b374f640ffe1c1a1362ff826e53590ee57915",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "fail",
       "symbol": "fail",
       "labels": {
@@ -26718,6 +26991,27 @@
       }
     },
     {
+      "id": "falkenberg",
+      "symbol": "falkenberg",
+      "labels": {
+        "sv-SE": "Falkenberg",
+        "en-US": "Falkenberg",
+        "es-ES": "Falkenberg",
+        "es-MX": "Falkenberg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/falkenberg.svg",
+      "bytes": 612,
+      "sha256": "3993ea6e38008e09d4d7a567ddc450ed605112bc7c93660004e8b4847f230907",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "fall",
       "symbol": "fall",
       "labels": {
@@ -26774,6 +27068,27 @@
       "file": "assets/false.svg",
       "bytes": 445,
       "sha256": "54aba426db03c469588c7da4e95cf78253a2794167801c8e6a5de7f645eb9b83",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "falun",
+      "symbol": "falun",
+      "labels": {
+        "sv-SE": "Falun",
+        "en-US": "Falun",
+        "es-ES": "Falun",
+        "es-MX": "Falun"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/falun.svg",
+      "bytes": 611,
+      "sha256": "cf3e9fdd9da1b0817fb723c3c0d035b81c259e763800534b767b0b17d98632a7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31128,6 +31443,27 @@
       }
     },
     {
+      "id": "gavle",
+      "symbol": "gavle",
+      "labels": {
+        "sv-SE": "Gävle",
+        "en-US": "Gävle",
+        "es-ES": "Gävle",
+        "es-MX": "Gävle"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/gavle.svg",
+      "bytes": 611,
+      "sha256": "06d39b48deacaf1316ac984cbc7415297f17113ada6bd484b1df259d9c09a146",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "gazpacho",
       "symbol": "gazpacho",
       "labels": {
@@ -33669,6 +34005,27 @@
       }
     },
     {
+      "id": "halmstad",
+      "symbol": "halmstad",
+      "labels": {
+        "sv-SE": "Halmstad",
+        "en-US": "Halmstad",
+        "es-ES": "Halmstad",
+        "es-MX": "Halmstad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/halmstad.svg",
+      "bytes": 613,
+      "sha256": "e35a98cdd6e37e9147b18ad79ea9fe14a0e6f5d3db0b52f103a8c66acf790154",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "ham",
       "symbol": "ham",
       "labels": {
@@ -34047,6 +34404,27 @@
       }
     },
     {
+      "id": "haninge",
+      "symbol": "haninge",
+      "labels": {
+        "sv-SE": "Haninge",
+        "en-US": "Haninge",
+        "es-ES": "Haninge",
+        "es-MX": "Haninge"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/haninge.svg",
+      "bytes": 611,
+      "sha256": "6ed59470156f148a0d334f863f068b1526af0143582bf93134831832181c0f18",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "hanoi",
       "symbol": "hanoi",
       "labels": {
@@ -34061,6 +34439,27 @@
       "file": "assets/hanoi.svg",
       "bytes": 507,
       "sha256": "9fa305def0c2148a06b5cff78bfd435ca22fe737b0334bf7b392e92dbb4d5f8b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "haparanda",
+      "symbol": "haparanda",
+      "labels": {
+        "sv-SE": "Haparanda",
+        "en-US": "Haparanda",
+        "es-ES": "Haparanda",
+        "es-MX": "Haparanda"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/haparanda.svg",
+      "bytes": 612,
+      "sha256": "5246018a5cf13095092e5c26e352a6a05c9cd111a0fce00e625b69159e14ad35",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34166,6 +34565,27 @@
       "file": "assets/harmonica.svg",
       "bytes": 661,
       "sha256": "45226de55156cfba864f170de348fb1c3a37d8b40a271783266948ca3143b4d5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "harnosand",
+      "symbol": "harnosand",
+      "labels": {
+        "sv-SE": "Härnösand",
+        "en-US": "Härnösand",
+        "es-ES": "Härnösand",
+        "es-MX": "Härnösand"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/harnosand.svg",
+      "bytes": 613,
+      "sha256": "28ff6ced1f69a876cd8e3bdbabf8ada791f9242a7fc6bb5162f3c0f0db828e89",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34950,6 +35370,27 @@
       }
     },
     {
+      "id": "helsingborg",
+      "symbol": "helsingborg",
+      "labels": {
+        "sv-SE": "Helsingborg",
+        "en-US": "Helsingborg",
+        "es-ES": "Helsingborg",
+        "es-MX": "Helsingborg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/helsingborg.svg",
+      "bytes": 613,
+      "sha256": "e40d48e2e5ce2741393c9b48526be5dfb3fff72a47d525274465cc0f9a572325",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "helsinki",
       "symbol": "helsinki",
       "labels": {
@@ -35489,6 +35930,27 @@
       "file": "assets/hockey-stick.svg",
       "bytes": 402,
       "sha256": "4ad10a57fb979da69fdf6082be3fb09174220a1297774b7f2fc2ca2e5d4b0cf8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "hoganas",
+      "symbol": "hoganas",
+      "labels": {
+        "sv-SE": "Höganäs",
+        "en-US": "Höganäs",
+        "es-ES": "Höganäs",
+        "es-MX": "Höganäs"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hoganas.svg",
+      "bytes": 613,
+      "sha256": "8f92427674819302f6e8b3da4fff87bf262c376330a6d8791be27be78d7d1ec9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -36455,6 +36917,48 @@
       "file": "assets/however.svg",
       "bytes": 463,
       "sha256": "4d21f5c6ade755faf391f96f1513c579c4d2870a6244def79f929b37ad00224e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "huddinge",
+      "symbol": "huddinge",
+      "labels": {
+        "sv-SE": "Huddinge",
+        "en-US": "Huddinge",
+        "es-ES": "Huddinge",
+        "es-MX": "Huddinge"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/huddinge.svg",
+      "bytes": 612,
+      "sha256": "7a8ac2ff940d4001061a848f8cc74f52268cdf2e51f4299d79127bfd5637c5b2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "hudiksvall",
+      "symbol": "hudiksvall",
+      "labels": {
+        "sv-SE": "Hudiksvall",
+        "en-US": "Hudiksvall",
+        "es-ES": "Hudiksvall",
+        "es-MX": "Hudiksvall"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hudiksvall.svg",
+      "bytes": 613,
+      "sha256": "8e8bb529806763f409e695a4c109f6ebbaaec28e102850aeb0a04ff23126fbe8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38772,6 +39276,27 @@
       }
     },
     {
+      "id": "jarfalla",
+      "symbol": "jarfalla",
+      "labels": {
+        "sv-SE": "Järfälla",
+        "en-US": "Järfälla",
+        "es-ES": "Järfälla",
+        "es-MX": "Järfälla"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/jarfalla.svg",
+      "bytes": 613,
+      "sha256": "0881427b8434cb7fa029b3900fa36557b0b43f9b5a2115159ded5c97c0e6eb34",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "jaw",
       "symbol": "jaw",
       "labels": {
@@ -39087,6 +39612,27 @@
       }
     },
     {
+      "id": "jonkoping",
+      "symbol": "jonkoping",
+      "labels": {
+        "sv-SE": "Jönköping",
+        "en-US": "Jönköping",
+        "es-ES": "Jönköping",
+        "es-MX": "Jönköping"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/jonkoping.svg",
+      "bytes": 613,
+      "sha256": "db5174812d6f17ef3456faa1c3be1f3fb0006516c6019658cbee5800a37f3635",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "jordan",
       "symbol": "jordan",
       "labels": {
@@ -39339,6 +39885,48 @@
       }
     },
     {
+      "id": "kalix",
+      "symbol": "kalix",
+      "labels": {
+        "sv-SE": "Kalix",
+        "en-US": "Kalix",
+        "es-ES": "Kalix",
+        "es-MX": "Kalix"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kalix.svg",
+      "bytes": 613,
+      "sha256": "ef34a30ab9c51a7229f87c74f75bc5236c4e65ce66feafc028e3655e13ee8fb3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kalmar",
+      "symbol": "kalmar",
+      "labels": {
+        "sv-SE": "Kalmar",
+        "en-US": "Kalmar",
+        "es-ES": "Kalmar",
+        "es-MX": "Kalmar"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kalmar.svg",
+      "bytes": 611,
+      "sha256": "e9f1ad1babdf994ea0fa8d13eab578aac663a9cd469341861b9c4081efcb433a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kampala",
       "symbol": "kampala",
       "labels": {
@@ -39381,6 +39969,48 @@
       }
     },
     {
+      "id": "karlskrona",
+      "symbol": "karlskrona",
+      "labels": {
+        "sv-SE": "Karlskrona",
+        "en-US": "Karlskrona",
+        "es-ES": "Karlskrona",
+        "es-MX": "Karlskrona"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/karlskrona.svg",
+      "bytes": 612,
+      "sha256": "67c0a5bce9e7941c81e416ae66752dbe6544cf1091b47e28d3113b1e48f1ab80",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "karlstad",
+      "symbol": "karlstad",
+      "labels": {
+        "sv-SE": "Karlstad",
+        "en-US": "Karlstad",
+        "es-ES": "Karlstad",
+        "es-MX": "Karlstad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/karlstad.svg",
+      "bytes": 613,
+      "sha256": "002eb70f733737f0c70de7b8707d00367f53da02309489dfe12a266c97c14872",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kathmandu",
       "symbol": "kathmandu",
       "labels": {
@@ -39395,6 +40025,27 @@
       "file": "assets/kathmandu.svg",
       "bytes": 562,
       "sha256": "7ac1a5b67e3b7cc9e81b2dff7e44b399d729ec90bfaaec243d799866a123be76",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "katrineholm",
+      "symbol": "katrineholm",
+      "labels": {
+        "sv-SE": "Katrineholm",
+        "en-US": "Katrineholm",
+        "es-ES": "Katrineholm",
+        "es-MX": "Katrineholm"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/katrineholm.svg",
+      "bytes": 612,
+      "sha256": "0ffbadeebaf805a527821b13b2f265806b447ddbcc17eec268dc0d8cbc74cdae",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39843,6 +40494,27 @@
       }
     },
     {
+      "id": "kiruna",
+      "symbol": "kiruna",
+      "labels": {
+        "sv-SE": "Kiruna",
+        "en-US": "Kiruna",
+        "es-ES": "Kiruna",
+        "es-MX": "Kiruna"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kiruna.svg",
+      "bytes": 614,
+      "sha256": "3e8afc7c1cff59fdd65cd9ecc11a0685970d919bab90ebba94eaf10c24b21847",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kiss",
       "symbol": "kiss",
       "labels": {
@@ -40200,6 +40872,69 @@
       }
     },
     {
+      "id": "koping",
+      "symbol": "koping",
+      "labels": {
+        "sv-SE": "Köping",
+        "en-US": "Köping",
+        "es-ES": "Köping",
+        "es-MX": "Köping"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/koping.svg",
+      "bytes": 613,
+      "sha256": "9a52019a4a1aca314323591b9e6f1098e7139f849c1d08c2d3bdd0bca9b185cf",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kramfors",
+      "symbol": "kramfors",
+      "labels": {
+        "sv-SE": "Kramfors",
+        "en-US": "Kramfors",
+        "es-ES": "Kramfors",
+        "es-MX": "Kramfors"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kramfors.svg",
+      "bytes": 612,
+      "sha256": "e4d9aa12c84bed003ff34bb2c8ee85bdfa1322aa0a93ee8774e95bb786e81203",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kristianstad",
+      "symbol": "kristianstad",
+      "labels": {
+        "sv-SE": "Kristianstad",
+        "en-US": "Kristianstad",
+        "es-ES": "Kristianstad",
+        "es-MX": "Kristianstad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kristianstad.svg",
+      "bytes": 612,
+      "sha256": "468e238d19521343ff80b0fabd5ed63f5a773124e622b37e14e860efafde36a5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kuala-lumpur",
       "symbol": "kuala-lumpur",
       "labels": {
@@ -40214,6 +40949,48 @@
       "file": "assets/kuala-lumpur.svg",
       "bytes": 451,
       "sha256": "95faf81a97e40ca8c1cce5783662d26d3de32b27249bc2ba29ec3fad2c5e4ae8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kungalv",
+      "symbol": "kungalv",
+      "labels": {
+        "sv-SE": "Kungälv",
+        "en-US": "Kungälv",
+        "es-ES": "Kungälv",
+        "es-MX": "Kungälv"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kungalv.svg",
+      "bytes": 611,
+      "sha256": "5ed8156185b69339b0eb7681893b69c9590af5d6606fe319e09e797116902212",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kungsbacka",
+      "symbol": "kungsbacka",
+      "labels": {
+        "sv-SE": "Kungsbacka",
+        "en-US": "Kungsbacka",
+        "es-ES": "Kungsbacka",
+        "es-MX": "Kungsbacka"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kungsbacka.svg",
+      "bytes": 612,
+      "sha256": "73d1065dffc2835b377c8924dbe63c7a830e86c50df41aca8526ea56413cb3fc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40634,6 +41411,27 @@
       "file": "assets/landlord.svg",
       "bytes": 663,
       "sha256": "08561b54b7022f453739aed98d1801d9c8ba9946decf3dbaaf3f6b596dda51d5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "landskrona",
+      "symbol": "landskrona",
+      "labels": {
+        "sv-SE": "Landskrona",
+        "en-US": "Landskrona",
+        "es-ES": "Landskrona",
+        "es-MX": "Landskrona"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/landskrona.svg",
+      "bytes": 612,
+      "sha256": "2c281592ab7203ceec1974bb5b6a8b162a9c42cae48d83332f9f0c0af38faed1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41670,6 +42468,27 @@
       }
     },
     {
+      "id": "lerum",
+      "symbol": "lerum",
+      "labels": {
+        "sv-SE": "Lerum",
+        "en-US": "Lerum",
+        "es-ES": "Lerum",
+        "es-MX": "Lerum"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lerum.svg",
+      "bytes": 611,
+      "sha256": "f72207679b1c9f7e4a033c9e258c81bee4ad6ba630247e5585a70479c3330117",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "lesotho",
       "symbol": "lesotho",
       "labels": {
@@ -42020,6 +42839,48 @@
       "file": "assets/lick-food.svg",
       "bytes": 797,
       "sha256": "1a4a277d915096b22bec04d4accc93447c2c6ea5ea3991e5be7289e1cad0ec66",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lidingo",
+      "symbol": "lidingo",
+      "labels": {
+        "sv-SE": "Lidingö",
+        "en-US": "Lidingö",
+        "es-ES": "Lidingö",
+        "es-MX": "Lidingö"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lidingo.svg",
+      "bytes": 612,
+      "sha256": "d63048de4060facd560887df295f6bebdad8f0edbc8f42506fd3b2566024d0fb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lidkoping",
+      "symbol": "lidkoping",
+      "labels": {
+        "sv-SE": "Lidköping",
+        "en-US": "Lidköping",
+        "es-ES": "Lidköping",
+        "es-MX": "Lidköping"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lidkoping.svg",
+      "bytes": 613,
+      "sha256": "957e32301d76ed4fb76ee277e9b413f0cba305eec9f175dc05090b31baf12862",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -42524,6 +43385,27 @@
       "file": "assets/line-up.svg",
       "bytes": 653,
       "sha256": "8231012c8ef26a356153b11f1ee0133465e896fdde40026f2ecdfb39d958a3ab",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "linkoping",
+      "symbol": "linkoping",
+      "labels": {
+        "sv-SE": "Linköping",
+        "en-US": "Linköping",
+        "es-ES": "Linköping",
+        "es-MX": "Linköping"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/linkoping.svg",
+      "bytes": 612,
+      "sha256": "6afe171d4b73c781fc7e04ee62f8b2e21fadf362fd76dd93869dafc681d2afa6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43623,6 +44505,27 @@
       }
     },
     {
+      "id": "ludvika",
+      "symbol": "ludvika",
+      "labels": {
+        "sv-SE": "Ludvika",
+        "en-US": "Ludvika",
+        "es-ES": "Ludvika",
+        "es-MX": "Ludvika"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ludvika.svg",
+      "bytes": 612,
+      "sha256": "318941d585762afd4c01556d04289134d5d6cc709934ff11679b9d1d00f90c08",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "luggage-tag",
       "symbol": "luggage-tag",
       "labels": {
@@ -43637,6 +44540,27 @@
       "file": "assets/luggage-tag.svg",
       "bytes": 533,
       "sha256": "5e3ebbfa673dd92ac8f896bda7d616c16dc2896a7351dda682712f9ee088ac90",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lulea",
+      "symbol": "lulea",
+      "labels": {
+        "sv-SE": "Luleå",
+        "en-US": "Luleå",
+        "es-ES": "Luleå",
+        "es-MX": "Luleå"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lulea.svg",
+      "bytes": 612,
+      "sha256": "4265d871f69d9c8864c8023a8db590cb009c32215a59a084385e29b37a620451",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43721,6 +44645,27 @@
       "file": "assets/lunchbox.webp",
       "bytes": 9828,
       "sha256": "5cd966870e6ea52cd78b1abe43824ca7f9b1e35ce70975cb1d29318be6a59003",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lund",
+      "symbol": "lund",
+      "labels": {
+        "sv-SE": "Lund",
+        "en-US": "Lund",
+        "es-ES": "Lund",
+        "es-MX": "Lund"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lund.svg",
+      "bytes": 612,
+      "sha256": "90e362d9acf9db259a36ff3020e9eaf1e60b315eb996af31822c3afc4fde57e1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44708,6 +45653,27 @@
       "file": "assets/march.svg",
       "bytes": 456,
       "sha256": "b12593b06de6937de29e27d64e92aa11fd074ef01deb7113baadda130c380279",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "mariestad",
+      "symbol": "mariestad",
+      "labels": {
+        "sv-SE": "Mariestad",
+        "en-US": "Mariestad",
+        "es-ES": "Mariestad",
+        "es-MX": "Mariestad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/mariestad.svg",
+      "bytes": 613,
+      "sha256": "1da73e55102bdd4e10b826b015a60fc7c445b823342f33dec5b2bb2cb7d24457",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47025,6 +47991,27 @@
       }
     },
     {
+      "id": "molndal",
+      "symbol": "molndal",
+      "labels": {
+        "sv-SE": "Mölndal",
+        "en-US": "Mölndal",
+        "es-ES": "Mölndal",
+        "es-MX": "Mölndal"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/molndal.svg",
+      "bytes": 612,
+      "sha256": "50bacc1adbd43e8752c0dfb4e80b2d8fbb843216f73754ad7340c8ec5d78319a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "mom",
       "symbol": "mom",
       "labels": {
@@ -49041,6 +50028,27 @@
       }
     },
     {
+      "id": "nacka",
+      "symbol": "nacka",
+      "labels": {
+        "sv-SE": "Nacka",
+        "en-US": "Nacka",
+        "es-ES": "Nacka",
+        "es-MX": "Nacka"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nacka.svg",
+      "bytes": 612,
+      "sha256": "5c7df6b692d179308b45d8fe140c8a84878ffa3fb9d2845c401916ef14ce2712",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "nail",
       "symbol": "nail",
       "labels": {
@@ -50819,6 +51827,27 @@
       "file": "assets/noodles.webp",
       "bytes": 7916,
       "sha256": "d151dc875ab3be208cd10419fc7988ccccd395329cd71f69bc4e687520046df9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "norrkoping",
+      "symbol": "norrkoping",
+      "labels": {
+        "sv-SE": "Norrköping",
+        "en-US": "Norrköping",
+        "es-ES": "Norrköping",
+        "es-MX": "Norrköping"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/norrkoping.svg",
+      "bytes": 613,
+      "sha256": "d0ff9fb3e12a6e08b4d4ea18eadc980ea63d1a13e0b19ce1eaf2ba10c325461e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -53703,6 +54732,27 @@
       }
     },
     {
+      "id": "nykoping",
+      "symbol": "nykoping",
+      "labels": {
+        "sv-SE": "Nyköping",
+        "en-US": "Nyköping",
+        "es-ES": "Nyköping",
+        "es-MX": "Nyköping"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/nykoping.svg",
+      "bytes": 612,
+      "sha256": "1f0f28187a8a726f818bb80ce52539c22e7cfb68af7bd513e99562cc9a651ec2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "oak-tree",
       "symbol": "oak-tree",
       "labels": {
@@ -54900,6 +55950,27 @@
       }
     },
     {
+      "id": "orebro",
+      "symbol": "orebro",
+      "labels": {
+        "sv-SE": "Örebro",
+        "en-US": "Örebro",
+        "es-ES": "Örebro",
+        "es-MX": "Örebro"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/orebro.svg",
+      "bytes": 613,
+      "sha256": "6dfe73bedf3f1ed45d124e0b26773ba162696446f1d12d7da42cb0b8aab814e7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "organize",
       "symbol": "organize",
       "labels": {
@@ -54914,6 +55985,27 @@
       "file": "assets/organize.svg",
       "bytes": 510,
       "sha256": "9ad1cce4f1470a56d54d0894af33566607a5f16d9f99d0178e26208179c45a4d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ornskoldsvik",
+      "symbol": "ornskoldsvik",
+      "labels": {
+        "sv-SE": "Örnsköldsvik",
+        "en-US": "Örnsköldsvik",
+        "es-ES": "Örnsköldsvik",
+        "es-MX": "Örnsköldsvik"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ornskoldsvik.svg",
+      "bytes": 612,
+      "sha256": "f19a8daa986eddeec05502768dc6ff7b0249ff20ac47462053391d65ba35ae55",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54977,6 +56069,27 @@
       "file": "assets/oslo.svg",
       "bytes": 475,
       "sha256": "534ab846d930cea90fcd969eb37c4ceb4f38288f9d97d12137f278b59eb44629",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ostersund",
+      "symbol": "ostersund",
+      "labels": {
+        "sv-SE": "Östersund",
+        "en-US": "Östersund",
+        "es-ES": "Östersund",
+        "es-MX": "Östersund"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ostersund.svg",
+      "bytes": 612,
+      "sha256": "27dd555c12276ea062b4f3505da717aedfe69a1003fa9f28a959c9e140f23a9e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55628,6 +56741,27 @@
       "file": "assets/owlhoot.svg",
       "bytes": 896,
       "sha256": "61aeea130f2f903b9dba8b9982e7bf8f70645e5e4b4413a38afe10292eafc599",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "oxelosund",
+      "symbol": "oxelosund",
+      "labels": {
+        "sv-SE": "Oxelösund",
+        "en-US": "Oxelösund",
+        "es-ES": "Oxelösund",
+        "es-MX": "Oxelösund"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/oxelosund.svg",
+      "bytes": 612,
+      "sha256": "06a275779216bdf6d8f9ef55f48963654e9528bf0063b8119dfe99b7f88b7ac5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57098,6 +58232,27 @@
       "file": "assets/participate.svg",
       "bytes": 699,
       "sha256": "a35736eabe18ef95e370e104444d5724f73b795be483082aa80a77f663f1c16a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "partille",
+      "symbol": "partille",
+      "labels": {
+        "sv-SE": "Partille",
+        "en-US": "Partille",
+        "es-ES": "Partille",
+        "es-MX": "Partille"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/partille.svg",
+      "bytes": 612,
+      "sha256": "6deb73ac4230d98dc0f2d771aa234ca9910de96e531b9cbd3972801af1a843ed",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59618,6 +60773,27 @@
       "file": "assets/pitcher.svg",
       "bytes": 791,
       "sha256": "b1597fac2b0ea6ca0ddd5d36932734bdefd46e72dc51855ca2b26dd97054c6a7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "pitea",
+      "symbol": "pitea",
+      "labels": {
+        "sv-SE": "Piteå",
+        "en-US": "Piteå",
+        "es-ES": "Piteå",
+        "es-MX": "Piteå"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/pitea.svg",
+      "bytes": 611,
+      "sha256": "4179643d31d9ea8a029f68aa412ca3cd51cbd8dad888ba789d92ccf9a54d8b93",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68445,6 +69621,27 @@
       }
     },
     {
+      "id": "sandviken",
+      "symbol": "sandviken",
+      "labels": {
+        "sv-SE": "Sandviken",
+        "en-US": "Sandviken",
+        "es-ES": "Sandviken",
+        "es-MX": "Sandviken"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sandviken.svg",
+      "bytes": 612,
+      "sha256": "0d2c203ef8dfbbacd867dabb10a0458fe58d7f733e8572efbb7c2b90e75a1fc7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "sandwich",
       "symbol": "sandwich",
       "labels": {
@@ -73212,6 +74409,27 @@
       }
     },
     {
+      "id": "simrishamn",
+      "symbol": "simrishamn",
+      "labels": {
+        "sv-SE": "Simrishamn",
+        "en-US": "Simrishamn",
+        "es-ES": "Simrishamn",
+        "es-MX": "Simrishamn"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/simrishamn.svg",
+      "bytes": 612,
+      "sha256": "84ff840e2a9902e02e010c946761241778d8e10d2a4eddc5dd77907fe20680c6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "sing",
       "symbol": "sing",
       "labels": {
@@ -73527,6 +74745,27 @@
       }
     },
     {
+      "id": "skelleftea",
+      "symbol": "skelleftea",
+      "labels": {
+        "sv-SE": "Skellefteå",
+        "en-US": "Skellefteå",
+        "es-ES": "Skellefteå",
+        "es-MX": "Skellefteå"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/skelleftea.svg",
+      "bytes": 613,
+      "sha256": "28576deed67ee5c3eecfefcf3d138f771db96e1059de92c003118d6672082cec",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "ski",
       "symbol": "ski",
       "labels": {
@@ -73646,6 +74885,27 @@
       "file": "assets/skopje.svg",
       "bytes": 536,
       "sha256": "c3aaa319644fcb1efed24ee1df2aed781e6a93ebf99b0734c7b44446f98acdca",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "skovde",
+      "symbol": "skovde",
+      "labels": {
+        "sv-SE": "Skövde",
+        "en-US": "Skövde",
+        "es-ES": "Skövde",
+        "es-MX": "Skövde"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/skovde.svg",
+      "bytes": 613,
+      "sha256": "96093f6b3183f9f0039fb81335a3405ecfd00e5e454cdaaf1634caca9151acc0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -74850,6 +76110,48 @@
       }
     },
     {
+      "id": "soderhamn",
+      "symbol": "soderhamn",
+      "labels": {
+        "sv-SE": "Söderhamn",
+        "en-US": "Söderhamn",
+        "es-ES": "Söderhamn",
+        "es-MX": "Söderhamn"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/soderhamn.svg",
+      "bytes": 613,
+      "sha256": "089bf139fe4d04257804b4e92c3d80692191a7ead498fc9fbd14661366cb6c70",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sodertalje",
+      "symbol": "sodertalje",
+      "labels": {
+        "sv-SE": "Södertälje",
+        "en-US": "Södertälje",
+        "es-ES": "Södertälje",
+        "es-MX": "Södertälje"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sodertalje.svg",
+      "bytes": 612,
+      "sha256": "6f91122bcb3c19bc811ee73e8a2b0d84e56f53cb892077721b6f0db009dd9985",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "sofa",
       "symbol": "sofa",
       "labels": {
@@ -75032,6 +76334,69 @@
       "file": "assets/sole.svg",
       "bytes": 746,
       "sha256": "36bd4705f9385204a0dd52c6c028e3e86a8f540c9ff2c90cc8c7694051fd8e6f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "solleftea",
+      "symbol": "solleftea",
+      "labels": {
+        "sv-SE": "Sollefteå",
+        "en-US": "Sollefteå",
+        "es-ES": "Sollefteå",
+        "es-MX": "Sollefteå"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/solleftea.svg",
+      "bytes": 612,
+      "sha256": "f8ec5d7bb92a0127ebc7dc616cb1d215ec7aecc98891dc99e15b24368e799280",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sollentuna",
+      "symbol": "sollentuna",
+      "labels": {
+        "sv-SE": "Sollentuna",
+        "en-US": "Sollentuna",
+        "es-ES": "Sollentuna",
+        "es-MX": "Sollentuna"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sollentuna.svg",
+      "bytes": 613,
+      "sha256": "c54b6debc17423be57ff68312df666d0369b480e6dbf651694452e38f1c5b12c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "solna",
+      "symbol": "solna",
+      "labels": {
+        "sv-SE": "Solna",
+        "en-US": "Solna",
+        "es-ES": "Solna",
+        "es-MX": "Solna"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/solna.svg",
+      "bytes": 612,
+      "sha256": "834234d77794fc016fa9e7f70f0115678397f2fa58b8760ad53bda95c40c7283",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -78420,6 +79785,27 @@
       }
     },
     {
+      "id": "strangnas",
+      "symbol": "strangnas",
+      "labels": {
+        "sv-SE": "Strängnäs",
+        "en-US": "Strängnäs",
+        "es-ES": "Strängnäs",
+        "es-MX": "Strängnäs"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/strangnas.svg",
+      "bytes": 613,
+      "sha256": "3256b60163abf49cb47431f6696501247eea9e0b4273ee767eae880c4be26db5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "strawberry",
       "symbol": "strawberry",
       "labels": {
@@ -79232,6 +80618,48 @@
       "file": "assets/sunday.svg",
       "bytes": 1150,
       "sha256": "ef0b0cd9e165b8138a98510c3f9c6ed5bea378c3c8b50cca033fea057d01530a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sundbyberg",
+      "symbol": "sundbyberg",
+      "labels": {
+        "sv-SE": "Sundbyberg",
+        "en-US": "Sundbyberg",
+        "es-ES": "Sundbyberg",
+        "es-MX": "Sundbyberg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sundbyberg.svg",
+      "bytes": 612,
+      "sha256": "97efecab58d03aee2f63bb50a77d0ebad608ef4180fa52cba041ae9ba7d5a1b3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sundsvall",
+      "symbol": "sundsvall",
+      "labels": {
+        "sv-SE": "Sundsvall",
+        "en-US": "Sundsvall",
+        "es-ES": "Sundsvall",
+        "es-MX": "Sundsvall"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sundsvall.svg",
+      "bytes": 613,
+      "sha256": "447906dd1b70377ea6d2575006da48dd6ca06c699ee0bc103b78fe239761e78c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80429,6 +81857,27 @@
       "file": "assets/tablet.webp",
       "bytes": 4496,
       "sha256": "21c96b050f18dc78436587857ca4f2c8393d7058b68acb70d650bcaa1ed68c97",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "taby",
+      "symbol": "taby",
+      "labels": {
+        "sv-SE": "Täby",
+        "en-US": "Täby",
+        "es-ES": "Täby",
+        "es-MX": "Täby"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/taby.svg",
+      "bytes": 613,
+      "sha256": "7c72365f46020cbd579bd04cf404724964131c33164adcc9905c3089c69fd428",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -83502,6 +84951,27 @@
       }
     },
     {
+      "id": "timra",
+      "symbol": "timra",
+      "labels": {
+        "sv-SE": "Timrå",
+        "en-US": "Timrå",
+        "es-ES": "Timrå",
+        "es-MX": "Timrå"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/timra.svg",
+      "bytes": 611,
+      "sha256": "42cc113e9c159d35c2e8e1de19849ca0ca5775c677df966f7b0ac2f50611b338",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "tingle",
       "symbol": "tingle",
       "labels": {
@@ -85749,6 +87219,27 @@
       }
     },
     {
+      "id": "trelleborg",
+      "symbol": "trelleborg",
+      "labels": {
+        "sv-SE": "Trelleborg",
+        "en-US": "Trelleborg",
+        "es-ES": "Trelleborg",
+        "es-MX": "Trelleborg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/trelleborg.svg",
+      "bytes": 614,
+      "sha256": "62d1a12c77fa94de3dca2c75de44dafac26cb5b14bab29258ea201d83097c311",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "tricycle",
       "symbol": "tricycle",
       "labels": {
@@ -85868,6 +87359,27 @@
       "file": "assets/trivet.svg",
       "bytes": 499,
       "sha256": "dc043050a040f6a3c77509a95186bfd3b88d364a37c0c68be90d84476d49f224",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "trollhattan",
+      "symbol": "trollhattan",
+      "labels": {
+        "sv-SE": "Trollhättan",
+        "en-US": "Trollhättan",
+        "es-ES": "Trollhättan",
+        "es-MX": "Trollhättan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/trollhattan.svg",
+      "bytes": 612,
+      "sha256": "f8aa02e62691121d185d5fb3163ebac3ca0fc749419e02cb09b095ffc613e5c3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -86925,6 +88437,27 @@
       }
     },
     {
+      "id": "uddevalla",
+      "symbol": "uddevalla",
+      "labels": {
+        "sv-SE": "Uddevalla",
+        "en-US": "Uddevalla",
+        "es-ES": "Uddevalla",
+        "es-MX": "Uddevalla"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/uddevalla.svg",
+      "bytes": 611,
+      "sha256": "51da38bdc179382f6f0791b656412ce632b6617d211a8e7363b8af30e2d75127",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "uganda",
       "symbol": "uganda",
       "labels": {
@@ -87065,6 +88598,27 @@
       "file": "assets/umbrella-stand.svg",
       "bytes": 530,
       "sha256": "45b0e73f44b38becbfa77880cea602930cdbf8d00634aeb20cdbae62259e9f83",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "umea",
+      "symbol": "umea",
+      "labels": {
+        "sv-SE": "Umeå",
+        "en-US": "Umeå",
+        "es-ES": "Umeå",
+        "es-MX": "Umeå"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/umea.svg",
+      "bytes": 612,
+      "sha256": "1ed65bf9a6093f9b3476aeae54bba7ef187fe0449aaabb760097872728729433",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88038,6 +89592,27 @@
       }
     },
     {
+      "id": "uppsala",
+      "symbol": "uppsala",
+      "labels": {
+        "sv-SE": "Uppsala",
+        "en-US": "Uppsala",
+        "es-ES": "Uppsala",
+        "es-MX": "Uppsala"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/uppsala.svg",
+      "bytes": 612,
+      "sha256": "afd5b95b9ccb8ca2b14eb7fbc012b1110eb7995b1ec7474d2818b99197e5af71",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "upset",
       "symbol": "upset",
       "labels": {
@@ -88731,6 +90306,27 @@
       }
     },
     {
+      "id": "vanersborg",
+      "symbol": "vanersborg",
+      "labels": {
+        "sv-SE": "Vänersborg",
+        "en-US": "Vänersborg",
+        "es-ES": "Vänersborg",
+        "es-MX": "Vänersborg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/vanersborg.svg",
+      "bytes": 613,
+      "sha256": "e7204d2c90f59e1b81399b30569cdcbd1296b7172abb9d7ed47a9a9a36796352",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "vanuatu",
       "symbol": "vanuatu",
       "labels": {
@@ -88752,6 +90348,27 @@
       }
     },
     {
+      "id": "varberg",
+      "symbol": "varberg",
+      "labels": {
+        "sv-SE": "Varberg",
+        "en-US": "Varberg",
+        "es-ES": "Varberg",
+        "es-MX": "Varberg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/varberg.svg",
+      "bytes": 612,
+      "sha256": "1c1d1b4c01b97d4a439caabfe6ebcb457b5e26681602dd827d09790666509b7c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "vase",
       "symbol": "vase",
       "labels": {
@@ -88766,6 +90383,48 @@
       "file": "assets/vase.svg",
       "bytes": 561,
       "sha256": "318d5a5f26318932343db30ca2553ad8aec4774f21c0d4c3d7cd4b6841b1b070",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "vasteras",
+      "symbol": "vasteras",
+      "labels": {
+        "sv-SE": "Västerås",
+        "en-US": "Västerås",
+        "es-ES": "Västerås",
+        "es-MX": "Västerås"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/vasteras.svg",
+      "bytes": 612,
+      "sha256": "c9853561ad23d5a34f55892a9c3267a5e2d329c1b511dba74f6ce060768b7e94",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "vaxjo",
+      "symbol": "vaxjo",
+      "labels": {
+        "sv-SE": "Växjö",
+        "en-US": "Växjö",
+        "es-ES": "Växjö",
+        "es-MX": "Växjö"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/vaxjo.svg",
+      "bytes": 613,
+      "sha256": "aad7904cd5976ada13f70a6f75f720dd0652457ab19cf88decc381fdbb0eee7c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -93743,6 +95402,27 @@
       "file": "assets/yourselves.svg",
       "bytes": 795,
       "sha256": "9a2f445d142c3fc1b7aaaa6fb47c38dc4d2b096c99a4961e186063f99cd46669",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ystad",
+      "symbol": "ystad",
+      "labels": {
+        "sv-SE": "Ystad",
+        "en-US": "Ystad",
+        "es-ES": "Ystad",
+        "es-MX": "Ystad"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ystad.svg",
+      "bytes": 612,
+      "sha256": "14f6c4f1ec3a7528a507b08dcf4fa1ad2e00a8a076ddbbb58059a00513898faf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

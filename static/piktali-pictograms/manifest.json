@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T14:47:36.643Z",
+  "exportedAt": "2026-10-20T15:04:37.052Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4384,
+  "count": 4395,
   "pictograms": [
     {
       "id": "abdomen",
@@ -6656,6 +6656,48 @@
       "file": "assets/big.webp",
       "bytes": 5284,
       "sha256": "1bfd25f30d7b6c59b5bea08a6ba311f2a1f8d3e5b24b486f90c5194100086971",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bike-lock",
+      "symbol": "bike-lock",
+      "labels": {
+        "sv-SE": "Cykellås",
+        "en-US": "Bike lock",
+        "es-ES": "Candado de bicicleta",
+        "es-MX": "Candado para bicicleta"
+      },
+      "categories": [
+        "movement"
+      ],
+      "file": "assets/bike-lock.svg",
+      "bytes": 513,
+      "sha256": "1c3fe826ba57c31d06c818bd26ee0edce782f128352945c376912581d425e043",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bike-pump",
+      "symbol": "bike-pump",
+      "labels": {
+        "sv-SE": "Cykelpump",
+        "en-US": "Bike pump",
+        "es-ES": "Bomba de bicicleta",
+        "es-MX": "Bomba para bicicleta"
+      },
+      "categories": [
+        "movement"
+      ],
+      "file": "assets/bike-pump.svg",
+      "bytes": 550,
+      "sha256": "008c834ced60c45b15a8f73f6b5d8583e71afe09a65decf371d90f6ce7267b99",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21153,6 +21195,27 @@
       }
     },
     {
+      "id": "dish-towel",
+      "symbol": "dish-towel",
+      "labels": {
+        "sv-SE": "Diskhandduk",
+        "en-US": "Dish towel",
+        "es-ES": "Paño de cocina",
+        "es-MX": "Trapo de cocina"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/dish-towel.svg",
+      "bytes": 470,
+      "sha256": "c4b1b1e6d81e9b75a6682aaefd76e93b700ba1f834c38392b12132e73dba0d92",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "dishwasher",
       "symbol": "dishwasher",
       "labels": {
@@ -23120,6 +23183,27 @@
       "file": "assets/ear.webp",
       "bytes": 3948,
       "sha256": "fdd835df8e6dbf918888faf6e4a8a5a0e3215b368a7d0e9b79c9615c7b51cda3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ear-defenders",
+      "symbol": "ear-defenders",
+      "labels": {
+        "sv-SE": "Hörselkåpor",
+        "en-US": "Ear defenders",
+        "es-ES": "Orejeras de protección",
+        "es-MX": "Orejeras"
+      },
+      "categories": [
+        "body-health-routines"
+      ],
+      "file": "assets/ear-defenders.svg",
+      "bytes": 532,
+      "sha256": "983b10baa9db192bf4f692ea862cd052d213237831592e05097ab5d50e490d5c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26543,6 +26627,27 @@
       "file": "assets/faucet.svg",
       "bytes": 518,
       "sha256": "b67d0660717d04b0da6cefa3d591d99a3b315875e0bb9d2e6f5d8b798a16b975",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "faucet-aerator",
+      "symbol": "faucet-aerator",
+      "labels": {
+        "sv-SE": "Strålsamlare",
+        "en-US": "Faucet aerator",
+        "es-ES": "Aireador de grifo",
+        "es-MX": "Aireador de llave"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/faucet-aerator.svg",
+      "bytes": 494,
+      "sha256": "be86229382ff884e53f7a6327e2e205c1e5cbd025733d83c467180e1e591e125",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48306,6 +48411,27 @@
       }
     },
     {
+      "id": "neck-pillow",
+      "symbol": "neck-pillow",
+      "labels": {
+        "sv-SE": "Nackkudde",
+        "en-US": "Neck pillow",
+        "es-ES": "Almohada de viaje",
+        "es-MX": "Almohada de viaje"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/neck-pillow.svg",
+      "bytes": 468,
+      "sha256": "202bd5ea0b2e110d1d772d7b12563464838d11f938828e411bb227f88b67aba4",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "necklace",
       "symbol": "necklace",
       "labels": {
@@ -55775,6 +55901,27 @@
       "file": "assets/parkinglot.svg",
       "bytes": 621,
       "sha256": "d5e2e9169d33896804da23592b8c92ec235a72d7cb6886a2ad56121adcc4b67e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "parking-meter",
+      "symbol": "parking-meter",
+      "labels": {
+        "sv-SE": "Parkeringsmätare",
+        "en-US": "Parking meter",
+        "es-ES": "Parquímetro",
+        "es-MX": "Parquímetro"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/parking-meter.svg",
+      "bytes": 552,
+      "sha256": "9542dfd98e18bcd47c9a21d72900f222cb885982dd9e7bb61b6ddf4adc29ae2e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63587,6 +63734,27 @@
       "file": "assets/reflect.svg",
       "bytes": 654,
       "sha256": "3bab8a49befeca7ec3ff532bf3273ec80429aea7a75d419e52c445344583a6e8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "reflector-vest",
+      "symbol": "reflector-vest",
+      "labels": {
+        "sv-SE": "Reflexväst",
+        "en-US": "Reflective vest",
+        "es-ES": "Chaleco reflectante",
+        "es-MX": "Chaleco reflejante"
+      },
+      "categories": [
+        "safety-boundaries"
+      ],
+      "file": "assets/reflector-vest.svg",
+      "bytes": 417,
+      "sha256": "ce860b12f9aa9cf8064aa486e0fad4a916eb770bceef255c3fe19511de18fac9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -83397,6 +83565,27 @@
       }
     },
     {
+      "id": "traffic-cone",
+      "symbol": "traffic-cone",
+      "labels": {
+        "sv-SE": "Trafikkon",
+        "en-US": "Traffic cone",
+        "es-ES": "Cono de tráfico",
+        "es-MX": "Cono vial"
+      },
+      "categories": [
+        "safety-boundaries"
+      ],
+      "file": "assets/traffic-cone.svg",
+      "bytes": 461,
+      "sha256": "5a2da5f5d81d3731d6357fa6d101dbd6a82952395a6e57af76228a1d1014df42",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "traffic-jam",
       "symbol": "traffic-jam",
       "labels": {
@@ -84083,6 +84272,27 @@
       "file": "assets/trinidad-and-tobago.svg",
       "bytes": 379,
       "sha256": "d4da0811f2eb1a891620841d07662d172f7f36b0f50db8c45c4497d168e63fd8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "trivet",
+      "symbol": "trivet",
+      "labels": {
+        "sv-SE": "Underlägg",
+        "en-US": "Trivet",
+        "es-ES": "Salvamanteles",
+        "es-MX": "Salvamanteles"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/trivet.svg",
+      "bytes": 499,
+      "sha256": "dc043050a040f6a3c77509a95186bfd3b88d364a37c0c68be90d84476d49f224",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88031,6 +88241,27 @@
       "file": "assets/wall-clock.svg",
       "bytes": 518,
       "sha256": "99fc9dae62b587d01cfaba04dae13ee29f80cadb5f86fe2fe79f6cab6969eb22",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "wall-hook",
+      "symbol": "wall-hook",
+      "labels": {
+        "sv-SE": "Väggkrok",
+        "en-US": "Wall hook",
+        "es-ES": "Gancho de pared",
+        "es-MX": "Gancho de pared"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/wall-hook.svg",
+      "bytes": 526,
+      "sha256": "f073e07fc475691081851a89c40e2f9476751be8c71b13163e1af66c6be80945",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

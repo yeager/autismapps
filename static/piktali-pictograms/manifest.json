@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:15:01.978Z",
+  "exportedAt": "2026-10-20T17:17:43.130Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -6633,8 +6633,8 @@
         "movement"
       ],
       "file": "assets/bicycle.webp",
-      "bytes": 10780,
-      "sha256": "b994540cdf60464312dc39f210c32b8270b07ec9e623d1d432172511420dc1b2",
+      "bytes": 10070,
+      "sha256": "67f34bd2cfff2b7b0fcb0fb02b55df80c6e47ca0b7113ea319e14192a233fdba",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -19380,8 +19380,8 @@
         "school-work-play"
       ],
       "file": "assets/dance.webp",
-      "bytes": 5792,
-      "sha256": "6988cbc9ea8e06ea82a8254fad416eae4cd072bb1fef0141b63c7f17407349ee",
+      "bytes": 6034,
+      "sha256": "4f7db444e626cf5012b1b992892b27ea381b7e1263a72fce085970ca20db7a8e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22257,8 +22257,8 @@
         "school-work-play"
       ],
       "file": "assets/draw.webp",
-      "bytes": 7454,
-      "sha256": "c21ce00858dc6845c7c33ef5ada77954a723a0cf7bea3291b6ea9f6a96ec311b",
+      "bytes": 8546,
+      "sha256": "18e7b9f2c61d0fb6c860a5182f1a692a0c105da4b4fea30fcf8798a59f8ac536",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38595,8 +38595,8 @@
         "movement"
       ],
       "file": "assets/jump.webp",
-      "bytes": 5052,
-      "sha256": "be5bdf68f620ed6b352b98107bd5619d73062b879c1d2d34b0c93f7c2c920fe2",
+      "bytes": 6496,
+      "sha256": "c8ae0218eb0794b24d3e4492455111fa6992d2213ac16230524e3e11fa179efb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66378,8 +66378,8 @@
         "movement"
       ],
       "file": "assets/run.webp",
-      "bytes": 5692,
-      "sha256": "ff903386207024a7b8480d84b03ca40c00f08f6217141e3a2d282d39d95717f0",
+      "bytes": 6166,
+      "sha256": "7346e40f934932179c3511ae61fe18686143844c053cd729799facf9608203e8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73350,8 +73350,8 @@
         "school-work-play"
       ],
       "file": "assets/soccer-ball.webp",
-      "bytes": 4076,
-      "sha256": "def7d7634fc1f4089f48814c65beb121a6e81c9099ed8a6f4894e7a724e2a17e",
+      "bytes": 7462,
+      "sha256": "f84d2fe6750c844228a1e136bd8c48304b2acbb991f0a3e5fb9c4c63f96b0cbc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77151,8 +77151,8 @@
         "movement"
       ],
       "file": "assets/stretch.webp",
-      "bytes": 4064,
-      "sha256": "cc7c00e22936650ec11180368a4453f7e9842b9ec976780bdb898754fa83d38c",
+      "bytes": 6472,
+      "sha256": "a47122d637c2216d41308ab1fb7a9bc6922a2d35c454fa620078bf37777e38ec",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -78558,8 +78558,8 @@
         "needs-actions"
       ],
       "file": "assets/swim.webp",
-      "bytes": 8034,
-      "sha256": "7c9d304d60ca7088a2cf4f66fe0798419b22ffc76f10ecfe311e5bf19dbf3372",
+      "bytes": 8126,
+      "sha256": "a85b209acf5b353bc5ad890e4a66c39dbe0142aa117abadb18318229a3ea35c7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88134,8 +88134,8 @@
         "needs-actions"
       ],
       "file": "assets/walk.webp",
-      "bytes": 4708,
-      "sha256": "fe83fef610747f3c279bbb2a0e72f6acfe84311ec8b29db20f6ad30d2b5433b1",
+      "bytes": 6568,
+      "sha256": "b460aeb51ae4e5962cb4ffca7d9984bc562a68942277f09fcc63eb2536638b7e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

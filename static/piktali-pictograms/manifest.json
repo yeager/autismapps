@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T16:18:21.160Z",
+  "exportedAt": "2026-10-20T16:46:37.176Z",
   "source": "piktali",
   "includePending": true,
   "count": 4399,
@@ -10475,9 +10475,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/cafe.svg",
-      "bytes": 701,
-      "sha256": "1b309761d8d838a5409783f8e868a2ea451d03a7713f43ddef07fe61d5b03065",
+      "file": "assets/cafe.webp",
+      "bytes": 9714,
+      "sha256": "b401bea8263abf3a51ff4fe02a643797aa2df40c90dea48bca2b86ce1b21b513",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -32756,9 +32756,9 @@
       "categories": [
         "places"
       ],
-      "file": "assets/gym.svg",
-      "bytes": 777,
-      "sha256": "8723a2dc16d387606a429ce89c66b7bc2e58f50a1695afa55067b369274b0969",
+      "file": "assets/gym.webp",
+      "bytes": 12448,
+      "sha256": "deaf1a1605b95c5640b18b7174795dcc4925b0cb3359aaefe0654344eec08159",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -32966,9 +32966,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/hairdresser.svg",
-      "bytes": 607,
-      "sha256": "94332e34e6aea5a40aba9a21200e33f667bac331ee949b17ca836be9b43af288",
+      "file": "assets/hairdresser.webp",
+      "bytes": 11904,
+      "sha256": "b41e0077a42bfede8b324ab0bade820584ae172fad8e4e497194e5c10fc03165",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37775,9 +37775,9 @@
       "categories": [
         "places"
       ],
-      "file": "assets/island.svg",
-      "bytes": 507,
-      "sha256": "39dfab69d60e7e28e98166dee7390b2d6208ec8916a9ab5ff98076ca7929ccbb",
+      "file": "assets/island.webp",
+      "bytes": 10244,
+      "sha256": "625ee2b245453b9562fe1b3cc231737b8010a1122f91c44cbc02e354aa0f3c1f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39854,9 +39854,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/lake.svg",
-      "bytes": 592,
-      "sha256": "f424942344ed268dbe240c1a17cb0a0eed6e030650db6efe974d2bc814738c7f",
+      "file": "assets/lake.webp",
+      "bytes": 10370,
+      "sha256": "22d9e40b1ae5b0532b2cdfdec98238ca7459934969f7818883b2b1aacf879a90",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43949,9 +43949,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/market.svg",
-      "bytes": 673,
-      "sha256": "bb12556272fc7b8dfbf8cecf9cda819bb785b3c9197148142722f36921b0ad5d",
+      "file": "assets/market.webp",
+      "bytes": 14054,
+      "sha256": "b0e8684226793f400f6db0f35f7cc12428af1339751a1e368d8fea158589c083",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80342,9 +80342,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/television.svg",
-      "bytes": 659,
-      "sha256": "a1bb44ef0f0bed350567c10aee5ba30a17028fa05a470357325216238a147ab4",
+      "file": "assets/television.webp",
+      "bytes": 9086,
+      "sha256": "cff73cf692fe0b166ee701e3543351dd206f6ab7a5f032d7488f929e363ed8ea",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80762,9 +80762,9 @@
       "categories": [
         "places"
       ],
-      "file": "assets/theater.svg",
-      "bytes": 875,
-      "sha256": "b7e4b003485fd68e5bde7ef3dcc547ac520f83db285e0cdf29fa10c35868a07e",
+      "file": "assets/theater.webp",
+      "bytes": 10090,
+      "sha256": "a17b2488f76353148b18994272b01fa3ed86927fbff9aa7707cf33a0a5779f4b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89162,9 +89162,9 @@
       "categories": [
         "places"
       ],
-      "file": "assets/waterfall.svg",
-      "bytes": 385,
-      "sha256": "a2b893ebd2e6f7552a3ca8321e02cef10dbf6835443f4606a1d64495eafe70ae",
+      "file": "assets/waterfall.webp",
+      "bytes": 13420,
+      "sha256": "f91f91394552c8cfd9e4f70eb959b5a4fe89cb4b8d37979272074836003b5ca4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

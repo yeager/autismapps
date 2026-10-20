@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:25:08.778Z",
+  "exportedAt": "2026-10-20T17:30:45.635Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4399,
+  "count": 4408,
   "pictograms": [
     {
       "id": "abdomen",
@@ -440,6 +440,48 @@
       "file": "assets/across.svg",
       "bytes": 295,
       "sha256": "bd3e6dc20c04a97e6471a4f5cae9ae4fcfd363f266284adf14714bc714978f96",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "actor",
+      "symbol": "actor",
+      "labels": {
+        "sv-SE": "Skådespelare",
+        "en-US": "Actor",
+        "es-ES": "Actor",
+        "es-MX": "Actor"
+      },
+      "categories": [
+        "people-relations"
+      ],
+      "file": "assets/actor.svg",
+      "bytes": 538,
+      "sha256": "ecdbe9244cb80dc4c896bf3bb591ff0b4c10113c633830bb933cce77302b09e5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "adapter",
+      "symbol": "adapter",
+      "labels": {
+        "sv-SE": "Adapter",
+        "en-US": "Adapter",
+        "es-ES": "Adaptador",
+        "es-MX": "Adaptador"
+      },
+      "categories": [
+        "home-objects"
+      ],
+      "file": "assets/adapter.svg",
+      "bytes": 514,
+      "sha256": "05055563e1f1e891551d69665dfc2f8d9f37812a7669db6ee4e7871cbbc507a8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18906,6 +18948,27 @@
       }
     },
     {
+      "id": "currency-exchange",
+      "symbol": "currency-exchange",
+      "labels": {
+        "sv-SE": "Växla valuta",
+        "en-US": "Exchange currency",
+        "es-ES": "Cambiar moneda",
+        "es-MX": "Cambiar moneda"
+      },
+      "categories": [
+        "money-finance"
+      ],
+      "file": "assets/currency-exchange.svg",
+      "bytes": 494,
+      "sha256": "437f632b8ccfe1fb9eff0b8470a84a5d8c5bccf7073f1894d9d74022a962f267",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "curry",
       "symbol": "curry",
       "labels": {
@@ -19382,6 +19445,27 @@
       "file": "assets/dance.webp",
       "bytes": 6034,
       "sha256": "4f7db444e626cf5012b1b992892b27ea381b7e1263a72fce085970ca20db7a8e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "dancer",
+      "symbol": "dancer",
+      "labels": {
+        "sv-SE": "Dansare",
+        "en-US": "Dancer",
+        "es-ES": "Bailarín",
+        "es-MX": "Bailarín"
+      },
+      "categories": [
+        "people-relations"
+      ],
+      "file": "assets/dancer.svg",
+      "bytes": 468,
+      "sha256": "8d84db004159fcf4f7c83110225511709ae6f7a53c199cedb69aee8a7a7e992c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21482,6 +21566,27 @@
       "file": "assets/doctor.webp",
       "bytes": 7286,
       "sha256": "843285f62926b4f02776d74e9ff051d76001e7356e73de4e64ae3d8deacb3ca0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "document",
+      "symbol": "document",
+      "labels": {
+        "sv-SE": "Dokument",
+        "en-US": "Document",
+        "es-ES": "Documento",
+        "es-MX": "Documento"
+      },
+      "categories": [
+        "communication"
+      ],
+      "file": "assets/document.svg",
+      "bytes": 379,
+      "sha256": "03f5a157a9e5dba90a99575bc6b65992e3d386ceb88c7c283a41d03c89c03d97",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29273,6 +29378,27 @@
       "file": "assets/fork.webp",
       "bytes": 3716,
       "sha256": "17443eff3a37a87a9e0bf69a5abaa721f1e576af5fe360832d2a8886c9a288a8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "form",
+      "symbol": "form",
+      "labels": {
+        "sv-SE": "Blankett",
+        "en-US": "Form",
+        "es-ES": "Formulario",
+        "es-MX": "Formulario"
+      },
+      "categories": [
+        "communication"
+      ],
+      "file": "assets/form.svg",
+      "bytes": 434,
+      "sha256": "2b18726216c7715a4c282e8062dc4492007db5f6f04053fc2479fcf2a2110b58",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -64623,6 +64749,27 @@
       }
     },
     {
+      "id": "reservation",
+      "symbol": "reservation",
+      "labels": {
+        "sv-SE": "Bokning",
+        "en-US": "Reservation",
+        "es-ES": "Reserva",
+        "es-MX": "Reservación"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/reservation.svg",
+      "bytes": 539,
+      "sha256": "12326d7a89cd39e5100a8f9c9f7acc75356d38b16095a2e3356e9ecf433052bf",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "reserved-seat",
       "symbol": "reserved-seat",
       "labels": {
@@ -71735,6 +71882,27 @@
       "file": "assets/signal.svg",
       "bytes": 593,
       "sha256": "5530e993bdf7097ba9a3cb1a158a3950cdc92bd2702313ebaf41bc468ea5acf6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "signature",
+      "symbol": "signature",
+      "labels": {
+        "sv-SE": "Underskrift",
+        "en-US": "Signature",
+        "es-ES": "Firma",
+        "es-MX": "Firma"
+      },
+      "categories": [
+        "communication"
+      ],
+      "file": "assets/signature.svg",
+      "bytes": 517,
+      "sha256": "2222f4eaa91c45063a0ceac8a09a05250aa2b27fae8f49812a500b47c62bb187",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -87611,6 +87779,27 @@
       "file": "assets/violin.svg",
       "bytes": 491,
       "sha256": "73c10326e53bd371bc8d073e9b3c0049016fd2462c27aa8e14b16dfac4206e6d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "visa",
+      "symbol": "visa",
+      "labels": {
+        "sv-SE": "Visum",
+        "en-US": "Visa",
+        "es-ES": "Visado",
+        "es-MX": "Visa"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/visa.svg",
+      "bytes": 533,
+      "sha256": "0fb685393f15eb0567371f36d3bd496cc3680318c58c5523efcb68878b257f52",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

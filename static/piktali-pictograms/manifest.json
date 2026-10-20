@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:39:48.105Z",
+  "exportedAt": "2026-10-20T17:40:39.043Z",
   "source": "piktali",
   "includePending": true,
-  "count": 4890,
+  "count": 5003,
   "pictograms": [
     {
       "id": "a-coruna",
@@ -167,6 +167,27 @@
       "file": "assets/abuja.svg",
       "bytes": 499,
       "sha256": "0b45d4a6d246cdec98c9830e3370e118e03a3078334170fb037418688a7d6df7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "acapulco",
+      "symbol": "acapulco",
+      "labels": {
+        "sv-SE": "Acapulco",
+        "en-US": "Acapulco",
+        "es-ES": "Acapulco",
+        "es-MX": "Acapulco"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/acapulco.svg",
+      "bytes": 688,
+      "sha256": "fdc0d55e763fa840718b831e3925b0341e714d19903ed2b0013d64c2c48b6abc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -846,6 +867,27 @@
       }
     },
     {
+      "id": "agadir",
+      "symbol": "agadir",
+      "labels": {
+        "sv-SE": "Agadir",
+        "en-US": "Agadir",
+        "es-ES": "Agadir",
+        "es-MX": "Agadir"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/agadir.svg",
+      "bytes": 688,
+      "sha256": "8ad8cb0015446eeb34c6fca002ae06ade7ac6fa6733edca261835b705bd90c26",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "again",
       "symbol": "again",
       "labels": {
@@ -1259,6 +1301,27 @@
       "file": "assets/alert.svg",
       "bytes": 631,
       "sha256": "9a2d809e9fa75247442f6032c22babe231c971291692378a44de6532c9dd2734",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "alexandria",
+      "symbol": "alexandria",
+      "labels": {
+        "sv-SE": "Alexandria",
+        "en-US": "Alexandria",
+        "es-ES": "Alexandria",
+        "es-MX": "Alexandria"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/alexandria.svg",
+      "bytes": 688,
+      "sha256": "d9e27bc533ba0c47fa5fe00e98170d4473770eb57217300f17a74e515d36da0d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2400,6 +2463,27 @@
       }
     },
     {
+      "id": "annaba",
+      "symbol": "annaba",
+      "labels": {
+        "sv-SE": "Annaba",
+        "en-US": "Annaba",
+        "es-ES": "Annaba",
+        "es-MX": "Annaba"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/annaba.svg",
+      "bytes": 688,
+      "sha256": "1e6bd334f8430443846d520719d86a864c3586781d3f9b02b2db9a57f5a7beac",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "announce",
       "symbol": "announce",
       "labels": {
@@ -2729,6 +2813,27 @@
       "file": "assets/antihistamine.svg",
       "bytes": 896,
       "sha256": "7faeef952d203ba14eb396f2277d58ab997cc2037cca98d638f0c687559ea83c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "antofagasta",
+      "symbol": "antofagasta",
+      "labels": {
+        "sv-SE": "Antofagasta",
+        "en-US": "Antofagasta",
+        "es-ES": "Antofagasta",
+        "es-MX": "Antofagasta"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/antofagasta.svg",
+      "bytes": 689,
+      "sha256": "2a9da2165025d15e6f52c4cfec144c92fee61b9c40a2ef4b887a0820c8d8636b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3324,6 +3429,27 @@
       }
     },
     {
+      "id": "arequipa",
+      "symbol": "arequipa",
+      "labels": {
+        "sv-SE": "Arequipa",
+        "en-US": "Arequipa",
+        "es-ES": "Arequipa",
+        "es-MX": "Arequipa"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/arequipa.svg",
+      "bytes": 689,
+      "sha256": "fd4de72c49b7a14b749500c3758ce964e724d9e5386590ea6a46d052d20d2261",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "argentina",
       "symbol": "argentina",
       "labels": {
@@ -3765,6 +3891,27 @@
       }
     },
     {
+      "id": "arusha",
+      "symbol": "arusha",
+      "labels": {
+        "sv-SE": "Arusha",
+        "en-US": "Arusha",
+        "es-ES": "Arusha",
+        "es-MX": "Arusha"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/arusha.svg",
+      "bytes": 689,
+      "sha256": "9518780534cf53dd80889119cbba79f16acc286b5c5f5f4867a11be9b35096c3",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "as-if",
       "symbol": "as-if",
       "labels": {
@@ -4136,6 +4283,27 @@
       "file": "assets/asuncion.svg",
       "bytes": 530,
       "sha256": "9eecafc78bfbdb94a8d8b30f77f0b4cf780d8b8dd68c4a2f5195b2c3fa1af0d1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "aswan",
+      "symbol": "aswan",
+      "labels": {
+        "sv-SE": "Aswan",
+        "en-US": "Aswan",
+        "es-ES": "Aswan",
+        "es-MX": "Aswan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/aswan.svg",
+      "bytes": 689,
+      "sha256": "7b31edf424c0e8a63785facb27d08706876b5108fb154935ebd2957c26a887e4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5844,6 +6012,48 @@
       }
     },
     {
+      "id": "barquisimeto",
+      "symbol": "barquisimeto",
+      "labels": {
+        "sv-SE": "Barquisimeto",
+        "en-US": "Barquisimeto",
+        "es-ES": "Barquisimeto",
+        "es-MX": "Barquisimeto"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/barquisimeto.svg",
+      "bytes": 689,
+      "sha256": "1da19998b69228121a1908e5f6b49cedee902e48d23a27391d9e46e442340147",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "barranquilla",
+      "symbol": "barranquilla",
+      "labels": {
+        "sv-SE": "Barranquilla",
+        "en-US": "Barranquilla",
+        "es-ES": "Barranquilla",
+        "es-MX": "Barranquilla"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/barranquilla.svg",
+      "bytes": 687,
+      "sha256": "f07dd8528ce565f20b091f55862347ef6899ef53bb14bb1b60061ba400405cce",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "barrie",
       "symbol": "barrie",
       "labels": {
@@ -6936,6 +7146,27 @@
       }
     },
     {
+      "id": "beira",
+      "symbol": "beira",
+      "labels": {
+        "sv-SE": "Beira",
+        "en-US": "Beira",
+        "es-ES": "Beira",
+        "es-MX": "Beira"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/beira.svg",
+      "bytes": 688,
+      "sha256": "9d5556309fc90a625351d2c4412aceb9f77f439fc5429a9ae98de80a6cd44362",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "beirut",
       "symbol": "beirut",
       "labels": {
@@ -6971,6 +7202,27 @@
       "file": "assets/belarus.svg",
       "bytes": 652,
       "sha256": "35fa3edded3421e874f8cf363c380971c4b6b785450f6b822135308fa8d55a7c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "belem",
+      "symbol": "belem",
+      "labels": {
+        "sv-SE": "Belém",
+        "en-US": "Belém",
+        "es-ES": "Belém",
+        "es-MX": "Belém"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/belem.svg",
+      "bytes": 689,
+      "sha256": "5c1d6d2cad8404eaffed45f097a1f1567211c97069f7dfd137a6e4f7ae364340",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7125,6 +7377,27 @@
       }
     },
     {
+      "id": "belo-horizonte",
+      "symbol": "belo-horizonte",
+      "labels": {
+        "sv-SE": "Belo Horizonte",
+        "en-US": "Belo Horizonte",
+        "es-ES": "Belo Horizonte",
+        "es-MX": "Belo Horizonte"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/belo-horizonte.svg",
+      "bytes": 688,
+      "sha256": "6b43d940fc55a3b204ed243829ef68be5889e90cf610e9f46ebde59d88dc9b13",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "belong",
       "symbol": "belong",
       "labels": {
@@ -7272,6 +7545,48 @@
       }
     },
     {
+      "id": "benghazi",
+      "symbol": "benghazi",
+      "labels": {
+        "sv-SE": "Benghazi",
+        "en-US": "Benghazi",
+        "es-ES": "Benghazi",
+        "es-MX": "Benghazi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/benghazi.svg",
+      "bytes": 687,
+      "sha256": "80ea2b9eb95c1c9d6686d026be1a82cb61f7e61027b198d4631bd0fd3ca7dd8b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "benguela",
+      "symbol": "benguela",
+      "labels": {
+        "sv-SE": "Benguela",
+        "en-US": "Benguela",
+        "es-ES": "Benguela",
+        "es-MX": "Benguela"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/benguela.svg",
+      "bytes": 688,
+      "sha256": "3741dd4a103a9456eb9edf6ff37f0aa55f25487b512db18b51e64264ed170581",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "benin",
       "symbol": "benin",
       "labels": {
@@ -7286,6 +7601,27 @@
       "file": "assets/benin.svg",
       "bytes": 498,
       "sha256": "177ccced3a7085314369d5e7886c1cb8c4ca2642aa64ec491d839b374bb9ee53",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "benin-city",
+      "symbol": "benin-city",
+      "labels": {
+        "sv-SE": "Benin City",
+        "en-US": "Benin City",
+        "es-ES": "Benin City",
+        "es-MX": "Benin City"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/benin-city.svg",
+      "bytes": 688,
+      "sha256": "2aa43be3587e6cbb639e79f3ec3b8a638ba5c2812454b201e755899d46c2997a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7958,6 +8294,27 @@
       "file": "assets/bitter.svg",
       "bytes": 578,
       "sha256": "d8c5d5660f7ff60ab3bb709f46cdadbf38e935801196a47a6ae956f0b2385ce4",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bizerte",
+      "symbol": "bizerte",
+      "labels": {
+        "sv-SE": "Bizerte",
+        "en-US": "Bizerte",
+        "es-ES": "Bizerte",
+        "es-MX": "Bizerte"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bizerte.svg",
+      "bytes": 689,
+      "sha256": "15f8cee1be8e18c63213790bf3172b3091dd6385421ebe46708250ad9ab1445c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8763,6 +9120,27 @@
       }
     },
     {
+      "id": "bobo-dioulasso",
+      "symbol": "bobo-dioulasso",
+      "labels": {
+        "sv-SE": "Bobo-Dioulasso",
+        "en-US": "Bobo-Dioulasso",
+        "es-ES": "Bobo-Dioulasso",
+        "es-MX": "Bobo-Dioulasso"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bobo-dioulasso.svg",
+      "bytes": 688,
+      "sha256": "8535608d6ee7d608f5f7733f2997649609defee15c8792246f364cc509a0db57",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "boden",
       "symbol": "boden",
       "labels": {
@@ -9449,6 +9827,27 @@
       "file": "assets/bottom.svg",
       "bytes": 221,
       "sha256": "dddb8bad212587ce9f17db18527ba42d248beb3a40ea3bbc7951a7007e3bb9f9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "bouake",
+      "symbol": "bouake",
+      "labels": {
+        "sv-SE": "Bouaké",
+        "en-US": "Bouaké",
+        "es-ES": "Bouaké",
+        "es-MX": "Bouaké"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bouake.svg",
+      "bytes": 689,
+      "sha256": "4caee84309252e0b10f7fead5bf18a14c8279219c1f0750f59b3948f2b70df06",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11031,6 +11430,27 @@
       }
     },
     {
+      "id": "bulawayo",
+      "symbol": "bulawayo",
+      "labels": {
+        "sv-SE": "Bulawayo",
+        "en-US": "Bulawayo",
+        "es-ES": "Bulawayo",
+        "es-MX": "Bulawayo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/bulawayo.svg",
+      "bytes": 688,
+      "sha256": "4e9350797ce9316a268860892f6ba316ee2a774402621fd8bcf31a591e85b45a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "bulgaria",
       "symbol": "bulgaria",
       "labels": {
@@ -11507,6 +11927,27 @@
       "file": "assets/but.svg",
       "bytes": 347,
       "sha256": "f09fd8a91bef7e2f97c9d908586b8d242870e83ab62cdbf34304906871f62e6e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "butare",
+      "symbol": "butare",
+      "labels": {
+        "sv-SE": "Butare",
+        "en-US": "Butare",
+        "es-ES": "Butare",
+        "es-MX": "Butare"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/butare.svg",
+      "bytes": 689,
+      "sha256": "d7b085cbcc06558bc52bc5868f44e93c0eafc117197195745e37f1d45dfc08f2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12102,6 +12543,27 @@
       }
     },
     {
+      "id": "cali-colombia",
+      "symbol": "cali-colombia",
+      "labels": {
+        "sv-SE": "Cali",
+        "en-US": "Cali",
+        "es-ES": "Cali",
+        "es-MX": "Cali"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cali-colombia.svg",
+      "bytes": 687,
+      "sha256": "7c7d76735555954d1fe62146b44e73eac197edfe825df4c2dbd346859fbda691",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "california",
       "symbol": "california",
       "labels": {
@@ -12396,6 +12858,27 @@
       }
     },
     {
+      "id": "campinas",
+      "symbol": "campinas",
+      "labels": {
+        "sv-SE": "Campinas",
+        "en-US": "Campinas",
+        "es-ES": "Campinas",
+        "es-MX": "Campinas"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/campinas.svg",
+      "bytes": 688,
+      "sha256": "cbc4c129befdf8491b2813ba7d8dcae5859f5f2c8faaefe14f9c1a7e1f4aff21",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "campsite",
       "symbol": "campsite",
       "labels": {
@@ -12599,6 +13082,27 @@
       "file": "assets/cancelled-trip.svg",
       "bytes": 556,
       "sha256": "c59eb3ed353cf81ba87795649fb00b394c8be13f400eca37c11de0ee3f2696cf",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "cancun",
+      "symbol": "cancun",
+      "labels": {
+        "sv-SE": "Cancún",
+        "en-US": "Cancún",
+        "es-ES": "Cancún",
+        "es-MX": "Cancún"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cancun.svg",
+      "bytes": 689,
+      "sha256": "37ec1084e01fb04ff72cf19c344e3c32f88544e9952d0dc8b6f19f6ae3a4d681",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13145,6 +13649,48 @@
       "file": "assets/carry.webp",
       "bytes": 5922,
       "sha256": "6057a69e53a9bd8aa23e74afc4398c4c4b060ef08a54ec71c11b614e7eb30330",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "cartagena-colombia",
+      "symbol": "cartagena-colombia",
+      "labels": {
+        "sv-SE": "Cartagena",
+        "en-US": "Cartagena",
+        "es-ES": "Cartagena",
+        "es-MX": "Cartagena"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cartagena-colombia.svg",
+      "bytes": 688,
+      "sha256": "952bdf672ba44359ef55b84ade9c69e5f1614da1b256f4ecde05615ad411f986",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "casablanca",
+      "symbol": "casablanca",
+      "labels": {
+        "sv-SE": "Casablanca",
+        "en-US": "Casablanca",
+        "es-ES": "Casablanca",
+        "es-MX": "Casablanca"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/casablanca.svg",
+      "bytes": 687,
+      "sha256": "cfb6a58c181e3e3fd689a7cca22e1b91d5530b94fa7bb205d3717094ad3f689c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15084,6 +15630,48 @@
       }
     },
     {
+      "id": "chiclayo",
+      "symbol": "chiclayo",
+      "labels": {
+        "sv-SE": "Chiclayo",
+        "en-US": "Chiclayo",
+        "es-ES": "Chiclayo",
+        "es-MX": "Chiclayo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chiclayo.svg",
+      "bytes": 688,
+      "sha256": "f33a59c42c41d45f67820fe8b23b542543ce225ff7d8585bb6e966e65424827e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "chihuahua",
+      "symbol": "chihuahua",
+      "labels": {
+        "sv-SE": "Chihuahua",
+        "en-US": "Chihuahua",
+        "es-ES": "Chihuahua",
+        "es-MX": "Chihuahua"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/chihuahua.svg",
+      "bytes": 689,
+      "sha256": "245f578dd06e840461cdf0de3339ad1afe0d6eafc070086c9f62eb6a74981122",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "chilaquiles",
       "symbol": "chilaquiles",
       "labels": {
@@ -15833,6 +16421,27 @@
       "file": "assets/city.svg",
       "bytes": 447,
       "sha256": "a373c7b524e970b81191fd7d70336413791d0cc254853a91720ff90d5b0b86fe",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ciudad-del-este",
+      "symbol": "ciudad-del-este",
+      "labels": {
+        "sv-SE": "Ciudad del Este",
+        "en-US": "Ciudad del Este",
+        "es-ES": "Ciudad del Este",
+        "es-MX": "Ciudad del Este"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ciudad-del-este.svg",
+      "bytes": 689,
+      "sha256": "896c57a44a04f10cf532cdc730cd43c73b82ba79f71686e5ca75f07fd941ca99",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -17009,6 +17618,27 @@
       "file": "assets/coat-rack.svg",
       "bytes": 453,
       "sha256": "0e639e6c844f6852c9fb3e4e91ffea93f575f58da7fa95d9dd6d293bcabecb4a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "cochabamba",
+      "symbol": "cochabamba",
+      "labels": {
+        "sv-SE": "Cochabamba",
+        "en-US": "Cochabamba",
+        "es-ES": "Cochabamba",
+        "es-MX": "Cochabamba"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cochabamba.svg",
+      "bytes": 689,
+      "sha256": "8601832cd9e32cca59d51ed73514e5a3d3aa9ba3acfb19a2424d1c58ab27529f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18423,6 +19053,27 @@
       }
     },
     {
+      "id": "concepcion",
+      "symbol": "concepcion",
+      "labels": {
+        "sv-SE": "Concepción",
+        "en-US": "Concepción",
+        "es-ES": "Concepción",
+        "es-MX": "Concepción"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/concepcion.svg",
+      "bytes": 689,
+      "sha256": "9d259267d0d235046cc7ad85e5daed93f80eca601a3559152528f9cc714689bd",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "concerned-for-someone",
       "symbol": "concerned-for-someone",
       "labels": {
@@ -18752,6 +19403,27 @@
       "file": "assets/constant-pain.svg",
       "bytes": 460,
       "sha256": "afe91c013bf1e9ee1bd1c05bf5c485006022734c04a95daf1694625d04d98f7a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "constantine",
+      "symbol": "constantine",
+      "labels": {
+        "sv-SE": "Constantine",
+        "en-US": "Constantine",
+        "es-ES": "Constantine",
+        "es-MX": "Constantine"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/constantine.svg",
+      "bytes": 689,
+      "sha256": "a382a7269fe6e0583d45e6e2d965130d73cfb92617d82aa03f7ff9cdc5898795",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20838,6 +21510,48 @@
       }
     },
     {
+      "id": "cucuta",
+      "symbol": "cucuta",
+      "labels": {
+        "sv-SE": "Cúcuta",
+        "en-US": "Cúcuta",
+        "es-ES": "Cúcuta",
+        "es-MX": "Cúcuta"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cucuta.svg",
+      "bytes": 689,
+      "sha256": "104350bc43e7d349f05e2a24584db2c382332b3ba3dc52a26f0ecfdd12f34e07",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "cuenca-ecuador",
+      "symbol": "cuenca-ecuador",
+      "labels": {
+        "sv-SE": "Cuenca",
+        "en-US": "Cuenca",
+        "es-ES": "Cuenca",
+        "es-MX": "Cuenca"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cuenca-ecuador.svg",
+      "bytes": 689,
+      "sha256": "d739028e1ed248849e592bf72b63184c2ec3dab7017323f557a2944ba9473b9f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "cup",
       "symbol": "cup",
       "labels": {
@@ -20915,6 +21629,27 @@
       "file": "assets/curious.svg",
       "bytes": 448,
       "sha256": "360fac261c0060ecad7ee47c55ec03389d0af963a6e1a2f762e6be05bdaba534",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "curitiba",
+      "symbol": "curitiba",
+      "labels": {
+        "sv-SE": "Curitiba",
+        "en-US": "Curitiba",
+        "es-ES": "Curitiba",
+        "es-MX": "Curitiba"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/curitiba.svg",
+      "bytes": 686,
+      "sha256": "ce396a5007e05e8a1effa9c4865d345071017dc004a6067c5718a1393e49085a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21104,6 +21839,27 @@
       "file": "assets/curved.svg",
       "bytes": 412,
       "sha256": "f3a3a288543524f73c47bd195824f7f3535e42a8b4699ac2b24567b0a4fb1f50",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "cusco",
+      "symbol": "cusco",
+      "labels": {
+        "sv-SE": "Cusco",
+        "en-US": "Cusco",
+        "es-ES": "Cusco",
+        "es-MX": "Cusco"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/cusco.svg",
+      "bytes": 688,
+      "sha256": "294d2ba17680ee929a13e35d42acaefd87970727f1c8f1f95d265cfda6cf1a0d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21671,6 +22427,27 @@
       "file": "assets/dangerous.svg",
       "bytes": 433,
       "sha256": "c5e828ac5f02b0765c8af199ffe6df2b67f50f4ce6a3144a132dd54c0486ba7b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "dar-es-salaam",
+      "symbol": "dar-es-salaam",
+      "labels": {
+        "sv-SE": "Dar es Salaam",
+        "en-US": "Dar es Salaam",
+        "es-ES": "Dar es Salaam",
+        "es-MX": "Dar es Salaam"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/dar-es-salaam.svg",
+      "bytes": 688,
+      "sha256": "0f5fd98ee8919268528e6752d3030d4047bb8631dbbe0e04d048002fc9f3535f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -23211,6 +23988,27 @@
       }
     },
     {
+      "id": "dire-dawa",
+      "symbol": "dire-dawa",
+      "labels": {
+        "sv-SE": "Dire Dawa",
+        "en-US": "Dire Dawa",
+        "es-ES": "Dire Dawa",
+        "es-MX": "Dire Dawa"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/dire-dawa.svg",
+      "bytes": 689,
+      "sha256": "a5965c636190101d76958cddd02bfd37018fc25310dc7471c3d69d1b39da68c5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "direct-debit",
       "symbol": "direct-debit",
       "labels": {
@@ -24387,6 +25185,27 @@
       }
     },
     {
+      "id": "douala",
+      "symbol": "douala",
+      "labels": {
+        "sv-SE": "Douala",
+        "en-US": "Douala",
+        "es-ES": "Douala",
+        "es-MX": "Douala"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/douala.svg",
+      "bytes": 688,
+      "sha256": "896bfb1574661486ca0f242a19a36986e12bebf388a6d7841f0f9c7ca0c31bc5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "double-bass",
       "symbol": "double-bass",
       "labels": {
@@ -25430,6 +26249,27 @@
       "file": "assets/duration.svg",
       "bytes": 472,
       "sha256": "b8c8de053f64c561edaf7b4ae832efabbceb29538f94fe8da6c9e92c59eb1579",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "durban",
+      "symbol": "durban",
+      "labels": {
+        "sv-SE": "Durban",
+        "en-US": "Durban",
+        "es-ES": "Durban",
+        "es-MX": "Durban"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/durban.svg",
+      "bytes": 689,
+      "sha256": "4ffb55e4d9247b03c63b1ab3131e71303d35a31c44dc6f93ea736a0fff8b2867",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -27068,6 +27908,27 @@
       "file": "assets/enough.svg",
       "bytes": 419,
       "sha256": "7faa8eb77b3fb7a2224c8327b2b42b1cf4f898a899c94a7882c7e4625f0bca6b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "entebbe",
+      "symbol": "entebbe",
+      "labels": {
+        "sv-SE": "Entebbe",
+        "en-US": "Entebbe",
+        "es-ES": "Entebbe",
+        "es-MX": "Entebbe"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/entebbe.svg",
+      "bytes": 687,
+      "sha256": "f511d029bedfc0da7285f966bad213dfc4207c49f37091850cd70acaa0c50b42",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29910,6 +30771,27 @@
       }
     },
     {
+      "id": "fez",
+      "symbol": "fez",
+      "labels": {
+        "sv-SE": "Fez",
+        "en-US": "Fez",
+        "es-ES": "Fez",
+        "es-MX": "Fez"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/fez.svg",
+      "bytes": 688,
+      "sha256": "674710f50983c149b49c484331ab6d2e5adc6dc54e95f6062cfe6e77f593019e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "fig",
       "symbol": "fig",
       "labels": {
@@ -32136,6 +33018,27 @@
       }
     },
     {
+      "id": "fortaleza",
+      "symbol": "fortaleza",
+      "labels": {
+        "sv-SE": "Fortaleza",
+        "en-US": "Fortaleza",
+        "es-ES": "Fortaleza",
+        "es-MX": "Fortaleza"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/fortaleza.svg",
+      "bytes": 688,
+      "sha256": "8898b5bab0d797764dcaae6afef8f81b99550f837792c2ce8c4f1c6626418b8a",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "forward",
       "symbol": "forward",
       "labels": {
@@ -33417,6 +34320,27 @@
       }
     },
     {
+      "id": "garoua",
+      "symbol": "garoua",
+      "labels": {
+        "sv-SE": "Garoua",
+        "en-US": "Garoua",
+        "es-ES": "Garoua",
+        "es-MX": "Garoua"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/garoua.svg",
+      "bytes": 688,
+      "sha256": "18f83da64ec045fea104b3555a669af7b3ad8df35f19ed76f1fc61cc4c83aafc",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "gas",
       "symbol": "gas",
       "labels": {
@@ -33536,6 +34460,27 @@
       "file": "assets/gazpacho.svg",
       "bytes": 577,
       "sha256": "45d86efcefb3293058716abdd4d94c6e0ffffe9c71e337d37d1dd8ac3b9c7725",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "gbarnga",
+      "symbol": "gbarnga",
+      "labels": {
+        "sv-SE": "Gbarnga",
+        "en-US": "Gbarnga",
+        "es-ES": "Gbarnga",
+        "es-MX": "Gbarnga"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/gbarnga.svg",
+      "bytes": 689,
+      "sha256": "340827a78c7b619b3f52489a7e70fe84e2e28f941e695ccd9089107fc8a70a06",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34236,6 +35181,27 @@
       }
     },
     {
+      "id": "giza",
+      "symbol": "giza",
+      "labels": {
+        "sv-SE": "Giza",
+        "en-US": "Giza",
+        "es-ES": "Giza",
+        "es-MX": "Giza"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/giza.svg",
+      "bytes": 687,
+      "sha256": "5f66b396d1514d5da90d7cbcc1a4f57688d6c5f53aa1d89ae5301d3f23dd7e1c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "glacier",
       "symbol": "glacier",
       "labels": {
@@ -34670,6 +35636,27 @@
       "file": "assets/goat-kid.svg",
       "bytes": 664,
       "sha256": "f503f008808faa1ccff54d9e843c22e0019b24c0c031d07331a5a40e20c8804e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "goiania",
+      "symbol": "goiania",
+      "labels": {
+        "sv-SE": "Goiânia",
+        "en-US": "Goiânia",
+        "es-ES": "Goiânia",
+        "es-MX": "Goiânia"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/goiania.svg",
+      "bytes": 689,
+      "sha256": "6beb139729af1193f74be0049f7d880191561fb5b32e0bf819a6bfd1eff48ad0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -35762,6 +36749,27 @@
       "file": "assets/guatemala-city.svg",
       "bytes": 510,
       "sha256": "e6b97b2513be1c15d463b6bf58bf196f67bc1f977b903c8bcf78cf9d9a3bcbdb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "guayaquil",
+      "symbol": "guayaquil",
+      "labels": {
+        "sv-SE": "Guayaquil",
+        "en-US": "Guayaquil",
+        "es-ES": "Guayaquil",
+        "es-MX": "Guayaquil"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/guayaquil.svg",
+      "bytes": 689,
+      "sha256": "02471a8fafd673c6cc7b2713017a93e3c977dec5ac82b15c32a477f716c6dde3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38016,6 +39024,27 @@
       }
     },
     {
+      "id": "hermosillo",
+      "symbol": "hermosillo",
+      "labels": {
+        "sv-SE": "Hermosillo",
+        "en-US": "Hermosillo",
+        "es-ES": "Hermosillo",
+        "es-MX": "Hermosillo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/hermosillo.svg",
+      "bytes": 688,
+      "sha256": "5bea5631065bf09801cf733cdb42cafd378ef263e8ab236cdf726c69cd7fb74d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "hex-key",
       "symbol": "hex-key",
       "labels": {
@@ -39486,6 +40515,27 @@
       }
     },
     {
+      "id": "huambo",
+      "symbol": "huambo",
+      "labels": {
+        "sv-SE": "Huambo",
+        "en-US": "Huambo",
+        "es-ES": "Huambo",
+        "es-MX": "Huambo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/huambo.svg",
+      "bytes": 687,
+      "sha256": "696ec1a03f9791ff9fe33f1aa9dc05ac3ae2c121c3d8b3ebcb79c15e344926c1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "huddinge",
       "symbol": "huddinge",
       "labels": {
@@ -39731,6 +40781,27 @@
       "file": "assets/person.webp",
       "bytes": 6258,
       "sha256": "0b6601cb8164b512fd679dd810bc2ec711071149648eb4f62dc55625aa4fe7d2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ibadan",
+      "symbol": "ibadan",
+      "labels": {
+        "sv-SE": "Ibadan",
+        "en-US": "Ibadan",
+        "es-ES": "Ibadan",
+        "es-MX": "Ibadan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ibadan.svg",
+      "bytes": 688,
+      "sha256": "cd16c796e9b461e6d6458eb0399842306542810459a483ad4dff1268f170f4aa",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -42363,6 +43434,27 @@
       }
     },
     {
+      "id": "johannesburg",
+      "symbol": "johannesburg",
+      "labels": {
+        "sv-SE": "Johannesburg",
+        "en-US": "Johannesburg",
+        "es-ES": "Johannesburg",
+        "es-MX": "Johannesburg"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/johannesburg.svg",
+      "bytes": 689,
+      "sha256": "e6944cbe33781d58d395df56190dce547b5ea1d8dbd7ae4c0ab932a2cf57fe24",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "johor-bahru",
       "symbol": "johor-bahru",
       "labels": {
@@ -42552,6 +43644,27 @@
       }
     },
     {
+      "id": "juarez",
+      "symbol": "juarez",
+      "labels": {
+        "sv-SE": "Juárez",
+        "en-US": "Juárez",
+        "es-ES": "Juárez",
+        "es-MX": "Juárez"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/juarez.svg",
+      "bytes": 687,
+      "sha256": "ebe7aa83d0e7ceabcf529c9dd0bb2dc641e41c0da0f8634c3b4c7825405aa133",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "judge",
       "symbol": "judge",
       "labels": {
@@ -42720,6 +43833,48 @@
       }
     },
     {
+      "id": "kaduna",
+      "symbol": "kaduna",
+      "labels": {
+        "sv-SE": "Kaduna",
+        "en-US": "Kaduna",
+        "es-ES": "Kaduna",
+        "es-MX": "Kaduna"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kaduna.svg",
+      "bytes": 688,
+      "sha256": "001fa110720bde57be1029da4ffa905ef6b4391ceec6162021b9cb24073ec6f6",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kairouan",
+      "symbol": "kairouan",
+      "labels": {
+        "sv-SE": "Kairouan",
+        "en-US": "Kairouan",
+        "es-ES": "Kairouan",
+        "es-MX": "Kairouan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kairouan.svg",
+      "bytes": 689,
+      "sha256": "10a4eb7c4e7fb6f98ea67c4aaea0ca6fe086d91f9ca955acc684d1070fed4cd9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kale",
       "symbol": "kale",
       "labels": {
@@ -42804,6 +43959,27 @@
       }
     },
     {
+      "id": "kananga",
+      "symbol": "kananga",
+      "labels": {
+        "sv-SE": "Kananga",
+        "en-US": "Kananga",
+        "es-ES": "Kananga",
+        "es-MX": "Kananga"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kananga.svg",
+      "bytes": 688,
+      "sha256": "ed071d55e318937e8523c3f448ab8058a5cf56cfa9cefa496cc94646a8e77e3b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kangaroo",
       "symbol": "kangaroo",
       "labels": {
@@ -42818,6 +43994,48 @@
       "file": "assets/kangaroo.svg",
       "bytes": 786,
       "sha256": "a9c3b2e323fbffcdd62e3a97a4c5dd4f23716e5aab9f122e2e24d6d14e79596f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kankan",
+      "symbol": "kankan",
+      "labels": {
+        "sv-SE": "Kankan",
+        "en-US": "Kankan",
+        "es-ES": "Kankan",
+        "es-MX": "Kankan"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kankan.svg",
+      "bytes": 689,
+      "sha256": "5f4f4fcff1748bc3897e679f4e3ffa1384c943ae5782cf0a0edc4ba1ddb65fc2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kano",
+      "symbol": "kano",
+      "labels": {
+        "sv-SE": "Kano",
+        "en-US": "Kano",
+        "es-ES": "Kano",
+        "es-MX": "Kano"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kano.svg",
+      "bytes": 688,
+      "sha256": "de0b9f31fc65c97200b54a3c32a7649bbf8d35e1ff37d0d6ad23a3d543a5f1b0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43028,6 +44246,27 @@
       "file": "assets/kawasaki.svg",
       "bytes": 659,
       "sha256": "d944e516d14705e8f492e129118540923820dbdb2e36ad75699635bf06bec98d",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "kayes",
+      "symbol": "kayes",
+      "labels": {
+        "sv-SE": "Kayes",
+        "en-US": "Kayes",
+        "es-ES": "Kayes",
+        "es-MX": "Kayes"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kayes.svg",
+      "bytes": 689,
+      "sha256": "948ee8200f5cfeed9b70be58d6f5d0682e355369ff47fd3bcc67a254cd13b229",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43581,6 +44820,27 @@
       }
     },
     {
+      "id": "kisumu",
+      "symbol": "kisumu",
+      "labels": {
+        "sv-SE": "Kisumu",
+        "en-US": "Kisumu",
+        "es-ES": "Kisumu",
+        "es-MX": "Kisumu"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kisumu.svg",
+      "bytes": 688,
+      "sha256": "28faaa1a5f71a998724246c6b076ebb8a91a25b5ebf2fb4fe2ff832e5a7af904",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kitakyushu",
       "symbol": "kitakyushu",
       "labels": {
@@ -44127,6 +45387,27 @@
       }
     },
     {
+      "id": "kumasi",
+      "symbol": "kumasi",
+      "labels": {
+        "sv-SE": "Kumasi",
+        "en-US": "Kumasi",
+        "es-ES": "Kumasi",
+        "es-MX": "Kumasi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/kumasi.svg",
+      "bytes": 687,
+      "sha256": "fc9a4be578140b0bd1d0114f113381a10d441d1f7039d2b96a5f1f5c122d702f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "kungalv",
       "symbol": "kungalv",
       "labels": {
@@ -44309,6 +45590,27 @@
       "file": "assets/la-paz.svg",
       "bytes": 612,
       "sha256": "b8ea693a4144295fa58b21f7ca9ac81ba65581d11acfa15bff606d15386a3dce",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "la-plata",
+      "symbol": "la-plata",
+      "labels": {
+        "sv-SE": "La Plata",
+        "en-US": "La Plata",
+        "es-ES": "La Plata",
+        "es-MX": "La Plata"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/la-plata.svg",
+      "bytes": 688,
+      "sha256": "76f11f352293c2ad2420d1d574ab787dd66a2a8032bb11b5a44fa5a0d9331b3a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44519,6 +45821,27 @@
       "file": "assets/lagoon.svg",
       "bytes": 537,
       "sha256": "07495667f06089a266af90c1728b93b3dc83466f5645beefe1577036d79a67a7",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "lagos",
+      "symbol": "lagos",
+      "labels": {
+        "sv-SE": "Lagos",
+        "en-US": "Lagos",
+        "es-ES": "Lagos",
+        "es-MX": "Lagos"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lagos.svg",
+      "bytes": 689,
+      "sha256": "3af4da38542896cc6781aa631e7d8aa0fe322e8de3adfd4bd2746b0151ca3dce",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47256,6 +48579,27 @@
       }
     },
     {
+      "id": "lobito",
+      "symbol": "lobito",
+      "labels": {
+        "sv-SE": "Lobito",
+        "en-US": "Lobito",
+        "es-ES": "Lobito",
+        "es-MX": "Lobito"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lobito.svg",
+      "bytes": 689,
+      "sha256": "7590af0545f08b221bcbcb48ee06c92a25d0a8639cfc8b0d3f960235da3e9ffb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "lobster",
       "symbol": "lobster",
       "labels": {
@@ -48033,6 +49377,27 @@
       }
     },
     {
+      "id": "lubumbashi",
+      "symbol": "lubumbashi",
+      "labels": {
+        "sv-SE": "Lubumbashi",
+        "en-US": "Lubumbashi",
+        "es-ES": "Lubumbashi",
+        "es-MX": "Lubumbashi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/lubumbashi.svg",
+      "bytes": 689,
+      "sha256": "722db90b8e7caed381df64586a76ee42a59b1e0a7979323f7a3dacc0338618b5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "lucknow",
       "symbol": "lucknow",
       "labels": {
@@ -48362,6 +49727,27 @@
       "file": "assets/luxembourg-city.svg",
       "bytes": 549,
       "sha256": "c57e80159c1f579f71b23fa6935050041ce763e29cc670fc8209263ad3d2aba1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "luxor",
+      "symbol": "luxor",
+      "labels": {
+        "sv-SE": "Luxor",
+        "en-US": "Luxor",
+        "es-ES": "Luxor",
+        "es-MX": "Luxor"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/luxor.svg",
+      "bytes": 688,
+      "sha256": "06df8807b06180730eeba7cacbe856c6f8b35c5c137595ddeec55c54eaed7539",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49083,6 +50469,27 @@
       }
     },
     {
+      "id": "manaus",
+      "symbol": "manaus",
+      "labels": {
+        "sv-SE": "Manaus",
+        "en-US": "Manaus",
+        "es-ES": "Manaus",
+        "es-MX": "Manaus"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/manaus.svg",
+      "bytes": 689,
+      "sha256": "a9b5ee337de384fd5dc038da1bd8f0cff840e6e4d428b70942584d1f058095d4",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "manchester",
       "symbol": "manchester",
       "labels": {
@@ -49293,6 +50700,48 @@
       }
     },
     {
+      "id": "mar-del-plata",
+      "symbol": "mar-del-plata",
+      "labels": {
+        "sv-SE": "Mar del Plata",
+        "en-US": "Mar del Plata",
+        "es-ES": "Mar del Plata",
+        "es-MX": "Mar del Plata"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/mar-del-plata.svg",
+      "bytes": 688,
+      "sha256": "79bb3ceaab8bc5c6b3e2d5c09473f33a679d2fdc723913ea65b78e77c189890f",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "maracaibo",
+      "symbol": "maracaibo",
+      "labels": {
+        "sv-SE": "Maracaibo",
+        "en-US": "Maracaibo",
+        "es-ES": "Maracaibo",
+        "es-MX": "Maracaibo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/maracaibo.svg",
+      "bytes": 689,
+      "sha256": "7b4dfd274ad1355ffcd2a0b06986bfe9f205d3283091e321ccf79f1d7a060979",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "maracas",
       "symbol": "maracas",
       "labels": {
@@ -49307,6 +50756,27 @@
       "file": "assets/maracas.svg",
       "bytes": 437,
       "sha256": "4ad95f23114d717abf6c6c4b3d2c402812925cc684cdafa6082773ace48cbb5b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "maradi",
+      "symbol": "maradi",
+      "labels": {
+        "sv-SE": "Maradi",
+        "en-US": "Maradi",
+        "es-ES": "Maradi",
+        "es-MX": "Maradi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/maradi.svg",
+      "bytes": 688,
+      "sha256": "5cbe06335664475568d24621dbf038f2893f02ba1f2335f2c25a8f1feedd47d4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49433,6 +50903,27 @@
       "file": "assets/market.webp",
       "bytes": 14054,
       "sha256": "b0e8684226793f400f6db0f35f7cc12428af1339751a1e368d8fea158589c083",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "marrakech",
+      "symbol": "marrakech",
+      "labels": {
+        "sv-SE": "Marrakech",
+        "en-US": "Marrakech",
+        "es-ES": "Marrakech",
+        "es-MX": "Marrakech"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/marrakech.svg",
+      "bytes": 689,
+      "sha256": "a8b52fba54e853383894e5107c95d12ff0db6a240cd401712ec67254552a7c70",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49881,6 +51372,27 @@
       }
     },
     {
+      "id": "mbuji-mayi",
+      "symbol": "mbuji-mayi",
+      "labels": {
+        "sv-SE": "Mbuji-Mayi",
+        "en-US": "Mbuji-Mayi",
+        "es-ES": "Mbuji-Mayi",
+        "es-MX": "Mbuji-Mayi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/mbuji-mayi.svg",
+      "bytes": 688,
+      "sha256": "a42392f4eab40500c7c03455b38925c746af9f83406b917909e540ff6ad15546",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "me",
       "symbol": "me",
       "labels": {
@@ -50238,6 +51750,27 @@
       }
     },
     {
+      "id": "medellin",
+      "symbol": "medellin",
+      "labels": {
+        "sv-SE": "Medellín",
+        "en-US": "Medellín",
+        "es-ES": "Medellín",
+        "es-MX": "Medellín"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/medellin.svg",
+      "bytes": 689,
+      "sha256": "5b1031f3fe4b4f822119f53ce34f3c9b75c6e2d7c270e2c2f106423a22698c83",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "mediate",
       "symbol": "mediate",
       "labels": {
@@ -50511,6 +52044,27 @@
       }
     },
     {
+      "id": "mekelle",
+      "symbol": "mekelle",
+      "labels": {
+        "sv-SE": "Mekelle",
+        "en-US": "Mekelle",
+        "es-ES": "Mekelle",
+        "es-MX": "Mekelle"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/mekelle.svg",
+      "bytes": 688,
+      "sha256": "933dca120d9c18c008ad1f05af475a6b7aae114f11116de2b396ced96c4e750c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "melbourne",
       "symbol": "melbourne",
       "labels": {
@@ -50651,6 +52205,27 @@
       "file": "assets/memphis.svg",
       "bytes": 611,
       "sha256": "67f78a400dda44003b94f69a98b029cc068c89d99d56904347305d71237e79ae",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "mendoza",
+      "symbol": "mendoza",
+      "labels": {
+        "sv-SE": "Mendoza",
+        "en-US": "Mendoza",
+        "es-ES": "Mendoza",
+        "es-MX": "Mendoza"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/mendoza.svg",
+      "bytes": 687,
+      "sha256": "5f8b79b88b9bfc11486460269d58195f76eb79e7c1aebfdc0d880621c205ce60",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50819,6 +52394,27 @@
       "file": "assets/menu.svg",
       "bytes": 577,
       "sha256": "06f1ecc5beb1b334c0a52fa5540eb4356f9ba141120b773bb3992b9e061b2d5c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "merida-mexico",
+      "symbol": "merida-mexico",
+      "labels": {
+        "sv-SE": "Mérida",
+        "en-US": "Mérida",
+        "es-ES": "Mérida",
+        "es-MX": "Mérida"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/merida-mexico.svg",
+      "bytes": 688,
+      "sha256": "26460f176dfcd9a39e4f70a352fc6a3188a4f94286bb470528159287076534b2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -51456,6 +53052,27 @@
       }
     },
     {
+      "id": "mindelo",
+      "symbol": "mindelo",
+      "labels": {
+        "sv-SE": "Mindelo",
+        "en-US": "Mindelo",
+        "es-ES": "Mindelo",
+        "es-MX": "Mindelo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/mindelo.svg",
+      "bytes": 689,
+      "sha256": "88410c7dd4f5b78ff637f961495faf0139d682c838dfd3178b33d0015d64a2b9",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "mine",
       "symbol": "mine",
       "labels": {
@@ -51617,6 +53234,27 @@
       "file": "assets/miskolc.svg",
       "bytes": 676,
       "sha256": "1e622b23b6375c1b284ae25d0a07cd6640e8da64d402bbda8b39a92198ab6c97",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "misrata",
+      "symbol": "misrata",
+      "labels": {
+        "sv-SE": "Misrata",
+        "en-US": "Misrata",
+        "es-ES": "Misrata",
+        "es-MX": "Misrata"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/misrata.svg",
+      "bytes": 689,
+      "sha256": "0e96015b21f295a2d6f036f2e4c2d0ca7be92ce7194cf8f1339c9e57300c516e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52037,6 +53675,27 @@
       "file": "assets/mom.webp",
       "bytes": 9086,
       "sha256": "7a260662403d7480b478cba86ad160474b1a0dee935aacb2d70842395f0b06ad",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "mombasa",
+      "symbol": "mombasa",
+      "labels": {
+        "sv-SE": "Mombasa",
+        "en-US": "Mombasa",
+        "es-ES": "Mombasa",
+        "es-MX": "Mombasa"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/mombasa.svg",
+      "bytes": 688,
+      "sha256": "b3fd67390ac0959b87bbbbe4eb5ccaaeee7917fda63c7c6a685b4fa7591dd130",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52821,6 +54480,27 @@
       }
     },
     {
+      "id": "morelia",
+      "symbol": "morelia",
+      "labels": {
+        "sv-SE": "Morelia",
+        "en-US": "Morelia",
+        "es-ES": "Morelia",
+        "es-MX": "Morelia"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/morelia.svg",
+      "bytes": 688,
+      "sha256": "e75cd0d4ef5255e4e33294a4eeee8cc78fe1e412610cb78b86eab0339c579e97",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "morning",
       "symbol": "morning",
       "labels": {
@@ -53129,6 +54809,27 @@
       "file": "assets/motorcycle.webp",
       "bytes": 8730,
       "sha256": "091bd137ba8608a29582e72d50839825a312785467cebcb5a208ea05436cd90c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "moundou",
+      "symbol": "moundou",
+      "labels": {
+        "sv-SE": "Moundou",
+        "en-US": "Moundou",
+        "es-ES": "Moundou",
+        "es-MX": "Moundou"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/moundou.svg",
+      "bytes": 689,
+      "sha256": "ae6ef8a980cbca8cac2f2df824b6c0c912a1b1f53e3984732570394c477e309f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54599,6 +56300,27 @@
       "file": "assets/ndjamena.svg",
       "bytes": 528,
       "sha256": "ea4a84470a5b7c0bfadd5f4c2799456e2e10399dadb8a90d50c84d3acd891573",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "ndola",
+      "symbol": "ndola",
+      "labels": {
+        "sv-SE": "Ndola",
+        "en-US": "Ndola",
+        "es-ES": "Ndola",
+        "es-MX": "Ndola"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/ndola.svg",
+      "bytes": 689,
+      "sha256": "23a952b9198899ee95fcb4eb52924fb3d8aebadb129d941b08fc0f86734005fd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -59835,6 +61557,27 @@
       }
     },
     {
+      "id": "omdurman",
+      "symbol": "omdurman",
+      "labels": {
+        "sv-SE": "Omdurman",
+        "en-US": "Omdurman",
+        "es-ES": "Omdurman",
+        "es-MX": "Omdurman"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/omdurman.svg",
+      "bytes": 688,
+      "sha256": "bc07189e27ac78dc867fdf44d89bc6e41e6b62e9bcf03db121363a429b1cb62b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "on-purpose",
       "symbol": "on-purpose",
       "labels": {
@@ -60395,6 +62138,27 @@
       "file": "assets/or.svg",
       "bytes": 338,
       "sha256": "2b9b9c2fc91efd72f4888688621e965bfdd7b1856a2e7597a12e7a1a5a0ba8cb",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "oran",
+      "symbol": "oran",
+      "labels": {
+        "sv-SE": "Oran",
+        "en-US": "Oran",
+        "es-ES": "Oran",
+        "es-MX": "Oran"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/oran.svg",
+      "bytes": 688,
+      "sha256": "01a66f27ec9380675e27b953de2edbc3e6d8b953800ef393eed03c3b1a2637ef",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66597,6 +68361,27 @@
       }
     },
     {
+      "id": "pointe-noire",
+      "symbol": "pointe-noire",
+      "labels": {
+        "sv-SE": "Pointe-Noire",
+        "en-US": "Pointe-Noire",
+        "es-ES": "Pointe-Noire",
+        "es-MX": "Pointe-Noire"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/pointe-noire.svg",
+      "bytes": 687,
+      "sha256": "93f1138f9393c31203547359635af9dd602fbee247197985a9b359ed223078a0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "pointed",
       "symbol": "pointed",
       "labels": {
@@ -67059,6 +68844,48 @@
       }
     },
     {
+      "id": "port-gentil",
+      "symbol": "port-gentil",
+      "labels": {
+        "sv-SE": "Port-Gentil",
+        "en-US": "Port-Gentil",
+        "es-ES": "Port-Gentil",
+        "es-MX": "Port-Gentil"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/port-gentil.svg",
+      "bytes": 688,
+      "sha256": "1ef5da84969a8d8b24f579a4f67d2b452e168e3cab71b649c89f8627e562a3c0",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "port-harcourt",
+      "symbol": "port-harcourt",
+      "labels": {
+        "sv-SE": "Port Harcourt",
+        "en-US": "Port Harcourt",
+        "es-ES": "Port Harcourt",
+        "es-MX": "Port Harcourt"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/port-harcourt.svg",
+      "bytes": 688,
+      "sha256": "713865873b2e645bc50083296ff2e245fdbff96b98f808a5e57c1a39198f2f4c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "port-louis",
       "symbol": "port-louis",
       "labels": {
@@ -67094,6 +68921,27 @@
       "file": "assets/port-moresby.svg",
       "bytes": 606,
       "sha256": "4d98a71fc5e9f06b910008532bfdabbadfa901a41ced7dd112dfb6063dce4f2c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "port-said",
+      "symbol": "port-said",
+      "labels": {
+        "sv-SE": "Port Said",
+        "en-US": "Port Said",
+        "es-ES": "Port Said",
+        "es-MX": "Port Said"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/port-said.svg",
+      "bytes": 689,
+      "sha256": "beec41f47941181b69776f4bdaadc87142c8e7cba85bae542fad9adb0c975b50",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -67157,6 +69005,27 @@
       "file": "assets/porto.svg",
       "bytes": 676,
       "sha256": "b481aac338888657c9cc30d7c53ca8fb02806f4c94c15694299f8df545970717",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "porto-alegre",
+      "symbol": "porto-alegre",
+      "labels": {
+        "sv-SE": "Porto Alegre",
+        "en-US": "Porto Alegre",
+        "es-ES": "Porto Alegre",
+        "es-MX": "Porto Alegre"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/porto-alegre.svg",
+      "bytes": 688,
+      "sha256": "09cc236126e710bf8a7f7675d769eb560eb0545d34f81a9e22308603bb681081",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68739,6 +70608,27 @@
       }
     },
     {
+      "id": "puebla",
+      "symbol": "puebla",
+      "labels": {
+        "sv-SE": "Puebla",
+        "en-US": "Puebla",
+        "es-ES": "Puebla",
+        "es-MX": "Puebla"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/puebla.svg",
+      "bytes": 689,
+      "sha256": "76bdaa550c96a09ab4a55b6c7517bbf9dfa1e29790920016f2fcfbd7b9b63a1b",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "puerto-rico",
       "symbol": "puerto-rico",
       "labels": {
@@ -69698,6 +71588,27 @@
       "file": "assets/quebec-city.svg",
       "bytes": 659,
       "sha256": "731b52b6e01a90a802574942c4f2aa64dd5e2d0409ddc26eeb1ec483bbbea872",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "queretaro",
+      "symbol": "queretaro",
+      "labels": {
+        "sv-SE": "Querétaro",
+        "en-US": "Querétaro",
+        "es-ES": "Querétaro",
+        "es-MX": "Querétaro"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/queretaro.svg",
+      "bytes": 688,
+      "sha256": "5ec81e07a23857257068fc513c5fb3e616d5630be83c3e7011cf4368cfbb03e5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71021,6 +72932,27 @@
       "file": "assets/recess.svg",
       "bytes": 542,
       "sha256": "add8767ab2c034675748fb9aa3657a1837cb570f27b24edd02b90be8073af96c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "recife",
+      "symbol": "recife",
+      "labels": {
+        "sv-SE": "Recife",
+        "en-US": "Recife",
+        "es-ES": "Recife",
+        "es-MX": "Recife"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/recife.svg",
+      "bytes": 689,
+      "sha256": "90353c54557e8d86a82a316c9c8e4ce76a31041f605e9d183d718fa5048b8757",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73905,6 +75837,27 @@
       }
     },
     {
+      "id": "rosario",
+      "symbol": "rosario",
+      "labels": {
+        "sv-SE": "Rosario",
+        "en-US": "Rosario",
+        "es-ES": "Rosario",
+        "es-MX": "Rosario"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/rosario.svg",
+      "bytes": 688,
+      "sha256": "e416709a3952a2e3c15ddb817d7d9fefe836addac43c285ac0e16b8ee5fc28e5",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "rose",
       "symbol": "rose",
       "labels": {
@@ -74402,6 +76355,27 @@
       "file": "assets/rwanda.svg",
       "bytes": 680,
       "sha256": "c9a45ee108c6fe2bc604a20bbd67e949028de36053ed0461a994ef4b4c64c4e2",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sabha",
+      "symbol": "sabha",
+      "labels": {
+        "sv-SE": "Sabha",
+        "en-US": "Sabha",
+        "es-ES": "Sabha",
+        "es-MX": "Sabha"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sabha.svg",
+      "bytes": 689,
+      "sha256": "5c807d185965fa422fba005a745d9912288146316da68d100f9918bdbbc3bf98",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -74955,6 +76929,48 @@
       }
     },
     {
+      "id": "salta",
+      "symbol": "salta",
+      "labels": {
+        "sv-SE": "Salta",
+        "en-US": "Salta",
+        "es-ES": "Salta",
+        "es-MX": "Salta"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/salta.svg",
+      "bytes": 689,
+      "sha256": "0229cb5f3ebd3cda627f45ae4f897edde197287db2a9f5bf875e702cbedfe543",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "salto-uruguay",
+      "symbol": "salto-uruguay",
+      "labels": {
+        "sv-SE": "Salto",
+        "en-US": "Salto",
+        "es-ES": "Salto",
+        "es-MX": "Salto"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/salto-uruguay.svg",
+      "bytes": 688,
+      "sha256": "a349ef2fb52983856894992831639f9ec130e85639b55803cec8cc9b0debbd81",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "salty",
       "symbol": "salty",
       "labels": {
@@ -74969,6 +76985,27 @@
       "file": "assets/salty.svg",
       "bytes": 573,
       "sha256": "aba42c004f59b914413cda587e478d2637c32bdd7991fe8b58bea116c51d98a1",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "salvador-brazil",
+      "symbol": "salvador-brazil",
+      "labels": {
+        "sv-SE": "Salvador",
+        "en-US": "Salvador",
+        "es-ES": "Salvador",
+        "es-MX": "Salvador"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/salvador-brazil.svg",
+      "bytes": 687,
+      "sha256": "ac8aa61f44da941f939468d47708a9f3ab400355390017422e2e9c5fa815b359",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75081,6 +77118,27 @@
       }
     },
     {
+      "id": "san-luis-potosi",
+      "symbol": "san-luis-potosi",
+      "labels": {
+        "sv-SE": "San Luis Potosí",
+        "en-US": "San Luis Potosí",
+        "es-ES": "San Luis Potosí",
+        "es-MX": "San Luis Potosí"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/san-luis-potosi.svg",
+      "bytes": 689,
+      "sha256": "34336a2333118483e9c0d69d0ac3f29362c41964511e0d5b764887d17a501912",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "san-marino",
       "symbol": "san-marino",
       "labels": {
@@ -75095,6 +77153,27 @@
       "file": "assets/san-marino.svg",
       "bytes": 605,
       "sha256": "fc9c3689f518889f76b325247c6292fb821a5cb49c10e495da709d701c2e77bd",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "san-pedro-civ",
+      "symbol": "san-pedro-civ",
+      "labels": {
+        "sv-SE": "San-Pédro",
+        "en-US": "San-Pédro",
+        "es-ES": "San-Pédro",
+        "es-MX": "San-Pédro"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/san-pedro-civ.svg",
+      "bytes": 688,
+      "sha256": "c613019c55f4fe9b0ea46b1eb7f5d505c46068671c3f2331c3ffc521a9c88b14",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75284,6 +77363,27 @@
       "file": "assets/santa-ana.svg",
       "bytes": 612,
       "sha256": "0654363c922d91e1189d3141f121916c4ec16bd331a2d577fabde3fc849e0f83",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "santa-cruz-bolivia",
+      "symbol": "santa-cruz-bolivia",
+      "labels": {
+        "sv-SE": "Santa Cruz",
+        "en-US": "Santa Cruz",
+        "es-ES": "Santa Cruz",
+        "es-MX": "Santa Cruz"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/santa-cruz-bolivia.svg",
+      "bytes": 687,
+      "sha256": "a17a5aeba0266d93227c0b042222ba6f90f97b7dff926b8a59613eea706cdd65",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77391,6 +79491,27 @@
       }
     },
     {
+      "id": "sekondi-takoradi",
+      "symbol": "sekondi-takoradi",
+      "labels": {
+        "sv-SE": "Sekondi-Takoradi",
+        "en-US": "Sekondi-Takoradi",
+        "es-ES": "Sekondi-Takoradi",
+        "es-MX": "Sekondi-Takoradi"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sekondi-takoradi.svg",
+      "bytes": 688,
+      "sha256": "e6cbce4e07ef7aef8462a94cc5f53fac6063e651a5ec755e5ff354df201936f8",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "select",
       "symbol": "select",
       "labels": {
@@ -78224,6 +80345,27 @@
       "file": "assets/seychelles.svg",
       "bytes": 437,
       "sha256": "5d1b90fc63c0a4536330afe51e754c5f084b98081ea7e9d57d12603f548113bc",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sfax",
+      "symbol": "sfax",
+      "labels": {
+        "sv-SE": "Sfax",
+        "en-US": "Sfax",
+        "es-ES": "Sfax",
+        "es-MX": "Sfax"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sfax.svg",
+      "bytes": 688,
+      "sha256": "4dc7383a4d243d100880fdbee8026eb2c8c142567ed6f439ef2f7ee910b6c0ab",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80156,6 +82298,27 @@
       "file": "assets/signature.svg",
       "bytes": 517,
       "sha256": "2222f4eaa91c45063a0ceac8a09a05250aa2b27fae8f49812a500b47c62bb187",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sikasso",
+      "symbol": "sikasso",
+      "labels": {
+        "sv-SE": "Sikasso",
+        "en-US": "Sikasso",
+        "es-ES": "Sikasso",
+        "es-MX": "Sikasso"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sikasso.svg",
+      "bytes": 688,
+      "sha256": "d5d21129cfdbd9223e31e23c31c9fd92b0cfdbcd20c50da061b6cf9cd8cc5299",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82760,6 +84923,27 @@
       "file": "assets/sour.svg",
       "bytes": 653,
       "sha256": "385c9f5007323e594d368318ea7f3482f921f499159ec36d9f4b54762b9f97ba",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "sousse",
+      "symbol": "sousse",
+      "labels": {
+        "sv-SE": "Sousse",
+        "en-US": "Sousse",
+        "es-ES": "Sousse",
+        "es-MX": "Sousse"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/sousse.svg",
+      "bytes": 687,
+      "sha256": "681830bff89d4ac7b134b0fdd047c7d386d4217c64b0218c05a9377cfbe58ab0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88794,6 +90978,27 @@
       }
     },
     {
+      "id": "tangier",
+      "symbol": "tangier",
+      "labels": {
+        "sv-SE": "Tangier",
+        "en-US": "Tangier",
+        "es-ES": "Tangier",
+        "es-MX": "Tangier"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/tangier.svg",
+      "bytes": 689,
+      "sha256": "5279ed97795298743adf09faa648069c41cf0df2ab3a419cffdf71d1cd035c3e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "tangle",
       "symbol": "tangle",
       "labels": {
@@ -91104,6 +93309,27 @@
       }
     },
     {
+      "id": "tijuana",
+      "symbol": "tijuana",
+      "labels": {
+        "sv-SE": "Tijuana",
+        "en-US": "Tijuana",
+        "es-ES": "Tijuana",
+        "es-MX": "Tijuana"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/tijuana.svg",
+      "bytes": 689,
+      "sha256": "af4f9c4245ea91c6d4616bdad687fdd338943aff4337e7791d1a1316505a8618",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "time",
       "symbol": "time",
       "labels": {
@@ -91391,6 +93617,27 @@
       "file": "assets/tissue-box.webp",
       "bytes": 4904,
       "sha256": "311ff50a4778a1c4b7f6acfba5d28119a246b4e5050f79b5ddb7cc3325f9ce2e",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "tlemcen",
+      "symbol": "tlemcen",
+      "labels": {
+        "sv-SE": "Tlemcen",
+        "en-US": "Tlemcen",
+        "es-ES": "Tlemcen",
+        "es-MX": "Tlemcen"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/tlemcen.svg",
+      "bytes": 688,
+      "sha256": "e4eac00eab109a292e3578f2f9cec09d5b956db93dd8f9cf488d95f63955def4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -91832,6 +94079,27 @@
       "file": "assets/toledo.svg",
       "bytes": 613,
       "sha256": "cfc0c0ea7c5ed476bea03b7190577f5f89af7f3388f5364ea011873384f88f44",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "toluca",
+      "symbol": "toluca",
+      "labels": {
+        "sv-SE": "Toluca",
+        "en-US": "Toluca",
+        "es-ES": "Toluca",
+        "es-MX": "Toluca"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/toluca.svg",
+      "bytes": 689,
+      "sha256": "c4b773ee563ede879bf8f9f0dc97d61f6cf0374d08144486509719b41fe5b59d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -93848,6 +96116,27 @@
       "file": "assets/true.svg",
       "bytes": 474,
       "sha256": "517cd417839deb500656b0034cc88ae9ca78d2d1c3067a323089dbd90b68c7fe",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "trujillo-peru",
+      "symbol": "trujillo-peru",
+      "labels": {
+        "sv-SE": "Trujillo",
+        "en-US": "Trujillo",
+        "es-ES": "Trujillo",
+        "es-MX": "Trujillo"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/trujillo-peru.svg",
+      "bytes": 688,
+      "sha256": "aee4560189681915a8a4c81de7aee807601589463df75a55a03b4136305b326f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -96753,6 +99042,27 @@
       }
     },
     {
+      "id": "valparaiso",
+      "symbol": "valparaiso",
+      "labels": {
+        "sv-SE": "Valparaíso",
+        "en-US": "Valparaíso",
+        "es-ES": "Valparaíso",
+        "es-MX": "Valparaíso"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/valparaiso.svg",
+      "bytes": 688,
+      "sha256": "0f8e7fcb10c65c8e50eac2493f748d2892884db9aadd44825b235ed80a8e6c18",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
       "id": "value-added-tax",
       "symbol": "value-added-tax",
       "labels": {
@@ -97061,6 +99371,27 @@
       "file": "assets/ventilate.svg",
       "bytes": 515,
       "sha256": "edcabb61c9263b8a8b91cae0beca51785636a94767d5616b7121ac4e83e25b78",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "veracruz",
+      "symbol": "veracruz",
+      "labels": {
+        "sv-SE": "Veracruz",
+        "en-US": "Veracruz",
+        "es-ES": "Veracruz",
+        "es-MX": "Veracruz"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/veracruz.svg",
+      "bytes": 689,
+      "sha256": "0407a2bd2d30f01c0fdab6954c5c562d30735e171beaa07d57b663970fb1a53c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -97712,6 +100043,27 @@
       "file": "assets/vulture.svg",
       "bytes": 723,
       "sha256": "50c7c5a01fedbb240f9225efb1b08f03045303e769fd7c7c1f46572cc6dc456c",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "wad-medani",
+      "symbol": "wad-medani",
+      "labels": {
+        "sv-SE": "Wad Medani",
+        "en-US": "Wad Medani",
+        "es-ES": "Wad Medani",
+        "es-MX": "Wad Medani"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/wad-medani.svg",
+      "bytes": 689,
+      "sha256": "3e0344cfa69e99d4de4816b21c03cb59bca9dd0f49ba1777106b09e3aa87a78f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -102521,6 +104873,27 @@
       "file": "assets/zimbabwe.svg",
       "bytes": 971,
       "sha256": "c08b23233ad5cf54b78b5a78efedf7264bc6046b12aa359f674f218f74f13f96",
+      "review": {
+        "aacUsability": "pending",
+        "pictogram": "pending",
+        "commercialRights": "pending"
+      }
+    },
+    {
+      "id": "zinder",
+      "symbol": "zinder",
+      "labels": {
+        "sv-SE": "Zinder",
+        "en-US": "Zinder",
+        "es-ES": "Zinder",
+        "es-MX": "Zinder"
+      },
+      "categories": [
+        "places"
+      ],
+      "file": "assets/zinder.svg",
+      "bytes": 689,
+      "sha256": "44482cc74e0ad5a2a92df5d0e0d10ce9c5d13cec9027f44b5d0f381eda816af7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

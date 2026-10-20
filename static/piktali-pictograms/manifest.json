@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T15:07:57.555Z",
+  "exportedAt": "2026-10-20T15:18:22.758Z",
   "source": "piktali",
   "includePending": true,
   "count": 4395,
@@ -3944,9 +3944,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/aunt.svg",
-      "bytes": 554,
-      "sha256": "1d270dd5ddefc878a4f2479f762950557d3347b8f2b8411bc580825b724a029d",
+      "file": "assets/aunt.webp",
+      "bytes": 15246,
+      "sha256": "d22ad926750ed71f484fcdf45515e8233519c902d07d502f7b5a17865f4eccca",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9110,9 +9110,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/brother.svg",
-      "bytes": 721,
-      "sha256": "358750832ae52a509c3298011ec5adf831cc92ec890b8749b7051516ddbec243",
+      "file": "assets/brother.webp",
+      "bytes": 12354,
+      "sha256": "2998922d4689665c98b2073dbc8278160f77dbd94e4fe0fdaf5809e13d66b946",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -17720,9 +17720,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/cousin.svg",
-      "bytes": 555,
-      "sha256": "f17b6e3281706a3007c9beacbb859840234fb3d2d40c3e50d2d39efc19f4692b",
+      "file": "assets/cousin.webp",
+      "bytes": 19050,
+      "sha256": "3b784e62b3fdd9905719fec170fbda96a1a330a9a110a7763b6ab7261cf8a22e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -19526,9 +19526,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/daughter.svg",
-      "bytes": 729,
-      "sha256": "505b7c25e55ecb608ea58a28baf343fb014a6f00c0f3239cd9e261ec79ead840",
+      "file": "assets/daughter.webp",
+      "bytes": 14804,
+      "sha256": "a6adbaceee555617466e0939ef35cdac85f683e9b3c3403d67f84f5583c00a89",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31832,9 +31832,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/grandfather.svg",
-      "bytes": 631,
-      "sha256": "0eefa2061752eadade5fdc0d98dfba4d25741c6e3ef0c79c7bfd3093538d9f7a",
+      "file": "assets/grandfather.webp",
+      "bytes": 14004,
+      "sha256": "e406d90055458c0ee7d562fa1fff115490dc32f8f62d8ff75285888575da2b88",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31853,9 +31853,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/grandmother.svg",
-      "bytes": 649,
-      "sha256": "712a3e54e55213e98c872083e15d253f1c542389e280a1851a8c3ecbded4b234",
+      "file": "assets/grandmother.webp",
+      "bytes": 15196,
+      "sha256": "797f711c55f7c1515a1b732306750ef5c9278e7281c377a727ff6002163e7143",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71984,9 +71984,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/sister.svg",
-      "bytes": 721,
-      "sha256": "358750832ae52a509c3298011ec5adf831cc92ec890b8749b7051516ddbec243",
+      "file": "assets/sister.webp",
+      "bytes": 15868,
+      "sha256": "0a115498ab0ac9d19d3c4acb7ba01926d82e59cd6abe5b889b1199098942ea6c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73853,9 +73853,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/son.svg",
-      "bytes": 729,
-      "sha256": "505b7c25e55ecb608ea58a28baf343fb014a6f00c0f3239cd9e261ec79ead840",
+      "file": "assets/son.webp",
+      "bytes": 15622,
+      "sha256": "f3190d6c51db6f60d334a91c2a40fd420e33920e10418f3d7d2ded3f96de3c60",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -85550,9 +85550,9 @@
       "categories": [
         "people-relations"
       ],
-      "file": "assets/uncle.svg",
-      "bytes": 639,
-      "sha256": "a85ade898cdd0f13004f72c7b4221ba86ac021ad00f7fe1145a5becf858c6e71",
+      "file": "assets/uncle.webp",
+      "bytes": 14336,
+      "sha256": "2749926c53489348725e11d1d7b482db11516b088dbc73b54ac136681f440b3f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

@@ -6,7 +6,9 @@ const lookupPath = new URL('../static/arasaac-sv.json', import.meta.url);
 const trafficPath = new URL('../static/pictograms/traffic-safety', import.meta.url);
 const pictogramSourcePath = new URL('../src/lib/data/arasaac-data.js', import.meta.url);
 const activityGridPath = new URL('../src/lib/components/traffic-safety/ActivityGrid.svelte', import.meta.url);
-const piktaliSymbols = ['trafficlight', 'crosswalk', 'safeplace', 'vest', 'car'];
+const piktaliSymbols = ['trafficlight', 'crosswalk', 'safeplace', 'reflector', 'car'];
+const piktaliManifestPath = new URL('../static/piktali-pictograms/manifest.json', import.meta.url);
+const piktaliSourcePath = new URL('../src/lib/piktali/pictograms.ts', import.meta.url);
 
 // Human-reviewed semantic overrides where the exact English catalog keyword is
 // misleading or the closest suitable ARASAAC image uses a different keyword.
@@ -22,12 +24,13 @@ function normalizeKeyword(value) {
   return value.trim().toLocaleLowerCase('en').replace(/^\\(["\\])$/, '$1');
 }
 
-const [lookupText, trafficFiles, pictogramSource, activityGrid, piktaliSvgs, catalogResponse] = await Promise.all([
+const [lookupText, trafficFiles, pictogramSource, activityGrid, piktaliManifestText, piktaliSource, catalogResponse] = await Promise.all([
   readFile(lookupPath, 'utf8'),
   readdir(trafficPath),
   readFile(pictogramSourcePath, 'utf8'),
   readFile(activityGridPath, 'utf8'),
-  Promise.all(piktaliSymbols.map((name) => readFile(new URL(`../static/pictograms/traffic-safety/piktali-${name}.svg`, import.meta.url), 'utf8').catch(() => ''))),
+  readFile(piktaliManifestPath, 'utf8'),
+  readFile(piktaliSourcePath, 'utf8'),
   fetch(catalogUrl)
 ]);
 
@@ -55,18 +58,34 @@ const localPngIds = new Set(trafficFiles.filter((file) => file.endsWith('.png'))
 for (const [key, id] of Object.entries(pictogramIds)) {
   if (id !== null && !localPngIds.has(String(id))) errors.push(`ARASAAC_IDS.${key}: missing local PNG ${id}.png`);
 }
-const expectedSymbols = { 'traffic-lights': 'trafficlight', crosswalk: 'crosswalk', 'safe-places': 'safeplace', reflectors: 'vest', vehicles: 'car' };
+const expectedSymbols = { 'traffic-lights': 'trafficlight', crosswalk: 'crosswalk', 'safe-places': 'safeplace', reflectors: 'reflector', vehicles: 'car' };
 if (pictogramIds.warning !== 25315 || !trafficFiles.includes('25315.png')) errors.push('road-signs tile: expected ARASAAC warning triangle 25315');
 if (!activityGrid.includes("getPictogram('warning')")) errors.push('road-signs tile: must use the warning pictogram');
 for (const [activity, symbol] of Object.entries(expectedSymbols)) {
   if (!new RegExp(`[\\'\\\"]?${activity}[\\'\\\"]?:\\s*['\\\"]${symbol}['\\\"]`).test(activityGrid)) errors.push(`${activity} tile: expected Piktali ${symbol} mapping`);
-  if (!trafficFiles.includes(`piktali-${symbol}.svg`)) errors.push(`${activity} tile: missing Piktali ${symbol} SVG`);
 }
-for (let index = 0; index < piktaliSvgs.length; index++) {
-  const svg = piktaliSvgs[index];
-  const symbol = piktaliSymbols[index];
-  if (!/<svg\b[^>]*viewBox="0 0 100 100"/.test(svg) || !new RegExp(`Piktali [^<]+ pictogram`).test(svg)) {
-    errors.push(`Piktali ${symbol} SVG is missing its viewBox or descriptive title`);
+const piktaliManifest = JSON.parse(piktaliManifestText);
+const piktaliBySymbol = new Map(piktaliManifest.pictograms.map((pictogram) => [pictogram.symbol, pictogram]));
+const piktaliMapBlock = piktaliSource.match(/const files: Record<string, string> = \{([\s\S]*?)\n  \};/);
+const piktaliAssetMap = Object.fromEntries(
+  [...(piktaliMapBlock?.[1] ?? '').matchAll(/^\s*(\w+): '(assets\/[^']+)'/gm)]
+    .map(([, symbol, file]) => [symbol, file])
+);
+if (!piktaliMapBlock) errors.push('Piktali traffic pictogram map: could not find the shared asset mapping');
+const piktaliAssetSymbols = { trafficlight: 'trafficlight', crosswalk: 'crosswalk', safeplace: 'safeplace', reflector: 'reflector-vest', car: 'car' };
+for (const symbol of piktaliSymbols) {
+  const catalogSymbol = piktaliAssetSymbols[symbol];
+  const pictogram = piktaliBySymbol.get(catalogSymbol);
+  const expectedFile = pictogram?.file;
+  const mappedFile = piktaliAssetMap[symbol];
+  if (!pictogram) errors.push(`Piktali ${symbol}: missing symbol ${catalogSymbol} from the manifest`);
+  if (mappedFile !== expectedFile) errors.push(`Piktali ${symbol}: expected manifest asset ${expectedFile}, got ${mappedFile}`);
+  if (expectedFile) {
+    const assetPath = new URL(`../static/piktali-pictograms/${expectedFile}`, import.meta.url);
+    const bytes = await readFile(assetPath).catch(() => null);
+    if (!bytes) errors.push(`Piktali ${symbol}: missing original asset ${expectedFile}`);
+    else if (expectedFile.endsWith('.svg') && !/<svg\b[^>]*viewBox=/.test(bytes.toString('utf8'))) errors.push(`Piktali ${symbol}: SVG has no viewBox`);
+    else if (expectedFile.endsWith('.webp') && bytes.toString('ascii', 8, 12) !== 'WEBP') errors.push(`Piktali ${symbol}: invalid WebP signature`);
   }
 }
 
@@ -101,7 +120,7 @@ for (const file of pngFiles) {
 console.log(`Checked ${Object.keys(lookup).length} Swedish lookup entries across ${uniqueIds.size} pictogram IDs.`);
 console.log(`Checked ${pngFiles.length} local traffic-safety PNGs against the catalog and PNG signature.`);
 console.log(`Checked ${Object.values(pictogramIds).filter((id) => id !== null).length} source ID assignments and the traffic-safety card image mappings.`);
-console.log(`Checked five traffic-safety cards use Piktali pictograms (${piktaliSymbols.join(', ')}) and road signs use the ARASAAC warning triangle.`);
+console.log(`Checked five traffic-safety cards resolve to the original Piktali manifest assets (${piktaliSymbols.join(', ')}) and road signs use the ARASAAC warning triangle.`);
 console.log(`ARASAAC English catalog: ${catalog.length} pictograms.`);
 
 if (errors.length) {

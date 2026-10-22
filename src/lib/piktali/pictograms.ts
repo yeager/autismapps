@@ -14,3 +14,16 @@ export function piktaliPictogramUrl(symbol: string): string | null {
 export function piktaliDictionaryPictogramUrl(englishWord: string): string | null {
   return piktaliPictogramUrl(englishWord);
 }
+
+/** Shared Piktali assets for the traffic-safety activity cards. */
+export function piktaliTrafficPictogramUrl(symbol: string): string | null {
+  const files: Record<string, string> = {
+    trafficlight: 'assets/trafficlight.webp',
+    crosswalk: 'assets/crosswalk.webp',
+    safeplace: 'assets/safeplace.svg',
+    reflector: 'assets/reflector-vest.svg',
+    car: 'assets/car.webp'
+  };
+  const file = files[symbol];
+  return file ? `${base}/piktali-pictograms/${file}` : null;
+}

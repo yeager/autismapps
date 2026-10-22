@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { base } from '$app/paths';
   import { getPictogram } from '$lib/data/arasaac-data.js';
   import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
+  import { piktaliTrafficPictogramUrl } from '$lib/piktali/pictograms';
   import { speak } from '$lib/tts';
 
   type Activity = {
@@ -63,16 +63,17 @@
     'traffic-lights': 'trafficlight',
     crosswalk: 'crosswalk',
     'safe-places': 'safeplace',
-    reflectors: 'vest',
+    reflectors: 'reflector',
     vehicles: 'car'
   };
 
   function pictogramFor(activity: Activity) {
     if (activity.id === 'road-signs') return getPictogram('warning');
     const symbol = piktaliSymbols[activity.id];
-    return symbol ? {
+    const url = symbol ? piktaliTrafficPictogramUrl(symbol) : null;
+    return url ? {
       key: `piktali-${symbol}`,
-      url: `${base}/pictograms/traffic-safety/piktali-${symbol}.svg?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`
+      url: `${url}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`
     } : undefined;
   }
   

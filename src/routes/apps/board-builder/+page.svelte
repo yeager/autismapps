@@ -3,6 +3,7 @@
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { speak } from '$lib/tts';
   import { searchPictograms, getPictogramUrl, type PictogramSearchResult } from '$lib/arasaac';
+  import { searchPiktaliPictograms } from '$lib/piktali/search';
   import { saveBoard, getBoards, deleteBoard, type Board, type BoardCell } from '$lib/storage';
   import { locale } from '$lib/i18n';
   import { arasaacBW } from '$lib/a11y';
@@ -47,7 +48,10 @@
     searchResults = [];
     try {
       const lang = get(locale);
-      searchResults = await searchPictograms(searchQuery, lang);
+      const piktaliResults = await searchPiktaliPictograms(searchQuery, lang);
+      searchResults = piktaliResults.length > 0
+        ? piktaliResults
+        : await searchPictograms(searchQuery, lang);
     } catch (error) {
       console.error('Pictogram search failed', error);
     } finally {

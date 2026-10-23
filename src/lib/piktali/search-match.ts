@@ -91,7 +91,8 @@ export function matchPiktaliPictograms(
 		const symbol = normalizePictogramKeyword(pictogram.symbol.replaceAll('-', ' '));
 		const hasExactLabel = exactLabels.some((label) => searchForms.includes(label));
 		const matchesLocalizedPrefix = searchForms.some((form) => localizedSearchLabel.startsWith(form));
-		const matchesLocalizedSubstring = searchForms.some((form) => localizedSearchLabel.includes(form));
+		const localizedWords = localizedSearchLabel.split(/\s+/);
+		const matchesLocalizedWordPrefix = searchForms.some((form) => localizedWords.some((word) => word.startsWith(form)));
 		const matchesSymbolPrefix = symbol.split(' ').some((word) => word.startsWith(normalizedQuery));
 		const isNumberSymbol = /^number\d+$/.test(pictogram.symbol);
 
@@ -103,7 +104,7 @@ export function matchPiktaliPictograms(
 			score = 0;
 		} else if (!isNumberSymbol && (matchesLocalizedPrefix || matchesSymbolPrefix)) {
 			score = 1;
-		} else if (!isNumberSymbol && matchesLocalizedSubstring) {
+		} else if (!isNumberSymbol && matchesLocalizedWordPrefix) {
 			score = 2;
 		} else {
 			return [];

@@ -47,11 +47,13 @@ test('Piktali fuzzy matches use the interface language and omit number symbols',
 });
 
 test('Piktali search accepts a Swedish query on the English site and vice versa', () => {
-	const [englishResult] = matchPiktaliPictograms(manifest.pictograms, 'hund', 'en', '/launcher');
+	const englishResults = matchPiktaliPictograms(manifest.pictograms, 'hund', 'en', '/launcher');
+	const [englishResult] = englishResults;
 	const [swedishResult] = matchPiktaliPictograms(manifest.pictograms, 'dog', 'sv', '/launcher');
 	assert.equal(englishResult.keyword, 'Dog');
 	assert.equal(swedishResult.keyword, 'Hund');
 	assert.equal(englishResult.url, swedishResult.url);
+	assert.ok(!englishResults.some((result) => result.keyword === 'Thunder'));
 });
 
 test('Piktali search finds Swedish labels when the query is plural or definite', () => {

@@ -16,11 +16,31 @@ export interface JsonCacheOptions {
   timeoutMs?: number;
 }
 
-export async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Response> {
+export async function fetchWithTimeout(
+  url: string,
+  timeoutMs: number,
+  fetcher: typeof fetch = fetch
+): Promise<Response> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    return await fetch(url, { signal: controller.signal });
+    return await fetcher(url, { signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+export async function fetchJsonWithTimeout<T>(
+  url: string,
+  timeoutMs: number,
+  fetcher: typeof fetch = fetch
+): Promise<T> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetcher(url, { signal: controller.signal });
+    if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
+    return await response.json() as T;
   } finally {
     clearTimeout(timeout);
   }

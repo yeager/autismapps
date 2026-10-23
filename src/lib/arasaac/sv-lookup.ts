@@ -5,8 +5,11 @@
  */
 
 import { base } from '$app/paths';
+import { fetchJsonWithTimeout } from './cache';
 import { applySwedishLookupOverrides } from './sv-lookup-overrides.js';
 import { swedishLookupUrl } from './sv-lookup-url.js';
+
+const SWEDISH_LOOKUP_TIMEOUT_MS = 5000;
 
 let cache: Record<string, { sv: string; id: number }> | null = null;
 let loading: Promise<Record<string, { sv: string; id: number }>> | null = null;
@@ -16,14 +19,14 @@ export function loadSvLookup(): Promise<Record<string, { sv: string; id: number 
   // Concurrent searches (apps look up a whole vocabulary at once) share one load of the 785 KB file
   loading ??= (async () => {
     try {
-      const res = await fetch(swedishLookupUrl(base, import.meta.env.DEV));
-      if (res.ok) {
-        const data: unknown = await res.json();
-        if (data && typeof data === 'object' && Object.keys(data).length > 0) {
-			const corrected = applySwedishLookupOverrides(data as Record<string, { sv: string; id: number }>);
-			cache = corrected;
-			return corrected;
-        }
+      const data = await fetchJsonWithTimeout<unknown>(
+        swedishLookupUrl(base, import.meta.env.DEV),
+        SWEDISH_LOOKUP_TIMEOUT_MS
+      );
+      if (data && typeof data === 'object' && Object.keys(data).length > 0) {
+		const corrected = applySwedishLookupOverrides(data as Record<string, { sv: string; id: number }>);
+		cache = corrected;
+		return corrected;
       }
     } catch {}
     // Do not memoize a failed fetch: a temporary offline or hosting error should

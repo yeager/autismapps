@@ -1,12 +1,27 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createJsonCache } from '../../src/lib/arasaac/cache.ts';
+import { createJsonCache, fetchJsonWithTimeout } from '../../src/lib/arasaac/cache.ts';
 
 const URL_A = 'https://api.arasaac.org/v1/pictograms/en/search/cat';
 const URL_B = 'https://api.arasaac.org/v1/pictograms/en/search/dog';
 const DAY = 24 * 60 * 60 * 1000;
 
 const json = (data, status = 200) => new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json' } });
+
+test('fetchJsonWithTimeout aborts while a response body is still loading', async () => {
+  let aborted = false;
+  const fetcher = async (_url, { signal }) => new Response(new ReadableStream({
+    start(controller) {
+      signal.addEventListener('abort', () => {
+        aborted = true;
+        controller.error(new DOMException('The request was aborted', 'AbortError'));
+      }, { once: true });
+    }
+  }), { headers: { 'content-type': 'application/json' } });
+
+  await assert.rejects(fetchJsonWithTimeout(URL_A, 20, fetcher), { name: 'AbortError' });
+  assert.equal(aborted, true);
+});
 
 /** Fake fetch: responder(url, n) returns the Response of the n-th call */
 function fakeFetch(responder) {

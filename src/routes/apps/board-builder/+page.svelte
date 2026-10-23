@@ -61,6 +61,17 @@
     }, 350);
   }
 
+  function combineSearchResults(...groups: PictogramSearchResult[][]): PictogramSearchResult[] {
+    const seen = new Set<number>();
+    return groups.flat()
+      .filter((picto) => {
+        if (seen.has(picto.id)) return false;
+        seen.add(picto.id);
+        return true;
+      })
+      .slice(0, 50);
+  }
+
   async function doSearch(requestId = ++searchRequestId) {
     if (searchTimeout) {
       clearTimeout(searchTimeout);
@@ -74,27 +85,31 @@
     }
     searching = true;
     searchResults = [];
-    try {
-      const lang = get(locale);
-      const [piktaliResults, arasaacResults] = await Promise.all([
-        searchPiktaliPictograms(query, lang),
-        searchPictograms(query, lang)
-      ]);
+    const lang = get(locale);
+    const resultsBySource: PictogramSearchResult[][] = [[], []];
+    const publishResults = (source: number, results: PictogramSearchResult[]) => {
       if (requestId !== searchRequestId) return;
-      const seen = new Set<number>();
-      searchResults = [...piktaliResults, ...arasaacResults]
-        .filter((picto) => {
-          if (seen.has(picto.id)) return false;
-          seen.add(picto.id);
-          return true;
-        })
-        .slice(0, 50);
+      resultsBySource[source] = results;
+      searchResults = combineSearchResults(...resultsBySource);
       hasSearched = true;
-    } catch (error) {
-      if (requestId === searchRequestId) {
-        console.error('Pictogram search failed', error);
-        hasSearched = true;
-      }
+      if (searchResults.length > 0) searching = false;
+    };
+
+    const piktaliSearch = searchPiktaliPictograms(query, lang)
+      .then((results) => publishResults(0, results))
+      .catch((error) => {
+        console.error('Piktali pictogram search failed', error);
+        publishResults(0, []);
+      });
+    const arasaacSearch = searchPictograms(query, lang)
+      .then((results) => publishResults(1, results))
+      .catch((error) => {
+        console.error('ARASAAC pictogram search failed', error);
+        publishResults(1, []);
+      });
+
+    try {
+      await Promise.all([piktaliSearch, arasaacSearch]);
     } finally {
       if (requestId === searchRequestId) searching = false;
     }

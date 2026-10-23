@@ -9,3 +9,11 @@ export function swedishLookupUrl(basePath, development = false) {
 	const cacheBuster = development ? '' : `?v=${SWEDISH_LOOKUP_REVISION}`;
 	return `${baseUrl}/${filename}${cacheBuster}`;
 }
+
+/** @param {string} basePath @param {boolean} [development] */
+export function swedishLookupUrls(basePath, development = false) {
+	const primary = swedishLookupUrl(basePath, development);
+	if (development) return [primary];
+	const baseUrl = basePath.replace(/\/$/, '');
+	return [primary, `${baseUrl}/arasaac-sv.json?v=${SWEDISH_LOOKUP_REVISION}`];
+}

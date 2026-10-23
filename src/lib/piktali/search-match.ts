@@ -1,7 +1,7 @@
 import { normalizePictogramKeyword } from '../arasaac/search-normalize.js';
-import { PIKTALI_MANIFEST_REVISION, piktaliManifestUrl } from './manifest-url.js';
+import { PIKTALI_MANIFEST_REVISION, piktaliManifestUrls } from './manifest-url.js';
 
-export { PIKTALI_MANIFEST_REVISION, piktaliManifestUrl } from './manifest-url.js';
+export { PIKTALI_MANIFEST_REVISION, piktaliManifestUrl, piktaliManifestUrls } from './manifest-url.js';
 
 export interface PiktaliManifestPictogram {
 	id: string;

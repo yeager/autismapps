@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { boardBuilderSearchResult, matchPiktaliPictograms, piktaliManifestUrl } from '../../src/lib/piktali/search-match.ts';
+import { boardBuilderSearchResult, matchPiktaliPictograms, piktaliManifestUrl, piktaliManifestUrls } from '../../src/lib/piktali/search-match.ts';
 
 const manifest = JSON.parse(await readFile(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
 
@@ -9,6 +9,11 @@ test('Piktali manifest uses a versioned path in production and the stable file i
 	assert.equal(piktaliManifestUrl('/launcher'), '/launcher/piktali-pictograms/manifest-2026-10-23-board-builder-search-1.json?v=2026-10-23-board-builder-search-1');
 	assert.equal(piktaliManifestUrl(''), '/piktali-pictograms/manifest-2026-10-23-board-builder-search-1.json?v=2026-10-23-board-builder-search-1');
 	assert.equal(piktaliManifestUrl('/launcher', true), '/launcher/piktali-pictograms/manifest.json');
+	assert.deepEqual(piktaliManifestUrls('/launcher'), [
+		'/launcher/piktali-pictograms/manifest-2026-10-23-board-builder-search-1.json?v=2026-10-23-board-builder-search-1',
+		'/launcher/piktali-pictograms/manifest.json?v=2026-10-23-board-builder-search-1'
+	]);
+	assert.deepEqual(piktaliManifestUrls('/launcher', true), ['/launcher/piktali-pictograms/manifest.json']);
 });
 
 test('Board Builder name aliases return the local Piktali communication board', () => {

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createJsonCache, fetchJsonWithTimeout } from '../../src/lib/arasaac/cache.ts';
+import { createJsonCache, fetchJsonWithFallback, fetchJsonWithTimeout } from '../../src/lib/arasaac/cache.ts';
 
 const URL_A = 'https://api.arasaac.org/v1/pictograms/en/search/cat';
 const URL_B = 'https://api.arasaac.org/v1/pictograms/en/search/dog';
@@ -21,6 +21,18 @@ test('fetchJsonWithTimeout aborts while a response body is still loading', async
 
   await assert.rejects(fetchJsonWithTimeout(URL_A, 20, fetcher), { name: 'AbortError' });
   assert.equal(aborted, true);
+});
+
+test('fetchJsonWithFallback tries the stable catalog URL after a missing versioned file', async () => {
+  const requested = [];
+  const fetcher = async (url) => {
+    requested.push(url);
+    if (url.endsWith('/versioned.json')) return new Response('', { status: 404 });
+    return Response.json({ entries: 1 });
+  };
+  const data = await fetchJsonWithFallback(['/launcher/versioned.json', '/launcher/stable.json?v=1'], 100, fetcher);
+  assert.deepEqual(requested, ['/launcher/versioned.json', '/launcher/stable.json?v=1']);
+  assert.deepEqual(data, { entries: 1 });
 });
 
 /** Fake fetch: responder(url, n) returns the Response of the n-th call */

@@ -5,9 +5,9 @@
  */
 
 import { base } from '$app/paths';
-import { fetchJsonWithTimeout } from './cache';
+import { fetchJsonWithFallback } from './cache';
 import { applySwedishLookupOverrides } from './sv-lookup-overrides.js';
-import { swedishLookupUrl } from './sv-lookup-url.js';
+import { swedishLookupUrls } from './sv-lookup-url.js';
 
 const SWEDISH_LOOKUP_TIMEOUT_MS = 5000;
 
@@ -19,8 +19,8 @@ export function loadSvLookup(): Promise<Record<string, { sv: string; id: number 
   // Concurrent searches (apps look up a whole vocabulary at once) share one load of the 785 KB file
   loading ??= (async () => {
     try {
-      const data = await fetchJsonWithTimeout<unknown>(
-        swedishLookupUrl(base, import.meta.env.DEV),
+      const data = await fetchJsonWithFallback<unknown>(
+        swedishLookupUrls(base, import.meta.env.DEV),
         SWEDISH_LOOKUP_TIMEOUT_MS
       );
       if (data && typeof data === 'object' && Object.keys(data).length > 0) {

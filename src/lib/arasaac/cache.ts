@@ -46,6 +46,23 @@ export async function fetchJsonWithTimeout<T>(
   }
 }
 
+/** Try a cache-busted asset URL first, then a stable URL used by older uploads. */
+export async function fetchJsonWithFallback<T>(
+  urls: string[],
+  timeoutMs: number,
+  fetcher: typeof fetch = fetch
+): Promise<T> {
+  let lastError: unknown;
+  for (const url of urls) {
+    try {
+      return await fetchJsonWithTimeout<T>(url, timeoutMs, fetcher);
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError ?? new Error('No JSON asset URLs provided');
+}
+
 const DAY = 24 * 60 * 60 * 1000;
 const STAMP = 'x-cached-at';
 

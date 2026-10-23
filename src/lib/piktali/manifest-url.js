@@ -8,3 +8,11 @@ export function piktaliManifestUrl(basePath, development = false) {
 	const cacheBuster = development ? '' : `?v=${PIKTALI_MANIFEST_REVISION}`;
 	return `${base}/piktali-pictograms/${filename}${cacheBuster}`;
 }
+
+/** @param {string} basePath @param {boolean} [development] */
+export function piktaliManifestUrls(basePath, development = false) {
+	const primary = piktaliManifestUrl(basePath, development);
+	if (development) return [primary];
+	const base = basePath.replace(/\/$/, '');
+	return [primary, `${base}/piktali-pictograms/manifest.json?v=${PIKTALI_MANIFEST_REVISION}`];
+}

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { swedishLookupUrl, SWEDISH_LOOKUP_REVISION } from '../../src/lib/arasaac/sv-lookup-url.js';
+import { swedishLookupUrl, swedishLookupUrls, SWEDISH_LOOKUP_REVISION } from '../../src/lib/arasaac/sv-lookup-url.js';
 import { searchPictogramLookup } from '../../src/lib/arasaac/search-normalize.js';
 import { applySwedishLookupOverrides, SWEDISH_LOOKUP_OVERRIDES } from '../../src/lib/arasaac/sv-lookup-overrides.js';
 
@@ -11,6 +11,11 @@ test('Swedish lookup uses a versioned path in production and the stable file in 
 	assert.equal(swedishLookupUrl('/launcher'), `/launcher/arasaac-sv-${SWEDISH_LOOKUP_REVISION}.json?v=${SWEDISH_LOOKUP_REVISION}`);
 	assert.equal(swedishLookupUrl(''), `/arasaac-sv-${SWEDISH_LOOKUP_REVISION}.json?v=${SWEDISH_LOOKUP_REVISION}`);
 	assert.equal(swedishLookupUrl('/launcher', true), '/launcher/arasaac-sv.json');
+	assert.deepEqual(swedishLookupUrls('/launcher'), [
+		`/launcher/arasaac-sv-${SWEDISH_LOOKUP_REVISION}.json?v=${SWEDISH_LOOKUP_REVISION}`,
+		`/launcher/arasaac-sv.json?v=${SWEDISH_LOOKUP_REVISION}`
+	]);
+	assert.deepEqual(swedishLookupUrls('/launcher', true), ['/launcher/arasaac-sv.json']);
 });
 const corrected = applySwedishLookupOverrides(catalog);
 

@@ -1,6 +1,6 @@
 import { loadSvLookup } from './sv-lookup';
 import { searchBildstod } from './bildstod';
-import { matchesPictogramKeyword, normalizePictogramKeyword, resolvePictogramSearchTerm } from './search-normalize.js';
+import { matchesPictogramKeyword, normalizePictogramKeyword, resolvePictogramSearchTerm, searchPictogramLookup } from './search-normalize.js';
 import { cachedJson } from './cache';
 import { getLocaleDef } from '$lib/i18n/locales';
 
@@ -44,43 +44,13 @@ export async function searchPictograms(
     } catch {}
   }
 
-  // === STEP 2: Swedish ARASAAC lookup (15,607 translations) ===
-  if (lang === 'sv' || lang === '') {
+  // === STEP 2: Local ARASAAC lookup (15,607 bilingual keyword mappings) ===
+  if (lang === 'sv' || lang === 'en' || lang === '') {
     const lookup = await loadSvLookup();
-
-    // 2a: Exact match on SWEDISH value (prevents "barn" → "ladugård")
-    for (const [en, entry] of Object.entries(lookup)) {
-      if (matchesPictogramKeyword(entry.sv, queryLower, true) && entry.id && !seenIds.has(entry.id)) {
-        results.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
-        seenIds.add(entry.id);
-        break;
-      }
-    }
-
-    // 2b: Exact match on English key
-    const exactEnKey = Object.entries(lookup).find(([en]) => matchesPictogramKeyword(en, queryLower, true))?.[1];
-    if (exactEnKey?.id && !seenIds.has(exactEnKey.id)) {
-      results.push({ id: exactEnKey.id, keyword: exactEnKey.sv, url: getPictogramUrl(exactEnKey.id, false), urlBW: getPictogramUrl(exactEnKey.id, true) });
-      seenIds.add(exactEnKey.id);
-    }
-
-    // 2c: Partial matches — Swedish values first, then English keys
-    if (results.length < 50) {
-      const svPartial: PictogramSearchResult[] = [];
-      const enPartial: PictogramSearchResult[] = [];
-      for (const [en, entry] of Object.entries(lookup)) {
-        if (!entry.id || seenIds.has(entry.id)) continue;
-        const svLower = normalizePictogramKeyword(entry.sv);
-        if (matchesPictogramKeyword(entry.sv, queryLower)) {
-          const item = { id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) };
-          if (svLower === queryLower) svPartial.unshift(item); else svPartial.push(item);
-          seenIds.add(entry.id);
-        } else if (en.includes(queryLower) && !seenIds.has(entry.id)) {
-          enPartial.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
-          seenIds.add(entry.id);
-        }
-      }
-      results.push(...svPartial, ...enPartial);
+    for (const match of searchPictogramLookup(lookup, queryLower, lang)) {
+      if (seenIds.has(match.id)) continue;
+      results.push({ id: match.id, keyword: match.keyword, url: getPictogramUrl(match.id, false), urlBW: getPictogramUrl(match.id, true) });
+      seenIds.add(match.id);
     }
 
     if (results.length > 0) {

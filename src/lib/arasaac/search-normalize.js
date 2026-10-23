@@ -17,6 +17,36 @@ export function matchesPictogramKeyword(label, query, exact = false) {
 	return exact ? normalizedLabel === normalizedQuery : normalizedLabel.includes(normalizedQuery);
 }
 
+/** Search the bilingual local catalog, preferring the interface language.
+ * @param {Record<string, {sv: string, id: number}>} lookup
+ * @param {string} query
+ * @param {string} [locale]
+ * @param {number} [limit]
+ */
+export function searchPictogramLookup(lookup, query, locale = 'en', limit = 50) {
+	const isSwedish = locale === 'sv' || locale === '';
+	const fields = isSwedish ? ['sv', 'en'] : ['en', 'sv'];
+	const seenIds = new Set();
+	const matches = [];
+	for (const exact of [true, false]) {
+		for (const field of fields) {
+			for (const [en, entry] of Object.entries(lookup)) {
+				if (!entry?.id || seenIds.has(entry.id)) continue;
+				const label = field === 'sv' ? entry.sv : en;
+				if (!label || !matchesPictogramKeyword(label, query, exact)) continue;
+				seenIds.add(entry.id);
+				matches.push({
+					id: entry.id,
+					keyword: isSwedish ? entry.sv : en,
+					exact
+				});
+				if (matches.length >= limit) return matches;
+			}
+		}
+	}
+	return matches;
+}
+
 const boardBuilderTerms = new Set([
 	'bradbyggare',
 	'bradbyggaren',

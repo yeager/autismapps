@@ -22,6 +22,14 @@ test('Piktali search matches Swedish and English catalog labels', () => {
 	assert.equal(swedish.url, english.url);
 });
 
+test('Piktali search accepts a Swedish query on the English site and vice versa', () => {
+	const [englishResult] = matchPiktaliPictograms(manifest.pictograms, 'hund', 'en', '/launcher');
+	const [swedishResult] = matchPiktaliPictograms(manifest.pictograms, 'dog', 'sv', '/launcher');
+	assert.equal(englishResult.keyword, 'Dog');
+	assert.equal(swedishResult.keyword, 'Hund');
+	assert.equal(englishResult.url, swedishResult.url);
+});
+
 test('Piktali search finds Swedish labels when the query is plural or definite', () => {
 	for (const [query, label] of [['hundar', 'Hund'], ['katter', 'Katt'], ['hunden', 'Hund']]) {
 		const results = matchPiktaliPictograms(manifest.pictograms, query, 'sv', '/launcher');

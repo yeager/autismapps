@@ -52,18 +52,28 @@ export function matchPiktaliPictograms(
 		const localizedLabel = locale === 'sv'
 			? pictogram.labels['sv-SE'] || pictogram.labels['en-US']
 			: pictogram.labels['en-US'] || pictogram.labels['sv-SE'];
-		const label = normalizePictogramKeyword(localizedLabel || '');
+		const searchableLabels = [...new Set([
+			pictogram.labels['sv-SE'],
+			pictogram.labels['en-US'],
+			pictogram.labels['es-ES'],
+			pictogram.labels['es-MX']
+		].filter((value): value is string => Boolean(value)))].map(normalizePictogramKeyword);
 		const symbol = normalizePictogramKeyword(pictogram.symbol.replaceAll('-', ' '));
+		const matchingLabel = searchableLabels.find((label) =>
+			searchForms.some((form) => form === label || label.startsWith(form) || label.includes(form))
+		);
 
 		let score: number;
 		if (isBoardBuilder) {
 			if (pictogram.symbol !== 'communication-board') return [];
 			score = 0;
-		} else if (searchForms.some((form) => form === label || form === symbol)) {
-			score = searchForms.length > 1 && searchForms[1] === label ? 1 : 0;
-		} else if (label.startsWith(normalizedQuery) || symbol.startsWith(normalizedQuery)) {
+		} else if (matchingLabel && searchForms.some((form) => form === matchingLabel)) {
+			score = 0;
+		} else if (matchingLabel || symbol === normalizedQuery) {
 			score = 1;
-		} else if (label.includes(normalizedQuery) || symbol.includes(normalizedQuery)) {
+		} else if (searchableLabels.some((label) => label.startsWith(normalizedQuery)) || symbol.startsWith(normalizedQuery)) {
+			score = 1;
+		} else if (searchableLabels.some((label) => label.includes(normalizedQuery)) || symbol.includes(normalizedQuery)) {
 			score = 2;
 		} else {
 			return [];

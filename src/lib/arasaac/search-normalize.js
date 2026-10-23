@@ -50,8 +50,12 @@ export function searchPictogramLookup(lookup, query, locale = 'en', limit = 50) 
 const boardBuilderTerms = new Set([
 	'bradbyggare',
 	'bradbyggaren',
+	'bradbyggarens',
+	'bradbyggarens sokning',
+	'bradbyggaren sokning',
 	'tavlbyggare',
 	'tavlbyggaren',
+	'tavlbyggarens',
 	'board builder',
 	'board builders',
 	'boardbuilder'
@@ -66,5 +70,7 @@ const boardBuilderTerms = new Set([
 export function resolvePictogramSearchTerm(value, locale = 'en') {
 	const query = String(value).trim();
 	if (!boardBuilderTerms.has(normalizePictogramKeyword(query))) return query;
-	return locale === 'sv' ? 'tavla' : 'board';
+	// The app name is not a pictogram concept. Searching for "tavla" returns
+	// unrelated classroom objects; use the actual communication-board label.
+	return locale === 'sv' ? 'kommunikationskarta' : 'communication board';
 }

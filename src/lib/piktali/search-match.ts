@@ -28,8 +28,12 @@ function swedishSearchForms(value: string): string[] {
 const boardBuilderTerms = new Set([
 	'bradbyggare',
 	'bradbyggaren',
+	'bradbyggarens',
+	'bradbyggarens sokning',
+	'bradbyggaren sokning',
 	'tavlbyggare',
 	'tavlbyggaren',
+	'tavlbyggarens',
 	'board builder',
 	'board builders',
 	'boardbuilder'

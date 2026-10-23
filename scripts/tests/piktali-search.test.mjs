@@ -6,7 +6,7 @@ import { matchPiktaliPictograms } from '../../src/lib/piktali/search-match.ts';
 const manifest = JSON.parse(await readFile(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
 
 test('Board Builder name aliases return the local Piktali communication board', () => {
-	for (const query of ['Brädbyggaren', 'Brädbyggare', 'Tavlbyggare', 'Board Builder']) {
+	for (const query of ['Brädbyggaren', 'Brädbyggare', 'Brädbyggarens', 'Tavlbyggare', 'Board Builder']) {
 		const [result] = matchPiktaliPictograms(manifest.pictograms, query, 'sv', '/launcher');
 		assert.equal(result.keyword, 'Kommunikationskarta');
 		assert.equal(result.url, '/launcher/piktali-pictograms/assets/communication-board.svg');

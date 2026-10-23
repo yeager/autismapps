@@ -21,9 +21,10 @@ test('Swedish pictogram labels and queries match consistently with å, ä and ö
 });
 
 test('Board Builder names map to relevant pictogram search terms', () => {
-	assert.equal(resolvePictogramSearchTerm('Brädbyggaren', 'sv'), 'tavla');
-	assert.equal(resolvePictogramSearchTerm('Tavlbyggare', 'sv'), 'tavla');
-	assert.equal(resolvePictogramSearchTerm('Board Builder', 'en'), 'board');
+	assert.equal(resolvePictogramSearchTerm('Brädbyggaren', 'sv'), 'kommunikationskarta');
+	assert.equal(resolvePictogramSearchTerm('Brädbyggarens', 'sv'), 'kommunikationskarta');
+	assert.equal(resolvePictogramSearchTerm('Tavlbyggare', 'sv'), 'kommunikationskarta');
+	assert.equal(resolvePictogramSearchTerm('Board Builder', 'en'), 'communication board');
 	assert.equal(resolvePictogramSearchTerm('glad', 'sv'), 'glad');
 });
 

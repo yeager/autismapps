@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { matchPiktaliPictograms, piktaliManifestUrl } from '../../src/lib/piktali/search-match.ts';
+import { boardBuilderSearchResult, matchPiktaliPictograms, piktaliManifestUrl } from '../../src/lib/piktali/search-match.ts';
 
 const manifest = JSON.parse(await readFile(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
 
@@ -17,6 +17,16 @@ test('Board Builder name aliases return the local Piktali communication board', 
 		assert.equal(result.url, '/launcher/piktali-pictograms/assets/communication-board.svg');
 		assert.ok(result.id < 0);
 	}
+});
+
+test('Board Builder aliases return the bundled pictogram without a manifest', () => {
+	for (const query of ['Brädbyggaren', 'Brädbyggarens', 'Tavlbyggare']) {
+		const [result] = boardBuilderSearchResult(query, 'sv', '/launcher');
+		assert.equal(result.keyword, 'Kommunikationskarta');
+		assert.equal(result.url, '/launcher/piktali-pictograms/assets/communication-board.svg');
+		assert.ok(result.id < 0);
+	}
+	assert.deepEqual(boardBuilderSearchResult('unknown', 'sv', '/launcher'), []);
 });
 
 test('Piktali search matches Swedish and English catalog labels', () => {

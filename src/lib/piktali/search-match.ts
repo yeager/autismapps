@@ -48,6 +48,28 @@ const boardBuilderTerms = new Set([
 	'boardbuilder'
 ]);
 
+export function isBoardBuilderSearchTerm(query: string): boolean {
+	return boardBuilderTerms.has(normalizePictogramKeyword(query));
+}
+
+/** Return the bundled communication-board symbol without fetching the catalog. */
+export function boardBuilderSearchResult(
+	query: string,
+	locale: string,
+	basePath: string
+): PiktaliSearchResult[] {
+	if (!isBoardBuilderSearchTerm(query)) return [];
+	const base = basePath.replace(/\/$/, '');
+	const url = `${base}/piktali-pictograms/assets/communication-board.svg`;
+	return [{
+		// Reserve a low, stable ID outside the manifest's sequential range.
+		id: -2_000_000_000,
+		keyword: locale === 'sv' ? 'Kommunikationskarta' : 'Communication board',
+		url,
+		urlBW: url
+	}];
+}
+
 /** Match local Piktali symbols by localized label or stable symbol name. */
 export function matchPiktaliPictograms(
 	pictograms: PiktaliManifestPictogram[],
@@ -59,7 +81,7 @@ export function matchPiktaliPictograms(
 	const normalizedQuery = normalizePictogramKeyword(query);
 	if (!normalizedQuery) return [];
 
-	const isBoardBuilder = boardBuilderTerms.has(normalizedQuery);
+	const isBoardBuilder = isBoardBuilderSearchTerm(query);
 	const searchForms = swedishSearchForms(normalizedQuery);
 	const matches = pictograms.flatMap((pictogram, index) => {
 		const localizedLabel = locale === 'sv'

@@ -1,5 +1,5 @@
 import { base } from '$app/paths';
-import { matchPiktaliPictograms, piktaliManifestUrl, type PiktaliManifestPictogram, type PiktaliSearchResult } from './search-match';
+import { boardBuilderSearchResult, matchPiktaliPictograms, piktaliManifestUrl, type PiktaliManifestPictogram, type PiktaliSearchResult } from './search-match';
 
 export { matchPiktaliPictograms } from './search-match';
 
@@ -27,6 +27,9 @@ export async function searchPiktaliPictograms(
 	query: string,
 	locale: string
 ): Promise<PiktaliSearchResult[]> {
+	const boardBuilderResult = boardBuilderSearchResult(query, locale, base);
+	if (boardBuilderResult.length > 0) return boardBuilderResult;
+
 	try {
 		return matchPiktaliPictograms(await loadPiktaliManifest(), query, locale, base);
 	} catch {

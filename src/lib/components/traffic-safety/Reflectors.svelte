@@ -853,6 +853,16 @@
     .tips-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 12px; }
     .tips-list li { padding: 4px 0 4px 22px; font-size: 16px; }
     .tips-list li::before { top: 4px; }
+    .comparison-section { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto minmax(0, 1fr); gap: 8px 12px; }
+    .comparison-header { grid-column: 1 / -1; margin: 0; gap: 8px; }
+    .comparison-header h2 { font-size: 22px; }
+    .toggle-button { padding: 8px 16px; }
+    .visibility-demo { grid-column: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; padding: 12px; margin: 0; }
+    .environment { flex: 1; min-height: 140px; }
+    .visibility-info { margin-top: 8px; }
+    .time-indicator { margin-bottom: 4px; font-size: 20px; }
+    .visibility-stats { padding: 8px; }
+    .back-demo-button { grid-column: 2; align-self: end; margin: 0; padding: 8px 16px; }
     .character-area { min-height: 220px; padding: 12px; }
     .reflector-items { padding: 12px; }
     .items-grid { gap: 8px; }

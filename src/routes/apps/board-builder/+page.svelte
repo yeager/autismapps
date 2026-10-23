@@ -48,10 +48,18 @@
     searchResults = [];
     try {
       const lang = get(locale);
-      const piktaliResults = await searchPiktaliPictograms(searchQuery, lang);
-      searchResults = piktaliResults.length > 0
-        ? piktaliResults
-        : await searchPictograms(searchQuery, lang);
+      const [piktaliResults, arasaacResults] = await Promise.all([
+        searchPiktaliPictograms(searchQuery, lang),
+        searchPictograms(searchQuery, lang)
+      ]);
+      const seen = new Set<number>();
+      searchResults = [...piktaliResults, ...arasaacResults]
+        .filter((picto) => {
+          if (seen.has(picto.id)) return false;
+          seen.add(picto.id);
+          return true;
+        })
+        .slice(0, 50);
     } catch (error) {
       console.error('Pictogram search failed', error);
     } finally {

@@ -4,6 +4,11 @@ import { join, relative, resolve, sep } from 'node:path';
 
 const basePath = (process.env.LAUNCHER_BASE_PATH || '/launcher').replace(/\/$/, '');
 const variants = ['build', 'build-sv'];
+const siteHostnames = new Set(['autismappar.se', 'autismapps.online']);
+
+function isSiteHostname(hostname) {
+	return [...siteHostnames].some((domain) => hostname === domain || hostname.endsWith(`.${domain}`));
+}
 
 function fail(message) {
 	throw new Error(message);
@@ -58,13 +63,13 @@ for (const variant of variants) {
 		for (const match of html.matchAll(/\bhref\s*=\s*(["'])(.*?)\1/g)) {
 			const href = match[2].replaceAll('&amp;', '&');
 			if (!href) continue;
+			if (/^(?:mailto|tel|sms|javascript|data):/i.test(href)) continue;
 			if (href.startsWith('#')) {
 				const fragment = decode(href.slice(1), href);
 				checked++;
 				if (!sourceIds.has(fragment)) errors.push(`${relative(root, sourceFile)} -> ${href} (missing #${fragment})`);
 				continue;
 			}
-			if (/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href)) continue;
 
 			let url;
 			try {
@@ -73,7 +78,7 @@ for (const variant of variants) {
 				errors.push(`${relative(root, sourceFile)}: invalid href ${href}`);
 				continue;
 			}
-			if (url.origin !== 'https://local.invalid') continue;
+			if (url.origin !== 'https://local.invalid' && !isSiteHostname(url.hostname)) continue;
 			const target = outputFileForPath(root, url.pathname, `${relative(root, sourceFile)} -> ${href}`);
 			if (!target) continue;
 			checked++;

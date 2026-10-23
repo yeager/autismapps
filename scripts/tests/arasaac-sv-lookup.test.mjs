@@ -70,3 +70,25 @@ test('visual review corrections for contact sheets 019 and 020 use the pictured 
 		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
 	}
 });
+
+test('visual review corrections for contact sheets 021 and 022 use the pictured meanings', () => {
+	const expected = {
+		'sum up': ['summera', 5868],
+		crook: ['herdestav', 5922],
+		hush: ['tyst', 5936],
+		'shut up': ['tyst', 5936],
+		'skewered fruit': ['fruktspett', 5931],
+		skewer: ['grillspett', 5931],
+		whip: ['vispa', 5924],
+		beat: ['vispa', 5924],
+		'mixed skewer': ['blandat grillspett', 5932],
+		'medium pig': ['medelstor gris', 5955],
+		takeoff: ['lyfta', 5984],
+		'pupìl': ['elev', 6041],
+		board: ['planka', 6143],
+		humpback: ['puckelrygg', 6020]
+	};
+	for (const [alias, [label, id]] of Object.entries(expected)) {
+		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
+	}
+});

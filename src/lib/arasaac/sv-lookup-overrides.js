@@ -66,7 +66,21 @@ export const SWEDISH_LOOKUP_OVERRIDES = Object.freeze({
 	'power saw': { sv: 'elektrisk såg', id: 5587 },
 	'coping saw': { sv: 'figursåg', id: 5588 },
 	plane: { sv: 'hyvel', id: 5609 },
-	'woodworking plane': { sv: 'hyvel', id: 5609 }
+	'woodworking plane': { sv: 'hyvel', id: 5609 },
+	'sum up': { sv: 'summera', id: 5868 },
+	crook: { sv: 'herdestav', id: 5922 },
+	hush: { sv: 'tyst', id: 5936 },
+	'shut up': { sv: 'tyst', id: 5936 },
+	'skewered fruit': { sv: 'fruktspett', id: 5931 },
+	skewer: { sv: 'grillspett', id: 5931 },
+	'whip': { sv: 'vispa', id: 5924 },
+	beat: { sv: 'vispa', id: 5924 },
+	'mixed skewer': { sv: 'blandat grillspett', id: 5932 },
+	'medium pig': { sv: 'medelstor gris', id: 5955 },
+	'takeoff': { sv: 'lyfta', id: 5984 },
+	'pupìl': { sv: 'elev', id: 6041 },
+	'board': { sv: 'planka', id: 6143 },
+	humpback: { sv: 'puckelrygg', id: 6020 }
 });
 
 /**

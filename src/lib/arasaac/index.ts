@@ -1,6 +1,6 @@
 import { loadSvLookup } from './sv-lookup';
 import { searchBildstod } from './bildstod';
-import { normalizePictogramKeyword } from './search-normalize.js';
+import { normalizePictogramKeyword, resolvePictogramSearchTerm } from './search-normalize.js';
 import { cachedJson } from './cache';
 import { getLocaleDef } from '$lib/i18n/locales';
 
@@ -25,7 +25,8 @@ export async function searchPictograms(
   query: string,
   lang: string = 'en'
 ): Promise<PictogramSearchResult[]> {
-  const queryLower = normalizePictogramKeyword(query);
+  const searchTerm = resolvePictogramSearchTerm(query, lang);
+  const queryLower = normalizePictogramKeyword(searchTerm);
   const seenIds = new Set<number>();
   const results: PictogramSearchResult[] = [];
 
@@ -33,7 +34,7 @@ export async function searchPictograms(
   // Swedish-labelled; only for sv/en (unchanged behaviour) — other locales go straight to ARASAAC
   if (lang === 'sv' || lang === 'en' || lang === '') {
     try {
-      const bildstodResults = await searchBildstod(query, lang === '' ? 'sv' : lang);
+      const bildstodResults = await searchBildstod(searchTerm, lang === '' ? 'sv' : lang);
       for (const b of bildstodResults) {
         if (!seenIds.has(b.id)) {
           results.push({ id: b.id, keyword: b.keyword, url: b.url, urlBW: b.url });
@@ -91,7 +92,7 @@ export async function searchPictograms(
   try {
     const searchLang = lang === 'sv' ? 'en' : getLocaleDef(lang || 'en').arasaac;
     // Cached: the API answers without caching headers (see ./cache.ts); a "no results" 404 rejects
-    const data = await cachedJson<Pictogram[]>(`${API_BASE}/pictograms/${searchLang}/search/${encodeURIComponent(query)}`);
+    const data = await cachedJson<Pictogram[]>(`${API_BASE}/pictograms/${searchLang}/search/${encodeURIComponent(searchTerm)}`);
     const lookup = lang === 'sv' ? await loadSvLookup() : null;
     for (const p of data) {
       if (seenIds.has(p._id)) continue;

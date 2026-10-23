@@ -32,6 +32,12 @@ export function searchPictogramLookup(lookup, query, locale = 'en', limit = 50) 
 		for (const field of fields) {
 			for (const [en, entry] of Object.entries(lookup)) {
 				if (!entry?.id || seenIds.has(entry.id)) continue;
+				// Searching for the Swedish animal "hund" should not also return
+				// the unrelated number "hundra" / "hundred" and its compounds.
+				if (normalizePictogramKeyword(query) === 'hund' && (
+					/\bhundred\b/.test(normalizePictogramKeyword(en))
+					|| /hundra$/.test(normalizePictogramKeyword(entry.sv || ''))
+				)) continue;
 				const label = field === 'sv' ? entry.sv : en;
 				if (!label || !matchesPictogramKeyword(label, query, exact)) continue;
 				seenIds.add(entry.id);

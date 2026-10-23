@@ -5,6 +5,7 @@
  */
 
 import { base } from '$app/paths';
+import { applySwedishLookupOverrides } from './sv-lookup-overrides.js';
 
 let cache: Record<string, { sv: string; id: number }> | null = null;
 let loading: Promise<Record<string, { sv: string; id: number }>> | null = null;
@@ -18,8 +19,9 @@ export function loadSvLookup(): Promise<Record<string, { sv: string; id: number 
       if (res.ok) {
         const data: unknown = await res.json();
         if (data && typeof data === 'object' && Object.keys(data).length > 0) {
-          cache = data as Record<string, { sv: string; id: number }>;
-          return cache;
+			const corrected = applySwedishLookupOverrides(data as Record<string, { sv: string; id: number }>);
+			cache = corrected;
+			return corrected;
         }
       }
     } catch {}

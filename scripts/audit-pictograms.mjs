@@ -1,5 +1,6 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { applySwedishLookupOverrides, SWEDISH_LOOKUP_OVERRIDES } from '../src/lib/arasaac/sv-lookup-overrides.js';
 
 const catalogUrl = 'https://api.arasaac.org/v1/pictograms/all/en';
 const lookupPath = new URL('../static/arasaac-sv.json', import.meta.url);
@@ -39,6 +40,7 @@ if (!catalogResponse.ok) {
 }
 
 const lookup = JSON.parse(lookupText.replace(/^\uFEFF/, ''));
+const correctedLookup = applySwedishLookupOverrides(lookup);
 const catalog = await catalogResponse.json();
 const byId = new Map(catalog.map((pictogram) => [String(pictogram._id), pictogram]));
 const errors = [];
@@ -109,6 +111,16 @@ for (const [term, entry] of Object.entries(lookup)) {
   }
 }
 
+for (const [term, correction] of Object.entries(SWEDISH_LOOKUP_OVERRIDES)) {
+  if (correction === null) {
+    if (term in correctedLookup) errors.push(`${JSON.stringify(term)}: reviewed unrelated catalog alias should be excluded`);
+  } else if ((lookup[term] && lookup[term].id !== correction.id)
+    || !byId.has(String(correction.id))
+    || correctedLookup[term]?.sv !== correction.sv) {
+    errors.push(`${JSON.stringify(term)}: reviewed Swedish correction does not match ARASAAC ID ${correction.id}`);
+  }
+}
+
 const pngFiles = trafficFiles.filter((file) => file.endsWith('.png'));
 for (const file of pngFiles) {
   const id = file.slice(0, -4);
@@ -120,6 +132,7 @@ for (const file of pngFiles) {
 }
 
 console.log(`Checked ${Object.keys(lookup).length} Swedish lookup entries across ${uniqueIds.size} pictogram IDs.`);
+console.log(`Checked ${Object.keys(SWEDISH_LOOKUP_OVERRIDES).length} reviewed Swedish alias corrections against their pictogram IDs.`);
 console.log(`Checked ${pngFiles.length} local traffic-safety PNGs against the catalog and PNG signature.`);
 console.log(`Checked ${Object.values(pictogramIds).filter((id) => id !== null).length} source ID assignments and the traffic-safety card image mappings.`);
 console.log(`Checked three traffic-safety cards resolve to Piktali assets (${['crosswalk', 'reflector', 'car'].join(', ')}), traffic lights and safe places use bundled ARASAAC symbols, and road signs use the ARASAAC warning triangle.`);

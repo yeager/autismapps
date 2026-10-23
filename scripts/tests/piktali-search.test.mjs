@@ -1,9 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { matchPiktaliPictograms } from '../../src/lib/piktali/search-match.ts';
+import { matchPiktaliPictograms, piktaliManifestUrl } from '../../src/lib/piktali/search-match.ts';
 
 const manifest = JSON.parse(await readFile(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
+
+test('Piktali manifest URL changes between deployments and keeps the launcher base path', () => {
+	assert.equal(piktaliManifestUrl('/launcher'), '/launcher/piktali-pictograms/manifest.json?v=2026-10-23-board-builder-search-1');
+	assert.equal(piktaliManifestUrl(''), '/piktali-pictograms/manifest.json?v=2026-10-23-board-builder-search-1');
+});
 
 test('Board Builder name aliases return the local Piktali communication board', () => {
 	for (const query of ['Brädbyggaren', 'Brädbyggare', 'Brädbyggarens', 'Tavlbyggare', 'Board Builder']) {

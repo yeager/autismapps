@@ -1,12 +1,12 @@
 import { base } from '$app/paths';
-import { matchPiktaliPictograms, type PiktaliManifestPictogram, type PiktaliSearchResult } from './search-match';
+import { matchPiktaliPictograms, piktaliManifestUrl, type PiktaliManifestPictogram, type PiktaliSearchResult } from './search-match';
 
 export { matchPiktaliPictograms } from './search-match';
 
 let manifestRequest: Promise<PiktaliManifestPictogram[]> | undefined;
 
 async function loadPiktaliManifest(): Promise<PiktaliManifestPictogram[]> {
-	manifestRequest ??= fetch(`${base}/piktali-pictograms/manifest.json`)
+	manifestRequest ??= fetch(piktaliManifestUrl(base))
 		.then((response) => {
 			if (!response.ok) throw new Error(`Piktali manifest request failed: ${response.status}`);
 			return response.json();

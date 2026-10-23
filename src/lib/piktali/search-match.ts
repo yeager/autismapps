@@ -14,6 +14,15 @@ export interface PiktaliSearchResult {
 	urlBW: string;
 }
 
+// Bump when the Piktali manifest changes so service workers and host caches
+// cannot keep returning a catalog from an older deployment.
+export const PIKTALI_MANIFEST_REVISION = '2026-10-23-board-builder-search-1';
+
+export function piktaliManifestUrl(basePath: string): string {
+	const base = basePath.replace(/\/$/, '');
+	return `${base}/piktali-pictograms/manifest.json?v=${PIKTALI_MANIFEST_REVISION}`;
+}
+
 /** Match common Swedish inflections to a catalog's singular label. */
 function swedishSearchForms(value: string): string[] {
 	const forms = [value];

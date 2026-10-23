@@ -8,6 +8,7 @@ export interface AppDef {
   icon: string;           // path to SVG
   route: string;
   ready: boolean;
+  searchTerms?: string[];
   /** Locales whose content is not adapted yet — the app shows as "coming soon" there */
   unavailableIn?: string[];
 }
@@ -28,7 +29,7 @@ export const NOT_ADAPTED_PT: string[] = [];
 
 const APP_LIST: AppDef[] = [
   // Communication (AAC)
-  { id: 'board-builder', name: 'app.board_builder', description: 'app.board_builder.desc', category: 'communication', icon: '/icons/board-builder.svg', route: '/apps/board-builder', ready: true },
+  { id: 'board-builder', name: 'app.board_builder', description: 'app.board_builder.desc', category: 'communication', icon: '/icons/board-builder.svg', route: '/apps/board-builder', ready: true, searchTerms: ['Tavlbyggare'] },
   { id: 'talk-board', name: 'app.talk_board', description: 'app.talk_board.desc', category: 'communication', icon: '/icons/talk-board.svg', route: '/apps/talk-board', ready: true },
   { id: 'situation-cards', name: 'app.situation_cards', description: 'app.situation_cards.desc', category: 'communication', icon: '/icons/situation-cards.svg', route: '/apps/situation-cards', ready: true },
   { id: 'talking-mat', name: 'app.talking_mat', description: 'app.talking_mat.desc', category: 'communication', icon: '/icons/talking-mat.svg', route: '/apps/talking-mat', ready: true },

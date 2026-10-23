@@ -28,7 +28,8 @@
     const query = searchQuery.trim().toLocaleLowerCase(bcp47);
     const matching = ALL_APPS.filter((app) => {
       const matchesCategory = !activeCategory || app.category === activeCategory;
-      const matchesQuery = !query || `${$t(app.name)} ${$t(app.description)}`.toLocaleLowerCase(bcp47).includes(query);
+      const searchableText = [$t(app.name), $t(app.description), ...(app.searchTerms ?? [])].join(' ');
+      const matchesQuery = !query || searchableText.toLocaleLowerCase(bcp47).includes(query);
       return matchesCategory && matchesQuery;
     });
 

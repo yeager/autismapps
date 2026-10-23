@@ -297,18 +297,6 @@
         </div>
       </div>
 
-      <!-- Video placeholder -->
-      {#if currentSound.videoPlaceholder}
-        <div class="video-placeholder">
-          <div class="video-thumb">
-            <span class="video-play-icon">▶</span>
-          </div>
-          <div class="video-info">
-            <span class="video-label">{$t('promptGuide.videoComingSoon')}</span>
-            <span class="video-desc">{$t('promptGuide.videoDesc')}</span>
-          </div>
-        </div>
-      {/if}
     </section>
   {/if}
 
@@ -685,52 +673,6 @@
   @keyframes pulse-icon {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.2); }
-  }
-
-  /* ═══ VIDEO PLACEHOLDER ═══ */
-  .video-placeholder {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: #F0F0F0;
-    border-radius: 14px;
-    border: 2px dashed #BDC3C7;
-    opacity: 0.7;
-  }
-
-  .video-thumb {
-    width: 80px;
-    height: 56px;
-    background: #333;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .video-play-icon {
-    color: white;
-    font-size: 1.5rem;
-    opacity: 0.7;
-  }
-
-  .video-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .video-label {
-    font-weight: 600;
-    color: #555;
-    font-size: 0.95rem;
-  }
-
-  .video-desc {
-    font-size: 0.8rem;
-    color: #95A5A6;
   }
 
   /* ═══ RESPONSIVE ═══ */

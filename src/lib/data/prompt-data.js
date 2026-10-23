@@ -102,7 +102,6 @@ export const DIRECTION_ANGLES = {
  * @property {string[]} steps_en
  * @property {string} exampleWord
  * @property {number} arasaacId
- * @property {boolean} [videoPlaceholder]
  */
 
 /**
@@ -132,7 +131,6 @@ export function getSoundsByCategory(categoryId) {
  *   description_sv: string, description_en: string,
  *   steps_sv: string[], steps_en: string[],
  *   exampleWord: string, arasaacId: number,
- *   videoPlaceholder?: boolean
  * }>}
  */
 export const promptData = [
@@ -163,7 +161,6 @@ export const promptData = [
     ],
     exampleWord: 'mamma',
     arasaacId: 2458,
-    videoPlaceholder: true,
   },
   {
     sound: 'b',
@@ -189,7 +186,6 @@ export const promptData = [
     ],
     exampleWord: 'boll',
     arasaacId: 3241,
-    videoPlaceholder: true,
   },
   {
     sound: 'p',
@@ -215,7 +211,6 @@ export const promptData = [
     ],
     exampleWord: 'pappa',
     arasaacId: 31146,
-    videoPlaceholder: true,
   },
 
   // ═══════════════════════════════════════
@@ -245,7 +240,6 @@ export const promptData = [
     ],
     exampleWord: 'fisk',
     arasaacId: 2520,
-    videoPlaceholder: true,
   },
   {
     sound: 'v',
@@ -271,7 +265,6 @@ export const promptData = [
     ],
     exampleWord: 'vatten',
     arasaacId: 32464,
-    videoPlaceholder: true,
   },
 
   // ═══════════════════════════════════════
@@ -301,7 +294,6 @@ export const promptData = [
     ],
     exampleWord: 'tak',
     arasaacId: 2584,
-    videoPlaceholder: true,
   },
   {
     sound: 'd',
@@ -327,7 +319,6 @@ export const promptData = [
     ],
     exampleWord: 'dörr',
     arasaacId: 3244,
-    videoPlaceholder: true,
   },
   {
     sound: 'n',
@@ -354,7 +345,6 @@ export const promptData = [
     ],
     exampleWord: 'näsa',
     arasaacId: 2887,
-    videoPlaceholder: true,
   },
   {
     sound: 'l',
@@ -380,7 +370,6 @@ export const promptData = [
     ],
     exampleWord: 'lampa',
     arasaacId: 4936,
-    videoPlaceholder: true,
   },
   {
     sound: 's',
@@ -406,7 +395,6 @@ export const promptData = [
     ],
     exampleWord: 'sol',
     arasaacId: 7252,
-    videoPlaceholder: true,
   },
 
   // ═══════════════════════════════════════
@@ -437,7 +425,6 @@ export const promptData = [
     ],
     exampleWord: 'katt',
     arasaacId: 7114,
-    videoPlaceholder: true,
   },
   {
     sound: 'g',
@@ -464,7 +451,6 @@ export const promptData = [
     ],
     exampleWord: 'gris',
     arasaacId: 24972,
-    videoPlaceholder: true,
   },
   {
     sound: 'ng',
@@ -491,7 +477,6 @@ export const promptData = [
     ],
     exampleWord: 'ring',
     arasaacId: 6900,
-    videoPlaceholder: true,
   },
 
   // ═══════════════════════════════════════
@@ -522,7 +507,6 @@ export const promptData = [
     ],
     exampleWord: 'sjö',
     arasaacId: 6022,
-    videoPlaceholder: true,
   },
   {
     sound: 'tj',
@@ -548,7 +532,6 @@ export const promptData = [
     ],
     exampleWord: 'tjugo',
     arasaacId: 29550,
-    videoPlaceholder: true,
   },
   {
     sound: 'r',
@@ -574,7 +557,6 @@ export const promptData = [
     ],
     exampleWord: 'resa',
     arasaacId: 28173,
-    videoPlaceholder: true,
   },
   {
     sound: 'rd',
@@ -600,7 +582,6 @@ export const promptData = [
     ],
     exampleWord: 'bord',
     arasaacId: 3129,
-    videoPlaceholder: true,
   },
   {
     sound: 'rt',
@@ -626,6 +607,5 @@ export const promptData = [
     ],
     exampleWord: 'kort',
     arasaacId: 17208,
-    videoPlaceholder: true,
   },
 ];

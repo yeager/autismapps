@@ -19,6 +19,9 @@
   let searchQuery = $state('');
   let searchResults = $state<PictogramSearchResult[]>([]);
   let searching = $state(false);
+  let hasSearched = $state(false);
+  let searchTimeout: ReturnType<typeof setTimeout> | undefined;
+  let searchRequestId = 0;
   let selectedCellIndex = $state<number | null>(null);
   let savedBoards = $state<Board[]>([]);
   let showMyBoards = $state(false);
@@ -42,16 +45,42 @@
     cells = createEmptyCells(size);
   }
 
-  async function doSearch() {
-    if (!searchQuery.trim()) return;
+  function handleSearchInput(event: Event) {
+    searchQuery = (event.currentTarget as HTMLInputElement).value;
+    if (searchTimeout) clearTimeout(searchTimeout);
+
+    const query = searchQuery.trim();
+    const requestId = ++searchRequestId;
+    searchResults = [];
+    hasSearched = false;
+    searching = false;
+    if (!query) return;
+
+    searchTimeout = setTimeout(() => {
+      void doSearch(requestId);
+    }, 350);
+  }
+
+  async function doSearch(requestId = ++searchRequestId) {
+    if (searchTimeout) {
+      clearTimeout(searchTimeout);
+      searchTimeout = undefined;
+    }
+    const query = searchQuery.trim();
+    if (!query) {
+      searchResults = [];
+      hasSearched = false;
+      return;
+    }
     searching = true;
     searchResults = [];
     try {
       const lang = get(locale);
       const [piktaliResults, arasaacResults] = await Promise.all([
-        searchPiktaliPictograms(searchQuery, lang),
-        searchPictograms(searchQuery, lang)
+        searchPiktaliPictograms(query, lang),
+        searchPictograms(query, lang)
       ]);
+      if (requestId !== searchRequestId) return;
       const seen = new Set<number>();
       searchResults = [...piktaliResults, ...arasaacResults]
         .filter((picto) => {
@@ -60,10 +89,14 @@
           return true;
         })
         .slice(0, 50);
+      hasSearched = true;
     } catch (error) {
-      console.error('Pictogram search failed', error);
+      if (requestId === searchRequestId) {
+        console.error('Pictogram search failed', error);
+        hasSearched = true;
+      }
     } finally {
-      searching = false;
+      if (requestId === searchRequestId) searching = false;
     }
   }
 
@@ -283,9 +316,10 @@
             type="search"
             bind:value={searchQuery}
             placeholder={$t('board.search_pictograms')}
+            oninput={handleSearchInput}
             onkeydown={(e) => { if (e.key === 'Enter') doSearch(); }}
           />
-          <button class="search-go" onclick={doSearch} disabled={searching}>
+          <button class="search-go" onclick={() => doSearch()} disabled={searching}>
             {searching ? '...' : '🔍'}
           </button>
         </div>
@@ -305,7 +339,7 @@
             </button>
           {/each}
         </div>
-      {:else if searchQuery && !searching}
+      {:else if searchQuery && hasSearched && !searching}
         <p class="no-results">{$t('board.no_results')}</p>
       {/if}
 

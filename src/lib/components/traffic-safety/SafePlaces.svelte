@@ -682,6 +682,28 @@
     transform: translateY(-2px);
   }
 
+  @media (min-width: 769px) and (max-height: 800px) {
+    .safe-places-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .activity-header { flex: 0 0 56px; padding: 6px 16px; }
+    .activity-header h1 { font-size: 24px; }
+    .back-button { padding: 8px 16px; }
+    .safe-places-content { flex: 1; min-height: 0; width: 100%; max-width: none; padding: 8px 16px; }
+    .overview-section, .game-section, .results-section { height: 100%; padding: 12px; }
+    .instructions h2 { margin-bottom: 6px; font-size: 22px; }
+    .instructions p { margin-bottom: 8px; font-size: 16px; line-height: 1.35; }
+    .examples { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 8px 0; }
+    .example-card { padding: 8px 12px; }
+    .example-icon { margin-bottom: 4px; font-size: 28px; }
+    .example-card h3 { margin-bottom: 4px; font-size: 17px; }
+    .example-card li { padding: 3px 0; font-size: 16px; }
+    .start-game-button { margin-top: 6px; padding: 8px 22px; font-size: 18px; }
+    .game-header { margin-bottom: 8px; }
+    .scenario-card { display: flex; align-items: center; gap: 16px; padding: 12px; }
+    .scenario-icon { font-size: 72px; }
+    .answer-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+    .answer-button { min-height: 52px; padding: 8px; }
+  }
+
   /* Mobile responsiveness */
   @media (max-width: 768px) {
     .safe-places-content {

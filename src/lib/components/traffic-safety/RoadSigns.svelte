@@ -614,6 +614,24 @@
     background: #757575;
   }
 
+  @media (min-width: 769px) and (max-height: 800px) {
+    .road-signs-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .activity-header { flex: 0 0 56px; padding: 6px 16px; }
+    .activity-header h1 { font-size: 24px; }
+    .back-button { padding: 8px 16px; }
+    .road-signs-content { flex: 1; min-height: 0; width: 100%; max-width: none; padding: 8px 16px; }
+    .overview-section, .flashcard, .quiz-section { height: 100%; padding: 12px; }
+    .mode-buttons { margin-bottom: 8px; }
+    .mode-button { padding: 8px 18px; font-size: 16px; }
+    .signs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .sign-card { min-height: 0; height: 150px; padding: 8px; gap: 4px; }
+    .sign-icon { width: 72px; height: 72px; }
+    .quiz-header { margin-bottom: 8px; }
+    .quiz-sign { width: 100px; height: 100px; }
+    .quiz-options { gap: 8px; }
+    .quiz-option { min-height: 48px; padding: 8px; }
+  }
+
   /* Mobile responsiveness */
   @media (max-width: 768px) {
     .road-signs-content {

@@ -391,6 +391,29 @@
   }
 
   /* Responsive design */
+  @media (min-width: 769px) and (max-height: 800px) {
+    .vehicles-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; padding: 8px 16px; }
+    .header { flex: 0 0 48px; margin-bottom: 8px; }
+    .header h2 { font-size: 24px; }
+    .back-button, .nav-button { padding: 8px 16px; }
+    .content { flex: 1; min-height: 0; }
+    .vehicle-grid { height: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .vehicle-card { min-height: 0; padding: 8px; gap: 6px; }
+    .vehicle-icon { width: 64px; height: 64px; }
+    .vehicle-card h3 { font-size: 17px; }
+    .vehicle-detail { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 12px; height: 100%; max-width: none; }
+    .vehicle-info, .scenarios { margin: 0; padding: 12px; }
+    .large-vehicle-icon { width: 96px; height: 96px; margin: 0 auto 8px; }
+    .vehicle-info h2 { margin: 0 0 8px; font-size: 24px; }
+    .action-buttons { gap: 8px; }
+    .sound-button, .scenario-button { padding: 8px 12px; font-size: 16px; }
+    .scenarios h3 { margin-bottom: 8px; font-size: 20px; }
+    .scenario-actions { gap: 8px; }
+    .action-button { margin: 0; padding: 8px; min-height: 76px; }
+    .action-button img { width: 32px; height: 32px; }
+    .navigation { margin-top: 8px; }
+  }
+
   @media (max-width: 768px) {
     .action-buttons {
       flex-direction: column;

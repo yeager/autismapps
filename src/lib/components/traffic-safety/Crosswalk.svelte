@@ -494,6 +494,26 @@
   }
 
   /* Mobile responsiveness */
+  @media (min-width: 769px) and (max-height: 800px) {
+    .crosswalk-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .activity-header { flex: 0 0 56px; padding: 6px 16px; }
+    .activity-header h1 { font-size: 24px; }
+    .back-button { padding: 8px 16px; }
+    .crosswalk-content { flex: 1; min-height: 0; width: 100%; padding: 8px 16px; }
+    .menu-section, .practice-section, .quiz-section { height: 100%; padding: 12px; }
+    .steps-overview h2 { margin-bottom: 8px; font-size: 22px; }
+    .steps-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin-bottom: 8px; }
+    .step-item { min-height: 112px; flex-direction: column; justify-content: center; gap: 6px; padding: 8px; margin: 0; font-size: 16px; }
+    .step-number { width: 28px; height: 28px; }
+    .step-text { line-height: 1.25; }
+    .practice-button, .next-button, .quiz-button { padding: 8px 18px; font-size: 18px; }
+    .street-view { height: 150px; margin-bottom: 8px; }
+    .current-step h3, .quiz-display h3 { margin: 0 0 8px; font-size: 22px; }
+    .step-display { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .quiz-buttons { gap: 8px; }
+    .quiz-button { min-height: 48px; }
+  }
+
   @media (max-width: 768px) {
     .crosswalk-content {
       padding: 1rem;

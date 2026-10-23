@@ -1,6 +1,6 @@
 import { loadSvLookup } from './sv-lookup';
 import { searchBildstod } from './bildstod';
-import { normalizePictogramKeyword, resolvePictogramSearchTerm } from './search-normalize.js';
+import { matchesPictogramKeyword, normalizePictogramKeyword, resolvePictogramSearchTerm } from './search-normalize.js';
 import { cachedJson } from './cache';
 import { getLocaleDef } from '$lib/i18n/locales';
 
@@ -50,7 +50,7 @@ export async function searchPictograms(
 
     // 2a: Exact match on SWEDISH value (prevents "barn" → "ladugård")
     for (const [en, entry] of Object.entries(lookup)) {
-      if (entry.sv.toLowerCase() === queryLower && entry.id && !seenIds.has(entry.id)) {
+      if (matchesPictogramKeyword(entry.sv, queryLower, true) && entry.id && !seenIds.has(entry.id)) {
         results.push({ id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) });
         seenIds.add(entry.id);
         break;
@@ -58,7 +58,7 @@ export async function searchPictograms(
     }
 
     // 2b: Exact match on English key
-    const exactEnKey = lookup[queryLower];
+    const exactEnKey = Object.entries(lookup).find(([en]) => matchesPictogramKeyword(en, queryLower, true))?.[1];
     if (exactEnKey?.id && !seenIds.has(exactEnKey.id)) {
       results.push({ id: exactEnKey.id, keyword: exactEnKey.sv, url: getPictogramUrl(exactEnKey.id, false), urlBW: getPictogramUrl(exactEnKey.id, true) });
       seenIds.add(exactEnKey.id);
@@ -70,8 +70,8 @@ export async function searchPictograms(
       const enPartial: PictogramSearchResult[] = [];
       for (const [en, entry] of Object.entries(lookup)) {
         if (!entry.id || seenIds.has(entry.id)) continue;
-        const svLower = entry.sv.toLowerCase();
-        if (svLower.includes(queryLower)) {
+        const svLower = normalizePictogramKeyword(entry.sv);
+        if (matchesPictogramKeyword(entry.sv, queryLower)) {
           const item = { id: entry.id, keyword: entry.sv, url: getPictogramUrl(entry.id, false), urlBW: getPictogramUrl(entry.id, true) };
           if (svLower === queryLower) svPartial.unshift(item); else svPartial.push(item);
           seenIds.add(entry.id);

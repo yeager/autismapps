@@ -9,6 +9,14 @@ export function normalizePictogramKeyword(value) {
 		.replace(/\p{Diacritic}/gu, '');
 }
 
+/** Compare labels and queries with the same accent/case normalization. */
+/** @param {string} label @param {string} query @param {boolean} [exact] */
+export function matchesPictogramKeyword(label, query, exact = false) {
+	const normalizedLabel = normalizePictogramKeyword(label);
+	const normalizedQuery = normalizePictogramKeyword(query);
+	return exact ? normalizedLabel === normalizedQuery : normalizedLabel.includes(normalizedQuery);
+}
+
 const boardBuilderTerms = new Set([
 	'bradbyggare',
 	'bradbyggaren',

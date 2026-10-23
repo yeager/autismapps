@@ -121,7 +121,7 @@
 
 <style>
   .traffic-safety-app {
-    min-height: 100vh;
+    min-height: calc(100dvh - 68px);
     background: linear-gradient(135deg, #e8f5e8 0%, #f3e5f5 50%, #e3f2fd 100%);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   }

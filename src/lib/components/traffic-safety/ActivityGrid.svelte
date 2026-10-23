@@ -178,6 +178,70 @@
     color: #666;
   }
 
+  @media (min-width: 769px) and (max-height: 850px) {
+    .activity-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .activity-card {
+      min-height: 0;
+      padding: 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .activity-icon {
+      width: 76px;
+      height: 76px;
+    }
+
+    .activity-text {
+      gap: 0.25rem;
+    }
+
+    .activity-text h3 {
+      font-size: 20px;
+    }
+
+    .activity-text p {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+
+  @media (max-width: 768px) and (min-height: 700px) {
+    .activity-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .activity-card {
+      min-height: 0;
+      padding: 0.5rem;
+      gap: 0.375rem;
+    }
+
+    .activity-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .activity-text {
+      gap: 0.25rem;
+    }
+
+    .activity-text h3 {
+      font-size: 18px;
+    }
+
+    .activity-text p {
+      font-size: 14px;
+      line-height: 1.25;
+    }
+  }
+
   .activity-text {
     flex: 1;
     display: flex;

@@ -95,18 +95,18 @@ The launcher currently contains **72 tools** across eight categories. The lists 
 ## Tech Stack
 
 - **SvelteKit** (Svelte 5 runes) with static adapter
-- **Piper WASM** — Offline text-to-speech (Swedish/English)
+- **Piper WASM** — Offline text-to-speech (Swedish, English, Brazilian Portuguese)
 - **Web Speech API** — Fallback TTS
 - **Dexie** (IndexedDB) — Offline storage, profiles
-- **ARASAAC** — Pictogram search (CC BY-NC-SA 3.0)
+- **Piktali and ARASAAC** — Local pictogram catalogue and online pictogram search
 - **Svenskt teckenspråkslexikon** — Sign language videos (CC BY-NC-SA 4.0)
 - **PWA** — Installable, works offline
 - **CSS only** — No Tailwind, no component library
 
 ## i18n
 
-- **Swedish (sv) and English (en):** 3,366 strings in each source catalog
-- The app name, page language, share metadata, and installable PWA manifest follow the selected language: Autismappar in Swedish and Autismapps in English
+- **Swedish (sv), English (en), and Brazilian Portuguese (pt-BR)** are available locales. Some pt-BR pronunciation content, including tongue-viewer sequences, is still awaiting speech-language specialist review.
+- Swedish pages use the Autismappar name; English and pt-BR pages use Autismapps. Page language, share metadata, and the installable PWA manifest follow the selected locale.
 - Additional translation work is managed through [Transifex](https://app.transifex.com/danielnylander/autismapps/)
 
 ## Development
@@ -122,11 +122,19 @@ npm run build    # Output in build/
 npm run preview  # Preview built site
 ```
 
-Build for the launcher hosted at `autismappar.se/launcher/` and `autismapps.online/launcher/`:
+Build localized launcher trees for Loopia:
 ```bash
-npm run build:launcher
+npm run build:launcher:domains # English in build/, Swedish in build-sv/
+npm run verify:launcher:locales
+npm run audit:links
 ```
-Upload the **contents** of `build/` into the website's `/launcher/` directory. This build uses `/launcher` for its assets and keeps the prerendered home page in `index.html`; `fallback.html` handles unknown routes. It also emits directory indexes for extensionless routes such as `/launcher/about` so they continue to work if the host has an older directory at that path. Keep `.htaccess` enabled for the slash behavior and cache headers.
+
+The live Loopia setup uses the shared document root `autismappar.se/public_html/` for both domains. Upload the **contents** of each build, preserving its relative paths:
+
+- `build-sv/` → `autismappar.se/public_html/launcher-sv/` for `autismappar.se`
+- `build/` → `autismappar.se/public_html/launcher/` for `autismapps.online`
+
+The domain-root `.htaccess` routes the Swedish hostname to `launcher-sv/`; `autismapps.online` serves the English `launcher/` tree. The separate FTPS folder `autismapps.online/public_html/launcher/` is not the active public webroot. Preserve the root and launcher `.htaccess` files and do not delete extra server files. The launcher build keeps the prerendered home page in `index.html`, uses `fallback.html` for unknown routes, and emits directory indexes for extensionless app routes.
 
 ## TTS Configuration
 

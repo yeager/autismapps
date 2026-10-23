@@ -6,6 +6,7 @@
 
 import { base } from '$app/paths';
 import { applySwedishLookupOverrides } from './sv-lookup-overrides.js';
+import { swedishLookupUrl } from './sv-lookup-url.js';
 
 let cache: Record<string, { sv: string; id: number }> | null = null;
 let loading: Promise<Record<string, { sv: string; id: number }>> | null = null;
@@ -15,7 +16,7 @@ export function loadSvLookup(): Promise<Record<string, { sv: string; id: number 
   // Concurrent searches (apps look up a whole vocabulary at once) share one load of the 785 KB file
   loading ??= (async () => {
     try {
-      const res = await fetch(`${base}/arasaac-sv.json`);
+      const res = await fetch(swedishLookupUrl(base));
       if (res.ok) {
         const data: unknown = await res.json();
         if (data && typeof data === 'object' && Object.keys(data).length > 0) {

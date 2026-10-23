@@ -1,10 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { swedishLookupUrl, SWEDISH_LOOKUP_REVISION } from '../../src/lib/arasaac/sv-lookup-url.js';
 import { searchPictogramLookup } from '../../src/lib/arasaac/search-normalize.js';
 import { applySwedishLookupOverrides, SWEDISH_LOOKUP_OVERRIDES } from '../../src/lib/arasaac/sv-lookup-overrides.js';
 
 const catalog = JSON.parse(await readFile(new URL('../../static/arasaac-sv.json', import.meta.url), 'utf8'));
+
+test('Swedish lookup URL is versioned and respects the launcher base path', () => {
+	assert.equal(swedishLookupUrl('/launcher'), `/launcher/arasaac-sv.json?v=${SWEDISH_LOOKUP_REVISION}`);
+	assert.equal(swedishLookupUrl(''), `/arasaac-sv.json?v=${SWEDISH_LOOKUP_REVISION}`);
+});
 const corrected = applySwedishLookupOverrides(catalog);
 
 test('reviewed Swedish labels match the pictograms and intended meanings', () => {

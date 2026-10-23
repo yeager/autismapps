@@ -92,3 +92,25 @@ test('visual review corrections for contact sheets 021 and 022 use the pictured 
 		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
 	}
 });
+
+test('visual review corrections for contact sheets 023 and 024 use the pictured meanings', () => {
+	const expected = {
+		whistle: ['visselpipa', 6182],
+		court: ['idrottshall', 6186],
+		spoke: ['eker', 6197],
+		'wheel spoke': ['hjuleker', 6197],
+		'suck in': ['suga in', 6217],
+		sip: ['smutta', 6217],
+		'suck up': ['suga upp', 6217],
+		'increase power': ['öka volymen', 6218],
+		underline: ['stryka under', 6219],
+		flap: ['flaxa', 6246],
+		hit: ['slå', 6513],
+		'get up': ['resa sig', 6548],
+		rise: ['resa sig', 6548],
+		uprise: ['stiga upp', 6549]
+	};
+	for (const [alias, [label, id]] of Object.entries(expected)) {
+		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
+	}
+});

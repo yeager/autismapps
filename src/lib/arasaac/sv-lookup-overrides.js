@@ -80,7 +80,21 @@ export const SWEDISH_LOOKUP_OVERRIDES = Object.freeze({
 	'takeoff': { sv: 'lyfta', id: 5984 },
 	'pupìl': { sv: 'elev', id: 6041 },
 	'board': { sv: 'planka', id: 6143 },
-	humpback: { sv: 'puckelrygg', id: 6020 }
+	humpback: { sv: 'puckelrygg', id: 6020 },
+	whistle: { sv: 'visselpipa', id: 6182 },
+	court: { sv: 'idrottshall', id: 6186 },
+	spoke: { sv: 'eker', id: 6197 },
+	'wheel spoke': { sv: 'hjuleker', id: 6197 },
+	'suck in': { sv: 'suga in', id: 6217 },
+	sip: { sv: 'smutta', id: 6217 },
+	'suck up': { sv: 'suga upp', id: 6217 },
+	'increase power': { sv: 'öka volymen', id: 6218 },
+	underline: { sv: 'stryka under', id: 6219 },
+	flap: { sv: 'flaxa', id: 6246 },
+	hit: { sv: 'slå', id: 6513 },
+	'get up': { sv: 'resa sig', id: 6548 },
+	rise: { sv: 'resa sig', id: 6548 },
+	uprise: { sv: 'stiga upp', id: 6549 }
 });
 
 /**

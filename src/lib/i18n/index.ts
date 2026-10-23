@@ -29,6 +29,9 @@ const translations: Record<string, TranslationCatalog> = {
   sv: flattenCatalog(sv)
 };
 const loadedLocales = new Set(['en', 'sv']);
+const lazyLocaleLoaders: Record<string, () => Promise<{ default: unknown }>> = {
+  pt_BR: () => import('./messages/pt_BR.json')
+};
 
 // Static builds are published on two language-specific domains. Seed the
 // prerendered HTML with the matching language; the browser still selects its
@@ -40,8 +43,13 @@ export const fallbackLocale = DEFAULT_LOCALE;
 /** Loads a dictionary; resolves false if the file does not exist. */
 export async function loadLocale(lang: string): Promise<boolean> {
   if (loadedLocales.has(lang)) return true;
+  const load = lazyLocaleLoaders[lang];
+  if (!load) {
+    console.warn(`Locale ${lang} not found, falling back to ${fallbackLocale}`);
+    return false;
+  }
   try {
-    const mod = await import(`./messages/${lang}.json`);
+    const mod = await load();
     translations[lang] = flattenCatalog(mod.default);
     loadedLocales.add(lang);
     return true;

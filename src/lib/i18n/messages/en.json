@@ -1135,6 +1135,7 @@
   "about.feat.privacy": "No ads or account required. Settings are stored locally; online services may receive technical request data.",
   "about.feat.free": "Free and open source forever",
   "about.credits": "Credits",
+  "about.credit.piktali": "Pictograms from the Piktali project.",
   "about.credit.arasaac": "Pictograms (CC BY-NC-SA 3.0). We have also contributed to ARASAAC's Swedish translation and language review.",
   "about.credit.signs": "Swedish Sign Language (CC BY-NC-SA 4.0, Stockholm University)",
   "about.credit.piper": "Offline text-to-speech engine",

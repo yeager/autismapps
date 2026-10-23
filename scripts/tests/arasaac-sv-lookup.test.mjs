@@ -114,3 +114,35 @@ test('visual review corrections for contact sheets 023 and 024 use the pictured 
 		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
 	}
 });
+
+test('visual review corrections for contact sheet 025 use the pictured meanings', () => {
+	const expected = {
+		'hake finger': ['fiskpinne', 6653],
+		company: ['sällskap', 6880],
+		that: ['den där', 6906],
+		repair: ['reparera', 6910],
+		land: ['landa', 6917],
+		increase: ['öka', 6920]
+	};
+	for (const [alias, [label, id]] of Object.entries(expected)) {
+		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
+	}
+});
+
+test('visual review corrections for contact sheet 026 use the pictured meanings', () => {
+	const expected = {
+		cluck: ['kackla', 6949],
+		cackle: ['kackla', 6950],
+		clack: ['kackla', 6950],
+		'be hot': ['vara varm', 6952],
+		yield: ['lämna företräde', 6968],
+		'give way': ['lämna företräde', 6968],
+		correct: ['rätta', 6998],
+		'take off': ['lyfta', 7018],
+		chase: ['jaga', 7037],
+		pursue: ['jaga', 7037]
+	};
+	for (const [alias, [label, id]] of Object.entries(expected)) {
+		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
+	}
+});

@@ -94,7 +94,23 @@ export const SWEDISH_LOOKUP_OVERRIDES = Object.freeze({
 	hit: { sv: 'slå', id: 6513 },
 	'get up': { sv: 'resa sig', id: 6548 },
 	rise: { sv: 'resa sig', id: 6548 },
-	uprise: { sv: 'stiga upp', id: 6549 }
+	uprise: { sv: 'stiga upp', id: 6549 },
+	'hake finger': { sv: 'fiskpinne', id: 6653 },
+	company: { sv: 'sällskap', id: 6880 },
+	that: { sv: 'den där', id: 6906 },
+	repair: { sv: 'reparera', id: 6910 },
+	land: { sv: 'landa', id: 6917 },
+	increase: { sv: 'öka', id: 6920 },
+	cluck: { sv: 'kackla', id: 6949 },
+	cackle: { sv: 'kackla', id: 6950 },
+	clack: { sv: 'kackla', id: 6950 },
+	'be hot': { sv: 'vara varm', id: 6952 },
+	yield: { sv: 'lämna företräde', id: 6968 },
+	'give way': { sv: 'lämna företräde', id: 6968 },
+	correct: { sv: 'rätta', id: 6998 },
+	'take off': { sv: 'lyfta', id: 7018 },
+	chase: { sv: 'jaga', id: 7037 },
+	pursue: { sv: 'jaga', id: 7037 }
 });
 
 /**

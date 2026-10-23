@@ -136,6 +136,8 @@ The live Loopia setup uses the shared document root `autismappar.se/public_html/
 
 The domain-root `.htaccess` routes the Swedish hostname to `launcher-sv/`; `autismapps.online` serves the English `launcher/` tree. The separate FTPS folder `autismapps.online/public_html/launcher/` is not the active public webroot. Preserve the root and launcher `.htaccess` files and do not delete extra server files. The launcher build keeps the prerendered home page in `index.html`, uses `fallback.html` for unknown routes, and emits directory indexes for extensionless app routes.
 
+If preparing a partial upload, include both versioned search catalogs from each build: `arasaac-sv-<revision>.json` and `piktali-pictograms/manifest-<revision>.json`. They are required by the launcher search code; omitting them makes pictogram searches return no results. `npm run verify:launcher:locales` checks these files in both language builds before upload.
+
 ## TTS Configuration
 
 - **Default engine:** Piper WASM (offline, ~5MB model download)

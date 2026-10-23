@@ -1,6 +1,8 @@
 // Verify domain-specific prerendered language, route coverage, and asset paths.
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
+import { SWEDISH_LOOKUP_REVISION } from '../src/lib/arasaac/sv-lookup-url.js';
+import { PIKTALI_MANIFEST_REVISION } from '../src/lib/piktali/manifest-url.js';
 
 const basePath = (process.env.LAUNCHER_BASE_PATH || '/launcher').replace(/\/$/, '');
 const canonicalBasePath = (process.env.CANONICAL_BASE_PATH || '/launcher').replace(/\/$/, '');
@@ -24,6 +26,15 @@ function attr(html, pattern) {
 
 for (const variant of variants) {
 	const root = resolve(variant.directory);
+	const requiredCatalogs = [
+		`arasaac-sv-${SWEDISH_LOOKUP_REVISION}.json`,
+		join('piktali-pictograms', `manifest-${PIKTALI_MANIFEST_REVISION}.json`)
+	];
+	for (const catalog of requiredCatalogs) {
+		const path = join(root, catalog);
+		expect(existsSync(path), `${variant.directory}: missing required search catalog ${catalog}`);
+		expect(readFileSync(path).length > 0, `${variant.directory}: empty required search catalog ${catalog}`);
+	}
 	const home = readFileSync(join(root, 'index.html'), 'utf8');
 	expect(home.includes(`<html lang="${variant.code}"`), `${variant.directory}: wrong home lang`);
 	expect(home.includes(variant.marker), `${variant.directory}: missing localized home marker`);
@@ -56,4 +67,4 @@ expect(/<h1[^>]*>\s*Trafiksäkerhet\s*<\/h1>/.test(trafficSv), 'Swedish Traffic 
 const trafficEn = readFileSync(join('build', 'apps', 'traffic-safety', 'index.html'), 'utf8');
 expect(/<h1[^>]*>\s*Traffic Safety\s*<\/h1>/.test(trafficEn), 'English Traffic Safety heading is not prerendered in English');
 
-console.log(`Verified ${appRoutes.length} app routes in English and Swedish builds; both domains have localized HTML, canonical metadata, and local assets.`);
+console.log(`Verified ${appRoutes.length} app routes, localized HTML, canonical metadata, local assets, and versioned search catalogs in English and Swedish builds.`);

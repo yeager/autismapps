@@ -10,6 +10,7 @@
     "build:launcher:domains": "node scripts/build-launcher-domains.mjs",
     "verify:launcher:locales": "node scripts/verify-launcher-locales.mjs",
     "audit:links": "node scripts/audit-internal-links.mjs",
+    "audit:app-cards": "node --experimental-strip-types scripts/audit-app-cards.mjs",
     "audit:pictograms": "node scripts/audit-pictograms.mjs",
     "preview": "vite preview",
     "prepare": "svelte-kit sync || echo ''",

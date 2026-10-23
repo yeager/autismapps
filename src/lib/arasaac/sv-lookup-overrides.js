@@ -110,7 +110,30 @@ export const SWEDISH_LOOKUP_OVERRIDES = Object.freeze({
 	correct: { sv: 'rätta', id: 6998 },
 	'take off': { sv: 'lyfta', id: 7018 },
 	chase: { sv: 'jaga', id: 7037 },
-	pursue: { sv: 'jaga', id: 7037 }
+	pursue: { sv: 'jaga', id: 7037 },
+	'pussy': { sv: 'kisse', id: 7114 },
+	scourer: { sv: 'skursvamp', id: 7098 },
+	'scouring pad': { sv: 'skursvamp', id: 7098 },
+	honk: { sv: 'kvacka', id: 7119 },
+	quack: { sv: 'kvacka', id: 7119 },
+	cronk: { sv: 'kraxa', id: 7119 },
+	caw: { sv: 'kraxa', id: 7119 },
+	grunt: { sv: 'grymta', id: 7121 },
+	corncob: { sv: 'majskolv', id: 7150 },
+	shrivel: { sv: 'vissna', id: 7153 },
+	moo: { sv: 'muua', id: 7169 },
+	bellow: { sv: 'råma', id: 7169 },
+	low: { sv: 'råma', id: 7169 },
+	note: { sv: 'anteckning', id: 7187 },
+	'long trousers': { sv: 'långbyxor', id: 7193 },
+	'put an egg': { sv: 'lägga ett ägg', id: 7211 },
+	'no entry sign': { sv: 'infart förbjuden', id: 7220 },
+	lined: { sv: 'randig', id: 7225 },
+	neigh: { sv: 'gnägga', id: 7228 },
+	roar: { sv: 'ryta', id: 7235 },
+	serve: { sv: 'servera', id: 7247 },
+	'blow of a whistle': { sv: 'blåsa i visselpipa', id: 7250 },
+	'wrap up': { sv: 'bädda in', id: 7265 }
 });
 
 /**

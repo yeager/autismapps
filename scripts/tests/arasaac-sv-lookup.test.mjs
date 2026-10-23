@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { searchPictogramLookup } from '../../src/lib/arasaac/search-normalize.js';
 import { applySwedishLookupOverrides, SWEDISH_LOOKUP_OVERRIDES } from '../../src/lib/arasaac/sv-lookup-overrides.js';
 
 const catalog = JSON.parse(await readFile(new URL('../../static/arasaac-sv.json', import.meta.url), 'utf8'));
@@ -22,6 +23,19 @@ test('applying Swedish label corrections does not mutate the catalog snapshot', 
 	assert.equal(catalog.tambourine.sv, 'panna');
 	assert.equal(corrected.tambourine.sv, 'tamburin');
 	assert.notEqual(corrected, catalog);
+});
+
+test('reviewed English aliases resolve to the intended Swedish pictograms', () => {
+	for (const [query, label, id] of [
+		['honk', 'kvacka', 7119],
+		['shrivel', 'vissna', 7153]
+	]) {
+		assert.deepEqual(searchPictogramLookup(corrected, query, 'sv')[0], {
+			id,
+			keyword: label,
+			exact: true
+		}, `${query} should find ${label} on the Swedish site`);
+	}
 });
 
 test('visual review corrections for contact sheets 017 and 018 use the pictured meanings', () => {
@@ -141,6 +155,37 @@ test('visual review corrections for contact sheet 026 use the pictured meanings'
 		'take off': ['lyfta', 7018],
 		chase: ['jaga', 7037],
 		pursue: ['jaga', 7037]
+	};
+	for (const [alias, [label, id]] of Object.entries(expected)) {
+		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
+	}
+});
+
+test('visual review corrections for contact sheets 027 and 028 use the pictured meanings', () => {
+	const expected = {
+		pussy: ['kisse', 7114],
+		scourer: ['skursvamp', 7098],
+		'scouring pad': ['skursvamp', 7098],
+		honk: ['kvacka', 7119],
+		quack: ['kvacka', 7119],
+		cronk: ['kraxa', 7119],
+		caw: ['kraxa', 7119],
+		grunt: ['grymta', 7121],
+		corncob: ['majskolv', 7150],
+		shrivel: ['vissna', 7153],
+		moo: ['muua', 7169],
+		bellow: ['råma', 7169],
+		low: ['råma', 7169],
+		note: ['anteckning', 7187],
+		'long trousers': ['långbyxor', 7193],
+		'put an egg': ['lägga ett ägg', 7211],
+		'no entry sign': ['infart förbjuden', 7220],
+		lined: ['randig', 7225],
+		neigh: ['gnägga', 7228],
+		roar: ['ryta', 7235],
+		serve: ['servera', 7247],
+		'blow of a whistle': ['blåsa i visselpipa', 7250],
+		'wrap up': ['bädda in', 7265]
 	};
 	for (const [alias, [label, id]] of Object.entries(expected)) {
 		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);

@@ -45,3 +45,28 @@ test('visual review corrections for contact sheets 017 and 018 use the pictured 
 		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
 	}
 });
+
+test('visual review corrections for contact sheets 019 and 020 use the pictured meanings', () => {
+	const expected = {
+		string: ['tråd', 5454],
+		plastered: ['gipsad', 5457],
+		'ice cream maker': ['glassförsäljare', 5483],
+		'ice-cream seller': ['glassförsäljare', 5483],
+		'ice-cream vendor': ['glassförsäljare', 5483],
+		'ice-cream man': ['glassförsäljare', 5483],
+		baste: ['tråckla', 5486],
+		tack: ['fästa', 5486],
+		measure: ['mäta', 5510],
+		operate: ['sköta', 5530],
+		'clean the table': ['torka av bordet', 5558],
+		'bring out': ['ta fram', 5568],
+		'paper bank': ['pappersinsamling', 5575],
+		'power saw': ['elektrisk såg', 5587],
+		'coping saw': ['figursåg', 5588],
+		plane: ['hyvel', 5609],
+		'woodworking plane': ['hyvel', 5609]
+	};
+	for (const [alias, [label, id]] of Object.entries(expected)) {
+		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
+	}
+});

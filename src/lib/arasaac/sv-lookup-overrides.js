@@ -49,7 +49,24 @@ export const SWEDISH_LOOKUP_OVERRIDES = Object.freeze({
 	'beach pads': { sv: 'strandpaddlar', id: 5100 },
 	'button up': { sv: 'knäppa', id: 5357 },
 	sweeten: { sv: 'sockra', id: 5392 },
-	wineskin: { sv: 'vinsäck', id: 5401 }
+	wineskin: { sv: 'vinsäck', id: 5401 },
+	string: { sv: 'tråd', id: 5454 },
+	plastered: { sv: 'gipsad', id: 5457 },
+	'ice cream maker': { sv: 'glassförsäljare', id: 5483 },
+	'ice-cream seller': { sv: 'glassförsäljare', id: 5483 },
+	'ice-cream vendor': { sv: 'glassförsäljare', id: 5483 },
+	'ice-cream man': { sv: 'glassförsäljare', id: 5483 },
+	baste: { sv: 'tråckla', id: 5486 },
+	tack: { sv: 'fästa', id: 5486 },
+	measure: { sv: 'mäta', id: 5510 },
+	operate: { sv: 'sköta', id: 5530 },
+	'clean the table': { sv: 'torka av bordet', id: 5558 },
+	'bring out': { sv: 'ta fram', id: 5568 },
+	'paper bank': { sv: 'pappersinsamling', id: 5575 },
+	'power saw': { sv: 'elektrisk såg', id: 5587 },
+	'coping saw': { sv: 'figursåg', id: 5588 },
+	plane: { sv: 'hyvel', id: 5609 },
+	'woodworking plane': { sv: 'hyvel', id: 5609 }
 });
 
 /**

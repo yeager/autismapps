@@ -14,6 +14,17 @@ export interface PiktaliSearchResult {
 	urlBW: string;
 }
 
+/** Match common Swedish inflections to a catalog's singular label. */
+function swedishSearchForms(value: string): string[] {
+	const forms = [value];
+	for (const suffix of ['arna', 'erna', 'orna', 'ar', 'er', 'or', 'en', 'et', 'an', 'na', 'ne', 's']) {
+		if (value.endsWith(suffix) && value.length - suffix.length >= 3) {
+			forms.push(value.slice(0, -suffix.length));
+		}
+	}
+	return [...new Set(forms)];
+}
+
 const boardBuilderTerms = new Set([
 	'bradbyggare',
 	'bradbyggaren',
@@ -36,6 +47,7 @@ export function matchPiktaliPictograms(
 	if (!normalizedQuery) return [];
 
 	const isBoardBuilder = boardBuilderTerms.has(normalizedQuery);
+	const searchForms = swedishSearchForms(normalizedQuery);
 	const matches = pictograms.flatMap((pictogram, index) => {
 		const localizedLabel = locale === 'sv'
 			? pictogram.labels['sv-SE'] || pictogram.labels['en-US']
@@ -47,8 +59,8 @@ export function matchPiktaliPictograms(
 		if (isBoardBuilder) {
 			if (pictogram.symbol !== 'communication-board') return [];
 			score = 0;
-		} else if (label === normalizedQuery || symbol === normalizedQuery) {
-			score = 0;
+		} else if (searchForms.some((form) => form === label || form === symbol)) {
+			score = searchForms.length > 1 && searchForms[1] === label ? 1 : 0;
 		} else if (label.startsWith(normalizedQuery) || symbol.startsWith(normalizedQuery)) {
 			score = 1;
 		} else if (label.includes(normalizedQuery) || symbol.includes(normalizedQuery)) {

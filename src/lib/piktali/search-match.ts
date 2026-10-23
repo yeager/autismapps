@@ -81,28 +81,29 @@ export function matchPiktaliPictograms(
 		const localizedLabel = locale === 'sv'
 			? pictogram.labels['sv-SE'] || pictogram.labels['en-US']
 			: pictogram.labels['en-US'] || pictogram.labels['sv-SE'];
-		const searchableLabels = [...new Set([
+		const localizedSearchLabel = normalizePictogramKeyword(localizedLabel || '');
+		const exactLabels = [...new Set([
 			pictogram.labels['sv-SE'],
 			pictogram.labels['en-US'],
 			pictogram.labels['es-ES'],
 			pictogram.labels['es-MX']
 		].filter((value): value is string => Boolean(value)))].map(normalizePictogramKeyword);
 		const symbol = normalizePictogramKeyword(pictogram.symbol.replaceAll('-', ' '));
-		const matchingLabel = searchableLabels.find((label) =>
-			searchForms.some((form) => form === label || label.startsWith(form) || label.includes(form))
-		);
+		const hasExactLabel = exactLabels.some((label) => searchForms.includes(label));
+		const matchesLocalizedPrefix = searchForms.some((form) => localizedSearchLabel.startsWith(form));
+		const matchesLocalizedSubstring = searchForms.some((form) => localizedSearchLabel.includes(form));
+		const matchesSymbolPrefix = symbol.split(' ').some((word) => word.startsWith(normalizedQuery));
+		const isNumberSymbol = /^number\d+$/.test(pictogram.symbol);
 
 		let score: number;
 		if (isBoardBuilder) {
 			if (pictogram.symbol !== 'communication-board') return [];
 			score = 0;
-		} else if (matchingLabel && searchForms.some((form) => form === matchingLabel)) {
+		} else if (hasExactLabel || symbol === normalizedQuery) {
 			score = 0;
-		} else if (matchingLabel || symbol === normalizedQuery) {
+		} else if (!isNumberSymbol && (matchesLocalizedPrefix || matchesSymbolPrefix)) {
 			score = 1;
-		} else if (searchableLabels.some((label) => label.startsWith(normalizedQuery)) || symbol.startsWith(normalizedQuery)) {
-			score = 1;
-		} else if (searchableLabels.some((label) => label.includes(normalizedQuery)) || symbol.includes(normalizedQuery)) {
+		} else if (!isNumberSymbol && matchesLocalizedSubstring) {
 			score = 2;
 		} else {
 			return [];

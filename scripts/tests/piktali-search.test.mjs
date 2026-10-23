@@ -38,6 +38,14 @@ test('Piktali search matches Swedish and English catalog labels', () => {
 	assert.equal(swedish.url, english.url);
 });
 
+test('Piktali fuzzy matches use the interface language and omit number symbols', () => {
+	const results = matchPiktaliPictograms(manifest.pictograms, 'hund', 'sv', '/launcher');
+	const labels = results.map((result) => result.keyword);
+	assert.ok(labels.includes('Hund'));
+	assert.ok(labels.includes('Gå ut med hunden'));
+	assert.ok(!labels.some((label) => ['Hundra', 'Tvåhundra', 'Trehundra', 'Fyrahundra', 'Femhundra', 'Sjunka', 'Åska'].includes(label)));
+});
+
 test('Piktali search accepts a Swedish query on the English site and vice versa', () => {
 	const [englishResult] = matchPiktaliPictograms(manifest.pictograms, 'hund', 'en', '/launcher');
 	const [swedishResult] = matchPiktaliPictograms(manifest.pictograms, 'dog', 'sv', '/launcher');

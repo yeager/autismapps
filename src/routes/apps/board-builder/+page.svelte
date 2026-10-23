@@ -404,92 +404,12 @@
     min-height: calc(100dvh - var(--header-h));
   }
 
-  @media (max-width: 640px) {
-    .board-builder {
-      flex-direction: column;
-    }
-  }
-
   /* Sidebar */
   .builder-sidebar {
     width: 320px;
     flex-shrink: 0;
     overflow-y: auto;
     max-height: calc(100dvh - 100px);
-  }
-
-  @media (max-width: 640px) {
-    .builder-sidebar {
-      width: 100%;
-      max-height: none;
-      overflow: visible;
-    }
-  }
-
-  /* Keep the complete editor visible on tablet-sized screens. */
-  @media (min-width: 641px) and (max-height: 820px) {
-    .board-builder {
-      height: calc(100dvh - var(--header-h));
-      min-height: 0;
-      gap: 12px;
-      padding: 8px;
-      overflow: hidden;
-    }
-
-    .builder-sidebar {
-      width: clamp(300px, 32vw, 380px);
-      max-height: none;
-      overflow: hidden;
-    }
-
-    .toolbar {
-      height: 100%;
-      min-height: 0;
-      gap: 8px;
-    }
-
-    .toolbar h2 { margin: 0; font-size: 1.1em; line-height: 1.15; }
-    .field { gap: 3px; }
-    .field label { font-size: .78em; }
-    .field input { min-height: 36px; padding: 6px 8px; font-size: .9em; }
-    .grid-options, .color-options { gap: 6px; }
-    .grid-option { min-height: 36px; padding: 4px 10px; }
-    .color-dot { width: 24px; height: 24px; }
-    .search-input input { min-height: 36px; padding: 6px 8px; }
-    .search-go { min-width: 40px; padding: 6px 10px; }
-
-    .picto-results {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 4px;
-      max-height: 150px;
-      overflow-y: auto;
-      padding: 2px;
-    }
-
-    .picto-item { gap: 2px; padding: 3px; }
-    .picto-item img { width: 40px; height: 40px; }
-    .picto-item span { font-size: .65em; }
-
-    .actions {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 4px;
-    }
-
-    .btn {
-      min-height: 34px;
-      padding: 4px 6px;
-      font-size: .72em;
-      line-height: 1.1;
-      white-space: normal;
-    }
-
-    .panel { max-height: 100px; overflow-y: auto; padding: 6px; gap: 4px; }
-    .builder-main { min-width: 0; min-height: 0; align-items: center; padding: 4px; }
-    .board-grid {
-      width: min(100%, calc(100dvh - var(--header-h) - 24px), calc(100vw - 420px));
-      max-width: min(600px, calc(100dvh - var(--header-h) - 24px), calc(100vw - 420px));
-    }
   }
 
   .toolbar {
@@ -814,6 +734,84 @@
   }
   .board-cell:hover .cell-clear {
     display: flex;
+  }
+
+  @media (max-width: 640px) {
+    .board-builder {
+      flex-direction: column;
+    }
+
+    .builder-sidebar {
+      width: 100%;
+      max-height: none;
+      overflow: visible;
+    }
+  }
+
+  /* Keep the complete editor visible on tablet-sized screens. */
+  @media (min-width: 641px) and (max-height: 820px) {
+    .board-builder {
+      height: calc(100dvh - var(--header-h));
+      min-height: 0;
+      gap: 12px;
+      padding: 8px;
+      overflow: hidden;
+    }
+
+    .builder-sidebar {
+      width: clamp(300px, 32vw, 380px);
+      max-height: none;
+      overflow: hidden;
+    }
+
+    .toolbar {
+      height: 100%;
+      min-height: 0;
+      gap: 8px;
+    }
+
+    .toolbar h2 { margin: 0; font-size: 1.1em; line-height: 1.15; }
+    .field { gap: 3px; }
+    .field label { font-size: .78em; }
+    .field input { min-height: 36px; padding: 6px 8px; font-size: .9em; }
+    .grid-options, .color-options { gap: 6px; }
+    .grid-option { min-height: 36px; padding: 4px 10px; }
+    .color-dot { width: 24px; height: 24px; }
+    .search-input input { min-height: 36px; padding: 6px 8px; }
+    .search-go { min-width: 40px; padding: 6px 10px; }
+
+    .picto-results {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4px;
+      max-height: 150px;
+      overflow-y: auto;
+      padding: 2px;
+    }
+
+    .picto-item { gap: 2px; padding: 3px; }
+    .picto-item img { width: 40px; height: 40px; }
+    .picto-item span { font-size: .65em; }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px;
+    }
+
+    .btn {
+      min-height: 34px;
+      padding: 4px 6px;
+      font-size: .72em;
+      line-height: 1.1;
+      white-space: normal;
+    }
+
+    .panel { max-height: 100px; overflow-y: auto; padding: 6px; gap: 4px; }
+    .builder-main { min-width: 0; min-height: 0; align-items: center; padding: 4px; }
+    .board-grid {
+      width: min(100%, calc(100dvh - var(--header-h) - 24px), calc(100vw - 420px));
+      max-width: min(600px, calc(100dvh - var(--header-h) - 24px), calc(100vw - 420px));
+    }
   }
 
   .label-edit {

@@ -25,7 +25,6 @@ const versionedPictogramAssets = files
 // Prerendered pages are cached too so navigations work offline.
 const ASSETS = [
   ...build,
-  ...files,
   ...prerendered,
   ...versionedPictogramAssets
 ];

@@ -22,3 +22,10 @@ test('the service worker imports only what SvelteKit dev also exports', () => {
 test('the base path is derived from the registration scope', () => {
   assert.match(src, /new URL\(sw\.registration\.scope\)\.pathname/);
 });
+
+test('service-worker installation does not precache every static file', () => {
+  // The static tree includes thousands of Piktali SVGs and tens of megabytes of
+  // other assets. They are cached on first use by the runtime network-first path.
+  assert.match(src, /const ASSETS = \[\s*\.\.\.build,\s*\.\.\.prerendered,/);
+  assert.doesNotMatch(src, /const ASSETS = \[[^\]]*\.\.\.files,/s);
+});

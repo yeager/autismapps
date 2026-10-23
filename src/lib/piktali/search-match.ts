@@ -1,4 +1,7 @@
 import { normalizePictogramKeyword } from '../arasaac/search-normalize.js';
+import { PIKTALI_MANIFEST_REVISION, piktaliManifestUrl } from './manifest-url.js';
+
+export { PIKTALI_MANIFEST_REVISION, piktaliManifestUrl } from './manifest-url.js';
 
 export interface PiktaliManifestPictogram {
 	id: string;
@@ -12,15 +15,6 @@ export interface PiktaliSearchResult {
 	keyword: string;
 	url: string;
 	urlBW: string;
-}
-
-// Bump when the Piktali manifest changes so service workers and host caches
-// cannot keep returning a catalog from an older deployment.
-export const PIKTALI_MANIFEST_REVISION = '2026-10-23-board-builder-search-1';
-
-export function piktaliManifestUrl(basePath: string): string {
-	const base = basePath.replace(/\/$/, '');
-	return `${base}/piktali-pictograms/manifest.json?v=${PIKTALI_MANIFEST_REVISION}`;
 }
 
 /** Match common Swedish inflections to a catalog's singular label. */

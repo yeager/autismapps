@@ -7,9 +7,10 @@ import { applySwedishLookupOverrides, SWEDISH_LOOKUP_OVERRIDES } from '../../src
 
 const catalog = JSON.parse(await readFile(new URL('../../static/arasaac-sv.json', import.meta.url), 'utf8'));
 
-test('Swedish lookup URL is versioned and respects the launcher base path', () => {
-	assert.equal(swedishLookupUrl('/launcher'), `/launcher/arasaac-sv.json?v=${SWEDISH_LOOKUP_REVISION}`);
-	assert.equal(swedishLookupUrl(''), `/arasaac-sv.json?v=${SWEDISH_LOOKUP_REVISION}`);
+test('Swedish lookup uses a versioned path in production and the stable file in development', () => {
+	assert.equal(swedishLookupUrl('/launcher'), `/launcher/arasaac-sv-${SWEDISH_LOOKUP_REVISION}.json?v=${SWEDISH_LOOKUP_REVISION}`);
+	assert.equal(swedishLookupUrl(''), `/arasaac-sv-${SWEDISH_LOOKUP_REVISION}.json?v=${SWEDISH_LOOKUP_REVISION}`);
+	assert.equal(swedishLookupUrl('/launcher', true), '/launcher/arasaac-sv.json');
 });
 const corrected = applySwedishLookupOverrides(catalog);
 

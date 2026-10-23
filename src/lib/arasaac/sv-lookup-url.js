@@ -2,8 +2,10 @@
 // a lookup file from a previous launcher deployment.
 export const SWEDISH_LOOKUP_REVISION = '2026-10-23-search-catalog-1';
 
-/** @param {string} basePath */
-export function swedishLookupUrl(basePath) {
+/** @param {string} basePath @param {boolean} [development] */
+export function swedishLookupUrl(basePath, development = false) {
 	const baseUrl = basePath.replace(/\/$/, '');
-	return `${baseUrl}/arasaac-sv.json?v=${SWEDISH_LOOKUP_REVISION}`;
+	const filename = development ? 'arasaac-sv.json' : `arasaac-sv-${SWEDISH_LOOKUP_REVISION}.json`;
+	const cacheBuster = development ? '' : `?v=${SWEDISH_LOOKUP_REVISION}`;
+	return `${baseUrl}/${filename}${cacheBuster}`;
 }

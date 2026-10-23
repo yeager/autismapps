@@ -5,9 +5,10 @@ import { boardBuilderSearchResult, matchPiktaliPictograms, piktaliManifestUrl } 
 
 const manifest = JSON.parse(await readFile(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
 
-test('Piktali manifest URL changes between deployments and keeps the launcher base path', () => {
-	assert.equal(piktaliManifestUrl('/launcher'), '/launcher/piktali-pictograms/manifest.json?v=2026-10-23-board-builder-search-1');
-	assert.equal(piktaliManifestUrl(''), '/piktali-pictograms/manifest.json?v=2026-10-23-board-builder-search-1');
+test('Piktali manifest uses a versioned path in production and the stable file in development', () => {
+	assert.equal(piktaliManifestUrl('/launcher'), '/launcher/piktali-pictograms/manifest-2026-10-23-board-builder-search-1.json?v=2026-10-23-board-builder-search-1');
+	assert.equal(piktaliManifestUrl(''), '/piktali-pictograms/manifest-2026-10-23-board-builder-search-1.json?v=2026-10-23-board-builder-search-1');
+	assert.equal(piktaliManifestUrl('/launcher', true), '/launcher/piktali-pictograms/manifest.json');
 });
 
 test('Board Builder name aliases return the local Piktali communication board', () => {

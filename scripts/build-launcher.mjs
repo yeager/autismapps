@@ -5,6 +5,8 @@ process.env.CI = 'true';
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SWEDISH_LOOKUP_REVISION } from '../src/lib/arasaac/sv-lookup-url.js';
+import { PIKTALI_MANIFEST_REVISION } from '../src/lib/piktali/manifest-url.js';
 
 const { build } = await import('vite');
 await build();
@@ -12,6 +14,23 @@ await build();
 const outputDirectoryName = process.env.BUILD_OUTPUT_DIR || 'build';
 const outputDirectory = fileURLToPath(new URL(`../${outputDirectoryName}/`, import.meta.url));
 const prerenderLocale = process.env.VITE_PRERENDER_LOCALE === 'sv' ? 'sv' : 'en';
+
+// Publish path-versioned catalog aliases as well as the stable source paths.
+// Some host caches key only by pathname and ignore query-string cache busters.
+const versionedCatalogs = [
+	[
+		new URL('../static/arasaac-sv.json', import.meta.url),
+		join(outputDirectory, `arasaac-sv-${SWEDISH_LOOKUP_REVISION}.json`)
+	],
+	[
+		new URL('../static/piktali-pictograms/manifest.json', import.meta.url),
+		join(outputDirectory, 'piktali-pictograms', `manifest-${PIKTALI_MANIFEST_REVISION}.json`)
+	]
+];
+for (const [source, destination] of versionedCatalogs) {
+	mkdirSync(dirname(destination), { recursive: true });
+	copyFileSync(source, destination);
+}
 
 // Keep extensionless static routes working even when an older deployment left
 // a directory with the same name on the host (for example /launcher/about).

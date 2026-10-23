@@ -16,7 +16,7 @@ export function loadSvLookup(): Promise<Record<string, { sv: string; id: number 
   // Concurrent searches (apps look up a whole vocabulary at once) share one load of the 785 KB file
   loading ??= (async () => {
     try {
-      const res = await fetch(swedishLookupUrl(base));
+      const res = await fetch(swedishLookupUrl(base, import.meta.env.DEV));
       if (res.ok) {
         const data: unknown = await res.json();
         if (data && typeof data === 'object' && Object.keys(data).length > 0) {

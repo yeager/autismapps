@@ -6,7 +6,7 @@ export { matchPiktaliPictograms } from './search-match';
 let manifestRequest: Promise<PiktaliManifestPictogram[]> | undefined;
 
 async function loadPiktaliManifest(): Promise<PiktaliManifestPictogram[]> {
-	manifestRequest ??= fetch(piktaliManifestUrl(base))
+	manifestRequest ??= fetch(piktaliManifestUrl(base, import.meta.env.DEV))
 		.then((response) => {
 			if (!response.ok) throw new Error(`Piktali manifest request failed: ${response.status}`);
 			return response.json();

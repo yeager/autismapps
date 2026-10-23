@@ -58,17 +58,18 @@
     }
   ];
 
-  // Use Piktali's original symbols where available, with a road-sign pictogram for this activity.
+  // Use the locally reviewed ARASAAC symbols where Piktali's current source art
+  // does not match the card meaning. Keep verified Piktali assets for the rest.
   const piktaliSymbols: Record<string, string> = {
-    'traffic-lights': 'trafficlight',
     crosswalk: 'crosswalk',
-    'safe-places': 'safeplace',
     reflectors: 'reflector',
     vehicles: 'car'
   };
 
   function pictogramFor(activity: Activity) {
     if (activity.id === 'road-signs') return getPictogram('warning');
+    if (activity.id === 'traffic-lights') return getPictogram('trafficLight');
+    if (activity.id === 'safe-places') return getPictogram('safePlace');
     const symbol = piktaliSymbols[activity.id];
     const url = symbol ? piktaliTrafficPictogramUrl(symbol) : null;
     return url ? {

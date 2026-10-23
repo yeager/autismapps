@@ -58,9 +58,11 @@ const localPngIds = new Set(trafficFiles.filter((file) => file.endsWith('.png'))
 for (const [key, id] of Object.entries(pictogramIds)) {
   if (id !== null && !localPngIds.has(String(id))) errors.push(`ARASAAC_IDS.${key}: missing local PNG ${id}.png`);
 }
-const expectedSymbols = { 'traffic-lights': 'trafficlight', crosswalk: 'crosswalk', 'safe-places': 'safeplace', reflectors: 'reflector', vehicles: 'car' };
+const expectedSymbols = { crosswalk: 'crosswalk', reflectors: 'reflector', vehicles: 'car' };
 if (pictogramIds.warning !== 25315 || !trafficFiles.includes('25315.png')) errors.push('road-signs tile: expected ARASAAC warning triangle 25315');
 if (!activityGrid.includes("getPictogram('warning')")) errors.push('road-signs tile: must use the warning pictogram');
+if (!activityGrid.includes("getPictogram('trafficLight')")) errors.push('traffic-lights tile: must use the locally bundled traffic-light pictogram');
+if (!activityGrid.includes("getPictogram('safePlace')")) errors.push('safe-places tile: must use the locally bundled safe-place pictogram');
 for (const [activity, symbol] of Object.entries(expectedSymbols)) {
   if (!new RegExp(`[\\'\\\"]?${activity}[\\'\\\"]?:\\s*['\\\"]${symbol}['\\\"]`).test(activityGrid)) errors.push(`${activity} tile: expected Piktali ${symbol} mapping`);
 }
@@ -120,7 +122,7 @@ for (const file of pngFiles) {
 console.log(`Checked ${Object.keys(lookup).length} Swedish lookup entries across ${uniqueIds.size} pictogram IDs.`);
 console.log(`Checked ${pngFiles.length} local traffic-safety PNGs against the catalog and PNG signature.`);
 console.log(`Checked ${Object.values(pictogramIds).filter((id) => id !== null).length} source ID assignments and the traffic-safety card image mappings.`);
-console.log(`Checked five traffic-safety cards resolve to the original Piktali manifest assets (${piktaliSymbols.join(', ')}) and road signs use the ARASAAC warning triangle.`);
+console.log(`Checked three traffic-safety cards resolve to Piktali assets (${['crosswalk', 'reflector', 'car'].join(', ')}), traffic lights and safe places use bundled ARASAAC symbols, and road signs use the ARASAAC warning triangle.`);
 console.log(`ARASAAC English catalog: ${catalog.length} pictograms.`);
 
 if (errors.length) {

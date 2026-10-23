@@ -23,3 +23,25 @@ test('applying Swedish label corrections does not mutate the catalog snapshot', 
 	assert.equal(corrected.tambourine.sv, 'tamburin');
 	assert.notEqual(corrected, catalog);
 });
+
+test('visual review corrections for contact sheets 017 and 018 use the pictured meanings', () => {
+	const expected = {
+		'swedish bench': ['bänk', 4919],
+		'psychomotricity blocks': ['motorikklossar', 4921],
+		punch: ['hålslag', 4949],
+		'fall tree': ['höstträd', 5063],
+		gogles: ['dykarglasögon', 5074],
+		'ice ring': ['skridskobana', 5088],
+		'ice rink': ['isrink', 5088],
+		'nativity scene': ['julkrubba', 5089],
+		crib: ['julkrubba', 5089],
+		creche: ['julkrubba', 5089],
+		'beach pads': ['strandpaddlar', 5100],
+		'button up': ['knäppa', 5357],
+		sweeten: ['sockra', 5392],
+		wineskin: ['vinsäck', 5401]
+	};
+	for (const [alias, [label, id]] of Object.entries(expected)) {
+		assert.deepEqual(corrected[alias], { sv: label, id }, `${alias} should match pictogram ${id}`);
+	}
+});

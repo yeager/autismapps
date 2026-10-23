@@ -35,7 +35,21 @@ export const SWEDISH_LOOKUP_OVERRIDES = Object.freeze({
 	'tobacco pipe': { sv: 'tobakspipa', id: 4722 },
 	sunshade: { sv: 'parasoll', id: 4746 },
 	blow: { sv: 'blåsa', id: 4747 },
-	sandcastle: { sv: 'sandslott', id: 4790 }
+	sandcastle: { sv: 'sandslott', id: 4790 },
+	'swedish bench': { sv: 'bänk', id: 4919 },
+	'psychomotricity blocks': { sv: 'motorikklossar', id: 4921 },
+	punch: { sv: 'hålslag', id: 4949 },
+	'fall tree': { sv: 'höstträd', id: 5063 },
+	gogles: { sv: 'dykarglasögon', id: 5074 },
+	'ice ring': { sv: 'skridskobana', id: 5088 },
+	'ice rink': { sv: 'isrink', id: 5088 },
+	'nativity scene': { sv: 'julkrubba', id: 5089 },
+	crib: { sv: 'julkrubba', id: 5089 },
+	creche: { sv: 'julkrubba', id: 5089 },
+	'beach pads': { sv: 'strandpaddlar', id: 5100 },
+	'button up': { sv: 'knäppa', id: 5357 },
+	sweeten: { sv: 'sockra', id: 5392 },
+	wineskin: { sv: 'vinsäck', id: 5401 }
 });
 
 /**

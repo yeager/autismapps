@@ -32,6 +32,8 @@ test('ARASAAC lookup accepts Swedish queries on the English site and shows Engli
 	const lookup = {
 		dog: { sv: 'hund', id: 2517 },
 		'dog food': { sv: 'hundmat', id: 7057 },
+		'dog walker': { sv: 'hundpromenad', id: 7010 },
+		thunderclap: { sv: 'åskknall', id: 7020 },
 		hundred: { sv: 'hundra', id: 100 },
 		'two hundred': { sv: 'tvåhundra', id: 200 },
 		cat: { sv: 'katt', id: 2406 }
@@ -39,7 +41,8 @@ test('ARASAAC lookup accepts Swedish queries on the English site and shows Engli
 	const results = searchPictogramLookup(lookup, 'hund', 'en');
 	assert.deepEqual(results, [
 		{ id: 2517, keyword: 'dog', exact: true },
-		{ id: 7057, keyword: 'dog food', exact: false }
+		{ id: 7057, keyword: 'dog food', exact: false },
+		{ id: 7010, keyword: 'dog walker', exact: false }
 	]);
 });
 

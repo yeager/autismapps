@@ -14,7 +14,10 @@ export function normalizePictogramKeyword(value) {
 export function matchesPictogramKeyword(label, query, exact = false) {
 	const normalizedLabel = normalizePictogramKeyword(label);
 	const normalizedQuery = normalizePictogramKeyword(query);
-	return exact ? normalizedLabel === normalizedQuery : normalizedLabel.includes(normalizedQuery);
+	if (!normalizedQuery) return false;
+	if (exact) return normalizedLabel === normalizedQuery;
+	if (normalizedLabel.startsWith(normalizedQuery)) return true;
+	return (normalizedLabel.match(/[\p{L}\p{N}]+/gu) ?? []).some((word) => word.startsWith(normalizedQuery));
 }
 
 /** Search the bilingual local catalog, preferring the interface language.

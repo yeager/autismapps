@@ -32,6 +32,12 @@ test('Swedish pictogram search falls back to its bundled catalog if uploaded fil
 	assert.equal(dog.keyword, 'hund');
 });
 
+test('searching for hund excludes unrelated labels that contain it inside another word', () => {
+	const results = searchPictogramLookup(corrected, 'hund', 'sv');
+	assert.ok(results.some((result) => result.keyword === 'hund'));
+	assert.ok(!results.some((result) => result.keyword === 'åskknall'));
+});
+
 test('reviewed Swedish labels match the pictograms and intended meanings', () => {
 	for (const [alias, correction] of Object.entries(SWEDISH_LOOKUP_OVERRIDES)) {
 		if (correction === null) {

@@ -86,6 +86,14 @@ function localizeDocumentMetadata(directory) {
 				.replace('Autismappar — Visuellt vardagsstöd för autism och NPF', 'Autismapps — Visual everyday support for autism and neurodivergence')
 				.replace('Autismappar — visuellt stöd i vardagen', 'Autismapps — visual support for everyday life')
 				.replace('Kostnadsfria visuella verktyg för kommunikation och vardagsrutiner.', 'Free visual tools for communication and everyday routines.');
+		} else {
+			html = html
+				.replace('Free visual tools for communication, routines, time and emotions. Explore picture support and everyday tools for phones, tablets and computers.', 'Gratis visuella verktyg för kommunikation, rutiner, tid och känslor. Prova bildstöd och vardagsstöd som fungerar på mobil, surfplatta och dator.')
+				.replace('autism apps, neurodivergent children, ADHD, autism, AAC, communication boards, pictograms, speech support, routines, free apps, PWA', 'autism appar, NPF-appar, ADHD barn, språkstörning, bildstöd, PECS, talsyntes, verbal dyspraxi, CAS, AKK, AAC, specialpedagogik, gratis, PWA')
+				.replace('Autismapps — Visual everyday support for autism and neurodivergence', 'Autismappar — Visuellt vardagsstöd för autism och NPF')
+				.replace('Explore free tools for communication, routines, time and emotions. Works on phones, tablets and computers.', 'Upptäck kostnadsfria verktyg för kommunikation, rutiner, tid och känslor. Fungerar på mobil, surfplatta och dator.')
+				.replace('Autismapps — visual support for everyday life', 'Autismappar — visuellt stöd i vardagen')
+				.replace('Free visual tools for communication and everyday routines.', 'Kostnadsfria visuella verktyg för kommunikation och vardagsrutiner.');
 		}
 		writeFileSync(path, html);
 	}

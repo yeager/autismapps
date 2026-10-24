@@ -1,5 +1,5 @@
 // Verify domain-specific prerendered language, route coverage, and asset paths.
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
 import { SWEDISH_LOOKUP_REVISION } from '../src/lib/arasaac/sv-lookup-url.js';
 import { PIKTALI_MANIFEST_REVISION } from '../src/lib/piktali/manifest-url.js';
@@ -14,6 +14,8 @@ const appRoutes = readdirSync('src/routes/apps', { withFileTypes: true })
 	.filter((entry) => entry.isDirectory())
 	.map((entry) => entry.name)
 	.sort();
+const piktaliSource = readFileSync('static/piktali-pictograms/manifest.json');
+const piktaliSourceManifest = JSON.parse(piktaliSource.toString('utf8'));
 
 function expect(condition, message) {
 	if (!condition) throw new Error(message);
@@ -34,6 +36,20 @@ for (const variant of variants) {
 		const path = join(root, catalog);
 		expect(existsSync(path), `${variant.directory}: missing required search catalog ${catalog}`);
 		expect(readFileSync(path).length > 0, `${variant.directory}: empty required search catalog ${catalog}`);
+	}
+	const piktaliCatalogPath = join(root, 'piktali-pictograms', `manifest-${PIKTALI_MANIFEST_REVISION}.json`);
+	const piktaliCatalogBytes = readFileSync(piktaliCatalogPath);
+	expect(piktaliCatalogBytes.equals(piktaliSource), `${variant.directory}: Piktali manifest differs from the source catalog`);
+	const piktaliCatalog = JSON.parse(piktaliCatalogBytes.toString('utf8'));
+	expect(Array.isArray(piktaliCatalog.pictograms) && piktaliCatalog.pictograms.length > 0, `${variant.directory}: Piktali catalog has no pictograms`);
+	expect(piktaliCatalog.pictograms.some((pictogram) => pictogram.labels?.['sv-SE'] === 'Hund'), `${variant.directory}: Piktali catalog cannot find the Swedish dog label`);
+	expect(piktaliCatalog.pictograms.some((pictogram) => pictogram.labels?.['en-US'] === 'Dog'), `${variant.directory}: Piktali catalog cannot find the English dog label`);
+	for (const pictogram of piktaliCatalog.pictograms) {
+		expect(typeof pictogram.file === 'string' && pictogram.file.startsWith('assets/'), `${variant.directory}: invalid Piktali asset path ${pictogram.file}`);
+		const assetPath = resolve(root, 'piktali-pictograms', pictogram.file);
+		expect(assetPath.startsWith(`${resolve(root, 'piktali-pictograms')}${sep}`), `${variant.directory}: Piktali asset escapes its catalog directory`);
+		expect(existsSync(assetPath), `${variant.directory}: missing Piktali asset ${pictogram.file}`);
+		expect(statSync(assetPath).size === pictogram.bytes, `${variant.directory}: wrong byte count for Piktali asset ${pictogram.file}`);
 	}
 	const home = readFileSync(join(root, 'index.html'), 'utf8');
 	expect(home.includes(`<html lang="${variant.code}"`), `${variant.directory}: wrong home lang`);
@@ -68,3 +84,4 @@ const trafficEn = readFileSync(join('build', 'apps', 'traffic-safety', 'index.ht
 expect(/<h1[^>]*>\s*Traffic Safety\s*<\/h1>/.test(trafficEn), 'English Traffic Safety heading is not prerendered in English');
 
 console.log(`Verified ${appRoutes.length} app routes, localized HTML, canonical metadata, local assets, and versioned search catalogs in English and Swedish builds.`);
+console.log(`Verified all ${piktaliSourceManifest.pictograms.length} Piktali assets in both builds, including the Swedish and English dog search labels.`);

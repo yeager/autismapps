@@ -52,6 +52,7 @@
       ? currentApp
       : null
   );
+  let updateAvailable = $state(false);
 
   function goSettings() {
     goto(base + '/settings');
@@ -63,7 +64,14 @@
   onMount(() => {
     if (!('serviceWorker' in navigator)) return;
 
+    const hadController = Boolean(navigator.serviceWorker.controller);
     let checking = false;
+
+    function handleControllerChange() {
+      // First activation is not an update. Only offer a reload when a worker
+      // that already controlled this page has been replaced.
+      if (hadController) updateAvailable = true;
+    }
 
     async function checkForUpdate() {
       if (!navigator.onLine || checking) return;
@@ -82,10 +90,12 @@
     }
 
     void checkForUpdate();
+    navigator.serviceWorker.addEventListener('controllerchange', handleControllerChange);
     document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('online', handleVisibilityChange);
 
     return () => {
+      navigator.serviceWorker.removeEventListener('controllerchange', handleControllerChange);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('online', handleVisibilityChange);
     };
@@ -189,6 +199,24 @@
       {@render children()}
     {/if}
   </main>
+
+  {#if updateAvailable}
+    <aside class="update-notice" role="status" aria-live="polite">
+      <span>{$t('pwa.updateAvailable')}</span>
+      <button class="update-reload" onclick={() => window.location.reload()}>
+        {$t('pwa.reload')}
+      </button>
+      <button
+        class="update-dismiss"
+        onclick={() => (updateAvailable = false)}
+        aria-label={$t('pwa.dismiss')}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </aside>
+  {/if}
 
   <AchievementPopup />
 </div>
@@ -297,5 +325,62 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+  }
+
+  .update-notice {
+    position: fixed;
+    z-index: 500;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    left: max(16px, env(safe-area-inset-left));
+    width: fit-content;
+    max-width: min(560px, calc(100% - 32px));
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px 12px 18px;
+    color: var(--text);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgb(0 0 0 / 18%);
+  }
+
+  .update-reload,
+  .update-dismiss {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .update-reload {
+    padding: 0 16px;
+    color: #fff;
+    background: #315a49;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .update-dismiss {
+    width: 44px;
+    flex: 0 0 44px;
+    color: inherit;
+    background: transparent;
+  }
+
+  .update-reload:focus-visible,
+  .update-dismiss:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 460px) {
+    .update-notice { gap: 8px; padding-left: 12px; font-size: .9rem; }
+    .update-reload { padding-inline: 12px; }
   }
 </style>

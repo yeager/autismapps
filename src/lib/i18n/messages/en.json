@@ -3835,5 +3835,8 @@
   "signDictionary.externalNote": "The sign videos are on an external site, which opens in a new tab. Internet is needed.",
   "signDictionary.searchExternal": "Search \"{q}\" on Spread The Sign",
   "signDictionary.creditPt": "Signs in Libras: Spread The Sign (European Sign Language Centre) — external link",
-  "common.doneSpeech": "{item} ✅"
+  "common.doneSpeech": "{item} ✅",
+  "pwa.updateAvailable": "An update is ready.",
+  "pwa.reload": "Reload",
+  "pwa.dismiss": "Dismiss message"
 }

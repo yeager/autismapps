@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { swedishLookupUrl, swedishLookupUrls, SWEDISH_LOOKUP_REVISION } from '../../src/lib/arasaac/sv-lookup-url.js';
 import { searchPictogramLookup } from '../../src/lib/arasaac/search-normalize.js';
 import { applySwedishLookupOverrides, SWEDISH_LOOKUP_OVERRIDES } from '../../src/lib/arasaac/sv-lookup-overrides.js';
+import { fetchJsonWithFallback } from '../../src/lib/arasaac/cache.ts';
 
 const catalog = JSON.parse(await readFile(new URL('../../static/arasaac-sv.json', import.meta.url), 'utf8'));
 
@@ -18,6 +19,18 @@ test('Swedish lookup uses a versioned path in production and the stable file in 
 	assert.deepEqual(swedishLookupUrls('/launcher', true), ['/launcher/arasaac-sv.json']);
 });
 const corrected = applySwedishLookupOverrides(catalog);
+
+test('Swedish pictogram search falls back to its bundled catalog if uploaded files are unavailable', async () => {
+	const loaded = await fetchJsonWithFallback(
+		['/launcher/arasaac-sv-versioned.json', '/launcher/arasaac-sv.json'],
+		1,
+		async () => { throw new Error('catalog fetch failed'); },
+		async () => catalog
+	);
+	const [dog] = searchPictogramLookup(applySwedishLookupOverrides(loaded), 'hund', 'sv');
+	assert.equal(dog.id, 2517);
+	assert.equal(dog.keyword, 'hund');
+});
 
 test('reviewed Swedish labels match the pictograms and intended meanings', () => {
 	for (const [alias, correction] of Object.entries(SWEDISH_LOOKUP_OVERRIDES)) {

@@ -35,6 +35,22 @@ test('fetchJsonWithFallback tries the stable catalog URL after a missing version
   assert.deepEqual(data, { entries: 1 });
 });
 
+test('fetchJsonWithFallback uses the bundled catalog immediately after a network failure', async () => {
+  const requested = [];
+  const fetcher = async (url) => {
+    requested.push(url);
+    throw new TypeError('Failed to fetch');
+  };
+  const data = await fetchJsonWithFallback(
+    ['/launcher/versioned.json', '/launcher/stable.json'],
+    100,
+    fetcher,
+    async () => ({ entries: 'bundled' })
+  );
+  assert.deepEqual(requested, ['/launcher/versioned.json']);
+  assert.deepEqual(data, { entries: 'bundled' });
+});
+
 /** Fake fetch: responder(url, n) returns the Response of the n-th call */
 function fakeFetch(responder) {
   const calls = [];

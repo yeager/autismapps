@@ -50,7 +50,8 @@ export async function fetchJsonWithTimeout<T>(
 export async function fetchJsonWithFallback<T>(
   urls: string[],
   timeoutMs: number,
-  fetcher: typeof fetch = fetch
+  fetcher: typeof fetch = fetch,
+  bundledFallback?: () => Promise<T>
 ): Promise<T> {
   let lastError: unknown;
   for (const url of urls) {
@@ -58,6 +59,22 @@ export async function fetchJsonWithFallback<T>(
       return await fetchJsonWithTimeout<T>(url, timeoutMs, fetcher);
     } catch (error) {
       lastError = error;
+      // A host/network failure will affect every catalog URL on this origin.
+      // Use the bundled copy now instead of waiting for another timeout.
+      if (bundledFallback && !(error instanceof Error && /^HTTP \d{3} for /.test(error.message))) {
+        try {
+          return await bundledFallback();
+        } catch (fallbackError) {
+          lastError = fallbackError;
+        }
+      }
+    }
+  }
+  if (bundledFallback) {
+    try {
+      return await bundledFallback();
+    } catch (error) {
+      lastError ??= error;
     }
   }
   throw lastError ?? new Error('No JSON asset URLs provided');

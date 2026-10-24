@@ -21,7 +21,9 @@ export function loadSvLookup(): Promise<Record<string, { sv: string; id: number 
     try {
       const data = await fetchJsonWithFallback<unknown>(
         swedishLookupUrls(base, import.meta.env.DEV),
-        SWEDISH_LOOKUP_TIMEOUT_MS
+        SWEDISH_LOOKUP_TIMEOUT_MS,
+        fetch,
+        async () => (await import('./sv-lookup-catalog.json')).default
       );
       if (data && typeof data === 'object' && Object.keys(data).length > 0) {
 		const corrected = applySwedishLookupOverrides(data as Record<string, { sv: string; id: number }>);

@@ -29,3 +29,21 @@ test('service-worker installation does not precache every static file', () => {
   assert.match(src, /const ASSETS = \[\s*\.\.\.build,\s*\.\.\.prerendered,/);
   assert.doesNotMatch(src, /const ASSETS = \[[^\]]*\.\.\.files,/s);
 });
+
+test('the service worker precaches every versioned traffic-safety card pictogram', () => {
+  const cardAssets = [
+    'trafficlight.webp',
+    'crosswalk.webp',
+    'danger.webp',
+    'safeplace.svg',
+    'reflector-vest.svg',
+    'car.webp'
+  ];
+
+  assert.match(src, /const versionedPiktaliTrafficAssets = files/);
+  assert.match(src, /\.\.\.versionedPiktaliTrafficAssets/);
+  for (const asset of cardAssets) {
+    const pattern = asset.replace('.', '\\.');
+    assert.ok(src.includes(pattern), `missing cached pictogram ${asset}`);
+  }
+});

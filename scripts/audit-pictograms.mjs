@@ -8,7 +8,7 @@ const lookupPath = new URL('../static/arasaac-sv.json', import.meta.url);
 const trafficPath = new URL('../static/pictograms/traffic-safety', import.meta.url);
 const pictogramSourcePath = new URL('../src/lib/data/arasaac-data.js', import.meta.url);
 const activityGridPath = new URL('../src/lib/components/traffic-safety/ActivityGrid.svelte', import.meta.url);
-const piktaliSymbols = ['trafficlight', 'crosswalk', 'safeplace', 'reflector', 'car'];
+const piktaliSymbols = ['trafficlight', 'crosswalk', 'danger', 'safeplace', 'reflector', 'car'];
 const piktaliManifestPath = new URL('../static/piktali-pictograms/manifest.json', import.meta.url);
 const piktaliSourcePath = new URL('../src/lib/piktali/pictograms.ts', import.meta.url);
 
@@ -64,12 +64,11 @@ for (const [key, id] of Object.entries(pictogramIds)) {
 const expectedSymbols = {
   'traffic-lights': 'trafficlight',
   crosswalk: 'crosswalk',
+  'road-signs': 'danger',
   'safe-places': 'safeplace',
   reflectors: 'reflector',
   vehicles: 'car'
 };
-if (pictogramIds.warning !== 25315 || !trafficFiles.includes('25315.png')) errors.push('road-signs tile: expected ARASAAC warning triangle 25315');
-if (!activityGrid.includes("getPictogram('warning')")) errors.push('road-signs tile: must use the warning pictogram');
 for (const [activity, symbol] of Object.entries(expectedSymbols)) {
   if (!new RegExp(`[\\'\\\"]?${activity}[\\'\\\"]?:\\s*['\\\"]${symbol}['\\\"]`).test(activityGrid)) errors.push(`${activity} tile: expected Piktali ${symbol} mapping`);
 }
@@ -132,7 +131,7 @@ const piktaliAssetMap = Object.fromEntries(
     .map(([, symbol, file]) => [symbol, file])
 );
 if (!piktaliMapBlock) errors.push('Piktali traffic pictogram map: could not find the shared asset mapping');
-const piktaliAssetSymbols = { trafficlight: 'trafficlight', crosswalk: 'crosswalk', safeplace: 'safeplace', reflector: 'reflector-vest', car: 'car' };
+const piktaliAssetSymbols = { trafficlight: 'trafficlight', crosswalk: 'crosswalk', danger: 'danger', safeplace: 'safeplace', reflector: 'reflector-vest', car: 'car' };
 for (const symbol of piktaliSymbols) {
   const catalogSymbol = piktaliAssetSymbols[symbol];
   const pictogram = piktaliBySymbol.get(catalogSymbol);
@@ -192,7 +191,7 @@ console.log(`Checked ${Object.keys(SWEDISH_LOOKUP_OVERRIDES).length} reviewed Sw
 console.log(`Checked ${pngFiles.length} local traffic-safety PNGs against the catalog and PNG signature.`);
 console.log(`Checked ${Object.values(pictogramIds).filter((id) => id !== null).length} source ID assignments and the traffic-safety card image mappings.`);
 console.log(`Checked ${checkedPiktaliAssets} Piktali manifest assets against their byte counts, SHA-256 hashes, file signatures, and Swedish/English labels.`);
-console.log(`Checked five traffic-safety cards resolve to Piktali assets (${Object.values(expectedSymbols).join(', ')}) and road signs use the ARASAAC warning triangle.`);
+console.log(`Checked all six traffic-safety cards resolve to the intended Piktali assets (${Object.values(expectedSymbols).join(', ')}).`);
 console.log(`ARASAAC English catalog: ${catalog.length} pictograms.`);
 
 if (errors.length) {

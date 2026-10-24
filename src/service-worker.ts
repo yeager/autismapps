@@ -20,13 +20,17 @@ const MAX_IMAGES = 1500;
 const versionedPictogramAssets = files
 	.filter((file) => /\/pictograms\/traffic-safety\/\d+\.png$/.test(file))
 	.map((file) => `${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`);
+const versionedPiktaliTrafficAssets = files
+	.filter((file) => /\/piktali-pictograms\/assets\/(trafficlight\.webp|crosswalk\.webp|danger\.webp|safeplace\.svg|reflector-vest\.svg|car\.webp)$/.test(file))
+	.map((file) => `${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`);
 
 // Paths from $service-worker already include the base path (/autismapps on Pages).
 // Prerendered pages are cached too so navigations work offline.
 const ASSETS = [
   ...build,
   ...prerendered,
-  ...versionedPictogramAssets
+  ...versionedPictogramAssets,
+  ...versionedPiktaliTrafficAssets
 ];
 
 // Shown only when offline and no page shell is cached. The app's saved locale lives in

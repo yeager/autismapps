@@ -20,6 +20,7 @@ export function piktaliTrafficPictogramUrl(symbol: string): string | null {
   const files: Record<string, string> = {
     trafficlight: 'assets/trafficlight.webp',
     crosswalk: 'assets/crosswalk.webp',
+    danger: 'assets/danger.webp',
     safeplace: 'assets/safeplace.svg',
     reflector: 'assets/reflector-vest.svg',
     car: 'assets/car.webp'

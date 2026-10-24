@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { getPictogram } from '$lib/data/arasaac-data.js';
   import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
   import { piktaliTrafficPictogramUrl } from '$lib/piktali/pictograms';
   import { speak } from '$lib/tts';
@@ -58,18 +57,17 @@
     }
   ];
 
-  // Use the original Piktali pictograms for each activity. The previous ARASAAC
-  // aliases for traffic lights and safe places selected an opened box and a safe.
+  // Use the original Piktali pictograms for every activity card.
   const piktaliSymbols: Record<string, string> = {
     'traffic-lights': 'trafficlight',
     crosswalk: 'crosswalk',
+    'road-signs': 'danger',
     'safe-places': 'safeplace',
     reflectors: 'reflector',
     vehicles: 'car'
   };
 
   function pictogramFor(activity: Activity) {
-    if (activity.id === 'road-signs') return getPictogram('warning');
     const symbol = piktaliSymbols[activity.id];
     const url = symbol ? piktaliTrafficPictogramUrl(symbol) : null;
     return url ? {

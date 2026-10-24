@@ -32,6 +32,10 @@ const ASSETS = [
   ...versionedPictogramAssets,
   ...versionedPiktaliTrafficAssets
 ];
+// The ONNX Runtime WASM is about 25 MB. Cache.addAll rejects it on some
+// browsers, which would prevent the entire service worker from installing.
+// Keep it in ASSETS so the normal fetch handler caches it when first used.
+const PRECACHE_ASSETS = ASSETS.filter((asset) => !asset.endsWith('.wasm'));
 
 // Shown only when offline and no page shell is cached. The app's saved locale lives in
 // localStorage (not reachable from a service worker), so this follows the browser language.
@@ -55,7 +59,7 @@ function offlineResponse(): Response {
 
 sw.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(ASSETS)).then(() => {
+    caches.open(CACHE).then((cache) => cache.addAll(PRECACHE_ASSETS)).then(() => {
       sw.skipWaiting();
     })
   );

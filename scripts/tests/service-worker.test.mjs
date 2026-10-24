@@ -30,6 +30,12 @@ test('service-worker installation does not precache every static file', () => {
   assert.doesNotMatch(src, /const ASSETS = \[[^\]]*\.\.\.files,/s);
 });
 
+test('the large ONNX Runtime WASM stays lazy so it cannot block service-worker installation', () => {
+  assert.match(src, /const PRECACHE_ASSETS = ASSETS\.filter\(\(asset\) => !asset\.endsWith\('\.wasm'\)\)/);
+  assert.match(src, /cache\.addAll\(PRECACHE_ASSETS\)/);
+  assert.match(src, /const isAsset = ASSETS\.includes\(url\.pathname\)/);
+});
+
 test('the service worker precaches every versioned traffic-safety card pictogram', () => {
   const cardAssets = [
     'trafficlight-b90e2485662d.webp',

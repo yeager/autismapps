@@ -32,12 +32,12 @@ test('service-worker installation does not precache every static file', () => {
 
 test('the service worker precaches every versioned traffic-safety card pictogram', () => {
   const cardAssets = [
-    'trafficlight.webp',
-    'crosswalk.webp',
-    'danger.webp',
-    'safeplace.svg',
-    'reflector-vest.svg',
-    'car.webp'
+    'trafficlight-b90e2485662d.webp',
+    'crosswalk-9302fa0c66df.webp',
+    'danger-4bc28024e9b4.webp',
+    'safeplace-59c8550bf6e0.svg',
+    'reflector-vest-ce860b12f9aa.svg',
+    'car-a54a1ff80372.webp'
   ];
 
   assert.match(src, /const versionedPiktaliTrafficAssets = files/);

@@ -39,7 +39,7 @@ export function compareDicts(src, tgt, { allowSame = [], maxRatio = 1.6, minLen 
 
 // Values that are legitimately identical across languages
 export const ALLOW_SAME = [
-  'PECS®', 'PECS', 'TEACCH', 'ARASAAC', 'Autismappar', 'Talking Mats™', 'LAMP', 'Piper', 'Web Speech API',
+  'PECS®', 'PECS', 'TEACCH', 'ARASAAC', 'Autismappar', 'Autismapps', 'Talking Mats™', 'LAMP', 'Piper', 'Web Speech API',
   'OK', 'Ok', 'TTS', 'CC BY-NC-SA 4.0', 'CC BY-NC-SA 3.0', 'PROMPT', 'DTTC', 'ReST', 'MIT', 'TAKK', 'Bildstöd',
   // pt_BR: words spelled identically in Portuguese, syllables and units
   'Normal', 'min', 'Social', 'Timer', 'Quiz', 'Total:', 'Piano', 'apps', 'Diploma', 'Diplomas', 'Tempo', 'BPM',

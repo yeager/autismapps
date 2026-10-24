@@ -11,22 +11,25 @@ function isUsableManifest(manifest: PiktaliManifest): manifest is { pictograms: 
 	);
 }
 
-/** Load the hosted catalog, falling back to a lazy bundled copy if the host cannot serve it. */
+/** Load the small bundled search index first so searches work through stale or offline hosts. */
 export async function fetchPiktaliManifest(
 	basePath: string,
 	development = false,
 	fetcher: typeof fetch = fetch,
 	bundledFallback: () => Promise<PiktaliManifest> = async () => (await import('./search-fallback.json', { with: { type: 'json' } })).default
 ): Promise<PiktaliManifestPictogram[]> {
-	const manifest = await fetchJsonWithFallback<PiktaliManifest>(
+	try {
+		const bundled = await bundledFallback();
+		if (isUsableManifest(bundled)) return bundled.pictograms;
+	} catch {
+		// Try the hosted copy below if the lazy local chunk cannot be loaded.
+	}
+
+	const hosted = await fetchJsonWithFallback<PiktaliManifest>(
 		piktaliManifestUrls(basePath, development),
 		PIKTALI_MANIFEST_TIMEOUT_MS,
-		fetcher,
-		bundledFallback
+		fetcher
 	);
-	if (isUsableManifest(manifest)) return manifest.pictograms;
-
-	const fallback = await bundledFallback();
-	if (!isUsableManifest(fallback)) throw new Error('Invalid bundled Piktali manifest');
-	return fallback.pictograms;
+	if (!isUsableManifest(hosted)) throw new Error('Invalid hosted Piktali manifest');
+	return hosted.pictograms;
 }

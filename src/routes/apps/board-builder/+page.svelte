@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { t } from '$lib/i18n';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
   import { speak } from '$lib/tts';
@@ -17,6 +18,7 @@
   let categoryColor = $state('#E67E22');
   let cells = $state<BoardCell[]>(createEmptyCells(4));
   let searchQuery = $state('');
+  let searchFocused = $state(false);
   let searchResults = $state<PictogramSearchResult[]>([]);
   let searching = $state(false);
   let hasSearched = $state(false);
@@ -141,6 +143,8 @@
     // Move to next empty cell
     const nextEmpty = cells.findIndex((c, i) => i > selectedCellIndex! && c.isEmpty);
     selectedCellIndex = nextEmpty >= 0 ? nextEmpty : null;
+    searchFocused = false;
+    document.getElementById('picto-search')?.blur();
   }
 
   function clearCell(index: number) {
@@ -268,6 +272,28 @@
 
   // Load boards on mount
   $effect(() => { loadSavedBoards(); });
+
+  onMount(() => {
+    const style = document.documentElement.style;
+    const previousHeight = style.getPropertyValue('--board-visible-height');
+    const viewport = window.visualViewport;
+    const updateHeight = () => {
+      style.setProperty('--board-visible-height', `${viewport?.height ?? window.innerHeight}px`);
+    };
+
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    viewport?.addEventListener('resize', updateHeight);
+    viewport?.addEventListener('scroll', updateHeight);
+
+    return () => {
+      window.removeEventListener('resize', updateHeight);
+      viewport?.removeEventListener('resize', updateHeight);
+      viewport?.removeEventListener('scroll', updateHeight);
+      if (previousHeight) style.setProperty('--board-visible-height', previousHeight);
+      else style.removeProperty('--board-visible-height');
+    };
+  });
 </script>
 
 <svelte:head>
@@ -278,23 +304,23 @@
 
 <h1 class="sr-only">{$t('app.board_builder')}</h1>
 
-<div class="board-builder">
+<div class="board-builder" class:search-focused={searchFocused}>
   <div class="builder-sidebar">
     <!-- Toolbar -->
     <div class="toolbar">
       <h2>{$t('board.title')}</h2>
       
-      <div class="field">
+      <div class="field board-name-field">
         <label for="board-name">{$t('board.board_name')}</label>
         <input id="board-name" type="text" bind:value={boardName} placeholder={$t("board.my_board")} />
       </div>
 
-      <div class="field">
+      <div class="field center-title-field">
         <label for="center-title">{$t('board.center_title')}</label>
         <input id="center-title" type="text" bind:value={centerTitle} />
       </div>
 
-      <div class="field">
+      <div class="field grid-size-field">
         <span id="grid-size-label">{$t('board.grid_size')}</span>
         <div class="grid-options">
           {#each GRID_OPTIONS as size}
@@ -307,7 +333,7 @@
         </div>
       </div>
 
-      <div class="field">
+      <div class="field category-color-field">
         <span id="cat-color-label">{$t('board.category_color')}</span>
         <div class="color-options">
           {#each COLORS as color}
@@ -323,7 +349,7 @@
       </div>
 
       <!-- Search -->
-      <div class="field">
+      <div class="field search-field">
         <label for="picto-search">{$t('board.search_pictograms')}</label>
         <div class="search-input">
           <input
@@ -332,6 +358,8 @@
             bind:value={searchQuery}
             placeholder={$t('board.search_pictograms')}
             oninput={handleSearchInput}
+            onfocus={() => searchFocused = true}
+            onblur={() => searchFocused = false}
             onkeydown={(e) => { if (e.key === 'Enter') doSearch(); }}
           />
           <button class="search-go" onclick={() => doSearch()} disabled={searching}>
@@ -346,6 +374,7 @@
           {#each searchResults as picto}
             <button
               class="picto-item"
+              onpointerdown={(event) => event.preventDefault()}
               onclick={() => addPictogramToCell(picto)}
               title={picto.keyword}
             >
@@ -795,13 +824,151 @@
 
   @media (max-width: 640px) {
     .board-builder {
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      height: calc(var(--board-visible-height, 100dvh) - 68px);
+      min-height: 0;
+      gap: 6px;
+      padding: 6px;
+      overflow: hidden;
     }
 
     .builder-sidebar {
       width: 100%;
+      min-height: 0;
       max-height: none;
-      overflow: visible;
+      overflow: hidden;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-auto-rows: max-content;
+      align-content: start;
+      height: 100%;
+      min-height: 0;
+      gap: 4px;
+      overflow: hidden;
+    }
+
+    .toolbar h2 {
+      grid-column: 1 / -1;
+      margin: 0;
+      font-size: 1.1em;
+      line-height: 1.1;
+    }
+
+    .field {
+      min-width: 0;
+      gap: 2px;
+    }
+
+    .field label { font-size: .72em; }
+    .field input { min-height: 36px; padding: 5px 8px; font-size: .88em; }
+
+    .grid-size-field .grid-options { gap: 3px; }
+    .grid-option { flex: 1; min-width: 0; min-height: 32px; padding: 2px 4px; font-size: .78em; }
+
+    .color-options { justify-content: space-between; gap: 2px; }
+    .color-dot { width: clamp(20px, 6vw, 25px); height: clamp(20px, 6vw, 25px); }
+
+    .search-field { grid-column: 1 / -1; }
+    .search-input input { min-width: 0; min-height: 38px; padding: 5px 8px; }
+    .search-go { min-width: 40px; padding: 5px 9px; }
+
+    .picto-results {
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 3px;
+      max-height: clamp(120px, 24vh, 176px);
+      overflow: hidden;
+      padding: 2px;
+    }
+
+    .picto-item:nth-child(n + 13) { display: none; }
+
+    .picto-item { min-width: 0; gap: 2px; padding: 2px; }
+    .picto-item img { width: 34px; height: 34px; }
+    .picto-item span { font-size: .58em; }
+
+    .no-results { grid-column: 1 / -1; margin: 0; padding: 6px; font-size: .78em; }
+
+    .actions {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4px;
+    }
+
+    .btn {
+      min-width: 0;
+      min-height: 34px;
+      padding: 4px 3px;
+      font-size: .68em;
+      line-height: 1.1;
+      white-space: normal;
+    }
+
+    .panel { grid-column: 1 / -1; max-height: 72px; min-height: 0; overflow-y: auto; padding: 5px; gap: 3px; }
+
+    .builder-main {
+      min-width: 0;
+      min-height: 0;
+      align-items: center;
+      padding: 0;
+    }
+
+    .board-grid {
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      padding: clamp(3px, 1vw, 6px);
+      gap: clamp(2px, .8vw, 4px);
+    }
+
+    .board-cell { min-height: 0; gap: 2px; padding: 2px; }
+    .board-cell img { width: min(72%, 56px); }
+    .cell-label { font-size: .62em; }
+
+    .board-builder.search-focused {
+      grid-template-rows: minmax(0, 1fr);
+    }
+
+    .search-focused .builder-sidebar { height: 100%; }
+    .search-focused .toolbar {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      align-content: stretch;
+    }
+
+    .search-focused .toolbar > :not(.search-field):not(.picto-results):not(.no-results) {
+      display: none;
+    }
+
+    .search-focused .search-field { grid-column: 1; }
+    .search-focused .picto-results {
+      grid-column: 1;
+      max-height: none;
+      min-height: 0;
+      grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+      align-content: start;
+      overflow-y: auto;
+    }
+
+    .search-focused .picto-item:nth-child(n + 13) { display: flex; }
+
+    .search-focused .builder-main { display: none; }
+  }
+
+  @media (max-width: 560px) {
+    .board-builder { height: calc(var(--board-visible-height, 100dvh) - 61px); }
+
+    .grid-option { font-size: .72em; }
+    .picto-results { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+    .search-focused .picto-results {
+      grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
     }
   }
 

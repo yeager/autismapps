@@ -64,9 +64,10 @@ test('tongue-viewer: every position sits in exactly one level; sequences use kno
   assert.equal(ids.length, 31);
   assert.deepEqual(SOUND_LEVELS_PT.map((l) => l.sounds.length), [7, 6, 7, 6, 5]);
   assert.deepEqual(SOUND_LEVELS_PT.flatMap((l) => l.sounds).sort(), [...ids].sort());
-  assert.equal(PRACTICE_SEQUENCES_PT.length, 14);
-  assert.deepEqual(PRACTICE_SEQUENCES_PT.find((seq) => seq.id === 'ba-na-na')?.say, ['', 'ba', '', 'ná', '', 'na'],
-    'banana keeps pt-BR stress on the middle syllable');
+  assert.equal(PRACTICE_SEQUENCES_PT.length, 6);
+  for (const id of ['ba-na-na', 'pa-to', 'bo-la', 'co-mi-da', 'sa-po', 'ga-to', 'va-ca', 'lu-a']) {
+    assert.ok(!PRACTICE_SEQUENCES_PT.some((seq) => seq.id === id), `${id} awaits speech-therapist review`);
+  }
   for (const seq of PRACTICE_SEQUENCES_PT) {
     for (const s of seq.sounds) assert.ok(ids.includes(s), `${seq.id}: ${s}`);
     assert.equal(seq.say?.length, seq.sounds.length, seq.id);

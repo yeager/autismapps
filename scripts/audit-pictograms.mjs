@@ -1,5 +1,6 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { applySwedishLookupOverrides, SWEDISH_LOOKUP_OVERRIDES } from '../src/lib/arasaac/sv-lookup-overrides.js';
 
 const catalogUrl = 'https://api.arasaac.org/v1/pictograms/all/en';
@@ -74,6 +75,57 @@ for (const [activity, symbol] of Object.entries(expectedSymbols)) {
 }
 const piktaliManifest = JSON.parse(piktaliManifestText);
 const piktaliBySymbol = new Map(piktaliManifest.pictograms.map((pictogram) => [pictogram.symbol, pictogram]));
+const piktaliManifestSymbols = new Set();
+const piktaliManifestFiles = new Set();
+let checkedPiktaliAssets = 0;
+
+for (const [index, pictogram] of piktaliManifest.pictograms.entries()) {
+  const label = pictogram.symbol || `manifest entry ${index}`;
+  if (!pictogram.symbol) errors.push(`${label}: missing symbol`);
+  else if (piktaliManifestSymbols.has(pictogram.symbol)) errors.push(`${label}: duplicate symbol`);
+  else piktaliManifestSymbols.add(pictogram.symbol);
+
+  if (!pictogram.file) {
+    errors.push(`${label}: missing asset path`);
+    continue;
+  }
+  if (piktaliManifestFiles.has(pictogram.file)) errors.push(`${label}: duplicate asset path ${pictogram.file}`);
+  else piktaliManifestFiles.add(pictogram.file);
+  if (!pictogram.file.startsWith('assets/')
+    || pictogram.file.includes('\\')
+    || pictogram.file.split('/').some((part) => !part || part === '.' || part === '..')) {
+    errors.push(`${label}: asset path must be inside assets/ (${pictogram.file})`);
+    continue;
+  }
+
+  const assetPath = new URL(`../static/piktali-pictograms/${pictogram.file}`, import.meta.url);
+  const bytes = await readFile(assetPath).catch(() => null);
+  if (!bytes) {
+    errors.push(`${label}: missing asset ${pictogram.file}`);
+    continue;
+  }
+
+  checkedPiktaliAssets++;
+  if (bytes.length !== pictogram.bytes) errors.push(`${label}: byte count does not match manifest (${bytes.length} != ${pictogram.bytes})`);
+  const sha256 = createHash('sha256').update(bytes).digest('hex');
+  if (sha256 !== pictogram.sha256) errors.push(`${label}: SHA-256 does not match manifest`);
+
+  if (pictogram.file.endsWith('.svg')) {
+    const svg = bytes.toString('utf8');
+    if (!/<svg\b[^>]*viewBox=/.test(svg)) errors.push(`${label}: SVG has no viewBox`);
+  } else if (pictogram.file.endsWith('.webp')) {
+    if (bytes.toString('ascii', 0, 4) !== 'RIFF' || bytes.toString('ascii', 8, 12) !== 'WEBP') {
+      errors.push(`${label}: invalid WebP signature`);
+    }
+  } else {
+    errors.push(`${label}: unsupported asset type ${pictogram.file}`);
+  }
+
+  if (!pictogram.labels?.['sv-SE'] || !pictogram.labels?.['en-US']) {
+    errors.push(`${label}: missing Swedish or English label`);
+  }
+}
+
 const piktaliMapBlock = piktaliSource.match(/const files: Record<string, string> = \{([\s\S]*?)\n  \};/);
 const piktaliAssetMap = Object.fromEntries(
   [...(piktaliMapBlock?.[1] ?? '').matchAll(/^\s*(\w+): '(assets\/[^']+)'/gm)]
@@ -139,6 +191,7 @@ console.log(`Checked ${Object.keys(lookup).length} Swedish lookup entries across
 console.log(`Checked ${Object.keys(SWEDISH_LOOKUP_OVERRIDES).length} reviewed Swedish alias corrections against their pictogram IDs.`);
 console.log(`Checked ${pngFiles.length} local traffic-safety PNGs against the catalog and PNG signature.`);
 console.log(`Checked ${Object.values(pictogramIds).filter((id) => id !== null).length} source ID assignments and the traffic-safety card image mappings.`);
+console.log(`Checked ${checkedPiktaliAssets} Piktali manifest assets against their byte counts, SHA-256 hashes, file signatures, and Swedish/English labels.`);
 console.log(`Checked five traffic-safety cards resolve to Piktali assets (${Object.values(expectedSymbols).join(', ')}) and road signs use the ARASAAC warning triangle.`);
 console.log(`ARASAAC English catalog: ${catalog.length} pictograms.`);
 

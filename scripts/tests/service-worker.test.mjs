@@ -42,11 +42,11 @@ test('large WASM is fetched on demand without a Cache Storage write', () => {
 
 test('the service worker precaches every versioned traffic-safety card pictogram', () => {
   const cardAssets = [
-    'trafficlight-b90e2485662d.webp',
+    'trafficlight-fd91ed3bdb7e-v2.svg',
     'crosswalk-9302fa0c66df.webp',
     'danger-4bc28024e9b4.webp',
-    'safeplace-59c8550bf6e0.svg',
-    'reflector-vest-ce860b12f9aa.svg',
+    'safeplace-59c8550bf6e0-v2.svg',
+    'reflector-vest-ce860b12f9aa-v2.svg',
     'car-a54a1ff80372.webp'
   ];
 

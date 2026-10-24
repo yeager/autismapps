@@ -109,6 +109,20 @@ if (browser) db.version(3).stores({
   diplomas: "++id, profileId, achievementKey, earnedAt"
 });
 
+// Saved boards are listed by updatedAt in getBoards(). Add the missing index
+// for existing databases as well as new installs so saved boards can load.
+if (browser) db.version(4).stores({
+  boards: "++id, name, category, createdAt, updatedAt",
+  schedules: "++id, name, date, createdAt",
+  settings: "++id, &key",
+  profiles: "++id, name, createdAt",
+  appProgress: "++id, profileId, appId, [profileId+appId]",
+  goldStars: "++id, profileId, appId, earnedAt",
+  achievements: "++id, profileId, achievementKey",
+  rewardGoals: "++id, profileId, type, completed",
+  diplomas: "++id, profileId, achievementKey, earnedAt"
+});
+
 export { db };
 
 export async function saveBoard(board: Board): Promise<number> {

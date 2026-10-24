@@ -19,7 +19,7 @@
       ],
       "file": "assets/a-coruna.svg",
       "bytes": 676,
-      "sha256": "75c7feb2445dae8f42f7c790f9ffe5fbcfd2fbc9ff4eed27de46be59f79240cc",
+      "sha256": "ec55c92d692b44c986b1e6a7fca0db7ae71feab17583b053bca1dc527c9cfeb2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40,7 +40,7 @@
       ],
       "file": "assets/abbotsford.svg",
       "bytes": 659,
-      "sha256": "a7b9285d8d001ecf4275cd2498267ed1f92e07e2678ca6b93c3e4d94c0d53cb6",
+      "sha256": "30037c5e13a4d4a64a0e94357a486ad22991d6303e242d9132a98ecb339777ab",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -187,7 +187,7 @@
       ],
       "file": "assets/acapulco.svg",
       "bytes": 688,
-      "sha256": "fdc0d55e763fa840718b831e3925b0341e714d19903ed2b0013d64c2c48b6abc",
+      "sha256": "08e1041edbefd30638040f3968d341a0de5dae75ca15e117dcc11fbcc9dac525",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -670,7 +670,7 @@
       ],
       "file": "assets/adelaide.svg",
       "bytes": 658,
-      "sha256": "91937a72bbf29e40fc387735521109c4f84b4c3b6ba31bd21a9ad4cbcfd5d65d",
+      "sha256": "88327b41da0fcb16d54bf024a141df6941b0d6cdedadfe86d78f528b3f208d7c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -880,7 +880,7 @@
       ],
       "file": "assets/agadir.svg",
       "bytes": 688,
-      "sha256": "8ad8cb0015446eeb34c6fca002ae06ade7ac6fa6733edca261835b705bd90c26",
+      "sha256": "ffccc8a5033447bc922a9c5e7eeb63d495ad4d96f16fbc509a137124f0ed9991",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -943,7 +943,7 @@
       ],
       "file": "assets/agra.svg",
       "bytes": 659,
-      "sha256": "e8fcd5ad4027f37a6ac44a501323e8b83bc2d98309ccb61e965e619d038d3fa2",
+      "sha256": "acbad7c2b642980d0b6edcf72654262ea56377dea3e6a56f8ef18dd642bac49f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1069,7 +1069,7 @@
       ],
       "file": "assets/ahmedabad.svg",
       "bytes": 657,
-      "sha256": "e5b234ea1b9164a1be0ba40490179336d9bbce7b7e694245ef9412b19d4022bf",
+      "sha256": "14a7b60027b87664770a0b659376c680a9954635c8f61eb6700265bcec044c92",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1279,7 +1279,7 @@
       ],
       "file": "assets/albuquerque.svg",
       "bytes": 613,
-      "sha256": "39372126c559856fba772c7f3ccde7b9f41d74a94fc7cb4750e36a50b23692fe",
+      "sha256": "8b6cd202edd2dad77093b548236aaa29796c1f4a7dfc86c94748d61264f41287",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1321,7 +1321,7 @@
       ],
       "file": "assets/alexandria.svg",
       "bytes": 688,
-      "sha256": "d9e27bc533ba0c47fa5fe00e98170d4473770eb57217300f17a74e515d36da0d",
+      "sha256": "52af8033db50bf22c499cd1d6b640e639e2b8f9b5b32a0024a9a2a5dafe4a3cd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1384,7 +1384,7 @@
       ],
       "file": "assets/alicante.svg",
       "bytes": 676,
-      "sha256": "0c860fa2e5c5bbefa3cceb6cecc424e3dfd75e061608417631df33a666a48407",
+      "sha256": "4d0e215e4e362b45b8e9ea814624ddbdf37ca081bacb335182f35a7886cb3560",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1405,7 +1405,7 @@
       ],
       "file": "assets/alingsas.svg",
       "bytes": 612,
-      "sha256": "1b53ecc946af9f7342cd6d334276cefcbb86fa23ef46ceff957ff88f5962c28c",
+      "sha256": "2e3898764f9cbfb93f2d7f08c7b61e90d0de3c56f4542c61409b49862ff607ce",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1425,8 +1425,8 @@
         "quantity-time"
       ],
       "file": "assets/all.svg",
-      "bytes": 358,
-      "sha256": "f665ba37966d963cc524375bf9b55b3c631f7fbf5593f4502314b3d7f0c74c14",
+      "bytes": 577,
+      "sha256": "a0e64e6956816b0554c896f3b85f2de3ee2f53994581422d27d06fed2e2fcae9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -1887,8 +1887,8 @@
         "communication"
       ],
       "file": "assets/also.svg",
-      "bytes": 276,
-      "sha256": "addcf145d513f527186b948a5cea11692e5ba3b1f8ff2347f696c27d9b73b588",
+      "bytes": 422,
+      "sha256": "9860c01b6b507b79b01c52b9b2e858387e7e95c100275608cb1c56ee09009e50",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2182,7 +2182,7 @@
       ],
       "file": "assets/anaheim.svg",
       "bytes": 613,
-      "sha256": "647a4b461fe5ec4971cc5da29f8dc9bf5b8ac82f4d3e10449bbbdfd6ce9348c9",
+      "sha256": "eca6094a81e60dae1985743b9f56368b52b89ee733532331957c1101108134dd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2245,7 +2245,7 @@
       ],
       "file": "assets/anchorage.svg",
       "bytes": 612,
-      "sha256": "9251d22944dca99db9ea42850209a315c43242cd7f6cd90461069f8cf95e5bcb",
+      "sha256": "3824ed466e598a46f29b925abee87d92b9e929d2c8c268a6e9569cb426a7b3c0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2265,8 +2265,8 @@
         "communication"
       ],
       "file": "assets/and.svg",
-      "bytes": 295,
-      "sha256": "b8bc90e03b2843fa4b5abadaa1c1753e1c66379172b8b8c90ebb00754cc3b729",
+      "bytes": 441,
+      "sha256": "2752df7accb4eed1999277575924979593f43c8c938c80489fc2c9f1f75057ce",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2329,7 +2329,7 @@
       ],
       "file": "assets/angelholm.svg",
       "bytes": 613,
-      "sha256": "db881ce94a929e91a48e1ac2bb2cec52daeb69134ba41701a60a0a9419666662",
+      "sha256": "b565d8ea8ea3ba13e3c6bab8dc8a91bdc80faadc5f421943d8f6c9dcedb42feb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2476,7 +2476,7 @@
       ],
       "file": "assets/annaba.svg",
       "bytes": 688,
-      "sha256": "1e6bd334f8430443846d520719d86a864c3586781d3f9b02b2db9a57f5a7beac",
+      "sha256": "c7c2a3536ccffe021744f2cef503d3913bf1f5238082201541cf493dd26e40a8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2833,7 +2833,7 @@
       ],
       "file": "assets/antofagasta.svg",
       "bytes": 689,
-      "sha256": "2a9da2165025d15e6f52c4cfec144c92fee61b9c40a2ef4b887a0820c8d8636b",
+      "sha256": "d33f6e21059d45d586107c2b5ee674f8172dca8457d3709a85ce70cba32489d2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -2854,7 +2854,7 @@
       ],
       "file": "assets/antwerp.svg",
       "bytes": 677,
-      "sha256": "e7c0af7346542c006a9a8d4baf132fdbd54a17bb49abfb4a67915fe00666be75",
+      "sha256": "3d7f23b43999db40f24956195c1ef7e7fee372969d3d762abf62f32a3236f54e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3358,7 +3358,7 @@
       ],
       "file": "assets/arboga.svg",
       "bytes": 613,
-      "sha256": "5517c1c3a672a014d9e66d6a0ee6c8a290fed84cbe12bc4dcce72c6c5ff6d6b5",
+      "sha256": "c317b1c6817a0937d763df528587323be4d7ed481302fb4df049a01fceddc86f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3421,7 +3421,7 @@
       ],
       "file": "assets/are.svg",
       "bytes": 613,
-      "sha256": "e6867d33a4e24e667fb1341569f8c89e9e0c13f143198f28f5e8cb97cc478f7c",
+      "sha256": "2a16ad7453720ea8fd7b043c41598a0e7992347ee11de0d412a12322beab4762",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3442,7 +3442,7 @@
       ],
       "file": "assets/arequipa.svg",
       "bytes": 689,
-      "sha256": "fd4de72c49b7a14b749500c3758ce964e724d9e5386590ea6a46d052d20d2261",
+      "sha256": "53ef444ed1743f1f1a72a19dab8dd1b3133231495d2ca8b67006fbb6eb012d9f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3568,7 +3568,7 @@
       ],
       "file": "assets/arlington.svg",
       "bytes": 611,
-      "sha256": "25d514eb465f2924461745b783f72c4900beeb6026686a763580a83aa986a3bb",
+      "sha256": "35de309b580d5665a6f52f39af5af8d795891a3e5e6c0196d39423727f5c7fb3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -3904,7 +3904,7 @@
       ],
       "file": "assets/arusha.svg",
       "bytes": 689,
-      "sha256": "9518780534cf53dd80889119cbba79f16acc286b5c5f5f4867a11be9b35096c3",
+      "sha256": "8c68455ee12504d48b715a47245e67ca4f2c5a8e9b67df5addf10578ac0fd28f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4303,7 +4303,7 @@
       ],
       "file": "assets/aswan.svg",
       "bytes": 689,
-      "sha256": "7b31edf424c0e8a63785facb27d08706876b5108fb154935ebd2957c26a887e4",
+      "sha256": "846f6cd7c6d749f42cf6de2ae78e2f012a68111ef78959d8d7a553ba4d1ec972",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4450,7 +4450,7 @@
       ],
       "file": "assets/atlanta.svg",
       "bytes": 613,
-      "sha256": "0c379b5df09cab397e797d22f7e80bbbf58bd0a5ad643f0274a6a7fb6eb9e703",
+      "sha256": "7e3a5355b8de67c4c865db86c34856242efe401e9c8dfdaf91a96a2eb9e25336",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4618,7 +4618,7 @@
       ],
       "file": "assets/auckland.svg",
       "bytes": 658,
-      "sha256": "882d3a5d7ea0214b06d5349c9b80fe3edead908eb9c10ff710af04be6d239426",
+      "sha256": "7ac0f6681ad87d46fb2e6df9c70d6fc7fe895b43a2086d4707e7d6472b4521b6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4702,7 +4702,7 @@
       ],
       "file": "assets/aurora.svg",
       "bytes": 613,
-      "sha256": "5a437553cc5fe19bbae9f2f74750a0b0e112ac361f955fcc0f44f1dc9e5b76cc",
+      "sha256": "198d5d648f48290ca7e01dcee172f3036d37b6a7d87ab6b374a3ae1a866f67cb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4723,7 +4723,7 @@
       ],
       "file": "assets/austin.svg",
       "bytes": 613,
-      "sha256": "2d51be68ba9606193634b43fab85b7e3d5ac1fd1119bad97d5debefab00b8588",
+      "sha256": "0d652492d8206f24367106b094dea75e44d5d8c7fd42bb9925c8b65e8e9ef1dd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -4870,7 +4870,7 @@
       ],
       "file": "assets/avesta.svg",
       "bytes": 612,
-      "sha256": "f8e860f0154eb3c2e420ba22aa561c4ee709d8312229949ac5db276d2d4000d8",
+      "sha256": "0933d20438a472a2d44d360fa81b5e6997a566fdf48d8f71d7c8f6a03c378162",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5353,7 +5353,7 @@
       ],
       "file": "assets/bakersfield.svg",
       "bytes": 613,
-      "sha256": "7e86eaa5ba76126853428a5d22a4f77739c19843e552f6f10c71df103cefc062",
+      "sha256": "35118b0a60eed45482c856a1693465628ed270b5f48da32b568b0e0dd1543568",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5542,7 +5542,7 @@
       ],
       "file": "assets/baltimore.svg",
       "bytes": 612,
-      "sha256": "69dc2fec44426d87bdc96623b6ab750b93ed9db3197108795959bfd9e5b2eaf6",
+      "sha256": "4c3cd30a44c712c6b1f9d242a79c7ef81b11528d83bb7d0642793395d0317b84",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5647,7 +5647,7 @@
       ],
       "file": "assets/bandung.svg",
       "bytes": 657,
-      "sha256": "ccdf9f8f0d5baf3dcbd4dfcc985e98325219e8106f86a64969590b8700d023e7",
+      "sha256": "8b036d0f57ded1568561b3e08d083beaf9234cb3defa468bc9f2a1bdd00b1974",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5668,7 +5668,7 @@
       ],
       "file": "assets/bangalore.svg",
       "bytes": 659,
-      "sha256": "205a90f64d41d4f3d1dea95834b178f6996d38adf8af930a4cadddd8adef62a4",
+      "sha256": "a8967b4e089e58e4c900513f5826a8e26ca718ceb5a836e8e9cf019862938146",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -5962,7 +5962,7 @@
       ],
       "file": "assets/bari.svg",
       "bytes": 677,
-      "sha256": "7ed57b8a2da6350f1501be7cf2b7490347425b215b1bce781f47622e260497bc",
+      "sha256": "b70ed9bb1484686235660767a27f88a82aec8583040ccafcd290a4054f58dafc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6025,7 +6025,7 @@
       ],
       "file": "assets/barquisimeto.svg",
       "bytes": 689,
-      "sha256": "1da19998b69228121a1908e5f6b49cedee902e48d23a27391d9e46e442340147",
+      "sha256": "e04c6bdd67904722efc9cde0e395dafe734357abd061a753e3cfb9bcdce85464",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6046,7 +6046,7 @@
       ],
       "file": "assets/barranquilla.svg",
       "bytes": 687,
-      "sha256": "f07dd8528ce565f20b091f55862347ef6899ef53bb14bb1b60061ba400405cce",
+      "sha256": "5bd93fc6c48648c210d9206807d3b3a5f94cb837857fe333218021c575734be7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6067,7 +6067,7 @@
       ],
       "file": "assets/barrie.svg",
       "bytes": 659,
-      "sha256": "dfd327482cd7f311fa2cce08d194a31221151ed1ef6758af971a41f706051e39",
+      "sha256": "86cf74b1e633b4cbaa47d4fdec5980ae44d3745ef025511fe8d2a3d1b99f22e6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -6298,7 +6298,7 @@
       ],
       "file": "assets/bath.svg",
       "bytes": 677,
-      "sha256": "7dddad9abec16faf254f11281d800073ad6d31e0a4b3735eeba22f781c616b60",
+      "sha256": "93fd95b2e416aa5a35437c0aabcd7292ca90a269ce80fb0edf5dd2544fdfa1a5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7159,7 +7159,7 @@
       ],
       "file": "assets/beira.svg",
       "bytes": 688,
-      "sha256": "9d5556309fc90a625351d2c4412aceb9f77f439fc5429a9ae98de80a6cd44362",
+      "sha256": "6e036eae7eb17cca8ae55d9ba84a20ee0ef22e8121bfe317eb603ae438803a39",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7222,7 +7222,7 @@
       ],
       "file": "assets/belem.svg",
       "bytes": 689,
-      "sha256": "5c1d6d2cad8404eaffed45f097a1f1567211c97069f7dfd137a6e4f7ae364340",
+      "sha256": "a1511469ab704b0e9fc8965c0de0ebbe886d68607e609cfd2b9a97a366ab424c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7243,7 +7243,7 @@
       ],
       "file": "assets/belfast.svg",
       "bytes": 676,
-      "sha256": "bc10758379c1b8d27490ba7192ad4e0190f99e159afbbf01180d874ccc8d91ea",
+      "sha256": "55083efd20a8cf8c89fa9a69192d200c0d2ba2ed68f327f6002447a66c3e057a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7390,7 +7390,7 @@
       ],
       "file": "assets/belo-horizonte.svg",
       "bytes": 688,
-      "sha256": "6b43d940fc55a3b204ed243829ef68be5889e90cf610e9f46ebde59d88dc9b13",
+      "sha256": "d3ab4652f0f84a234b4c91bd0322f06499e78de774bebc39a9bf764110126973",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7558,7 +7558,7 @@
       ],
       "file": "assets/benghazi.svg",
       "bytes": 687,
-      "sha256": "80ea2b9eb95c1c9d6686d026be1a82cb61f7e61027b198d4631bd0fd3ca7dd8b",
+      "sha256": "753d1485310f808debc9d7393bd482fda2c4511d611b99337b758364b7aa5f20",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7579,7 +7579,7 @@
       ],
       "file": "assets/benguela.svg",
       "bytes": 688,
-      "sha256": "3741dd4a103a9456eb9edf6ff37f0aa55f25487b512db18b51e64264ed170581",
+      "sha256": "929de9c0fe50939055c91a4309439f8e3c4a016c6ae975fd82c4afb354b4eb83",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7621,7 +7621,7 @@
       ],
       "file": "assets/benin-city.svg",
       "bytes": 688,
-      "sha256": "2aa43be3587e6cbb639e79f3ec3b8a638ba5c2812454b201e755899d46c2997a",
+      "sha256": "6f245112d3c739768c5c7c7d7a539d04cda01e91f958d27f44959aab057e7f79",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7768,7 +7768,7 @@
       ],
       "file": "assets/bhopal.svg",
       "bytes": 658,
-      "sha256": "a1fce93513be024b4d15848b05d5991bee8730d3ef340a8a0bb661c525645035",
+      "sha256": "9ec991ff20fd1f8e2f6a91e2bf7a08564562a0778a12be7bcd612908503297c7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7810,7 +7810,7 @@
       ],
       "file": "assets/bialystok.svg",
       "bytes": 676,
-      "sha256": "1530a34b7d4789242b4ad8933734b782e68b5fa9f975a3292d31ee6ebb87dafb",
+      "sha256": "352411680e6d4a25459508ad28ed81e3bb1f0ed3db66b0788cd7b327f1b1faab",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -7978,7 +7978,7 @@
       ],
       "file": "assets/bilbao.svg",
       "bytes": 677,
-      "sha256": "a93be869c2cf038dba6f92f801e4e0ea9f5e1bdebcf785f01ce6b68db40b56fc",
+      "sha256": "c598cfc81e0af2d1af25ebfe9808a99b95c8ca878ca23540d354e0ca48278165",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8188,7 +8188,7 @@
       ],
       "file": "assets/birmingham.svg",
       "bytes": 676,
-      "sha256": "495727660c7a0eb36ab272e15c226e8d87feecfe8c472adc28721205c71a7a3f",
+      "sha256": "672706cdcf67bf55ceec74960032eea2b8c6384e91bf92b1ad8af457dd455794",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8208,8 +8208,8 @@
         "school-work-play"
       ],
       "file": "assets/birthday.svg",
-      "bytes": 432,
-      "sha256": "8b1e140166bc37cccc8ddde7975a5c63b58a12fea761d294acb78ae58f73e179",
+      "bytes": 578,
+      "sha256": "b0d5bdbbae71ac8ce5fa036c1be7d42be06c0fddd4c89f25225e0b1669d0e001",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -8314,7 +8314,7 @@
       ],
       "file": "assets/bizerte.svg",
       "bytes": 689,
-      "sha256": "15f8cee1be8e18c63213790bf3172b3091dd6385421ebe46708250ad9ab1445c",
+      "sha256": "b8ab6ac840b318f9709b7f5f5b243c6c127fa9a1f3a5fac6f4cfda95b72b73a9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9133,7 +9133,7 @@
       ],
       "file": "assets/bobo-dioulasso.svg",
       "bytes": 688,
-      "sha256": "8535608d6ee7d608f5f7733f2997649609defee15c8792246f364cc509a0db57",
+      "sha256": "aa5a6e27a3f6272dcc7da6b47190e186dec3e9a5a963ef82d631cd4ca1edabb8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9154,7 +9154,7 @@
       ],
       "file": "assets/boden.svg",
       "bytes": 612,
-      "sha256": "283fd5bf4d8a43578d3ff154aa724d50ba33e4cd0bed0c070adccd4a89230368",
+      "sha256": "e8c88099aca6a284520b60525041b7cb93f732d6785acfca538a544341aa2251",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9195,8 +9195,8 @@
         "body-health-routines"
       ],
       "file": "assets/body.svg",
-      "bytes": 284,
-      "sha256": "1500e28bd28d562760cda0a3adf189679f72958fe576f2c51677d2c87895cd2d",
+      "bytes": 357,
+      "sha256": "90fd411bd73240a52cc92b2c369cefdf819ebfd32a01914cbd60291843d42805",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9343,7 +9343,7 @@
       ],
       "file": "assets/bollnas.svg",
       "bytes": 613,
-      "sha256": "b63ca390c990c7a185258375df6bd8e73c6eb9370949c3581310568d70ae1b53",
+      "sha256": "6a7f3dc249d827b83237b8a0942a95990e30523394a18253b9fcbe7b8e992db4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9364,7 +9364,7 @@
       ],
       "file": "assets/bologna.svg",
       "bytes": 677,
-      "sha256": "7e1b6bb42d7e412b09add97ac27c25490ed1c636d1e4f612e31d4f84de95c30c",
+      "sha256": "d9a27413a83eba2b58b076a676e617980bf229539ab8d59b3b98279333b37993",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9490,7 +9490,7 @@
       ],
       "file": "assets/boras.svg",
       "bytes": 612,
-      "sha256": "e8d636a00bf3a87f3729671f05e5a2fe09dc349a3ba6596b05132a0aceb862ca",
+      "sha256": "60c08369307db6604c03e72a2f0db4bb8164003c947ee718c76f99f7aed1c285",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9511,7 +9511,7 @@
       ],
       "file": "assets/bordeaux.svg",
       "bytes": 677,
-      "sha256": "2b957d4983d5764db7946ef922c545e98a5b903355a4981db61d9a88279b29d1",
+      "sha256": "d7b862061b1521aa420ce32b2346956652545ecb4fd67ab1ffc72a1164216ee8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9574,7 +9574,7 @@
       ],
       "file": "assets/borlange.svg",
       "bytes": 612,
-      "sha256": "733e1743b491f6b3fab4d35eb0db49e81de0e5c2aa2c3432b0500864412dd0ff",
+      "sha256": "47f3395fda0971964bfff1fd0d5fa97183d931eae9f739948dc93d8e9c5e20c6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9679,7 +9679,7 @@
       ],
       "file": "assets/boston.svg",
       "bytes": 612,
-      "sha256": "4e8a59d7fcd90584c73faccb8885b75347c6ff87a54711a7b3f618871848286b",
+      "sha256": "c18b423256cca354bda3fe0401d0948ebc91f4642ccefd3185da0fd875baf50c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9742,7 +9742,7 @@
       ],
       "file": "assets/botkyrka.svg",
       "bytes": 611,
-      "sha256": "e3a5924712f38de3f362af17ef488ab66ce53c854e9c8d1ecd8a84c0782f8a1f",
+      "sha256": "2e1aded3af4cf5ecada4fb066d7772f90e2072ec48bc7555829f378019047f89",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -9847,7 +9847,7 @@
       ],
       "file": "assets/bouake.svg",
       "bytes": 689,
-      "sha256": "4caee84309252e0b10f7fead5bf18a14c8279219c1f0750f59b3948f2b70df06",
+      "sha256": "2a72135e52af19bbe13df5e3ca6514d4eb2084bdd15a837f1652c7478bd94b3e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10120,7 +10120,7 @@
       ],
       "file": "assets/braga.svg",
       "bytes": 674,
-      "sha256": "5a7270ac857ba2a786c3387f672319947ad98ba638bd9e2fc54924436061153a",
+      "sha256": "defaacb2728cd2aea314325c8858d9adb96f3ab4ec4a85632ec25153c59e3018",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10519,7 +10519,7 @@
       ],
       "file": "assets/brescia.svg",
       "bytes": 677,
-      "sha256": "3734c249a93e4ea080a5b4f266a1085dae8161e96383ce23d6fc499040f7f59c",
+      "sha256": "6e2c68a48beddc66d7dfd178405e9c27138602e7c5cbfc8f998fe4ed53d5283a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10624,7 +10624,7 @@
       ],
       "file": "assets/brighton.svg",
       "bytes": 677,
-      "sha256": "bc9aa5e6ebfe17ccd52d1740b54a879467de26824603fa7dc061969de2f77cf5",
+      "sha256": "1800776614296a0d33a25b23537bbc291422fe4115937d543673f355327ff609",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10666,7 +10666,7 @@
       ],
       "file": "assets/brisbane.svg",
       "bytes": 659,
-      "sha256": "ae6c5d66ad5b2f3bdfb0c2aa934d88a9e57f9e55da7afdde891ea2728e6d821a",
+      "sha256": "c72b4ba86a60857a5c8dddac424628de32bb967f6902ec686f50527100924a67",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10687,7 +10687,7 @@
       ],
       "file": "assets/bristol.svg",
       "bytes": 676,
-      "sha256": "81cd6dd2c5672237f0543e34555535cdd88f69e35de6fe720b26e3f92a2d37a3",
+      "sha256": "a49a5c0170e44fe73b34563282e53b375e3298cdd8cc3ecbe6f75db926da4037",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10729,7 +10729,7 @@
       ],
       "file": "assets/brno.svg",
       "bytes": 676,
-      "sha256": "ebd48dff13bdb700b32fbf4734b58addeee68495427f942c8c0301ec19d4ec6f",
+      "sha256": "0435201c659fe0f29e4e5c2c86e86b7fee210c9a3022bceec4cb755927c656e3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -10939,7 +10939,7 @@
       ],
       "file": "assets/bruges.svg",
       "bytes": 677,
-      "sha256": "e33a5a87026f273878abedf4156a3f5fec30b03a24d30841eb6298f96fba8696",
+      "sha256": "e9a5083fde5aef3f73d9583d94667d30d5e28cac9282d967ff969a61e7a1d8a8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11296,7 +11296,7 @@
       ],
       "file": "assets/buffalo.svg",
       "bytes": 611,
-      "sha256": "46a60d42d686fa0f3cea18b712f9143fba44882454598732aec9acaf6e8f8ac3",
+      "sha256": "a019c8ab1a8be81c4b5565224988c0db4d7385f15e5b5f408cf32fea0c5ad2c8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11443,7 +11443,7 @@
       ],
       "file": "assets/bulawayo.svg",
       "bytes": 688,
-      "sha256": "4e9350797ce9316a268860892f6ba316ee2a774402621fd8bcf31a591e85b45a",
+      "sha256": "ce5f8c0cc0c328f2e41f8bb6863acadfcd07a4aa3081699540988d76f2494260",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11925,8 +11925,8 @@
         "communication"
       ],
       "file": "assets/but.svg",
-      "bytes": 347,
-      "sha256": "f09fd8a91bef7e2f97c9d908586b8d242870e83ab62cdbf34304906871f62e6e",
+      "bytes": 420,
+      "sha256": "41a2bb03d01b4fb72385eb4ea53d6cca730c17373b09cf31b2ed4f11eecb5777",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -11947,7 +11947,7 @@
       ],
       "file": "assets/butare.svg",
       "bytes": 689,
-      "sha256": "d7b085cbcc06558bc52bc5868f44e93c0eafc117197195745e37f1d45dfc08f2",
+      "sha256": "2c72a2d22040e1ca17977dfbccb61ef3e4097524dcf6cb3677fe15ca29993587",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12535,7 +12535,7 @@
       ],
       "file": "assets/calgary.svg",
       "bytes": 657,
-      "sha256": "43c1a006c721c5f7ef654f51e446119f425858819c2d738d282e8678ddfe5c0e",
+      "sha256": "e314a70f0bae5c6cba153e38f846fa260606f98066f5982518186132f3a6ea24",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12556,7 +12556,7 @@
       ],
       "file": "assets/cali-colombia.svg",
       "bytes": 687,
-      "sha256": "7c7d76735555954d1fe62146b44e73eac197edfe825df4c2dbd346859fbda691",
+      "sha256": "52d65824bdae634a9d512e902138909b08a748a19fd25240fc8e650bd56e4ce7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12766,7 +12766,7 @@
       ],
       "file": "assets/cambridge.svg",
       "bytes": 676,
-      "sha256": "66a8dd6d1e0b15ff2d69a9cc4ef73dd8a3602f56ba7ab889d8afb7a7a91440c8",
+      "sha256": "aae811a67e3fc09745a1eff6840658d260ae7ebc1993f810182a92227bf765d4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -12871,7 +12871,7 @@
       ],
       "file": "assets/campinas.svg",
       "bytes": 688,
-      "sha256": "cbc4c129befdf8491b2813ba7d8dcae5859f5f2c8faaefe14f9c1a7e1f4aff21",
+      "sha256": "ee34b8ea1b916bf6f629ee814fe29bf379774b8291b10e484a4796df71765823",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13102,7 +13102,7 @@
       ],
       "file": "assets/cancun.svg",
       "bytes": 689,
-      "sha256": "37ec1084e01fb04ff72cf19c344e3c32f88544e9952d0dc8b6f19f6ae3a4d681",
+      "sha256": "5825e959e77740d6c15dc2d19504a558c32bfaf06b1a64e2545aa731102f5a3f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13438,7 +13438,7 @@
       ],
       "file": "assets/cardiff.svg",
       "bytes": 676,
-      "sha256": "ecbe40b79f9769a906e353f519bcc7471894e804dbf599865010d62418d8dfdf",
+      "sha256": "a21101b4eefa1cc8807a27fe34ed689e348570eddc2131eae10f1810440d3e1e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13669,7 +13669,7 @@
       ],
       "file": "assets/cartagena-colombia.svg",
       "bytes": 688,
-      "sha256": "952bdf672ba44359ef55b84ade9c69e5f1614da1b256f4ecde05615ad411f986",
+      "sha256": "0b63f7d271e533f91b9827aa95cde48c81a11a21a1c92a24b736e3156a7738da",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13690,7 +13690,7 @@
       ],
       "file": "assets/casablanca.svg",
       "bytes": 687,
-      "sha256": "cfb6a58c181e3e3fd689a7cca22e1b91d5530b94fa7bb205d3717094ad3f689c",
+      "sha256": "70b47684f8745445a85907cc716351e36684cc8de04d72601e6a2bcfce8a60a1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -13963,7 +13963,7 @@
       ],
       "file": "assets/catania.svg",
       "bytes": 674,
-      "sha256": "2d7bfaa95101ade32feba0736f49d511ca0746db8c0d3dcdc34d41548d3eaf73",
+      "sha256": "4ecd849f3c0101820733c533dda494b79174a9a64b56e6442522afeedfba991d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -14110,7 +14110,7 @@
       ],
       "file": "assets/cebu-city.svg",
       "bytes": 657,
-      "sha256": "a25d0272b2d029bb8ffaa26b38c74feb6309732d16e7b611c154ac93db772d74",
+      "sha256": "d43e57706a0250a21695fde389ee4f6c34c11b54934f4a91b3a655b146295f5c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -14425,7 +14425,7 @@
       ],
       "file": "assets/chandler.svg",
       "bytes": 613,
-      "sha256": "859feaa746f4f238e91c9dc44afc73e51c6427c092f0b7154dfebad44f3a4be0",
+      "sha256": "0bd80356ff0a73e8aa0acc7589cb38e3f12d25ebc62879d3c4bbeabcae126ee4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -14782,7 +14782,7 @@
       ],
       "file": "assets/changsha.svg",
       "bytes": 657,
-      "sha256": "038e3eafa037435a151fcaa6330d7b35dd9f1c3f004b0ef6913835c55ab3e5be",
+      "sha256": "a66af46ce48b810893283371b95906da582522b6c753abe89289c318a760ab8f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -14950,7 +14950,7 @@
       ],
       "file": "assets/charleroi.svg",
       "bytes": 677,
-      "sha256": "ed56e10cb46f962bde2fa4303b3b97c85cc431d23101076571bdf05483e9ff8f",
+      "sha256": "0bda3f973555edb30bf41b45b85555b67e676130e75c3e40e5ccdd1c71f07e05",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -14971,7 +14971,7 @@
       ],
       "file": "assets/charlotte.svg",
       "bytes": 613,
-      "sha256": "e47c427e85e1f117d66a3f1a91766151713714fb33a5c3a9d3604787e5a27645",
+      "sha256": "23588e434a40f76834bb053b74f5f1f338d7f409d4589209c6dbfd241ec59c89",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15307,7 +15307,7 @@
       ],
       "file": "assets/chengdu.svg",
       "bytes": 659,
-      "sha256": "a6548291c229e855b63eae54f11d0756fb8bc760e83c66ce382b5d896b4c9ffe",
+      "sha256": "3aac013f67e6fc4fcfdfe88165e5656246a166ac1902d6e0a1427ed98945de5b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15328,7 +15328,7 @@
       ],
       "file": "assets/chennai.svg",
       "bytes": 658,
-      "sha256": "05f1f05ab707eb43f38a188e49e15de5712efe681c83fc2f1f9f3ebff16fe049",
+      "sha256": "4cff129896f0767ffe3e66f8ae930dd96bbd7115d39693f90782b84b1b5f6bda",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15517,7 +15517,7 @@
       ],
       "file": "assets/chiang-mai.svg",
       "bytes": 659,
-      "sha256": "f89c55e9b18614ab2d3164c5a4b1650c9ef038ada8794f926f5841e3e4de0364",
+      "sha256": "b6534b97b8589889a7a6debcf1dfde2bca8fdb5f74d0b26c57200ba8f7588a21",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15538,7 +15538,7 @@
       ],
       "file": "assets/chiba.svg",
       "bytes": 658,
-      "sha256": "0a2640a894a48cd5a36f36bcd3ec3914cc733db70e39da9dca8f1cbc467f3085",
+      "sha256": "5349d90abae1d2b738ed1c7c0524c2ca323b4e822e3f3d285ffaa94a5a1ce90c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15643,7 +15643,7 @@
       ],
       "file": "assets/chiclayo.svg",
       "bytes": 688,
-      "sha256": "f33a59c42c41d45f67820fe8b23b542543ce225ff7d8585bb6e966e65424827e",
+      "sha256": "a4976c24438bc2f1aa2aaeccb41ac103559f48b5f03523915efb761b1d3564a2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15664,7 +15664,7 @@
       ],
       "file": "assets/chihuahua.svg",
       "bytes": 689,
-      "sha256": "245f578dd06e840461cdf0de3339ad1afe0d6eafc070086c9f62eb6a74981122",
+      "sha256": "21a161923786bb492a18d0674304fe238d2507ab878b563d9b5add0d054b712d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -15916,7 +15916,7 @@
       ],
       "file": "assets/chittagong.svg",
       "bytes": 659,
-      "sha256": "6914e284cc69542a05748405498270ba8b4eb32cdc4a47b02e66a40fcb8d70b5",
+      "sha256": "26b7d36510ef3c602552bb68d50311170d3db2fbac79986111c3140255f5899f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -16000,7 +16000,7 @@
       ],
       "file": "assets/chongqing.svg",
       "bytes": 659,
-      "sha256": "62ca4710d99fd679d45a7a047eb12701fa5962e6cd0555b51ba18a3130b0ad8c",
+      "sha256": "49d760358209dced4a4f6e65df61cb30f9f290c6aeead60e2d416013368c38c5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -16168,7 +16168,7 @@
       ],
       "file": "assets/christchurch.svg",
       "bytes": 659,
-      "sha256": "744276cfc41cacf73f7fa1efc60293ec1e444a1d2bfec09ce18064f5ab211725",
+      "sha256": "5e2d72784ff0e01c0c2cf183fa363b0aa38cdae0503226e2d86d3792754004a4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -16189,7 +16189,7 @@
       ],
       "file": "assets/chula-vista.svg",
       "bytes": 612,
-      "sha256": "8b7b4947dcea01467348100f42495e3543110a1de432000d37d0bfbc1445edf7",
+      "sha256": "b2f8839b8ea4ac0ff138e17c42f351049a78d045165b6df71d9422872a53e1f3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -16273,7 +16273,7 @@
       ],
       "file": "assets/cincinnati.svg",
       "bytes": 612,
-      "sha256": "d737af5f5ad7cf46ed1638d9920146f47c9ba83d215f6a8dba85799d92f8573e",
+      "sha256": "3b97e8505db4b44bb154373c8746773a46dc1af9c5bbd4c602f49bc839a0282e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -16441,7 +16441,7 @@
       ],
       "file": "assets/ciudad-del-este.svg",
       "bytes": 689,
-      "sha256": "896c57a44a04f10cf532cdc730cd43c73b82ba79f71686e5ca75f07fd941ca99",
+      "sha256": "2bedec2afdcfda79c87bf7b9ecf1a23f3b6fa72ee620ef4f146680a43ca24dc7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -17008,7 +17008,7 @@
       ],
       "file": "assets/clermont-ferrand.svg",
       "bytes": 676,
-      "sha256": "f577cd13a6867c810ca0f9f53c7e33e7780531eafaee4de85f5cc46c20b50dab",
+      "sha256": "ff480e50a56afbcc9c141f91108324afc6030377a4ee566047eb67b07343c2ad",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -17029,7 +17029,7 @@
       ],
       "file": "assets/cleveland.svg",
       "bytes": 612,
-      "sha256": "c2f5ccdb06fa7394da29b7de65dba3da8c864a330dc4f67310da4f3303b9c9ae",
+      "sha256": "4e2451383505c07316a37a1563020eb6e4bab237f642a084afefc0211d141a05",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -17638,7 +17638,7 @@
       ],
       "file": "assets/cochabamba.svg",
       "bytes": 689,
-      "sha256": "8601832cd9e32cca59d51ed73514e5a3d3aa9ba3acfb19a2424d1c58ab27529f",
+      "sha256": "0210f8c8e052d172892b70573d87e888fdf1cef90693b8e3acbfe785eb09fd9b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -17743,7 +17743,7 @@
       ],
       "file": "assets/coimbra.svg",
       "bytes": 676,
-      "sha256": "85510e3fa118bdb4a08ba73cff5dc970c3f8b6cc4f88b6f55416f0d5863a57c6",
+      "sha256": "5cc7072fb2f8c163602bc82cb440eb3e59d7fee205809d99fd4cdbbb528ca541",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18100,7 +18100,7 @@
       ],
       "file": "assets/colorado-springs.svg",
       "bytes": 612,
-      "sha256": "8d1e7408a1ef1796a05882772579e503243c48a467218248fe5691d1b25bfdf0",
+      "sha256": "1e2a1cbb494ad5bddae5a2bdf85e6db742768cefa3dc553eb0085a4a67cb4382",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -18205,7 +18205,7 @@
       ],
       "file": "assets/columbus.svg",
       "bytes": 613,
-      "sha256": "00cc5616fc95d2e1f9641d392a5b2380946bf3a2f84e1fcf833b55f2e7a13fe1",
+      "sha256": "17dfacaaa530925191e8f1b7d588d57acbfa57be3110ca41fad459102847a490",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -19066,7 +19066,7 @@
       ],
       "file": "assets/concepcion.svg",
       "bytes": 689,
-      "sha256": "9d259267d0d235046cc7ad85e5daed93f80eca601a3559152528f9cc714689bd",
+      "sha256": "05b5e147b05bdc33491df16011a3570ef0b336cd6bc0aa704c0aac0cb9e9a37a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -19423,7 +19423,7 @@
       ],
       "file": "assets/constantine.svg",
       "bytes": 689,
-      "sha256": "a382a7269fe6e0583d45e6e2d965130d73cfb92617d82aa03f7ff9cdc5898795",
+      "sha256": "cb1dfac59ad36fc2eae194075f496a5fc53e47809043051b01faee11bbd566f4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -19864,7 +19864,7 @@
       ],
       "file": "assets/cordoba.svg",
       "bytes": 675,
-      "sha256": "8517961f8b550ed662fbbd55a14e07b495e5737177af7a6179be63e2318c3c08",
+      "sha256": "c4c8b857908a3353e6bae0f9e2b813f27af8a1140a9e53cedabeb1302edcdee6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20032,7 +20032,7 @@
       ],
       "file": "assets/corpus-christi.svg",
       "bytes": 613,
-      "sha256": "cc19728fb4ec6f6379ea9d6aedda3ec8d923083e0f90ed876b1aadad0561303c",
+      "sha256": "5bdf4f98b2b55a9d8bd2c60f421fcb37a41169aa0096ab648b99e58f99548af6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -20494,7 +20494,7 @@
       ],
       "file": "assets/coventry.svg",
       "bytes": 676,
-      "sha256": "a9e951811b11c7049eb6bc0b47258956924c8604dc04a85db6e9822863731831",
+      "sha256": "8de67679f240a3555a4fc1823cc86e488e81ac0080199a202397f00fa4557d42",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21523,7 +21523,7 @@
       ],
       "file": "assets/cucuta.svg",
       "bytes": 689,
-      "sha256": "104350bc43e7d349f05e2a24584db2c382332b3ba3dc52a26f0ecfdd12f34e07",
+      "sha256": "68e6c9a5c7257e44677e9d89e7d139a804edb301fd26861d1b186cf4310a324b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21544,7 +21544,7 @@
       ],
       "file": "assets/cuenca-ecuador.svg",
       "bytes": 689,
-      "sha256": "d739028e1ed248849e592bf72b63184c2ec3dab7017323f557a2944ba9473b9f",
+      "sha256": "c9f6b54ec9b55f07a1484e786bdb3ebaa1ddb55bbd6b9e9596adc043f163c712",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21649,7 +21649,7 @@
       ],
       "file": "assets/curitiba.svg",
       "bytes": 686,
-      "sha256": "ce396a5007e05e8a1effa9c4865d345071017dc004a6067c5718a1393e49085a",
+      "sha256": "d9760187237e72f83e4160e70f6025c5f15488cdce995f1a057197bd645de356",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -21859,7 +21859,7 @@
       ],
       "file": "assets/cusco.svg",
       "bytes": 688,
-      "sha256": "294d2ba17680ee929a13e35d42acaefd87970727f1c8f1f95d265cfda6cf1a0d",
+      "sha256": "008ce08c96f3ebf59b3837a68f97fb832e035c747137ae7d6a9cd9103c094e04",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22111,7 +22111,7 @@
       ],
       "file": "assets/da-nang.svg",
       "bytes": 659,
-      "sha256": "13ad1817edd25c82d02c33bda52a12e0acb0d51d4c948f9fa4c2841508a66526",
+      "sha256": "0f4f4031f1a660751f97a3769a94e95b625e290e26c081031a603e2b663e3fd0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22153,7 +22153,7 @@
       ],
       "file": "assets/daegu.svg",
       "bytes": 658,
-      "sha256": "f547274fe1887106701d6c80776cdaf61cd20db1951e5a9ce75f417cb62e8729",
+      "sha256": "c51fb06f1eb22a546cfab688466afaf9cce19aeced13b6e05d802c1bbccb67a2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22258,7 +22258,7 @@
       ],
       "file": "assets/dalian.svg",
       "bytes": 659,
-      "sha256": "a2e739b066b4ab719cf68629b666e4dd873e2aca83168ffa1e7ae0a1f97ab6ca",
+      "sha256": "8b40b4ea20aba961bf92dd71d5bef3cebe8c20a9207005c2854c4b91101221e7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22279,7 +22279,7 @@
       ],
       "file": "assets/dallas.svg",
       "bytes": 613,
-      "sha256": "14c464ed5607e99dc0115491194771f113310e9abd25fd5864cdb8eda181b74c",
+      "sha256": "17a53b278a51b6dd871008f0cceb7ea1a9eb8cb50b86e18274c084169e6e696d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22447,7 +22447,7 @@
       ],
       "file": "assets/dar-es-salaam.svg",
       "bytes": 688,
-      "sha256": "0f5fd98ee8919268528e6752d3030d4047bb8631dbbe0e04d048002fc9f3535f",
+      "sha256": "36137cbbc26694f8a34074d19e7e15dfd83894c004c1bb24b3c7db75f50dbd34",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22594,7 +22594,7 @@
       ],
       "file": "assets/davao.svg",
       "bytes": 658,
-      "sha256": "7cf392279388f31610505681fef750a7db31543910e8c936ddffdaeb8a3ab0ee",
+      "sha256": "cd3d64ba42bf1450547964dd70557f64b036b54c1122cdedafbda4397c9a8352",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22614,8 +22614,8 @@
         "quantity-time"
       ],
       "file": "assets/day.svg",
-      "bytes": 363,
-      "sha256": "03ae55324c64534469e3b374fe91a916158047cd69f83a8c0f01427a84f3f416",
+      "bytes": 509,
+      "sha256": "039e8e1955ec5d7a1d429a8fd71b44d6db223700fa2d9821f7aed669a0fdbda4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -22825,7 +22825,7 @@
       ],
       "file": "assets/debrecen.svg",
       "bytes": 676,
-      "sha256": "25cf72e17ad0e7f4321f9d5ec39f223d75805f469b2809bd3c3532278ec3b2ac",
+      "sha256": "476d2fa309df445f93a290dddac8daaee8eee02616044cde547c52f986723e04",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -23287,7 +23287,7 @@
       ],
       "file": "assets/denver.svg",
       "bytes": 612,
-      "sha256": "4db7cd5bce67b5e0611852cc34a5d46c605bf22a3cc9be2ef780c64ec6e6f30e",
+      "sha256": "b2f6136d2852a3767659015cbd339e4745faaaff82eaaa6ce20ca005fe1cf0af",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -23602,7 +23602,7 @@
       ],
       "file": "assets/detroit.svg",
       "bytes": 612,
-      "sha256": "e36a1e2db7121b7acde5e2499dcf32f045c833e7e5a6273efa27122881e6e818",
+      "sha256": "c2f2c23f84a8d2af3cc4f6b7528d49f6cc696476075e1132c209b5f059399914",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -23811,8 +23811,8 @@
         "quantity-time"
       ],
       "file": "assets/different.svg",
-      "bytes": 287,
-      "sha256": "e650830f42049f9fe8b13953c0e182a83bd2a46cb18cce7a8c29926ea586d03e",
+      "bytes": 433,
+      "sha256": "0d9a7325fb9e9950e17b5a860e147be8147def87675191b16c567a4752166805",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -23875,7 +23875,7 @@
       ],
       "file": "assets/dijon.svg",
       "bytes": 676,
-      "sha256": "28eb7b551f6c45991d646125a4d9261f8e6161635d4527f7ecca19f5ccf67f2f",
+      "sha256": "5182f220a9535f101458318f209c32804c380900f36c91606f7397a02286c977",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -24001,7 +24001,7 @@
       ],
       "file": "assets/dire-dawa.svg",
       "bytes": 689,
-      "sha256": "a5965c636190101d76958cddd02bfd37018fc25310dc7471c3d69d1b39da68c5",
+      "sha256": "4bb0206e8806047cf550c1839c77fadfa681b9436a0e2d0ec3dfc8da24f19cfc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -25198,7 +25198,7 @@
       ],
       "file": "assets/douala.svg",
       "bytes": 688,
-      "sha256": "896bfb1574661486ca0f242a19a36986e12bebf388a6d7841f0f9c7ca0c31bc5",
+      "sha256": "86f217c9d10408927067227748c06bf12b8486093aa2b7bbed65584e2e21efbf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26227,7 +26227,7 @@
       ],
       "file": "assets/dunedin.svg",
       "bytes": 658,
-      "sha256": "010073bfff134d771a9430455cce7d05effd3c15ddfb0c03c6bbaa3f8343ca28",
+      "sha256": "5615e72d6e48386a2be87440b099563b0a6c7b9e325a5a2a698c8bbf4d0b491d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26269,7 +26269,7 @@
       ],
       "file": "assets/durban.svg",
       "bytes": 689,
-      "sha256": "4ffb55e4d9247b03c63b1ab3131e71303d35a31c44dc6f93ea736a0fff8b2867",
+      "sha256": "fcef83add3bbb6bd113ebc30689ff15cfc2b49e446c64ac341d0aab808bf127c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26290,7 +26290,7 @@
       ],
       "file": "assets/durham.svg",
       "bytes": 613,
-      "sha256": "244331f163e915e77d962a9a92aa4b81e73fdae2993789476d77919cb39cf308",
+      "sha256": "7b79e4fa6f750bf1367cdb299275720525f2a725885ce9eb0a5dd439bc6738dd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26941,7 +26941,7 @@
       ],
       "file": "assets/edinburgh.svg",
       "bytes": 676,
-      "sha256": "12685a902ed6175bfdd0214ae67086df1aaa7f272c8e8e01ececd5bea99dd7d7",
+      "sha256": "ab5f69e946325918a9843cc73113995660122a3234e1dde7333a8c892deb0f12",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -26983,7 +26983,7 @@
       ],
       "file": "assets/edmonton.svg",
       "bytes": 658,
-      "sha256": "3e210d0d86358f35b27e7b6054de55adefa978387e7d280c0912cb26ed788a27",
+      "sha256": "d75cc0e1f6554f6e0c7751be44c3ebc5aa756e6a62f5eb0ae8820f146fbd4206",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -27130,7 +27130,7 @@
       ],
       "file": "assets/eindhoven.svg",
       "bytes": 675,
-      "sha256": "8ccb0c9ee95199ab4676d2bb5851a299c3a672768fd76a38e2495ca2ebeb82e7",
+      "sha256": "ca59198d0e48f83e724d29d7d6a64519279513766488ecbd27404aef07d6d052",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -27172,7 +27172,7 @@
       ],
       "file": "assets/el-paso.svg",
       "bytes": 613,
-      "sha256": "4bc44b1f7e2c40d58f444864663762b8dfcacda2b52f9ca50fa66a32001ffbd7",
+      "sha256": "c56e744d2e3f16b2b182dbc819cd2a40a541081b210e1f525d1da68ce88af7ff",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -27886,7 +27886,7 @@
       ],
       "file": "assets/enkoping.svg",
       "bytes": 612,
-      "sha256": "923875b20aedc3451a61a7b323d4233c7acecf587c87d7a413ca86ca5ea928a0",
+      "sha256": "bacbc0b041b698d15d613c3f39a43f9d2d45cff7211213f394c93c93143779a9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -27928,7 +27928,7 @@
       ],
       "file": "assets/entebbe.svg",
       "bytes": 687,
-      "sha256": "f511d029bedfc0da7285f966bad213dfc4207c49f37091850cd70acaa0c50b42",
+      "sha256": "6acaf391969146727d2df2b2d0b28e60f4f176abe9fd8345b34857f27b88093f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -28201,7 +28201,7 @@
       ],
       "file": "assets/eskilstuna.svg",
       "bytes": 612,
-      "sha256": "90775afb4f06871882fbd7d4d3b1b71b9724305bc7d13bb35eb90aa8d7c7f594",
+      "sha256": "722f1bc28790ebd962875714affcf6914fdcdab61e41c5e11ef3cbc01a781d15",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29545,7 +29545,7 @@
       ],
       "file": "assets/fagersta.svg",
       "bytes": 612,
-      "sha256": "b7500be26d594e35fe3bc879969b374f640ffe1c1a1362ff826e53590ee57915",
+      "sha256": "1ced471001cdc6e233f9db439633805dc6da50cf6061c38aa6633840accc8f0e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29650,7 +29650,7 @@
       ],
       "file": "assets/faisalabad.svg",
       "bytes": 658,
-      "sha256": "fe03f3160339b6e43beee5aea7ca82ed13c0cf459b8c90b466ebc0c4e0edd8ec",
+      "sha256": "f6e75f94b1c8db77bf0abe0e7ce3c93c023e344d147ef14d205860337736dc54",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29713,7 +29713,7 @@
       ],
       "file": "assets/falkenberg.svg",
       "bytes": 612,
-      "sha256": "3993ea6e38008e09d4d7a567ddc450ed605112bc7c93660004e8b4847f230907",
+      "sha256": "9355f8e86f3818658714734c06ca67ea55067eff14e6506d157df16d4b8da9e3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29797,7 +29797,7 @@
       ],
       "file": "assets/falun.svg",
       "bytes": 611,
-      "sha256": "cf3e9fdd9da1b0817fb723c3c0d035b81c259e763800534b767b0b17d98632a7",
+      "sha256": "a5897e9db6677b65ab5cf1f27583c9edfe9c2c9fda72559a30be900addf141c9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -29944,7 +29944,7 @@
       ],
       "file": "assets/faridabad.svg",
       "bytes": 658,
-      "sha256": "d1f7664ef130ddb24a69a6705c490a6f551eca32d305259437a222d9b5be8141",
+      "sha256": "1668aa81d81e08f97bed18623688e1696ff8c40115e97f9b4321e4bca4c43014",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -30007,7 +30007,7 @@
       ],
       "file": "assets/faro.svg",
       "bytes": 676,
-      "sha256": "7bc0113b2a0c40d00af7597205f9a62d7eba043956fb26a3961148cc7cecf9af",
+      "sha256": "802b96a1c5c4877dd3f76a16575cfea9e54fcb2bcb0a30e175a5cf4ab9265083",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -30784,7 +30784,7 @@
       ],
       "file": "assets/fez.svg",
       "bytes": 688,
-      "sha256": "674710f50983c149b49c484331ab6d2e5adc6dc54e95f6062cfe6e77f593019e",
+      "sha256": "66ff45ce2fa808d852d52c5cbb87a71897d6a447bb740a66b81b1ddd2068ed88",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31960,7 +31960,7 @@
       ],
       "file": "assets/florence.svg",
       "bytes": 676,
-      "sha256": "779adce4e6aa0cabb07482c53996ec29f41ce08bbd06c2584ee05a8653c82373",
+      "sha256": "cbace241899749c948a659fbb9d05f15923b639d22aa6b60d01ac09092c17d5c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -32989,7 +32989,7 @@
       ],
       "file": "assets/fort-wayne.svg",
       "bytes": 611,
-      "sha256": "7da307d041cbccdc79696224af021d03658187b7916c69316bb3631c5bb2132b",
+      "sha256": "a7416f9a8b3039b96b9e020e35d9e49c3169c3202450a33a253ba585f4bb5e77",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33010,7 +33010,7 @@
       ],
       "file": "assets/fort-worth.svg",
       "bytes": 612,
-      "sha256": "f54ddb1fbd58b67f912045bca73d65e6c3cffebd951ae35575144b13233b3c5d",
+      "sha256": "f2f3795fe7908b380f1a5571b21752d19a2fc2acbe4806f1a1c325aecdcd1798",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33031,7 +33031,7 @@
       ],
       "file": "assets/fortaleza.svg",
       "bytes": 688,
-      "sha256": "8898b5bab0d797764dcaae6afef8f81b99550f837792c2ce8c4f1c6626418b8a",
+      "sha256": "ec8d957dd664ddb0e8d8a08b36c5617f9800220e1f6961155772ceefa2de5771",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33346,7 +33346,7 @@
       ],
       "file": "assets/fresno.svg",
       "bytes": 612,
-      "sha256": "e5fae84a959711cef20fa776451d204a25d9e060c6faa89957c790b52e6b7ab2",
+      "sha256": "ef8664ea204737b98e833ca2ea21dfbf1c5f0de91f717a89083ce7a5094f018b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33661,7 +33661,7 @@
       ],
       "file": "assets/fukuoka.svg",
       "bytes": 658,
-      "sha256": "2dead70a756155e97bb43b5f266572d4b6a49b422a3555bd338a58681b32b466",
+      "sha256": "4839b22f8a0f9f9e1924dbf4fa0c51a9587c6085af82404b394d1f228e9dce41",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33745,7 +33745,7 @@
       ],
       "file": "assets/funchal.svg",
       "bytes": 677,
-      "sha256": "f5d08e30d854182a11b6abfd8e5a4207b52ff4181263254c7e2aa1bd6923eacc",
+      "sha256": "01ab130c4e68de219c4e0812e92e791c6bf18bb54ba5451eb53b04631175fd02",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -33892,7 +33892,7 @@
       ],
       "file": "assets/fuzhou.svg",
       "bytes": 659,
-      "sha256": "9aa536ba7650f1754ffb41fac361651ea2af1c3801e3cebaff24159c28b145ee",
+      "sha256": "04696d7c742195dd70e26486a6d8ebdec44c993f4972c7eeaa00c7c1cbbc30f0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34333,7 +34333,7 @@
       ],
       "file": "assets/garoua.svg",
       "bytes": 688,
-      "sha256": "18f83da64ec045fea104b3555a669af7b3ad8df35f19ed76f1fc61cc4c83aafc",
+      "sha256": "f64cb0229df646b20bee51428223bf0cfb2b7ed1e1ce440da2311ee769bb9a25",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34438,7 +34438,7 @@
       ],
       "file": "assets/gavle.svg",
       "bytes": 611,
-      "sha256": "06d39b48deacaf1316ac984cbc7415297f17113ada6bd484b1df259d9c09a146",
+      "sha256": "6fa75098bf9744d4d367abb780828769963c5fedf30524b167958b2064ea14ad",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34480,7 +34480,7 @@
       ],
       "file": "assets/gbarnga.svg",
       "bytes": 689,
-      "sha256": "340827a78c7b619b3f52489a7e70fe84e2e28f941e695ccd9089107fc8a70a06",
+      "sha256": "8342748cb99d0185373b435ea9812f7a1d7f0bdf52794e929bbe44bceaccbdd4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34501,7 +34501,7 @@
       ],
       "file": "assets/gdansk.svg",
       "bytes": 675,
-      "sha256": "f5401518fbd2658421117ec213c49ba3ce4e42bb07d6c87bff8c8711b5107ee4",
+      "sha256": "a1f901fb81482430b43f94492ef36e8a3faa82f8cc98cd588d41e9c91b600504",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34543,7 +34543,7 @@
       ],
       "file": "assets/genoa.svg",
       "bytes": 677,
-      "sha256": "8b5a1f40b4af87cae70e8be17bdc2a3659377be962e57e8ce8f748fe2d988fdc",
+      "sha256": "1ad185579872362aad6231110c43806b580c2f580273672578c40f6006db5d02",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34627,7 +34627,7 @@
       ],
       "file": "assets/george-town.svg",
       "bytes": 659,
-      "sha256": "ca2d3384eb56c6921a1195025d641c02380316404f5fab93026c1d91a90007b4",
+      "sha256": "a7b304d1e2290ab6247baead1e331a776bfaac25c905dbecc843328b82dd3add",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34963,7 +34963,7 @@
       ],
       "file": "assets/ghaziabad.svg",
       "bytes": 657,
-      "sha256": "a83c1a04a84e4b049bd89ca6c53e8dc3f902d39675810ae088d72f157dbf1cf8",
+      "sha256": "d1659492e620d1cd41eaf9b5d8bb40b22a61cc63767bf76a002c84d23d5f40b1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -34984,7 +34984,7 @@
       ],
       "file": "assets/ghent.svg",
       "bytes": 677,
-      "sha256": "92b8dd9e4f896aedb20180b2ba01bb735c9c5429dae8db4fc327509108237a43",
+      "sha256": "e6b6d438aafabd08eb0eba60dda7a9d8544f3df856944e781600846b0341ea1d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -35047,7 +35047,7 @@
       ],
       "file": "assets/gijon.svg",
       "bytes": 677,
-      "sha256": "4017ba574bd2885a0f1ac0934512564b93f44cb45d36773456548e181c38c3aa",
+      "sha256": "27e0e0c36f9ae9f033790490a6f967488eda4064bb78ac87109f5aab2622234d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -35194,7 +35194,7 @@
       ],
       "file": "assets/giza.svg",
       "bytes": 687,
-      "sha256": "5f66b396d1514d5da90d7cbcc1a4f57688d6c5f53aa1d89ae5301d3f23dd7e1c",
+      "sha256": "e88ee3bf650b52e4d6bb07a052f7d85df3b216e4b16843b623c63495f53f3220",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -35236,7 +35236,7 @@
       ],
       "file": "assets/glasgow.svg",
       "bytes": 677,
-      "sha256": "a75ac98ee3dc9a91c325e8d8feaaf14e53a645aaa48c9617611c7925b69da858",
+      "sha256": "2742e5b2df9ee0bef959523e3309f6c90a3723eafb186cd5488703fa9bd6c420",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -35656,7 +35656,7 @@
       ],
       "file": "assets/goiania.svg",
       "bytes": 689,
-      "sha256": "6beb139729af1193f74be0049f7d880191561fb5b32e0bf819a6bfd1eff48ad0",
+      "sha256": "2fbced3049b70b07fc348d9c5aa55abea829d2e7e676d48d321e47dc1734ff53",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -35677,7 +35677,7 @@
       ],
       "file": "assets/gold-coast.svg",
       "bytes": 657,
-      "sha256": "ecdecb9c7ed2c7288d549747c59a18b20cdb35eca311cd5fef5c9a86aed73955",
+      "sha256": "1873b8f8ee32eb3841ef4c1c1849b7f86dfd5d14618a8c6465d5e43937b72a3c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -36412,7 +36412,7 @@
       ],
       "file": "assets/greensboro.svg",
       "bytes": 613,
-      "sha256": "f2fe2ff14fad41c4901fddb8dce562c83e12f363820eeacb72276ef7704ad247",
+      "sha256": "255dc70add032dfe444a26406c229dbc25ce9dafd07ea95d5f9f90870aeaf33f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -36454,7 +36454,7 @@
       ],
       "file": "assets/grenoble.svg",
       "bytes": 677,
-      "sha256": "0e25ad6cf50134a7c9f3fbe1672c098d13ae54c1e7b0ae2ed2c0baa8c99f1598",
+      "sha256": "e744c2e7315cada030c2778d7133101d81335d3aaa7721d46d155d3206650a74",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -36580,7 +36580,7 @@
       ],
       "file": "assets/groningen.svg",
       "bytes": 676,
-      "sha256": "0e9baa5fd4f659f5d21fcb4fc1735fd38e595e794eec5aaa3c42d65b4ea1536c",
+      "sha256": "4cd7a20747f5d89495eaaab83f78f0dfaed2a11a15685cb05b987edb3264cb96",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -36685,7 +36685,7 @@
       ],
       "file": "assets/guangzhou.svg",
       "bytes": 658,
-      "sha256": "a8cdb423a0706220bc2691f089b3f7c41a0da8eb1ea3861528d812fe95d5067a",
+      "sha256": "b5ee80d4b783fb36b772420c3ccd4b378bb8c5a00b16dd0d55c4977b8f970894",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -36769,7 +36769,7 @@
       ],
       "file": "assets/guayaquil.svg",
       "bytes": 689,
-      "sha256": "02471a8fafd673c6cc7b2713017a93e3c977dec5ac82b15c32a477f716c6dde3",
+      "sha256": "d13876a773e3dc5c57166ff2d427b6ac1cd92267b2bc21c5db4be68898560f7b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37042,7 +37042,7 @@
       ],
       "file": "assets/hai-phong.svg",
       "bytes": 659,
-      "sha256": "91be93a1b469365243b83741d9771097f4b22da84c817f961df3d344aea772af",
+      "sha256": "c2a05a759c5d77a0e5b878a9424c76db6592404440952b8cfa9c2dbacde726af",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37336,7 +37336,7 @@
       ],
       "file": "assets/halifax.svg",
       "bytes": 659,
-      "sha256": "d91bc2d257a1c98b3b58eb86645299d49fde1e4497f4d8f7229f39b761b7a716",
+      "sha256": "579b358c505ab49f87c6124f594bbd40bf92de3a106c9638469125627a7fd137",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37378,7 +37378,7 @@
       ],
       "file": "assets/halmstad.svg",
       "bytes": 613,
-      "sha256": "e35a98cdd6e37e9147b18ad79ea9fe14a0e6f5d3db0b52f103a8c66acf790154",
+      "sha256": "cb9149b3283c9391dc23805f736bf59781bb74768df410826300fd6e0c5ce385",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37420,7 +37420,7 @@
       ],
       "file": "assets/hamamatsu.svg",
       "bytes": 659,
-      "sha256": "5b88383e628d29e2f0f1070fbc6390c0b85cae8e5ae8cb816f0e179dbf44de63",
+      "sha256": "8775e4fc4577e1ba120f1f6243ac661a1059344da65bacbcbfccfb86e03d90c1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37462,7 +37462,7 @@
       ],
       "file": "assets/hamilton.svg",
       "bytes": 659,
-      "sha256": "f4caeb03f8d954f5905e43dddf786b6885751d52e53a76e8dd82ae21a7e008cb",
+      "sha256": "d7eecff03d70ded9cb8ffe82350071c8b551ca795dc71e7ff3093e5ad66941f8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37819,7 +37819,7 @@
       ],
       "file": "assets/hangzhou.svg",
       "bytes": 658,
-      "sha256": "5797ab0c7c9f4599d82fb805b7b0c183c72dbc581d2336a6f6bb2e534e8faf95",
+      "sha256": "7272e6d5f9fb6d423295cb87c1bc6f0d12d82a9e37f30f4bf2e8077342758d6a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37840,7 +37840,7 @@
       ],
       "file": "assets/haninge.svg",
       "bytes": 611,
-      "sha256": "6ed59470156f148a0d334f863f068b1526af0143582bf93134831832181c0f18",
+      "sha256": "188246b4d516f4c0cd6bed03550b4ebf7607e42ba2b736ad5bfacc34654440b7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37882,7 +37882,7 @@
       ],
       "file": "assets/haparanda.svg",
       "bytes": 612,
-      "sha256": "5246018a5cf13095092e5c26e352a6a05c9cd111a0fce00e625b69159e14ad35",
+      "sha256": "4fd553c4da520786d3731bdc6e8d5cd22c9e081a1d38f741a3f8cb5e1d9b3e9f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -37966,7 +37966,7 @@
       ],
       "file": "assets/harbin.svg",
       "bytes": 658,
-      "sha256": "c21e28a198228fe099c54c7ffdd5adaf303699491d81742d7232084a4410a42d",
+      "sha256": "3a4e765b5e2281f57aeab6f746b2d4622cd9982ffe9b016c637e1875f6caa0d8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38029,7 +38029,7 @@
       ],
       "file": "assets/harnosand.svg",
       "bytes": 613,
-      "sha256": "28ff6ced1f69a876cd8e3bdbabf8ada791f9242a7fc6bb5162f3c0f0db828e89",
+      "sha256": "c2453cca50bac03da98b45d3b12e984c4742a606e6a3a5b1b58589324f9ba2e8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38848,7 +38848,7 @@
       ],
       "file": "assets/helsingborg.svg",
       "bytes": 613,
-      "sha256": "e40d48e2e5ce2741393c9b48526be5dfb3fff72a47d525274465cc0f9a572325",
+      "sha256": "04a2b349a0d7527fa276a6c7471fcf144124f989f4a0089b54f5ed5fbfa7f696",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -38932,7 +38932,7 @@
       ],
       "file": "assets/henderson.svg",
       "bytes": 612,
-      "sha256": "7e79c3ba931814955a23b340c5e0288919981db1b69e63778c4eb0b2a8a26d4d",
+      "sha256": "0c65b427876323346e19db27e2d40538f1508c5730e9c794af3c447df472b447",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39037,7 +39037,7 @@
       ],
       "file": "assets/hermosillo.svg",
       "bytes": 688,
-      "sha256": "5bea5631065bf09801cf733cdb42cafd378ef263e8ab236cdf726c69cd7fb74d",
+      "sha256": "ed2861b4bfc58349bf0376c31b3cfdb3ab2c579d1638a323e0447b796998e655",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39352,7 +39352,7 @@
       ],
       "file": "assets/hiroshima.svg",
       "bytes": 658,
-      "sha256": "c8243067ca10f8b1a8c82a41a82540802357f1ad7057982ee5d1918ed6a1ce84",
+      "sha256": "5b06fbecf2af8e0df9653e68fc23160eb0a7bdd3deb9b3cf7896a9a97bab1eeb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39436,7 +39436,7 @@
       ],
       "file": "assets/ho-chi-minh-city.svg",
       "bytes": 659,
-      "sha256": "f5393d76f455021362508e3db3f5b7f27272323d10da95f705d583702ffa2601",
+      "sha256": "5a6776a7917143ca33c6883a12aa81be30c1c6dfe98eee80b5dc3e96bc996a97",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39499,7 +39499,7 @@
       ],
       "file": "assets/hoganas.svg",
       "bytes": 613,
-      "sha256": "8f92427674819302f6e8b3da4fff87bf262c376330a6d8791be27be78d7d1ec9",
+      "sha256": "67afe07f42c376a372fd7d6248690628194333dbef94483ae2d538aec9a1abb4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -39835,7 +39835,7 @@
       ],
       "file": "assets/honolulu.svg",
       "bytes": 612,
-      "sha256": "c1836cf9f1e156c7719e6c61dea4b286655fe5b52cc622157502a73ad76a98d5",
+      "sha256": "777c495fcfa74ddca459acd144e3c57176344de6c17139f7bee8b7e91179db5c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40360,7 +40360,7 @@
       ],
       "file": "assets/houston.svg",
       "bytes": 612,
-      "sha256": "e0787fbaf09ca52d187f043442beb127d0f7c88f9dd13af4ce3208cfc1e4990b",
+      "sha256": "c7edced34fa9c2be7e1c18e8356eb1fee2da93a849909cc76b1c55d5a2a65e46",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40528,7 +40528,7 @@
       ],
       "file": "assets/huambo.svg",
       "bytes": 687,
-      "sha256": "696ec1a03f9791ff9fe33f1aa9dc05ac3ae2c121c3d8b3ebcb79c15e344926c1",
+      "sha256": "df0c870a16f712eaa1096cfa2a0ab2560981f6437c2bd3b0635d4c1f493a06ba",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40549,7 +40549,7 @@
       ],
       "file": "assets/huddinge.svg",
       "bytes": 612,
-      "sha256": "7a8ac2ff940d4001061a848f8cc74f52268cdf2e51f4299d79127bfd5637c5b2",
+      "sha256": "a810bcb5a5d809a10a5396087216b6fa01242c12c19a4e6839d969a456f3fed0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40570,7 +40570,7 @@
       ],
       "file": "assets/hudiksvall.svg",
       "bytes": 613,
-      "sha256": "8e8bb529806763f409e695a4c109f6ebbaaec28e102850aeb0a04ff23126fbe8",
+      "sha256": "9dd802bf073548a7a7f7687a709a15ae1c90e528bfefc311a99829a058ee2176",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40738,7 +40738,7 @@
       ],
       "file": "assets/hyderabad.svg",
       "bytes": 657,
-      "sha256": "1cb6af74a01e8c142b8ec833b42e2e6090bcab9cdd017b3da83762397c80d8cf",
+      "sha256": "3592b954f569b2191b0b98dd9beff30c95b3657a8b525fa3b2306d30803ff757",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -40801,7 +40801,7 @@
       ],
       "file": "assets/ibadan.svg",
       "bytes": 688,
-      "sha256": "cd16c796e9b461e6d6458eb0399842306542810459a483ad4dff1268f170f4aa",
+      "sha256": "62c0523bbcfe14cec7633b33b7bade298800a334977efa69682b1f5a7799156f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41494,7 +41494,7 @@
       ],
       "file": "assets/incheon.svg",
       "bytes": 658,
-      "sha256": "fe5ebdf0cae75f1055afba633f0e848ade403a7c19a02f17b888d4fc95116427",
+      "sha256": "f17997818c625c38830957b8288198e8be039aeb276e1346dd66b5f3169ea79d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41725,7 +41725,7 @@
       ],
       "file": "assets/indianapolis.svg",
       "bytes": 613,
-      "sha256": "b16d316b1c7195489fa6e770c7d8489419f02fc9b27d19d82f3725936c780bc6",
+      "sha256": "5aadceb41796a2c3ad44fca9c0d6f56950999a190f2753ed884d6bd2fe9edc1a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -41809,7 +41809,7 @@
       ],
       "file": "assets/indore.svg",
       "bytes": 659,
-      "sha256": "3d6752423e9cf285a966147fdb58bf2d3e16715956d1d0b8d8405c131bd2be08",
+      "sha256": "9da193a7231918d54d8638549a0540db520e7e9ee11969e9ecce75573781ebb8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -42712,7 +42712,7 @@
       ],
       "file": "assets/irvine.svg",
       "bytes": 613,
-      "sha256": "2052749dc618d36383b9f8fe451da44afc3092fa8b47cf0b03d7c2b3ac39b9ab",
+      "sha256": "039710822a4988263c76cdf6f0f7173e0dbec501ef75e0d4efd432b653c899b6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -42964,7 +42964,7 @@
       ],
       "file": "assets/jacksonville.svg",
       "bytes": 611,
-      "sha256": "773fdf68bb8867d5d79064a6c94b4006bd9aac25827871eae6ed2d41c82e7c98",
+      "sha256": "3ac16aa571b53667cec411552f3ffa9731a96f1d1151de0d7ef764a36a42695a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43006,7 +43006,7 @@
       ],
       "file": "assets/jaipur.svg",
       "bytes": 659,
-      "sha256": "538a6790ce265a357753ba776c03b6ce3c04355520b0c98506c4c8331c2d8117",
+      "sha256": "5d5c2750e45c0e9df0cec6f66902ec6b6621beb4506ba1f2451437d8c182c351",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43153,7 +43153,7 @@
       ],
       "file": "assets/jarfalla.svg",
       "bytes": 613,
-      "sha256": "0881427b8434cb7fa029b3900fa36557b0b43f9b5a2115159ded5c97c0e6eb34",
+      "sha256": "4337f083509d20787d53a2268410667cd28314d39cee62f3073d2b7ab052ff22",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43258,7 +43258,7 @@
       ],
       "file": "assets/jersey-city.svg",
       "bytes": 613,
-      "sha256": "4fec154c67d892a606b93eb46073a8291a50c0216735127cd73032d050647620",
+      "sha256": "f244df3bf3af8139f96d2ae5d7985d2367903cab244e26ee97482a833ae20d62",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43300,7 +43300,7 @@
       ],
       "file": "assets/jinan.svg",
       "bytes": 658,
-      "sha256": "4f638fd060e6470a30053ba7b19484908b1b7d98ce12dcdde4a117fdae4ac05f",
+      "sha256": "2cba902ccf132152a2f982cf71bd76c61ca30a675067f4c1ed6b6b17ddc90357",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43447,7 +43447,7 @@
       ],
       "file": "assets/johannesburg.svg",
       "bytes": 689,
-      "sha256": "e6944cbe33781d58d395df56190dce547b5ea1d8dbd7ae4c0ab932a2cf57fe24",
+      "sha256": "66b2c63cd0a9994fd17f9b1366538bfe7c6d41378cefd7f1b4e29eebafdde216",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43468,7 +43468,7 @@
       ],
       "file": "assets/johor-bahru.svg",
       "bytes": 658,
-      "sha256": "fd2d3ffa9ff77fa202b72a5e07a45371a0a29a59d00c8eb2688e3c200ab109bf",
+      "sha256": "0762968600ef11fc220a80ffc19dd3184fe7dc209a78a94de3f5702e122801cb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43573,7 +43573,7 @@
       ],
       "file": "assets/jonkoping.svg",
       "bytes": 613,
-      "sha256": "db5174812d6f17ef3456faa1c3be1f3fb0006516c6019658cbee5800a37f3635",
+      "sha256": "54327ae9d79a3a2cd62070fcf8784e519a77f098193e7dc909385a69a6e58b03",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43657,7 +43657,7 @@
       ],
       "file": "assets/juarez.svg",
       "bytes": 687,
-      "sha256": "ebe7aa83d0e7ceabcf529c9dd0bb2dc641e41c0da0f8634c3b4c7825405aa133",
+      "sha256": "de8336e9f570910a475cdfba50f04bedcdba61f67a10e0afe27311f12db9efc0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43846,7 +43846,7 @@
       ],
       "file": "assets/kaduna.svg",
       "bytes": 688,
-      "sha256": "001fa110720bde57be1029da4ffa905ef6b4391ceec6162021b9cb24073ec6f6",
+      "sha256": "c06ded95192228db28f7c60eb7abb084e4f0ddd9b8116efbc31f6b6bd4fb4f1c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43867,7 +43867,7 @@
       ],
       "file": "assets/kairouan.svg",
       "bytes": 689,
-      "sha256": "10a4eb7c4e7fb6f98ea67c4aaea0ca6fe086d91f9ca955acc684d1070fed4cd9",
+      "sha256": "713adadeaec9766f3c5853b89f0fed66c5c07c16873f517c9f089e728b29c60a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43909,7 +43909,7 @@
       ],
       "file": "assets/kalix.svg",
       "bytes": 613,
-      "sha256": "ef34a30ab9c51a7229f87c74f75bc5236c4e65ce66feafc028e3655e13ee8fb3",
+      "sha256": "cd7c190a39d05f6a1827ef930068f6774e94de6806fee152590e9ee816fb1a9e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43930,7 +43930,7 @@
       ],
       "file": "assets/kalmar.svg",
       "bytes": 611,
-      "sha256": "e9f1ad1babdf994ea0fa8d13eab578aac663a9cd469341861b9c4081efcb433a",
+      "sha256": "2934122d9b8674cc0a0046e39bb177563be87c478511e74afa75625d97ee07d9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -43972,7 +43972,7 @@
       ],
       "file": "assets/kananga.svg",
       "bytes": 688,
-      "sha256": "ed071d55e318937e8523c3f448ab8058a5cf56cfa9cefa496cc94646a8e77e3b",
+      "sha256": "722295f4fee45c68dd9009a7bbbe9402e0e466f026051a647c78f4ff642987d8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44014,7 +44014,7 @@
       ],
       "file": "assets/kankan.svg",
       "bytes": 689,
-      "sha256": "5f4f4fcff1748bc3897e679f4e3ffa1384c943ae5782cf0a0edc4ba1ddb65fc2",
+      "sha256": "d0a0791ae6facd99306ac138e1040491d03b2dd3dc17ffcda684414b06ea69cf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44035,7 +44035,7 @@
       ],
       "file": "assets/kano.svg",
       "bytes": 688,
-      "sha256": "de0b9f31fc65c97200b54a3c32a7649bbf8d35e1ff37d0d6ad23a3d543a5f1b0",
+      "sha256": "2fa5647fee149b81a9ba65e096f6655cdcf130ba94e2bbea06ea34519f323cab",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44056,7 +44056,7 @@
       ],
       "file": "assets/kanpur.svg",
       "bytes": 657,
-      "sha256": "0db4878e89eac016fa98873295c05c5e1ba6b1a3af12e367d98abe3e265b4024",
+      "sha256": "8ba0ea9f088f251d62eeebae1acb9859eff4f4c92c78c17de679ef2c309768b1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44098,7 +44098,7 @@
       ],
       "file": "assets/kansas-city.svg",
       "bytes": 613,
-      "sha256": "5543b90ad083509a737c4a51ad184427478306dc020a2c38d7546dcbe4b861a1",
+      "sha256": "c9a45a9eddb2baa81d2c16eaea70c8f5711a0166ed6b16f77483879026ef964b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44119,7 +44119,7 @@
       ],
       "file": "assets/karachi.svg",
       "bytes": 658,
-      "sha256": "00b8b97f6701b59c044baae5cc5b399ffbc084c1c41d93f3f776de8a5b2d383f",
+      "sha256": "1222e840396820600e7190e98869f3d059ebd9def62ec7db0b534fb60f66ebaa",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44140,7 +44140,7 @@
       ],
       "file": "assets/karlskrona.svg",
       "bytes": 612,
-      "sha256": "67c0a5bce9e7941c81e416ae66752dbe6544cf1091b47e28d3113b1e48f1ab80",
+      "sha256": "d6af44dc529d1cb314fe0ae03ab7e783e0ae3ae15d625924ca787ccb7ac36358",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44161,7 +44161,7 @@
       ],
       "file": "assets/karlstad.svg",
       "bytes": 613,
-      "sha256": "002eb70f733737f0c70de7b8707d00367f53da02309489dfe12a266c97c14872",
+      "sha256": "c4b299f229c08ebab4aaca4deb0d4c8237d272fd5ed5bad793e263096d7c7828",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44203,7 +44203,7 @@
       ],
       "file": "assets/katowice.svg",
       "bytes": 677,
-      "sha256": "8b7578fd315009dbb6c5abf789b2affee817776977746d4482000a4568662610",
+      "sha256": "f276ca4c182a7f491f574588f5646f039930d2e2d089242032a23bd1bbdb77ea",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44224,7 +44224,7 @@
       ],
       "file": "assets/katrineholm.svg",
       "bytes": 612,
-      "sha256": "0ffbadeebaf805a527821b13b2f265806b447ddbcc17eec268dc0d8cbc74cdae",
+      "sha256": "c25aeec833bb89bfe72c05c092f0515de3881c6b5ea4c7d6f7a174a370f2e365",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44245,7 +44245,7 @@
       ],
       "file": "assets/kawasaki.svg",
       "bytes": 659,
-      "sha256": "d944e516d14705e8f492e129118540923820dbdb2e36ad75699635bf06bec98d",
+      "sha256": "3129442a8360d7006aa501ad5f1c12e3b40daf005c47cacaacad1fb1e2a17e37",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44266,7 +44266,7 @@
       ],
       "file": "assets/kayes.svg",
       "bytes": 689,
-      "sha256": "948ee8200f5cfeed9b70be58d6f5d0682e355369ff47fd3bcc67a254cd13b229",
+      "sha256": "03bceb588dabe47b8e83fe68ac59a79580daebc8d0281b9b0f03be64e97aeed0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44371,7 +44371,7 @@
       ],
       "file": "assets/kelowna.svg",
       "bytes": 658,
-      "sha256": "2c447c4d6f4bf090babaec66eaf367f885697bf8077965b41d4dc231d1e556c7",
+      "sha256": "0362befc3894c31f073bf993e248c53dd63ff95e1509a9486720617a32cf77bf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44560,7 +44560,7 @@
       ],
       "file": "assets/khulna.svg",
       "bytes": 659,
-      "sha256": "15521ad1d4e644f88ca9a92dfe77b0620ec00b6ad09e6eab2324d292342112fd",
+      "sha256": "cf0cd1a7ae04a13609451990b97c4971f2505a003280d0720175b3db52e8ab1a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44791,7 +44791,7 @@
       ],
       "file": "assets/kiruna.svg",
       "bytes": 614,
-      "sha256": "3e8afc7c1cff59fdd65cd9ecc11a0685970d919bab90ebba94eaf10c24b21847",
+      "sha256": "d5cf9b848029b39543eda8a9226172bed8ed2f6f441ae1a8f16b021cec8c46a3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44833,7 +44833,7 @@
       ],
       "file": "assets/kisumu.svg",
       "bytes": 688,
-      "sha256": "28faaa1a5f71a998724246c6b076ebb8a91a25b5ebf2fb4fe2ff832e5a7af904",
+      "sha256": "09d8e25da2c819288644651f38ce4581d22e89182d589e2db31db7d1d81f6f8b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44854,7 +44854,7 @@
       ],
       "file": "assets/kitakyushu.svg",
       "bytes": 658,
-      "sha256": "b9b1e7e7d3d671d4d8f360bd8db2d8c3646750e5dbb59fcb09c2d3ce8b04dce5",
+      "sha256": "cde125cafb781481f6faff7f2dbca0c5cd190ca9df4c725972bb4180454a3f34",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -44938,7 +44938,7 @@
       ],
       "file": "assets/kitchener.svg",
       "bytes": 657,
-      "sha256": "2fd7f23deacbeae0f9640e639094ca87215b4d5660eacb9ea4c7bd7dcb8d2eb6",
+      "sha256": "03d253066adb319c5c07f1166f0bce7ef6ab42e9e17e3604dea23f5babac6a91",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45232,7 +45232,7 @@
       ],
       "file": "assets/kobe.svg",
       "bytes": 659,
-      "sha256": "8ebc98ea725dabb3d7740da3191d70a51728adc9f8fd901afd9067b47842069b",
+      "sha256": "da899b1ab9a8c668fbad1f3ec54fe4443534cbcf75c4848469c1ee7c3d571b4a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45253,7 +45253,7 @@
       ],
       "file": "assets/kolkata.svg",
       "bytes": 658,
-      "sha256": "5d8dfbe540ed092be30f8468b74352a9ab2eacd132c70fe5196796ff18f5883b",
+      "sha256": "7d65ce7822c00c024ac9d7e06235387feaa4eb17d545348567550dabc3d1a2da",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45274,7 +45274,7 @@
       ],
       "file": "assets/koping.svg",
       "bytes": 613,
-      "sha256": "9a52019a4a1aca314323591b9e6f1098e7139f849c1d08c2d3bdd0bca9b185cf",
+      "sha256": "31499d3f933dd89c4015c2e8db459ad63d30a153387e20cf51e50a2a00c8fbbd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45295,7 +45295,7 @@
       ],
       "file": "assets/kosice.svg",
       "bytes": 676,
-      "sha256": "126c72a4a4f3efd817011b46d9be27eec6bbf45b515c5b21dc5ad2edeece8e4a",
+      "sha256": "05b11b2b05e70d52a8a3329d560ec26a154c4d831ea5f1583c1cbbc691dbd757",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45316,7 +45316,7 @@
       ],
       "file": "assets/krakow.svg",
       "bytes": 676,
-      "sha256": "5d5d18c54d86d3fa5ed06b62b967f9403f3acc8262b2b7f3149eb3f28506083b",
+      "sha256": "9ce34342e1ae21a89074609d147c4ad13ec1d749d07b917a64c0c20b9fdf0eec",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45337,7 +45337,7 @@
       ],
       "file": "assets/kramfors.svg",
       "bytes": 612,
-      "sha256": "e4d9aa12c84bed003ff34bb2c8ee85bdfa1322aa0a93ee8774e95bb786e81203",
+      "sha256": "bb3bd1ae9a9f7793668e9e74fddd01c23d163cd04b38c973e94a930cf1b17818",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45358,7 +45358,7 @@
       ],
       "file": "assets/kristianstad.svg",
       "bytes": 612,
-      "sha256": "468e238d19521343ff80b0fabd5ed63f5a773124e622b37e14e860efafde36a5",
+      "sha256": "066117e5679a26d16291b1cca4e2f07057592597b0484dd96c6a933a482b11a6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45400,7 +45400,7 @@
       ],
       "file": "assets/kumasi.svg",
       "bytes": 687,
-      "sha256": "fc9a4be578140b0bd1d0114f113381a10d441d1f7039d2b96a5f1f5c122d702f",
+      "sha256": "42d21d3fad8ec48ac98597569550f0bf5b5fe0126888038798ed12ab4f2121c2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45421,7 +45421,7 @@
       ],
       "file": "assets/kungalv.svg",
       "bytes": 611,
-      "sha256": "5ed8156185b69339b0eb7681893b69c9590af5d6606fe319e09e797116902212",
+      "sha256": "6c7fbaaa748fc9ea6aa2a87940c2f24c11396f551077f45f46349111655ed31f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45442,7 +45442,7 @@
       ],
       "file": "assets/kungsbacka.svg",
       "bytes": 612,
-      "sha256": "73d1065dffc2835b377c8924dbe63c7a830e86c50df41aca8526ea56413cb3fc",
+      "sha256": "9479bfe663e0e4c704ad43a05c4663002357d5f29db10d0d5543719849145ba0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45463,7 +45463,7 @@
       ],
       "file": "assets/kunming.svg",
       "bytes": 659,
-      "sha256": "06d8713cb79e4f8bb76f7e34d56aa345811a55379efcb6382965accf3fe42a3e",
+      "sha256": "121c59b1fc1d60dfda7d6535bb3baed6d77c2678bff0e8ca0645b9905914cbf2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45547,7 +45547,7 @@
       ],
       "file": "assets/kyoto.svg",
       "bytes": 657,
-      "sha256": "653778dbe827359748c7cead0481f24a6d0cbfa44fdabe64e8b1b40012748c1f",
+      "sha256": "09c0d2fd8eb4ef8086cbc6c36f51be539fa33c564ec4d669d7c462400d1682f7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45610,7 +45610,7 @@
       ],
       "file": "assets/la-plata.svg",
       "bytes": 688,
-      "sha256": "76f11f352293c2ad2420d1d574ab787dd66a2a8032bb11b5a44fa5a0d9331b3a",
+      "sha256": "89f00645d970c47bddbab03325b89cb6f42910e7beb650914b8033d8d18c0e5d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45841,7 +45841,7 @@
       ],
       "file": "assets/lagos.svg",
       "bytes": 689,
-      "sha256": "3af4da38542896cc6781aa631e7d8aa0fe322e8de3adfd4bd2746b0151ca3dce",
+      "sha256": "9e8d29b4f2cb790ae6cedeae889c612cb15b70b0e298d5f71d10d0ef836e824b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45862,7 +45862,7 @@
       ],
       "file": "assets/lahore.svg",
       "bytes": 658,
-      "sha256": "9c340dc2aa48b2ba955eac92e46afdaa3615ecefafdbd5e56d00ad51ea8356ff",
+      "sha256": "edd761f29b39f0eb406cb2f9c059ff8862eadfa5a98466e7772c97b4bd569d67",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -45988,7 +45988,7 @@
       ],
       "file": "assets/landskrona.svg",
       "bytes": 612,
-      "sha256": "2c281592ab7203ceec1974bb5b6a8b162a9c42cae48d83332f9f0c0af38faed1",
+      "sha256": "d460fdc29bd00f5d396a200eb60f0c602040b35f32576784d9dbcd76341096c5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -46093,7 +46093,7 @@
       ],
       "file": "assets/laredo.svg",
       "bytes": 612,
-      "sha256": "c4d8860576894d23441eeaac78926874a83f549b2e928c434e8ef971ca8c2c70",
+      "sha256": "a7a818fd4df81e5bab3dc44e7b69492e74f6f6d47633d5da61c619ad6e1b493f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -46135,7 +46135,7 @@
       ],
       "file": "assets/las-vegas.svg",
       "bytes": 613,
-      "sha256": "714ec66ff56525433eb43dba90947822c4feb1ea5908df85767719c5463573ae",
+      "sha256": "e24a8a68f23320730c96b46cc41ea7b750e0ebd7184930fcee9b5c89bc26b627",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -46828,7 +46828,7 @@
       ],
       "file": "assets/leeds.svg",
       "bytes": 677,
-      "sha256": "5a85744a4835e78b025cc457b99a96685634be76c93d6b6445a4e7448cf54209",
+      "sha256": "3b09b423abfa80be27c0a675d8e51110983fffb2faefcceb6929220e1deb50f3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -46954,7 +46954,7 @@
       ],
       "file": "assets/leicester.svg",
       "bytes": 677,
-      "sha256": "d9733c868b116a5837bd4eb7ac22b2a9f9ea12691631a14e2f400fe788227d6a",
+      "sha256": "f2f1af8d9af85e316e66ad63876f0b291ab86a74d56dfd12819490ed8138c94a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -46995,8 +46995,8 @@
         "food-drink"
       ],
       "file": "assets/lemonade.svg",
-      "bytes": 386,
-      "sha256": "1e7b02692ff4c34717c101dd818f93154e5e84e307bd7fab19c2ad6d9ff07a39",
+      "bytes": 532,
+      "sha256": "0effd65cc1af970b3cb67667b5f48e9590ee364b5c51139f377129f6d267fa6a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47122,7 +47122,7 @@
       ],
       "file": "assets/lerum.svg",
       "bytes": 611,
-      "sha256": "f72207679b1c9f7e4a033c9e258c81bee4ad6ba630247e5585a70479c3330117",
+      "sha256": "0b228700af0e5aa99bb11e6a76dfe1012b9244ab52cfea8f9a01db3f2754bfe4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47353,7 +47353,7 @@
       ],
       "file": "assets/lexington.svg",
       "bytes": 613,
-      "sha256": "ae5a3e398664fc12b4e5ee818b2b3475e674ca4f7705d68bb6e59544458b1226",
+      "sha256": "b6ff5873f7498e8b0b297acb4475558389e5e6d0bcab9c2f52ae7894a74af6c5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47521,7 +47521,7 @@
       ],
       "file": "assets/lidingo.svg",
       "bytes": 612,
-      "sha256": "d63048de4060facd560887df295f6bebdad8f0edbc8f42506fd3b2566024d0fb",
+      "sha256": "4f7878b46d2c86eb0c46d65d7e7bbab5b9d1785874d10dca81c8c842867885e5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47542,7 +47542,7 @@
       ],
       "file": "assets/lidkoping.svg",
       "bytes": 613,
-      "sha256": "957e32301d76ed4fb76ee277e9b413f0cba305eec9f175dc05090b31baf12862",
+      "sha256": "b85cf22765333d52318a4bf5e48f5f41cfd3c8202030ee3283259f35c8b25a38",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47647,7 +47647,7 @@
       ],
       "file": "assets/liege.svg",
       "bytes": 675,
-      "sha256": "68978657e77cd2bd7e62627e8165ce4ce9f4cc0708c1916d9324ec6a16674115",
+      "sha256": "ddec01cb56c9ac46f31d1ccde154a60112c12dd109aaa8fabfb3bfd2f1772e7d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -47941,7 +47941,7 @@
       ],
       "file": "assets/lille.svg",
       "bytes": 676,
-      "sha256": "cceb158a440a61425c383800c67725a87cd65374dc6e292cd4964ae2fd4692e0",
+      "sha256": "7cb9f0ff5b7c40e8445c5d5a11e322214c6310a483aeda1d3ff07d1aef41be01",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48067,7 +48067,7 @@
       ],
       "file": "assets/lincoln.svg",
       "bytes": 612,
-      "sha256": "25dad7cf13fb4283d68b681df8baee1c6cc6e6ab770834b3d84db5cfde806399",
+      "sha256": "671449436f66ce6187f59d9162ae4bddbbb4700a84e6bca25255376eea9e2e92",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48130,7 +48130,7 @@
       ],
       "file": "assets/linkoping.svg",
       "bytes": 612,
-      "sha256": "6afe171d4b73c781fc7e04ee62f8b2e21fadf362fd76dd93869dafc681d2afa6",
+      "sha256": "e4db5e76aecb7c2ec283eb22d24096d15367c868566cf2713b42d57277fce859",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48382,7 +48382,7 @@
       ],
       "file": "assets/liverpool.svg",
       "bytes": 677,
-      "sha256": "23705a5e8bd11bd8f0b24c644fc4b20dab97100a92d8264356649d0c9c6e77c8",
+      "sha256": "5b67e5a43525c895862104ee5923e3846b35833cca2809bd723f8fcd46e938c6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48592,7 +48592,7 @@
       ],
       "file": "assets/lobito.svg",
       "bytes": 689,
-      "sha256": "7590af0545f08b221bcbcb48ee06c92a25d0a8639cfc8b0d3f960235da3e9ffb",
+      "sha256": "67f809c6ecdcea984808e0ecf83660a033bbd3c51c2b65dbd11b54fb9e45da91",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48697,7 +48697,7 @@
       ],
       "file": "assets/lodz.svg",
       "bytes": 677,
-      "sha256": "a12a1cb07aac7a3b79ab144795d55af80f00f6809f83fbe829a00c487589b103",
+      "sha256": "28796adfa3948c99924cdee61834f654b8f484e4c8187521ac81ff403a746654",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -48844,7 +48844,7 @@
       ],
       "file": "assets/long-beach.svg",
       "bytes": 613,
-      "sha256": "97ab41cc9ffdfc5d79299a4673e5bc7312b6db862a4bb1818bc6707f6d28e0d9",
+      "sha256": "e6e7bc164231da4673434a97ba4f76b9e2f0067271ae61c8a74b249f2313d855",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49222,7 +49222,7 @@
       ],
       "file": "assets/louisville.svg",
       "bytes": 612,
-      "sha256": "c28623cb6bf9f5cadab5351558896f1e182ba9a07fd04335150a9daa868fe654",
+      "sha256": "ee32235c0fd7f353efe527f0f42549ae360b40e8a5ab05cdb7b7158d6f7ca682",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49369,7 +49369,7 @@
       ],
       "file": "assets/lublin.svg",
       "bytes": 677,
-      "sha256": "fcaaee71e286ab8683cc8e6af4bd060ea1780efb05a9c957ccb8afdcab3fbfa7",
+      "sha256": "fcda740eb5686e72a3f8fb5611271de159744c3052eccc8618b3ce5e849a6ee1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49390,7 +49390,7 @@
       ],
       "file": "assets/lubumbashi.svg",
       "bytes": 689,
-      "sha256": "722db90b8e7caed381df64586a76ee42a59b1e0a7979323f7a3dacc0338618b5",
+      "sha256": "5cf65623692e370bcc22962ce459e9861f5374f14bf68cc92f0b9983989a59dd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49411,7 +49411,7 @@
       ],
       "file": "assets/lucknow.svg",
       "bytes": 658,
-      "sha256": "2f0611a99db63f5a279f7065b3e24fc0d388b5453f2f8ebd5bf71c9f64eeb7ab",
+      "sha256": "67dfefbd0071c898434e1549b3f03459d96d6432fb28bf03064b33341d4e313d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49432,7 +49432,7 @@
       ],
       "file": "assets/ludhiana.svg",
       "bytes": 659,
-      "sha256": "bf02c813060285b8be2b448e634fa6f208ed277e431096379f08541bd8dbcc7c",
+      "sha256": "a3bc00d5cf8ba18052ed653a4ae980fc21d082eeb007b49df9a1f9bac8cabf26",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49453,7 +49453,7 @@
       ],
       "file": "assets/ludvika.svg",
       "bytes": 612,
-      "sha256": "318941d585762afd4c01556d04289134d5d6cc709934ff11679b9d1d00f90c08",
+      "sha256": "0695e3336bce2160f6fe0b501d86efdef00632408a4dff3accef6eac7eb8a3b0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49495,7 +49495,7 @@
       ],
       "file": "assets/lulea.svg",
       "bytes": 612,
-      "sha256": "4265d871f69d9c8864c8023a8db590cb009c32215a59a084385e29b37a620451",
+      "sha256": "a92e043d79f7b295797d16e8f9875b67dd8c03c8d8349ca8657a1fe95fe28091",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49600,7 +49600,7 @@
       ],
       "file": "assets/lund.svg",
       "bytes": 612,
-      "sha256": "90e362d9acf9db259a36ff3020e9eaf1e60b315eb996af31822c3afc4fde57e1",
+      "sha256": "6d3d4f7f74e789ead9f456057578c2ee523f028159a0bbf4b305f1c76407e259",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49747,7 +49747,7 @@
       ],
       "file": "assets/luxor.svg",
       "bytes": 688,
-      "sha256": "06df8807b06180730eeba7cacbe856c6f8b35c5c137595ddeec55c54eaed7539",
+      "sha256": "728da24a774e0b0039f8c1426b11d5996fd4368d758c72dae93a4c41f05de5f8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49789,7 +49789,7 @@
       ],
       "file": "assets/lyon.svg",
       "bytes": 677,
-      "sha256": "b90bb61a4403ab7c0d25b4af87e7843c9161c2856d8911a2fbe15451e34c9caf",
+      "sha256": "9588e0977afd8d78b6175c74e4b08b0b3754d59416440108e4fcf0ac6831b653",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49810,7 +49810,7 @@
       ],
       "file": "assets/maastricht.svg",
       "bytes": 676,
-      "sha256": "e733f3fbaa47bcfffe919ca20f90e899c0460326d614e7b52675c723ae2aa521",
+      "sha256": "1a4c2f676d53b24d68013d799f3985bf135b30c2fcc63caa65199565e72ffb32",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -49873,7 +49873,7 @@
       ],
       "file": "assets/madison.svg",
       "bytes": 613,
-      "sha256": "9ed7667e3122e37c574b096556d37a56893074f3592d40a8b2ff5754ff57c79a",
+      "sha256": "fe2df227a85e1be3149fa9d112549d9a3ea0357de77ef4cc43a09d4b96477766",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50062,7 +50062,7 @@
       ],
       "file": "assets/makassar.svg",
       "bytes": 659,
-      "sha256": "6c6ea1cd66206f382252520beb18660aeb22f7c9d24a81b1e1b967ca7bba3381",
+      "sha256": "69a5886c9da1812461f0e9df96f4ff04cc0bb69f8d802bedd50b87d8c030c70b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50482,7 +50482,7 @@
       ],
       "file": "assets/manaus.svg",
       "bytes": 689,
-      "sha256": "a9b5ee337de384fd5dc038da1bd8f0cff840e6e4d428b70942584d1f058095d4",
+      "sha256": "43937cf729705e181711ea8017a2dd3c7ffc83eee0b1e65cedf8c3dc0d97edcb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50503,7 +50503,7 @@
       ],
       "file": "assets/manchester.svg",
       "bytes": 675,
-      "sha256": "5163f08f1167c17a4940a286f0d30db476fae7beb5ab8287b2f22d4f9543f022",
+      "sha256": "0999a866332f91e3ca9159cb1cdc7f2cae9c0861791a24358b6bcae10d6df410",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50713,7 +50713,7 @@
       ],
       "file": "assets/mar-del-plata.svg",
       "bytes": 688,
-      "sha256": "79bb3ceaab8bc5c6b3e2d5c09473f33a679d2fdc723913ea65b78e77c189890f",
+      "sha256": "3dbfb7639e944ae56b14fa8228d69e7bf5f57959c770f50a00f454afd02d685c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50734,7 +50734,7 @@
       ],
       "file": "assets/maracaibo.svg",
       "bytes": 689,
-      "sha256": "7b4dfd274ad1355ffcd2a0b06986bfe9f205d3283091e321ccf79f1d7a060979",
+      "sha256": "245cfc1d08b3bd7b87c7f9ded19f4c8cbdc2aa2dd91082f743c7747df9b0f1ef",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50776,7 +50776,7 @@
       ],
       "file": "assets/maradi.svg",
       "bytes": 688,
-      "sha256": "5cbe06335664475568d24621dbf038f2893f02ba1f2335f2c25a8f1feedd47d4",
+      "sha256": "4b3a16a935348a10f09f609520f6b84c056f825a7badc6e4359794617cfc9e09",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50839,7 +50839,7 @@
       ],
       "file": "assets/mariestad.svg",
       "bytes": 613,
-      "sha256": "1da73e55102bdd4e10b826b015a60fc7c445b823342f33dec5b2bb2cb7d24457",
+      "sha256": "0a025cb801002805c3d46e050051bb6b897209d9041cad4968ce43cb825f2e99",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50923,7 +50923,7 @@
       ],
       "file": "assets/marrakech.svg",
       "bytes": 689,
-      "sha256": "a8b52fba54e853383894e5107c95d12ff0db6a240cd401712ec67254552a7c70",
+      "sha256": "0b90e12da3de5489b4a1217a78b34e21a9243620d7baeea2ee61e760bb5667c8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -50944,7 +50944,7 @@
       ],
       "file": "assets/marseille.svg",
       "bytes": 676,
-      "sha256": "e385260ded3c3f0b0531aa70fae4d4f56dad2baffaaac26b1bcef5ee363f71ab",
+      "sha256": "e1d09e59c86d6e3f560e3299f7cb3a0eff153b52413d04f8077ac475e7199632",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -51385,7 +51385,7 @@
       ],
       "file": "assets/mbuji-mayi.svg",
       "bytes": 688,
-      "sha256": "a42392f4eab40500c7c03455b38925c746af9f83406b917909e540ff6ad15546",
+      "sha256": "23ad60a372a7371ad26a523f52b9ef08ba7c75d05b119b0f634117ca531f8fee",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -51763,7 +51763,7 @@
       ],
       "file": "assets/medellin.svg",
       "bytes": 689,
-      "sha256": "5b1031f3fe4b4f822119f53ce34f3c9b75c6e2d7c270e2c2f106423a22698c83",
+      "sha256": "a4e17867fa27c832b6e50e86d31e92016c36d0d8510f8c10867406ebc725130e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -51994,7 +51994,7 @@
       ],
       "file": "assets/meerut.svg",
       "bytes": 658,
-      "sha256": "a8a080d5166532be7696e8e2c5b701ae9ae903f83bee10df524a6a5316254213",
+      "sha256": "bf3d2311a402166aaf32caf5245af285e02c510befa0dae23e785aee1a06437c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52057,7 +52057,7 @@
       ],
       "file": "assets/mekelle.svg",
       "bytes": 688,
-      "sha256": "933dca120d9c18c008ad1f05af475a6b7aae114f11116de2b396ced96c4e750c",
+      "sha256": "0d07cd52af89d93503ca3a40569ef089ec2675a183fe9e9451732300ba0dc09d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52204,7 +52204,7 @@
       ],
       "file": "assets/memphis.svg",
       "bytes": 611,
-      "sha256": "67f78a400dda44003b94f69a98b029cc068c89d99d56904347305d71237e79ae",
+      "sha256": "45c82855f8c712a692f30c6710e315807226ee3831b808fc7b099e4bbd8c62ce",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52225,7 +52225,7 @@
       ],
       "file": "assets/mendoza.svg",
       "bytes": 687,
-      "sha256": "5f8b79b88b9bfc11486460269d58195f76eb79e7c1aebfdc0d880621c205ce60",
+      "sha256": "7269b76d6065c3d632036390e48708f294d439d5bac27d817cd3219151ab49f5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52414,7 +52414,7 @@
       ],
       "file": "assets/merida-mexico.svg",
       "bytes": 688,
-      "sha256": "26460f176dfcd9a39e4f70a352fc6a3188a4f94286bb470528159287076534b2",
+      "sha256": "eabbeed7167f7518d43a46fabce86f551c23f8a55a82b2fb5f2157a8602ea7ab",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52477,7 +52477,7 @@
       ],
       "file": "assets/messina.svg",
       "bytes": 676,
-      "sha256": "2eb6f7680d9e41b9449a3337aa63bf2d82c37d4ae0bd5d8a30c5d1d4a19820c4",
+      "sha256": "aba9c13439a0c6e4069d2a1e576103b9d1a8e7b2670868fe600e0cb173df6efb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52603,7 +52603,7 @@
       ],
       "file": "assets/miami.svg",
       "bytes": 612,
-      "sha256": "e29c1d4dd325765d0f12dca9e40e4414c35b45d0038f02d05947557692bd8560",
+      "sha256": "50020a40e8645c2f82621ebcf93bfb8d58abfa8ca15a5b0cfda75c6c02c1777b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -52855,7 +52855,7 @@
       ],
       "file": "assets/milan.svg",
       "bytes": 677,
-      "sha256": "e946aa71226cee5962a717e2da4ca8a765894ae95936bb3e6ba2b2e93932e148",
+      "sha256": "ba643cda8cce0c43f7be8bc8cbc45d6336087470f3cae4b360866fec3667bddb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -53023,7 +53023,7 @@
       ],
       "file": "assets/milwaukee.svg",
       "bytes": 613,
-      "sha256": "a50f0b7a2fc20a92c29a7c9eb4a30636c5d5cbbc3b1e6eb6e15dbe0d608a05b3",
+      "sha256": "cadc06a7423252c23c84b88b188fe90fe86ffa520d49fa915b4cd4a6e6229850",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -53065,7 +53065,7 @@
       ],
       "file": "assets/mindelo.svg",
       "bytes": 689,
-      "sha256": "88410c7dd4f5b78ff637f961495faf0139d682c838dfd3178b33d0015d64a2b9",
+      "sha256": "1cb8987d91ea030db2637fbd56d8465a290dba6e426db383e974e009998013c4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -53107,7 +53107,7 @@
       ],
       "file": "assets/minneapolis.svg",
       "bytes": 613,
-      "sha256": "1950a1ed91129e1bb8eaa14beec574857ed3a9c7c199428d444e09f37fcd5c89",
+      "sha256": "259d5bd4ff87b32a817e145e2b0439747bf3d0226b6e7382dd279741a1b5d91e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -53233,7 +53233,7 @@
       ],
       "file": "assets/miskolc.svg",
       "bytes": 676,
-      "sha256": "1e622b23b6375c1b284ae25d0a07cd6640e8da64d402bbda8b39a92198ab6c97",
+      "sha256": "f2b0b840e700c138fe816a5194b67a4cb5c3bd735070afcb1f1ea5f7090cd2e6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -53254,7 +53254,7 @@
       ],
       "file": "assets/misrata.svg",
       "bytes": 689,
-      "sha256": "0e96015b21f295a2d6f036f2e4c2d0ca7be92ce7194cf8f1339c9e57300c516e",
+      "sha256": "f7b28a52e1cc5d0af1fa9ce7ae5e3a7af2351ab9ef7b0b2a479dcb38eab4282b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -53653,7 +53653,7 @@
       ],
       "file": "assets/molndal.svg",
       "bytes": 612,
-      "sha256": "50bacc1adbd43e8752c0dfb4e80b2d8fbb843216f73754ad7340c8ec5d78319a",
+      "sha256": "6513f64b2fc022068273322674f78b8b5a1e72b8453083af217e5c862a8235ba",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -53695,7 +53695,7 @@
       ],
       "file": "assets/mombasa.svg",
       "bytes": 688,
-      "sha256": "b3fd67390ac0959b87bbbbe4eb5ccaaeee7917fda63c7c6a685b4fa7591dd130",
+      "sha256": "ce82fc467d44d365946733cb18a15127b4bd8400fbbca3e196526fc538d93702",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54262,7 +54262,7 @@
       ],
       "file": "assets/montpellier.svg",
       "bytes": 676,
-      "sha256": "c12454b3051309a4e099fead0b8683259472f932c3878b9fbe493afff6da321c",
+      "sha256": "9255d7ce21f303479ec11c32caf31eb2db8ee534d3d68177b5ad47dd176cdda9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54283,7 +54283,7 @@
       ],
       "file": "assets/montreal.svg",
       "bytes": 658,
-      "sha256": "f81317b83d57188cb7566d34e434d052afa681c4ac10c56eef0c2d89616180e9",
+      "sha256": "6d8ff510df768727ae94cc9539e27ec2e64a27546f0777dcff7f274b64765734",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54493,7 +54493,7 @@
       ],
       "file": "assets/morelia.svg",
       "bytes": 688,
-      "sha256": "e75cd0d4ef5255e4e33294a4eeee8cc78fe1e412610cb78b86eab0339c579e97",
+      "sha256": "a4364c443f24bbea7c7304577e5846b2929a4fd9c7f46c0739ac942ada02e2cb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54829,7 +54829,7 @@
       ],
       "file": "assets/moundou.svg",
       "bytes": 689,
-      "sha256": "ae6ef8a980cbca8cac2f2df824b6c0c912a1b1f53e3984732570394c477e309f",
+      "sha256": "1d1cb42ad36b043d2237a0ba2b2bc6c78ab9e8ba79827ebe96059fb11f8fa729",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -54882,13 +54882,13 @@
       "id": "mouse",
       "symbol": "mouse",
       "labels": {
-        "sv-SE": "Mus",
-        "en-US": "Mouse",
-        "es-ES": "Ratón",
-        "es-MX": "Ratón"
+        "sv-SE": "Datormus",
+        "en-US": "Computer mouse",
+        "es-ES": "Ratón de ordenador",
+        "es-MX": "Ratón de computadora"
       },
       "categories": [
-        "animals-nature-weather"
+        "school-work-play"
       ],
       "file": "assets/mouse.webp",
       "bytes": 3324,
@@ -55312,7 +55312,7 @@
       ],
       "file": "assets/multan.svg",
       "bytes": 659,
-      "sha256": "df2063989a378de98a0db8dff34d8fb5a6205311d96ca58356aff225fb412362",
+      "sha256": "9daee22e7c9cfdfa366b761398d87dac3f5454afe9aac990c09bf0485fdbf465",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55396,7 +55396,7 @@
       ],
       "file": "assets/murcia.svg",
       "bytes": 676,
-      "sha256": "eb71bf0ab3a5fa0ccb2580ca3219da1bd0c08b4b002b5117332baf7d4e9fa310",
+      "sha256": "6267cb1ac589b371719b5ba7fef4cc25567256a9f77f494e9fb6645d470bed89",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55858,7 +55858,7 @@
       ],
       "file": "assets/nacka.svg",
       "bytes": 612,
-      "sha256": "5c7df6b692d179308b45d8fe140c8a84878ffa3fb9d2845c401916ef14ce2712",
+      "sha256": "bb80959aa1705c55046e331b4e5382b79449277c85307a60b11fae21b7e6be2f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55879,7 +55879,7 @@
       ],
       "file": "assets/nagoya.svg",
       "bytes": 657,
-      "sha256": "b8984f9ca18fc62aa5022b954d816c3ec98c792a4de77f51d59bd258d992eaa4",
+      "sha256": "1403b60a1d512d960227c38c08566d713da275f28f2e86a57e382f0fb55ba437",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -55900,7 +55900,7 @@
       ],
       "file": "assets/nagpur.svg",
       "bytes": 658,
-      "sha256": "4eeeaa6542446a764ff592ae9c1a168f2693a7b08fdf811256f08088988bf4cb",
+      "sha256": "bd10a3fb8c7ce2a4920008ae46bbd60b954f2ce43045572607658d2db1159b03",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -56068,7 +56068,7 @@
       ],
       "file": "assets/nanjing.svg",
       "bytes": 658,
-      "sha256": "968c631f2394d47ab4eb174af8b250362726983440c713378174ba92f7f6be7a",
+      "sha256": "77463deb8d8fcdffcc2ce2d7ca3fc5425b7c24c494149a3bf6550f93672958c6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -56089,7 +56089,7 @@
       ],
       "file": "assets/nantes.svg",
       "bytes": 675,
-      "sha256": "da128471c3681723e687e8299be9555f436a369ef9f762b7e84c53e2d8678697",
+      "sha256": "ae2da611f935a4666cd9b4d2c1316e4f5e5fbca899a18d0fecd43334d85ebfdf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -56152,7 +56152,7 @@
       ],
       "file": "assets/naples.svg",
       "bytes": 677,
-      "sha256": "d515911f3a88409091b5cb112439fec48885288ef7b780e708f3bb9d5aabf4ab",
+      "sha256": "01228be9fb59987074e3def70d0c6ec372cd29cff3452d9f4e06cd88c75c9379",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -56215,7 +56215,7 @@
       ],
       "file": "assets/nashik.svg",
       "bytes": 658,
-      "sha256": "c1c7d84f81c996bd409804ec0cf4335c73ec3df6b46e3059d0e04398b275b444",
+      "sha256": "84290a4b386de6587fd8d9fb1c1808039038eab35e90520d8a2eff73cd813e34",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -56236,7 +56236,7 @@
       ],
       "file": "assets/nashville.svg",
       "bytes": 611,
-      "sha256": "d95f9cd6fb9eedcd8e4f460a830417d18e0293e2a436fee318de93ea15fd777e",
+      "sha256": "e8eb27d0377432acca3ccc62e11f1297c4089c596baa1740e9fbcbfe4e434691",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -56320,7 +56320,7 @@
       ],
       "file": "assets/ndola.svg",
       "bytes": 689,
-      "sha256": "23a952b9198899ee95fcb4eb52924fb3d8aebadb129d941b08fc0f86734005fd",
+      "sha256": "71032e0f0f0cc4ac138412ab5d43da9a1f7289bc5b319b640c5e00c3ea0809e4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57349,7 +57349,7 @@
       ],
       "file": "assets/new-orleans.svg",
       "bytes": 612,
-      "sha256": "515fea788307af6c944b8efe7d35eabc5ec0953f508f17fc4a6998f53b784381",
+      "sha256": "e0e791c50056ea67dc10db908ab27b4dc087fbf66be98e51ab955c621dc9c5dc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57412,7 +57412,7 @@
       ],
       "file": "assets/newark.svg",
       "bytes": 612,
-      "sha256": "3aa17547f96d966d48101760b0ff35faacc9be04116596a593ecacf44935bcf0",
+      "sha256": "cdd0790568805e72e03ffe98d8d5507c8193a6696f148cf235672dbc01582086",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57433,7 +57433,7 @@
       ],
       "file": "assets/newcastle.svg",
       "bytes": 675,
-      "sha256": "fe7d180c6e1ab74487a72ac06d8baf3d31c3c2759d48704960a3677080e87576",
+      "sha256": "9c7690ae6ac9058695a98035181b8392b9b36d34d6e51b0d18d4510185054335",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57580,7 +57580,7 @@
       ],
       "file": "assets/nice.svg",
       "bytes": 675,
-      "sha256": "a08b7f669c77383b482d69c1bc0fd80e9b55689577b8625c5876a093f0ae2263",
+      "sha256": "b967ba41ca2f60cb81bb287ba6312f6f8001f40b2315177a88d0c5776d0f7abc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -57769,7 +57769,7 @@
       ],
       "file": "assets/niigata.svg",
       "bytes": 658,
-      "sha256": "9c6827a33fdfa9627626a247c02c459138f2353bea0c8ba088a9dee806cba5d0",
+      "sha256": "3b0e3ee27a4f528ed09220d45269322e9412876fb7861d2cfe1a0b7bc4adc250",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58042,7 +58042,7 @@
       ],
       "file": "assets/norrkoping.svg",
       "bytes": 613,
-      "sha256": "d0ff9fb3e12a6e08b4d4ea18eadc980ea63d1a13e0b19ce1eaf2ba10c325461e",
+      "sha256": "b0f170f6398d89023dccb9d352a027cea6b81bfd94ed628f3e464505752ebe5f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58483,7 +58483,7 @@
       ],
       "file": "assets/nottingham.svg",
       "bytes": 676,
-      "sha256": "a32ba4060aad9c0722e97de663d81a8537ad952ddcfaab472d115b62c6ae72f9",
+      "sha256": "f22b38273d6456e4250146bf5cb2e8937cbf525531eeacd573eedde835212325",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61003,7 +61003,7 @@
       ],
       "file": "assets/nykoping.svg",
       "bytes": 612,
-      "sha256": "1f0f28187a8a726f818bb80ce52539c22e7cfb68af7bd513e99562cc9a651ec2",
+      "sha256": "a54e43dd2b50f158d852fd881c7d2e1eabe5cb23dbbd8f6b926589a41e052459",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61465,7 +61465,7 @@
       ],
       "file": "assets/oklahoma-city.svg",
       "bytes": 612,
-      "sha256": "874a65744c4077c20963d3e27230581288f8180bff0f83481322845ce1711d09",
+      "sha256": "972bc79bfd0637da0bb3ffaed8688518b51bf3c8391b7c68bcdd7801c90cd188",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61528,7 +61528,7 @@
       ],
       "file": "assets/omaha.svg",
       "bytes": 612,
-      "sha256": "bfbf4c109fe70cf4a55b84d0edcedc4d66611e3816706cae1c68f2034240ec91",
+      "sha256": "73561b98312a3dbec3a4070e1bd7d8c443acecefa07856f1f6da629ff4e7d53b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -61570,7 +61570,7 @@
       ],
       "file": "assets/omdurman.svg",
       "bytes": 688,
-      "sha256": "bc07189e27ac78dc867fdf44d89bc6e41e6b62e9bcf03db121363a429b1cb62b",
+      "sha256": "a64f38b41856b890db7f7ba9992e5092eb8d1b7877b26723f75aae63e1162bf0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62009,9 +62009,9 @@
       "categories": [
         "home-objects"
       ],
-      "file": "assets/opendoor.svg",
-      "bytes": 388,
-      "sha256": "1ca6cc69934273490d98113a7b927fcb7155b356f85c1d31bd7c00c1ad6cb739",
+      "file": "assets/open-door-810749a2d284-v2.svg",
+      "bytes": 600,
+      "sha256": "810749a2d2842f40530628198f5502702c973d75c7f6de41f212178599d34c67",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62136,8 +62136,8 @@
         "communication"
       ],
       "file": "assets/or.svg",
-      "bytes": 338,
-      "sha256": "2b9b9c2fc91efd72f4888688621e965bfdd7b1856a2e7597a12e7a1a5a0ba8cb",
+      "bytes": 557,
+      "sha256": "38bb093d95ad67e595f26b219ae5491295cb0702405e5f5bc18e3e39fc35ebac",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62158,7 +62158,7 @@
       ],
       "file": "assets/oran.svg",
       "bytes": 688,
-      "sha256": "01a66f27ec9380675e27b953de2edbc3e6d8b953800ef393eed03c3b1a2637ef",
+      "sha256": "c4116a28d6b1e2a89993538850ca5fa3f467f90395b05cf1d74a80d13e768803",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62347,7 +62347,7 @@
       ],
       "file": "assets/orebro.svg",
       "bytes": 613,
-      "sha256": "6dfe73bedf3f1ed45d124e0b26773ba162696446f1d12d7da42cb0b8aab814e7",
+      "sha256": "91f8b54e9686cbeaecac4435f6ad7bd4cfec1368b03c09297c2c6fad12081430",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62410,7 +62410,7 @@
       ],
       "file": "assets/orlando.svg",
       "bytes": 612,
-      "sha256": "41aa1b88840ead3d26e95095771741820a293497643db200f0141a82ffd883c9",
+      "sha256": "7bfed4de856039087ca94c82ce4aa5c7c2903f139b3f9a1cabd61f4ca678919f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62431,7 +62431,7 @@
       ],
       "file": "assets/ornskoldsvik.svg",
       "bytes": 612,
-      "sha256": "f19a8daa986eddeec05502768dc6ff7b0249ff20ac47462053391d65ba35ae55",
+      "sha256": "5d8e3f9371180ee266d474dfe7f27c6f881a5b9052af1e8d0c9f66259f12d3f3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62494,7 +62494,7 @@
       ],
       "file": "assets/oshawa.svg",
       "bytes": 659,
-      "sha256": "06ccb5b2f18890d9bac2b8fa33716c2c7cbc86c410d71616b379bd5dfe19b815",
+      "sha256": "9cafb8bb79bd3eb9bd699aaf0820dd1db1c57191847fc6d7dfecef638a54737f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62536,7 +62536,7 @@
       ],
       "file": "assets/ostersund.svg",
       "bytes": 612,
-      "sha256": "27dd555c12276ea062b4f3505da717aedfe69a1003fa9f28a959c9e140f23a9e",
+      "sha256": "e606d55c3957ce3ed5bbe3147a8d8faf18ada226e33fc7a91cde6800f1410063",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -62557,7 +62557,7 @@
       ],
       "file": "assets/ostrava.svg",
       "bytes": 677,
-      "sha256": "2961096d22d2cb03d762f17bf86619b51ca9bae7ae6e12567667d5c999ba567e",
+      "sha256": "62079ae4765d0a62aa374bb581ff4b8fb7610ae7e8b80c5923b8765d05641952",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63187,7 +63187,7 @@
       ],
       "file": "assets/oviedo.svg",
       "bytes": 676,
-      "sha256": "62f093116724dfee21fb464e651363f6fc0a1c1ba8c5b8f8c62d81c60b099684",
+      "sha256": "4da37dc56274f4d8a17a5d6208210cb9b0c0aa8f48124c48547ca5da9fd2ab5c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63250,7 +63250,7 @@
       ],
       "file": "assets/oxelosund.svg",
       "bytes": 612,
-      "sha256": "06a275779216bdf6d8f9ef55f48963654e9528bf0063b8119dfe99b7f88b7ac5",
+      "sha256": "40fe3c4ee872e1ebcc0eb921e8719bdc9d855461ccd6e70f522e7ea62c60455a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63271,7 +63271,7 @@
       ],
       "file": "assets/oxford.svg",
       "bytes": 676,
-      "sha256": "a1e28a4087c80e6c3aa0d9ccb3221d9f778d1d4b5a5c7a1ab739422f6747416c",
+      "sha256": "998963ed542600226032ad38b03d5358a517b5e233ef603ccb60ccecba18d234",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63481,7 +63481,7 @@
       ],
       "file": "assets/padua.svg",
       "bytes": 676,
-      "sha256": "5c7e06e690d885752addcb5196825e26fbfe52e1cd929765cdc41ef5fe3a2350",
+      "sha256": "f03ab178d46ead47290b48fa1287a96d853cd6bde7a3f8d74ee990ca92ca658c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63922,7 +63922,7 @@
       ],
       "file": "assets/palembang.svg",
       "bytes": 659,
-      "sha256": "cd2b5e463025cd67bf92a3f2844ac7b1887720ba7a8b5721c6cbf140a7867ae0",
+      "sha256": "20494e2cbcbfb89528951a619f67f339f6d640492ebac37d938cd550565936be",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -63943,7 +63943,7 @@
       ],
       "file": "assets/palermo.svg",
       "bytes": 676,
-      "sha256": "ba2296dc3ce260f7dd813b6832780037502eea82011ed84d789c4097805c60d0",
+      "sha256": "c4748b2ad01b022c7a72236a1c189fe0e03a480da66e9f29fabb0dbbc3036feb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -64027,7 +64027,7 @@
       ],
       "file": "assets/palma.svg",
       "bytes": 677,
-      "sha256": "e3dbffb7feedacac886e6bb618fac3c7625e8098b0db2ad83aeb2c428832c126",
+      "sha256": "e5cfed45f67bd03f702a58c6a22ac3bd5d2a7aff77c4c143df6e5b3f40f1ede2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -64048,7 +64048,7 @@
       ],
       "file": "assets/pamplona.svg",
       "bytes": 677,
-      "sha256": "74356c755a610fe0851380dfd011873ee2a51c8fba29c4dba55941363a644712",
+      "sha256": "db40a00cad2b1d364eb1bafbd94d0ce29eef9abb86e3dd86331158abba7fe879",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -64867,7 +64867,7 @@
       ],
       "file": "assets/partille.svg",
       "bytes": 612,
-      "sha256": "6deb73ac4230d98dc0f2d771aa234ca9910de96e531b9cbd3972801af1a843ed",
+      "sha256": "d283dbf9260b42862c2e025e3b62dbcdd7b62cc2d788e52ed65e4c41cba43638",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -65203,7 +65203,7 @@
       ],
       "file": "assets/patna.svg",
       "bytes": 658,
-      "sha256": "80ae7300afc24e85c40fa1b0d6cc7fb160b0fbbf502e0d5b8129fd30f892f750",
+      "sha256": "9f685e691bc53735769b4372519a95029685c48f2ead86d9f176f62a5cf565cd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -65224,7 +65224,7 @@
       ],
       "file": "assets/pattaya.svg",
       "bytes": 656,
-      "sha256": "20566bdef1ee46e2c1d45e21a2b4a35d408ef20b4f5dd150d78a53faeb3c2eff",
+      "sha256": "7872d8cc00991951d4010ac4e19f4f53907e33c8aeaee579947d57e3a87f4a81",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -65812,7 +65812,7 @@
       ],
       "file": "assets/pecs.svg",
       "bytes": 676,
-      "sha256": "d00d28c408b353f456fb4363daab31455c068ed04df42bfd26a497e15b0e4395",
+      "sha256": "eb8290f14a2b62552259dd07e5469fd0ddd993316cbac35b960349c03baa8606",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66484,7 +66484,7 @@
       ],
       "file": "assets/perth.svg",
       "bytes": 659,
-      "sha256": "832cc66907a4e4990fc2d574972d7c129cd0e4b907496b26dd46c911a65c5383",
+      "sha256": "4073bb2d338bdc5615d8bb435394dfab89bab3df62d3bbe6d6a87d74bc7c5117",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66526,7 +66526,7 @@
       ],
       "file": "assets/peshawar.svg",
       "bytes": 657,
-      "sha256": "e2c5bdb7d21c7ef8f9be3b0b76debd9642d34742b90cc7a744ffb6b5df0486f9",
+      "sha256": "f3e00cb9af84f6b4ac4dc5298aa72ce5c12a6bb007520f11fbf6df916ec42a7e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66652,7 +66652,7 @@
       ],
       "file": "assets/philadelphia.svg",
       "bytes": 611,
-      "sha256": "c0ff0cf159b5cf6f2c50a60b32158bf6cb4a7c7608dbbe8f8fffbc7c62d5a74e",
+      "sha256": "838f966efae31cef685a94a75908276d3653452c78a753e637fa7facb1d7dce5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -66715,7 +66715,7 @@
       ],
       "file": "assets/phoenix.svg",
       "bytes": 612,
-      "sha256": "6e6ffaac30030e2033b679b56d6cc0c18af8e8177dd2d6cc979fb08996d808a8",
+      "sha256": "bff221a3d4011fa8bc859ac31618a9ad7036dae7e19f4b5a3528ee27455e62a1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -67576,7 +67576,7 @@
       ],
       "file": "assets/pitea.svg",
       "bytes": 611,
-      "sha256": "4179643d31d9ea8a029f68aa412ca3cd51cbd8dad888ba789d92ccf9a54d8b93",
+      "sha256": "3c2a71000d721ce870790521a6f5c06cb8dd88e1a7112649cd6163d8312f427b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -67597,7 +67597,7 @@
       ],
       "file": "assets/pittsburgh.svg",
       "bytes": 612,
-      "sha256": "2a3e288d836328176554b6233236bebc1815c7592e964cfe640bd85627248bc0",
+      "sha256": "1526201f78533c813bf9b11bddfb90d8caf60f04f1577e7f6acf7dc19de43b5f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68248,7 +68248,7 @@
       ],
       "file": "assets/plzen.svg",
       "bytes": 675,
-      "sha256": "b88b83011117ac3485127adc2e3416496d1b01c095f3d4b7693fbd079082a577",
+      "sha256": "c2e82a06fb8be6d293daf733e7381434d622437eef94a1dd5e021adf2e68d5ce",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68374,7 +68374,7 @@
       ],
       "file": "assets/pointe-noire.svg",
       "bytes": 687,
-      "sha256": "93f1138f9393c31203547359635af9dd602fbee247197985a9b359ed223078a0",
+      "sha256": "b0f47f718ce42f6152601762532b4cbf601d0440c92ce90337258d58d063cac7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68666,9 +68666,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/popcorn.webp",
-      "bytes": 6638,
-      "sha256": "de4dddec6428c8841bd1c3ff2d5e48cf8afbc2120546f0b2e6aaa967f2c466c6",
+      "file": "assets/popcorn-4063857d3462-v2.webp",
+      "bytes": 7684,
+      "sha256": "4063857d3462a8b111a60ce335a1afdf83950c353bcf9bd633819d543feab9e7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68857,7 +68857,7 @@
       ],
       "file": "assets/port-gentil.svg",
       "bytes": 688,
-      "sha256": "1ef5da84969a8d8b24f579a4f67d2b452e168e3cab71b649c89f8627e562a3c0",
+      "sha256": "3b7661beb64197ad88e132965eb56ac14d3fb00829ee9e9557d1743274b080bb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68878,7 +68878,7 @@
       ],
       "file": "assets/port-harcourt.svg",
       "bytes": 688,
-      "sha256": "713865873b2e645bc50083296ff2e245fdbff96b98f808a5e57c1a39198f2f4c",
+      "sha256": "51daa4f5c5f46e86a1a625df8db8a2a2cec79047457e443e2457435072843497",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68941,7 +68941,7 @@
       ],
       "file": "assets/port-said.svg",
       "bytes": 689,
-      "sha256": "beec41f47941181b69776f4bdaadc87142c8e7cba85bae542fad9adb0c975b50",
+      "sha256": "805959194b571dfcb46abffda71c3455b8f7ea56c10fefc1a5f73da3ef0520e9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -68983,7 +68983,7 @@
       ],
       "file": "assets/portland.svg",
       "bytes": 613,
-      "sha256": "aa37de97bd8e9f057f0cc84de0c0843ba4bdb7ef16010d252fafbf9f9b8f445c",
+      "sha256": "84a865b18a0a922f93876247bd1342f6e73f000cca746eca5eb29428a1f18071",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -69004,7 +69004,7 @@
       ],
       "file": "assets/porto.svg",
       "bytes": 676,
-      "sha256": "b481aac338888657c9cc30d7c53ca8fb02806f4c94c15694299f8df545970717",
+      "sha256": "3a63e8e76d402ed912bce6b8c993bda943da4789abb30e3515ecdc41ae3e6330",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -69025,7 +69025,7 @@
       ],
       "file": "assets/porto-alegre.svg",
       "bytes": 688,
-      "sha256": "09cc236126e710bf8a7f7675d769eb560eb0545d34f81a9e22308603bb681081",
+      "sha256": "2fc0737e0a5df52360b4fc51fad5c7081f4f23d921617e2ddd8ca30c22eeaea0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -69445,7 +69445,7 @@
       ],
       "file": "assets/poznan.svg",
       "bytes": 677,
-      "sha256": "b306c5f2fde5cf151db206123986de1be2462294c79694060d71809e60994209",
+      "sha256": "3d98e86d95631c4fb3f2865771957d21e837de89d6aa66dd7d0eb803fba5cf6b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -70621,7 +70621,7 @@
       ],
       "file": "assets/puebla.svg",
       "bytes": 689,
-      "sha256": "76bdaa550c96a09ab4a55b6c7517bbf9dfa1e29790920016f2fcfbd7b9b63a1b",
+      "sha256": "fbd4df41b1362e34a53d03104af7ba406d56aaa39536505c800ea1a37e127109",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -70852,7 +70852,7 @@
       ],
       "file": "assets/pune.svg",
       "bytes": 659,
-      "sha256": "f59fc381d2b0c4b1c749eaf0929d7b09428fb593cf119d58b697f977f7e6b210",
+      "sha256": "e4389a40168cc88e2e481c02a4c38491cd06a13dd2f1780643938ce79dfde364",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71545,7 +71545,7 @@
       ],
       "file": "assets/qingdao.svg",
       "bytes": 658,
-      "sha256": "3521a0ce289545e6e3baee5cbd8b9d5df5de460689f9f241035e50de9cdea8a9",
+      "sha256": "708ca1503acac926c0fbc181b4f232e51fe51d81acfb38a3f163c35bd73ea77a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71587,7 +71587,7 @@
       ],
       "file": "assets/quebec-city.svg",
       "bytes": 659,
-      "sha256": "731b52b6e01a90a802574942c4f2aa64dd5e2d0409ddc26eeb1ec483bbbea872",
+      "sha256": "f97ead77b02f81ee01b8239dc57c9148ffa45aac5c2766351664a853bc7dec64",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71608,7 +71608,7 @@
       ],
       "file": "assets/queretaro.svg",
       "bytes": 688,
-      "sha256": "5ec81e07a23857257068fc513c5fb3e616d5630be83c3e7011cf4368cfbb03e5",
+      "sha256": "83754a54cfc0795cdf7aa23328b16e41b9b10063ed29a7a4d4f262c2387b6e47",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71671,7 +71671,7 @@
       ],
       "file": "assets/quetta.svg",
       "bytes": 657,
-      "sha256": "c9594eb7489dcbddd1cefb86559fecd078d80b98305dd07fff770a0d8365a20c",
+      "sha256": "fac881ecf5ee525202bdbe6f9d8da4d12f49e1d9c8db78ec08d5ba0455573745",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -71713,7 +71713,7 @@
       ],
       "file": "assets/quezon-city.svg",
       "bytes": 658,
-      "sha256": "d926f7e0190c6275123be907553aad05f98e1e03257fe8708855ccebfb694ed2",
+      "sha256": "cb2d61ffcecf52d43db30d718f51543dc7d40c452e6a66540f9e161d523accd0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72301,7 +72301,7 @@
       ],
       "file": "assets/rajkot.svg",
       "bytes": 658,
-      "sha256": "abfb532aa9361f940bcc2770e32ad0ba7926bee6af5da5d209f2a65e958649e2",
+      "sha256": "33c9cd8f19d0128ce69891a466e7ad2bb77729e49a17532b4f777b1219874791",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72322,7 +72322,7 @@
       ],
       "file": "assets/rajshahi.svg",
       "bytes": 659,
-      "sha256": "7901e4f34e4eeeeccfea6623b08721a6321a58666dd2aed7cfcdd32d0d2ebb9b",
+      "sha256": "0067652322b5e1b89d76e49002496caf535142a8711a4068e621340d924470b9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72385,7 +72385,7 @@
       ],
       "file": "assets/raleigh.svg",
       "bytes": 612,
-      "sha256": "aa7f2a1ba0c2f03083e7854f9110166385ef19fc64db41b3c53b0acb13619b8b",
+      "sha256": "f0faa1e71c79fc7d2b733736073e47ae70243b6f6c07681ef6b6b29226600f94",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72532,7 +72532,7 @@
       ],
       "file": "assets/rawalpindi.svg",
       "bytes": 659,
-      "sha256": "66609f7cdcd3bedf343211cc619fc08ddd91d948267f1caad2d9a6b47347d771",
+      "sha256": "e6e73ef55211a653339bdfdcbc3da8dc335f4465305ca806d3edba3e0da4ba3c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -72952,7 +72952,7 @@
       ],
       "file": "assets/recife.svg",
       "bytes": 689,
-      "sha256": "90353c54557e8d86a82a316c9c8e4ce76a31041f605e9d183d718fa5048b8757",
+      "sha256": "dc78694c95bc5309a56a54aca1e6ebe35fdb2489ce1cc2eb90bd62ed313ba0fd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73477,7 +73477,7 @@
       ],
       "file": "assets/regina.svg",
       "bytes": 658,
-      "sha256": "de8b068789d981530d700c093014611acba2eb185ba2afe9518d7dd9b7461406",
+      "sha256": "2c227795bf312f7a270ce639aae81f916d8c4fe9908886c8504824f1b065a404",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73561,7 +73561,7 @@
       ],
       "file": "assets/reims.svg",
       "bytes": 676,
-      "sha256": "cc1251878aeb03847f01f3d934b710dd669cbceea4ef9def65d30f9b8f015ac7",
+      "sha256": "6ee22b6f9f9f20f30b6be47d3f4ba5946c1658d30f902be1e7ecaa0462d3f6aa",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -73918,7 +73918,7 @@
       ],
       "file": "assets/rennes.svg",
       "bytes": 676,
-      "sha256": "5206a55999f1aacc729f741feea3e42464cfeca93dc26d0a12b1ef148b786649",
+      "sha256": "d776acfc20b87853e38e94df7985d63ab4c9f653d7180f643bf2b032c7d4b8da",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75388,7 +75388,7 @@
       ],
       "file": "assets/riverside.svg",
       "bytes": 612,
-      "sha256": "3658b990a859de1a7788efe5b857bbf51e5684ac8b8a8434bacba74b35d7361f",
+      "sha256": "22a9ff737993913a4b82f9df9519f8dab3c052b9f434b08977b26bf667e2c058",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75850,7 +75850,7 @@
       ],
       "file": "assets/rosario.svg",
       "bytes": 688,
-      "sha256": "e416709a3952a2e3c15ddb817d7d9fefe836addac43c285ac0e16b8ee5fc28e5",
+      "sha256": "2d707be6eca7fb09eeec1c48e51d5f180238dbc6516c5ef9d0657fdeb3b2ea54",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75934,7 +75934,7 @@
       ],
       "file": "assets/rotterdam.svg",
       "bytes": 676,
-      "sha256": "2ed753fe04e258117c725a1e3713d8df23560093d4a49b4abde7649d923260b3",
+      "sha256": "2913cede7738e695d603bef2586cad6100413862442dcc525a5aa816c5dee7b5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -75955,7 +75955,7 @@
       ],
       "file": "assets/rouen.svg",
       "bytes": 677,
-      "sha256": "b7cae3c36624710b59019bda46ca17c0fb5113cef100e722a5e76fec3d03ea22",
+      "sha256": "20ccf642b96d3fd20e0831bb77a5c3703c3d3cf7814df72dbcf32b9af4ebe71c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76375,7 +76375,7 @@
       ],
       "file": "assets/sabha.svg",
       "bytes": 689,
-      "sha256": "5c807d185965fa422fba005a745d9912288146316da68d100f9918bdbbc3bf98",
+      "sha256": "f5a4544ae45561e7c27cc1cd70d2467d3855e39dd9477538cdba06174bf0ba79",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76396,7 +76396,7 @@
       ],
       "file": "assets/sacramento.svg",
       "bytes": 611,
-      "sha256": "1b5002fc27f859d656c685560024aefe94549e2410534077c070f900cd7fa170",
+      "sha256": "5b77e2569dbb2cc0d5bfac84c200735ed60ddf11956f770f77e0c3df71c49bbf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76585,7 +76585,7 @@
       ],
       "file": "assets/saguenay.svg",
       "bytes": 658,
-      "sha256": "83e063ac0dafb6b8d7cf8b7c91e2ce2521c1f4e9b5667d187dec56717e2a206a",
+      "sha256": "64bbd86299cc55379f4645af0e71e20a97e0f6800bb44412600c4c26e6ada3f9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76669,7 +76669,7 @@
       ],
       "file": "assets/saint-paul.svg",
       "bytes": 612,
-      "sha256": "104f74dd633a96760dd8ad0bc47d4215844d4af8eaadfeff93da33d06ed2070b",
+      "sha256": "3c59b98a00390d20dbbd4bd9b198ffcc7f3f8451c9c280f708367cf93fbd6b4a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76711,7 +76711,7 @@
       ],
       "file": "assets/sakai.svg",
       "bytes": 658,
-      "sha256": "904f3e0706721ca44e40234027dcc32b1cd025d2602aa26f7ee1f4d94e996310",
+      "sha256": "759463cb1fab5682ea38dbab85a9eeb4f52b5ebc59a877dfd918704986aa5439",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76774,7 +76774,7 @@
       ],
       "file": "assets/salamanca.svg",
       "bytes": 676,
-      "sha256": "ce7e693b2e605260fc53346b3385e0f57524f5e38a023ced66ba1bd6bb7cbc2a",
+      "sha256": "4c95ade866edf972d82b85cb508f58b98c8ca76a7ae93e8e87e20f79f84ac082",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76942,7 +76942,7 @@
       ],
       "file": "assets/salta.svg",
       "bytes": 689,
-      "sha256": "0229cb5f3ebd3cda627f45ae4f897edde197287db2a9f5bf875e702cbedfe543",
+      "sha256": "f9eb7452b1bcfef692fe13e0f8cebc527c60f5aa0a7829e4580ec617fbfe9472",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -76963,7 +76963,7 @@
       ],
       "file": "assets/salto-uruguay.svg",
       "bytes": 688,
-      "sha256": "a349ef2fb52983856894992831639f9ec130e85639b55803cec8cc9b0debbd81",
+      "sha256": "86032d817a40d5463b97ee85d681469bcbfc8400707f3b3d9c8c2b457f44db5a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77005,7 +77005,7 @@
       ],
       "file": "assets/salvador-brazil.svg",
       "bytes": 687,
-      "sha256": "ac8aa61f44da941f939468d47708a9f3ab400355390017422e2e9c5fa815b359",
+      "sha256": "083b9925c4e45dd780f1f91b2c2cbfe150fe6c193be3d145486c251410700404",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77025,8 +77025,8 @@
         "quantity-time"
       ],
       "file": "assets/same.svg",
-      "bytes": 278,
-      "sha256": "6e000f62f8f59f57e96b838bc7f88d0d354773225fb8df2295118d7b923e4e86",
+      "bytes": 424,
+      "sha256": "7f29832e75963d0670b6eb83b816ecf087666d34a64f741a894560cb42e204db",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77068,7 +77068,7 @@
       ],
       "file": "assets/san-antonio.svg",
       "bytes": 612,
-      "sha256": "53fd6bb9e14bd0d862d516b3de9d1fb09b1138ea9b75dd24a7026ebc888c64cd",
+      "sha256": "3ce17011948e757ee7ab6ba814126cbca7ca18188b79f666da0897c2c462759c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77089,7 +77089,7 @@
       ],
       "file": "assets/san-diego.svg",
       "bytes": 612,
-      "sha256": "895209b420b9ca962004cef01bdf3ae7f8f7cdc2990cd8e85bca2021b8914fe6",
+      "sha256": "0296aac11a167c51ab61141b9759794c1253b40a930661a67381fc673b45b1eb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77131,7 +77131,7 @@
       ],
       "file": "assets/san-luis-potosi.svg",
       "bytes": 689,
-      "sha256": "34336a2333118483e9c0d69d0ac3f29362c41964511e0d5b764887d17a501912",
+      "sha256": "e469680ead463e03385dd247c291026b78b84f859a94ac70f6f76dac98644504",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77173,7 +77173,7 @@
       ],
       "file": "assets/san-pedro-civ.svg",
       "bytes": 688,
-      "sha256": "c613019c55f4fe9b0ea46b1eb7f5d505c46068671c3f2331c3ffc521a9c88b14",
+      "sha256": "0fe4d4225e418229fd87e370bb4e31a2dc71211deac2857029f613fcb9f8b8b0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77320,7 +77320,7 @@
       ],
       "file": "assets/sandviken.svg",
       "bytes": 612,
-      "sha256": "0d2c203ef8dfbbacd867dabb10a0458fe58d7f733e8572efbb7c2b90e75a1fc7",
+      "sha256": "61e6e2f8426b523b46ff60d04924005b5d5238ac46729b720db0141d3042cdb4",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77362,7 +77362,7 @@
       ],
       "file": "assets/santa-ana.svg",
       "bytes": 612,
-      "sha256": "0654363c922d91e1189d3141f121916c4ec16bd331a2d577fabde3fc849e0f83",
+      "sha256": "041aec7aa64ccca786bc0b34b8109c95d655625792f3bf098b1116f6968bcbed",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77383,7 +77383,7 @@
       ],
       "file": "assets/santa-cruz-bolivia.svg",
       "bytes": 687,
-      "sha256": "a17a5aeba0266d93227c0b042222ba6f90f97b7dff926b8a59613eea706cdd65",
+      "sha256": "fc159112e27869c0f1eab9cb13eab200be7d587a25eab64d5f61d3322f95fa15",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77404,7 +77404,7 @@
       ],
       "file": "assets/santander.svg",
       "bytes": 676,
-      "sha256": "50c4bd546c3882e73b3d8b938872c40b2ebdf7fca00ad827ccde2608361049ca",
+      "sha256": "bca62ec5dd265a0aff538f3637b59bca96ce64990e16372259e014987837f78f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77551,7 +77551,7 @@
       ],
       "file": "assets/sapporo.svg",
       "bytes": 658,
-      "sha256": "51350ffea3cba987df8e02a22b9a277ff3c464e60b8e65472b438c6a9a2c1de5",
+      "sha256": "a6fff87a4e716b820c602fa9e5f4bf5462e9b26f25fdfc3a96fd7381dcd3ff1a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -77593,7 +77593,7 @@
       ],
       "file": "assets/saskatoon.svg",
       "bytes": 658,
-      "sha256": "fa8412fcb34173aaa8d61dcf9bbbd53c877a8a141a74e10a2f6469162124aeee",
+      "sha256": "4a39e094670ed7316f660907c2127c017e8722a56537557735f1c43c24f76bf5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79252,7 +79252,7 @@
       ],
       "file": "assets/seattle.svg",
       "bytes": 613,
-      "sha256": "42e2ec464330795e4f41136aa982434a2568d63ed9066a249a8ed9d471a532be",
+      "sha256": "bfb4389fe8e61ab61726653e82a20b79294d523ca6f60e7db0d4de98d2e61775",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79504,7 +79504,7 @@
       ],
       "file": "assets/sekondi-takoradi.svg",
       "bytes": 688,
-      "sha256": "e6cbce4e07ef7aef8462a94cc5f53fac6063e651a5ec755e5ff354df201936f8",
+      "sha256": "881dd4aca2cfd7023cf7699f449ab66098e9a5dbf6b05489d8f52403e63f1773",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79588,7 +79588,7 @@
       ],
       "file": "assets/semarang.svg",
       "bytes": 659,
-      "sha256": "5998134e1a735402542ef504347fe399ef68a6b9d376196b2ec95a9ce08a16a7",
+      "sha256": "9f9c55e9e413dcf56bcc46fcbdfacd693532b4a95457d172fb81a1ec5655f580",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -79651,7 +79651,7 @@
       ],
       "file": "assets/sendai.svg",
       "bytes": 658,
-      "sha256": "5f14a9c629b7a4b7c817d8d90dedb5fff0d3b953fb27d59770af62095fad8196",
+      "sha256": "37436a00bbf93fd4db84550fc7f94730160cf9b1ee34fff9d0c47f41f0e70ac7",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80365,7 +80365,7 @@
       ],
       "file": "assets/sfax.svg",
       "bytes": 688,
-      "sha256": "4dc7383a4d243d100880fdbee8026eb2c8c142567ed6f439ef2f7ee910b6c0ab",
+      "sha256": "3a14444e695c631b34d36852b858e885c7c5dac9926a7d774a9570c6b149db6e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80491,7 +80491,7 @@
       ],
       "file": "assets/shanghai.svg",
       "bytes": 658,
-      "sha256": "6b6d837182c4094f5e328550ec6580e89d98a1a9a892d903dc1245a69465ec28",
+      "sha256": "9aa1ab7107c1326582d5def85a7adc8a2c4c7503528f66811d1cd1cb0989c480",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80827,7 +80827,7 @@
       ],
       "file": "assets/sheffield.svg",
       "bytes": 676,
-      "sha256": "e67280ff032d1b58807f75f5ff03f10800d9fd97d5a84ea8b6d268d10de096e8",
+      "sha256": "7b27e2c189d68fb7f7b07bcb3db34d6ef87f4b06f02b0f8172004f4454f2c1e3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80911,7 +80911,7 @@
       ],
       "file": "assets/shenzhen.svg",
       "bytes": 658,
-      "sha256": "c1c27f627f574f40c283b53d1e36ace4656fa952d56181a48a13df8e37d9fcc1",
+      "sha256": "c41173e4f2cea613fe9b48b0d7c661a0fb84691219c64de4b4ef2e7a2c3144f3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -80932,7 +80932,7 @@
       ],
       "file": "assets/sherbrooke.svg",
       "bytes": 659,
-      "sha256": "f444c932bbb5388e0ec436c905be67a127a5f4bde58a70773f7763cba8812373",
+      "sha256": "f4059c21a50d1c2da4cd9f6daaae0463f3a24d89eb63e98fff2c4a720f187456",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -81919,7 +81919,7 @@
       ],
       "file": "assets/sialkot.svg",
       "bytes": 658,
-      "sha256": "20060ede1d7142cb3289a3e761de29a484aa5f03f95546565b293b93177758e3",
+      "sha256": "90e2f7754e7269da3c19aa1edaedf731a78f91bdc5596a0b7321fc66794b064c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82318,7 +82318,7 @@
       ],
       "file": "assets/sikasso.svg",
       "bytes": 688,
-      "sha256": "d5d21129cfdbd9223e31e23c31c9fd92b0cfdbcd20c50da061b6cf9cd8cc5299",
+      "sha256": "9c55606a08e870ed9442eaaa6b9b5eaa8f38d8ff91c1e0afe01d5d6174d2978f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82444,7 +82444,7 @@
       ],
       "file": "assets/simrishamn.svg",
       "bytes": 612,
-      "sha256": "84ff840e2a9902e02e010c946761241778d8e10d2a4eddc5dd77907fe20680c6",
+      "sha256": "f05394ddc5676ae3edcab29f8c7e1038d0fc02e5e5ca8e884383965f06ea5908",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82780,7 +82780,7 @@
       ],
       "file": "assets/skelleftea.svg",
       "bytes": 613,
-      "sha256": "28576deed67ee5c3eecfefcf3d138f771db96e1059de92c003118d6672082cec",
+      "sha256": "6eae958fcdc4dd662f9c246bb57e119e70ab6a4ba28a1e48ef3ffd647c34edf1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -82927,7 +82927,7 @@
       ],
       "file": "assets/skovde.svg",
       "bytes": 613,
-      "sha256": "96093f6b3183f9f0039fb81335a3405ecfd00e5e454cdaaf1634caca9151acc0",
+      "sha256": "927a01b69710e6f9d6f1440953c985552086dff9d2f098cfbeeb606b4a454d80",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84145,7 +84145,7 @@
       ],
       "file": "assets/soderhamn.svg",
       "bytes": 613,
-      "sha256": "089bf139fe4d04257804b4e92c3d80692191a7ead498fc9fbd14661366cb6c70",
+      "sha256": "f65139e9005c20c6f60a1a5ec5da66cdf8ac94786c31d5bfa5950c95a288ea2b",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84166,7 +84166,7 @@
       ],
       "file": "assets/sodertalje.svg",
       "bytes": 612,
-      "sha256": "6f91122bcb3c19bc811ee73e8a2b0d84e56f53cb892077721b6f0db009dd9985",
+      "sha256": "f24d59b9a8335da9c7e4ccdbf51b8d44eb607582b41b070909459b3349db9fb9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84376,7 +84376,7 @@
       ],
       "file": "assets/solleftea.svg",
       "bytes": 612,
-      "sha256": "f8ec5d7bb92a0127ebc7dc616cb1d215ec7aecc98891dc99e15b24368e799280",
+      "sha256": "fb7efd7dd0746776f8cc1b13e6712628a0106c7b4e88746a9b986b178f97e5f0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84397,7 +84397,7 @@
       ],
       "file": "assets/sollentuna.svg",
       "bytes": 613,
-      "sha256": "c54b6debc17423be57ff68312df666d0369b480e6dbf651694452e38f1c5b12c",
+      "sha256": "7aca8b40a2a405b7aabd1e1d8648b095ff2366ee9edfa277f9b6f233da0c28e5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84418,7 +84418,7 @@
       ],
       "file": "assets/solna.svg",
       "bytes": 612,
-      "sha256": "834234d77794fc016fa9e7f70f0115678397f2fa58b8760ad53bda95c40c7283",
+      "sha256": "531498f7ee64d9f7c23f5089cce4b1a17fa1f93880ce9471346e7e18510f8c55",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -84943,7 +84943,7 @@
       ],
       "file": "assets/sousse.svg",
       "bytes": 687,
-      "sha256": "681830bff89d4ac7b134b0fdd047c7d386d4217c64b0218c05a9377cfbe58ab0",
+      "sha256": "99a51bb9a1003c965c8ae3a087e23a5c6f83694b2b3ad6a9723bf53179c46d53",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -86350,7 +86350,7 @@
       ],
       "file": "assets/st-catharines.svg",
       "bytes": 657,
-      "sha256": "9d831af90602579fac1559f0853ac4db4683bb74ead9ab62d15feafdff07d2a2",
+      "sha256": "96937b3fbaf7fa9b25ad911a596ac737d1dbcf3c5b8884d179a28daffb407835",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -86371,7 +86371,7 @@
       ],
       "file": "assets/st-louis.svg",
       "bytes": 613,
-      "sha256": "f1a4d76349423989091ae2b8b566f236bc8ee1090a3aa3b316134fca0971b5ae",
+      "sha256": "e27463315d2ab398b404f2ad1c3ec50e5e57c22758bec1fb448101fd724bae17",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -86392,7 +86392,7 @@
       ],
       "file": "assets/st-petersburg.svg",
       "bytes": 613,
-      "sha256": "897522ee43f6c4546daa86a95c2db8f5dbe11d4896aec8425836a41128428950",
+      "sha256": "250673ab762d7ab33a30b6ecae5d3fc67179c487388c5064ef13c48207e37dd2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -87505,7 +87505,7 @@
       ],
       "file": "assets/stockton.svg",
       "bytes": 612,
-      "sha256": "5ae42af892192ba89e70154f45b2f4a0a2d23893db446b5c44c503cf34299a9b",
+      "sha256": "a27e1af9d3adab6fd0b3f1f765371b0e60254d5ab53f4db7d1c22b97febc86f8",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -87967,7 +87967,7 @@
       ],
       "file": "assets/strangnas.svg",
       "bytes": 613,
-      "sha256": "3256b60163abf49cb47431f6696501247eea9e0b4273ee767eae880c4be26db5",
+      "sha256": "aa5d601e3bfffd6c731983effad2e7621ad19df4da31868e09ed9d5b22efe3e9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -87988,7 +87988,7 @@
       ],
       "file": "assets/strasbourg.svg",
       "bytes": 677,
-      "sha256": "9a12f2e1696a9eea5176707edcba9285e6bb9143c9a5a1254a708d0efa43fd5a",
+      "sha256": "a09e25d5f3333c0d9225ed5d1a447386786fbbe6ba23ba976be880fe4c6def93",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88050,8 +88050,8 @@
         "places"
       ],
       "file": "assets/street.svg",
-      "bytes": 293,
-      "sha256": "ff8b2f88d08a6287c4841f33584b40b434938f5bc1425a06e1f36216f1a26871",
+      "bytes": 366,
+      "sha256": "f3e710e2a9e588ae200706720e5a788cfd3040eeee06c13086ea42bd5533956a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88828,7 +88828,7 @@
       ],
       "file": "assets/sundbyberg.svg",
       "bytes": 612,
-      "sha256": "97efecab58d03aee2f63bb50a77d0ebad608ef4180fa52cba041ae9ba7d5a1b3",
+      "sha256": "4daea3ac93a01c60be64de74b1443c448454653ea6a6696a686e259f18e0ea3f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -88849,7 +88849,7 @@
       ],
       "file": "assets/sundsvall.svg",
       "bytes": 613,
-      "sha256": "447906dd1b70377ea6d2575006da48dd6ca06c699ee0bc103b78fe239761e78c",
+      "sha256": "c1766edb4a15142592c683e3009ad2722fac22f9a187c115026f4d3e67331393",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89143,7 +89143,7 @@
       ],
       "file": "assets/surabaya.svg",
       "bytes": 658,
-      "sha256": "8ec36136475f646dc8dcc3c2af774bc14580786e9beb3d82a6810ea94f62ff8e",
+      "sha256": "8c23c9b19ad603bc1de4117994aa25b6a76f192d38dc5b581e3bfa482db4110e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89164,7 +89164,7 @@
       ],
       "file": "assets/surat.svg",
       "bytes": 659,
-      "sha256": "2551217f69541551e679ab83c61cef6c9ac3d1d5399d25cde7c058593eb652ca",
+      "sha256": "db8c2eeef65546d84d4a16cc56d43fa96b0265adaafb1152024054a920346d6e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89353,7 +89353,7 @@
       ],
       "file": "assets/suzhou.svg",
       "bytes": 658,
-      "sha256": "8d549c13e8a00b5b5e631a3cc38cbe1a86b432d653acfc0665977ec7be3acfcc",
+      "sha256": "3a981f4622af4cbe861fc873c8906d127dbcc9f8a9e409eba304160da2ed35fa",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -89941,7 +89941,7 @@
       ],
       "file": "assets/sylhet.svg",
       "bytes": 659,
-      "sha256": "8b6949990087023f0141fe196c4ab8802d792c8ae4bfbd878ab781dc5bbe7dcc",
+      "sha256": "cd05be6fdb2e20df05fca9e52ad42ac776d5599119e6216ba07a1337c730de80",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90046,7 +90046,7 @@
       ],
       "file": "assets/szczecin.svg",
       "bytes": 676,
-      "sha256": "893a257cb51e41931e54a892810f0cb7239b5383eec4ff3fc9a9fd7037690dc8",
+      "sha256": "7a4e5941749379db650d95e34d4885fd23a421336171cee9ff2bc684c1133c59",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90067,7 +90067,7 @@
       ],
       "file": "assets/szeged.svg",
       "bytes": 676,
-      "sha256": "60de5bc622d548aaf4f358237ae442c10a79064a0d199566b170d864d07394ec",
+      "sha256": "9e797feab32e8d34f330d200bb8aef154c68f8d37aea63cd2290dde6cab3b11c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90193,7 +90193,7 @@
       ],
       "file": "assets/taby.svg",
       "bytes": 613,
-      "sha256": "7c72365f46020cbd579bd04cf404724964131c33164adcc9905c3089c69fd428",
+      "sha256": "cb2b7b0ad1e708492217ecef0a9fc324e452683c96b07a6ca222437ab56a2cdf",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90928,7 +90928,7 @@
       ],
       "file": "assets/tampa.svg",
       "bytes": 613,
-      "sha256": "3bf206f15639f8093a53c8f5d8623c46801febbe0cd4404f1c727580db591175",
+      "sha256": "f6ec9e58cb34808d6b6c1d19650eae8e3991b376096f475c3dabd6de528d3ec9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -90991,7 +90991,7 @@
       ],
       "file": "assets/tangier.svg",
       "bytes": 689,
-      "sha256": "5279ed97795298743adf09faa648069c41cf0df2ab3a419cffdf71d1cd035c3e",
+      "sha256": "6e49ea3b36ef589e9214ca37374d95872d26dd0d333082a67e0c2405606c7d7d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -91159,7 +91159,7 @@
       ],
       "file": "assets/taranto.svg",
       "bytes": 676,
-      "sha256": "9218675d3aa1c60e927b0ada74a2c10587e4bcd0eaa394aa2c64c8bb7c4b11b0",
+      "sha256": "236b4f33e773048b122d99560b1c5e06429434059393529be7727600968a5ab6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -91388,9 +91388,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/teach.svg",
-      "bytes": 388,
-      "sha256": "9bc8fb8526d8eba7a645dab3354dd48356068931d072feb73373fa7199d6bf92",
+      "file": "assets/teach-d215c515b03c-v2.svg",
+      "bytes": 651,
+      "sha256": "d215c515b03c4f0b29e388d85e15b9dac38c25c2a2ea3bbacbd7e47e93914c05",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -91999,7 +91999,7 @@
       ],
       "file": "assets/thane.svg",
       "bytes": 658,
-      "sha256": "d6330fdd3723e420d6dbdabdd4959e9e6425224fa69b05c6e5b8a4dc795e5980",
+      "sha256": "07a82d1fbd72ea2c4b190ee611380cb8cc0c7c60fcf056cac87dbaf63b7d45e9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -92061,8 +92061,8 @@
         "communication"
       ],
       "file": "assets/that.svg",
-      "bytes": 446,
-      "sha256": "d38b2e4b23917eb763ce10408a9d0b5a85fbec3b16ef50a145f35436489af3eb",
+      "bytes": 592,
+      "sha256": "2350d304615c2e0c3eb9fe5bfd108fb2af0c5e5e15db5b88a0c05cdb10566201",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -92523,8 +92523,8 @@
         "communication"
       ],
       "file": "assets/this.svg",
-      "bytes": 341,
-      "sha256": "61b4e37c772da40da77bbe3f65d19e9f507f2757e954c2c9784154c7aedb4ed6",
+      "bytes": 487,
+      "sha256": "c2c48b55d5697793649f60576bdc54c3c7d0e79ae6f7f2886f44cdb942d1a132",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -92965,7 +92965,7 @@
       ],
       "file": "assets/tianjin.svg",
       "bytes": 658,
-      "sha256": "a7497e6d547ef21dfd10a5fc5693fb0273a33b909bef7c40d14e8f9fd24a37f8",
+      "sha256": "f342e6ecfa1d9fa93223933e6e6b7f030df48a833901d7dffa91b7c446bdb559",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -93322,7 +93322,7 @@
       ],
       "file": "assets/tijuana.svg",
       "bytes": 689,
-      "sha256": "af4f9c4245ea91c6d4616bdad687fdd338943aff4337e7791d1a1316505a8618",
+      "sha256": "91f8e1e8ff165131b16facb88dcec510c68e0237532fe3d45cb680e5d8c8d47d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -93448,7 +93448,7 @@
       ],
       "file": "assets/timra.svg",
       "bytes": 611,
-      "sha256": "42cc113e9c159d35c2e8e1de19849ca0ca5775c677df966f7b0ac2f50611b338",
+      "sha256": "0cc10bad274930b0888e526205e8b90d8cb3b86f8f12b0ad5675cf80c4daa8fc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -93637,7 +93637,7 @@
       ],
       "file": "assets/tlemcen.svg",
       "bytes": 688,
-      "sha256": "e4eac00eab109a292e3578f2f9cec09d5b956db93dd8f9cf488d95f63955def4",
+      "sha256": "c5ec8d98a3e88c4de798bee29787a77d8f42b78f11a1e767e3c39236ede335dc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -94078,7 +94078,7 @@
       ],
       "file": "assets/toledo.svg",
       "bytes": 613,
-      "sha256": "cfc0c0ea7c5ed476bea03b7190577f5f89af7f3388f5364ea011873384f88f44",
+      "sha256": "761d340b64afdc774a36bfa02b6af060a25920200521662d466fed429fb69226",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -94099,7 +94099,7 @@
       ],
       "file": "assets/toluca.svg",
       "bytes": 689,
-      "sha256": "c4b773ee563ede879bf8f9f0dc97d61f6cf0374d08144486509719b41fe5b59d",
+      "sha256": "8d1dfee1af2e726c04f6033229b3ac40d3e5f84487e73976e36c0f032a9becfc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -94918,7 +94918,7 @@
       ],
       "file": "assets/toulouse.svg",
       "bytes": 676,
-      "sha256": "82c9cf78042b9e7be063adcc3ed1cce34eea7fda92dc2a6607e5d8e3ff93a5a5",
+      "sha256": "db17789f7b32a95cee9be6167863ff3fb115241efa99fc7872e822d65edde35d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -94981,7 +94981,7 @@
       ],
       "file": "assets/tours.svg",
       "bytes": 675,
-      "sha256": "dbb1f7a409910446751f5bc8293e179bb6d95b6587c73134bef1f138fbcca3b8",
+      "sha256": "4931969ffa299b8f3f895bd36307dacd36db2fb836c4ce0565742e93d752adec",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -95821,7 +95821,7 @@
       ],
       "file": "assets/trelleborg.svg",
       "bytes": 614,
-      "sha256": "62d1a12c77fa94de3dca2c75de44dafac26cb5b14bab29258ea201d83097c311",
+      "sha256": "3c39cd487aa5eeab664983c2f7552edc2c3cfe796714c1a0aa38273582be13fc",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -95863,7 +95863,7 @@
       ],
       "file": "assets/trieste.svg",
       "bytes": 676,
-      "sha256": "f06cd9d5a736791bbf33b319370e99a8c9ee1d73f0b3079b2b3886616496f257",
+      "sha256": "cea4580461fad58b6fcdeb542e87c193fa8ffc928aaff07dc6cff9ed28f801c9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -95989,7 +95989,7 @@
       ],
       "file": "assets/trois-rivieres.svg",
       "bytes": 657,
-      "sha256": "3d26e7948f93bc38df107eebc80b5a054fbf721e05294a2493056c2aa2b5b94f",
+      "sha256": "f8cff7c4d68a628a4a0c829ba5677dab366de61697a8bff9943dcc7740ffe48c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -96010,7 +96010,7 @@
       ],
       "file": "assets/trollhattan.svg",
       "bytes": 612,
-      "sha256": "f8aa02e62691121d185d5fb3163ebac3ca0fc749419e02cb09b095ffc613e5c3",
+      "sha256": "c259c7946ce1784ddda68084c1e7a735de8ec13a5890d6c1bed9876a1b129822",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -96136,7 +96136,7 @@
       ],
       "file": "assets/trujillo-peru.svg",
       "bytes": 688,
-      "sha256": "aee4560189681915a8a4c81de7aee807601589463df75a55a03b4136305b326f",
+      "sha256": "56d8762f56634e3b8f424f1d32bc6b48ce7888badd348e567c4d8bca645f4d9a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -96304,7 +96304,7 @@
       ],
       "file": "assets/tucson.svg",
       "bytes": 613,
-      "sha256": "11b6801e7fd81d023569b13608d3bb18fd28493f10b65ed59bc7f0e5eeef4b1a",
+      "sha256": "2bcf003079e65ea73c9b337c12a278e60194c9f00a5c8b1621797268a3f98548",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -96367,7 +96367,7 @@
       ],
       "file": "assets/tulsa.svg",
       "bytes": 612,
-      "sha256": "9f4c32bce133de5f40742c1a5a38f9a1638c8ae4bab9a4e22424b1c6da4e7ed2",
+      "sha256": "dc0d188684b605a6229339442fb6ab42c3025c5f08eee92c530b0198b7eee83c",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -96386,9 +96386,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/tuna.webp",
-      "bytes": 8386,
-      "sha256": "abc2c893c6af98a1c66001a2ed40e6fd7edd088b5cb1747345f2660581b3e2b9",
+      "file": "assets/tuna-c38da0631362-v2.webp",
+      "bytes": 6738,
+      "sha256": "c38da0631362f7926bcc39664a848e94cdb57e9a38c8196443ca8690d8eac916",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -96493,7 +96493,7 @@
       ],
       "file": "assets/turin.svg",
       "bytes": 676,
-      "sha256": "f466cd8b2feadb657eb319e0df7cdeb6b85ea29a88bc898386d2c383006df289",
+      "sha256": "8fc70a690f8c7f7bb2cb1a7f2f2135cd6f532f29d9074af373965efd84e6a328",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -97165,7 +97165,7 @@
       ],
       "file": "assets/uddevalla.svg",
       "bytes": 611,
-      "sha256": "51da38bdc179382f6f0791b656412ce632b6617d211a8e7363b8af30e2d75127",
+      "sha256": "df4f475709c1c623650d17f100baf7b72719c596b9622fba3c918d3e7e47ef64",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -97333,7 +97333,7 @@
       ],
       "file": "assets/umea.svg",
       "bytes": 612,
-      "sha256": "1ed65bf9a6093f9b3476aeae54bba7ef187fe0449aaabb760097872728729433",
+      "sha256": "4cbcfcc1ebaa030e2b512f1eebaa5f4b3d70dd546cc2ae706ebaceadb1883b25",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -98320,7 +98320,7 @@
       ],
       "file": "assets/uppsala.svg",
       "bytes": 612,
-      "sha256": "afd5b95b9ccb8ca2b14eb7fbc012b1110eb7995b1ec7474d2818b99197e5af71",
+      "sha256": "70382aea316f26062bca542d4c1e5ce4a0ddd4407282f02689dfac03f102389a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -98761,7 +98761,7 @@
       ],
       "file": "assets/utrecht.svg",
       "bytes": 677,
-      "sha256": "575abf09dc7afb8be92b04db088cf5fc99c63399ae8e53d4e26bd10827e90b8d",
+      "sha256": "783cc1b3213fe5f9fa070dfd53f14aa98a24ae5267872a7f3c7c700d36164a8a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -98802,8 +98802,8 @@
         "school-work-play"
       ],
       "file": "assets/vacation.svg",
-      "bytes": 429,
-      "sha256": "37d06b9924603e80ca83b4c973fed09240edfda70cce4c468acc3886a4b5d9f6",
+      "bytes": 575,
+      "sha256": "681b99df35b24fadb280f1109c2ca9a6e45e5111fbd90dfc95738009c063a48e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -98908,7 +98908,7 @@
       ],
       "file": "assets/vadodara.svg",
       "bytes": 658,
-      "sha256": "78aa465e7c5767473a545ba66b54d25286087c8bebbe338fe0a2e0835cd4e72d",
+      "sha256": "f567e93d435e53772ff34f6a9f9ab1b769436d4369aa11bc11e610d957495d17",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -98992,7 +98992,7 @@
       ],
       "file": "assets/valladolid.svg",
       "bytes": 677,
-      "sha256": "d9f8bc0c95a2e14681a986acef98f8a2a6855d27363280d037780d14b75ff677",
+      "sha256": "8d497e5125f937ade4db8e62dc69f65749d188e7e21d4f7278af67fcaf80db63",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99055,7 +99055,7 @@
       ],
       "file": "assets/valparaiso.svg",
       "bytes": 688,
-      "sha256": "0f8e7fcb10c65c8e50eac2493f748d2892884db9aadd44825b235ed80a8e6c18",
+      "sha256": "55ccc49a31d912ee69076679042c7ad4c9cea15852b551099c8dd611c707583a",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99139,7 +99139,7 @@
       ],
       "file": "assets/vanersborg.svg",
       "bytes": 613,
-      "sha256": "e7204d2c90f59e1b81399b30569cdcbd1296b7172abb9d7ed47a9a9a36796352",
+      "sha256": "fcc0ee1ffd7c9d34b4755c4026414810cbf7c4eef6d02e3048c6b601958c8ea0",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99181,7 +99181,7 @@
       ],
       "file": "assets/varberg.svg",
       "bytes": 612,
-      "sha256": "1c1d1b4c01b97d4a439caabfe6ebcb457b5e26681602dd827d09790666509b7c",
+      "sha256": "5d98d68e9bec77a60196045d23ad96c30b11d4dd0029b52c0dc434484cabbb23",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99223,7 +99223,7 @@
       ],
       "file": "assets/vasteras.svg",
       "bytes": 612,
-      "sha256": "c9853561ad23d5a34f55892a9c3267a5e2d329c1b511dba74f6ce060768b7e94",
+      "sha256": "8cebb2b6daf30a1da11dabca12a8f02ac7554e64181f10ce4bc88908db47a46f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99244,7 +99244,7 @@
       ],
       "file": "assets/vaxjo.svg",
       "bytes": 613,
-      "sha256": "aad7904cd5976ada13f70a6f75f720dd0652457ab19cf88decc381fdbb0eee7c",
+      "sha256": "1ac506f0dbd8fafafa986fa37f7778ee2c052dc46b4e350f0fbce8e6e26af0aa",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99349,7 +99349,7 @@
       ],
       "file": "assets/venice.svg",
       "bytes": 676,
-      "sha256": "82247259f7e7be74f985c1e4e193ed1a6fcf9d0ff4e80efdc1a507e8f2aa6a09",
+      "sha256": "f009f9f01dbf936189140e94fa3a5e3480705f2bdcd51a7416672dde528cf8eb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99391,7 +99391,7 @@
       ],
       "file": "assets/veracruz.svg",
       "bytes": 689,
-      "sha256": "0407a2bd2d30f01c0fdab6954c5c562d30735e171beaa07d57b663970fb1a53c",
+      "sha256": "8573e036a418670470a56a1bf7194cbb571c40f183830bfad30b31bcc2e9d1d1",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99433,7 +99433,7 @@
       ],
       "file": "assets/verona.svg",
       "bytes": 676,
-      "sha256": "1036f83da37d6563c320ce1656c3103e16943cbd5f5ca528ad70ad7b5f2ee845",
+      "sha256": "159ac00b683c84a5358bbef8b942fcc0254a5778d8cca417d53bbd0a97ba2d91",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99664,7 +99664,7 @@
       ],
       "file": "assets/vigo.svg",
       "bytes": 676,
-      "sha256": "bad193e01b7f10f6b300b2586787871a78e83cb984d99e7adf137ad0da271ffa",
+      "sha256": "7cc91856f1ebfb402c1d2b049c850f793bc87d30007e644c67a569f8c61d090e",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -99832,7 +99832,7 @@
       ],
       "file": "assets/visakhapatnam.svg",
       "bytes": 658,
-      "sha256": "9e35f0960858a58e89f212db0286cd37b90c7a3379737105b382e603d814c456",
+      "sha256": "b8336760a93f61cf3120f0eedf1a85359b0bdf1f3b9c0c2757a209a57c945136",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -100063,7 +100063,7 @@
       ],
       "file": "assets/wad-medani.svg",
       "bytes": 689,
-      "sha256": "3e0344cfa69e99d4de4816b21c03cb59bca9dd0f49ba1777106b09e3aa87a78f",
+      "sha256": "2dc492cb54f358be1bb382fe7a5bc58a7c675c4e63c3e8bb0ecccc8df70efa6d",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -102162,8 +102162,8 @@
         "quantity-time"
       ],
       "file": "assets/when.svg",
-      "bytes": 467,
-      "sha256": "98ad5d5fd0c311058723002dfcb72a5d78580b3fbf255c557e50ba60f4ad5d84",
+      "bytes": 686,
+      "sha256": "e0f48bd3f1d679b860ff647934453dae3f6f90aa8c3f0966530d989d97e743cd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -102603,8 +102603,8 @@
         "communication"
       ],
       "file": "assets/why.svg",
-      "bytes": 265,
-      "sha256": "d655260f5555940ffd475fc44e643b38468044fd7f982330d4c0f21f0da179df",
+      "bytes": 338,
+      "sha256": "9eaef30735a0423f99faefdec7e201f64cacf3ac756e6185a1b51ce2c7312399",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -102625,7 +102625,7 @@
       ],
       "file": "assets/wichita.svg",
       "bytes": 611,
-      "sha256": "ce1bf7de93c5249f8857a76469779f20ec742c5a714625d2eaddb186f1c69491",
+      "sha256": "3553d913a705e7bcb4957595d3382d5ad0002ed0b680e4765e94e9b7a92775be",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -102856,7 +102856,7 @@
       ],
       "file": "assets/windsor.svg",
       "bytes": 659,
-      "sha256": "1e711999c5580e719d7dfff06a3ca58bb260c6db9d6168af63ba4b7b35a8228c",
+      "sha256": "383cac383926904fc544c53d64328a9416c05e2d52b6bc67dd185d216bb65219",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -102940,7 +102940,7 @@
       ],
       "file": "assets/winnipeg.svg",
       "bytes": 658,
-      "sha256": "2c343167928fdd80857d35ecdacb71c7efd65ce3a47f113357cb6606f3f86f16",
+      "sha256": "1e5cb7ad97fa91495db165d97ec217f7b5eadeed271770306ec45a24423e6720",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -103107,8 +103107,8 @@
         "communication"
       ],
       "file": "assets/with.svg",
-      "bytes": 383,
-      "sha256": "1bc0cdce6f548bc98167ddeee59fa31055b0d55863cd19ab26b9cee6d2fdfe68",
+      "bytes": 529,
+      "sha256": "c2355782529616cfeb18f2c562f963a871446fe2c131d337f1c10b31a7c52bfb",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -103170,8 +103170,8 @@
         "communication"
       ],
       "file": "assets/without.svg",
-      "bytes": 301,
-      "sha256": "b512414182a4ae3f08c431f6314e6a1bc1eaca94c0f4b9db0c3647c8b0b9b4f4",
+      "bytes": 374,
+      "sha256": "f90626ffbf59e56e4fdd3a96ffbf973f8b586a03dc33d0d964ff686d0ab021d9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -103316,9 +103316,9 @@
       "categories": [
         "clothing"
       ],
-      "file": "assets/wool.svg",
-      "bytes": 376,
-      "sha256": "c013847ee83bca7db3a074cb35bf1e80c0a2c8a04b6ced286f7861bb27e8cd0f",
+      "file": "assets/wool-5a56c580e5e5-v2.svg",
+      "bytes": 663,
+      "sha256": "5a56c580e5e57f85f95ec78e251f557483f7bf8e81fccca4d3f2da146bec3be3",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104032,7 +104032,7 @@
       ],
       "file": "assets/wroclaw.svg",
       "bytes": 676,
-      "sha256": "fbbb533aea32a0e20c6ee5f0000cd4894b28b75309964652148fb99e0053ceae",
+      "sha256": "7f2e741e2a93ff74c00deabb32057e5006cea172ceb952e5fc400d76c4d507f9",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104053,7 +104053,7 @@
       ],
       "file": "assets/wuhan.svg",
       "bytes": 658,
-      "sha256": "241b3a4b5e87231922bea3c56e92bfd9497bb3b1f52d2bc12bdff18ab69a608d",
+      "sha256": "a83488c054bbcc1716b129c80e416408eefd23900419cd522c8ff0c0ea7a7308",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104074,7 +104074,7 @@
       ],
       "file": "assets/wuxi.svg",
       "bytes": 659,
-      "sha256": "9f49b47a9fc24fbab5a56086b260860fd5171b36221d96ad0cd9e329afab5bd0",
+      "sha256": "d30be6d7fcda8eb506a7ce065a39580142f391bd7a3dffca014c105243b45b52",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104137,7 +104137,7 @@
       ],
       "file": "assets/xiamen.svg",
       "bytes": 659,
-      "sha256": "8231cce810b413c016a2eb607d6919118e8009fe1b0b827b5cd85b9bc60cdcd1",
+      "sha256": "a44efcac40d2010dca11f430c0fb0012fcd3a19797cbf3d40c608fe90df7ee17",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104158,7 +104158,7 @@
       ],
       "file": "assets/xian.svg",
       "bytes": 658,
-      "sha256": "af93286a183dd517a0f3a04801c1fdb4c23b8b7f21635198df6e38a3374ea7f3",
+      "sha256": "e1d7293b0199b0fab2731cebfe076fbde8a3dcfe473ae9ba47a088ab055d5ac5",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104515,7 +104515,7 @@
       ],
       "file": "assets/yogyakarta.svg",
       "bytes": 659,
-      "sha256": "067bc68d90f904cba313c9a09b9bcd15ac487168205df3b903efca8d70731ceb",
+      "sha256": "a943dbb159b194a27e58ee5cd455d5736c5556082c06132ad5d652322589c957",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104536,7 +104536,7 @@
       ],
       "file": "assets/yokohama.svg",
       "bytes": 658,
-      "sha256": "f466797435ecd7f07abdc1bb43322950ddd715e0c8d54d6c6f210fbbf222a038",
+      "sha256": "5408b55c097363e643195f31195a87abd138aa232943b9c40d187752c54d9a4f",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104557,7 +104557,7 @@
       ],
       "file": "assets/york.svg",
       "bytes": 676,
-      "sha256": "d6ead43652c4a02e1e8e57ce5fcf4bc92046aab3cc84c1c538db8454d489fc7e",
+      "sha256": "b745adffb938d282db47bd10d4918ec1dcf5be1aa79696c208470dbfa3d43e84",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104725,7 +104725,7 @@
       ],
       "file": "assets/ystad.svg",
       "bytes": 612,
-      "sha256": "14f6c4f1ec3a7528a507b08dcf4fa1ad2e00a8a076ddbbb58059a00513898faf",
+      "sha256": "871ad64726c8bf6c0b5ec03e02a4b45237b71cd89d27cbfda5c8432d9ceb2fa6",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104809,7 +104809,7 @@
       ],
       "file": "assets/zaragoza.svg",
       "bytes": 676,
-      "sha256": "9fb599735b8064ccd65d988461f74bd48f8ffab1f5e97b08511747b64cc84158",
+      "sha256": "14c4db45215742394160624e11e55fe1cc5f5aaab5a87b2f494641099f6ad068",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -104893,7 +104893,7 @@
       ],
       "file": "assets/zinder.svg",
       "bytes": 689,
-      "sha256": "44482cc74e0ad5a2a92df5d0e0d10ce9c5d13cec9027f44b5d0f381eda816af7",
+      "sha256": "46d7cf6ac2514dd5ca7fd15e1a26770854bb61ed0afc286044928b5c72b00135",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

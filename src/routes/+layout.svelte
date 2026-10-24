@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import '../app.css';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
@@ -7,6 +8,7 @@
   import { theme, textSize, reducedMotion, themeClass, textSizeClass } from '$lib/a11y';
   import { speak, preloadVoice } from '$lib/tts';
   import { browser } from '$app/environment';
+  import { requestServiceWorkerUpdate } from '$lib/pwa/update-check.js';
   import AchievementPopup from '$lib/components/rewards/AchievementPopup.svelte';
   import StarCounter from '$lib/components/rewards/StarCounter.svelte';
   import { ALL_APPS, isBlockedIn } from '$lib/apps';
@@ -54,6 +56,40 @@
   function goSettings() {
     goto(base + '/settings');
   }
+
+  // Loopia and browsers can keep cached files for a long time. Check for an
+  // updated service worker when the app opens and when it returns to the foreground.
+  // The worker activates the new cache; the user can reopen the app to load it.
+  onMount(() => {
+    if (!('serviceWorker' in navigator)) return;
+
+    let checking = false;
+
+    async function checkForUpdate() {
+      if (!navigator.onLine || checking) return;
+      checking = true;
+      try {
+        await requestServiceWorkerUpdate(navigator.serviceWorker, navigator.onLine);
+      } catch {
+        // Offline or a temporary hosting error: the next foreground check retries.
+      } finally {
+        checking = false;
+      }
+    }
+
+    function handleVisibilityChange() {
+      if (document.visibilityState === 'visible') void checkForUpdate();
+    }
+
+    void checkForUpdate();
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('online', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('online', handleVisibilityChange);
+    };
+  });
 
   // Initialize locale (see `initial`) + preload that locale's Piper voice
   if (browser) {

@@ -12,12 +12,12 @@ const piktaliSymbols = ['trafficlight', 'crosswalk', 'danger', 'safeplace', 'ref
 // Visually reviewed card art. Pin both the meaning and bytes so a manifest
 // update cannot silently replace an approved image with a different symbol.
 const reviewedPiktaliCards = {
-  trafficlight: { file: 'assets/trafficlight.webp', sha256: 'b90e2485662da42b9a43de6cb72052583b909a27c5cdfdb599c7f81108c47bf0', labels: { 'sv-SE': 'Trafikljus', 'en-US': 'Traffic light' }, meaning: 'traffic light' },
-  crosswalk: { file: 'assets/crosswalk.webp', sha256: '9302fa0c66df4216e4069d2ee48dbf0ebb6924595aabac8e008b808b32e8f249', labels: { 'sv-SE': 'Övergångsställe', 'en-US': 'Crosswalk' }, meaning: 'pedestrian crossing' },
-  danger: { file: 'assets/danger.webp', sha256: '4bc28024e9b4fdc94ad3449fdd3eaf10d3cc85869016d52aa2851c60fa7a42cb', labels: { 'sv-SE': 'Fara', 'en-US': 'Danger' }, meaning: 'warning sign' },
-  safeplace: { file: 'assets/safeplace.svg', sha256: '59c8550bf6e0671eb1b2b7df3ded3071221710ad572023baf4f4dcbadd190bcd', labels: { 'sv-SE': 'Trygg plats', 'en-US': 'Safe place' }, meaning: 'safe place' },
-  reflector: { file: 'assets/reflector-vest.svg', sha256: 'ce860b12f9aa9cf8064aa486e0fad4a916eb770bceef255c3fe19511de18fac9', labels: { 'sv-SE': 'Reflexväst', 'en-US': 'Reflective vest' }, meaning: 'reflective vest' },
-  car: { file: 'assets/car.webp', sha256: 'a54a1ff803725ba41966ca5d1e0b8ff560d6a1b9f0d92bab02b0948cc8bce445', labels: { 'sv-SE': 'Bil', 'en-US': 'Car' }, meaning: 'car' }
+  trafficlight: { file: 'assets/trafficlight-b90e2485662d.webp', manifestFile: 'assets/trafficlight.webp', sha256: 'b90e2485662da42b9a43de6cb72052583b909a27c5cdfdb599c7f81108c47bf0', labels: { 'sv-SE': 'Trafikljus', 'en-US': 'Traffic light' }, meaning: 'traffic light' },
+  crosswalk: { file: 'assets/crosswalk-9302fa0c66df.webp', manifestFile: 'assets/crosswalk.webp', sha256: '9302fa0c66df4216e4069d2ee48dbf0ebb6924595aabac8e008b808b32e8f249', labels: { 'sv-SE': 'Övergångsställe', 'en-US': 'Crosswalk' }, meaning: 'pedestrian crossing' },
+  danger: { file: 'assets/danger-4bc28024e9b4.webp', manifestFile: 'assets/danger.webp', sha256: '4bc28024e9b4fdc94ad3449fdd3eaf10d3cc85869016d52aa2851c60fa7a42cb', labels: { 'sv-SE': 'Fara', 'en-US': 'Danger' }, meaning: 'warning sign' },
+  safeplace: { file: 'assets/safeplace-59c8550bf6e0.svg', manifestFile: 'assets/safeplace.svg', sha256: '59c8550bf6e0671eb1b2b7df3ded3071221710ad572023baf4f4dcbadd190bcd', labels: { 'sv-SE': 'Trygg plats', 'en-US': 'Safe place' }, meaning: 'safe place' },
+  reflector: { file: 'assets/reflector-vest-ce860b12f9aa.svg', manifestFile: 'assets/reflector-vest.svg', sha256: 'ce860b12f9aa9cf8064aa486e0fad4a916eb770bceef255c3fe19511de18fac9', labels: { 'sv-SE': 'Reflexväst', 'en-US': 'Reflective vest' }, meaning: 'reflective vest' },
+  car: { file: 'assets/car-a54a1ff80372.webp', manifestFile: 'assets/car.webp', sha256: 'a54a1ff803725ba41966ca5d1e0b8ff560d6a1b9f0d92bab02b0948cc8bce445', labels: { 'sv-SE': 'Bil', 'en-US': 'Car' }, meaning: 'car' }
 };
 const piktaliManifestPath = new URL('../static/piktali-pictograms/manifest.json', import.meta.url);
 const piktaliSourcePath = new URL('../src/lib/piktali/pictograms.ts', import.meta.url);
@@ -149,7 +149,7 @@ for (const symbol of piktaliSymbols) {
   const expectedFile = reviewed?.file;
   const mappedFile = piktaliAssetMap[symbol];
   if (!pictogram) errors.push(`Piktali ${symbol}: missing symbol ${catalogSymbol} from the manifest`);
-  if (pictogram?.file !== expectedFile) errors.push(`Piktali ${symbol}: visually reviewed ${reviewed?.meaning} image should remain ${expectedFile}, got ${pictogram?.file}`);
+  if (pictogram?.file !== reviewed?.manifestFile) errors.push(`Piktali ${symbol}: catalog symbol should remain ${reviewed?.manifestFile}, got ${pictogram?.file}`);
   for (const [locale, label] of Object.entries(reviewed?.labels ?? {})) {
     if (pictogram?.labels?.[locale] !== label) errors.push(`Piktali ${symbol}: expected reviewed ${locale} label ${label}, got ${pictogram?.labels?.[locale]}`);
   }
@@ -161,6 +161,7 @@ for (const symbol of piktaliSymbols) {
     else {
       const sha256 = createHash('sha256').update(bytes).digest('hex');
       if (sha256 !== reviewed.sha256) errors.push(`Piktali ${symbol}: visually reviewed ${reviewed.meaning} image hash changed (${sha256})`);
+      if (!expectedFile.includes(sha256.slice(0, 12))) errors.push(`Piktali ${symbol}: cache-safe filename must include the reviewed content hash`);
       if (expectedFile.endsWith('.svg') && !/<svg\b[^>]*viewBox=/.test(bytes.toString('utf8'))) errors.push(`Piktali ${symbol}: SVG has no viewBox`);
       else if (expectedFile.endsWith('.webp') && bytes.toString('ascii', 8, 12) !== 'WEBP') errors.push(`Piktali ${symbol}: invalid WebP signature`);
     }

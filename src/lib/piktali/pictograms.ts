@@ -18,12 +18,13 @@ export function piktaliDictionaryPictogramUrl(englishWord: string): string | nul
 /** Shared Piktali assets for the traffic-safety activity cards. */
 export function piktaliTrafficPictogramUrl(symbol: string): string | null {
   const files: Record<string, string> = {
-    trafficlight: 'assets/trafficlight.webp',
-    crosswalk: 'assets/crosswalk.webp',
-    danger: 'assets/danger.webp',
-    safeplace: 'assets/safeplace.svg',
-    reflector: 'assets/reflector-vest.svg',
-    car: 'assets/car.webp'
+    // Content-addressed names bypass host caches that ignore query strings.
+    trafficlight: 'assets/trafficlight-b90e2485662d.webp',
+    crosswalk: 'assets/crosswalk-9302fa0c66df.webp',
+    danger: 'assets/danger-4bc28024e9b4.webp',
+    safeplace: 'assets/safeplace-59c8550bf6e0.svg',
+    reflector: 'assets/reflector-vest-ce860b12f9aa.svg',
+    car: 'assets/car-a54a1ff80372.webp'
   };
   const file = files[symbol];
   return file ? `${base}/piktali-pictograms/${file}` : null;

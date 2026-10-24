@@ -296,7 +296,7 @@ export const CATEGORY_SETS = [
           { id: 'ant', nameKey: 'categorySort.item.ant', arasaacId: 2425 },
           { id: 'butterfly', nameKey: 'categorySort.item.butterfly', arasaacId: 26200 },
           { id: 'key', nameKey: 'categorySort.item.key', arasaacId: 8153 },
-          { id: 'coin', nameKey: 'categorySort.item.coin', arasaacId: 10279 },
+          { id: 'coin', nameKey: 'categorySort.item.coin', piktaliSymbol: 'coin' },
           { id: 'ladybug', nameKey: 'categorySort.item.ladybug', arasaacId: 2924 },
         ],
       },

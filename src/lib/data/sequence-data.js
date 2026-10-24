@@ -298,7 +298,7 @@ export const sequences = [
       { description: { en: 'Show your card', sv: 'Visa ditt kort', pt_BR: 'Mostre sua carteirinha' }, arasaacId: 17208, order: 2 },
       { description: { en: 'Find a book', sv: 'Hitta en bok', pt_BR: 'Encontre um livro' }, arasaacId: 25191, order: 3 },
       { description: { en: 'Read the book', sv: 'Läs boken', pt_BR: 'Leia o livro' }, arasaacId: 7141, order: 4 },
-      { description: { en: 'Return the book', sv: 'Lämna tillbaka boken', pt_BR: 'Devolva o livro' }, arasaacId: 29714, order: 5 },
+      { description: { en: 'Return the book', sv: 'Lämna tillbaka boken', pt_BR: 'Devolva o livro' }, arasaacId: 6474, order: 5 },
     ],
   },
 ];

@@ -2,6 +2,9 @@ import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { applySwedishLookupOverrides, SWEDISH_LOOKUP_OVERRIDES } from '../src/lib/arasaac/sv-lookup-overrides.js';
+import { CATEGORY_SETS } from '../src/lib/data/category-data.js';
+import { sequences } from '../src/lib/data/sequence-data.js';
+import { sharedPictogramFiles } from '../src/lib/piktali/shared-pictogram-files.js';
 
 const catalogUrl = 'https://api.arasaac.org/v1/pictograms/all/en';
 const lookupPath = new URL('../static/arasaac-sv.json', import.meta.url);
@@ -169,6 +172,32 @@ for (const symbol of piktaliSymbols) {
   }
 }
 
+const categoryCoin = CATEGORY_SETS.flatMap((set) => set.categories ?? [])
+  .flatMap((category) => category.items ?? [])
+  .find((item) => item.id === 'coin');
+const coinPictogram = piktaliBySymbol.get('coin');
+const reviewedCoinSha256 = 'eb25b285b6685abddca8794dd3675ddc430be18a389c8439d233ae390b303a20';
+if (categoryCoin?.piktaliSymbol !== 'coin' || 'arasaacId' in (categoryCoin ?? {})) {
+  errors.push('Category Sort coin: expected the generic Piktali coin, not a currency-specific ARASAAC coin');
+}
+if (!coinPictogram || coinPictogram.file !== 'assets/coin.svg' || sharedPictogramFiles.coin !== coinPictogram.file) {
+  errors.push('Category Sort coin: Piktali symbol, shared asset map, and manifest do not agree');
+} else {
+  if (coinPictogram.labels?.['sv-SE'] !== 'Mynt' || coinPictogram.labels?.['en-US'] !== 'Coin') {
+    errors.push('Category Sort coin: expected reviewed Swedish and English labels');
+  }
+  const bytes = await readFile(new URL(`../static/piktali-pictograms/${coinPictogram.file}`, import.meta.url)).catch(() => null);
+  if (!bytes || createHash('sha256').update(bytes).digest('hex') !== reviewedCoinSha256) {
+    errors.push('Category Sort coin: reviewed generic coin artwork is missing or changed');
+  }
+}
+
+const libraryReturn = sequences.find((sequence) => sequence.id === 'visit-library')?.steps
+  .find((step) => step.description.en === 'Return the book');
+if (libraryReturn?.arasaacId !== 6474) {
+  errors.push(`Visit the library / Return the book: expected reviewed ARASAAC ID 6474, got ${libraryReturn?.arasaacId}`);
+}
+
 for (const [term, entry] of Object.entries(lookup)) {
   const pictogram = byId.get(String(entry.id));
   uniqueIds.add(entry.id);
@@ -214,6 +243,7 @@ console.log(`Checked ${Object.values(pictogramIds).filter((id) => id !== null).l
 console.log(`Checked ${checkedPiktaliAssets} Piktali manifest assets against their byte counts, SHA-256 hashes, file signatures, and Swedish/English labels.`);
 console.log(`Checked all six traffic-safety cards resolve to the intended Piktali assets (${Object.values(expectedSymbols).join(', ')}).`);
 console.log('Verified all six visually reviewed Piktali meanings, Swedish and English labels, asset paths, and pinned SHA-256 hashes.');
+console.log('Verified Category Sort uses the pinned generic Piktali coin and the library sequence uses ARASAAC return-book ID 6474.');
 console.log(`ARASAAC English catalog: ${catalog.length} pictograms.`);
 
 if (errors.length) {

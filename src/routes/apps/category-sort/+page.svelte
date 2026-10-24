@@ -9,9 +9,10 @@
   import { flip } from 'svelte/animate';
   import { awardStar, GoldStarBurst } from '$lib/rewards';
   import { CATEGORY_SETS, getAllItems, arasaacUrl } from '$lib/data/category-data.js';
+  import { piktaliPictogramUrl } from '$lib/piktali/pictograms';
 
   type Screen = 'levels' | 'sets' | 'playing' | 'odd' | 'done';
-  type SortItem = { id: string; nameKey: string; arasaacId: number; categoryId?: string; isOdd?: boolean };
+  type SortItem = { id: string; nameKey: string; arasaacId?: number; piktaliSymbol?: string; categoryId?: string; isOdd?: boolean };
   type SortCategory = { id: string; labelKey: string; icon: string; items: SortItem[] };
   type OddRound = { items: SortItem[]; hintKey: string };
   type CategorySet = {
@@ -69,6 +70,11 @@
 
   function setsForLevel(level: number): CategorySet[] {
     return categorySets.filter((set) => set.level === level);
+  }
+
+  function pictogramUrl(item: SortItem): string {
+    if (item.piktaliSymbol) return piktaliPictogramUrl(item.piktaliSymbol) ?? '';
+    return typeof item.arasaacId === 'number' ? arasaacUrl(item.arasaacId) : '';
   }
 
   function loadCustomSets(): CustomSet[] {
@@ -430,7 +436,7 @@
               }
             }}
           >
-            <img src={arasaacUrl(currentItem.arasaacId)} alt={$t(currentItem.nameKey)} loading="lazy" />
+            <img src={pictogramUrl(currentItem)} alt={$t(currentItem.nameKey)} loading="lazy" />
             <span class="item-label">{$t(currentItem.nameKey)}</span>
           </button>
           <p class="drag-hint">{$t(hintShown ? `categorySort.cat.${currentItem.categoryId}` : 'categorySort.dragHint')}</p>
@@ -457,7 +463,7 @@
                 {#each (sortedItems[cat.id] || []) as sorted}
                   <img
                     class="sorted-thumb"
-                    src={arasaacUrl(sorted.arasaacId)}
+                    src={pictogramUrl(sorted)}
                     alt={$t(sorted.nameKey)}
                     in:scale={{ duration: 300 }}
                   />
@@ -484,7 +490,7 @@
               onclick={() => { speakItem(item); handleOddPick(item); }}
               disabled={oddFeedback === 'correct'}
             >
-              <img src={arasaacUrl(item.arasaacId)} alt={$t(item.nameKey)} loading="lazy" />
+              <img src={pictogramUrl(item)} alt={$t(item.nameKey)} loading="lazy" />
               <span class="odd-label">{$t(item.nameKey)}</span>
             </button>
           {/each}
@@ -523,7 +529,7 @@
       class="drag-ghost"
       style="left: {touchDragPos.x - 40}px; top: {touchDragPos.y - 40}px;"
     >
-      <img src={arasaacUrl(touchDragItem.arasaacId)} alt="" />
+      <img src={pictogramUrl(touchDragItem)} alt="" />
     </div>
   {/if}
 

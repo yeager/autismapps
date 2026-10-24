@@ -1,5 +1,6 @@
 import { base } from '$app/paths';
 import { dictionaryPictogramFiles } from './dictionary-files';
+import { sharedPictogramFiles } from './shared-pictogram-files';
 
 /**
  * Stable paths for the subset of shared Piktali pictograms used by the picture
@@ -7,7 +8,7 @@ import { dictionaryPictogramFiles } from './dictionary-files';
  * applications that need the full catalog and its review metadata.
  */
 export function piktaliPictogramUrl(symbol: string): string | null {
-  const file = dictionaryPictogramFiles[symbol];
+  const file = dictionaryPictogramFiles[symbol] ?? sharedPictogramFiles[symbol];
   return file ? `${base}/piktali-pictograms/${file}` : null;
 }
 

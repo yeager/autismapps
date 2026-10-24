@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import { locale, t, READY_LOCALES } from '$lib/i18n';
   import { flagSvg } from '$lib/flags';
   import { fade } from 'svelte/transition';
@@ -77,7 +78,7 @@
     <section class="section privacy-link">
       <h2>{$t('about.privacy.title')}</h2>
       <p>{$t('about.privacy.summary')}</p>
-      <a href={$locale === 'sv' ? 'https://autismappar.se/dataskydd.html' : 'https://autismapps.online/dataskydd.html'}>{$t('about.privacy.link')}</a>
+      <a href={base + '/privacy/'}>{$t('about.privacy.link')}</a>
     </section>
 
     <section class="section developer">

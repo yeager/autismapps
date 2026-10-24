@@ -62,6 +62,23 @@ for (const variant of variants) {
 	expect(home.includes(`content="${variant.brand}"`), `${variant.directory}: wrong site brand metadata`);
 	expect(home.includes(`${basePath}/manifest-${variant.code}.json`), `${variant.directory}: wrong language manifest`);
 
+	const privacyPath = join(root, 'privacy', 'index.html');
+	expect(existsSync(privacyPath), `${variant.directory}: missing localized privacy page`);
+	const privacy = readFileSync(privacyPath, 'utf8');
+	expect(privacy.includes(`<html lang="${variant.code}"`), `${variant.directory}: wrong privacy page language`);
+	expect(privacy.includes(`href="https://${variant.host}${canonicalBasePath}/privacy/"`), `${variant.directory}: wrong privacy page canonical`);
+	expect(privacy.includes(variant.code === 'sv' ? 'Uppgifter som sparas på din enhet' : 'Information stored on your device'), `${variant.directory}: privacy page content is not localized`);
+	for (const externalUrl of [
+		'https://arasaac.org/privacy-policy',
+		'https://teckensprakslexikon.su.se',
+		'https://huggingface.co/privacy',
+		'https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net'
+	]) {
+		expect(privacy.includes(externalUrl), `${variant.directory}: privacy page is missing ${externalUrl}`);
+	}
+	const about = readFileSync(join(root, 'about', 'index.html'), 'utf8');
+	expect(about.includes(`href="${basePath}/privacy/"`), `${variant.directory}: About page does not link to its localized privacy page`);
+
 	for (const slug of appRoutes) {
 		const path = join(root, 'apps', slug, 'index.html');
 		expect(existsSync(path), `${variant.directory}: missing route ${slug}`);

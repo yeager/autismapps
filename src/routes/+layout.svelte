@@ -30,7 +30,8 @@
     '/apps/sensory-profile',
     '/apps/prosody-trainer',
     '/apps/board-builder',
-    '/apps/picture-schedule'
+    '/apps/picture-schedule',
+    '/privacy'
   ]);
   const pageTitle = $derived.by(() => {
     const brand = $t('app.title.brand');
@@ -38,9 +39,14 @@
     if ($page.route.id === '/') return `${brand} — ${$t('home.headline')}`;
     if ($page.route.id === '/instruktioner') return `${$t('instructions.title')} · ${brand}`;
     if ($page.route.id === '/diploma') return $t('diploma.page_title');
+    if ($page.route.id === '/privacy') return `${$t('about.privacy.title')} · ${brand}`;
     return `${brand} — ${$t('app.subtitle')}`;
   });
-  const pageDescription = $derived(currentApp ? $t(currentApp.description) : $t('home.intro'));
+  const pageDescription = $derived(currentApp
+    ? $t(currentApp.description)
+    : $page.route.id === '/privacy'
+      ? $t('about.privacy.summary')
+      : $t('home.intro'));
 
   // Each production domain is one language (autismappar.se = sv, autismapps.online = en)
   // and wins over a saved choice — except for ready locales without a domain of their

@@ -34,7 +34,7 @@ const ASSETS = [
 ];
 // The ONNX Runtime WASM is about 25 MB. Cache.addAll rejects it on some
 // browsers, which would prevent the entire service worker from installing.
-// Keep it in ASSETS so the normal fetch handler caches it when first used.
+// Keep it in ASSETS for routing, but fetch it on demand without Cache Storage.
 const PRECACHE_ASSETS = ASSETS.filter((asset) => !asset.endsWith('.wasm'));
 
 // Shown only when offline and no page shell is cached. The app's saved locale lives in
@@ -171,17 +171,34 @@ sw.addEventListener('fetch', (event) => {
   const isAsset = ASSETS.includes(url.pathname);
 
   if (isAsset) {
+    // Cache Storage fails on this large response in supported browsers. Let
+    // the network handle it on demand without making service-worker install fail.
+    if (url.pathname.endsWith('.wasm')) {
+      event.respondWith(fetch(event.request).catch(() => new Response('Offline', { status: 503 })));
+      return;
+    }
+
     // Cache-first for static build assets
     event.respondWith(
-      caches.match(event.request).then((cached) => {
-        return cached || fetch(event.request).then((response) => {
+      (async () => {
+        const cached = await caches.match(event.request);
+        if (cached) return cached;
+
+        try {
+          const response = await fetch(event.request);
           if (response.status === 200) {
-            const clone = response.clone();
-            caches.open(CACHE).then((cache) => cache.put(event.request, clone));
+            try {
+              const cache = await caches.open(CACHE);
+              await cache.put(event.request, response.clone());
+            } catch {
+              // Storage may be full or unavailable; the downloaded file still works online.
+            }
           }
           return response;
-        }).catch(() => new Response('Offline', { status: 503 }));
-      })
+        } catch {
+          return new Response('Offline', { status: 503 });
+        }
+      })()
     );
   } else {
     // Network-first for dynamic content (ARASAAC images etc)

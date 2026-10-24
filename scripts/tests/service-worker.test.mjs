@@ -36,6 +36,10 @@ test('the large ONNX Runtime WASM stays lazy so it cannot block service-worker i
   assert.match(src, /const isAsset = ASSETS\.includes\(url\.pathname\)/);
 });
 
+test('large WASM is fetched on demand without a Cache Storage write', () => {
+  assert.match(src, /if \(url\.pathname\.endsWith\('\.wasm'\)\) \{\s*event\.respondWith\(fetch\(event\.request\)\.catch\(\(\) => new Response\('Offline', \{ status: 503 \}\)\)\)/);
+});
+
 test('the service worker precaches every versioned traffic-safety card pictogram', () => {
   const cardAssets = [
     'trafficlight-b90e2485662d.webp',

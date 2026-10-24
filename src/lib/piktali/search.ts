@@ -1,20 +1,13 @@
 import { base } from '$app/paths';
-import { fetchJsonWithFallback } from '../arasaac/cache';
-import { boardBuilderSearchResult, matchPiktaliPictograms, piktaliManifestUrls, type PiktaliManifestPictogram, type PiktaliSearchResult } from './search-match';
+import { fetchPiktaliManifest } from './manifest-loader';
+import { boardBuilderSearchResult, matchPiktaliPictograms, type PiktaliManifestPictogram, type PiktaliSearchResult } from './search-match';
 
 export { matchPiktaliPictograms } from './search-match';
 
-const PIKTALI_MANIFEST_TIMEOUT_MS = 5000;
 let manifestRequest: Promise<PiktaliManifestPictogram[]> | undefined;
 
 async function loadPiktaliManifest(): Promise<PiktaliManifestPictogram[]> {
-	manifestRequest ??= fetchJsonWithFallback<{ pictograms?: PiktaliManifestPictogram[] }>(
-			piktaliManifestUrls(base, import.meta.env.DEV),
-      PIKTALI_MANIFEST_TIMEOUT_MS
-    ).then((manifest) => {
-      if (!Array.isArray(manifest.pictograms)) throw new Error('Invalid Piktali manifest');
-      return manifest.pictograms;
-    })
+	manifestRequest ??= fetchPiktaliManifest(base, import.meta.env.DEV)
 		.catch((error) => {
 			manifestRequest = undefined;
 			throw error;

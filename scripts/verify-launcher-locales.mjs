@@ -16,6 +16,8 @@ const appRoutes = readdirSync('src/routes/apps', { withFileTypes: true })
 	.sort();
 const piktaliSource = readFileSync('static/piktali-pictograms/manifest.json');
 const piktaliSourceManifest = JSON.parse(piktaliSource.toString('utf8'));
+const clientManifest = JSON.parse(readFileSync('.svelte-kit/output/client/.vite/manifest.json', 'utf8'));
+const piktaliFallbackChunk = clientManifest['src/lib/piktali/search-fallback.json'];
 
 function expect(condition, message) {
 	if (!condition) throw new Error(message);
@@ -28,6 +30,8 @@ function attr(html, pattern) {
 
 for (const variant of variants) {
 	const root = resolve(variant.directory);
+	expect(piktaliFallbackChunk?.isDynamicEntry === true, 'Piktali fallback should remain a lazy client chunk');
+	expect(existsSync(join(root, piktaliFallbackChunk.file)), `${variant.directory}: missing lazy Piktali fallback chunk`);
 	const requiredCatalogs = [
 		`arasaac-sv-${SWEDISH_LOOKUP_REVISION}.json`,
 		join('piktali-pictograms', `manifest-${PIKTALI_MANIFEST_REVISION}.json`)

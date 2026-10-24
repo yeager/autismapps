@@ -88,7 +88,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { min-width: 320px; min-height: 100%; scroll-behavior: smooth; background: var(--bg); }
+html { min-width: 320px; min-height: 100%; scroll-behavior: smooth; touch-action: manipulation; background: var(--bg); }
 body { min-width: 320px; min-height: 100dvh; margin: 0; overflow-x: hidden; background: var(--bg); color: var(--text); font-family: var(--font); }
 button, input, select, textarea { font: inherit; }
 button { color: inherit; cursor: pointer; }

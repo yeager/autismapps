@@ -12,26 +12,52 @@ export async function requestServiceWorkerUpdate(container, online) {
 }
 
 /**
- * Notify only when a new worker installs over an existing active worker.
- * The first install also changes the page controller, but is not an update.
- * @param {Pick<ServiceWorkerRegistration, 'active' | 'installing' | 'addEventListener' | 'removeEventListener'>} registration
+ * Notify when a worker has installed over an existing active worker. Check
+ * workers that were already installing or waiting before the listener was
+ * attached; a page opened during an update can otherwise miss `updatefound`.
+ * @param {Pick<ServiceWorkerRegistration, 'active' | 'installing' | 'waiting' | 'addEventListener' | 'removeEventListener'>} registration
  * @param {() => void} onUpdateReady
  */
 export function watchForServiceWorkerUpdate(registration, onUpdateReady) {
-	function handleUpdateFound() {
-		const installing = registration.installing;
-		if (!installing || !registration.active) return;
-		const worker = /** @type {ServiceWorker} */ (installing);
+	let disposed = false;
+	let notified = false;
+	const watchedWorkers = new Map();
 
-		function handleStateChange() {
+	function notifyUpdateReady() {
+		if (disposed || notified || !registration.active) return;
+		notified = true;
+		onUpdateReady();
+	}
+
+	/** @param {ServiceWorker | null} worker */
+	function watchInstallingWorker(worker) {
+		if (!worker || !registration.active || watchedWorkers.has(worker)) return;
+
+		const handleStateChange = () => {
 			if (worker.state !== 'installed') return;
 			worker.removeEventListener('statechange', handleStateChange);
-			onUpdateReady();
-		}
+			watchedWorkers.delete(worker);
+			notifyUpdateReady();
+		};
 
+		watchedWorkers.set(worker, handleStateChange);
 		worker.addEventListener('statechange', handleStateChange);
+		// The worker may have reached `installed` before this listener was added.
+		handleStateChange();
+	}
+
+	function handleUpdateFound() {
+		watchInstallingWorker(registration.installing);
 	}
 
 	registration.addEventListener('updatefound', handleUpdateFound);
-	return () => registration.removeEventListener('updatefound', handleUpdateFound);
+	if (registration.waiting && registration.active) notifyUpdateReady();
+	else watchInstallingWorker(registration.installing);
+
+	return () => {
+		disposed = true;
+		registration.removeEventListener('updatefound', handleUpdateFound);
+		for (const [worker, listener] of watchedWorkers) worker.removeEventListener('statechange', listener);
+		watchedWorkers.clear();
+	};
 }

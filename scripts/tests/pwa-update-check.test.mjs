@@ -70,3 +70,34 @@ test('offers a reload when a new worker installs over the active worker', () => 
 	assert.equal(offered, true);
 	assert.equal(worker.listeners.get('statechange').size, 0);
 });
+
+test('offers a reload for a waiting update that was ready before the page opened', () => {
+	const registration = Object.assign(new FakeEventTarget(), { active: {}, installing: null, waiting: {} });
+	let offered = false;
+
+	watchForServiceWorkerUpdate(registration, () => { offered = true; });
+
+	assert.equal(offered, true);
+});
+
+test('watches an update worker that was already installing when the page opened', () => {
+	const worker = Object.assign(new FakeEventTarget(), { state: 'installing' });
+	const registration = Object.assign(new FakeEventTarget(), { active: {}, installing: worker, waiting: null });
+	let offered = false;
+
+	watchForServiceWorkerUpdate(registration, () => { offered = true; });
+	worker.state = 'installed';
+	worker.dispatch('statechange');
+
+	assert.equal(offered, true);
+});
+
+test('offers a reload when an update worker was installed before the listener attached', () => {
+	const worker = Object.assign(new FakeEventTarget(), { state: 'installed' });
+	const registration = Object.assign(new FakeEventTarget(), { active: {}, installing: worker, waiting: null });
+	let offered = false;
+
+	watchForServiceWorkerUpdate(registration, () => { offered = true; });
+
+	assert.equal(offered, true);
+});

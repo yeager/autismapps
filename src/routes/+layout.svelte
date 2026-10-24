@@ -8,7 +8,7 @@
   import { theme, textSize, reducedMotion, themeClass, textSizeClass } from '$lib/a11y';
   import { speak, preloadVoice } from '$lib/tts';
   import { browser } from '$app/environment';
-  import { requestServiceWorkerUpdate } from '$lib/pwa/update-check.js';
+  import { requestServiceWorkerUpdate, watchForServiceWorkerUpdate } from '$lib/pwa/update-check.js';
   import AchievementPopup from '$lib/components/rewards/AchievementPopup.svelte';
   import StarCounter from '$lib/components/rewards/StarCounter.svelte';
   import { ALL_APPS, isBlockedIn } from '$lib/apps';
@@ -64,19 +64,19 @@
   onMount(() => {
     if (!('serviceWorker' in navigator)) return;
 
-    const hadController = Boolean(navigator.serviceWorker.controller);
     let checking = false;
-
-    function handleControllerChange() {
-      // First activation is not an update. Only offer a reload when a worker
-      // that already controlled this page has been replaced.
-      if (hadController) updateAvailable = true;
-    }
+    let stopWatchingUpdates: (() => void) | undefined;
 
     async function checkForUpdate() {
       if (!navigator.onLine || checking) return;
       checking = true;
       try {
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (registration && !stopWatchingUpdates) {
+          stopWatchingUpdates = watchForServiceWorkerUpdate(registration, () => {
+            updateAvailable = true;
+          });
+        }
         await requestServiceWorkerUpdate(navigator.serviceWorker, navigator.onLine);
       } catch {
         // Offline or a temporary hosting error: the next foreground check retries.
@@ -90,12 +90,11 @@
     }
 
     void checkForUpdate();
-    navigator.serviceWorker.addEventListener('controllerchange', handleControllerChange);
     document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('online', handleVisibilityChange);
 
     return () => {
-      navigator.serviceWorker.removeEventListener('controllerchange', handleControllerChange);
+      stopWatchingUpdates?.();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('online', handleVisibilityChange);
     };

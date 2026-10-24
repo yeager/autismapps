@@ -14,6 +14,7 @@ npm run dev
 Build and verify the two localized Loopia trees:
 
 ```sh
+npm run build:loopia-app-pages
 npm run build:launcher:domains
 npm run verify:launcher:locales
 npm run audit:links

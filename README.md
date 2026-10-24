@@ -129,6 +129,12 @@ npm run verify:launcher:locales
 npm run audit:links
 ```
 
+Generate the bilingual legacy app-detail pages used at `/apps/<id>.html` on Loopia:
+```bash
+npm run build:loopia-app-pages # 72 pages in build-loopia-root/apps/
+```
+These pages use the app registry and Swedish/English message catalogs as their source, select the brand from the hostname, and link to the matching app through a relative same-domain launcher path. Upload the generated `apps/*.html` files to the shared document root; do not put them in the inactive `autismapps.online/public_html/` FTP tree.
+
 The live Loopia setup uses the shared document root `autismappar.se/public_html/` for both domains. Upload the **contents** of each build, preserving its relative paths:
 
 - `build-sv/` → `autismappar.se/public_html/launcher-sv/` for `autismappar.se`

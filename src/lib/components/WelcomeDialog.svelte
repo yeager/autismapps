@@ -92,7 +92,7 @@
     padding: 1.75rem;
     max-width: 440px;
     width: 100%;
-    max-height: min(82dvh, 680px);
+    max-height: calc(100dvh - 2rem);
     overflow-y: auto;
     text-align: center;
     box-shadow: 0 20px 60px rgba(16, 36, 25, 0.25);

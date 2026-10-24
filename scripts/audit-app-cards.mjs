@@ -59,8 +59,12 @@ for (const app of ALL_APPS) {
 		}
 
 		const html = readFileSync(routeHtml, 'utf8');
-		const heading = normalizeText(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '');
 		const cardName = normalizeText(locale.messages[app.name]);
+		const title = normalizeText(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? '');
+		if (!title || !title.includes(cardName)) {
+			errors.push(`${app.id}: ${locale.code} page title "${title}" does not include the app name "${cardName}"`);
+		}
+		const heading = normalizeText(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '');
 		if (!heading || !heading.includes(cardName)) {
 			errors.push(`${app.id}: ${locale.code} route heading "${heading}" does not match card name "${cardName}"`);
 		}

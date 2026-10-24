@@ -20,10 +20,27 @@
   // includes the configured base while the route id remains the root route.
   const isHome = $derived($page.route.id === '/');
   const currentApp = $derived(ALL_APPS.find((a) => a.route === $page.route.id));
-  // Remember whether the page itself supplied a title before the layout sets
-  // its localized fallback. Otherwise the fallback would be mistaken for a
-  // page title on the next locale change and remain in the previous language.
-  let hasPageSpecificTitle = false;
+  const PAGE_TITLE_ROUTES = new Set([
+    '/instruktioner',
+    '/diploma',
+    '/apps/tongue-viewer',
+    '/apps/transition-helper',
+    '/apps/traffic-safety',
+    '/apps/talk-board',
+    '/apps/sensory-profile',
+    '/apps/prosody-trainer',
+    '/apps/board-builder',
+    '/apps/picture-schedule'
+  ]);
+  const pageTitle = $derived.by(() => {
+    const brand = $t('app.title.brand');
+    if (currentApp) return `${$t(currentApp.name)} — ${brand}`;
+    if ($page.route.id === '/') return `${brand} — ${$t('home.headline')}`;
+    if ($page.route.id === '/instruktioner') return `${$t('instructions.title')} · ${brand}`;
+    if ($page.route.id === '/diploma') return $t('diploma.page_title');
+    return `${brand} — ${$t('app.subtitle')}`;
+  });
+  const pageDescription = $derived(currentApp ? $t(currentApp.description) : $t('home.intro'));
 
   // Each production domain is one language (autismappar.se = sv, autismapps.online = en)
   // and wins over a saved choice — except for ready locales without a domain of their
@@ -102,7 +119,6 @@
 
   // Initialize locale (see `initial`) + preload that locale's Piper voice
   if (browser) {
-    hasPageSpecificTitle = Boolean(document.querySelector('head > title')?.textContent?.trim());
     setLocale(initial).then((code) => {
       localeReady = true;
       preloadVoice(code);
@@ -120,20 +136,17 @@
     // Only sv and en have their own manifest (one per production domain)
     const language = $locale === 'sv' ? 'sv' : 'en';
     const brand = $t('app.title.brand');
-    const description = $t('home.intro');
     const canonicalUrl = window.location.origin + window.location.pathname;
 
     document.documentElement.lang = def.bcp47;
-    if ($page.route.id === '/' || !hasPageSpecificTitle) {
-      document.title = `${brand} — ${$t('app.subtitle')}`;
-    }
-    setMeta('meta[name="description"]', description);
-    setMeta('meta[property="og:title"]', `${brand} — ${$t('home.headline')}`);
-    setMeta('meta[property="og:description"]', description);
+    if (!PAGE_TITLE_ROUTES.has($page.route.id ?? '')) document.title = pageTitle;
+    setMeta('meta[name="description"]', pageDescription);
+    setMeta('meta[property="og:title"]', pageTitle);
+    setMeta('meta[property="og:description"]', pageDescription);
     setMeta('meta[property="og:locale"]', def.bcp47.replace('-', '_'));
     setMeta('meta[property="og:site_name"]', brand);
-    setMeta('meta[name="twitter:title"]', `${brand} — ${$t('home.headline')}`);
-    setMeta('meta[name="twitter:description"]', description);
+    setMeta('meta[name="twitter:title"]', pageTitle);
+    setMeta('meta[name="twitter:description"]', pageDescription);
     setMeta('meta[name="apple-mobile-web-app-title"]', brand);
     document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.setAttribute('href', canonicalUrl);
     setMeta('meta[property="og:url"]', canonicalUrl);
@@ -142,6 +155,12 @@
     if (manifest) manifest.href = `${base}/manifest-${language}.json`;
   });
 </script>
+
+<svelte:head>
+  {#if !PAGE_TITLE_ROUTES.has($page.route.id ?? '')}
+    <title>{pageTitle}</title>
+  {/if}
+</svelte:head>
 
 <div
   class="app-shell {$themeClass} {$textSizeClass}"
@@ -313,6 +332,7 @@
 
   @media (max-width: 560px) {
     .app-header { min-height: 60px; padding: 8px 14px; gap: 7px; }
+    .app-main.has-header { --app-header-height: 60px; }
     .header-brand { gap: 6px; font-size: .76rem; }
     .brand-mark { width: 26px; height: 26px; padding: 5px; }
     .back-btn { width: 40px; min-width: 40px; padding: 0; justify-content: center; }
@@ -325,6 +345,8 @@
     display: flex;
     flex-direction: column;
   }
+
+  .app-main.has-header { --app-header-height: 68px; }
 
   .update-notice {
     position: fixed;

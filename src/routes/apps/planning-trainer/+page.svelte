@@ -725,7 +725,7 @@
   .plan-page {
     display: flex;
     flex-direction: column;
-    min-height: 100dvh;
+    min-height: calc(100dvh - var(--app-header-height, 68px));
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -848,6 +848,15 @@
     padding: 12px;
     font-size: 0.7em;
     color: var(--text-muted);
+  }
+
+  @media (max-width: 560px) {
+    .section { padding: 12px 16px; }
+    .view-instruction { padding: 12px 16px; }
+    .nav-buttons { padding: 16px; }
+    .template-grid { gap: 8px; }
+    .template-card { gap: 6px; padding: 12px 10px; }
+    .template-icon { width: 56px; height: 56px; }
   }
 
   /* ===== Home ===== */

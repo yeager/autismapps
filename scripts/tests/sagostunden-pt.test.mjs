@@ -67,10 +67,10 @@ test('labels and pictograms follow the story language', () => {
   assert.equal(wordPicto(sjorovare, 'pt_BR'), 24937);
 });
 
-test('every template has a pt-BR title and five paragraphs with valid tokens', () => {
+test('every template has localized titles and five Portuguese paragraphs with valid tokens', () => {
   assert.equal(TEMPLATES.length, 25);
   for (const t of TEMPLATES) {
-    assert.ok(t.title.sv && t.title.pt_BR, `${t.id}: title`);
+    assert.ok(t.title.sv && t.title.en && t.title.pt_BR, `${t.id}: localized titles`);
     assert.equal(t.paragraphs.pt_BR.length, t.paragraphs.sv.length, `${t.id}: paragraph count`);
     for (const p of t.paragraphs.pt_BR) {
       const braces = p.match(/\{[^}]*\}/g) ?? [];

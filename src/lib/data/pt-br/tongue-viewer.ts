@@ -66,7 +66,7 @@ export const PRACTICE_SEQUENCES_PT: PracticeSequence[] = [
   { id: 'ala-ara-alha', sounds: ['a', 'l', 'a', 'a', 'r', 'a', 'a', 'lh', 'a'], text: 'ala-ara-alha', say: ['', '', 'ala', '', '', 'ara', '', '', 'alha'] },
   { id: 'sa-za-cha-ja', sounds: ['s', 'a', 'z', 'a', 'ch', 'a', 'j', 'a'], text: 'sa-za-cha-ja', say: ['', 'sá', '', 'zá', '', 'chá', '', 'já'] },
   { id: 'a-ã-ô-õ', sounds: ['a', 'ã', 'ô', 'õ'], text: 'a-ã-ô-õ', say: ['á', 'hã', 'hô', 'hõ'] },
-  { id: 'ba-na-na', sounds: ['b', 'a', 'n', 'a', 'n', 'a'], text: 'ba-na-na', say: ['', 'bá', '', 'ná', '', 'ná'] },
+  { id: 'ba-na-na', sounds: ['b', 'a', 'n', 'a', 'n', 'a'], text: 'ba-na-na', say: ['', 'ba', '', 'ná', '', 'na'] },
   { id: 'pa-to', sounds: ['p', 'a', 't', 'ô'], text: 'pa-to', say: ['', 'pá', '', 'tô'] },
   { id: 'bo-la', sounds: ['b', 'ó', 'l', 'a'], text: 'bo-la', say: ['', 'bó', '', 'lá'] },
   { id: 'co-mi-da', sounds: ['c', 'ô', 'm', 'i', 'd', 'a'], text: 'co-mi-da', say: ['', 'cô', '', 'mí', '', 'dá'] },

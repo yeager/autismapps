@@ -515,38 +515,33 @@
   }
 
   @media (max-width: 768px) {
-    .crosswalk-content {
-      padding: 1rem;
-    }
-    
-    .activity-header {
-      padding: 1rem;
-    }
-    
-    .activity-header h1 {
-      font-size: 24px;
-    }
-    
-    .street-view {
-      height: 150px;
-    }
-    
-    .character {
-      font-size: 30px;
-    }
-    
-    .car {
-      font-size: 24px;
-    }
-    
-    .quiz-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .quiz-button {
-      min-width: 200px;
-    }
+    .crosswalk-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .activity-header { flex: 0 0 52px; gap: 8px; padding: 6px 10px; }
+    .activity-header h1 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 19px; }
+    .back-button { padding: 8px 10px; font-size: 15px; }
+    .crosswalk-content { flex: 1; min-height: 0; width: 100%; padding: 8px; }
+    .menu-section, .practice-section, .quiz-section { height: 100%; min-height: 0; padding: 10px; }
+    .menu-section { display: flex; flex-direction: column; justify-content: space-between; }
+    .steps-overview h2 { margin: 0 0 6px; font-size: 19px; }
+    .steps-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin: 0; }
+    .step-item { min-width: 0; min-height: 52px; gap: 6px; padding: 6px; margin: 0; font-size: 14px; line-height: 1.2; }
+    .step-number { width: 26px; height: 26px; }
+    .step-text { line-height: 1.2; }
+    .action-buttons { margin-top: 8px; }
+    .practice-button, .next-button, .quiz-button { min-height: 44px; padding: 8px 12px; font-size: 15px; }
+    .practice-section, .quiz-section { display: flex; flex-direction: column; }
+    .street-view { height: auto; min-height: 130px; max-height: 260px; flex: 1 1 auto; margin: 0 0 8px; }
+    .character { font-size: 30px; }
+    .car { font-size: 24px; }
+    .step-display { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; }
+    .current-step { min-width: 0; }
+    .current-step h3, .quiz-display h3 { margin: 0 0 4px; font-size: 18px; }
+    .step-indicator { margin: 0; font-size: 12px; }
+    .quiz-display { flex: 0 0 auto; }
+    .quiz-buttons { flex-direction: row; align-items: stretch; gap: 6px; margin: 6px 0; }
+    .quiz-button { min-width: 0; width: 50%; }
+    .score { margin: 6px 0; font-size: 18px; }
+    .reset-button { min-height: 44px; padding: 8px 12px; }
   }
 
   /* High contrast mode */

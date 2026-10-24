@@ -769,4 +769,40 @@
   * {
     font-size: max(16px, 1em);
   }
+
+  @media (max-width: 768px) {
+    .safe-places-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .activity-header { flex: 0 0 52px; gap: 8px; padding: 6px 10px; }
+    .activity-header h1 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 19px; }
+    .back-button { padding: 8px 10px; font-size: 15px; }
+    .safe-places-content { flex: 1; min-height: 0; width: 100%; padding: 8px; }
+    .overview-section, .game-section, .results-section { height: 100%; min-height: 0; padding: 10px; }
+    .overview-section { display: flex; flex-direction: column; }
+    .instructions h2 { margin: 0 0 4px; font-size: 20px; }
+    .instructions p { margin: 0 0 6px; font-size: 14px; line-height: 1.3; }
+    .examples { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin: 4px 0; }
+    .example-card { min-width: 0; padding: 7px; }
+    .example-icon { margin: 0 0 2px; font-size: 22px; }
+    .example-card h3 { margin: 0 0 3px; font-size: 15px; }
+    .example-card li { padding: 3px 0; font-size: 13px; line-height: 1.2; }
+    .start-game-button { min-height: 44px; margin-top: auto; padding: 8px 16px; font-size: 17px; }
+    .game-section { display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; gap: 6px; }
+    .game-header { flex-direction: row; flex-wrap: wrap; gap: 4px 8px; margin: 0; font-size: 13px; }
+    .score-display { gap: 8px; font-size: 13px; }
+    .progress { font-size: 13px; }
+    .scenario-card { display: flex; align-items: center; gap: 10px; min-height: 0; padding: 10px; }
+    .scenario-image { flex: 0 0 72px; }
+    .scenario-icon { font-size: 50px; }
+    .scenario-info h2 { margin: 0 0 4px; font-size: 19px; }
+    .scenario-info p { margin: 0; font-size: 14px; line-height: 1.3; }
+    .question h3 { margin: 0; font-size: 17px; }
+    .answer-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    .answer-button { min-height: 48px; padding: 7px; font-size: 15px; }
+    .results-section { display: grid; place-items: center; }
+    .results-card { width: 100%; padding: 12px; }
+    .results-header h2 { font-size: 20px; }
+    .score-circle { width: 96px; height: 96px; }
+    .action-buttons { flex-direction: row; gap: 8px; }
+    .play-again-button, .back-button-results { min-height: 44px; padding: 8px; font-size: 14px; }
+  }
 </style>

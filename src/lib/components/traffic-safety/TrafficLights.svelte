@@ -480,4 +480,30 @@
       transform: none;
     }
   }
+
+  @media (max-width: 768px) {
+    .traffic-lights-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; padding: 8px; }
+    .header { flex: 0 0 48px; margin: 0; }
+    .header h2 { font-size: 22px; }
+    .content { flex: 1; min-height: 0; grid-template-columns: minmax(96px, .65fr) minmax(0, 1.35fr); grid-template-rows: minmax(0, 1fr) 44px; gap: 4px 8px; align-items: center; }
+    .traffic-light-section { display: contents; }
+    .traffic-light { grid-column: 1; grid-row: 1; }
+    .light-housing { width: 72px; padding: 8px; gap: 7px; border-radius: 14px; }
+    .light { width: 56px; height: 56px; }
+    .light-pole { height: 32px; }
+    .instructions { grid-column: 2; grid-row: 1; min-width: 0; padding: 0; }
+    .tap-instruction { margin: 0 0 6px; font-size: 15px; }
+    .light-meanings { gap: 6px; margin: 0 0 8px; }
+    .meaning { gap: 7px; padding: 6px; min-height: 44px; text-align: left; }
+    .color-circle { width: 26px; height: 26px; flex: 0 0 26px; }
+    .meaning span { font-size: 14px; }
+    .back-button, .quiz-button, .exit-quiz-button { padding: 8px 12px; font-size: 15px; }
+    .quiz-question { margin: 0 0 6px; font-size: 18px; }
+    .quiz-context { margin: 0 0 6px; padding: 6px; font-size: 14px; }
+    .answer-buttons { gap: 6px; margin: 0 0 6px; }
+    .answer-button { min-height: 44px; gap: 6px; padding: 6px; font-size: 15px; }
+    .answer-button img { width: 28px; height: 28px; }
+    .pedestrian-section { grid-column: 1 / -1; grid-row: 2; padding: 0; }
+    .pedestrian-figure { font-size: 34px; line-height: 1; }
+  }
 </style>

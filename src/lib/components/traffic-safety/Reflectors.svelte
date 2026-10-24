@@ -941,4 +941,53 @@
   * {
     font-size: max(16px, 1em);
   }
+
+  @media (max-width: 768px) {
+    .reflectors-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .activity-header { flex: 0 0 52px; gap: 8px; padding: 6px 10px; }
+    .activity-header h1 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 19px; }
+    .back-button { padding: 8px 10px; font-size: 15px; }
+    .reflectors-content { flex: 1; min-height: 0; width: 100%; padding: 8px; }
+    .overview-section, .comparison-section, .dress-up-section { height: 100%; min-height: 0; padding: 10px; }
+    .overview-section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto auto minmax(0, 1fr); gap: 6px; }
+    .intro, .activity-buttons, .tips-section { grid-column: 1 / -1; }
+    .intro h2 { margin: 0 0 3px; font-size: 19px; }
+    .intro p { margin: 0; font-size: 14px; line-height: 1.3; }
+    .activity-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin: 0; }
+    .activity-btn { min-width: 0; padding: 8px 5px; }
+    .btn-icon { margin: 0 0 3px; font-size: 26px; }
+    .activity-btn h3 { margin: 0 0 3px; font-size: 14px; line-height: 1.15; }
+    .activity-btn p { font-size: 12px; line-height: 1.2; }
+    .tips-section { align-self: stretch; min-width: 0; margin: 0; padding: 7px; }
+    .tips-section h3 { margin: 0 0 3px; font-size: 15px; }
+    .tips-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 8px; }
+    .tips-list li { padding: 4px 0 4px 18px; font-size: 12px; line-height: 1.2; }
+    .tips-list li::before { top: 4px; }
+    .comparison-section { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 6px; }
+    .comparison-header { flex-direction: row; justify-content: space-between; gap: 6px; margin: 0; text-align: left; }
+    .comparison-header h2 { font-size: 18px; }
+    .toggle-button { padding: 7px 10px; font-size: 14px; }
+    .visibility-demo { display: grid; grid-template-rows: minmax(110px, 1fr) auto; gap: 6px; min-height: 0; margin: 0; padding: 8px; }
+    .environment { min-height: 110px; }
+    .road { height: 64px; padding: 0 12px; }
+    .visibility-info { margin: 0; }
+    .time-indicator { margin: 0 0 3px; font-size: 16px; }
+    .visibility-stats { padding: 6px; font-size: 13px; }
+    .back-demo-button, .back-game-button { min-height: 44px; margin: 0; padding: 7px 12px; font-size: 14px; }
+    .dress-up-section { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 6px; }
+    .dress-up-header { flex-direction: row; justify-content: space-between; gap: 6px; text-align: left; }
+    .dress-up-header h2 { margin: 0; font-size: 17px; }
+    .progress-info { flex-direction: row; gap: 6px; font-size: 13px; }
+    .reset-button { min-height: 40px; padding: 5px 8px; font-size: 12px; }
+    .dress-up-game { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; min-height: 0; }
+    .character-area { min-height: 0; padding: 8px; }
+    .character { font-size: 48px; }
+    .drop-instruction { padding: 5px; font-size: 12px; }
+    .reflector-items { min-width: 0; padding: 7px; }
+    .reflector-items h3 { margin: 0 0 4px; font-size: 14px; }
+    .items-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+    .reflector-item { min-width: 0; min-height: 44px; padding: 4px; }
+    .item-icon { font-size: 20px; }
+    .item-name { font-size: 11px; line-height: 1.1; }
+  }
 </style>

@@ -415,18 +415,43 @@
   }
 
   @media (max-width: 768px) {
+    .vehicles-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; padding: 8px; }
+    .header { flex: 0 0 48px; gap: 8px; margin: 0; }
+    .header h2 { font-size: 21px; }
+    .back-button, .nav-button { padding: 8px 10px; font-size: 14px; }
+    .content { flex: 1; min-height: 0; }
+    .vehicle-grid { height: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 6px; }
+    .vehicle-card { min-height: 0; min-width: 0; justify-content: center; gap: 4px; padding: 6px 3px; }
+    .vehicle-icon { width: min(100%, 56px); height: 56px; flex: 0 0 56px; }
+    .vehicle-card h3 { font-size: 13px; line-height: 1.1; }
+    .vehicle-detail { height: 100%; max-width: none; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 6px; }
+    .vehicle-info { margin: 0; padding: 8px; }
+    .large-vehicle-icon { width: 64px; height: 64px; margin: 0 auto 4px; }
+    .vehicle-info h2 { margin: 0 0 6px; font-size: 21px; }
     .action-buttons {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      gap: 6px;
     }
 
     .sound-button, .scenario-button {
-      width: 100%;
-      max-width: 300px;
+      flex: 1 1 0;
+      width: auto;
+      min-width: 0;
+      min-height: 48px;
+      padding: 6px;
+      font-size: 13px;
+      line-height: 1.15;
     }
 
+    .scenarios { min-height: 0; margin: 0; padding: 8px; }
+    .scenarios h3 { margin: 0 0 6px; font-size: 17px; }
     .scenario-actions {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px;
     }
+    .action-button { min-height: 44px; gap: 2px; padding: 4px; font-size: 13px; }
+    .action-button img { width: 26px; height: 26px; }
+    .action-button span { font-size: 12px; line-height: 1.1; }
+    .navigation { margin: 0; }
   }
 </style>

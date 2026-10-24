@@ -712,4 +712,33 @@
   * {
     font-size: max(16px, 1em);
   }
+
+  @media (max-width: 768px) {
+    .road-signs-container { height: calc(100dvh - var(--header-h)); min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    .activity-header { flex: 0 0 52px; gap: 8px; padding: 6px 10px; }
+    .activity-header h1 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 19px; }
+    .back-button { padding: 8px 10px; font-size: 15px; }
+    .road-signs-content { flex: 1; min-height: 0; width: 100%; padding: 6px 8px; }
+    .overview-section, .flashcard, .quiz-section { height: 100%; min-height: 0; padding: 8px; }
+    .mode-buttons { margin: 0 0 6px; }
+    .mode-button { padding: 7px 12px; font-size: 15px; }
+    .signs-grid { height: calc(100% - 48px); grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    .sign-card { height: auto; min-height: 0; justify-content: center; padding: 5px; gap: 8px; }
+    .sign-icon { width: min(100%, 72px); height: 72px; flex: 0 0 72px; }
+    .sign-icon :global(svg) { max-width: 100%; max-height: 100%; }
+    .sign-name { margin: 0; overflow-wrap: anywhere; font-size: 13px; line-height: 1.15; }
+    .flashcard-section { height: 100%; align-items: stretch; }
+    .flashcard { display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+    .sign-display { width: 100px; height: 100px; }
+    .sign-info h2 { margin: 4px 0; font-size: 22px; }
+    .sign-info p { margin: 0; font-size: 15px; }
+    .navigation { display: flex; flex-direction: row; justify-content: center; gap: 6px; margin-top: 6px; }
+    .nav-button, .back-quiz-button { min-height: 44px; padding: 7px 9px; font-size: 14px; }
+    .quiz-header { flex-direction: row; gap: 6px; margin: 0 0 6px; }
+    .quiz-header h2 { font-size: 18px; }
+    .quiz-sign { width: 78px; height: 78px; }
+    .quiz-options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    .quiz-option { min-height: 44px; padding: 6px; font-size: 14px; }
+    .back-quiz-button { margin-top: 6px; }
+  }
 </style>

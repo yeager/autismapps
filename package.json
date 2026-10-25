@@ -7,6 +7,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "build:loopia-app-pages": "node --experimental-strip-types scripts/generate-app-detail-pages.mjs",
+    "generate:root-sitemap": "node --experimental-strip-types scripts/generate-root-sitemap.mjs",
     "build:launcher": "node scripts/build-launcher.mjs",
     "build:launcher:domains": "node scripts/build-launcher-domains.mjs",
     "verify:launcher:locales": "node scripts/verify-launcher-locales.mjs",

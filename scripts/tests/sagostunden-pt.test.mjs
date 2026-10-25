@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { fillPt, capitalizeSentences, PT_TOKEN } from '../../src/lib/sagostunden/grammar-pt.ts';
 import { ALL_WORDS, wordLabel, wordPicto } from '../../src/lib/sagostunden/words.ts';
 import { TEMPLATES } from '../../src/lib/sagostunden/templates.ts';
+import { pick } from '../../src/lib/i18n/locales.ts';
 
 const SLOT_CATEGORY = { DJUR: 'djur', PLATS: 'platser', SAK: 'saker', MAT: 'mat', PERSON: 'personer', VERB: 'verb' };
 
@@ -82,6 +83,14 @@ test('every template has localized titles and five Portuguese paragraphs with va
         if (names === 'VERB') assert.ok(!form && masc === undefined, `${t.id}: ${token} — VERB takes no article or gender`);
       }
       assert.doesNotMatch(p, /\b(em|de|a|por) \{o_/, `${t.id}: needs a contraction (no/do/ao/pelo) in "${p}"`);
+    }
+  }
+});
+
+test('story template titles follow the selected interface language', () => {
+  for (const template of TEMPLATES) {
+    for (const locale of ['sv', 'en', 'pt_BR']) {
+      assert.equal(pick(template.title, locale), template.title[locale], `${template.id}: ${locale} title`);
     }
   }
 });

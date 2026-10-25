@@ -33,7 +33,8 @@ test('service-worker installation does not precache every static file', () => {
 test('the large ONNX Runtime WASM stays lazy so it cannot block service-worker installation', () => {
   assert.match(src, /const PRECACHE_ASSETS = ASSETS\.filter\(\(asset\) => !asset\.endsWith\('\.wasm'\)\)/);
   assert.match(src, /cache\.addAll\(PRECACHE_ASSETS\)/);
-  assert.match(src, /const isAsset = ASSETS\.includes\(url\.pathname\)/);
+  assert.match(src, /const ASSET_PATHS = new Set\(ASSETS\.map\(\(asset\) => new URL\(asset, sw\.registration\.scope\)\.pathname\)\)/);
+  assert.match(src, /const isAsset = ASSET_PATHS\.has\(url\.pathname\)/);
 });
 
 test('large WASM is fetched on demand without a Cache Storage write', () => {

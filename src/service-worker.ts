@@ -36,6 +36,10 @@ const ASSETS = [
 // browsers, which would prevent the entire service worker from installing.
 // Keep it in ASSETS for routing, but fetch it on demand without Cache Storage.
 const PRECACHE_ASSETS = ASSETS.filter((asset) => !asset.endsWith('.wasm'));
+// Match requests by pathname while retaining query strings in the Cache key.
+// Versioned card pictograms are precached as `file.svg?v=...`, but fetch events
+// expose the pathname separately from the query string.
+const ASSET_PATHS = new Set(ASSETS.map((asset) => new URL(asset, sw.registration.scope).pathname));
 
 // Shown only when offline and no page shell is cached. The app's saved locale lives in
 // localStorage (not reachable from a service worker), so this follows the browser language.
@@ -168,7 +172,7 @@ sw.addEventListener('fetch', (event) => {
   // Skip external requests except ARASAAC images
   if (url.origin !== location.origin && !url.hostname.includes('arasaac.org')) return;
 
-  const isAsset = ASSETS.includes(url.pathname);
+  const isAsset = ASSET_PATHS.has(url.pathname);
 
   if (isAsset) {
     // Cache Storage fails on this large response in supported browsers. Let

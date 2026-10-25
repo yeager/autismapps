@@ -1130,7 +1130,7 @@
   "about.features": "Funktioner",
   "about.feat.tts": "Talsyntes på alla interaktiva element",
   "about.feat.pwa": "Många verktyg fungerar offline. Appbibliotek och tjänster online behöver internet.",
-  "about.feat.i18n": "Svenska och engelska (fler språk kommer via Transifex)",
+  "about.feat.i18n": "Svenska, engelska och brasiliansk portugisiska (fler språk är på gång via Transifex)",
   "about.feat.a11y": "Tillgänglig: stora tryckytor, hög kontrast",
   "about.feat.privacy": "Inga annonser eller krav på konto. Inställningar sparas lokalt; onlinetjänster kan ta emot tekniska uppgifter.",
   "about.feat.free": "Gratis och öppen källkod för alltid",

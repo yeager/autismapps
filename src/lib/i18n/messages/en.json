@@ -1130,7 +1130,7 @@
   "about.features": "Features",
   "about.feat.tts": "Text-to-speech on all interactive elements",
   "about.feat.pwa": "Many tools work offline. The app library and online services need an internet connection.",
-  "about.feat.i18n": "Swedish and English (more languages coming via Transifex)",
+  "about.feat.i18n": "Swedish, English, and Brazilian Portuguese (more languages coming via Transifex)",
   "about.feat.a11y": "Accessible: large touch targets, high contrast",
   "about.feat.privacy": "No ads or account required. Settings are stored locally; online services may receive technical request data.",
   "about.feat.free": "Free and open source forever",

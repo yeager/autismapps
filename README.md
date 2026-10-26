@@ -133,14 +133,14 @@ Generate the bilingual legacy app-detail pages used at `/apps/<id>.html` on Loop
 ```bash
 npm run build:loopia-app-pages # 72 pages in build-loopia-root/apps/
 ```
-These pages use the app registry and Swedish/English message catalogs as their source, select the brand from the hostname, and link to the matching app through a relative same-domain launcher path. Upload generated app pages to the appropriate public document root for each domain; the two Loopia domains have separate FTPS trees.
+These pages use the app registry and Swedish/English message catalogs as their source, select the brand from the hostname, and link to the matching app through a relative same-domain launcher path. Both public hostnames use the shared Loopia document root `autismappar.se/public_html/`.
 
-The source is shared in this repository, but the active Loopia launchers are in separate public document roots. Upload the **contents** of each build, preserving its relative paths:
+The source is shared in this repository, and the active Loopia launchers are also in the shared document root. Upload the **contents** of each build, preserving its relative paths:
 
 - `build-sv/` → `autismappar.se/public_html/launcher-sv/` for `autismappar.se`
-- `build/` → `autismapps.online/public_html/launcher/` for `autismapps.online`
+- `build/` → `autismappar.se/public_html/launcher/` for `autismapps.online`
 
-The Swedish domain routes to `launcher-sv/`; the English site links to its `/launcher/` tree. Preserve each domain's root and launcher `.htaccess` files and do not delete extra server files when deploying. The launcher build keeps the prerendered home page in `index.html`, uses `fallback.html` for unknown routes, and emits directory indexes for extensionless app routes.
+The root `.htaccess` rewrites Swedish `/launcher/` requests to `launcher-sv/`; English `/launcher/` requests use the shared `launcher/` directory. The separate FTPS tree `autismapps.online/public_html/` is not the active web root for the public English hostname. Preserve the shared root and launcher `.htaccess` files and do not delete extra server files when deploying. The launcher build keeps the prerendered home page in `index.html`, uses `fallback.html` for unknown routes, and emits directory indexes for extensionless app routes.
 
 If preparing a partial upload, include both versioned search catalogs from each build: `arasaac-sv-<revision>.json` and `piktali-pictograms/manifest-<revision>.json`. They are required by the launcher search code; omitting them makes pictogram searches return no results. `npm run verify:launcher:locales` checks these files in both language builds before upload.
 

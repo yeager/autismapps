@@ -1,8 +1,9 @@
 <script>
+  import { base } from '$app/paths';
   import { speak } from '$lib/tts';
   import { pick } from '$lib/i18n';
 
-  /** @typedef {{ id: string, nameKey?: string, descriptionKey?: string, name?: Partial<Record<string, string>>, description?: Partial<Record<string, string>>, svg: string, color: string }} RoadSign */
+  /** @typedef {{ id: string, nameKey?: string, descriptionKey?: string, name?: Partial<Record<string, string>>, description?: Partial<Record<string, string>>, image?: string, svg?: string, color: string }} RoadSign */
 
   let { i18n = {}, lang = 'en', onback } = $props();
 
@@ -19,71 +20,42 @@
       id: 'stop',
       nameKey: 'road-signs.stop',
       descriptionKey: 'road-signs.stop-description',
-      svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <polygon points="35,15 85,15 105,35 105,85 85,105 35,105 15,85 15,35" fill="#FF0000" stroke="#FFFFFF" stroke-width="3"/>
-        <text x="60" y="70" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">STOP</text>
-      </svg>`,
+      image: '/pictograms/traffic-safety/signs/stop-7169a31e6a62.png',
       color: '#FF0000'
     },
     {
       id: 'crosswalk',
       nameKey: 'road-signs.crosswalk',
       descriptionKey: 'road-signs.crosswalk-description',
-      svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <rect x="7" y="7" width="106" height="106" rx="10" fill="#0066A1" stroke="#FFFFFF" stroke-width="3"/>
-        <path d="M60 15 L108 99 H12 Z" fill="#FFFFFF"/>
-        <path d="M61 30 C55 30 52 35 52 41 L48 55 L39 62 L42 67 L52 62 L49 75 L42 88 L48 91 L59 77 L67 92 L74 89 L66 73 L70 62 L77 69 L82 66 L73 56 L69 43 C67 35 66 30 61 30 Z" fill="#111111"/>
-        <path d="M22 101 L34 82 H42 L32 101 Z M45 101 L53 82 H62 L59 101 Z M70 101 L78 82 H87 L89 101 Z M96 101 L87 82 H96 L108 101 Z" fill="#111111"/>
-      </svg>`,
+      image: '/pictograms/traffic-safety/signs/crosswalk-524d4aa3821f.png',
       color: '#0066CC'
     },
     {
       id: 'warning',
       nameKey: 'road-signs.warning',
       descriptionKey: 'road-signs.warning-description',
-      svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <polygon points="60,10 111,105 9,105" fill="#FFCC00" stroke="#E5323B" stroke-width="9" stroke-linejoin="round"/>
-        <text x="60" y="77" font-family="Arial, sans-serif" font-size="43" font-weight="bold" fill="black" text-anchor="middle">!</text>
-      </svg>`,
+      image: '/pictograms/traffic-safety/signs/warning-cd892013e3e6.png',
       color: '#FFCC00'
     },
     {
       id: 'bicycle-path',
       nameKey: 'road-signs.bicycle-path',
       descriptionKey: 'road-signs.bicycle-path-description',
-      svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <circle cx="60" cy="60" r="52" fill="#0066A1" stroke="#FFFFFF" stroke-width="3"/>
-        <g fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="31" cy="78" r="20"/><circle cx="89" cy="78" r="20"/>
-          <path d="M31 78 L48 50 L68 78 L31 78 L59 78 L78 48 L89 78 L68 78 M48 50 L69 50 M78 48 L84 44 M44 46 L54 46"/>
-          <circle cx="59" cy="78" r="3" fill="#FFFFFF" stroke="none"/>
-        </g>
-      </svg>`,
+      image: '/pictograms/traffic-safety/signs/bicycle-path-8bca5059f214.png',
       color: '#0066CC'
     },
     {
-      id: 'playground',
+      id: 'children-warning',
       nameKey: 'road-signs.children-warning',
       descriptionKey: 'road-signs.children-warning-description',
-      svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <path d="M60 8 L114 108 H6 Z" fill="#E5323B"/>
-        <path d="M60 20 L101 98 H19 Z" fill="#FFCC00"/>
-        <g fill="#111111" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="47" cy="42" r="6" stroke="none"/><circle cx="72" cy="48" r="5" stroke="none"/>
-          <path d="M46 51 L39 68 L30 78 L34 82 L45 74 L51 62 L55 76 L48 88 L54 91 L63 78 L59 61 L57 53 L67 59 L72 56 L59 49 Z"/>
-          <path d="M73 56 L68 69 L64 81 L68 84 L76 74 L80 64 L86 73 L80 85 L85 88 L94 76 L86 59 L79 54 Z"/>
-        </g>
-      </svg>`,
+      image: '/pictograms/traffic-safety/signs/children-warning-23b257e8e23b.png',
       color: '#E5323B'
     },
     {
       id: 'speed-limit',
       nameKey: 'road-signs.speed-limit',
       descriptionKey: 'road-signs.speed-limit-description',
-      svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <circle cx="60" cy="60" r="50" fill="white" stroke="#FF0000" stroke-width="5"/>
-        <text x="60" y="75" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="black" text-anchor="middle">30</text>
-      </svg>`,
+      image: '/pictograms/traffic-safety/signs/speed-limit-30-56cff9b2500f.png',
       color: '#FF0000'
     }
   ];
@@ -255,7 +227,11 @@
               onclick={() => showSign(index)}
             >
               <div class="sign-icon">
-                {@html sign.svg}
+                {#if sign.image}
+                  <img src={`${base}${sign.image}`} alt="" aria-hidden="true" />
+                {:else}
+                  {@html sign.svg ?? ''}
+                {/if}
               </div>
               <div class="sign-name">{signName(sign)}</div>
             </button>
@@ -269,7 +245,11 @@
       <div class="flashcard-section">
         <div class="flashcard">
           <div class="sign-display">
-            {@html signs[currentSignIndex].svg}
+            {#if signs[currentSignIndex].image}
+              <img src={`${base}${signs[currentSignIndex].image}`} alt="" aria-hidden="true" />
+            {:else}
+              {@html signs[currentSignIndex].svg ?? ''}
+            {/if}
           </div>
           
           <div class="sign-info">
@@ -309,7 +289,11 @@
         </div>
         
         <div class="quiz-sign">
-          {@html signs[currentSignIndex].svg}
+          {#if signs[currentSignIndex].image}
+            <img src={`${base}${signs[currentSignIndex].image}`} alt="" aria-hidden="true" />
+          {:else}
+            {@html signs[currentSignIndex].svg ?? ''}
+          {/if}
         </div>
         
         <div class="quiz-options">
@@ -445,6 +429,12 @@
     justify-content: center;
   }
 
+  .sign-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
   .sign-name {
     font-size: 18px;
     font-weight: bold;
@@ -476,6 +466,13 @@
     justify-content: center;
     background: #f8f9fa;
     border-radius: 16px;
+  }
+
+  .sign-display img,
+  .quiz-sign img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .sign-info h2 {

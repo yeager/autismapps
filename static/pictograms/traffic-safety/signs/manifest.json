@@ -1,0 +1,55 @@
+{
+  "source": "Transportstyrelsen",
+  "reuse": "Transportstyrelsen states that its traffic signs may be used freely for different purposes without approval; use only in the proper context.",
+  "rights_url": "https://www.transportstyrelsen.se/sv/om-oss/pressrum/pressbilder/",
+  "signs": {
+    "stop": {
+      "file": "stop-7169a31e6a62.png",
+      "sha256": "7169a31e6a621a9436fa4078e57f29c348d5dc9c19429a19bb6f93f109a0e881",
+      "meaning": "B2 stopplikt",
+      "image_url": "https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/b.-vajningspliktsmarken/b02.-stopplikt/b2-1.png",
+      "page_url": "https://www.transportstyrelsen.se/sv/vagtrafik/trafikregler-och-vagmarken/vagmarken/vajningspliktsmarken/stopplikt/",
+      "bytes": 9384
+    },
+    "crosswalk": {
+      "file": "crosswalk-524d4aa3821f.png",
+      "sha256": "524d4aa3821f4e9206f832347d2cc4ca8c6406868cb4a1ce012c041d5474cbd6",
+      "meaning": "B3 övergångsställe",
+      "image_url": "https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/b.-vajningspliktsmarken/b03.-overgangsstalle/b3-1.png",
+      "page_url": "https://www.transportstyrelsen.se/sv/vagtrafik/trafikregler-och-vagmarken/vagmarken/vajningspliktsmarken/overgangsstalle/",
+      "bytes": 9528
+    },
+    "warning": {
+      "file": "warning-cd892013e3e6.png",
+      "sha256": "cd892013e3e6ff7eeffa097617d8e1aa92ae6ea4535d1eb07e2a6eec781c5091",
+      "meaning": "A40 varning för annan fara",
+      "image_url": "https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/a.-varningsmarken/a40.-varning-for-annan-fara/a40-1.png",
+      "page_url": "https://www.transportstyrelsen.se/sv/vagtrafik/trafikregler-och-vagmarken/vagmarken/varningsmarken/varning-for-annan-fara/",
+      "bytes": 9825
+    },
+    "bicycle-path": {
+      "file": "bicycle-path-8bca5059f214.png",
+      "sha256": "8bca5059f2148fb333982d8c18a643b06744710bd2aed68d99f8a4ad05250cb9",
+      "meaning": "D4 påbjuden cykelbana",
+      "image_url": "https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/d.-pabudsmarken/d04.-pabjuden-cykelbana/d4-1.png",
+      "page_url": "https://www.transportstyrelsen.se/sv/vagtrafik/trafikregler-och-vagmarken/vagmarken/pabudsmarken/Pabjuden-cykelbana/",
+      "bytes": 16956
+    },
+    "children-warning": {
+      "file": "children-warning-23b257e8e23b.png",
+      "sha256": "23b257e8e23bf9b015482790afb15801ad64c9e1f023f9e6e3e48faf3ac8ec16",
+      "meaning": "A15 varning för barn",
+      "image_url": "https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/a.-varningsmarken/a15.-varning-for-barn/a15-1.png",
+      "page_url": "https://www.transportstyrelsen.se/sv/vagtrafik/trafikregler-och-vagmarken/vagmarken/varningsmarken/varning-for-barn/",
+      "bytes": 15689
+    },
+    "speed-limit-30": {
+      "file": "speed-limit-30-56cff9b2500f.png",
+      "sha256": "56cff9b2500f2b1c240bb6bc2a93e80e2d54c75d92d6f4298c00c8f83c8bf5e2",
+      "meaning": "C31 hastighetsbegränsning 30 km/h",
+      "image_url": "https://www.transportstyrelsen.se/globalassets/global/vag/vagmarken2/c.-forbudsmarken/c31.-hastighetsbegransning/c31-3.png",
+      "page_url": "https://www.transportstyrelsen.se/sv/vagtrafik/trafikregler-och-vagmarken/vagmarken/forbudsmarken/hastighetsbegransning/hastighetsbegransning-3/",
+      "bytes": 11900
+    }
+  }
+}

@@ -1,61 +1,69 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 
 const component = await readFile(new URL('../../src/lib/components/traffic-safety/RoadSigns.svelte', import.meta.url), 'utf8');
+const manifest = JSON.parse(await readFile(new URL('../../static/pictograms/traffic-safety/signs/manifest.json', import.meta.url), 'utf8'));
 const sv = JSON.parse(await readFile(new URL('../../src/lib/i18n/messages/sv.json', import.meta.url), 'utf8'));
 const en = JSON.parse(await readFile(new URL('../../src/lib/i18n/messages/en.json', import.meta.url), 'utf8'));
 
 function sign(id) {
 	const start = component.indexOf(`id: '${id}'`);
 	assert.notEqual(start, -1, `missing sign ${id}`);
-	const end = component.indexOf('\n    },', start);
+	const ends = ['\n    },', '\n  ];']
+		.map((marker) => component.indexOf(marker, start))
+		.filter((index) => index >= 0);
+	const end = Math.min(...ends);
 	assert.notEqual(end, -1, `unterminated sign ${id}`);
 	return component.slice(start, end);
 }
 
-test('Swedish stop sign displays the official STOP text', () => {
-	assert.match(sign('stop'), />STOP<\/text>/);
-	assert.doesNotMatch(sign('stop'), />STOPP<\/text>/);
-});
+const reviewedSwedishSigns = [
+	{ componentId: 'stop', manifestId: 'stop', nameKey: 'stop', meaning: 'B2 stopplikt', sv: 'Stopp', en: 'Stop' },
+	{ componentId: 'crosswalk', manifestId: 'crosswalk', nameKey: 'crosswalk', meaning: 'B3 övergångsställe', sv: 'Övergångsställe', en: 'Crosswalk' },
+	{ componentId: 'warning', manifestId: 'warning', nameKey: 'warning', meaning: 'A40 varning för annan fara', sv: 'Varning', en: 'Warning' },
+	{ componentId: 'bicycle-path', manifestId: 'bicycle-path', nameKey: 'bicycle-path', meaning: 'D4 påbjuden cykelbana', sv: 'Påbjuden cykelbana', en: 'Mandatory cycle path' },
+	{ componentId: 'children-warning', manifestId: 'children-warning', nameKey: 'children-warning', meaning: 'A15 varning för barn', sv: 'Varning för barn', en: 'Warning: children' },
+	{ componentId: 'speed-limit', manifestId: 'speed-limit-30', nameKey: 'speed-limit', meaning: 'C31 hastighetsbegränsning 30 km/h', sv: 'Hastighetsbegränsning 30', en: 'Speed Limit 30' }
+];
 
-test('crosswalk sign contains the blue square, white triangle, pedestrian and crossing stripes', () => {
-	const svg = sign('crosswalk');
-	assert.match(svg, /fill="#0066A1"/);
-	assert.match(svg, /M60 15 L108 99 H12 Z/);
-	assert.match(svg, /fill="#111111"/);
-	assert.match(svg, /M22 101 L34 82/);
-});
+test('all Swedish traffic sign cards map to the matching official sign image', async () => {
+	assert.equal(manifest.source, 'Transportstyrelsen');
+	assert.match(manifest.reuse, /used freely/i);
+	assert.equal(reviewedSwedishSigns.length, 6);
 
-test('Swedish warning signs use a red border around a yellow triangle', () => {
-	for (const id of ['warning', 'playground']) {
-		const svg = sign(id);
-		assert.match(svg, /fill="#FFCC00"/);
-		assert.match(svg, /(stroke|fill)="#E5323B"/);
+	for (const expected of reviewedSwedishSigns) {
+		const record = manifest.signs[expected.manifestId];
+		assert.ok(record, `missing manifest entry ${expected.manifestId}`);
+		assert.equal(record.meaning, expected.meaning);
+		assert.match(record.image_url, /^https:\/\/www\.transportstyrelsen\.se\/globalassets\//);
+
+		const block = sign(expected.componentId);
+		assert.match(block, new RegExp(`image: '/pictograms/traffic-safety/signs/${record.file}'`));
+		assert.doesNotMatch(block, /svg:/, `${expected.componentId} must use its reviewed official artwork`);
+
+		const bytes = await readFile(new URL(`../../static/pictograms/traffic-safety/signs/${record.file}`, import.meta.url));
+		assert.deepEqual(bytes.subarray(0, 8), Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
+		assert.equal(bytes.length, record.bytes);
+		assert.equal(createHash('sha256').update(bytes).digest('hex'), record.sha256);
+
+		assert.equal(sv['traffic-safety']['road-signs'][expected.nameKey], expected.sv);
+		assert.equal(en['traffic-safety']['road-signs'][expected.nameKey], expected.en);
 	}
+});
+
+test('children warning and speed-limit cards cannot drift to misleading labels', () => {
+	const children = sign('children-warning');
+	assert.match(children, /nameKey: 'road-signs\.children-warning'/);
+	assert.match(children, /descriptionKey: 'road-signs\.children-warning-description'/);
 	assert.equal(sv['traffic-safety']['road-signs']['children-warning'], 'Varning för barn');
 	assert.equal(en['traffic-safety']['road-signs']['children-warning'], 'Warning: children');
+	assert.equal(sv['traffic-safety']['road-signs']['speed-limit'], 'Hastighetsbegränsning 30');
 });
 
-test('cycle-path sign has the blue D4 circle and a complete bicycle', () => {
-	const svg = sign('bicycle-path');
-	assert.match(svg, /<circle cx="60" cy="60" r="52" fill="#0066A1"/);
-	assert.match(svg, /<circle cx="31" cy="78" r="20"/);
-	assert.match(svg, /<circle cx="89" cy="78" r="20"/);
-	assert.match(svg, /L31 78 L59 78 L78 48/);
-	assert.equal(sv['traffic-safety']['road-signs']['bicycle-path'], 'Påbjuden cykelbana');
-});
-
-test('children warning has two black figures inside a yellow red-bordered triangle', () => {
-	const svg = sign('playground');
-	assert.match(svg, /M60 8 L114 108 H6 Z/);
-	assert.match(svg, /<circle cx="47" cy="42"/);
-	assert.match(svg, /<circle cx="72" cy="48"/);
-	assert.match(svg, /children-warning-description/);
-});
-
-test('speed-limit sign retains the 30 km/h restriction graphic', () => {
-	const svg = sign('speed-limit');
-	assert.match(svg, /stroke="#FF0000"/);
-	assert.match(svg, />30<\/text>/);
+test('official sign images are used consistently in overview, flashcard and quiz', () => {
+	assert.equal((component.match(/src={`\$\{base\}\$\{(?:sign|signs\[currentSignIndex\])\.image\}`}/g) ?? []).length, 3);
+	assert.match(component, /import \{ base \} from '\$app\/paths'/);
+	assert.match(component, /alt="" aria-hidden="true"/);
 });

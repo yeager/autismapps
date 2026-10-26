@@ -1,5 +1,7 @@
 <script lang="ts">
   import { speak } from '$lib/tts';
+  import { piktaliTrafficPictogramUrl } from '$lib/piktali/pictograms';
+  import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
 
   type TranslationData = Record<string, any>;
   type SafetyScenario = {
@@ -8,7 +10,7 @@
     isSafe: boolean;
     descriptionKey: string;
     explanationKey: string;
-    image: string;
+    pictogram: string;
     background: string;
   };
   let { i18n = {}, onback = () => {} } = $props<{ i18n?: TranslationData; onback?: () => void }>();
@@ -26,7 +28,7 @@
       isSafe: true,
       descriptionKey: 'sidewalk-desc',
       explanationKey: 'sidewalk-explanation',
-      image: '🚶‍➡️',
+      pictogram: 'sidewalk',
       background: '#E8F5E8'
     },
     {
@@ -35,7 +37,7 @@
       isSafe: false,
       descriptionKey: 'road-desc',
       explanationKey: 'road-explanation',
-      image: '🚗',
+      pictogram: 'street',
       background: '#FFEBEE'
     },
     {
@@ -44,7 +46,7 @@
       isSafe: false,
       descriptionKey: 'parking-desc',
       explanationKey: 'parking-explanation',
-      image: '🅿️',
+      pictogram: 'parkinglot',
       background: '#FFEBEE'
     },
     {
@@ -53,7 +55,7 @@
       isSafe: true,
       descriptionKey: 'playground-desc',
       explanationKey: 'playground-explanation',
-      image: '🛝',
+      pictogram: 'playground',
       background: '#E8F5E8'
     },
     {
@@ -62,7 +64,7 @@
       isSafe: true,
       descriptionKey: 'crosswalk-desc',
       explanationKey: 'crosswalk-explanation',
-      image: '🚸',
+      pictogram: 'crosswalk',
       background: '#E8F5E8'
     },
     {
@@ -71,7 +73,7 @@
       isSafe: false,
       descriptionKey: 'highway-desc',
       explanationKey: 'highway-explanation',
-      image: '🚘',
+      pictogram: 'highway',
       background: '#FFEBEE'
     },
     {
@@ -80,7 +82,7 @@
       isSafe: true,
       descriptionKey: 'school-zone-desc',
       explanationKey: 'school-zone-explanation',
-      image: '🏫',
+      pictogram: 'school',
       background: '#E8F5E8'
     },
     {
@@ -89,7 +91,7 @@
       isSafe: false,
       descriptionKey: 'construction-desc',
       explanationKey: 'construction-explanation',
-      image: '🚧',
+      pictogram: 'roadworks',
       background: '#FFEBEE'
     }
   ];
@@ -108,6 +110,11 @@
 
   function scenarioText(scenario: SafetyScenario, key: 'nameKey' | 'descriptionKey' | 'explanationKey') {
     return getI18nValue(`safe-places.${scenario[key]}`);
+  }
+
+  function scenarioPictogram(scenario: SafetyScenario) {
+    const url = piktaliTrafficPictogramUrl(scenario.pictogram);
+    return url ? `${url}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}` : '';
   }
 
   function startGame() {
@@ -219,7 +226,11 @@
         
         <div class="scenario-card" style="background: {scenarios[currentScenario].background}">
           <div class="scenario-image">
-            <div class="scenario-icon">{scenarios[currentScenario].image}</div>
+            <img
+              class="scenario-icon"
+              src={scenarioPictogram(scenarios[currentScenario])}
+              alt={scenarioText(scenarios[currentScenario], 'nameKey')}
+            />
           </div>
           
           <div class="scenario-info">
@@ -484,8 +495,11 @@
   }
 
   .scenario-icon {
-    font-size: 80px;
-    margin-bottom: 1rem;
+    display: block;
+    width: min(160px, 38vw);
+    height: min(160px, 38vw);
+    object-fit: contain;
+    margin: 0 auto 1rem;
   }
 
   .scenario-info h2 {
@@ -699,7 +713,7 @@
     .start-game-button { margin-top: 6px; padding: 8px 22px; font-size: 18px; }
     .game-header { margin-bottom: 8px; }
     .scenario-card { display: flex; align-items: center; gap: 16px; padding: 12px; }
-    .scenario-icon { font-size: 72px; }
+    .scenario-icon { width: min(120px, 32vw); height: min(120px, 32vw); }
     .answer-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
     .answer-button { min-height: 52px; padding: 8px; }
   }
@@ -736,9 +750,7 @@
       text-align: center;
     }
     
-    .scenario-icon {
-      font-size: 60px;
-    }
+    .scenario-icon { width: min(120px, 34vw); height: min(120px, 34vw); }
   }
 
   /* High contrast mode */
@@ -792,7 +804,7 @@
     .progress { font-size: 13px; }
     .scenario-card { display: flex; align-items: center; gap: 10px; min-height: 0; padding: 10px; }
     .scenario-image { flex: 0 0 72px; }
-    .scenario-icon { font-size: 50px; }
+    .scenario-icon { width: 72px; height: 72px; }
     .scenario-info h2 { margin: 0 0 4px; font-size: 19px; }
     .scenario-info p { margin: 0; font-size: 14px; line-height: 1.3; }
     .question h3 { margin: 0; font-size: 17px; }

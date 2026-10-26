@@ -6,6 +6,11 @@ import { CATEGORY_SETS } from '../../src/lib/data/category-data.js';
 import { sequences } from '../../src/lib/data/sequence-data.js';
 import { sharedPictogramFiles } from '../../src/lib/piktali/shared-pictogram-files.js';
 
+const piktaliManifest = JSON.parse(fs.readFileSync(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
+const safePlacesSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/SafePlaces.svelte', import.meta.url), 'utf8');
+const trafficPictogramsSource = fs.readFileSync(new URL('../../src/lib/piktali/pictograms.ts', import.meta.url), 'utf8');
+const serviceWorkerSource = fs.readFileSync(new URL('../../src/service-worker.ts', import.meta.url), 'utf8');
+
 test('Category Sort uses the generic Piktali coin instead of a euro-denominated ARASAAC coin', () => {
   const coin = CATEGORY_SETS.flatMap((set) => set.categories ?? [])
     .flatMap((category) => category.items ?? [])
@@ -30,4 +35,38 @@ test('library sequence shows the reviewed pictogram for returning a book', () =>
   assert.ok(step);
   assert.equal(step.arasaacId, 6474);
   assert.notEqual(step.arasaacId, 29714, '29714 depicts going home');
+});
+
+test('Safe Places uses matching bundled Piktali scene pictograms instead of emoji', () => {
+  const scenarios = [
+    ['sidewalk', 'sidewalk', 'sidewalk'],
+    ['road', 'street', 'street'],
+    ['parking', 'parkinglot', 'parkinglot'],
+    ['playground', 'playground', 'playground'],
+    ['crosswalk', 'crosswalk', 'crosswalk'],
+    // Piktali has no motorway pictogram, so use its general street pictogram.
+    ['highway', 'highway', 'street'],
+    ['school-zone', 'school', 'school'],
+    ['construction', 'roadworks', 'roadworks']
+  ];
+
+  for (const [scenarioId, symbol, manifestSymbol] of scenarios) {
+    const start = safePlacesSource.indexOf(`id: '${scenarioId}'`);
+    assert.notEqual(start, -1, `missing Safe Places scenario ${scenarioId}`);
+    const block = safePlacesSource.slice(start, safePlacesSource.indexOf('\n    },', start));
+    assert.ok(block.includes(`pictogram: '${symbol}'`), `${scenarioId} uses ${symbol}`);
+    assert.doesNotMatch(block, /image:\s*['"][^'"]+['"]/, `${scenarioId} must not use an emoji image`);
+
+    const pictogram = piktaliManifest.pictograms.find((item) => item.symbol === manifestSymbol);
+    assert.ok(pictogram, `missing Piktali pictogram ${manifestSymbol}`);
+    const fileMatch = trafficPictogramsSource.match(new RegExp(`${symbol}: '([^']+)'`));
+    assert.ok(fileMatch, `${symbol} resolves to a Piktali file`);
+    const mappedFile = fileMatch[1];
+    const bytes = fs.readFileSync(new URL(`../../static/piktali-pictograms/${mappedFile}`, import.meta.url));
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), pictogram.sha256, `${symbol} asset matches its manifest hash`);
+    const basename = mappedFile.split('/').at(-1).replaceAll('.', `${String.fromCharCode(92)}.`);
+    assert.ok(serviceWorkerSource.includes(basename), `${symbol} is precached for offline use`);
+  }
+
+  assert.match(safePlacesSource, /<img[\s\S]*?src=\{scenarioPictogram\(scenarios\[currentScenario\]\)\}/);
 });

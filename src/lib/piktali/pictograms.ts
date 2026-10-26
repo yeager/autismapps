@@ -25,7 +25,14 @@ export function piktaliTrafficPictogramUrl(symbol: string): string | null {
     danger: 'assets/danger-4bc28024e9b4.webp',
     safeplace: 'assets/safeplace-59c8550bf6e0-v2.svg',
     reflector: 'assets/reflector-vest-ce860b12f9aa-v2.svg',
-    car: 'assets/car-a54a1ff80372.webp'
+    car: 'assets/car-a54a1ff80372.webp',
+    sidewalk: 'assets/sidewalk.svg',
+    street: 'assets/street.svg',
+    parkinglot: 'assets/parkinglot.svg',
+    playground: 'assets/playground.webp',
+    highway: 'assets/street.svg',
+    school: 'assets/school.webp',
+    roadworks: 'assets/roadworks.svg'
   };
   const file = files[symbol];
   return file ? `${base}/piktali-pictograms/${file}` : null;

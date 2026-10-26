@@ -132,7 +132,7 @@ export function renderPage(app) {
 			</div>
 		</article>
 	</main>
-	<footer class="footer"><span>© 2026 ${leaf('Autismappar', 'Autismapps')}</span> · <a href="../privacy/">${leaf('Dataskydd', 'Privacy')}</a></footer>
+	<footer class="footer"><span>© 2026 ${leaf('Autismappar', 'Autismapps')}</span> · <a href="../dataskydd.html">${leaf('Dataskydd', 'Privacy')}</a></footer>
 	<script>
 		(() => {
 			const host = location.hostname.toLowerCase();

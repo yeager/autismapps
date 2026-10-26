@@ -14,6 +14,8 @@ test('all registered apps have matching localized detail pages and same-host lau
 		assert.match(html, new RegExp(`href="\\.\\./launcher/apps/${app.id}/"`));
 		assert.match(html, new RegExp(`href="https://autismappar\\.se/apps/${app.id}\\.html"`));
 		assert.match(html, new RegExp(`href="https://autismapps\\.online/apps/${app.id}\\.html"`));
+		assert.match(html, /href="\.\.\/dataskydd\.html"/);
+		assert.doesNotMatch(html, /href="\.\.\/privacy\/"/);
 		assert.match(html, /data-sv="[^"]+" data-en="[^"]+"/);
 		assert.match(html, /location\.hostname/);
 		const [, inlineScript] = html.match(/<script>\s*([\s\S]*?)\s*<\/script>/) ?? [];

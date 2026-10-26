@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import { ALL_APPS } from '../../src/lib/apps.ts';
-import { renderPage } from '../generate-app-detail-pages.mjs';
+import { renderLegacyCategoryAlias, renderPage } from '../generate-app-detail-pages.mjs';
 
 test('all registered apps have matching localized detail pages and same-host launch routes', () => {
 	const ids = new Set();
@@ -32,6 +32,20 @@ test('generated detail pages use relative launcher and icon URLs that preserve d
 	assert.match(html, /href="\.\.\/launcher\/apps\/board-builder\/"/);
 	assert.match(html, /src="\.\.\/icons\/board-builder\.svg"/);
 	assert.match(html, /href="\.\.\/"/);
+});
+
+test('legacy speech and language aliases open the existing speech category in either locale', () => {
+	for (const alias of ['verbal-dyspraxi', 'sprakstorning']) {
+		const html = renderLegacyCategoryAlias(alias);
+		assert.match(html, /http-equiv="refresh" content="0;url=\/launcher\/\?category=speech"/);
+		assert.match(html, /href="\/launcher\/\?category=speech"/);
+		assert.doesNotMatch(html, new RegExp(`/launcher/apps/${alias}`));
+		assert.match(html, /data-sv="Tal- och språkstöd — Autismappar" data-en="Speech and language support — Autismapps"/);
+		const [, inlineScript] = html.match(/<script>\s*([\s\S]*?)\s*<\/script>/) ?? [];
+		assert.ok(inlineScript);
+		assert.doesNotThrow(() => new Function(inlineScript));
+	}
+	assert.throws(() => renderLegacyCategoryAlias('unknown'), /Unsupported legacy app alias/);
 });
 
 test('detail pages choose Autismappar only on the Swedish host and preserve the GitHub Pages base path', () => {

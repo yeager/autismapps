@@ -160,6 +160,33 @@ export function renderPage(app) {
 `;
 }
 
+export function renderLegacyCategoryAlias(id) {
+	if (!['verbal-dyspraxi', 'sprakstorning'].includes(id)) {
+		throw new Error(`Unsupported legacy app alias: ${id}`);
+	}
+	return `<!doctype html>
+<html lang="sv">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="refresh" content="0;url=/launcher/?category=speech">
+	<title data-sv="Tal- och språkstöd — Autismappar" data-en="Speech and language support — Autismapps">Tal- och språkstöd — Autismappar</title>
+</head>
+<body>
+	<p><a href="/launcher/?category=speech" data-sv="Öppna tal- och språkstöd" data-en="Open speech and language support">Öppna tal- och språkstöd</a></p>
+	<script>
+		const isSwedish = /(^|\\.)autismappar\\.se$/.test(location.hostname.toLowerCase());
+		const locale = isSwedish ? 'sv' : 'en';
+		document.documentElement.lang = locale;
+		for (const element of document.querySelectorAll('[data-sv][data-en]')) {
+			element.textContent = element.dataset[locale];
+		}
+	</script>
+</body>
+</html>
+`;
+}
+
 export function generatePages(outputDir = OUTPUT_DIR) {
 	fs.mkdirSync(outputDir, { recursive: true });
 	const seen = new Set();
@@ -167,6 +194,11 @@ export function generatePages(outputDir = OUTPUT_DIR) {
 		if (seen.has(app.id)) throw new Error(`Duplicate app-detail page id: ${app.id}`);
 		seen.add(app.id);
 		fs.writeFileSync(path.join(outputDir, `${app.id}.html`), renderPage(app));
+	}
+	for (const alias of ['verbal-dyspraxi', 'sprakstorning']) {
+		const aliasDirectory = path.join(outputDir, alias);
+		fs.mkdirSync(aliasDirectory, { recursive: true });
+		fs.writeFileSync(path.join(aliasDirectory, 'index.html'), renderLegacyCategoryAlias(alias));
 	}
 	return seen.size;
 }

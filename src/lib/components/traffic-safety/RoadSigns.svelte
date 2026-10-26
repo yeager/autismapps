@@ -728,7 +728,7 @@
     .sign-card { height: auto; min-height: 0; justify-content: center; padding: 5px; gap: 8px; }
     .sign-icon { width: min(100%, 72px); height: 72px; flex: 0 0 72px; }
     .sign-icon :global(svg) { max-width: 100%; max-height: 100%; }
-    .sign-name { margin: 0; overflow-wrap: anywhere; font-size: 13px; line-height: 1.15; }
+    .sign-name { margin: 0; overflow-wrap: normal; word-break: normal; hyphens: auto; font-size: 13px; line-height: 1.15; }
     .flashcard-section { height: 100%; align-items: stretch; }
     .flashcard { display: flex; flex-direction: column; justify-content: center; gap: 8px; }
     .sign-display { width: 100px; height: 100px; }

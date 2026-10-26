@@ -1,7 +1,7 @@
 <script lang="ts">
   import { speak } from '$lib/tts';
   import { playSuccessSound, playErrorSound } from '$lib/audio.js';
-  import { getPictogram } from '$lib/data/arasaac-data.js';
+  import { piktaliTrafficPictogramUrl } from '$lib/piktali/pictograms';
 
   type TranslationData = Record<string, any>;
   type Light = 'red' | 'yellow' | 'green';
@@ -22,6 +22,7 @@
     green: 'go'
   };
 
+  const pedestrianPictogram = piktaliTrafficPictogramUrl('walk');
   let pedestrianVisible = $derived(currentLight === 'green');
 
   function cycleLight() {
@@ -138,15 +139,16 @@
 
             <div class="answer-buttons">
               {#each actions as action}
-                {@const pictogram = getPictogram(action)}
+                {@const pictogramUrl = piktaliTrafficPictogramUrl(action)}
                 <button
                   class="answer-button"
                   onclick={() => handleAnswerClick(action)}
                 >
-                  {#if action !== 'go' && action !== 'wait' && pictogram}
+                  {#if pictogramUrl}
                     <img
-                      src={pictogram.url}
-                      alt={getNestedValue(i18n, `actions.${action}`) || action}
+                      src={pictogramUrl}
+                      alt=""
+                      aria-hidden="true"
                     />
                   {/if}
                   <span>{getNestedValue(i18n, `actions.${action}`) || action}</span>
@@ -165,7 +167,11 @@
     <!-- Pedestrian Animation -->
     <div class="pedestrian-section">
       <div class="pedestrian {pedestrianVisible ? 'walking' : 'stopped'}">
-        <div class="pedestrian-figure">🚶</div>
+        <div class="pedestrian-figure">
+          {#if pedestrianPictogram}
+            <img src={pedestrianPictogram} alt="" aria-hidden="true" />
+          {/if}
+        </div>
       </div>
     </div>
   </div>
@@ -398,6 +404,14 @@
     font-size: 80px;
   }
 
+  .pedestrian-figure img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
   @keyframes walk {
     0% { transform: translateX(-50px); }
     100% { transform: translateX(50px); }
@@ -448,6 +462,7 @@
     .quiz-button { padding: 8px 12px; }
     .pedestrian-section { padding: 8px; }
     .pedestrian-figure { font-size: 56px; }
+    .pedestrian-figure img { width: 56px; height: 56px; }
     .quiz-question { margin: 0 0 8px; font-size: 20px; }
     .quiz-context { margin-bottom: 8px; padding: 8px; font-size: 16px; }
     .answer-buttons { gap: 8px; margin-bottom: 8px; }
@@ -505,5 +520,6 @@
     .answer-button img { width: 28px; height: 28px; }
     .pedestrian-section { grid-column: 1 / -1; grid-row: 2; padding: 0; }
     .pedestrian-figure { font-size: 34px; line-height: 1; }
+    .pedestrian-figure img { width: 40px; height: 40px; }
   }
 </style>

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { speak } from '$lib/tts';
   import { piktaliTrafficPictogramUrl } from '$lib/piktali/pictograms';
-  import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
 
   type TranslationData = Record<string, any>;
   type SafetyScenario = {
@@ -113,8 +112,7 @@
   }
 
   function scenarioPictogram(scenario: SafetyScenario) {
-    const url = piktaliTrafficPictogramUrl(scenario.pictogram);
-    return url ? `${url}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}` : '';
+    return piktaliTrafficPictogramUrl(scenario.pictogram) ?? '';
   }
 
   function startGame() {

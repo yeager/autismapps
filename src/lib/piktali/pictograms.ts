@@ -1,6 +1,7 @@
 import { base } from '$app/paths';
 import { dictionaryPictogramFiles } from './dictionary-files';
 import { sharedPictogramFiles } from './shared-pictogram-files';
+import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
 
 /**
  * Stable paths for the subset of shared Piktali pictograms used by the picture
@@ -32,8 +33,25 @@ export function piktaliTrafficPictogramUrl(symbol: string): string | null {
     playground: 'assets/playground.webp',
     highway: 'assets/street.svg',
     school: 'assets/school.webp',
-    roadworks: 'assets/roadworks.svg'
+    roadworks: 'assets/roadworks.svg',
+    stop: 'assets/stop.webp',
+    wait: 'assets/wait.webp',
+    go: 'assets/go.webp',
+    look: 'assets/look.webp',
+    walk: 'assets/walk.webp',
+    person: 'assets/persongeneral.webp',
+    sun: 'assets/sun.webp',
+    moon: 'assets/moon.webp',
+    bus: 'assets/bus.webp',
+    truck: 'assets/truck.webp',
+    bicycle: 'assets/bicycle.webp',
+    ambulance: 'assets/ambulance.webp',
+    'police-car': 'assets/police-car.webp',
+    'fire-engine': 'assets/fire-engine.webp',
+    hat: 'assets/hat.webp',
+    backpack: 'assets/backpack.webp',
+    shoes: 'assets/shoes.webp'
   };
   const file = files[symbol];
-  return file ? `${base}/piktali-pictograms/${file}` : null;
+  return file ? `${base}/piktali-pictograms/${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}` : null;
 }

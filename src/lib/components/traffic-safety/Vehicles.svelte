@@ -1,7 +1,7 @@
 <script lang="ts">
   import { speak } from '$lib/tts';
   import { playVehicleSound } from '$lib/audio.js';
-  import { getPictogram } from '$lib/data/arasaac-data.js';
+  import { piktaliTrafficPictogramUrl } from '$lib/piktali/pictograms';
 
   type TranslationData = Record<string, any>;
   type VehicleId = 'car' | 'bus' | 'truck' | 'bicycle' | 'ambulance' | 'police' | 'firetruck';
@@ -18,8 +18,8 @@
     { id: 'truck', icon: 'truck' },
     { id: 'bicycle', icon: 'bicycle' },
     { id: 'ambulance', icon: 'ambulance' },
-    { id: 'police', icon: 'police' },
-    { id: 'firetruck', icon: 'firetruck' }
+    { id: 'police', icon: 'police-car' },
+    { id: 'firetruck', icon: 'fire-engine' }
   ];
 
   const vehicleScenarios: Record<VehicleId, string[]> = {
@@ -75,16 +75,17 @@
       <!-- Vehicle Selection Grid -->
       <div class="vehicle-grid">
         {#each vehicles as vehicle}
-          {@const pictogram = getPictogram(vehicle.icon)}
+          {@const pictogramUrl = piktaliTrafficPictogramUrl(vehicle.icon)}
           <button
             class="vehicle-card"
             onclick={() => handleVehicleClick(vehicle)}
           >
             <div class="vehicle-icon">
-              {#if pictogram}
+              {#if pictogramUrl}
                 <img
-                  src={pictogram.url}
-                  alt={getNestedValue(i18n, `vehicles.${vehicle.id}`) || vehicle.id}
+                  src={pictogramUrl}
+                  alt=""
+                  aria-hidden="true"
                   loading="lazy"
                 />
               {:else}
@@ -100,14 +101,15 @@
       </div>
     {:else}
       <!-- Vehicle Detail View -->
-      {@const selectedPictogram = getPictogram(selectedVehicle.icon)}
+      {@const selectedPictogramUrl = piktaliTrafficPictogramUrl(selectedVehicle.icon)}
       <div class="vehicle-detail">
         <div class="vehicle-info">
           <div class="large-vehicle-icon">
-            {#if selectedPictogram}
+            {#if selectedPictogramUrl}
               <img
-                src={selectedPictogram.url}
-                alt={getNestedValue(i18n, `vehicles.${selectedVehicle.id}`) || selectedVehicle.id}
+                src={selectedPictogramUrl}
+                alt=""
+                aria-hidden="true"
               />
             {:else}
               <div class="placeholder-icon">
@@ -135,15 +137,16 @@
 
             <div class="scenario-actions">
               {#each vehicleScenarios[selectedVehicle.id] as action}
-                {@const actionPictogram = getPictogram(action)}
+                {@const actionPictogramUrl = piktaliTrafficPictogramUrl(action)}
                 <button
                   class="action-button"
                   onclick={() => handleScenarioAnswer(action)}
                 >
-                  {#if action !== 'safe' && actionPictogram}
+                  {#if action !== 'safe' && actionPictogramUrl}
                     <img
-                      src={actionPictogram.url}
-                      alt={getNestedValue(i18n, `actions.${action}`) || action}
+                      src={actionPictogramUrl}
+                      alt=""
+                      aria-hidden="true"
                     />
                   {/if}
                   <span>{getNestedValue(i18n, `actions.${action}`) || action}</span>

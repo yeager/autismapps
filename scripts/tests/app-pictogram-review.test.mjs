@@ -8,6 +8,10 @@ import { sharedPictogramFiles } from '../../src/lib/piktali/shared-pictogram-fil
 
 const piktaliManifest = JSON.parse(fs.readFileSync(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
 const safePlacesSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/SafePlaces.svelte', import.meta.url), 'utf8');
+const trafficLightsSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/TrafficLights.svelte', import.meta.url), 'utf8');
+const vehiclesSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/Vehicles.svelte', import.meta.url), 'utf8');
+const crosswalkSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/Crosswalk.svelte', import.meta.url), 'utf8');
+const reflectorsSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/Reflectors.svelte', import.meta.url), 'utf8');
 const trafficPictogramsSource = fs.readFileSync(new URL('../../src/lib/piktali/pictograms.ts', import.meta.url), 'utf8');
 const serviceWorkerSource = fs.readFileSync(new URL('../../src/service-worker.ts', import.meta.url), 'utf8');
 
@@ -69,4 +73,54 @@ test('Safe Places uses matching bundled Piktali scene pictograms instead of emoj
   }
 
   assert.match(safePlacesSource, /<img[\s\S]*?src=\{scenarioPictogram\(scenarios\[currentScenario\]\)\}/);
+});
+
+test('Traffic Safety actions, vehicles and clothing use verified Piktali pictograms', () => {
+  const assets = [
+    ['stop', 'stop', trafficLightsSource],
+    ['wait', 'wait', trafficLightsSource],
+    ['go', 'go', trafficLightsSource],
+    ['look', 'look', vehiclesSource],
+    ['walk', 'walk', crosswalkSource],
+    ['person', 'persongeneral', reflectorsSource],
+    ['sun', 'sun', reflectorsSource],
+    ['moon', 'moon', reflectorsSource],
+    ['car', 'car', vehiclesSource],
+    ['bus', 'bus', vehiclesSource],
+    ['truck', 'truck', vehiclesSource],
+    ['bicycle', 'bicycle', vehiclesSource],
+    ['ambulance', 'ambulance', vehiclesSource],
+    ['police-car', 'police-car', vehiclesSource],
+    ['fire-engine', 'fire-engine', vehiclesSource],
+    ['reflector', 'reflector-vest', reflectorsSource],
+    ['hat', 'hat', reflectorsSource],
+    ['backpack', 'backpack', reflectorsSource],
+    ['shoes', 'shoes', reflectorsSource]
+  ];
+
+  for (const [mappingKey, manifestSymbol, componentSource] of assets) {
+    const pictogram = piktaliManifest.pictograms.find((item) => item.symbol === manifestSymbol);
+    assert.ok(pictogram, `missing Piktali pictogram ${manifestSymbol}`);
+    assert.ok(componentSource.includes('piktaliTrafficPictogramUrl'), `component does not resolve ${mappingKey} through Piktali`);
+
+    const escapedKey = mappingKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const fileMatch = trafficPictogramsSource.match(new RegExp(`(?:^|\\s)['"]?${escapedKey}['"]?: '([^']+)'`, 'm'));
+    assert.ok(fileMatch, `${mappingKey} resolves to a Piktali asset`);
+    const mappedFile = fileMatch[1];
+    const bytes = fs.readFileSync(new URL(`../../static/piktali-pictograms/${mappedFile}`, import.meta.url));
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), pictogram.sha256, `${mappingKey} asset matches its manifest hash`);
+    const basename = mappedFile.split('/').at(-1).replaceAll('.', `${String.fromCharCode(92)}.`);
+    assert.ok(serviceWorkerSource.includes(basename), `${mappingKey} is precached for offline use`);
+  }
+
+  assert.match(trafficPictogramsSource, /TRAFFIC_SAFETY_PICTOGRAM_REVISION/);
+  assert.match(trafficLightsSource, /\{#if pictogramUrl\}/, 'all three traffic-light actions render their available pictogram');
+  assert.match(vehiclesSource, /icon: 'police-car'/);
+  assert.match(vehiclesSource, /icon: 'fire-engine'/);
+  assert.match(crosswalkSource, /class="character-image"/);
+  assert.match(reflectorsSource, /class="reflective-band"/, 'the reflective armband is drawn as a band, not represented by an unrelated pictogram');
+  assert.match(reflectorsSource, /placedPictogram = reflector\.pictogram/);
+  assert.match(reflectorsSource, /class="placed-reflector"[\s\S]*?src=\{placedPictogram\}/);
+  assert.match(reflectorsSource, /dayPictogram/);
+  assert.match(reflectorsSource, /nightPictogram/);
 });

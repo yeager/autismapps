@@ -1,5 +1,6 @@
 <script lang="ts">
   import { speak } from '$lib/tts';
+  import { piktaliTrafficPictogramUrl } from '$lib/piktali/pictograms';
 
   type TranslationData = Record<string, any>;
   let { i18n = {}, onback = () => {} } = $props<{ i18n?: TranslationData; onback?: () => void }>();
@@ -17,6 +18,8 @@
     { key: 'step4', action: 'lookLeft' },
     { key: 'step5', action: 'walk' }
   ];
+  const pedestrianPictogram = piktaliTrafficPictogramUrl('walk');
+  const carPictogram = piktaliTrafficPictogramUrl('car');
 
   function getI18nValue(key: string): string {
     const value = key.split('.').reduce<any>((obj, segment) => obj?.[segment], i18n);
@@ -113,14 +116,14 @@
         <div class="street-view">
           <div class="sidewalk left">
             <div class="character {currentStep >= 4 ? 'walking' : 'waiting'}">
-              🚶‍♀️
+              {#if pedestrianPictogram}<img class="character-image" src={pedestrianPictogram} alt="" aria-hidden="true" />{/if}
             </div>
           </div>
           
           <div class="road">
             <div class="crosswalk-lines"></div>
             {#if carVisible && currentStep < 4}
-              <div class="car">🚗</div>
+              <div class="car">{#if carPictogram}<img class="car-image" src={carPictogram} alt="" aria-hidden="true" />{/if}</div>
             {/if}
           </div>
           
@@ -147,13 +150,15 @@
       <div class="quiz-section">
         <div class="street-view">
           <div class="sidewalk left">
-            <div class="character waiting">🚶‍♀️</div>
+            <div class="character waiting">
+              {#if pedestrianPictogram}<img class="character-image" src={pedestrianPictogram} alt="" aria-hidden="true" />{/if}
+            </div>
           </div>
           
           <div class="road">
             <div class="crosswalk-lines"></div>
             {#if carVisible}
-              <div class="car">🚗</div>
+              <div class="car">{#if carPictogram}<img class="car-image" src={carPictogram} alt="" aria-hidden="true" />{/if}</div>
             {/if}
           </div>
           
@@ -355,10 +360,17 @@
   }
 
   .character {
-    font-size: 40px;
     transition: all 0.3s ease;
     z-index: 10;
     position: relative;
+  }
+
+  .character-image {
+    display: block;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border-radius: 8px;
   }
 
   .character.walking {
@@ -380,10 +392,17 @@
   }
 
   .car {
-    font-size: 32px;
     animation: drive 3s linear infinite;
     position: absolute;
     z-index: 5;
+  }
+
+  .car-image {
+    display: block;
+    width: 64px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 8px;
   }
 
   @keyframes drive {

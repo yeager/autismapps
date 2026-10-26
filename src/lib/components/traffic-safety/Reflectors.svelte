@@ -1,5 +1,6 @@
 <script lang="ts">
   import { speak } from '$lib/tts';
+  import { piktaliTrafficPictogramUrl } from '$lib/piktali/pictograms';
 
   type TranslationData = Record<string, any>;
   type Reflector = {
@@ -7,7 +8,7 @@
     nameKey: string;
     position: { x: number; y: number };
     placed: boolean;
-    emoji: string;
+    pictogram: string | null;
   };
   let { i18n = {}, onback = () => {} } = $props<{ i18n?: TranslationData; onback?: () => void }>();
 
@@ -15,6 +16,12 @@
   let isDaytime = $state(true);
   let dressUpProgress = $state<Reflector[]>([]);
   let score = $state(0);
+  const personPictogram = piktaliTrafficPictogramUrl('person');
+  const walkingPictogram = piktaliTrafficPictogramUrl('walk');
+  const carPictogram = piktaliTrafficPictogramUrl('car');
+  const dayPictogram = piktaliTrafficPictogramUrl('sun');
+  const nightPictogram = piktaliTrafficPictogramUrl('moon');
+  const reflectorPictogram = piktaliTrafficPictogramUrl('reflector');
 
   const reflectorItems: Reflector[] = [
     {
@@ -22,35 +29,35 @@
       nameKey: 'item-vest',
       position: { x: 45, y: 35 },
       placed: false,
-      emoji: '🦺'
+      pictogram: 'reflector'
     },
     {
       id: 'hat',
       nameKey: 'item-hat',
       position: { x: 48, y: 15 },
       placed: false,
-      emoji: '🧢'
+      pictogram: 'hat'
     },
     {
       id: 'bag',
       nameKey: 'item-bag',
       position: { x: 35, y: 45 },
       placed: false,
-      emoji: '🎒'
+      pictogram: 'backpack'
     },
     {
       id: 'shoes',
       nameKey: 'item-shoes',
       position: { x: 48, y: 80 },
       placed: false,
-      emoji: '👟'
+      pictogram: 'shoes'
     },
     {
       id: 'band',
       nameKey: 'item-band',
       position: { x: 55, y: 45 },
       placed: false,
-      emoji: '🟨'
+      pictogram: null
     }
   ];
 
@@ -163,13 +170,16 @@
 
         <div class="activity-buttons">
           <button class="activity-btn" onclick={startComparison}>
-            <div class="btn-icon">🌞🌙</div>
+            <div class="btn-icon">
+              {#if dayPictogram}<img src={dayPictogram} alt="" aria-hidden="true" />{/if}
+              {#if nightPictogram}<img src={nightPictogram} alt="" aria-hidden="true" />{/if}
+            </div>
             <h3>{getI18nValue('reflectors.day-vs-night')}</h3>
             <p>{getI18nValue('reflectors.day-vs-night-desc')}</p>
           </button>
 
           <button class="activity-btn" onclick={startDressUp}>
-            <div class="btn-icon">👕✨</div>
+            <div class="btn-icon">{#if reflectorPictogram}<img src={reflectorPictogram} alt="" aria-hidden="true" />{/if}</div>
             <h3>{getI18nValue('reflectors.dress-title')}</h3>
             <p>{getI18nValue('reflectors.dress-desc')}</p>
           </button>
@@ -200,7 +210,9 @@
           <div class="environment">
             <div class="road">
               <div class="person" class:with-reflectors={!isDaytime}>
-                <div class="person-body">🚶‍♂️</div>
+                <div class="person-body">
+                  {#if walkingPictogram}<img src={walkingPictogram} alt="" aria-hidden="true" />{/if}
+                </div>
                 {#if !isDaytime}
                   <div class="reflector-glow r1"></div>
                   <div class="reflector-glow r2"></div>
@@ -209,7 +221,9 @@
               </div>
               
               <div class="car">
-                <div class="car-body">🚗</div>
+                <div class="car-body">
+                  {#if carPictogram}<img src={carPictogram} alt="" aria-hidden="true" />{/if}
+                </div>
                 {#if !isDaytime}
                   <div class="headlight left"></div>
                   <div class="headlight right"></div>
@@ -264,15 +278,22 @@
                ondragover={handleDragOver}
                ondrop={handleDrop}>
             <div class="character">
-              <div class="character-body">🧍‍♀️</div>
+              <div class="character-body">
+                {#if personPictogram}<img src={personPictogram} alt="" aria-hidden="true" />{/if}
+              </div>
               
               <!-- Show placed reflectors -->
               {#each dressUpProgress as reflector}
+                {@const placedPictogram = reflector.pictogram ? piktaliTrafficPictogramUrl(reflector.pictogram) : null}
                 <div 
                   class="placed-reflector"
                   style="left: {reflector.position.x}%; top: {reflector.position.y}%"
                 >
-                  ✨
+                  {#if placedPictogram}
+                    <img src={placedPictogram} alt="" aria-hidden="true" />
+                  {:else}
+                    <span class="reflective-band" aria-hidden="true"></span>
+                  {/if}
                 </div>
               {/each}
             </div>
@@ -287,6 +308,7 @@
             <div class="items-grid">
               {#each availableReflectors as reflector}
                 {#if !reflector.placed}
+                  {@const itemPictogram = reflector.pictogram ? piktaliTrafficPictogramUrl(reflector.pictogram) : null}
                   <button
                     type="button"
                     class="reflector-item"
@@ -295,7 +317,13 @@
                     onclick={() => placeReflector(reflector)}
                     aria-label={formatMessage('reflectors.add-reflector', { item: getI18nValue(`reflectors.${reflector.nameKey}`) })}
                   >
-                    <div class="item-icon">{reflector.emoji}</div>
+                    <div class="item-icon">
+                      {#if itemPictogram}
+                        <img src={itemPictogram} alt="" aria-hidden="true" />
+                      {:else}
+                        <span class="reflective-band" aria-hidden="true"></span>
+                      {/if}
+                    </div>
                     <div class="item-name">{getI18nValue(`reflectors.${reflector.nameKey}`)}</div>
                   </button>
                 {/if}
@@ -416,6 +444,15 @@
   .btn-icon {
     font-size: 48px;
     margin-bottom: 1rem;
+  }
+
+  .btn-icon img {
+    width: 40px;
+    height: 40px;
+    margin: 0 3px;
+    object-fit: contain;
+    border-radius: 6px;
+    vertical-align: middle;
   }
 
   .activity-btn h3 {
@@ -550,6 +587,14 @@
     font-size: 40px;
   }
 
+  .person-body img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
   .person.with-reflectors {
     filter: drop-shadow(0 0 10px #fff);
   }
@@ -593,6 +638,14 @@
 
   .car-body {
     font-size: 32px;
+  }
+
+  .car-body img {
+    display: block;
+    width: 80px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: 8px;
   }
 
   .headlight {
@@ -748,11 +801,37 @@
     z-index: 1;
   }
 
+  .character-body img {
+    display: block;
+    width: 136px;
+    height: 136px;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
   .placed-reflector {
     position: absolute;
-    font-size: 20px;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
     z-index: 2;
     animation: sparkle 1s ease-in-out infinite;
+  }
+
+  .placed-reflector img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    filter: drop-shadow(0 0 4px #fff);
+  }
+
+  .placed-reflector .reflective-band {
+    width: 24px;
+    height: 12px;
+    border-width: 4px;
   }
 
   @keyframes sparkle {
@@ -814,6 +893,25 @@
   .item-icon {
     font-size: 32px;
     margin-bottom: 0.5rem;
+  }
+
+  .item-icon img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+
+  .reflective-band {
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+    border: 6px solid #f4cc35;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px #fff, 0 0 0 1px #6b5a1d;
+    transform: rotate(-18deg);
   }
 
   .item-name {
@@ -956,6 +1054,7 @@
     .activity-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin: 0; }
     .activity-btn { min-width: 0; padding: 8px 5px; }
     .btn-icon { margin: 0 0 3px; font-size: 26px; }
+    .btn-icon img { width: 28px; height: 28px; }
     .activity-btn h3 { margin: 0 0 3px; font-size: 14px; line-height: 1.15; }
     .activity-btn p { font-size: 12px; line-height: 1.2; }
     .tips-section { align-self: stretch; min-width: 0; margin: 0; padding: 7px; }
@@ -971,6 +1070,8 @@
     .environment { min-height: 110px; }
     .road { height: 64px; padding: 0 12px; }
     .visibility-info { margin: 0; }
+    .person-body img { width: 48px; height: 48px; }
+    .car-body img { width: 58px; height: 38px; }
     .time-indicator { margin: 0 0 3px; font-size: 16px; }
     .visibility-stats { padding: 6px; font-size: 13px; }
     .back-demo-button, .back-game-button { min-height: 44px; margin: 0; padding: 7px 12px; font-size: 14px; }
@@ -982,12 +1083,14 @@
     .dress-up-game { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; min-height: 0; }
     .character-area { min-height: 0; padding: 8px; }
     .character { font-size: 48px; }
+    .character-body img { width: min(100%, 104px); height: 104px; }
     .drop-instruction { padding: 5px; font-size: 12px; }
     .reflector-items { min-width: 0; padding: 7px; }
     .reflector-items h3 { margin: 0 0 4px; font-size: 14px; }
     .items-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
     .reflector-item { min-width: 0; min-height: 44px; padding: 4px; }
     .item-icon { font-size: 20px; }
+    .item-icon img { width: 28px; height: 28px; }
     .item-name { font-size: 11px; line-height: 1.1; }
   }
 </style>

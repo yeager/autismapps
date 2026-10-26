@@ -48,7 +48,24 @@ test('the service worker precaches every versioned traffic-safety card pictogram
     'danger-4bc28024e9b4.webp',
     'safeplace-59c8550bf6e0-v2.svg',
     'reflector-vest-ce860b12f9aa-v2.svg',
-    'car-a54a1ff80372.webp'
+    'car-a54a1ff80372.webp',
+    'stop.webp',
+    'wait.webp',
+    'go.webp',
+    'look.webp',
+    'walk.webp',
+    'persongeneral.webp',
+    'sun.webp',
+    'moon.webp',
+    'bus.webp',
+    'truck.webp',
+    'bicycle.webp',
+    'ambulance.webp',
+    'police-car.webp',
+    'fire-engine.webp',
+    'hat.webp',
+    'backpack.webp',
+    'shoes.webp'
   ];
 
   assert.match(src, /const versionedPiktaliTrafficAssets = files/);

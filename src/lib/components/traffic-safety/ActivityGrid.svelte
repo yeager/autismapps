@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
   import { piktaliTrafficPictogramUrl } from '$lib/piktali/pictograms';
   import { speak } from '$lib/tts';
 
@@ -72,7 +71,7 @@
     const url = symbol ? piktaliTrafficPictogramUrl(symbol) : null;
     return url ? {
       key: `piktali-${symbol}`,
-      url: `${url}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`
+      url
     } : undefined;
   }
   

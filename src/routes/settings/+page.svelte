@@ -27,9 +27,9 @@
     { value: 'high-contrast', key: 'settings.theme.high_contrast' }
   ];
 
-  function changeLang(code: string) {
-    setLocale(code);
-    if (browser) localStorage.setItem('locale', code);
+  async function changeLang(code: string) {
+    const appliedLocale = await setLocale(code);
+    if (browser) localStorage.setItem('locale', appliedLocale);
     speak($t(`settings.language`));
   }
 

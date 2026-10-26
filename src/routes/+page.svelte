@@ -56,7 +56,7 @@
     }
   });
 
-  function chooseLanguage(code: string) {
+  async function chooseLanguage(code: string) {
     if (browser) {
       const hostname = window.location.hostname.toLowerCase();
       const isProductionDomain = hostname === 'autismappar.se'
@@ -72,8 +72,8 @@
         return;
       }
     }
-    setLocale(code);
-    if (browser) localStorage.setItem('locale', code);
+    const appliedLocale = await setLocale(code);
+    if (browser) localStorage.setItem('locale', appliedLocale);
     langOpen = false;
   }
 

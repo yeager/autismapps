@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "exportedAt": "2026-10-20T17:40:39.043Z",
+  "exportedAt": "2026-10-26T02:10:36.331Z",
   "source": "piktali",
   "includePending": true,
   "count": 5003,
@@ -6800,9 +6800,9 @@
       "categories": [
         "animals-nature-weather"
       ],
-      "file": "assets/beaver.svg",
-      "bytes": 466,
-      "sha256": "8a173121d881b0f5a65a8ad6a33eb24df1ff30bc641347808b44ac5d0884fa23",
+      "file": "assets/beaver-2d4b2acb3938.svg",
+      "bytes": 1248,
+      "sha256": "2d4b2acb3938a76f1ccb82382ae13ae475443783886a0221364e6fb8d01dc5c2",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -28094,9 +28094,9 @@
       "categories": [
         "school-work-play"
       ],
-      "file": "assets/erase.svg",
-      "bytes": 427,
-      "sha256": "906f921f9e0d913dd56cafc2c2a3b37d7e3b7442b925a391de63c2729a94a0db",
+      "file": "assets/erase-00490e46095b.svg",
+      "bytes": 874,
+      "sha256": "00490e46095b854fcab228eedab429a83e00a33d43e656f8c6b15c0c4ebfd166",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -31412,9 +31412,9 @@
       "categories": [
         "food-drink"
       ],
-      "file": "assets/fish-free.svg",
-      "bytes": 421,
-      "sha256": "dc9fe7104a5d392469324774ece6e685c1e7c9d616b439e56fd4095e9c1febff",
+      "file": "assets/fish-free-de7618066fe6.svg",
+      "bytes": 613,
+      "sha256": "de7618066fe6c123b3337ce254b7f53089f4e8045c9d55d66f1cdc3ef47dd904",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",
@@ -58418,9 +58418,9 @@
       "categories": [
         "communication"
       ],
-      "file": "assets/nothing.svg",
-      "bytes": 510,
-      "sha256": "53ec365b569f05f6ea852488a58bf56fed38307492cb34b2d83c4314136be89d",
+      "file": "assets/nothing-668650606fe5.svg",
+      "bytes": 656,
+      "sha256": "668650606fe528f6d4fc177c37a937342a7a44b61293af67b5332296daacb7cd",
       "review": {
         "aacUsability": "pending",
         "pictogram": "pending",

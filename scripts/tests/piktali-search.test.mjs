@@ -6,12 +6,12 @@ import { boardBuilderSearchResult, matchPiktaliPictograms, piktaliManifestUrl, p
 const manifest = JSON.parse(await readFile(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
 
 test('Piktali manifest uses a versioned path in production and the stable file in development', () => {
-	assert.equal(piktaliManifestUrl('/launcher'), '/launcher/piktali-pictograms/manifest-2026-10-24-piktali-visual-audit-1.json?v=2026-10-24-piktali-visual-audit-1');
-	assert.equal(piktaliManifestUrl(''), '/piktali-pictograms/manifest-2026-10-24-piktali-visual-audit-1.json?v=2026-10-24-piktali-visual-audit-1');
+	assert.equal(piktaliManifestUrl('/launcher'), '/launcher/piktali-pictograms/manifest-2026-10-26-piktali-corrections-1.json?v=2026-10-26-piktali-corrections-1');
+	assert.equal(piktaliManifestUrl(''), '/piktali-pictograms/manifest-2026-10-26-piktali-corrections-1.json?v=2026-10-26-piktali-corrections-1');
 	assert.equal(piktaliManifestUrl('/launcher', true), '/launcher/piktali-pictograms/manifest.json');
 	assert.deepEqual(piktaliManifestUrls('/launcher'), [
-		'/launcher/piktali-pictograms/manifest-2026-10-24-piktali-visual-audit-1.json?v=2026-10-24-piktali-visual-audit-1',
-		'/launcher/piktali-pictograms/manifest.json?v=2026-10-24-piktali-visual-audit-1'
+		'/launcher/piktali-pictograms/manifest-2026-10-26-piktali-corrections-1.json?v=2026-10-26-piktali-corrections-1',
+		'/launcher/piktali-pictograms/manifest.json?v=2026-10-26-piktali-corrections-1'
 	]);
 	assert.deepEqual(piktaliManifestUrls('/launcher', true), ['/launcher/piktali-pictograms/manifest.json']);
 });

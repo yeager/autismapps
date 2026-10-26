@@ -118,6 +118,29 @@ const piktaliManifestSymbols = new Set();
 const piktaliManifestFiles = new Set();
 let checkedPiktaliAssets = 0;
 
+// These illustrations were redrawn after a visual audit found that the old
+// images could be read as unrelated concepts. Pin the new artwork bytes while
+// keeping pictogram and AAC approval explicitly pending for human review.
+const correctedPiktaliDrafts = {
+  beaver: { file: 'assets/beaver-2d4b2acb3938.svg', sha256: '2d4b2acb3938a76f1ccb82382ae13ae475443783886a0221364e6fb8d01dc5c2' },
+  erase: { file: 'assets/erase-00490e46095b.svg', sha256: '00490e46095b854fcab228eedab429a83e00a33d43e656f8c6b15c0c4ebfd166' },
+  'fish-free': { file: 'assets/fish-free-de7618066fe6.svg', sha256: 'de7618066fe6c123b3337ce254b7f53089f4e8045c9d55d66f1cdc3ef47dd904' },
+  nothing: { file: 'assets/nothing-668650606fe5.svg', sha256: '668650606fe528f6d4fc177c37a937342a7a44b61293af67b5332296daacb7cd' }
+};
+for (const [symbol, expected] of Object.entries(correctedPiktaliDrafts)) {
+  const pictogram = piktaliBySymbol.get(symbol);
+  if (!pictogram) {
+    errors.push(`Piktali ${symbol}: missing corrected draft from the manifest`);
+    continue;
+  }
+  if (pictogram.file !== expected.file || pictogram.sha256 !== expected.sha256) {
+    errors.push(`Piktali ${symbol}: corrected draft asset or pinned hash changed`);
+  }
+  if (pictogram.review?.pictogram !== 'pending' || pictogram.review?.aacUsability !== 'pending') {
+    errors.push(`Piktali ${symbol}: corrected artwork must remain pending pictogram and AAC review`);
+  }
+}
+
 for (const [index, pictogram] of piktaliManifest.pictograms.entries()) {
   const label = pictogram.symbol || `manifest entry ${index}`;
   if (!pictogram.symbol) errors.push(`${label}: missing symbol`);

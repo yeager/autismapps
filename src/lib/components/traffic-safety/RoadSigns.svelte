@@ -21,7 +21,7 @@
       descriptionKey: 'road-signs.stop-description',
       svg: `<svg width="120" height="120" viewBox="0 0 120 120">
         <polygon points="35,15 85,15 105,35 105,85 85,105 35,105 15,85 15,35" fill="#FF0000" stroke="#FFFFFF" stroke-width="3"/>
-        <text x="60" y="70" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">STOPP</text>
+        <text x="60" y="70" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">STOP</text>
       </svg>`,
       color: '#FF0000'
     },
@@ -30,10 +30,10 @@
       nameKey: 'road-signs.crosswalk',
       descriptionKey: 'road-signs.crosswalk-description',
       svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <rect x="10" y="10" width="100" height="100" rx="15" fill="#0066CC" stroke="#FFFFFF" stroke-width="3"/>
-        <path d="M40 35 L50 35 L55 45 L65 45 L70 35 L80 35 L75 55 L70 75 L65 85 L55 85 L50 75 L45 55 Z" fill="white"/>
-        <rect x="30" y="90" width="60" height="8" fill="white"/>
-        <rect x="30" y="85" width="60" height="2" fill="white"/>
+        <rect x="7" y="7" width="106" height="106" rx="10" fill="#0066A1" stroke="#FFFFFF" stroke-width="3"/>
+        <path d="M60 15 L108 99 H12 Z" fill="#FFFFFF"/>
+        <path d="M61 30 C55 30 52 35 52 41 L48 55 L39 62 L42 67 L52 62 L49 75 L42 88 L48 91 L59 77 L67 92 L74 89 L66 73 L70 62 L77 69 L82 66 L73 56 L69 43 C67 35 66 30 61 30 Z" fill="#111111"/>
+        <path d="M22 101 L34 82 H42 L32 101 Z M45 101 L53 82 H62 L59 101 Z M70 101 L78 82 H87 L89 101 Z M96 101 L87 82 H96 L108 101 Z" fill="#111111"/>
       </svg>`,
       color: '#0066CC'
     },
@@ -42,8 +42,8 @@
       nameKey: 'road-signs.warning',
       descriptionKey: 'road-signs.warning-description',
       svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <polygon points="60,15 100,90 20,90" fill="#FFCC00" stroke="#000000" stroke-width="3"/>
-        <text x="60" y="70" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="black" text-anchor="middle">!</text>
+        <polygon points="60,10 111,105 9,105" fill="#FFCC00" stroke="#E5323B" stroke-width="9" stroke-linejoin="round"/>
+        <text x="60" y="77" font-family="Arial, sans-serif" font-size="43" font-weight="bold" fill="black" text-anchor="middle">!</text>
       </svg>`,
       color: '#FFCC00'
     },
@@ -52,30 +52,29 @@
       nameKey: 'road-signs.bicycle-path',
       descriptionKey: 'road-signs.bicycle-path-description',
       svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <circle cx="60" cy="60" r="50" fill="#0066CC" stroke="#FFFFFF" stroke-width="3"/>
-        <circle cx="35" cy="70" r="12" fill="none" stroke="white" stroke-width="3"/>
-        <circle cx="85" cy="70" r="12" fill="none" stroke="white" stroke-width="3"/>
-        <path d="M35 70 L60 45 L75 55 M60 45 L60 25" stroke="white" stroke-width="3" fill="none"/>
+        <circle cx="60" cy="60" r="52" fill="#0066A1" stroke="#FFFFFF" stroke-width="3"/>
+        <g fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="31" cy="78" r="20"/><circle cx="89" cy="78" r="20"/>
+          <path d="M31 78 L48 50 L68 78 L31 78 L59 78 L78 48 L89 78 L68 78 M48 50 L69 50 M78 48 L84 44 M44 46 L54 46"/>
+          <circle cx="59" cy="78" r="3" fill="#FFFFFF" stroke="none"/>
+        </g>
       </svg>`,
       color: '#0066CC'
     },
     {
       id: 'playground',
-      nameKey: 'road-signs.playground',
-      descriptionKey: 'road-signs.playground-description',
+      nameKey: 'road-signs.children-warning',
+      descriptionKey: 'road-signs.children-warning-description',
       svg: `<svg width="120" height="120" viewBox="0 0 120 120">
-        <rect x="10" y="10" width="100" height="100" rx="15" fill="#FF6600" stroke="#FFFFFF" stroke-width="3"/>
-        <circle cx="45" cy="35" r="8" fill="white"/>
-        <rect x="40" y="45" width="10" height="15" fill="white"/>
-        <rect x="35" y="60" width="20" height="8" fill="white"/>
-        <rect x="40" y="68" width="4" height="12" fill="white"/>
-        <rect x="46" y="68" width="4" height="12" fill="white"/>
-        <circle cx="75" cy="35" r="8" fill="white"/>
-        <rect x="70" y="45" width="10" height="15" fill="white"/>
-        <path d="M65 55 L75 65 M85 55 L75 65" stroke="white" stroke-width="3"/>
-        <rect x="73" y="68" width="4" height="12" fill="white"/>
+        <path d="M60 8 L114 108 H6 Z" fill="#E5323B"/>
+        <path d="M60 20 L101 98 H19 Z" fill="#FFCC00"/>
+        <g fill="#111111" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="47" cy="42" r="6" stroke="none"/><circle cx="72" cy="48" r="5" stroke="none"/>
+          <path d="M46 51 L39 68 L30 78 L34 82 L45 74 L51 62 L55 76 L48 88 L54 91 L63 78 L59 61 L57 53 L67 59 L72 56 L59 49 Z"/>
+          <path d="M73 56 L68 69 L64 81 L68 84 L76 74 L80 64 L86 73 L80 85 L85 88 L94 76 L86 59 L79 54 Z"/>
+        </g>
       </svg>`,
-      color: '#FF6600'
+      color: '#E5323B'
     },
     {
       id: 'speed-limit',

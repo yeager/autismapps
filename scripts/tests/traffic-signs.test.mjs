@@ -63,7 +63,8 @@ test('children warning and speed-limit cards cannot drift to misleading labels',
 });
 
 test('official sign images are used consistently in overview, flashcard and quiz', () => {
-	assert.equal((component.match(/src={`\$\{base\}\$\{(?:sign|signs\[currentSignIndex\])\.image\}`}/g) ?? []).length, 3);
+	assert.equal((component.match(/src=\{signImage\((?:sign|signs\[currentSignIndex\])\)\}/g) ?? []).length, 3);
 	assert.match(component, /import \{ base \} from '\$app\/paths'/);
+	assert.match(component, /function signImage\(sign\)[\s\S]*?\$\{base\}\$\{sign\.image\}\?v=\$\{TRAFFIC_SAFETY_PICTOGRAM_REVISION\}/);
 	assert.match(component, /alt="" aria-hidden="true"/);
 });

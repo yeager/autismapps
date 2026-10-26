@@ -23,6 +23,9 @@ const versionedPictogramAssets = files
 const versionedPiktaliTrafficAssets = files
 	.filter((file) => /\/piktali-pictograms\/assets\/(trafficlight-fd91ed3bdb7e-v2\.svg|crosswalk-9302fa0c66df\.webp|danger-4bc28024e9b4\.webp|safeplace-59c8550bf6e0-v2\.svg|reflector-vest-ce860b12f9aa-v2\.svg|car-a54a1ff80372\.webp)$/.test(file))
 	.map((file) => `${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`);
+const versionedTrafficSignAssets = files
+	.filter((file) => /\/pictograms\/traffic-safety\/signs\/[a-z0-9-]+\.png$/.test(file))
+	.map((file) => `${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`);
 
 // Paths from $service-worker already include the base path (/autismapps on Pages).
 // Prerendered pages are cached too so navigations work offline.
@@ -30,7 +33,8 @@ const ASSETS = [
   ...build,
   ...prerendered,
   ...versionedPictogramAssets,
-  ...versionedPiktaliTrafficAssets
+  ...versionedPiktaliTrafficAssets,
+  ...versionedTrafficSignAssets
 ];
 // The ONNX Runtime WASM is about 25 MB. Cache.addAll rejects it on some
 // browsers, which would prevent the entire service worker from installing.

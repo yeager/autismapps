@@ -2,6 +2,7 @@
   import { base } from '$app/paths';
   import { speak } from '$lib/tts';
   import { pick } from '$lib/i18n';
+  import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
 
   /** @typedef {{ id: string, nameKey?: string, descriptionKey?: string, name?: Partial<Record<string, string>>, description?: Partial<Record<string, string>>, image?: string, svg?: string, color: string }} RoadSign */
 
@@ -156,6 +157,11 @@
     return sign.descriptionKey ? getI18nValue(sign.descriptionKey) : pick(sign.description ?? {}, lang);
   }
 
+  /** @param {RoadSign} sign */
+  function signImage(sign) {
+    return sign.image ? `${base}${sign.image}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}` : '';
+  }
+
   /** @param {number} index */
   function showSign(index) {
     currentSignIndex = index;
@@ -228,7 +234,7 @@
             >
               <div class="sign-icon">
                 {#if sign.image}
-                  <img src={`${base}${sign.image}`} alt="" aria-hidden="true" />
+                  <img src={signImage(sign)} alt="" aria-hidden="true" />
                 {:else}
                   {@html sign.svg ?? ''}
                 {/if}
@@ -246,7 +252,7 @@
         <div class="flashcard">
           <div class="sign-display">
             {#if signs[currentSignIndex].image}
-              <img src={`${base}${signs[currentSignIndex].image}`} alt="" aria-hidden="true" />
+              <img src={signImage(signs[currentSignIndex])} alt="" aria-hidden="true" />
             {:else}
               {@html signs[currentSignIndex].svg ?? ''}
             {/if}
@@ -290,7 +296,7 @@
         
         <div class="quiz-sign">
           {#if signs[currentSignIndex].image}
-            <img src={`${base}${signs[currentSignIndex].image}`} alt="" aria-hidden="true" />
+            <img src={signImage(signs[currentSignIndex])} alt="" aria-hidden="true" />
           {:else}
             {@html signs[currentSignIndex].svg ?? ''}
           {/if}

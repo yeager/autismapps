@@ -58,3 +58,9 @@ test('the service worker precaches every versioned traffic-safety card pictogram
     assert.ok(src.includes(pattern), `missing cached pictogram ${asset}`);
   }
 });
+
+test('the service worker precaches all versioned official traffic signs', () => {
+  assert.match(src, /const versionedTrafficSignAssets = files/);
+  assert.ok(src.includes('.filter((file) => /\\/pictograms\\/traffic-safety\\/signs\\/[a-z0-9-]+\\.png$/.test(file))'));
+  assert.match(src, /\.\.\.versionedTrafficSignAssets/);
+});

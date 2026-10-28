@@ -64,6 +64,7 @@ test('the service worker precaches every versioned traffic-safety card pictogram
     'police-car.webp',
     'fire-engine.webp',
     'hat.webp',
+    'helmet.webp',
     'backpack.webp',
     'shoes.webp'
   ];

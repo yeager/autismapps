@@ -32,11 +32,11 @@
       pictogram: 'reflector'
     },
     {
-      id: 'hat',
-      nameKey: 'item-hat',
+      id: 'helmet',
+      nameKey: 'item-helmet',
       position: { x: 48, y: 15 },
       placed: false,
-      pictogram: 'hat'
+      pictogram: 'helmet'
     },
     {
       id: 'bag',
@@ -285,12 +285,18 @@
               <!-- Show placed reflectors -->
               {#each dressUpProgress as reflector}
                 {@const placedPictogram = reflector.pictogram ? piktaliTrafficPictogramUrl(reflector.pictogram) : null}
-                <div 
+                <div
                   class="placed-reflector"
+                  class:placed-reflector--helmet={reflector.id === 'helmet'}
+                  class:placed-reflector--bag={reflector.id === 'bag'}
+                  class:placed-reflector--shoes={reflector.id === 'shoes'}
                   style="left: {reflector.position.x}%; top: {reflector.position.y}%"
                 >
                   {#if placedPictogram}
                     <img src={placedPictogram} alt="" aria-hidden="true" />
+                    {#if reflector.id === 'helmet' || reflector.id === 'bag' || reflector.id === 'shoes'}
+                      <span class="reflective-detail reflective-detail--{reflector.id}" aria-hidden="true"></span>
+                    {/if}
                   {:else}
                     <span class="reflective-band" aria-hidden="true"></span>
                   {/if}
@@ -317,9 +323,17 @@
                     onclick={() => placeReflector(reflector)}
                     aria-label={formatMessage('reflectors.add-reflector', { item: getI18nValue(`reflectors.${reflector.nameKey}`) })}
                   >
-                    <div class="item-icon">
+                    <div
+                      class="item-icon"
+                      class:item-icon--helmet={reflector.id === 'helmet'}
+                      class:item-icon--bag={reflector.id === 'bag'}
+                      class:item-icon--shoes={reflector.id === 'shoes'}
+                    >
                       {#if itemPictogram}
                         <img src={itemPictogram} alt="" aria-hidden="true" />
+                        {#if reflector.id === 'helmet' || reflector.id === 'bag' || reflector.id === 'shoes'}
+                          <span class="reflective-detail reflective-detail--{reflector.id}" aria-hidden="true"></span>
+                        {/if}
                       {:else}
                         <span class="reflective-band" aria-hidden="true"></span>
                       {/if}
@@ -819,6 +833,13 @@
     animation: sparkle 1s ease-in-out infinite;
   }
 
+  .placed-reflector--helmet,
+  .placed-reflector--bag,
+  .placed-reflector--shoes {
+    width: 42px;
+    height: 42px;
+  }
+
   .placed-reflector img {
     display: block;
     width: 100%;
@@ -826,6 +847,52 @@
     object-fit: contain;
     border-radius: 6px;
     filter: drop-shadow(0 0 4px #fff);
+  }
+
+  .reflective-detail {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    height: 9%;
+    min-height: 4px;
+    border: 1px solid #34443e;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f4d45c 0 22%, #fff 22% 78%, #f4d45c 78%);
+    box-shadow: 0 0 0 1px #fff, 0 0 5px #fff;
+    pointer-events: none;
+  }
+
+  .reflective-detail--helmet {
+    top: 56%;
+    left: 22%;
+    width: 56%;
+    transform: rotate(-8deg);
+  }
+
+  .reflective-detail--bag {
+    top: 54%;
+    left: 20%;
+    width: 60%;
+  }
+
+  .reflective-detail--shoes {
+    bottom: 27%;
+    left: 17%;
+    width: 30%;
+    height: 10%;
+  }
+
+  .reflective-detail--shoes::after {
+    position: absolute;
+    top: 0;
+    left: 180%;
+    width: 100%;
+    height: 100%;
+    border: inherit;
+    border-radius: inherit;
+    background: inherit;
+    box-shadow: inherit;
+    content: '';
   }
 
   .placed-reflector .reflective-band {
@@ -891,15 +958,18 @@
   }
 
   .item-icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 0.5rem;
     font-size: 32px;
-    margin-bottom: 0.5rem;
   }
 
   .item-icon img {
     display: block;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
+    width: 48px;
+    height: 48px;
+    margin: 0;
     object-fit: contain;
     border-radius: 6px;
   }
@@ -912,6 +982,11 @@
     border-radius: 999px;
     box-shadow: inset 0 0 0 1px #fff, 0 0 0 1px #6b5a1d;
     transform: rotate(-18deg);
+  }
+
+  .item-icon .reflective-detail {
+    height: 8%;
+    min-height: 4px;
   }
 
   .item-name {

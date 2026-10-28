@@ -50,7 +50,8 @@ export function piktaliTrafficPictogramUrl(symbol: string): string | null {
     'fire-engine': 'assets/fire-engine.webp',
     hat: 'assets/hat.webp',
     backpack: 'assets/backpack.webp',
-    shoes: 'assets/shoes.webp'
+    shoes: 'assets/shoes.webp',
+    helmet: 'assets/helmet.webp'
   };
   const file = files[symbol];
   return file ? `${base}/piktali-pictograms/${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}` : null;

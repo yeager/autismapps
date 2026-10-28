@@ -93,7 +93,7 @@ test('Traffic Safety actions, vehicles and clothing use verified Piktali pictogr
     ['police-car', 'police-car', vehiclesSource],
     ['fire-engine', 'fire-engine', vehiclesSource],
     ['reflector', 'reflector-vest', reflectorsSource],
-    ['hat', 'hat', reflectorsSource],
+    ['helmet', 'helmet', reflectorsSource],
     ['backpack', 'backpack', reflectorsSource],
     ['shoes', 'shoes', reflectorsSource]
   ];
@@ -119,6 +119,10 @@ test('Traffic Safety actions, vehicles and clothing use verified Piktali pictogr
   assert.match(vehiclesSource, /icon: 'fire-engine'/);
   assert.match(crosswalkSource, /class="character-image"/);
   assert.match(reflectorsSource, /class="reflective-band"/, 'the reflective armband is drawn as a band, not represented by an unrelated pictogram');
+  assert.match(reflectorsSource, /reflective-detail--helmet/);
+  assert.match(reflectorsSource, /reflective-detail--bag/);
+  assert.match(reflectorsSource, /reflective-detail--shoes/);
+  assert.match(reflectorsSource, /nameKey: 'item-helmet'/);
   assert.match(reflectorsSource, /placedPictogram = reflector\.pictogram/);
   assert.match(reflectorsSource, /class="placed-reflector"[\s\S]*?src=\{placedPictogram\}/);
   assert.match(reflectorsSource, /dayPictogram/);

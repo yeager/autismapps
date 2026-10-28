@@ -50,6 +50,12 @@ function outputFileForPath(root, pathname, context) {
 		if (statSync(output).isFile()) return output;
 		if (statSync(output).isDirectory()) return join(output, 'index.html');
 	}
+	// adapter-static emits extensionless routes as `route.html` when
+	// trailingSlash is `never`; check that output before assuming a directory.
+	if (!/\.[a-z0-9]+$/i.test(relativePath)) {
+		const htmlOutput = `${output}.html`;
+		if (existsSync(htmlOutput) && statSync(htmlOutput).isFile()) return htmlOutput;
+	}
 	if (pathname.endsWith('/') || !relativePath || !/\.[a-z0-9]+$/i.test(relativePath)) output = join(output, 'index.html');
 	return output;
 }

@@ -1,24 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { boardBuilderSearchResult, matchPiktaliPictograms, piktaliManifestUrl, piktaliManifestUrls } from '../../src/lib/piktali/search-match.ts';
+import { boardBuilderSearchResult, isApprovedPiktaliPictogram, matchPiktaliPictograms, piktaliManifestUrl, piktaliManifestUrls } from '../../src/lib/piktali/search-match.ts';
 
 const manifest = JSON.parse(await readFile(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
 
 test('Piktali manifest uses a versioned path in production and the stable file in development', () => {
-	assert.equal(piktaliManifestUrl('/launcher'), '/launcher/piktali-pictograms/manifest-2026-10-26-piktali-corrections-1.json?v=2026-10-26-piktali-corrections-1');
-	assert.equal(piktaliManifestUrl(''), '/piktali-pictograms/manifest-2026-10-26-piktali-corrections-1.json?v=2026-10-26-piktali-corrections-1');
+	assert.equal(piktaliManifestUrl('/launcher'), '/launcher/piktali-pictograms/manifest-2026-10-28-piktali-reviewed-catalog-1.json?v=2026-10-28-piktali-reviewed-catalog-1');
+	assert.equal(piktaliManifestUrl(''), '/piktali-pictograms/manifest-2026-10-28-piktali-reviewed-catalog-1.json?v=2026-10-28-piktali-reviewed-catalog-1');
 	assert.equal(piktaliManifestUrl('/launcher', true), '/launcher/piktali-pictograms/manifest.json');
 	assert.deepEqual(piktaliManifestUrls('/launcher'), [
-		'/launcher/piktali-pictograms/manifest-2026-10-26-piktali-corrections-1.json?v=2026-10-26-piktali-corrections-1',
-		'/launcher/piktali-pictograms/manifest.json?v=2026-10-26-piktali-corrections-1'
+		'/launcher/piktali-pictograms/manifest-2026-10-28-piktali-reviewed-catalog-1.json?v=2026-10-28-piktali-reviewed-catalog-1',
+		'/launcher/piktali-pictograms/manifest.json?v=2026-10-28-piktali-reviewed-catalog-1'
 	]);
 	assert.deepEqual(piktaliManifestUrls('/launcher', true), ['/launcher/piktali-pictograms/manifest.json']);
 });
 
 test('Board Builder name aliases return the local Piktali communication board', () => {
 	for (const query of ['Brädbyggaren', 'Brädbyggare', 'Brädbyggarens', 'Tavlbyggare', 'Board Builder']) {
-		const [result] = matchPiktaliPictograms(manifest.pictograms, query, 'sv', '/launcher');
+		const [result] = boardBuilderSearchResult(query, 'sv', '/launcher');
 		assert.equal(result.keyword, 'Kommunikationskarta');
 		assert.equal(result.url, '/launcher/piktali-pictograms/assets/communication-board.svg');
 		assert.ok(result.id < 0);
@@ -43,11 +43,17 @@ test('Piktali search matches Swedish and English catalog labels', () => {
 	assert.equal(swedish.url, english.url);
 });
 
-test('Piktali fuzzy matches use the interface language and omit number symbols', () => {
+test('Piktali search includes approved matches and excludes entries with pending review fields', () => {
 	const results = matchPiktaliPictograms(manifest.pictograms, 'hund', 'sv', '/launcher');
 	const labels = results.map((result) => result.keyword);
 	assert.ok(labels.includes('Hund'));
+	const dogWalk = manifest.pictograms.find(({ labels }) => labels['sv-SE'] === 'Gå ut med hunden');
+	assert.ok(dogWalk);
+	assert.equal(isApprovedPiktaliPictogram(dogWalk), true);
 	assert.ok(labels.includes('Gå ut med hunden'));
+	const pendingDogWalk = { ...dogWalk, review: { ...dogWalk.review, commercialRights: 'pending' } };
+	assert.equal(isApprovedPiktaliPictogram(pendingDogWalk), false);
+	assert.deepEqual(matchPiktaliPictograms([pendingDogWalk], 'Gå ut med hunden', 'sv', '/launcher'), []);
 	assert.ok(!labels.some((label) => ['Hundra', 'Tvåhundra', 'Trehundra', 'Fyrahundra', 'Femhundra', 'Sjunka', 'Åska'].includes(label)));
 });
 

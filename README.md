@@ -144,6 +144,8 @@ The root `.htaccess` rewrites Swedish `/launcher/` requests to `launcher-sv/`; E
 
 If preparing a partial upload, include both versioned search catalogs from each build: `arasaac-sv-<revision>.json` and `piktali-pictograms/manifest-<revision>.json`. They are required by the launcher search code; omitting them makes pictogram searches return no results. `npm run verify:launcher:locales` checks these files in both language builds before upload.
 
+Piktali search displays only pictograms whose language, AAC-usefulness, image, and commercial-rights reviews are all approved in the source manifest. The manifest records the project owner's confirmation for all 5,003 pictograms. The locale verifier checks the declared production-ready count, all packaged pictogram assets, and that the Swedish “Hund” entry is approved.
+
 ## TTS Configuration
 
 - **Default engine:** Piper WASM (offline, ~5MB model download)

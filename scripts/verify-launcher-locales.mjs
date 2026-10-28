@@ -16,12 +16,25 @@ const appRoutes = readdirSync('src/routes/apps', { withFileTypes: true })
 	.sort();
 const piktaliSource = readFileSync('static/piktali-pictograms/manifest.json');
 const piktaliSourceManifest = JSON.parse(piktaliSource.toString('utf8'));
+const productionReadyPiktograms = piktaliSourceManifest.pictograms.filter((pictogram) =>
+	pictogram.pictogramStatus === 'approved'
+	&& pictogram.review?.translation === 'approved'
+	&& pictogram.review?.aacUsability === 'approved'
+	&& pictogram.review?.pictogram === 'approved'
+	&& pictogram.review?.commercialRights === 'approved'
+);
 const clientManifest = JSON.parse(readFileSync('.svelte-kit/output/client/.vite/manifest.json', 'utf8'));
 const piktaliFallbackChunk = clientManifest['src/lib/piktali/search-fallback.json'];
 
 function expect(condition, message) {
 	if (!condition) throw new Error(message);
 }
+
+expect(
+	piktaliSourceManifest.productionReadyCount === productionReadyPiktograms.length,
+	`Piktali production-ready count mismatch: manifest says ${piktaliSourceManifest.productionReadyCount}, reviews approve ${productionReadyPiktograms.length}`
+);
+expect(productionReadyPiktograms.some((pictogram) => pictogram.labels?.['sv-SE'] === 'Hund'), 'Hund is not approved for production search');
 
 function attr(html, pattern) {
 	const match = html.match(pattern);
@@ -54,7 +67,7 @@ for (const variant of variants) {
 		expect(assetPath.startsWith(`${resolve(root, 'piktali-pictograms')}${sep}`), `${variant.directory}: Piktali asset escapes its catalog directory`);
 		expect(existsSync(assetPath), `${variant.directory}: missing Piktali asset ${pictogram.file}`);
 		expect(statSync(assetPath).size === pictogram.bytes, `${variant.directory}: wrong byte count for Piktali asset ${pictogram.file}`);
-	}
+}
 	const home = readFileSync(join(root, 'index.html'), 'utf8');
 	expect(home.includes(`<html lang="${variant.code}"`), `${variant.directory}: wrong home lang`);
 	expect(home.includes(variant.marker), `${variant.directory}: missing localized home marker`);
@@ -105,4 +118,4 @@ const trafficEn = readFileSync(join('build', 'apps', 'traffic-safety', 'index.ht
 expect(/<h1[^>]*>\s*Traffic Safety\s*<\/h1>/.test(trafficEn), 'English Traffic Safety heading is not prerendered in English');
 
 console.log(`Verified ${appRoutes.length} app routes, localized HTML, canonical metadata, local assets, and versioned search catalogs in English and Swedish builds.`);
-console.log(`Verified all ${piktaliSourceManifest.pictograms.length} Piktali assets in both builds, including the Swedish and English dog search labels.`);
+console.log(`Verified ${piktaliSourceManifest.pictograms.length} Piktali catalog assets and ${productionReadyPiktograms.length} fully reviewed production search entries, including Hund.`);

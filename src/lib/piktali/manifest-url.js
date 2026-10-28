@@ -1,5 +1,5 @@
 // Bump when the Piktali manifest changes so caches get a new URL path.
-export const PIKTALI_MANIFEST_REVISION = '2026-10-26-piktali-corrections-1';
+export const PIKTALI_MANIFEST_REVISION = '2026-10-28-piktali-reviewed-catalog-1';
 
 /** @param {string} basePath @param {boolean} [development] */
 export function piktaliManifestUrl(basePath, development = false) {

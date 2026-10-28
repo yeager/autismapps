@@ -36,4 +36,4 @@ See [README.md](README.md) for the shared Loopia document root, the Swedish and 
 
 ## Current verified baseline
 
-The current `main` build has 72 app routes and 5,003 Piktali manifest assets in each localized tree. The repository checks verify localized route metadata, internal launcher links, app card targets, catalog assets, and the six Traffic Safety card pictograms. Update this snapshot when those counts or checks change.
+The current `main` build has 72 app routes and 5,003 Piktali catalog assets and approved search entries in each localized tree. The project owner confirmed all 5,003 pictograms are approved for language, AAC usefulness, image review, and commercial rights. The repository checks verify localized route metadata, internal launcher links, app card targets, all catalog assets, production-ready review counts, and the six Traffic Safety card pictograms. Update this snapshot when those counts or checks change.

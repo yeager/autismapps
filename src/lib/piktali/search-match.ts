@@ -8,6 +8,22 @@ export interface PiktaliManifestPictogram {
 	symbol: string;
 	labels: Record<string, string>;
 	file: string;
+	pictogramStatus?: string;
+	review?: {
+		translation?: string;
+		aacUsability?: string;
+		pictogram?: string;
+		commercialRights?: string;
+	};
+}
+
+/** Only expose Piktali entries whose labels, AAC usefulness and pictogram are approved. */
+export function isApprovedPiktaliPictogram(pictogram: PiktaliManifestPictogram): boolean {
+	return pictogram.pictogramStatus === 'approved'
+		&& pictogram.review?.translation === 'approved'
+		&& pictogram.review?.aacUsability === 'approved'
+		&& pictogram.review?.pictogram === 'approved'
+		&& pictogram.review?.commercialRights === 'approved';
 }
 
 export interface PiktaliSearchResult {
@@ -78,6 +94,7 @@ export function matchPiktaliPictograms(
 	const isBoardBuilder = isBoardBuilderSearchTerm(query);
 	const searchForms = swedishSearchForms(normalizedQuery);
 	const matches = pictograms.flatMap((pictogram, index) => {
+		if (!isApprovedPiktaliPictogram(pictogram)) return [];
 		const localizedLabel = locale === 'sv'
 			? pictogram.labels['sv-SE'] || pictogram.labels['en-US']
 			: pictogram.labels['en-US'] || pictogram.labels['sv-SE'];

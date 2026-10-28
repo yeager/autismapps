@@ -1,5 +1,5 @@
 import { fetchJsonWithFallback } from '../arasaac/cache.ts';
-import { piktaliManifestUrls, type PiktaliManifestPictogram } from './search-match.ts';
+import { isApprovedPiktaliPictogram, piktaliManifestUrls, type PiktaliManifestPictogram } from './search-match.ts';
 
 const PIKTALI_MANIFEST_TIMEOUT_MS = 5000;
 
@@ -20,7 +20,10 @@ export async function fetchPiktaliManifest(
 ): Promise<PiktaliManifestPictogram[]> {
 	try {
 		const bundled = await bundledFallback();
-		if (isUsableManifest(bundled)) return bundled.pictograms;
+		if (isUsableManifest(bundled)) {
+			const approved = bundled.pictograms.filter(isApprovedPiktaliPictogram);
+			if (approved.length > 0) return approved;
+		}
 	} catch {
 		// Try the hosted copy below if the lazy local chunk cannot be loaded.
 	}
@@ -31,5 +34,5 @@ export async function fetchPiktaliManifest(
 		fetcher
 	);
 	if (!isUsableManifest(hosted)) throw new Error('Invalid hosted Piktali manifest');
-	return hosted.pictograms;
+	return hosted.pictograms.filter(isApprovedPiktaliPictogram);
 }

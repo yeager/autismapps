@@ -12,7 +12,8 @@
   let searchQuery = $state('');
   let showAllApps = $state(false);
   let langOpen = $state(false);
-  let aboutOpen = $state(false);
+  let aboutDialog: HTMLDialogElement | undefined = $state();
+  let aboutTrigger: HTMLButtonElement | undefined = $state();
   let userName = $state('');
   let userAvatar = $state('👋');
   let langRef: HTMLDivElement | undefined = $state();
@@ -81,9 +82,18 @@
 
   function handleKeydown(event: KeyboardEvent) {
     if (event.key === 'Escape') {
-      aboutOpen = false;
       langOpen = false;
     }
+  }
+
+  function openAbout(event: MouseEvent) {
+    aboutTrigger = event.currentTarget as HTMLButtonElement;
+    aboutDialog?.showModal();
+  }
+
+  function handleAboutClose() {
+    aboutTrigger?.focus();
+    aboutTrigger = undefined;
   }
 
   function selectCategory(category: AppCategory | null) {
@@ -145,7 +155,7 @@
       <a class="nav-icon-button" href={base + '/settings'} aria-label={$t('app.settings')}>
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 2.94-.09-.03a1.7 1.7 0 0 0-1.8.2 1.7 1.7 0 0 0-.72 1.5V22h-3.4v-.1a1.7 1.7 0 0 0-1.13-1.6 1.7 1.7 0 0 0-1.8.2l-.08.06-2.94-1.7.03-.09a1.7 1.7 0 0 0-.2-1.8A1.7 1.7 0 0 0 4.5 16H4v-3.4h.1a1.7 1.7 0 0 0 1.6-1.13 1.7 1.7 0 0 0-.2-1.8l-.06-.08 1.7-2.94.09.03a1.7 1.7 0 0 0 1.8-.2A1.7 1.7 0 0 0 9.75 5V4.5h3.4v.1a1.7 1.7 0 0 0 1.13 1.6 1.7 1.7 0 0 0 1.8-.2l.08-.06 2.94 1.7-.03.09a1.7 1.7 0 0 0 .2 1.8 1.7 1.7 0 0 0 1.5.72h.5v3.4h-.1a1.7 1.7 0 0 0-1.6 1.13Z"/></svg>
       </a>
-      <button class="nav-icon-button about-button" onclick={() => aboutOpen = true} aria-label={$t('about.title')}>
+      <button class="nav-icon-button about-button" onclick={openAbout} aria-label={$t('about.title')}>
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5M12 8h.01"/></svg>
       </button>
     </div>
@@ -236,20 +246,16 @@
   </footer>
 </div>
 
-{#if aboutOpen}
-  <div class="about-overlay">
-    <dialog open class="about-modal" aria-modal="true" aria-labelledby="about-title">
-      <button class="about-close" onclick={() => aboutOpen = false} aria-label={$t('app.back')}>×</button>
-      <span class="about-mark" aria-hidden="true">✳</span>
-      <h2 id="about-title">{$t('about.title')}</h2>
-      <p class="about-tagline">{$t('about.tagline')}</p>
-      <div class="about-section"><h3>{$t('about.whatIs')}</h3><p>{$t('about.description')}</p></div>
-      <div class="about-section"><h3>{$t('about.forWhom')}</h3><p>{$t('about.audience.children')} · {$t('about.audience.parents')} · {$t('about.audience.teachers')} · {$t('about.audience.therapists')}</p></div>
-      <div class="about-section"><h3>{$t('about.developer')}</h3><p><strong>Daniel Nylander</strong></p><a href="mailto:daniel@danielnylander.se">daniel@danielnylander.se</a></div>
-      <div class="about-credits"><a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> · <a href="https://github.com/rhasspy/piper" target="_blank" rel="noopener">Piper</a><p>CC BY-NC-SA 4.0</p></div>
-    </dialog>
-  </div>
-{/if}
+<dialog bind:this={aboutDialog} class="about-modal" aria-labelledby="about-title" onclose={handleAboutClose}>
+  <button class="about-close" onclick={() => aboutDialog?.close()} aria-label={$t('app.back')} autofocus>×</button>
+  <span class="about-mark" aria-hidden="true">✳</span>
+  <h2 id="about-title">{$t('about.title')}</h2>
+  <p class="about-tagline">{$t('about.tagline')}</p>
+  <div class="about-section"><h3>{$t('about.whatIs')}</h3><p>{$t('about.description')}</p></div>
+  <div class="about-section"><h3>{$t('about.forWhom')}</h3><p>{$t('about.audience.children')} · {$t('about.audience.parents')} · {$t('about.audience.teachers')} · {$t('about.audience.therapists')}</p></div>
+  <div class="about-section"><h3>{$t('about.developer')}</h3><p><strong>Daniel Nylander</strong></p><a href="mailto:daniel@danielnylander.se">daniel@danielnylander.se</a></div>
+  <div class="about-credits"><a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> · <a href="https://github.com/rhasspy/piper" target="_blank" rel="noopener">Piper</a><p>CC BY-NC-SA 4.0</p></div>
+</dialog>
 
 <style>
   .home-page { min-height: 100dvh; color: var(--text); background: var(--bg); }
@@ -345,8 +351,8 @@
   .brand-mark.small span:nth-child(2) { height: 14px; }
   .brand-mark.small span:nth-child(3) { height: 11px; }
 
-  .about-overlay { position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: 20px; background: #14251fc2; backdrop-filter: blur(6px); }
-  .about-modal { position: relative; width: min(520px, 100%); max-height: min(84dvh, 720px); overflow: auto; margin: auto; padding: 34px; border: 1px solid var(--border); border-radius: 22px; background: var(--bg-card); color: var(--text); box-shadow: 0 26px 80px #10241940; }
+  .about-modal { position: fixed; width: min(520px, calc(100% - 40px)); max-height: min(84dvh, 720px); overflow: auto; margin: auto; padding: 34px; border: 1px solid var(--border); border-radius: 22px; background: var(--bg-card); color: var(--text); box-shadow: 0 26px 80px #10241940; }
+  .about-modal::backdrop { background: #14251fc2; backdrop-filter: blur(6px); }
   .about-close { position: absolute; top: 14px; right: 15px; width: 36px; height: 36px; border-radius: 50%; color: var(--text-muted); font-size: 1.5rem; }
   .about-close:hover { background: var(--bg-hover); }
   .about-mark { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 15px; border-radius: 13px; background: #315a49; color: #fff; font-size: 1.35rem; }

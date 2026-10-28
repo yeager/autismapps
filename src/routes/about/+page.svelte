@@ -78,7 +78,7 @@
     <section class="section privacy-link">
       <h2>{$t('about.privacy.title')}</h2>
       <p>{$t('about.privacy.summary')}</p>
-      <a href={base + '/privacy/'}>{$t('about.privacy.link')}</a>
+      <a href={base + '/privacy'}>{$t('about.privacy.link')}</a>
     </section>
 
     <section class="section developer">

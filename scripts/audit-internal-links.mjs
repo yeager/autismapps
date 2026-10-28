@@ -52,7 +52,7 @@ function outputFileForPath(root, pathname, context) {
 	}
 	// adapter-static emits extensionless routes as `route.html` when
 	// trailingSlash is `never`; check that output before assuming a directory.
-	if (!/\.[a-z0-9]+$/i.test(relativePath)) {
+	if (!pathname.endsWith('/') && !/\.[a-z0-9]+$/i.test(relativePath)) {
 		const htmlOutput = `${output}.html`;
 		if (existsSync(htmlOutput) && statSync(htmlOutput).isFile()) return htmlOutput;
 	}

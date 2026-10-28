@@ -77,7 +77,7 @@ for (const variant of variants) {
 		expect(privacy.includes(externalUrl), `${variant.directory}: privacy page is missing ${externalUrl}`);
 	}
 	const about = readFileSync(join(root, 'about', 'index.html'), 'utf8');
-	expect(about.includes(`href="${basePath}/privacy/"`), `${variant.directory}: About page does not link to its localized privacy page`);
+	expect(about.includes(`href="${basePath}/privacy"`), `${variant.directory}: About page does not link to its localized privacy page`);
 
 	for (const slug of appRoutes) {
 		const path = join(root, 'apps', slug, 'index.html');

@@ -54,7 +54,7 @@
 
     <nav class="page-links" aria-label={$t('about.title')}>
       <a href={base + '/'}>{$t('app.title.brand')}</a>
-      <a href={base + '/about/'}>{$t('about.title')}</a>
+      <a href={base + '/about'}>{$t('about.title')}</a>
     </nav>
   </article>
 </main>

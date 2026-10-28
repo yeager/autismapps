@@ -33,6 +33,11 @@ export interface PiktaliSearchResult {
 	urlBW: string;
 }
 
+function piktaliAssetUrl(basePath: string, file: string): string {
+	const base = basePath.replace(/\/$/, '');
+	return `${base}/piktali-pictograms/${file}?v=${PIKTALI_MANIFEST_REVISION}`;
+}
+
 /** Match common Swedish inflections to a catalog's singular label. */
 function swedishSearchForms(value: string): string[] {
 	const forms = [value];
@@ -69,8 +74,7 @@ export function boardBuilderSearchResult(
 	basePath: string
 ): PiktaliSearchResult[] {
 	if (!isBoardBuilderSearchTerm(query)) return [];
-	const base = basePath.replace(/\/$/, '');
-	const url = `${base}/piktali-pictograms/assets/communication-board.svg`;
+	const url = piktaliAssetUrl(basePath, 'assets/communication-board.svg');
 	return [{
 		// Reserve a low, stable ID outside the manifest's sequential range.
 		id: -2_000_000_000,
@@ -127,7 +131,7 @@ export function matchPiktaliPictograms(
 			return [];
 		}
 
-		const url = `${basePath}/piktali-pictograms/${pictogram.file}`;
+		const url = piktaliAssetUrl(basePath, pictogram.file);
 		return [{
 			score,
 			index,

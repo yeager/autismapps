@@ -1,4 +1,4 @@
-// Bump when the Piktali manifest changes so caches get a new URL path.
+// Bump when the Piktali manifest or any asset changes so caches get new URLs.
 export const PIKTALI_MANIFEST_REVISION = '2026-10-28-piktali-reviewed-catalog-2';
 
 /** @param {string} basePath @param {boolean} [development] */

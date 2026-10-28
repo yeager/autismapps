@@ -20,7 +20,7 @@ test('Board Builder name aliases return the local Piktali communication board', 
 	for (const query of ['Brädbyggaren', 'Brädbyggare', 'Brädbyggarens', 'Tavlbyggare', 'Board Builder']) {
 		const [result] = boardBuilderSearchResult(query, 'sv', '/launcher');
 		assert.equal(result.keyword, 'Kommunikationskarta');
-		assert.equal(result.url, '/launcher/piktali-pictograms/assets/communication-board.svg');
+		assert.equal(result.url, '/launcher/piktali-pictograms/assets/communication-board.svg?v=2026-10-28-piktali-reviewed-catalog-2');
 		assert.ok(result.id < 0);
 	}
 });
@@ -29,7 +29,7 @@ test('Board Builder aliases return the bundled pictogram without a manifest', ()
 	for (const query of ['Brädbyggaren', 'Brädbyggarens', 'Tavlbyggare']) {
 		const [result] = boardBuilderSearchResult(query, 'sv', '/launcher');
 		assert.equal(result.keyword, 'Kommunikationskarta');
-		assert.equal(result.url, '/launcher/piktali-pictograms/assets/communication-board.svg');
+		assert.equal(result.url, '/launcher/piktali-pictograms/assets/communication-board.svg?v=2026-10-28-piktali-reviewed-catalog-2');
 		assert.ok(result.id < 0);
 	}
 	assert.deepEqual(boardBuilderSearchResult('unknown', 'sv', '/launcher'), []);
@@ -41,6 +41,7 @@ test('Piktali search matches Swedish and English catalog labels', () => {
 	assert.equal(swedish.keyword, 'Hund');
 	assert.equal(english.keyword, 'Dog');
 	assert.equal(swedish.url, english.url);
+	assert.match(swedish.url, /\?v=2026-10-28-piktali-reviewed-catalog-2$/);
 });
 
 test('Piktali search includes approved matches and excludes entries with pending review fields', () => {

@@ -1,12 +1,14 @@
 # 🌟 Förbättringsrapport — Autismappar PWA
 
+> **Historisk planeringsanteckning.** Innehållet skrevs för en tidigare version av projektet och är inte en aktuell funktionslista eller roadmap. Hänvisningen till 42 appar och idéerna längre ned speglar dåvarande läge; flera förslag har sedan dess blivit egna appar eller funktioner. Se [TASK.md](TASK.md) för aktuell projektstatus och [src/lib/apps.ts](src/lib/apps.ts) för katalogens 72 registrerade appar.
+
 > *"Vi ska tillsammans göra de bästa apparna för barnen som har fått en liten svår start i livet"*
 
 ## ✅ Genomfört: Välkomstdialoger
 
 ### Vad som implementerades
 - **WelcomeDialog-komponent** (`src/lib/components/WelcomeDialog.svelte`) — en återanvändbar Svelte-komponent
-- **Tillagd i alla 42 appar** med individuellt anpassat innehåll
+- **Tillagd i 42 appar vid den tidigare inventeringen** med individuellt anpassat innehåll
 - **Tre sektioner per app:**
   - 🎯 *Vad är detta?* — Beskriver appens syfte och målgrupp
   - ❓ *Hur fungerar det?* — Kort användarguide

@@ -1,9 +1,13 @@
-// Check prerendered launcher links against the files and fragments in each locale build.
+// Check prerendered site links against the files and fragments in each build.
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
 
 const basePath = (process.env.LAUNCHER_BASE_PATH || '/launcher').replace(/\/$/, '');
-const variants = ['build', 'build-sv'];
+const variants = (process.env.LINK_AUDIT_VARIANTS || 'build,build-sv')
+	.split(',')
+	.map((variant) => variant.trim())
+	.filter(Boolean);
+if (!variants.length) throw new Error('LINK_AUDIT_VARIANTS must name at least one build directory.');
 const siteHostnames = new Set(['autismappar.se', 'autismapps.online']);
 
 function isSiteHostname(hostname) {
@@ -97,5 +101,5 @@ for (const variant of variants) {
 	}
 
 	if (errors.length) fail(`${variant}: ${errors.length} broken internal link(s):\n${errors.join('\n')}`);
-	console.log(`${variant}: verified ${checked} internal launcher links and fragments across ${files.length} HTML files.`);
+	console.log(`${variant}: verified ${checked} internal links and fragments across ${files.length} HTML files.`);
 }

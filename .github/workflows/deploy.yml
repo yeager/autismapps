@@ -46,6 +46,7 @@ jobs:
           test -f build/launcher/404.html
           test -f build/launcher/apps/traffic-safety/index.html
           grep -q '/autismapps/launcher/_app/' build/launcher/index.html
+          LINK_AUDIT_VARIANTS=build LAUNCHER_BASE_PATH=/autismapps npm run audit:links
         env:
           NODE_OPTIONS: '--unhandled-rejections=warn'
       - uses: actions/upload-pages-artifact@v5

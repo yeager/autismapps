@@ -48,18 +48,18 @@ export const PRIVACY_POLICIES: Record<string, PrivacyPolicy> = {
             url: 'https://teckensprakslexikon.su.se'
           },
           {
+            name: 'Spread The Sign',
+            description: 'In the Brazilian Portuguese sign dictionary, choosing a word can open a search on Spread The Sign. The selected word is included in the search URL, and your browser connects directly to the service. It can receive your IP address and details of the requested page. See the service’s website for its own information practices.',
+            link: 'Visit Spread The Sign',
+            url: 'https://www.spreadthesign.com'
+          },
+          {
             name: 'Hugging Face',
             description: 'Hugging Face automatically receives usage and session information (date and location), your IP address, and your device type and version, operating system, and browser. Its privacy policy says this information may be used to provide, operate, and improve the service, analyze usage, troubleshoot, and maintain security. It is kept as long as needed for the service, legal requirements, security, and legitimate interests; no fixed retention period is specified.',
             detail: 'Text you enter for speech is not sent to Hugging Face.',
             link: 'Hugging Face privacy policy',
             url: 'https://huggingface.co/privacy'
           },
-          {
-            name: 'jsDelivr',
-            description: 'jsDelivr delivers some program files. Its data processing agreement lists IP address, browser type and version, referring domain, requested CDN address, time, and diagnostic information. The agreement describes ongoing processing but does not specify a fixed retention period.',
-            link: 'jsDelivr data processing agreement',
-            url: 'https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net'
-          }
         ],
         paragraphs: [
           'Opening an external link sends a normal request to the website you chose. Those services handle information under their own terms and privacy policies.'
@@ -122,18 +122,18 @@ export const PRIVACY_POLICIES: Record<string, PrivacyPolicy> = {
             url: 'https://teckensprakslexikon.su.se'
           },
           {
+            name: 'Spread The Sign',
+            description: 'I den brasiliansk-portugisiska teckenspråksordboken kan ett valt ord öppna en sökning hos Spread The Sign. Ordet läggs i sökadressen och webbläsaren ansluter direkt till tjänsten. Den kan ta emot din IP-adress och uppgifter om den efterfrågade sidan. Se tjänstens webbplats för information om hur den hanterar uppgifter.',
+            link: 'Besök Spread The Sign',
+            url: 'https://www.spreadthesign.com'
+          },
+          {
             name: 'Hugging Face',
             description: 'Hugging Face tar automatiskt emot användnings- och sessionsuppgifter (datum och plats), IP-adress samt typ och version av enhet, operativsystem och webbläsare. Enligt deras integritetspolicy kan uppgifterna användas för att leverera, driva och förbättra tjänsten, analysera användningen, felsöka och upprätthålla säkerheten. De sparas så länge det behövs för tjänsten, lagkrav, säkerhet och berättigade intressen. Någon fast lagringstid anges inte.',
             detail: 'Text som du skriver för uppläsning skickas inte till Hugging Face.',
             link: 'Hugging Faces integritetspolicy',
             url: 'https://huggingface.co/privacy'
           },
-          {
-            name: 'jsDelivr',
-            description: 'jsDelivr levererar vissa programfiler. Enligt tjänstens personuppgiftsbiträdesavtal behandlas IP-adress, webbläsartyp och version, hänvisande domän, begärd CDN-adress, tidpunkt och diagnostikuppgifter. Avtalet beskriver löpande behandling men anger ingen bestämd lagringstid.',
-            link: 'Avtal om databehandling hos jsDelivr',
-            url: 'https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net'
-          }
         ],
         paragraphs: [
           'När du öppnar en extern länk skickas en vanlig förfrågan till webbplatsen du valt. De tjänsterna ansvarar själva för sin behandling enligt sina villkor och integritetspolicyer.'
@@ -196,18 +196,18 @@ export const PRIVACY_POLICIES: Record<string, PrivacyPolicy> = {
             url: 'https://teckensprakslexikon.su.se'
           },
           {
+            name: 'Spread The Sign',
+            description: 'No dicionário de Libras, escolher uma palavra pode abrir uma busca no Spread The Sign. A palavra selecionada é incluída na URL de busca, e o navegador se conecta diretamente ao serviço. Ele pode receber seu endereço IP e detalhes da página solicitada. Consulte o site do serviço para saber como ele trata informações.',
+            link: 'Visitar o Spread The Sign',
+            url: 'https://www.spreadthesign.com'
+          },
+          {
             name: 'Hugging Face',
             description: 'O Hugging Face recebe automaticamente informações de uso e sessão (data e local), endereço IP, tipo e versão do dispositivo, sistema operacional e navegador. A política de privacidade informa que esses dados podem ser usados para fornecer, operar e melhorar o serviço, analisar o uso, solucionar problemas e manter a segurança. Eles são mantidos pelo tempo necessário para o serviço, obrigações legais, segurança e interesses legítimos; não há um prazo fixo informado.',
             detail: 'O texto digitado para ser lido em voz alta não é enviado ao Hugging Face.',
             link: 'Política de privacidade do Hugging Face',
             url: 'https://huggingface.co/privacy'
           },
-          {
-            name: 'jsDelivr',
-            description: 'O jsDelivr entrega alguns arquivos de programa. Seu acordo de tratamento de dados lista endereço IP, tipo e versão do navegador, domínio de origem, endereço CDN solicitado, horário e informações de diagnóstico. O acordo descreve o tratamento contínuo, mas não especifica um prazo fixo de retenção.',
-            link: 'Acordo de tratamento de dados do jsDelivr',
-            url: 'https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net'
-          }
         ],
         paragraphs: [
           'Ao abrir um link externo, uma solicitação comum é enviada ao site escolhido. Esses serviços são responsáveis pelo tratamento de acordo com seus próprios termos e políticas de privacidade.'

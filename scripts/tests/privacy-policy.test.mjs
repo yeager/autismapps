@@ -6,8 +6,8 @@ const locales = ['en', 'sv', 'pt_BR'];
 const requiredLinks = [
 	'https://arasaac.org/privacy-policy',
 	'https://teckensprakslexikon.su.se',
-	'https://huggingface.co/privacy',
-	'https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net'
+	'https://www.spreadthesign.com',
+	'https://huggingface.co/privacy'
 ];
 
 test('privacy policy has localized content and working contact details for every ready locale', () => {
@@ -19,6 +19,8 @@ test('privacy policy has localized content and working contact details for every
 		assert.ok(policy.sections.length >= 6, `${locale}: missing policy sections`);
 		const content = JSON.stringify(policy);
 		for (const link of requiredLinks) assert.ok(content.includes(link), `${locale}: missing ${link}`);
+		assert.doesNotMatch(content, /jsDelivr/i, `${locale}: lists a service not used by the active site`);
+		assert.match(content, /selected word|valt ord|palavra selecionada/i, `${locale}: does not explain that the sign search term is sent externally`);
 		assert.match(content, /localStorage/);
 		assert.match(content, /Hugging Face/);
 	}

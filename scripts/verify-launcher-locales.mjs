@@ -84,8 +84,8 @@ for (const variant of variants) {
 	for (const externalUrl of [
 		'https://arasaac.org/privacy-policy',
 		'https://teckensprakslexikon.su.se',
-		'https://huggingface.co/privacy',
-		'https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net'
+		'https://www.spreadthesign.com',
+		'https://huggingface.co/privacy'
 	]) {
 		expect(privacy.includes(externalUrl), `${variant.directory}: privacy page is missing ${externalUrl}`);
 	}

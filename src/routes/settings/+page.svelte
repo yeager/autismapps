@@ -1,5 +1,6 @@
 <script lang="ts">
   import { t, locale, setLocale, LOCALES, getLocaleDef } from '$lib/i18n';
+  import { getLocaleDomainRedirect } from '$lib/i18n/domain-routing.js';
   import { flagSvg } from '$lib/flags';
   import { speak, preloadVoice, getStoredVoices, removeVoice, getEngine, voiceStoreFor, ttsStatus } from '$lib/tts';
   import { voicesForLang, type VoiceOption } from '$lib/tts/voices';
@@ -28,6 +29,13 @@
   ];
 
   async function changeLang(code: string) {
+    if (browser) {
+      const redirect = getLocaleDomainRedirect(code, window.location.href);
+      if (redirect) {
+        window.location.assign(redirect);
+        return;
+      }
+    }
     const appliedLocale = await setLocale(code);
     if (browser) localStorage.setItem('locale', appliedLocale);
     speak($t(`settings.language`));

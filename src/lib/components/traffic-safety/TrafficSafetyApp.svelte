@@ -2,6 +2,7 @@
   // TTS uses app locale automatically
   import WelcomeDialog from './WelcomeDialog.svelte';
   import { setLocale, pick } from '$lib/i18n';
+  import { getLocaleDomainRedirect } from '$lib/i18n/domain-routing.js';
   import en from '$lib/i18n/messages/en.json';
   import sv from '$lib/i18n/messages/sv.json';
   import ptBR from '$lib/i18n/messages/pt_BR.json';
@@ -27,6 +28,13 @@
   let i18nData: Record<string, any> = $derived(pick(trafficSafetyTranslations, lang));
 
   function chooseLanguage(language: string) {
+    if (typeof window !== 'undefined') {
+      const redirect = getLocaleDomainRedirect(language, window.location.href);
+      if (redirect) {
+        window.location.assign(redirect);
+        return;
+      }
+    }
     lang = language;
     setLocale(language);
     if (typeof localStorage !== 'undefined') localStorage.setItem('locale', language);

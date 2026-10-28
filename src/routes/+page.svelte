@@ -2,6 +2,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import { t, locale, setLocale, READY_LOCALES, getLocaleDef } from '$lib/i18n';
+  import { getLocaleDomainRedirect } from '$lib/i18n/domain-routing.js';
   import { browser } from '$app/environment';
   import { speak } from '$lib/tts';
   import { ALL_APPS, CATEGORY_META, isAvailableIn, type AppCategory } from '$lib/apps';
@@ -18,8 +19,6 @@
 
   const categories = Object.entries(CATEGORY_META) as [AppCategory, typeof CATEGORY_META[AppCategory]][];
   const languages = READY_LOCALES;
-  // Locales with their own production domain; the others (pt_BR) switch in place on either domain
-  const DOMAIN_HOSTS: Record<string, string> = { sv: 'autismappar.se', en: 'autismapps.online' };
   const featuredIds = new Set(['talk-board', 'picture-schedule', 'visual-timer', 'calm-room', 'emotion-map', 'word-builder', 'day-planner', 'chooser']);
   const currentFlag = $derived(getLocaleDef($locale).flag);
   // toLocaleLowerCase needs a BCP-47 tag ('pt_BR' throws a RangeError)
@@ -58,17 +57,9 @@
 
   async function chooseLanguage(code: string) {
     if (browser) {
-      const hostname = window.location.hostname.toLowerCase();
-      const isProductionDomain = hostname === 'autismappar.se'
-        || hostname.endsWith('.autismappar.se')
-        || hostname === 'autismapps.online'
-        || hostname.endsWith('.autismapps.online');
-      const targetHost = DOMAIN_HOSTS[code];
-      if (isProductionDomain && targetHost && hostname !== targetHost) {
-        const target = new URL(window.location.href);
-        target.protocol = 'https:';
-        target.host = targetHost;
-        window.location.assign(target.toString());
+      const redirect = getLocaleDomainRedirect(code, window.location.href);
+      if (redirect) {
+        window.location.assign(redirect);
         return;
       }
     }

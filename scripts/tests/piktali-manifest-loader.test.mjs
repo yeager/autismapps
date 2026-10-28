@@ -23,6 +23,8 @@ test('bundled Piktali fallback stays aligned with the source manifest', () => {
 		}
 	})));
 	assert.equal(sourceManifest.productionReadyCount, approved.length);
+	assert.equal(sourceManifest.includePending, false);
+	assert.equal(approved.length, 5003);
 	assert.ok(fallback.pictograms.every(isApprovedPiktaliPictogram));
 	assert.ok(fallback.pictograms.length > 0);
 	assert.equal(sourceManifest.ownerReviewConfirmation?.source, 'user confirmation in the Autismappar project conversation');

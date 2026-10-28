@@ -34,6 +34,7 @@ jobs:
 
           LAUNCHER_BASE_PATH=/autismapps/launcher npm run build:launcher:domains
           LAUNCHER_BASE_PATH=/autismapps/launcher npm run verify:launcher:locales
+          LAUNCHER_BASE_PATH=/autismapps/launcher npm run audit:links
           mv build "$temp_dir/launcher"
 
           mv "$temp_dir/root" build

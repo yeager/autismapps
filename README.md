@@ -124,10 +124,12 @@ npm run preview  # Preview built site
 
 Build localized launcher trees for Loopia:
 ```bash
-npm run build:launcher:domains # English in build/, Swedish in build-sv/
+VITE_PIKTALI_ASSET_URL_MODE=path npm run build:launcher:domains # Loopia; English in build/, Swedish in build-sv/
 npm run verify:launcher:locales
 npm run audit:links
 ```
+
+The Loopia launcher uses path-versioned Piktali image URLs and the generated `.htaccess` rewrites them to the single on-disk asset copy. GitHub Pages builds use query-versioned image URLs because Pages does not support Apache rewrites.
 
 Generate the bilingual legacy app-detail pages used at `/apps/<id>.html` on Loopia:
 ```bash

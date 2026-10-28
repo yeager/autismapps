@@ -33,8 +33,11 @@ export interface PiktaliSearchResult {
 	urlBW: string;
 }
 
-function piktaliAssetUrl(basePath: string, file: string): string {
+function piktaliAssetUrl(basePath: string, file: string, versionedPath = false): string {
 	const base = basePath.replace(/\/$/, '');
+	if (versionedPath) {
+		return `${base}/piktali-pictograms/v${PIKTALI_MANIFEST_REVISION}/${file}`;
+	}
 	return `${base}/piktali-pictograms/${file}?v=${PIKTALI_MANIFEST_REVISION}`;
 }
 
@@ -71,10 +74,11 @@ export function isBoardBuilderSearchTerm(query: string): boolean {
 export function boardBuilderSearchResult(
 	query: string,
 	locale: string,
-	basePath: string
+	basePath: string,
+	versionedPath = false
 ): PiktaliSearchResult[] {
 	if (!isBoardBuilderSearchTerm(query)) return [];
-	const url = piktaliAssetUrl(basePath, 'assets/communication-board.svg');
+	const url = piktaliAssetUrl(basePath, 'assets/communication-board.svg', versionedPath);
 	return [{
 		// Reserve a low, stable ID outside the manifest's sequential range.
 		id: -2_000_000_000,
@@ -90,7 +94,8 @@ export function matchPiktaliPictograms(
 	query: string,
 	locale: string,
 	basePath: string,
-	limit = 30
+	limit = 30,
+	versionedPath = false
 ): PiktaliSearchResult[] {
 	const normalizedQuery = normalizePictogramKeyword(query);
 	if (!normalizedQuery) return [];
@@ -131,7 +136,7 @@ export function matchPiktaliPictograms(
 			return [];
 		}
 
-		const url = piktaliAssetUrl(basePath, pictogram.file);
+		const url = piktaliAssetUrl(basePath, pictogram.file, versionedPath);
 		return [{
 			score,
 			index,

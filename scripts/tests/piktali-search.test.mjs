@@ -4,6 +4,11 @@ import { readFile } from 'node:fs/promises';
 import { boardBuilderSearchResult, isApprovedPiktaliPictogram, matchPiktaliPictograms, piktaliManifestUrl, piktaliManifestUrls } from '../../src/lib/piktali/search-match.ts';
 
 const manifest = JSON.parse(await readFile(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
+const launcherHtaccess = await readFile(new URL('../../deploy/launcher.htaccess', import.meta.url), 'utf8');
+
+test('Loopia Apache config maps path-versioned Piktali URLs to the single asset copy', () => {
+	assert.ok(launcherHtaccess.includes('RewriteRule ^piktali-pictograms/v[A-Za-z0-9._-]+/assets/(.+)$ piktali-pictograms/assets/$1 [END]'));
+});
 
 test('Piktali manifest uses a versioned path in production and the stable file in development', () => {
 	assert.equal(piktaliManifestUrl('/launcher'), '/launcher/piktali-pictograms/manifest-2026-10-28-piktali-reviewed-catalog-2.json?v=2026-10-28-piktali-reviewed-catalog-2');
@@ -35,6 +40,12 @@ test('Board Builder aliases return the bundled pictogram without a manifest', ()
 	assert.deepEqual(boardBuilderSearchResult('unknown', 'sv', '/launcher'), []);
 });
 
+test('Loopia Board Builder assets use a path-versioned cache key', () => {
+	const [result] = boardBuilderSearchResult('Brädbyggaren', 'sv', '/launcher', true);
+	assert.equal(result.url, '/launcher/piktali-pictograms/v2026-10-28-piktali-reviewed-catalog-2/assets/communication-board.svg');
+	assert.ok(!result.url.includes('?'));
+});
+
 test('Piktali search matches Swedish and English catalog labels', () => {
 	const [swedish] = matchPiktaliPictograms(manifest.pictograms, 'hund', 'sv', '/launcher');
 	const [english] = matchPiktaliPictograms(manifest.pictograms, 'dog', 'en', '/launcher');
@@ -42,6 +53,13 @@ test('Piktali search matches Swedish and English catalog labels', () => {
 	assert.equal(english.keyword, 'Dog');
 	assert.equal(swedish.url, english.url);
 	assert.match(swedish.url, /\?v=2026-10-28-piktali-reviewed-catalog-2$/);
+});
+
+test('Loopia Piktali search uses a path-versioned image URL', () => {
+	const [result] = matchPiktaliPictograms(manifest.pictograms, 'hund', 'sv', '/launcher', 30, true);
+	assert.equal(result.keyword, 'Hund');
+	assert.equal(result.url, '/launcher/piktali-pictograms/v2026-10-28-piktali-reviewed-catalog-2/assets/dog.webp');
+	assert.ok(!result.url.includes('?'));
 });
 
 test('Piktali search includes approved matches and excludes entries with pending review fields', () => {

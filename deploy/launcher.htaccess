@@ -4,6 +4,12 @@ Options -MultiViews
 DirectoryIndex index.html
 DirectorySlash On
 
+# Keep Piktali assets path-versioned on Loopia while storing only one copy.
+# Query strings can be ignored by some host caches, so rewrite the versioned
+# public URL to the stable on-disk asset after the cache has seen its new path.
+RewriteEngine On
+RewriteRule ^piktali-pictograms/v[A-Za-z0-9._-]+/assets/(.+)$ piktali-pictograms/assets/$1 [END]
+
 # Never cache the live entry point, fallback, or service-worker script.
 <IfModule mod_headers.c>
   <FilesMatch "^(service-worker\.js|index\.html|fallback\.html)$">

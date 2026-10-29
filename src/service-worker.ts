@@ -20,9 +20,12 @@ const MAX_IMAGES = 1500;
 const versionedPictogramAssets = files
 	.filter((file) => /\/pictograms\/traffic-safety\/\d+\.png$/.test(file))
 	.map((file) => `${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`);
+const pathVersionedPiktaliAssets = import.meta.env.VITE_PIKTALI_ASSET_URL_MODE === 'path';
 const versionedPiktaliTrafficAssets = files
 	.filter((file) => /\/piktali-pictograms\/assets\/(trafficlight-fd91ed3bdb7e-v2\.svg|crosswalk-9302fa0c66df\.webp|danger-4bc28024e9b4\.webp|safeplace-59c8550bf6e0-v2\.svg|reflector-vest-ce860b12f9aa-v2\.svg|car-a54a1ff80372\.webp|sidewalk\.svg|street\.svg|parkinglot\.svg|playground\.webp|school\.webp|roadworks\.svg|stop\.webp|wait\.webp|go\.webp|look\.webp|walk\.webp|persongeneral\.webp|sun\.webp|moon\.webp|bus\.webp|truck\.webp|bicycle\.webp|ambulance\.webp|police-car\.webp|fire-engine\.webp|hat\.webp|helmet\.webp|backpack\.webp|shoes\.webp)$/.test(file))
-	.map((file) => `${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`);
+	.map((file) => pathVersionedPiktaliAssets
+		? file.replace('/piktali-pictograms/assets/', `/piktali-pictograms/v${TRAFFIC_SAFETY_PICTOGRAM_REVISION}/assets/`)
+		: `${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`);
 const versionedTrafficSignAssets = files
 	.filter((file) => /\/pictograms\/traffic-safety\/signs\/[a-z0-9-]+\.png$/.test(file))
 	.map((file) => `${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}`);
@@ -41,8 +44,7 @@ const ASSETS = [
 // Keep it in ASSETS for routing, but fetch it on demand without Cache Storage.
 const PRECACHE_ASSETS = ASSETS.filter((asset) => !asset.endsWith('.wasm'));
 // Match requests by pathname while retaining query strings in the Cache key.
-// Versioned card pictograms are precached as `file.svg?v=...`, but fetch events
-// expose the pathname separately from the query string.
+// The deployed build precaches the same URL form used by its Piktali images.
 const ASSET_PATHS = new Set(ASSETS.map((asset) => new URL(asset, sw.registration.scope).pathname));
 
 // Shown only when offline and no page shell is cached. The app's saved locale lives in

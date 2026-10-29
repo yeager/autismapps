@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import { CATEGORY_SETS } from '../../src/lib/data/category-data.js';
 import { sequences } from '../../src/lib/data/sequence-data.js';
 import { sharedPictogramFiles } from '../../src/lib/piktali/shared-pictogram-files.js';
+import { trafficSafetyPictogramUrl } from '../../src/lib/data/pictogram-cache.js';
 
 const piktaliManifest = JSON.parse(fs.readFileSync(new URL('../../static/piktali-pictograms/manifest.json', import.meta.url), 'utf8'));
 const safePlacesSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/SafePlaces.svelte', import.meta.url), 'utf8');
@@ -113,7 +114,7 @@ test('Traffic Safety actions, vehicles and clothing use verified Piktali pictogr
     assert.ok(serviceWorkerSource.includes(basename), `${mappingKey} is precached for offline use`);
   }
 
-  assert.match(trafficPictogramsSource, /TRAFFIC_SAFETY_PICTOGRAM_REVISION/);
+  assert.match(trafficPictogramsSource, /trafficSafetyPictogramUrl\(base, file/);
   assert.match(trafficLightsSource, /\{#if pictogramUrl\}/, 'all three traffic-light actions render their available pictogram');
   assert.match(vehiclesSource, /icon: 'police-car'/);
   assert.match(vehiclesSource, /icon: 'fire-engine'/);
@@ -127,4 +128,18 @@ test('Traffic Safety actions, vehicles and clothing use verified Piktali pictogr
   assert.match(reflectorsSource, /class="placed-reflector"[\s\S]*?src=\{placedPictogram\}/);
   assert.match(reflectorsSource, /dayPictogram/);
   assert.match(reflectorsSource, /nightPictogram/);
+});
+
+test('Traffic Safety Piktali assets use Loopia path versioning and keep query versioning elsewhere', () => {
+  const file = 'assets/trafficlight-fd91ed3bdb7e-v2.svg';
+  assert.equal(
+    trafficSafetyPictogramUrl('/launcher/', file, true),
+    '/launcher/piktali-pictograms/v2026-10-28-reflective-accessories-6/assets/trafficlight-fd91ed3bdb7e-v2.svg'
+  );
+  assert.equal(
+    trafficSafetyPictogramUrl('/launcher/', file),
+    '/launcher/piktali-pictograms/assets/trafficlight-fd91ed3bdb7e-v2.svg?v=2026-10-28-reflective-accessories-6'
+  );
+  assert.match(trafficPictogramsSource, /VITE_PIKTALI_ASSET_URL_MODE === 'path'/);
+  assert.match(serviceWorkerSource, /pathVersionedPiktaliAssets[\s\S]*file\.replace\('\/piktali-pictograms\/assets\//);
 });

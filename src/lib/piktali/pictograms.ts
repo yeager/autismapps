@@ -1,7 +1,7 @@
 import { base } from '$app/paths';
 import { dictionaryPictogramFiles } from './dictionary-files';
 import { sharedPictogramFiles } from './shared-pictogram-files';
-import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
+import { trafficSafetyPictogramUrl } from '$lib/data/pictogram-cache.js';
 
 /**
  * Stable paths for the subset of shared Piktali pictograms used by the picture
@@ -20,7 +20,7 @@ export function piktaliDictionaryPictogramUrl(englishWord: string): string | nul
 /** Shared Piktali assets for the traffic-safety activity cards. */
 export function piktaliTrafficPictogramUrl(symbol: string): string | null {
   const files: Record<string, string> = {
-    // Content-addressed names bypass host caches that ignore query strings.
+    // The deployment URL is versioned so Loopia caches cannot keep old artwork.
     trafficlight: 'assets/trafficlight-fd91ed3bdb7e-v2.svg',
     crosswalk: 'assets/crosswalk-9302fa0c66df.webp',
     danger: 'assets/danger-4bc28024e9b4.webp',
@@ -54,5 +54,7 @@ export function piktaliTrafficPictogramUrl(symbol: string): string | null {
     helmet: 'assets/helmet.webp'
   };
   const file = files[symbol];
-  return file ? `${base}/piktali-pictograms/${file}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}` : null;
+  return file
+    ? trafficSafetyPictogramUrl(base, file, import.meta.env.VITE_PIKTALI_ASSET_URL_MODE === 'path')
+    : null;
 }

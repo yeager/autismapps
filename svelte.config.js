@@ -6,6 +6,10 @@ const outputDirectory = process.env.BUILD_OUTPUT_DIR || 'build';
 
 const config = {
 	kit: {
+		version: {
+			// Keep production builds reproducible; override this when a cache reset is needed.
+			name: process.env.SVELTEKIT_APP_VERSION || process.env.npm_package_version || '0.3.0'
+		},
 		adapter: adapter({
 			pages: outputDirectory,
 			assets: outputDirectory,

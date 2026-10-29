@@ -4,9 +4,12 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 
 const component = await readFile(new URL('../../src/lib/components/traffic-safety/RoadSigns.svelte', import.meta.url), 'utf8');
+const cacheModule = await readFile(new URL('../../src/lib/data/pictogram-cache.js', import.meta.url), 'utf8');
 const manifest = JSON.parse(await readFile(new URL('../../static/pictograms/traffic-safety/signs/manifest.json', import.meta.url), 'utf8'));
 const sv = JSON.parse(await readFile(new URL('../../src/lib/i18n/messages/sv.json', import.meta.url), 'utf8'));
 const en = JSON.parse(await readFile(new URL('../../src/lib/i18n/messages/en.json', import.meta.url), 'utf8'));
+const launcherHtaccess = await readFile(new URL('../../deploy/launcher.htaccess', import.meta.url), 'utf8');
+const serviceWorker = await readFile(new URL('../../src/service-worker.ts', import.meta.url), 'utf8');
 
 function sign(id) {
 	const start = component.indexOf(`id: '${id}'`);
@@ -65,6 +68,21 @@ test('children warning and speed-limit cards cannot drift to misleading labels',
 test('official sign images are used consistently in overview, flashcard and quiz', () => {
 	assert.equal((component.match(/src=\{signImage\((?:sign|signs\[currentSignIndex\])\)\}/g) ?? []).length, 3);
 	assert.match(component, /import \{ base \} from '\$app\/paths'/);
-	assert.match(component, /function signImage\(sign\)[\s\S]*?\$\{base\}\$\{sign\.image\}\?v=\$\{TRAFFIC_SAFETY_PICTOGRAM_REVISION\}/);
+	assert.match(component, /function signImage\(sign\)[\s\S]*?trafficSafetySignUrl\(base, sign\.image/);
 	assert.match(component, /alt="" aria-hidden="true"/);
+});
+
+test('traffic sign images have Loopia path versioning and server-side aliases', async () => {
+	const { trafficSafetySignUrl } = await import('../../src/lib/data/pictogram-cache.js');
+	assert.equal(
+		trafficSafetySignUrl('/launcher/', '/pictograms/traffic-safety/signs/stop-7169a31e6a62.png', true),
+		'/launcher/pictograms/traffic-safety/v2026-10-28-reflective-accessories-6/signs/stop-7169a31e6a62.png'
+	);
+	assert.equal(
+		trafficSafetySignUrl('/launcher/', '/pictograms/traffic-safety/signs/stop-7169a31e6a62.png'),
+		'/launcher/pictograms/traffic-safety/signs/stop-7169a31e6a62.png?v=2026-10-28-reflective-accessories-6'
+	);
+	assert.match(cacheModule, /export function trafficSafetySignUrl/);
+	assert.match(launcherHtaccess, /RewriteRule \^pictograms\/traffic-safety\/v\[A-Za-z0-9\._-\]\+\/signs/);
+	assert.match(serviceWorker, /file\.replace\('\/pictograms\/traffic-safety\/signs\//);
 });

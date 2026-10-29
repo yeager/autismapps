@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
   import { speak } from '$lib/tts';
   import { pick } from '$lib/i18n';
-  import { TRAFFIC_SAFETY_PICTOGRAM_REVISION } from '$lib/data/pictogram-cache.js';
+  import { trafficSafetySignUrl } from '$lib/data/pictogram-cache.js';
 
   /** @typedef {{ id: string, nameKey?: string, descriptionKey?: string, name?: Partial<Record<string, string>>, description?: Partial<Record<string, string>>, image?: string, svg?: string, color: string }} RoadSign */
 
@@ -159,7 +159,9 @@
 
   /** @param {RoadSign} sign */
   function signImage(sign) {
-    return sign.image ? `${base}${sign.image}?v=${TRAFFIC_SAFETY_PICTOGRAM_REVISION}` : '';
+    return sign.image
+      ? trafficSafetySignUrl(base, sign.image, import.meta.env.VITE_PIKTALI_ASSET_URL_MODE === 'path')
+      : '';
   }
 
   /** @param {number} index */

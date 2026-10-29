@@ -141,5 +141,5 @@ test('Traffic Safety Piktali assets use Loopia path versioning and keep query ve
     '/launcher/piktali-pictograms/assets/trafficlight-fd91ed3bdb7e-v2.svg?v=2026-10-28-reflective-accessories-6'
   );
   assert.match(trafficPictogramsSource, /VITE_PIKTALI_ASSET_URL_MODE === 'path'/);
-  assert.match(serviceWorkerSource, /pathVersionedPiktaliAssets[\s\S]*file\.replace\('\/piktali-pictograms\/assets\//);
+  assert.match(serviceWorkerSource, /pathVersionedAssets[\s\S]*file\.replace\('\/piktali-pictograms\/assets\//);
 });

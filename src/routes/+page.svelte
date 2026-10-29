@@ -379,7 +379,8 @@
     .brand-mark { width: 30px; height: 30px; }
     .brand-name { font-size: .98rem; }
     .nav-links { height: 68px; gap: 15px; margin-left: auto; }
-    .nav-link { font-size: .76rem; }
+    .nav-link { font-size: .76rem; white-space: nowrap; }
+    .nav-link.active { display: none; }
     .nav-actions { margin-left: 0; gap: 1px; }
     .nav-icon-button { width: 35px; height: 38px; }
     .about-button { display: none; }
@@ -411,7 +412,7 @@
   @media (max-width: 390px) {
     .site-nav, main { width: calc(100% - 28px); }
     .nav-links { gap: 10px; }
-    .nav-link { font-size: .7rem; }
+    .nav-link { font-size: .7rem; white-space: nowrap; }
     .nav-icon-button { width: 32px; }
     .app-card { min-height: 77px; gap: 7px; padding: 9px 8px; }
     .card-icon { width: 36px; height: 36px; flex-basis: 36px; }

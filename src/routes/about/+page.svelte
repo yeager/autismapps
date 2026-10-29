@@ -71,7 +71,7 @@
         <li>Piktali — {$t('about.credit.piktali')}</li>
         <li><a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — {$t('about.credit.arasaac')}</li>
         <li><a href="https://teckensprakslexikon.su.se" target="_blank" rel="noopener">{$t('about.sign_lexicon')}</a> — {$t('about.credit.signs')}</li>
-        <li><a href="https://github.com/rhasspy/piper" target="_blank" rel="noopener">Piper</a> — {$t('about.credit.piper')}</li>
+        <li><a href="https://github.com/OHF-Voice/piper1-gpl" target="_blank" rel="noopener">Piper</a> — {$t('about.credit.piper')}</li>
       </ul>
     </section>
 

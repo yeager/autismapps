@@ -254,7 +254,7 @@
   <div class="about-section"><h3>{$t('about.whatIs')}</h3><p>{$t('about.description')}</p></div>
   <div class="about-section"><h3>{$t('about.forWhom')}</h3><p>{$t('about.audience.children')} · {$t('about.audience.parents')} · {$t('about.audience.teachers')} · {$t('about.audience.therapists')}</p></div>
   <div class="about-section"><h3>{$t('about.developer')}</h3><p><strong>Daniel Nylander</strong></p><a href="mailto:daniel@danielnylander.se">daniel@danielnylander.se</a></div>
-  <div class="about-credits"><a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> · <a href="https://github.com/rhasspy/piper" target="_blank" rel="noopener">Piper</a><p>CC BY-NC-SA 4.0</p></div>
+  <div class="about-credits"><a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> · <a href="https://github.com/OHF-Voice/piper1-gpl" target="_blank" rel="noopener">Piper</a><p>CC BY-NC-SA 4.0</p></div>
 </dialog>
 
 <style>

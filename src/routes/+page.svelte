@@ -212,7 +212,7 @@
 
       <div class="apps-heading">
         <h3>{sectionTitle}</h3>
-        <span>{visibleApps.length} {$t('home.tools_count')}</span>
+        <span aria-live="polite" aria-atomic="true">{visibleApps.length} {$t('home.tools_count')}</span>
       </div>
 
       {#if visibleApps.length}

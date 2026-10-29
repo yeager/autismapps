@@ -62,8 +62,13 @@
   // so a direct URL to an app blocked in that locale must already be treated as blocked.
   const saved = browser ? localStorage.getItem('locale') : null;
   const savedReady = saved && isReadyLocale(saved) ? saved : null;
+  const requestedLocaleParam = browser ? new URLSearchParams(window.location.search).get('locale') : null;
+  const requestedLocale = requestedLocaleParam === 'pt-BR' || requestedLocaleParam === 'pt_BR'
+    ? 'pt_BR'
+    : null;
   const initial = browser
-    ? (savedReady && !DOMAIN_LOCALES.includes(savedReady) ? savedReady : null) ||
+    ? (requestedLocale && isReadyLocale(requestedLocale) ? requestedLocale : null) ||
+      (savedReady && !DOMAIN_LOCALES.includes(savedReady) ? savedReady : null) ||
       domainLocale() ||
       savedReady ||
       detectLocale(navigator.language)
@@ -127,6 +132,7 @@
   if (browser) {
     setLocale(initial).then((code) => {
       localeReady = true;
+      if (requestedLocale && code === requestedLocale) localStorage.setItem('locale', code);
       preloadVoice(code);
     });
   }

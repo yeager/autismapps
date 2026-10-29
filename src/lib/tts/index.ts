@@ -393,6 +393,15 @@ export async function speak(text: string, opts: TTSOptions = {}): Promise<void> 
 	const rate = opts.rate ?? (storeRate !== 1.0 ? storeRate : DEFAULT_RATE);
 	text = applyPhonetics(text, lang);
 
+	// iOS Safari requires speechSynthesis.speak() to run synchronously inside the
+	// user's gesture. Waiting for initPiper() first loses that gesture, even when
+	// Piper is immediately rejected as unsupported on iOS.
+	if (isIOSDevice()) {
+		updateStatus({ engine: 'webspeech', lastSpoke: text, lastError: '' });
+		await speakWebSpeech(text, lang, rate, opts);
+		return;
+	}
+
 	const piper = await initPiper();
 	if (piper) {
 		try {
@@ -578,14 +587,18 @@ function speakWebSpeech(text: string, lang: string, rate: number, opts: TTSOptio
 		});
 	}
 
-	utterance.onstart = () => opts.onStart?.(NaN);
 	speaking = true;
 	currentUtterance = utterance;
 	return new Promise<void>((resolve) => {
 		let finished = false;
+		let started = false;
+		let startTimer: ReturnType<typeof setTimeout> | undefined;
+		let finishTimer: ReturnType<typeof setTimeout> | undefined;
 		const finish = () => {
 			if (finished) return;
 			finished = true;
+			if (startTimer) clearTimeout(startTimer);
+			if (finishTimer) clearTimeout(finishTimer);
 			if (currentUtterance === utterance) {
 				speaking = false;
 				currentUtterance = null;
@@ -594,10 +607,37 @@ function speakWebSpeech(text: string, lang: string, rate: number, opts: TTSOptio
 			resolve();
 		};
 		finishCurrent = finish;
+		utterance.onstart = () => {
+			started = true;
+			if (startTimer) clearTimeout(startTimer);
+			updateStatus({ engine: 'webspeech', lastError: '' });
+			opts.onStart?.(NaN);
+			// A stuck Web Speech utterance must not block all later speech.
+			finishTimer = setTimeout(() => {
+				updateStatus({ lastError: 'Web Speech stopped responding during playback' });
+				speechSynthesis.cancel();
+				finish();
+			}, Math.max(30_000, text.length * 250));
+		};
 		utterance.onend = () => { finish(); opts.onEnd?.(); };
 		// cancel() fires 'interrupted'/'canceled' here; stop() has already settled the promise through finishCurrent
-		utterance.onerror = () => finish();
-		speechSynthesis.speak(utterance);
+		utterance.onerror = (event) => {
+			const error = (event as SpeechSynthesisErrorEvent).error || 'unknown';
+			updateStatus({ lastError: `Web Speech: ${error}` });
+			finish();
+		};
+		startTimer = setTimeout(() => {
+			if (started || finished) return;
+			updateStatus({ lastError: 'Web Speech did not start; tap the speaker again' });
+			speechSynthesis.cancel();
+			finish();
+		}, 5000);
+		try {
+			speechSynthesis.speak(utterance);
+		} catch (error) {
+			updateStatus({ lastError: `Web Speech: ${String(error)}` });
+			finish();
+		}
 	});
 }
 

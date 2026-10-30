@@ -101,7 +101,7 @@ export function matchPiktaliPictograms(
 	if (!normalizedQuery) return [];
 
 	const isBoardBuilder = isBoardBuilderSearchTerm(query);
-	const searchForms = swedishSearchForms(normalizedQuery);
+	const searchForms = locale === 'sv' ? swedishSearchForms(normalizedQuery) : [normalizedQuery];
 	const matches = pictograms.flatMap((pictogram, index) => {
 		if (!isApprovedPiktaliPictogram(pictogram)) return [];
 		const localizedLabel = locale === 'sv'
@@ -111,8 +111,7 @@ export function matchPiktaliPictograms(
 		const exactLabels = [...new Set([
 			pictogram.labels['sv-SE'],
 			pictogram.labels['en-US'],
-			pictogram.labels['es-ES'],
-			pictogram.labels['es-MX']
+			...(locale === 'pt_BR' ? [] : [pictogram.labels['es-ES'], pictogram.labels['es-MX']])
 		].filter((value): value is string => Boolean(value)))].map(normalizePictogramKeyword);
 		const symbol = normalizePictogramKeyword(pictogram.symbol.replaceAll('-', ' '));
 		const hasExactLabel = exactLabels.some((label) => searchForms.includes(label));

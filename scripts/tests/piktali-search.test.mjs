@@ -86,6 +86,11 @@ test('Piktali search accepts a Swedish query on the English site and vice versa'
 	assert.ok(!englishResults.some((result) => result.keyword === 'Thunder'));
 });
 
+test('Piktali search does not use Spanish aliases or Swedish inflections for pt-BR queries', () => {
+	assert.deepEqual(matchPiktaliPictograms(manifest.pictograms, 'comer', 'pt_BR', '/launcher'), []);
+	assert.deepEqual(matchPiktaliPictograms(manifest.pictograms, 'gato', 'pt_BR', '/launcher'), []);
+});
+
 test('Piktali search finds Swedish labels when the query is plural or definite', () => {
 	for (const [query, label] of [['hundar', 'Hund'], ['katter', 'Katt'], ['hunden', 'Hund']]) {
 		const results = matchPiktaliPictograms(manifest.pictograms, query, 'sv', '/launcher');

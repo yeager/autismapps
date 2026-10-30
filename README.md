@@ -139,6 +139,8 @@ These pages use the app registry and Swedish/English message catalogs as their s
 
 The source is shared in this repository, and the active Loopia launchers are also in the shared document root. Upload the **contents** of each build, preserving its relative paths:
 
+The shared root landing pages are tracked in `deploy/root-site/`: `index.html` is served on `autismappar.se`, and `index-en.html` on `autismapps.online`. Upload only the changed landing-page files to `autismappar.se/public_html/`.
+
 - `build-sv/` → `autismappar.se/public_html/launcher-sv/` for `autismappar.se`
 - `build/` → `autismappar.se/public_html/launcher/` for `autismapps.online`
 

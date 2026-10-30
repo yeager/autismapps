@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(registrations){registrations.forEach(function(reg){var worker=reg.active||reg.waiting||reg.installing;if(!worker)return;var script=new URL(worker.scriptURL),scope=new URL(reg.scope);if(script.origin===location.origin&&script.pathname==="/service-worker.js"&&scope.pathname==="/")reg.unregister()})})}</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>Autismapps — tools for everyday life</title>
+  <meta name="description" content="Free digital tools for communication, routines and learning. Made with care for different ways of thinking and communicating.">
+  <meta property="og:title" content="Autismapps — tools for everyday life">
+  <meta property="og:site_name" content="Autismapps">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="sv_SE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://autismapps.online/images/og-image.png">
+  <meta property="og:description" content="Free digital tools for communication, routines and learning. For families, schools and support professionals.">
+  <meta name="twitter:title" content="Autismapps — tools for everyday life">
+  <meta name="twitter:description" content="Free digital tools for communication, routines and learning. For families, schools and support professionals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://autismapps.online/">
+  <meta property="og:image" content="https://autismapps.online/images/og-image.png">
+  <link rel="canonical" href="https://autismapps.online/">
+  <link rel="alternate" hreflang="sv" href="https://autismappar.se/">
+  <link rel="alternate" hreflang="en" href="https://autismapps.online/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+
+<link rel="stylesheet" href="redesign.css?v=20261029-ptbr">
+
+</head>
+<body>
+<a class="skip" href="#main" data-sv="Hoppa till innehållet" data-en="Skip to content">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="/" aria-label="Autismapps home" data-sv-label="Autismappar startsida" data-en-label="Autismapps home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.2 14.4 8l5.3.8-3.8 3.8.9 5.3L12 15.4l-4.8 2.5.9-5.3-3.8-3.8L9.6 8 12 3.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.3" fill="currentColor"/></svg></span><span data-brand-name data-sv="autismappar" data-en="autismapps">autismapps</span></a>
+  <button class="menu-toggle" aria-label="Open menu" data-sv-label="Öppna meny" data-en-label="Open menu" aria-expanded="false">☰</button>
+  <nav class="nav" aria-label="Main menu" data-sv-label="Huvudmeny" data-en-label="Main menu">
+    <a href="#verktyg" data-sv="Verktyg" data-en="Tools">Tools</a><a href="#sa-fungerar-det" data-sv="Så fungerar det" data-en="How it works">How it works</a><a href="/launcher/material/" data-sv="Material" data-en="Resources">Resources</a><a href="om.html" data-sv="Om projektet" data-en="About">About</a><a class="nav-cta" href="/launcher/" data-sv="Öppna verktygen ↗" data-en="Open the tools ↗">Open the tools ↗</a>
+  </nav>
+  <div class="language" role="group" aria-label="Language" data-sv-label="Språk" data-en-label="Language"><button type="button" id="btn-sv" class="active" aria-label="Svenska">SV</button><button type="button" id="btn-en" aria-label="English">EN</button><a class="language-link" href="/launcher/?locale=pt-BR" lang="pt-BR" aria-label="Português do Brasil">PT-BR</a></div>
+</header>
+<main id="main">
+  <section class="hero">
+    <div class="hero-text"><div class="eyebrow" data-sv="Digitala verktyg med omtanke" data-en="Thoughtful digital tools">Thoughtful digital tools</div>
+      <h1 data-sv="Stöd som passar <em>just din</em> vardag." data-en="Support that fits <em>your</em> everyday.">Support that fits <em>your</em> everyday.</h1>
+      <p class="hero-copy" data-sv="Små verktyg som gör plats för kommunikation, mer förutsägbarhet och egna sätt att lära. Gratis att använda hemma, i skolan och tillsammans." data-en="Small tools that make room for communication, more predictability and individual ways to learn. Free to use at home, at school and together.">Small tools that make room for communication, more predictability and individual ways to learn. Free to use at home, at school and together.</p>
+      <div class="actions"><a class="button button-primary" href="#verktyg"><span data-sv="Hitta ett verktyg" data-en="Find a tool">Find a tool</span><svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="button button-quiet" href="/launcher/" data-sv="Visa alla verktyg" data-en="Browse all tools">Browse all tools</a></div>
+      <div class="trustline"><span class="dot"></span><span data-sv="Gratis · utan konto · byggt med familjer och pedagoger i åtanke" data-en="Free · no account · made with families and educators in mind">Free · no account · made with families and educators in mind</span></div>
+    </div>
+    <div class="hero-art" aria-label="Illustration of a visual daily schedule" data-sv-label="Illustration av visuellt vardagsschema" data-en-label="Illustration of a visual daily schedule">
+      <div class="art-wash"></div><span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✦</span>
+      <div class="art-card schedule-card"><div class="card-top"><strong data-sv="Min förmiddag" data-en="My morning">My morning</strong><span class="day-chip" data-sv="I dag" data-en="Today">Today</span></div>
+        <div class="schedule-row"><span class="schedule-icon" style="background:#fae6d4">☀️</span><span data-sv="Vakna och klä på mig" data-en="Wake up and get dressed">Wake up and get dressed</span><span class="check">✓</span></div>
+        <div class="schedule-row"><span class="schedule-icon" style="background:#e5e2f5">🪥</span><span data-sv="Borsta tänderna" data-en="Brush my teeth">Brush my teeth</span><span class="check">✓</span></div>
+        <div class="schedule-row"><span class="schedule-icon" style="background:#e2eee2">🥣</span><span data-sv="Äta frukost" data-en="Have breakfast">Have breakfast</span></div>
+        <div class="schedule-row"><span class="schedule-icon" style="background:#e0edf0">🎒</span><span data-sv="Gå till skolan" data-en="Go to school">Go to school</span></div>
+      </div>
+      <div class="art-card message-card"><small data-sv="JAG VILL" data-en="I WANT">I WANT</small><p data-sv="säga något" data-en="say something">say something</p><div class="symbol-row"><span class="symbol" style="background:#f4e4da">👋</span><span class="symbol" style="background:#e3e4f2">💬</span><span class="symbol" style="background:#e1eee4">❤️</span></div></div>
+      <div class="art-card mood-card"><small data-sv="Hur känns det?" data-en="How do I feel?">How do I feel?</small><div class="moods"><span>🙂</span><span>😌</span><span>😊</span></div></div><div class="art-label" data-sv="Ett steg i taget" data-en="One step at a time">One step at a time</div>
+    </div>
+  </section>
+  <div class="principles"><div class="principles-inner"><span class="principle"><b>✳</b><span data-sv="Gratis och utan konto" data-en="Free, no account">Free, no account</span></span><span class="principle"><b>◌</b><span data-sv="Fungerar på mobil och dator" data-en="Works on phones and computers">Works on phones and computers</span></span><span class="principle"><b>⌂</b><span data-sv="Integritet i första hand" data-en="Privacy comes first">Privacy comes first</span></span><span class="principle"><b>↗</b><span data-sv="Öppen källkod" data-en="Open source">Open source</span></span></div></div>
+  <section class="section" id="sa-fungerar-det"><div class="section-head"><div><div class="section-kicker" data-sv="Börja där du är" data-en="Start where you are">Start where you are</div><h2 data-sv="Vad vill du få stöd med?" data-en="What would you like help with?">What would you like help with?</h2></div><p class="section-lead" data-sv="Välj ett område för att snabbt hitta verktyg som passar situationen. Prova dig fram och anpassa efter personen." data-en="Choose an area to quickly find tools for the situation. Explore and adapt them to the person.">Choose an area to quickly find tools for the situation. Explore and adapt them to the person.</p></div>
+    <div class="path-grid"><a class="path-card" href="#verktyg" data-filter-link="communication" data-category-card="communication"><span class="path-num">01 / <span data-sv="UTTRYCKA SIG" data-en="COMMUNICATE">COMMUNICATE</span></span><span class="path-icon">💬</span><h3 data-sv="Kommunikation på egna villkor" data-en="Communication on your terms">Communication on your terms</h3><p data-sv="Bildstöd, pratbrädor och hjälp att bygga meningar." data-en="Visual supports, communication boards and help building sentences.">Visual supports, communication boards and help building sentences.</p><span class="path-arrow">↗</span></a>
+      <a class="path-card" href="#verktyg" data-filter-link="daily" data-category-card="daily"><span class="path-num">02 / <span data-sv="FÅ FLYT" data-en="FIND A RHYTHM">FIND A RHYTHM</span></span><span class="path-icon">🌿</span><h3 data-sv="Mer lugn i vardagen" data-en="More ease in the day">More ease in the day</h3><p data-sv="Rutiner, visuella scheman och steg för steg." data-en="Routines, visual schedules and step by step guides.">Routines, visual schedules and step by step guides.</p><span class="path-arrow">↗</span></a>
+      <a class="path-card" href="#verktyg" data-filter-link="emotions" data-category-card="emotions"><span class="path-num">03 / <span data-sv="HITTA BALANS" data-en="FIND BALANCE">FIND BALANCE</span></span><span class="path-icon">☁️</span><h3 data-sv="Förstå känslor och energi" data-en="Understand feelings and energy">Understand feelings and energy</h3><p data-sv="Utforska känslor, återhämtning och fokus." data-en="Explore feelings, rest and focus.">Explore feelings, rest and focus.</p><span class="path-arrow">↗</span></a></div>
+  </section>
+  <section class="catalog" id="verktyg"><div class="section"><div class="catalog-top"><div class="section-head"><div><div class="section-kicker" data-sv="Utforska biblioteket" data-en="Explore the library">Explore the library</div><h2 data-sv="Verktyg för olika stunder" data-en="Tools for everyday moments">Tools for everyday moments</h2></div><p class="section-lead" data-sv="Filtrera efter område eller sök på det du behöver." data-en="Filter by topic or search for what you need.">Filter by topic or search for what you need.</p></div><label class="searchbox"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><input type="search" id="app-search" aria-label="Search tools" data-sv-label="Sök verktyg" data-en-label="Search tools" placeholder="Search for a tool…"></label></div>
+      <div class="filter-list" role="group" aria-label="Filter tools" data-sv-label="Filtrera verktyg" data-en-label="Filter tools"><button class="filter-btn active" data-category="all" data-sv="Alla verktyg" data-en="All tools">All tools</button><button class="filter-btn" data-category="communication" data-sv="💬 Kommunikation" data-en="💬 Communication">💬 Communication</button><button class="filter-btn" data-category="daily" data-sv="🏡 Vardagsrutiner" data-en="🏡 Daily routines">🏡 Daily routines</button><button class="filter-btn" data-category="time" data-sv="⏱ Tid och planering" data-en="⏱ Time and planning">⏱ Time and planning</button><button class="filter-btn" data-category="emotions" data-sv="☁️ Känslor och lugn" data-en="☁️ Feelings and calm">☁️ Feelings and calm</button><button class="filter-btn" data-category="learning" data-sv="📚 Lärande" data-en="📚 Learning">📚 Learning</button><button class="filter-btn" data-category="play" data-sv="🎲 Spel och lek" data-en="🎲 Play and games">🎲 Play and games</button><button class="filter-btn" data-category="speech" data-sv="🗣️ Tal och dyspraxi" data-en="🗣️ Speech and dyspraxia">🗣️ Speech and dyspraxia</button><button class="filter-btn" data-category="social" data-sv="🤝 Socialt samspel" data-en="🤝 Social interaction">🤝 Social interaction</button></div>
+<p class="results-count" id="results-count" aria-live="polite"></p>
+      <div class="apps-grid" id="apps-grid">
+<a href="/launcher/apps/board-builder" class="app-card" data-en-search="Board Builder Create AAC communication boards with pictograms" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Brädbyggaren" data-en="Board Builder">Board Builder</span></h3>
+<p data-sv="Skapa AKK-kommunikationsbrädor med piktogram" data-en="Create AAC communication boards with pictograms">Create AAC communication boards with pictograms</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/talk-board" class="app-card" data-en-search="Talk Board Interactive communication board — tap to speak" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Pratbrädan" data-en="Talk Board">Talk Board</span></h3>
+<p data-sv="Interaktivt kommunikationsbräde — tryck för att tala" data-en="Interactive communication board — tap to speak">Interactive communication board — tap to speak</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/situation-cards" class="app-card" data-en-search="Situation Cards Ready-made topic boards for everyday situations" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Situationskartor" data-en="Situation Cards">Situation Cards</span></h3>
+<p data-sv="Färdiga temabrädor för vardagssituationer" data-en="Ready-made topic boards for everyday situations">Ready-made topic boards for everyday situations</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/talking-mat" class="app-card" data-en-search="Talking Mat Express opinions by sorting pictures into zones" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Samtalsmatta" data-en="Talking Mat">Talking Mat</span></h3>
+<p data-sv="Uttryck åsikter genom att sortera bilder i zoner" data-en="Express opinions by sorting pictures into zones">Express opinions by sorting pictures into zones</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/pecs-trainer" class="app-card" data-en-search="PECS Trainer Practice picture exchange communication" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="PECS-övning" data-en="PECS Trainer">PECS Trainer</span></h3>
+<p data-sv="Träna bildutbyteskommunikation" data-en="Practice picture exchange communication">Practice picture exchange communication</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/point-talk" class="app-card" data-en-search="Point Talk Aided language stimulation — learn by pointing" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Pekprat" data-en="Point Talk">Point Talk</span></h3>
+<p data-sv="Stödd språkstimulering — lär genom att peka" data-en="Aided language stimulation — learn by pointing">Aided language stimulation — learn by pointing</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/phrase-builder" class="app-card" data-en-search="Phrase Builder Build sentences with pictograms" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Frasbyggaren" data-en="Phrase Builder">Phrase Builder</span></h3>
+<p data-sv="Bygg meningar med piktogram" data-en="Build sentences with pictograms">Build sentences with pictograms</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/pecs-board" class="app-card" data-en-search="PECS Board Picture exchange communication boards" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="PECS-bräda" data-en="PECS Board">PECS Board</span></h3>
+<p data-sv="Kommunikationstavlor med bilder" data-en="Picture exchange communication boards">Picture exchange communication boards</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/sentence-strip" class="app-card" data-en-search="Sentence Strip Build sentences with PECS sentence strips (Phase IV-VI)" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Meningsremsan" data-en="Sentence Strip">Sentence Strip</span></h3>
+<p data-sv="Bygg meningar med PECS-meningsremsor (fas IV-VI)" data-en="Build sentences with PECS sentence strips (Phase IV-VI)">Build sentences with PECS sentence strips (Phase IV-VI)</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/symbol-text" class="app-card" data-en-search="Symbol Text Type text and see pictograms above each word" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Symboltext" data-en="Symbol Text">Symbol Text</span></h3>
+<p data-sv="Skriv text och se piktogram ovanför varje ord" data-en="Type text and see pictograms above each word">Type text and see pictograms above each word</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/comm-book" class="app-card" data-en-search="Communication Book Digital communication book with tabs, photos and pictograms" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Kommunikationsboken" data-en="Communication Book">Communication Book</span></h3>
+<p data-sv="Digital kommunikationsbok med flikar, foton och piktogram" data-en="Digital communication book with tabs, photos and pictograms">Digital communication book with tabs, photos and pictograms</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/conversation-aid" class="app-card" data-en-search="Conversation Aid Ready-made phrases for conversations" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Samtalsstöd" data-en="Conversation Aid">Conversation Aid</span></h3>
+<p data-sv="Färdiga fraser för samtal" data-en="Ready-made phrases for conversations">Ready-made phrases for conversations</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/social-stories" class="app-card" data-en-search="Social Stories Visual stories for everyday situations" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Sociala berättelser" data-en="Social Stories">Social Stories</span></h3>
+<p data-sv="Visuella berättelser för vardagssituationer" data-en="Visual stories for everyday situations">Visual stories for everyday situations</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/day-planner" class="app-card" data-en-search="Day Planner Plan your day with visual timeline" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Dagsplanerare" data-en="Day Planner">Day Planner</span></h3>
+<p data-sv="Planera din dag med visuell tidslinje" data-en="Plan your day with visual timeline">Plan your day with visual timeline</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/picture-schedule" class="app-card" data-en-search="Picture Schedule Create visual daily schedules with pictures" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Bildschema" data-en="Picture Schedule">Picture Schedule</span></h3>
+<p data-sv="Skapa visuella dagsscheman med bilder" data-en="Create visual daily schedules with pictures">Create visual daily schedules with pictures</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/my-schedule" class="app-card" data-en-search="My Schedule Create your own visual schedule" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Mitt schema" data-en="My Schedule">My Schedule</span></h3>
+<p data-sv="Skapa ditt eget visuella schema" data-en="Create your own visual schedule">Create your own visual schedule</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/routine-buddy" class="app-card" data-en-search="Routine Buddy Step-by-step daily routines" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Rutinkompis" data-en="Routine Buddy">Routine Buddy</span></h3>
+<p data-sv="Steg-för-steg-rutiner för varje dag" data-en="Step-by-step daily routines">Step-by-step daily routines</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/step-guide" class="app-card" data-en-search="Step Guide Break tasks into clear visual steps" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Stegvisaren" data-en="Step Guide">Step Guide</span></h3>
+<p data-sv="Dela upp uppgifter i tydliga visuella steg" data-en="Break tasks into clear visual steps">Break tasks into clear visual steps</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/visual-support" class="app-card" data-en-search="Visual Support Visual schedules with step-by-step routines" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Bildstöd" data-en="Visual Support">Visual Support</span></h3>
+<p data-sv="Visuella scheman med steg-för-steg-rutiner" data-en="Visual schedules with step-by-step routines">Visual schedules with step-by-step routines</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/clothes-chooser" class="app-card" data-en-search="Clothes Chooser Help choosing clothes based on weather and activity" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Klädväljaren" data-en="Clothes Chooser">Clothes Chooser</span></h3>
+<p data-sv="Hjälp att välja kläder efter väder och aktivitet" data-en="Help choosing clothes based on weather and activity">Help choosing clothes based on weather and activity</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/cooking-helper" class="app-card" data-en-search="Cooking Helper Visual cooking instructions step by step" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Matlagaren" data-en="Cooking Helper">Cooking Helper</span></h3>
+<p data-sv="Visuella matlagningsinstruktioner steg för steg" data-en="Visual cooking instructions step by step">Visual cooking instructions step by step</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/visual-timer" class="app-card" data-en-search="Visual Timer Visual countdown with first-then support" data-cat="time">
+<h3><span class="cat-dot" style="background:#27AE60"></span><span data-sv="Visuell timer" data-en="Visual Timer">Visual Timer</span></h3>
+<p data-sv="Visuell nedräkning med först-sedan-stöd" data-en="Visual countdown with first-then support">Visual countdown with first-then support</p>
+<div class="tags"><span class="tag" data-sv="Tid och planering" data-en="Time &amp; planning">Time & planning</span></div>
+</a>
+<a href="/launcher/apps/time-tracker" class="app-card" data-en-search="Time Tracker Visual timer for activities" data-cat="time">
+<h3><span class="cat-dot" style="background:#27AE60"></span><span data-sv="Tidskollen" data-en="Time Tracker">Time Tracker</span></h3>
+<p data-sv="Visuell timer för aktiviteter" data-en="Visual timer for activities">Visual timer for activities</p>
+<div class="tags"><span class="tag" data-sv="Tid och planering" data-en="Time &amp; planning">Time & planning</span></div>
+</a>
+<a href="/launcher/apps/clock-teacher" class="app-card" data-en-search="Clock Teacher Learn to read analog and digital clocks" data-cat="time">
+<h3><span class="cat-dot" style="background:#27AE60"></span><span data-sv="Klockläraren" data-en="Clock Teacher">Clock Teacher</span></h3>
+<p data-sv="Lär dig läsa analoga och digitala klockor" data-en="Learn to read analog and digital clocks">Learn to read analog and digital clocks</p>
+<div class="tags"><span class="tag" data-sv="Tid och planering" data-en="Time &amp; planning">Time & planning</span></div>
+</a>
+<a href="/launcher/apps/break-check" class="app-card" data-en-search="Break Check Regular break reminders with activities" data-cat="time">
+<h3><span class="cat-dot" style="background:#27AE60"></span><span data-sv="Pauskollen" data-en="Break Check">Break Check</span></h3>
+<p data-sv="Regelbundna pausåminnelser med aktiviteter" data-en="Regular break reminders with activities">Regular break reminders with activities</p>
+<div class="tags"><span class="tag" data-sv="Tid och planering" data-en="Time &amp; planning">Time & planning</span></div>
+</a>
+<a href="/launcher/apps/practice-board" class="app-card" data-en-search="Practice Board Track practice sessions and progress" data-cat="time">
+<h3><span class="cat-dot" style="background:#27AE60"></span><span data-sv="Övningstavlan" data-en="Practice Board">Practice Board</span></h3>
+<p data-sv="Spåra övningstillfällen och framsteg" data-en="Track practice sessions and progress">Track practice sessions and progress</p>
+<div class="tags"><span class="tag" data-sv="Tid och planering" data-en="Time &amp; planning">Time & planning</span></div>
+</a>
+<a href="/launcher/apps/sign-dictionary" class="app-card" data-en-search="Sign Dictionary Learn Swedish Sign Language with video" data-cat="communication">
+<h3><span class="cat-dot" style="background:#E67E22"></span><span data-sv="Teckenordbok" data-en="Sign Dictionary">Sign Dictionary</span></h3>
+<p data-sv="Lär dig svenskt teckenspråk med video" data-en="Learn Swedish Sign Language with video">Learn Swedish Sign Language with video</p>
+<div class="tags"><span class="tag" data-sv="Kommunikation" data-en="Communication">Communication</span></div>
+</a>
+<a href="/launcher/apps/school-day" class="app-card" data-en-search="School Day Follow your school day schedule" data-cat="time">
+<h3><span class="cat-dot" style="background:#27AE60"></span><span data-sv="Skoldagen" data-en="School Day">School Day</span></h3>
+<p data-sv="Följ ditt skolschema" data-en="Follow your school day schedule">Follow your school day schedule</p>
+<div class="tags"><span class="tag" data-sv="Tid och planering" data-en="Time &amp; planning">Time & planning</span></div>
+</a>
+<a href="/launcher/apps/emotion-map" class="app-card" data-en-search="Emotion Map Identify and express emotions with pictures" data-cat="emotions">
+<h3><span class="cat-dot" style="background:#9B59B6"></span><span data-sv="Känslokartan" data-en="Emotion Map">Emotion Map</span></h3>
+<p data-sv="Identifiera och uttryck känslor med bilder" data-en="Identify and express emotions with pictures">Identify and express emotions with pictures</p>
+<div class="tags"><span class="tag" data-sv="Känslor och lugn" data-en="Feelings &amp; calm">Feelings & calm</span></div>
+</a>
+<a href="/launcher/apps/calm-room" class="app-card" data-en-search="Calm Room Calming activities and sensory tools" data-cat="emotions">
+<h3><span class="cat-dot" style="background:#9B59B6"></span><span data-sv="Lugnarummet" data-en="Calm Room">Calm Room</span></h3>
+<p data-sv="Lugnande aktiviteter och sinnesverktyg" data-en="Calming activities and sensory tools">Calming activities and sensory tools</p>
+<div class="tags"><span class="tag" data-sv="Känslor och lugn" data-en="Feelings &amp; calm">Feelings & calm</span></div>
+</a>
+<a href="/launcher/apps/focus-buddy" class="app-card" data-en-search="Focus Buddy Pomodoro timer with task list and parked thoughts" data-cat="emotions">
+<h3><span class="cat-dot" style="background:#9B59B6"></span><span data-sv="Fokuskompis" data-en="Focus Buddy">Focus Buddy</span></h3>
+<p data-sv="Hjälp att behålla fokus med timers och belöningar" data-en="Pomodoro timer with task list and parked thoughts">Pomodoro timer with task list and parked thoughts</p>
+<div class="tags"><span class="tag" data-sv="Känslor och lugn" data-en="Feelings &amp; calm">Feelings & calm</span></div>
+</a>
+<a href="/launcher/apps/energy-meter" class="app-card" data-en-search="Energy Meter Track energy levels throughout the day" data-cat="emotions">
+<h3><span class="cat-dot" style="background:#9B59B6"></span><span data-sv="Energimätaren" data-en="Energy Meter">Energy Meter</span></h3>
+<p data-sv="Spåra energinivåer under dagen" data-en="Track energy levels throughout the day">Track energy levels throughout the day</p>
+<div class="tags"><span class="tag" data-sv="Känslor och lugn" data-en="Feelings &amp; calm">Feelings & calm</span></div>
+</a>
+<a href="/launcher/apps/anger-manager" class="app-card" data-en-search="Anger Manager Anger thermometer with calming strategies" data-cat="emotions">
+<h3><span class="cat-dot" style="background:#9B59B6"></span><span data-sv="Ilskehanteraren" data-en="Anger Manager">Anger Manager</span></h3>
+<p data-sv="Ilsketermometer med lugnande strategier" data-en="Anger thermometer with calming strategies">Anger thermometer with calming strategies</p>
+<div class="tags"><span class="tag" data-sv="Känslor och lugn" data-en="Feelings &amp; calm">Feelings & calm</span></div>
+</a>
+<a href="/launcher/apps/reward-chart" class="app-card" data-en-search="Reward Chart Earn stars for good habits" data-cat="emotions">
+<h3><span class="cat-dot" style="background:#9B59B6"></span><span data-sv="Belöningskartan" data-en="Reward Chart">Reward Chart</span></h3>
+<p data-sv="Tjäna stjärnor för goda vanor" data-en="Earn stars for good habits">Earn stars for good habits</p>
+<div class="tags"><span class="tag" data-sv="Känslor och lugn" data-en="Feelings &amp; calm">Feelings & calm</span></div>
+</a>
+<a href="/launcher/apps/word-builder" class="app-card" data-en-search="Word Builder Build words letter by letter" data-cat="learning">
+<h3><span class="cat-dot" style="background:#B09000"></span><span data-sv="Ordbyggaren" data-en="Word Builder">Word Builder</span></h3>
+<p data-sv="Bygg ord bokstav för bokstav" data-en="Build words letter by letter">Build words letter by letter</p>
+<div class="tags"><span class="tag" data-sv="Lärande" data-en="Learning">Learning</span></div>
+</a>
+<a href="/launcher/apps/sentence-builder" class="app-card" data-en-search="Sentence Builder Build sentences with color-coded words" data-cat="learning">
+<h3><span class="cat-dot" style="background:#B09000"></span><span data-sv="Meningsbyggaren" data-en="Sentence Builder">Sentence Builder</span></h3>
+<p data-sv="Bygg meningar med färgkodade ord" data-en="Build sentences with color-coded words">Build sentences with color-coded words</p>
+<div class="tags"><span class="tag" data-sv="Lärande" data-en="Learning">Learning</span></div>
+</a>
+<a href="/launcher/apps/letter-journey" class="app-card" data-en-search="Letter Journey Learn letters with phonetics and animation" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Bokstavsresan" data-en="Letter Journey">Letter Journey</span></h3>
+<p data-sv="Lär dig bokstäver med fonetik och animation" data-en="Learn letters with phonetics and animation">Learn letters with phonetics and animation</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/oral-motor" class="app-card" data-en-search="Oral Motor Practice oral motor movements for speech — tongue, lips, jaw and breathing" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Munmotoriken" data-en="Oral Motor">Oral Motor</span></h3>
+<p data-sv="Öva munmotoriska rörelser för tal — tunga, läppar, käke och andning" data-en="Practice oral motor movements for speech — tongue, lips, jaw and breathing">Practice oral motor movements for speech — tongue, lips, jaw and breathing</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/sound-chain" class="app-card" data-en-search="Sound Chain Chain sounds together into syllables and words — visual chain links" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Ljudkedjan" data-en="Sound Chain">Sound Chain</span></h3>
+<p data-sv="Kedja ihop ljud till stavelser och ord — visuella kedjelänkar" data-en="Chain sounds together into syllables and words — visual chain links">Chain sounds together into syllables and words — visual chain links</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/speech-practice" class="app-card" data-en-search="Speech Practice Structured speech training with the DTTC method — listen, imitate, practice" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Pratpraktiken" data-en="Speech Practice">Speech Practice</span></h3>
+<p data-sv="Strukturerad talträning med DTTC-metoden — lyssna, härma, öva" data-en="Structured speech training with the DTTC method — listen, imitate, practice">Structured speech training with the DTTC method — listen, imitate, practice</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/syllable-jump" class="app-card" data-en-search="Syllable Jump Jump through syllables — clap the rhythm and build words" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Stavelsehoppet" data-en="Syllable Jump">Syllable Jump</span></h3>
+<p data-sv="Hoppa genom stavelser — klappa takten och bygg ord" data-en="Jump through syllables — clap the rhythm and build words">Jump through syllables — clap the rhythm and build words</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/picture-dictionary" class="app-card" data-en-search="Picture Dictionary Browse, learn, and quiz yourself on everyday words" data-cat="learning">
+<h3><span class="cat-dot" style="background:#B09000"></span><span data-sv="Bildordbok" data-en="Picture Dictionary">Picture Dictionary</span></h3>
+<p data-sv="Bläddra, lär dig och testa dina kunskaper om vardagliga ord" data-en="Browse, learn, and quiz yourself on everyday words">Browse, learn, and quiz yourself on everyday words</p>
+<div class="tags"><span class="tag" data-sv="Lärande" data-en="Learning">Learning</span></div>
+</a>
+<a href="/launcher/apps/math-aid" class="app-card" data-en-search="Math Aid Visual math with counting objects" data-cat="learning">
+<h3><span class="cat-dot" style="background:#B09000"></span><span data-sv="Räknestöd" data-en="Math Aid">Math Aid</span></h3>
+<p data-sv="Visuell matte med konkreta föremål" data-en="Visual math with counting objects">Visual math with counting objects</p>
+<div class="tags"><span class="tag" data-sv="Lärande" data-en="Learning">Learning</span></div>
+</a>
+<a href="/launcher/apps/counting" class="app-card" data-en-search="Counting Visual counting with concrete objects" data-cat="learning">
+<h3><span class="cat-dot" style="background:#B09000"></span><span data-sv="Räkning" data-en="Counting">Counting</span></h3>
+<p data-sv="Visuell räkning med konkreta föremål" data-en="Visual counting with concrete objects">Visual counting with concrete objects</p>
+<div class="tags"><span class="tag" data-sv="Lärande" data-en="Learning">Learning</span></div>
+</a>
+<a href="/launcher/apps/money-check" class="app-card" data-en-search="Money Check Learn about money and making change" data-cat="learning">
+<h3><span class="cat-dot" style="background:#B09000"></span><span data-sv="Pengakollen" data-en="Money Check">Money Check</span></h3>
+<p data-sv="Lär dig om pengar och att ge tillbaka växel" data-en="Learn about money and making change">Learn about money and making change</p>
+<div class="tags"><span class="tag" data-sv="Lärande" data-en="Learning">Learning</span></div>
+</a>
+<a href="/launcher/apps/memory-game" class="app-card" data-en-search="Memory Game Match pairs to train memory" data-cat="play">
+<h3><span class="cat-dot" style="background:#E74C3C"></span><span data-sv="Minnesspel" data-en="Memory Game">Memory Game</span></h3>
+<p data-sv="Matcha par och träna minnet" data-en="Match pairs to train memory">Match pairs to train memory</p>
+<div class="tags"><span class="tag" data-sv="Lek och minne" data-en="Play &amp; memory">Play & memory</span></div>
+</a>
+<a href="/launcher/apps/sound-library" class="app-card" data-en-search="Sound Library Explore fun sounds by category" data-cat="play">
+<h3><span class="cat-dot" style="background:#E74C3C"></span><span data-sv="Ljudlådan" data-en="Sound Library">Sound Library</span></h3>
+<p data-sv="Utforska roliga ljud efter kategori" data-en="Explore fun sounds by category">Explore fun sounds by category</p>
+<div class="tags"><span class="tag" data-sv="Lek och minne" data-en="Play &amp; memory">Play & memory</span></div>
+</a>
+<a href="/launcher/apps/diary" class="app-card" data-en-search="Diary Visual diary with pictures and text" data-cat="emotions">
+<h3><span class="cat-dot" style="background:#9B59B6"></span><span data-sv="Dagboken" data-en="Diary">Diary</span></h3>
+<p data-sv="Visuell dagbok med bilder och text" data-en="Visual diary with pictures and text">Visual diary with pictures and text</p>
+<div class="tags"><span class="tag" data-sv="Känslor och lugn" data-en="Feelings &amp; calm">Feelings & calm</span></div>
+</a>
+<a href="/launcher/apps/chooser" class="app-card" data-en-search="Chooser Help making choices between options" data-cat="play">
+<h3><span class="cat-dot" style="background:#E74C3C"></span><span data-sv="Väljaren" data-en="Chooser">Chooser</span></h3>
+<p data-sv="Hjälp att göra val mellan alternativ" data-en="Help making choices between options">Help making choices between options</p>
+<div class="tags"><span class="tag" data-sv="Lek och minne" data-en="Play &amp; memory">Play & memory</span></div>
+</a>
+<a href="/launcher/apps/speech-rhythm" class="app-card" data-en-search="Speech Rhythm Prosody and rhythm training for CAS — tap along, stress patterns and intonation" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Talrytmen" data-en="Speech Rhythm">Speech Rhythm</span></h3>
+<p data-sv="Prosodi- och rytmträning för verbal dyspraxi — tappa takten, betoningsmönster och intonation" data-en="Prosody and rhythm training for CAS — tap along, stress patterns and intonation">Prosody and rhythm training for CAS — tap along, stress patterns and intonation</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/sound-lottery" class="app-card" data-en-search="Sound Lottery Randomized phoneme practice — spin the wheel and practice sounds in isolation → syllable → word → sentence" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Ljudlotteriet" data-en="Sound Lottery">Sound Lottery</span></h3>
+<p data-sv="Slumpad fonemträning — snurra hjulet och öva ljud i isolering → stavelse → ord → mening" data-en="Randomized phoneme practice — spin the wheel and practice sounds in isolation → syllable → word → sentence">Randomized phoneme practice — spin the wheel and practice sounds in isolation → syllable → word → sentence</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/mouth-gym" class="app-card" data-en-search="Mouth Gym Animated visual guides for tongue, lips and jaw — based on PROMPT therapy" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Mungymnastiken" data-en="Mouth Gym">Mouth Gym</span></h3>
+<p data-sv="Animerade visuella guider för tunga, läppar och käke — baserad på PROMPT-terapi" data-en="Animated visual guides for tongue, lips and jaw — based on PROMPT therapy">Animated visual guides for tongue, lips and jaw — based on PROMPT therapy</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/word-parade" class="app-card" data-en-search="Word Parade Minimal pairs — words that differ by one sound. Critical phonological training" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Ordparaden" data-en="Word Parade">Word Parade</span></h3>
+<p data-sv="Minimala par — ord som skiljer sig med ett ljud (bil/pil). Kritisk fonologisk träning" data-en="Minimal pairs — words that differ by one sound. Critical phonological training">Minimal pairs — words that differ by one sound. Critical phonological training</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/story-workshop" class="app-card" data-en-search="Story Workshop Narrative speech practice — build simple stories with picture sequences and practice telling them" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Berättarverkstan" data-en="Story Workshop">Story Workshop</span></h3>
+<p data-sv="Narrativ talträning — bygg enkla berättelser med bildsekvenser och öva berätta dem" data-en="Narrative speech practice — build simple stories with picture sequences and practice telling them">Narrative speech practice — build simple stories with picture sequences and practice telling them</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/sagostunden" class="app-card" data-en-search="Story Time Create fun stories by choosing words and pictures" data-cat="play">
+<h3><span class="cat-dot" style="background:#E74C3C"></span><span data-sv="Sagostunden" data-en="Story Time">Story Time</span></h3>
+<p data-sv="Skapa roliga sagor genom att välja ord och bilder" data-en="Create fun stories by choosing words and pictures">Create fun stories by choosing words and pictures</p>
+<div class="tags"><span class="tag" data-sv="Lek och minne" data-en="Play &amp; memory">Play & memory</span></div>
+</a>
+<a href="/launcher/apps/the-mimic" class="app-card" data-en-search="The Mimic Listen and repeat with increasing complexity — sounds → words → phrases → sentences. Core DTTC technique" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Efterhärmaren" data-en="The Mimic">The Mimic</span></h3>
+<p data-sv="Lyssna och upprepa med ökande komplexitet — ljud → ord → fraser → meningar. Kärn-DTTC-teknik" data-en="Listen and repeat with increasing complexity — sounds → words → phrases → sentences. Core DTTC technique">Listen and repeat with increasing complexity — sounds → words → phrases → sentences. Core DTTC technique</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/rest-trainer" class="app-card" data-en-search="Syllable Transitions Practice smooth transitions between syllables" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Stavelseövergångar" data-en="Syllable Transitions">Syllable Transitions</span></h3>
+<p data-sv="Träna smidiga övergångar mellan stavelser" data-en="Practice smooth transitions between syllables">Practice smooth transitions between syllables</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/prosody-trainer" class="app-card" data-en-search="Prosody Training Practice speech melody, stress, and rhythm" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Prosoditräning" data-en="Prosody Training">Prosody Training</span></h3>
+<p data-sv="Träna talmelodi, betoning och rytm" data-en="Practice speech melody, stress, and rhythm">Practice speech melody, stress, and rhythm</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/melody-therapy" class="app-card" data-en-search="Melody Therapy Melodic Intonation Therapy — sing to learn to speak" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Meloditerapi" data-en="Melody Therapy">Melody Therapy</span></h3>
+<p data-sv="Melodisk intonationsterapi — sjunga för att lära sig tala" data-en="Melodic Intonation Therapy — sing to learn to speak">Melodic Intonation Therapy — sing to learn to speak</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/mouth-motor" class="app-card" data-en-search="Mouth Motor Visual articulation guide — see WHERE to place tongue, lips and jaw for each Swedish sound" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Munmotorik" data-en="Mouth Motor">Mouth Motor</span></h3>
+<p data-sv="Visuell artikulationsguide — se VAR tungan, läpparna och käken ska vara för varje svenskt ljud" data-en="Visual articulation guide — see WHERE to place tongue, lips and jaw for each Swedish sound">Visual articulation guide — see WHERE to place tongue, lips and jaw for each Swedish sound</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/tongue-viewer" class="app-card" data-en-search="Tongue Viewer Animated tongue position simulator" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="Tungvisaren" data-en="Tongue Viewer">Tongue Viewer</span></h3>
+<p data-sv="Animerad tungpositions-simulator" data-en="Animated tongue position simulator">Animated tongue position simulator</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/prompt-guide" class="app-card" data-en-search="PROMPT Guide Tactile cues for speech therapy" data-cat="speech">
+<h3><span class="cat-dot" style="background:#E91E63"></span><span data-sv="PROMPT-guide" data-en="PROMPT Guide">PROMPT Guide</span></h3>
+<p data-sv="Taktila ledtrådar för talterapi" data-en="Tactile cues for speech therapy">Tactile cues for speech therapy</p>
+<div class="tags"><span class="tag" data-sv="Talträning" data-en="Speech practice">Speech practice</span></div>
+</a>
+<a href="/launcher/apps/perspective-taking" class="app-card" data-en-search="Perspective Taking Understand other people&#x27;s thoughts, feelings, and perspectives" data-cat="social">
+<h3><span class="cat-dot" style="background:#55776A"></span><span data-sv="Perspektivtagande" data-en="Perspective Taking">Perspective Taking</span></h3>
+<p data-sv="Förstå andras tankar, känslor och perspektiv" data-en="Understand other people&#x27;s thoughts, feelings, and perspectives">Understand other people's thoughts, feelings, and perspectives</p>
+<div class="tags"><span class="tag" data-sv="Socialt samspel" data-en="Social interaction">Social interaction</span></div>
+</a>
+<a href="/launcher/apps/sequence-trainer" class="app-card" data-en-search="Sequence Training Arrange events in the correct order" data-cat="learning">
+<h3><span class="cat-dot" style="background:#B09000"></span><span data-sv="Sekvensträning" data-en="Sequence Training">Sequence Training</span></h3>
+<p data-sv="Ordna händelser i rätt ordning" data-en="Arrange events in the correct order">Arrange events in the correct order</p>
+<div class="tags"><span class="tag" data-sv="Lärande" data-en="Learning">Learning</span></div>
+</a>
+<a href="/launcher/apps/category-sort" class="app-card" data-en-search="Category Sort Sort pictures into the right categories" data-cat="learning">
+<h3><span class="cat-dot" style="background:#B09000"></span><span data-sv="Sortera kategorier" data-en="Category Sort">Category Sort</span></h3>
+<p data-sv="Sortera bilder i rätt kategori" data-en="Sort pictures into the right categories">Sort pictures into the right categories</p>
+<div class="tags"><span class="tag" data-sv="Lärande" data-en="Learning">Learning</span></div>
+</a>
+<a href="/launcher/apps/sound-sensitivity" class="app-card" data-en-search="Sound Sensitivity Manage sound sensitivity — log triggers, learn coping strategies, and practice gradual exposure" data-cat="emotions">
+<h3><span class="cat-dot" style="background:#9B59B6"></span><span data-sv="Ljudkänslighet" data-en="Sound Sensitivity">Sound Sensitivity</span></h3>
+<p data-sv="Hantera ljudkänslighet — logga triggers, lär dig strategier och öva gradvis exponering" data-en="Manage sound sensitivity — log triggers, learn coping strategies, and practice gradual exposure">Manage sound sensitivity — log triggers, learn coping strategies, and practice gradual exposure</p>
+<div class="tags"><span class="tag" data-sv="Känslor och lugn" data-en="Feelings &amp; calm">Feelings & calm</span></div>
+</a>
+<a href="/launcher/apps/sensory-profile" class="app-card" data-en-search="Sensory Profile Map sensory needs and build a sensory diet" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Sensorisk profil" data-en="Sensory Profile">Sensory Profile</span></h3>
+<p data-sv="Kartlägg sensoriska behov och bygg en sensorisk diet" data-en="Map sensory needs and build a sensory diet">Map sensory needs and build a sensory diet</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/transition-helper" class="app-card" data-en-search="Transition Helper Visual support for activity changes" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Övergångshjälpen" data-en="Transition Helper">Transition Helper</span></h3>
+<p data-sv="Visuellt stöd vid aktivitetsbyten" data-en="Visual support for activity changes">Visual support for activity changes</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/time-perception" class="app-card" data-en-search="Time Perception Understand abstract time concepts through visual activities" data-cat="learning">
+<h3><span class="cat-dot" style="background:#B09000"></span><span data-sv="Tidsuppfattning" data-en="Time Perception">Time Perception</span></h3>
+<p data-sv="Förstå abstrakta tidsbegrepp genom visuella aktiviteter" data-en="Understand abstract time concepts through visual activities">Understand abstract time concepts through visual activities</p>
+<div class="tags"><span class="tag" data-sv="Lärande" data-en="Learning">Learning</span></div>
+</a>
+<a href="/launcher/apps/planning-trainer" class="app-card" data-en-search="Planning Trainer Executive function training — break down tasks, estimate time and prioritize" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Planeringsträning" data-en="Planning Trainer">Planning Trainer</span></h3>
+<p data-sv="Träning av exekutiva funktioner — bryt ner uppgifter, uppskatta tid och prioritera" data-en="Executive function training — break down tasks, estimate time and prioritize">Executive function training — break down tasks, estimate time and prioritize</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+<a href="/launcher/apps/fine-motor" class="app-card" data-en-search="Fine Motor Fine motor skills training — finger exercises, tracing and pattern copying" data-cat="play">
+<h3><span class="cat-dot" style="background:#E74C3C"></span><span data-sv="Finmotorik" data-en="Fine Motor">Fine Motor</span></h3>
+<p data-sv="Finmotorikträning — fingerövningar, spåra och kopiera mönster" data-en="Fine motor skills training — finger exercises, tracing and pattern copying">Fine motor skills training — finger exercises, tracing and pattern copying</p>
+<div class="tags"><span class="tag" data-sv="Lek och minne" data-en="Play &amp; memory">Play & memory</span></div>
+</a>
+<a href="/launcher/apps/traffic-safety" class="app-card" data-en-search="Traffic Safety Learn road safety with traffic lights, signs, and vehicles" data-cat="daily">
+<h3><span class="cat-dot" style="background:#3498DB"></span><span data-sv="Trafiksäkerhet" data-en="Traffic Safety">Traffic Safety</span></h3>
+<p data-sv="Lär dig trafiksäkerhet med trafikljus, skyltar och fordon" data-en="Learn road safety with traffic lights, signs, and vehicles">Learn road safety with traffic lights, signs, and vehicles</p>
+<div class="tags"><span class="tag" data-sv="Vardagsstöd" data-en="Daily support">Daily support</span></div>
+</a>
+</div><div class="empty-state" id="empty-state" data-sv="Inga verktyg hittades. Prova ett annat ord eller område." data-en="No tools found. Try another word or topic.">No tools found. Try another word or topic.</div>
+      <div class="catalog-foot"><a class="all-apps-link" href="/launcher/" data-sv="Visa hela biblioteket i appöversikten →" data-en="See the full library in the app overview →">See the full library in the app overview →</a></div>
+    </div></section>
+  <section class="about-band"><div class="section about-content"><div><div class="quote-mark">“</div><blockquote data-sv="Bra stöd börjar med att lyssna på vad som fungerar för varje person." data-en="Good support starts by listening to what works for each person.">Good support starts by listening to what works for each person.</blockquote><p data-sv="Autismappar växte fram ur vardagen som förälder. Målet är enkelt: fler användbara verktyg ska finnas nära till hands, utan kostnad eller krångel." data-en="Autismapps grew from everyday life as a parent. The goal is simple: useful tools should be within reach, without cost or hassle.">Autismapps grew from everyday life as a parent. The goal is simple: useful tools should be within reach, without cost or hassle.</p><div class="author"><div class="avatar">DN</div><div><b>Daniel Nylander</b><span data-sv="Grundare och utvecklare" data-en="Founder and developer">Founder and developer</span></div></div></div>
+      <div class="about-links"><a href="om.html" class="about-link"><i>↗</i><b data-sv="Om projektet" data-en="About the project">About the project</b><span data-sv="Bakgrunden och tankarna bakom" data-en="The story and ideas behind it">The story and ideas behind it</span></a><a href="/launcher/instruktioner/" class="about-link"><i>⌘</i><b data-sv="Kom igång" data-en="Getting started">Getting started</b><span data-sv="Så använder du verktygen" data-en="How to use the tools">How to use the tools</span></a><a href="/launcher/material/" class="about-link"><i>▤</i><b data-sv="Utskriftsmaterial" data-en="Printable resources">Printable resources</b><span data-sv="Stöd att använda även utan skärm" data-en="Support to use away from screens">Support to use away from screens</span></a><a href="dataskydd.html" class="about-link"><i>⌑</i><b data-sv="Integritet" data-en="Privacy">Privacy</b><span data-sv="Läs om data och dataskydd" data-en="Read about data and privacy">Read about data and privacy</span></a></div>
+  </div></section>
+  <section class="closing"><h2 data-sv="Hitta ett verktyg som gör dagen lite enklare." data-en="Find a tool that makes today a little easier.">Find a tool that makes today a little easier.</h2><p data-sv="Börja när det passar dig. Inget konto behövs." data-en="Start whenever it suits you. No account needed.">Start whenever it suits you. No account needed.</p><a href="/launcher/" class="button"><span data-sv="Utforska alla verktyg" data-en="Explore all tools">Explore all tools</span> →</a></section>
+</main>
+<footer class="site-footer"><a href="/" class="footer-brand" data-brand-name data-sv="autismappar" data-en="autismapps">autismapps</a><div class="footer-links"><a href="om.html" data-sv="Om" data-en="About">About</a><a href="/launcher/material/" data-sv="Material" data-en="Resources">Resources</a><a href="blogg.html" data-sv="Nyheter" data-en="Updates">Updates</a><a href="dataskydd.html" data-sv="Dataskydd" data-en="Privacy">Privacy</a><a href="https://github.com/yeager/autismapps">GitHub</a></div><span>© 2026 Daniel Nylander</span></footer>
+<script>
+(()=>{const cards=[...document.querySelectorAll('.app-card')],buttons=[...document.querySelectorAll('.filter-btn')],search=document.querySelector('#app-search'),count=document.querySelector('#results-count'),empty=document.querySelector('#empty-state');let category='all',lang='sv';
+function update(){const q=search.value.trim().toLocaleLowerCase(lang==='sv'?'sv':'en');let visible=0;for(const card of cards){const text=(card.textContent+' '+(card.dataset.enSearch||'')).toLocaleLowerCase(lang==='sv'?'sv':'en');const show=(category==='all'||card.dataset.cat===category)&&(!q||text.includes(q));card.hidden=!show;if(show)visible++}count.textContent=lang==='en'?`${visible} tools shown`:`Visar ${visible} verktyg`;empty.style.display=visible?'none':'block'}
+buttons.forEach(btn=>btn.addEventListener('click',()=>{category=btn.dataset.category;buttons.forEach(b=>b.classList.toggle('active',b===btn));update()}));search.addEventListener('input',update);
+document.querySelectorAll('[data-filter-link]').forEach(link=>link.addEventListener('click',()=>{category=link.dataset.filterLink;document.querySelector('#verktyg').scrollIntoView({behavior:'smooth'});buttons.forEach(b=>b.classList.toggle('active',b.dataset.category===category));update()}));
+const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
+function setPageMetadata(next){
+  const english=next==='en';
+  const domain=english?'https://autismapps.online':'https://autismappar.se';
+  const title=english?'Autismapps — tools for everyday life':'Autismappar – verktyg för en enklare vardag';
+  const description=english
+    ?'Free digital tools for communication, routines and learning. Made with care for different ways of thinking and communicating.'
+    :'Upptäck kostnadsfria digitala verktyg för kommunikation, struktur och lärande. Skapade med omtanke för olika sätt att fungera.';
+  const socialDescription=english
+    ?'Free digital tools for communication, routines and learning. For families, schools and support professionals.'
+    :'Gratis digitala verktyg för kommunikation, struktur och lärande. För familjer, skolor och stödpersoner.';
+  document.title=title;
+  document.querySelector('meta[name="description"]').content=description;
+  document.querySelector('meta[property="og:title"]').content=title;
+  document.querySelector('meta[property="og:site_name"]').content=english?'Autismapps':'Autismappar';
+  document.querySelector('meta[property="og:locale"]').content=english?'en_US':'sv_SE';
+  document.querySelector('meta[property="og:locale:alternate"]').content=english?'sv_SE':'en_US';
+  document.querySelector('meta[property="og:description"]').content=socialDescription;
+  document.querySelector('meta[property="og:url"]').content=domain+'/';
+  document.querySelector('meta[name="twitter:title"]').content=title;
+  document.querySelector('meta[name="twitter:description"]').content=socialDescription;
+  document.querySelector('link[rel="canonical"]').href=domain+'/';
+  document.querySelector('link[hreflang="sv"]').href='https://autismappar.se/';
+  document.querySelector('link[hreflang="en"]').href='https://autismapps.online/';
+  document.querySelector('.brand').setAttribute('aria-label',english?'Autismapps home':'Autismappar startsida');
+}
+function setLanguage(next){lang=next;document.documentElement.lang=next;document.querySelectorAll('[data-sv][data-en]').forEach(el=>{const value=el.dataset[next];if(el.tagName==='INPUT')el.placeholder=next==='en'?'Search for a tool…':'Sök efter ett verktyg…';else el.innerHTML=value});document.querySelectorAll('[data-brand-name]').forEach(el=>el.textContent=next==='sv'?'autismappar':'autismapps');document.querySelector('#btn-sv').classList.toggle('active',next==='sv');document.querySelector('#btn-en').classList.toggle('active',next==='en');document.querySelector('.menu-toggle').setAttribute('aria-label',next==='en'?'Open menu':'Öppna meny');search.setAttribute('aria-label',next==='en'?'Search tools':'Sök verktyg');document.querySelectorAll('[data-sv-label][data-en-label]').forEach(el=>el.setAttribute('aria-label',next==='en'?el.dataset.enLabel:el.dataset.svLabel));setPageMetadata(next);try{localStorage.setItem('lang',next)}catch{}update()}
+function goLanguage(next){try{localStorage.setItem('lang',next)}catch{}const productionHosts=['autismappar.se','www.autismappar.se','autismapps.online','www.autismapps.online'];if(!productionHosts.includes(location.hostname.toLowerCase())){setLanguage(next);return}const url=new URL(location.href);url.protocol='https:';url.host=next==='sv'?'autismappar.se':'autismapps.online';url.searchParams.set('lang',next);location.href=url.toString()}document.querySelector('#btn-sv').addEventListener('click',()=>goLanguage('sv'));document.querySelector('#btn-en').addEventListener('click',()=>goLanguage('en'));const currentUrl=new URL(location.href),requestedLang=currentUrl.searchParams.get('lang');let saved='';try{saved=localStorage.getItem('lang')||''}catch{}const isSwedishHost=['autismappar.se','www.autismappar.se'].includes(location.hostname),isEnglishHost=['autismapps.online','www.autismapps.online'].includes(location.hostname),isProductionHost=isSwedishHost||isEnglishHost,preferred=isSwedishHost?'sv':(isEnglishHost?'en':(requestedLang==='sv'||requestedLang==='en'?requestedLang:(saved==='sv'?'sv':(saved?'en':(navigator.language.toLowerCase().startsWith('sv')?'sv':'en')))));if(isProductionHost&&((preferred==='sv'&&!isSwedishHost)||(preferred!=='sv'&&!isEnglishHost))){currentUrl.protocol='https:';currentUrl.host=preferred==='sv'?'autismappar.se':'autismapps.online';currentUrl.searchParams.set('lang',preferred);location.replace(currentUrl.toString())}else{if(requestedLang==='sv'||requestedLang==='en'){currentUrl.searchParams.delete('lang');history.replaceState(null,'',currentUrl.pathname+currentUrl.search+currentUrl.hash)}setLanguage(preferred)}})();
+</script>
+</body>
+</html>

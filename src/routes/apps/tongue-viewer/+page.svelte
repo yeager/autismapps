@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>{$t('tongueViewer.title')}</title>
+  <title>{$t('tongueViewer.title')} — {$t('app.title.brand')}</title>
   <meta name="description" content={$t('tongueViewer.purpose')} />
 </svelte:head>
 

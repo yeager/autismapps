@@ -127,7 +127,7 @@
 </script>
 
 <svelte:head>
-  <title>{$t('sensory.title')}</title>
+  <title>{$t('sensory.title')} — {$t('app.title.brand')}</title>
 </svelte:head>
 
 <WelcomeDialog

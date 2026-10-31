@@ -8,6 +8,7 @@
   import { theme, textSize, reducedMotion, themeClass, textSizeClass } from '$lib/a11y';
   import { speak, preloadVoice } from '$lib/tts';
   import { browser } from '$app/environment';
+  import { requestedLocaleFromParam } from '$lib/i18n/domain-routing.js';
   import { requestServiceWorkerUpdate, watchForServiceWorkerUpdate } from '$lib/pwa/update-check.js';
   import AchievementPopup from '$lib/components/rewards/AchievementPopup.svelte';
   import StarCounter from '$lib/components/rewards/StarCounter.svelte';
@@ -63,9 +64,7 @@
   const saved = browser ? localStorage.getItem('locale') : null;
   const savedReady = saved && isReadyLocale(saved) ? saved : null;
   const requestedLocaleParam = browser ? new URLSearchParams(window.location.search).get('locale') : null;
-  const requestedLocale = requestedLocaleParam === 'pt-BR' || requestedLocaleParam === 'pt_BR'
-    ? 'pt_BR'
-    : null;
+  const requestedLocale = browser ? requestedLocaleFromParam(requestedLocaleParam, domainLocale()) : null;
   const initial = browser
     ? (requestedLocale && isReadyLocale(requestedLocale) ? requestedLocale : null) ||
       (savedReady && !DOMAIN_LOCALES.includes(savedReady) ? savedReady : null) ||
@@ -132,7 +131,14 @@
   if (browser) {
     setLocale(initial).then((code) => {
       localeReady = true;
-      if (requestedLocale && code === requestedLocale) localStorage.setItem('locale', code);
+      if (requestedLocale && code === requestedLocale) {
+        localStorage.setItem('locale', code);
+        const url = new URL(window.location.href);
+        if (url.searchParams.has('locale')) {
+          url.searchParams.delete('locale');
+          window.history.replaceState(window.history.state, '', url);
+        }
+      }
       preloadVoice(code);
     });
   }

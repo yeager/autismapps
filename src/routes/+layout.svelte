@@ -23,7 +23,6 @@
   const currentApp = $derived(ALL_APPS.find((a) => a.route === $page.route.id));
   const PAGE_TITLE_ROUTES = new Set([
     '/instruktioner',
-    '/material',
     '/diploma',
     '/apps/tongue-viewer',
     '/apps/transition-helper',

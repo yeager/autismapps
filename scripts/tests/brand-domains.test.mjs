@@ -14,7 +14,9 @@ test('the resources page title is localized and includes the matching brand', ()
 	assert.equal(messages('sv')['material.title'], 'Material');
 	assert.equal(messages('en')['material.title'], 'Resources');
 	const layout = readFileSync(new URL('../../src/routes/+layout.svelte', import.meta.url), 'utf8');
-	assert.match(layout, /'\/material',[\s\S]*?if \(\$page\.route\.id === '\/material'\) return `\$\{\$t\('material\.title'\)\} · \$\{brand\}`/);
+	const customHeadRoutes = layout.match(/const PAGE_TITLE_ROUTES = new Set\(\[([\s\S]*?)\]\);/)?.[1] ?? '';
+	assert.doesNotMatch(customHeadRoutes, /'\/material'/);
+	assert.match(layout, /if \(\$page\.route\.id === '\/material'\) return `\$\{\$t\('material\.title'\)\} · \$\{brand\}`/);
 });
 
 test('offline setup links point to the matching language domain', () => {

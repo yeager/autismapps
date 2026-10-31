@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Material – autismappar</title>
+  <script>
+    const english = window.location.hostname === 'autismapps.online';
+    document.documentElement.lang = english ? 'en' : 'sv';
+    document.title = english ? 'Resources – autismapps' : 'Material – autismappar';
+    const path = '/launcher/material/';
+    window.location.replace(path + window.location.search + window.location.hash);
+  </script>
+</head>
+<body>
+  <p><span lang="sv">Sidan har flyttat.</span><span lang="en">This page has moved.</span> <a href="/launcher/material/">Öppna materialet</a>.</p>
+  <script>
+    if (window.location.hostname === 'autismapps.online') {
+      document.querySelector('[lang="sv"]').hidden = true;
+      document.querySelector('[lang="en"]').hidden = false;
+      document.querySelector('a').href = '/launcher/material/';
+      document.querySelector('a').textContent = 'Open the resources';
+    }
+  </script>
+</body>
+</html>

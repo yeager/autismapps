@@ -10,6 +10,13 @@ test('Swedish uses Autismappar and every other ready locale uses Autismapps', ()
 	assert.equal(messages('pt_BR')['app.title.brand'], 'Autismapps');
 });
 
+test('the resources page title is localized and includes the matching brand', () => {
+	assert.equal(messages('sv')['material.title'], 'Material');
+	assert.equal(messages('en')['material.title'], 'Resources');
+	const layout = readFileSync(new URL('../../src/routes/+layout.svelte', import.meta.url), 'utf8');
+	assert.match(layout, /'\/material',[\s\S]*?if \(\$page\.route\.id === '\/material'\) return `\$\{\$t\('material\.title'\)\} · \$\{brand\}`/);
+});
+
 test('offline setup links point to the matching language domain', () => {
 	for (const key of ['offline.ios_step1', 'offline.android_step1', 'offline.desktop_step1']) {
 		assert.match(messages('sv')[key], /autismappar\.se/);

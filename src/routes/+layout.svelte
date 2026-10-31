@@ -23,6 +23,7 @@
   const currentApp = $derived(ALL_APPS.find((a) => a.route === $page.route.id));
   const PAGE_TITLE_ROUTES = new Set([
     '/instruktioner',
+    '/material',
     '/diploma',
     '/apps/tongue-viewer',
     '/apps/transition-helper',
@@ -39,6 +40,7 @@
     if (currentApp) return `${$t(currentApp.name)} — ${brand}`;
     if ($page.route.id === '/') return `${brand} — ${$t('home.headline')}`;
     if ($page.route.id === '/instruktioner') return `${$t('instructions.title')} · ${brand}`;
+    if ($page.route.id === '/material') return `${$t('material.title')} · ${brand}`;
     if ($page.route.id === '/diploma') return $t('diploma.page_title');
     if ($page.route.id === '/privacy') return `${$t('about.privacy.title')} · ${brand}`;
     return `${brand} — ${$t('app.subtitle')}`;

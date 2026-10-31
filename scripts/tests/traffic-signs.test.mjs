@@ -10,7 +10,7 @@ const sv = JSON.parse(await readFile(new URL('../../src/lib/i18n/messages/sv.jso
 const en = JSON.parse(await readFile(new URL('../../src/lib/i18n/messages/en.json', import.meta.url), 'utf8'));
 const appLocales = Object.fromEntries(await Promise.all(['sv', 'en', 'pt_BR'].map(async (locale) => [
 	locale,
-	JSON.parse(await readFile(new URL(`../../src/lib/data/i18n-${locale}.json`, import.meta.url), 'utf8'))['traffic-safety']['road-signs']
+	JSON.parse(await readFile(new URL(`../../src/lib/i18n/messages/${locale}.json`, import.meta.url), 'utf8'))['traffic-safety']['road-signs']
 ])));
 const launcherHtaccess = await readFile(new URL('../../deploy/launcher.htaccess', import.meta.url), 'utf8');
 const serviceWorker = await readFile(new URL('../../src/service-worker.ts', import.meta.url), 'utf8');

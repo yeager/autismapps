@@ -8,6 +8,10 @@ const cacheModule = await readFile(new URL('../../src/lib/data/pictogram-cache.j
 const manifest = JSON.parse(await readFile(new URL('../../static/pictograms/traffic-safety/signs/manifest.json', import.meta.url), 'utf8'));
 const sv = JSON.parse(await readFile(new URL('../../src/lib/i18n/messages/sv.json', import.meta.url), 'utf8'));
 const en = JSON.parse(await readFile(new URL('../../src/lib/i18n/messages/en.json', import.meta.url), 'utf8'));
+const appLocales = Object.fromEntries(await Promise.all(['sv', 'en', 'pt_BR'].map(async (locale) => [
+	locale,
+	JSON.parse(await readFile(new URL(`../../src/lib/data/i18n-${locale}.json`, import.meta.url), 'utf8'))['traffic-safety']['road-signs']
+])));
 const launcherHtaccess = await readFile(new URL('../../deploy/launcher.htaccess', import.meta.url), 'utf8');
 const serviceWorker = await readFile(new URL('../../src/service-worker.ts', import.meta.url), 'utf8');
 
@@ -63,6 +67,21 @@ test('children warning and speed-limit cards cannot drift to misleading labels',
 	assert.equal(sv['traffic-safety']['road-signs']['children-warning'], 'Varning för barn');
 	assert.equal(en['traffic-safety']['road-signs']['children-warning'], 'Warning: children');
 	assert.equal(sv['traffic-safety']['road-signs']['speed-limit'], 'Hastighetsbegränsning 30');
+});
+
+test('every road-sign label and spoken explanation exists in the app runtime locales', () => {
+	const swedishSet = component.split('const SIGNS_SE = [')[1]?.split('// Brazilian signs')[0] ?? '';
+	const keys = [
+		...[...swedishSet.matchAll(/nameKey:\s*'road-signs\.([^']+)'/g)].map((match) => match[1]),
+		...[...swedishSet.matchAll(/descriptionKey:\s*'road-signs\.([^']+)'/g)].map((match) => match[1])
+	];
+	assert.equal(keys.length, 12, 'the six Swedish signs should each have a label and spoken explanation');
+	for (const [locale, translations] of Object.entries(appLocales)) {
+		for (const key of keys) {
+			assert.equal(typeof translations[key], 'string', `${locale} is missing road-signs.${key}`);
+			assert.ok(translations[key].trim(), `${locale} has an empty road-signs.${key}`);
+		}
+	}
 });
 
 test('official sign images are used consistently in overview, flashcard and quiz', () => {

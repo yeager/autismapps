@@ -8,7 +8,7 @@
   import { theme, textSize, reducedMotion, themeClass, textSizeClass } from '$lib/a11y';
   import { speak, preloadVoice } from '$lib/tts';
   import { browser } from '$app/environment';
-  import { requestedLocaleFromParam } from '$lib/i18n/domain-routing.js';
+  import { requestedLocaleFromParam, savedLocaleOverride } from '$lib/i18n/domain-routing.js';
   import { requestServiceWorkerUpdate, watchForServiceWorkerUpdate } from '$lib/pwa/update-check.js';
   import AchievementPopup from '$lib/components/rewards/AchievementPopup.svelte';
   import StarCounter from '$lib/components/rewards/StarCounter.svelte';
@@ -50,10 +50,8 @@
       ? $t('about.privacy.summary')
       : $t('home.intro'));
 
-  // Each production domain is one language (autismappar.se = sv, autismapps.online = en)
-  // and wins over a saved choice — except for ready locales without a domain of their
-  // own (pt_BR), which can only be reached by choosing them on one of those domains.
-  const DOMAIN_LOCALES = ['sv', 'en'];
+  // autismappar.se is Swedish; autismapps.online hosts English and other
+  // non-Swedish locales. The domain wins over a saved locale from the other host.
   function domainLocale(): string | null {
     const hostname = window.location.hostname.toLowerCase();
     if (hostname === 'autismappar.se' || hostname.endsWith('.autismappar.se')) return 'sv';
@@ -66,9 +64,10 @@
   const savedReady = saved && isReadyLocale(saved) ? saved : null;
   const requestedLocaleParam = browser ? new URLSearchParams(window.location.search).get('locale') : null;
   const requestedLocale = browser ? requestedLocaleFromParam(requestedLocaleParam, domainLocale()) : null;
+  const savedOverride = browser ? savedLocaleOverride(savedReady, domainLocale()) : null;
   const initial = browser
     ? (requestedLocale && isReadyLocale(requestedLocale) ? requestedLocale : null) ||
-      (savedReady && !DOMAIN_LOCALES.includes(savedReady) ? savedReady : null) ||
+      savedOverride ||
       domainLocale() ||
       savedReady ||
       detectLocale(navigator.language)

@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { getLocaleDomainRedirect, requestedLocaleFromParam } from '../../src/lib/i18n/domain-routing.js';
+import { readFileSync } from 'node:fs';
+import { getLocaleDomainRedirect, requestedLocaleFromParam, savedLocaleOverride } from '../../src/lib/i18n/domain-routing.js';
 
 test('choosing Swedish from the English site preserves route, query, and hash on the Swedish domain', () => {
 	assert.equal(
@@ -35,15 +36,33 @@ test('redirect carries the chosen domain language over a saved language on the t
 	assert.equal(requestedLocaleFromParam('en', 'en'), 'en');
 	assert.equal(requestedLocaleFromParam('sv', 'sv'), 'sv');
 	assert.equal(requestedLocaleFromParam('pt-BR', 'en'), 'pt_BR');
-	assert.equal(requestedLocaleFromParam('pt_BR', 'sv'), 'pt_BR');
+	assert.equal(requestedLocaleFromParam('pt_BR', 'sv'), null);
+	assert.equal(requestedLocaleFromParam('pt-BR', null), 'pt_BR');
 	assert.equal(requestedLocaleFromParam('sv', 'en'), null);
 	assert.equal(requestedLocaleFromParam('en', 'sv'), null);
 	assert.equal(requestedLocaleFromParam('de', 'en'), null);
 });
 
-test('Portuguese stays on the selected production domain because it has no separate domain', () => {
-	assert.equal(getLocaleDomainRedirect('pt_BR', 'https://autismappar.se/launcher/settings/'), null);
+test('Portuguese always uses the non-Swedish domain and preserves the selected route', () => {
+	assert.equal(
+		getLocaleDomainRedirect('pt_BR', 'https://autismappar.se/launcher/settings/?category=visual#language'),
+		'https://autismapps.online/launcher/settings/?category=visual&locale=pt_BR#language'
+	);
 	assert.equal(getLocaleDomainRedirect('pt_BR', 'https://autismapps.online/launcher/settings/'), null);
+});
+
+test('a saved Portuguese locale is restored on autismapps.online but not autismappar.se', () => {
+	assert.equal(savedLocaleOverride('pt_BR', 'en'), 'pt_BR');
+	assert.equal(savedLocaleOverride('pt_BR', 'sv'), null);
+	assert.equal(savedLocaleOverride('pt_BR', null), 'pt_BR');
+	assert.equal(savedLocaleOverride('sv', 'en'), null);
+});
+
+test('the public homepage Portuguese links point directly to autismapps.online', () => {
+	for (const path of ['../../deploy/root-site/index.html', '../../deploy/root-site/index-en.html']) {
+		const html = readFileSync(new URL(path, import.meta.url), 'utf8');
+		assert.match(html, /href="https:\/\/autismapps\.online\/launcher\/\?locale=pt-BR"/);
+	}
 });
 
 test('same-domain language selections do not navigate', () => {

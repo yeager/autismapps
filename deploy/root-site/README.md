@@ -8,3 +8,5 @@ These two landing pages are served from the shared Loopia `public_html` root:
 The root `index.php` selects the language-specific file. Keep both copies in sync when changing the shared homepage, and upload only the changed page files. App instructions and printable materials live in the localized launcher at `/launcher/instruktioner/` and `/launcher/material/`.
 
 Legacy pages link to `/instruktioner.html` and `/material.html`. Keep the root aliases with these landing pages so those old links continue to reach the localized launcher pages.
+
+The shared root rewrite configuration is tracked in `.htaccess`. Upload it as `public_html/.htaccess` when changed. It routes Swedish app detail URLs to the matching prerendered page under `launcher-sv/`; the English hostname continues to use `launcher/`.

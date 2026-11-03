@@ -1,0 +1,82 @@
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# Revalidate HTML documents and service-worker scripts so hosts and browsers
+# do not keep serving stale site content. Fingerprinted static assets stay cached.
+<IfModule mod_headers.c>
+    <FilesMatch "^(service-worker\.js|.*\.html?|lang\.js)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+        Header set X-Accel-Expires "0"
+    </FilesMatch>
+</IfModule>
+
+# COOP/COEP headers for SharedArrayBuffer (Piper WASM TTS)
+<IfModule mod_headers.c>
+    Header set Cross-Origin-Opener-Policy "same-origin"
+    Header set Cross-Origin-Embedder-Policy "credentialless"
+    Header set Cross-Origin-Resource-Policy "cross-origin"
+</IfModule>
+
+# Canonical routes and host-specific static landing pages.
+RewriteEngine On
+
+# Block version-control metadata at every path depth.
+RewriteRule (^|/)\.(?:git|svn|hg)(?:/|$) - [F,L,NC]
+RewriteCond %{THE_REQUEST} \s/+index\.php(?:[?\s]) [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} /index-en\.html [NC]
+RewriteRule ^index-en\.html$ https://autismapps.online/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteCond %{HTTP_HOST} ^(www\.)?autismapps\.online$ [NC]
+RewriteRule ^index\.html$ https://autismapps.online/ [R=301,L]
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ https://autismappar.se/ [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?autismapps\.online$ [NC]
+RewriteRule ^$ index-en.html [L]
+RewriteRule ^$ index.html [L]
+
+# Canonicalize the launcher URL before the hosting proxy adds a slash to its HTTP redirect.
+RewriteCond %{HTTP_HOST} ^(www\.)?autismapps\.online$ [NC]
+RewriteRule ^launcher$ https://autismapps.online/launcher/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
+RewriteRule ^launcher$ https://autismappar.se/launcher/ [R=301,L]
+
+# Serve the extensionless route directly for any local alias.
+RewriteRule ^launcher$ /launcher/index.html [L]
+
+# Serve the domain-specific launcher files directly from /launcher/.
+# App cards link to /launcher/apps/<slug>/ on both domains. Route these
+# pre-rendered Swedish pages to the Swedish tree on .se; the English domain
+# continues to use the shared /launcher/ tree.
+RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
+RewriteCond %{REQUEST_URI} ^/launcher/apps/([A-Za-z0-9-]+)/?$
+RewriteCond %{DOCUMENT_ROOT}/launcher-sv/apps/%1/index.html -f
+RewriteRule ^launcher/apps/[A-Za-z0-9-]+/?$ launcher-sv/apps/%1/index.html [END]
+
+# Serve Swedish pre-rendered pages and unique resources on .se; common files stay in /launcher.
+RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
+RewriteRule ^launcher/$ launcher-sv/index.html [L]
+RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/launcher-sv/$1 -f
+RewriteRule ^launcher/(.*)$ launcher-sv/$1 [L]
+RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/launcher-sv/$1/index.html -f
+RewriteRule ^launcher/(.*)/$ launcher-sv/$1/index.html [L]
+
+# SPA fallback for /launcher/ routes
+RewriteCond %{REQUEST_URI} ^/launcher/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^launcher/(.*)$ /launcher/fallback.html [L]

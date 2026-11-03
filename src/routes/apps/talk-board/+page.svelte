@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
   import { t } from '$lib/i18n';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
@@ -138,7 +139,12 @@
         {:else}
           <div class="empty-state">
             <p>{$t("talk.no_boards")}</p>
-            <a href={base + '/apps/board-builder'} class="link-btn">{$t("talk.open_builder")}</a>
+            <a href={base + '/apps/board-builder'} class="link-btn" onclick={(event) => {
+              if (browser && /(^|\.)autismappar\.se$/i.test(window.location.hostname)) {
+                event.preventDefault();
+                window.location.assign('/launcher-sv/apps/board-builder/');
+              }
+            }}>{$t("talk.open_builder")}</a>
           </div>
         {/each}
       </div>

@@ -108,12 +108,15 @@
       return;
     }
     speak($t(app.name));
-    const url = new URL(base + app.route, window.location.origin);
+    const isSwedishDomain = /(^|\.)autismappar\.se$/i.test(window.location.hostname);
+    const routeBase = isSwedishDomain ? '/launcher-sv' : base;
+    const url = new URL(routeBase + app.route + (isSwedishDomain ? '/' : ''), window.location.origin);
     if (userName) {
       url.searchParams.set('userName', userName);
       url.searchParams.set('userAvatar', userAvatar);
     }
-    goto(url.pathname + url.search);
+    if (isSwedishDomain) window.location.assign(url.pathname + url.search);
+    else goto(url.pathname + url.search);
   }
 
   function categoryColor(category: AppCategory) {

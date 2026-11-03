@@ -95,9 +95,12 @@ test('www aliases redirect to the canonical production host', () => {
 
 test('Swedish app cards use the Swedish build and old generic launcher URLs redirect to its base path', () => {
 	const rootHtaccess = readFileSync(new URL('../../deploy/root-site/.htaccess', import.meta.url), 'utf8');
+	const launcherHtaccess = readFileSync(new URL('../../deploy/launcher.htaccess', import.meta.url), 'utf8');
 	const swedishHomepage = readFileSync(new URL('../../deploy/root-site/index.html', import.meta.url), 'utf8');
 	const appDetailGenerator = readFileSync(new URL('../../scripts/generate-app-detail-pages.mjs', import.meta.url), 'utf8');
 	assert.ok(rootHtaccess.includes('RewriteRule ^launcher/?(.*)$ https://autismappar.se/launcher-sv/$1 [R=302,L,NE]'));
+	assert.ok(launcherHtaccess.includes('RewriteCond %{REQUEST_URI} ^/launcher(?:/|$) [NC]'));
+	assert.ok(launcherHtaccess.includes('RewriteRule ^(.*)$ https://autismappar.se/launcher-sv/$1 [R=302,L,NE]'));
 	assert.equal((swedishHomepage.match(/href="\/launcher-sv\/apps\/[a-z0-9-]+"/g) || []).length, 72);
 	assert.doesNotMatch(swedishHomepage, /href="\/launcher\/apps\//);
 	assert.match(swedishHomepage, /href="\/launcher-sv\/"/);

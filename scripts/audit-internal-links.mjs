@@ -60,7 +60,8 @@ function outputFileForPath(root, pathname, context, basePath) {
 }
 
 for (const variant of variants) {
-	const basePath = variant === 'build-sv' ? '/launcher-sv' : '/launcher';
+	const basePath = process.env.LAUNCHER_BASE_PATH?.replace(/\/$/, '')
+		|| (variant === 'build-sv' ? '/launcher-sv' : '/launcher');
 	const root = resolve(variant);
 	const files = collectHtmlFiles(root);
 	const idsByFile = new Map(files.map((file) => [file, idsIn(readFileSync(file, 'utf8'))]));

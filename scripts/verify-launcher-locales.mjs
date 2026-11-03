@@ -3,6 +3,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
 import { SWEDISH_LOOKUP_REVISION } from '../src/lib/arasaac/sv-lookup-url.js';
 import { PIKTALI_MANIFEST_REVISION } from '../src/lib/piktali/manifest-url.js';
+import { ICON_REVISION } from '../src/lib/pwa/icon-revision.js';
 
 const basePath = (process.env.LAUNCHER_BASE_PATH || '/launcher').replace(/\/$/, '');
 const canonicalBasePath = (process.env.CANONICAL_BASE_PATH || '/launcher').replace(/\/$/, '');
@@ -73,7 +74,14 @@ for (const variant of variants) {
 	expect(home.includes(variant.marker), `${variant.directory}: missing localized home marker`);
 	expect(home.includes(`href="https://${variant.host}${canonicalBasePath}/"`), `${variant.directory}: wrong home canonical host`);
 	expect(home.includes(`content="${variant.brand}"`), `${variant.directory}: wrong site brand metadata`);
-	expect(home.includes(`${basePath}/manifest-${variant.code}.json`), `${variant.directory}: wrong language manifest`);
+	const manifestName = `manifest-${variant.code}-v${ICON_REVISION}.json`;
+	expect(home.includes(`${basePath}/${manifestName}`), `${variant.directory}: wrong language manifest`);
+	const manifestPath = join(root, manifestName);
+	expect(existsSync(manifestPath), `${variant.directory}: missing versioned language manifest`);
+	const appManifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+	for (const icon of appManifest.icons) {
+		expect(existsSync(join(root, icon.src.replace(/^\.\//, ''))), `${variant.directory}: missing versioned app icon ${icon.src}`);
+	}
 
 	const privacyPath = join(root, 'privacy', 'index.html');
 	expect(existsSync(privacyPath), `${variant.directory}: missing localized privacy page`);

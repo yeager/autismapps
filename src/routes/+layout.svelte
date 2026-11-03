@@ -14,6 +14,7 @@
   import StarCounter from '$lib/components/rewards/StarCounter.svelte';
   import { ALL_APPS, isBlockedIn } from '$lib/apps';
   import ComingSoonNotice from '$lib/components/ComingSoonNotice.svelte';
+import { ICON_REVISION } from '$lib/pwa/icon-revision.js';
 
   let { children } = $props();
 
@@ -170,7 +171,7 @@
     setMeta('meta[property="og:url"]', canonicalUrl);
 
     const manifest = document.querySelector<HTMLLinkElement>('link[rel="manifest"]');
-    if (manifest) manifest.href = `${base}/manifest-${language}.json`;
+    if (manifest) manifest.href = `${base}/manifest-${language}-v${ICON_REVISION}.json`;
   });
 </script>
 

@@ -7,6 +7,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SWEDISH_LOOKUP_REVISION } from '../src/lib/arasaac/sv-lookup-url.js';
 import { PIKTALI_MANIFEST_REVISION } from '../src/lib/piktali/manifest-url.js';
+import { ICON_REVISION } from '../src/lib/pwa/icon-revision.js';
 
 const { build } = await import('vite');
 await build();
@@ -14,7 +15,6 @@ await build();
 const outputDirectoryName = process.env.BUILD_OUTPUT_DIR || 'build';
 const outputDirectory = fileURLToPath(new URL(`../${outputDirectoryName}/`, import.meta.url));
 const prerenderLocale = process.env.VITE_PRERENDER_LOCALE === 'sv' ? 'sv' : 'en';
-const iconRevision = '20261103';
 
 // Publish path-versioned catalog aliases as well as the stable source paths.
 // Some host caches key only by pathname and ignore query-string cache busters.
@@ -72,7 +72,7 @@ function localizeDocumentMetadata(directory) {
 		const canonical = `${canonicalHost}${canonicalBasePath}${route === '/' ? '/' : route}`;
 		let html = readFileSync(path, 'utf8')
 			.replace(/<html lang="[^"]*"/, `<html lang="${prerenderLocale}"`)
-			.replace(/(<link rel="manifest" href=")[^"]*/, `$1${basePath}/manifest-${prerenderLocale}.json?v=${iconRevision}`)
+			.replace(/(<link rel="manifest" href=")[^"]*/, `$1${basePath}/manifest-${prerenderLocale}-v${ICON_REVISION}.json`)
 			.replace(/(<meta property="og:locale" content=")[^"]*/, `$1${prerenderLocale === 'sv' ? 'sv_SE' : 'en_US'}`)
 			.replace(/(<meta property="og:site_name" content=")[^"]*/, `$1${brand}`)
 			.replace(/(<meta property="og:image" content=")[^"]*/, `$1${canonicalHost}/images/og-image.png`)

@@ -83,11 +83,16 @@ test('the public homepage Portuguese links point directly to autismapps.online',
 	}
 });
 
-test('English homepage app cards keep English selected when opened from a saved Portuguese session', () => {
+test('English homepage launcher links keep English selected from a saved Portuguese session', () => {
 	const html = readFileSync(new URL('../../deploy/root-site/index-en.html', import.meta.url), 'utf8');
 	const links = [...html.matchAll(/<a href="([^"]+)" class="app-card"/g)].map((match) => match[1]);
 	assert.equal(links.length, 72);
 	assert.ok(links.every((href) => /^\/launcher\/apps\/[a-z0-9-]+\?locale=en$/.test(href)));
+	const launcherLinks = [...html.matchAll(/<a\b[^>]*href="([^"]+)"/g)]
+		.map((match) => match[1])
+		.filter((href) => href.startsWith('/launcher/'));
+	assert.ok(launcherLinks.length > links.length);
+	assert.ok(launcherLinks.every((href) => new URL(href, 'https://autismapps.online').searchParams.get('locale') === 'en'));
 });
 
 test('same-domain language selections do not navigate', () => {

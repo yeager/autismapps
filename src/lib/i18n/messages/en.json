@@ -1147,6 +1147,8 @@
   "welcome.whatIsThis": "What is this?",
   "welcome.howItWorks": "How does it work?",
   "welcome.goal": "Purpose & goal",
+  "welcome.moreDetails": "More information",
+  "welcome.lessDetails": "Less information",
   "welcome.dontShowAgain": "Don't show again",
   "welcome.letsGo": "Let's go!",
   "welcome.talkBoard.purpose": "A communication board (AAC) for children with neurodevelopmental conditions who need support to express themselves. Based on core vocabulary with LAMP principles.",
@@ -3326,7 +3328,9 @@
     "welcome": {
       "purpose": "Learn important traffic safety rules and road skills.",
       "how": "Tap on the activities to practice safe walking and crossing streets.",
-      "goal": "Become confident and safe around traffic and roads."
+      "goal": "Become confident and safe around traffic and roads.",
+      "more": "More information",
+      "less": "Less information"
     },
     "activities": {
       "traffic-lights": "Traffic Lights",

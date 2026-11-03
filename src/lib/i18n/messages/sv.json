@@ -1147,6 +1147,8 @@
   "welcome.whatIsThis": "Vad är detta?",
   "welcome.howItWorks": "Hur fungerar det?",
   "welcome.goal": "Mål och syfte",
+  "welcome.moreDetails": "Visa mer information",
+  "welcome.lessDetails": "Visa mindre information",
   "welcome.dontShowAgain": "Visa inte igen",
   "welcome.letsGo": "Nu kör vi!",
   "welcome.talkBoard.purpose": "En kommunikationstavla (AKK) för barn med NPF och IF som behöver stöd att uttrycka sig. Baserat på kärnvokabulär med LAMP-principer.",
@@ -3326,7 +3328,9 @@
     "welcome": {
       "purpose": "Lär dig viktiga trafikregler och färdigheter för vägar.",
       "how": "Tryck på aktiviteterna för att öva säker gång och gatuövergång.",
-      "goal": "Bli trygg och säker i närheten av trafik och vägar."
+      "goal": "Bli trygg och säker i närheten av trafik och vägar.",
+      "more": "Visa mer information",
+      "less": "Visa mindre information"
     },
     "activities": {
       "traffic-lights": "Trafikljus",

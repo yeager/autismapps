@@ -1143,6 +1143,8 @@
   "welcome.whatIsThis": "O que é isto?",
   "welcome.howItWorks": "Como funciona?",
   "welcome.goal": "Propósito e objetivo",
+  "welcome.moreDetails": "Mais informações",
+  "welcome.lessDetails": "Menos informações",
   "welcome.dontShowAgain": "Não mostrar de novo",
   "welcome.letsGo": "Vamos lá!",
   "welcome.talkBoard.purpose": "Uma prancha de comunicação (CAA) para crianças com condições do neurodesenvolvimento que precisam de apoio para se expressar. Baseada em vocabulário nuclear, com os princípios do LAMP.",
@@ -3252,7 +3254,9 @@
     "welcome": {
       "purpose": "Aprenda regras importantes para andar com segurança no trânsito.",
       "how": "Toque nas atividades para treinar como andar na calçada e atravessar a rua.",
-      "goal": "Ficar seguro e confiante perto de ruas e carros."
+      "goal": "Ficar seguro e confiante perto de ruas e carros.",
+      "more": "Mais informações",
+      "less": "Menos informações"
     },
     "activities": {
       "traffic-lights": "Semáforo",

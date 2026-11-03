@@ -18,6 +18,7 @@
 
   let show = false;
   let dontShowAgain = false;
+  let showDetails = false;
 
   const STORAGE_KEY = `welcome-dismissed-${appId}`;
 
@@ -49,14 +50,26 @@
         <p>{$t(purposeKey)}</p>
       </div>
 
-      <div class="welcome-section">
-        <div class="section-label">❓ {$t('welcome.howItWorks')}</div>
-        <p>{$t(howKey)}</p>
-      </div>
+      <button
+        class="welcome-more"
+        type="button"
+        aria-expanded={showDetails}
+        aria-controls="welcome-details"
+        on:click={() => (showDetails = !showDetails)}
+      >
+        {$t(showDetails ? 'welcome.lessDetails' : 'welcome.moreDetails')}
+      </button>
 
-      <div class="welcome-section">
-        <div class="section-label">💡 {$t('welcome.goal')}</div>
-        <p>{$t(goalKey)}</p>
+      <div class="welcome-details" id="welcome-details" class:expanded={showDetails}>
+        <div class="welcome-section">
+          <div class="section-label">❓ {$t('welcome.howItWorks')}</div>
+          <p>{$t(howKey)}</p>
+        </div>
+
+        <div class="welcome-section">
+          <div class="section-label">💡 {$t('welcome.goal')}</div>
+          <p>{$t(goalKey)}</p>
+        </div>
       </div>
 
       <label class="dont-show">
@@ -73,6 +86,7 @@
 
 <style>
   .welcome-overlay {
+    box-sizing: border-box;
     position: fixed;
     inset: 0;
     background: rgba(28, 47, 37, 0.55);
@@ -85,13 +99,15 @@
   }
 
   .welcome-dialog {
+    box-sizing: border-box;
     background: var(--bg-card, #fff);
     color: var(--text, #26392f);
     border: 1px solid var(--border, #e1e7e1);
     border-radius: 1.25rem;
     padding: 1.75rem;
     max-width: 440px;
-    width: 100%;
+    width: min(100%, 440px);
+    min-width: 0;
     max-height: calc(100dvh - 2rem);
     overflow-y: auto;
     text-align: center;
@@ -131,6 +147,25 @@
     color: var(--text, #26392f);
   }
 
+  .welcome-more {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--accent, #315a49);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 650;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+    padding: 0.4rem;
+    margin: 0 auto 0.45rem;
+  }
+
+  .welcome-details {
+    display: contents;
+  }
+
   .dont-show {
     display: flex;
     align-items: center;
@@ -168,11 +203,28 @@
     transform: translateY(0);
   }
 
-  @media (max-width: 560px) {
-    .welcome-dialog { padding: 1.25rem; }
-    .welcome-icon { font-size: 2.5rem; }
-    h2 { margin-bottom: .9rem; font-size: 1.3rem; }
-    .welcome-section { margin-bottom: .7rem; padding: .7rem; }
-    .welcome-section p { font-size: .87rem; }
+  @media (max-width: 560px), (max-height: 640px) {
+    .welcome-overlay {
+      align-items: flex-start;
+      overflow-y: auto;
+      padding: max(0.5rem, env(safe-area-inset-top)) 0.5rem max(0.5rem, env(safe-area-inset-bottom));
+    }
+
+    .welcome-dialog {
+      max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 1rem);
+      padding: 0.85rem;
+      border-radius: 1rem;
+    }
+
+    .welcome-icon { display: none; }
+    h2 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+    .welcome-section { margin-bottom: 0.5rem; padding: 0.6rem; }
+    .section-label { font-size: 0.8rem; }
+    .welcome-section p { font-size: 0.86rem; line-height: 1.35; }
+    .welcome-more { display: block; }
+    .welcome-details { display: none; }
+    .welcome-details.expanded { display: block; }
+    .dont-show { margin: 0.5rem 0; font-size: 0.78rem; }
+    .welcome-start { padding: 0.7rem 1.25rem; font-size: 1rem; }
   }
 </style>

@@ -3401,6 +3401,7 @@
       "sidewalk": "Trottoar",
       "road": "Väg",
       "parking": "Parkering",
+      "crosswalk": "Övergångsställe",
       "safe": "SÄKERT",
       "dangerous": "FARLIGT",
       "drag-to-sort": "Dra föremål till SÄKERT eller FARLIGT",

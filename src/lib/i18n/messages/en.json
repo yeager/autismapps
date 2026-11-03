@@ -3401,6 +3401,7 @@
       "sidewalk": "Sidewalk",
       "road": "Road",
       "parking": "Parking Lot",
+      "crosswalk": "Crosswalk",
       "safe": "SAFE",
       "dangerous": "DANGEROUS",
       "drag-to-sort": "Drag items to SAFE or DANGEROUS zones",

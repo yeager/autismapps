@@ -16,6 +16,22 @@ const reflectorsSource = fs.readFileSync(new URL('../../src/lib/components/traff
 const trafficActivityGridSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/ActivityGrid.svelte', import.meta.url), 'utf8');
 const trafficPictogramsSource = fs.readFileSync(new URL('../../src/lib/piktali/pictograms.ts', import.meta.url), 'utf8');
 const serviceWorkerSource = fs.readFileSync(new URL('../../src/service-worker.ts', import.meta.url), 'utf8');
+const trafficLocales = Object.fromEntries(['sv', 'en', 'pt_BR'].map((locale) => [
+  locale,
+  JSON.parse(fs.readFileSync(new URL(`../../src/lib/i18n/messages/${locale}.json`, import.meta.url), 'utf8'))
+]));
+
+test('Safe Places scenario names are translated in every shipped locale', () => {
+  const scenarioNames = ['sidewalk', 'road', 'parking', 'playground', 'crosswalk', 'highway', 'school-zone', 'construction'];
+
+  for (const [locale, messages] of Object.entries(trafficLocales)) {
+    const translations = messages['traffic-safety']['safe-places'];
+    for (const name of scenarioNames) {
+      assert.equal(typeof translations[name], 'string', `${locale}: missing Safe Places name ${name}`);
+      assert.notEqual(translations[name], `safe-places.${name}`, `${locale}: untranslated Safe Places name ${name}`);
+    }
+  }
+});
 
 test('Category Sort uses the generic Piktali coin instead of a euro-denominated ARASAAC coin', () => {
   const coin = CATEGORY_SETS.flatMap((set) => set.categories ?? [])

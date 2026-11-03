@@ -3327,6 +3327,7 @@
       "sidewalk": "Calçada",
       "road": "Rua",
       "parking": "Estacionamento",
+      "crosswalk": "Faixa de pedestres",
       "safe": "SEGURO",
       "dangerous": "PERIGOSO",
       "drag-to-sort": "Arraste para SEGURO ou PERIGOSO",

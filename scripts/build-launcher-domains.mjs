@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const buildScript = fileURLToPath(new URL('./build-launcher.mjs', import.meta.url));
 const sharedBasePath = process.env.LAUNCHER_BASE_PATH;
+const canonicalBasePath = process.env.CANONICAL_BASE_PATH;
 
 for (const { locale, outputDirectory } of [
 	{ locale: 'en', outputDirectory: 'build' },
@@ -14,7 +15,7 @@ for (const { locale, outputDirectory } of [
 		env: {
 			...process.env,
 			BASE_PATH: sharedBasePath || (locale === 'sv' ? '/launcher-sv' : '/launcher'),
-			CANONICAL_BASE_PATH: sharedBasePath || (locale === 'sv' ? '/launcher-sv' : '/launcher'),
+			CANONICAL_BASE_PATH: canonicalBasePath || (locale === 'sv' ? '/launcher-sv' : '/launcher'),
 			BUILD_OUTPUT_DIR: outputDirectory,
 			CI: 'true',
 			VITE_PRERENDER_LOCALE: locale

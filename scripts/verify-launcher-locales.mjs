@@ -41,7 +41,7 @@ function attr(html, pattern) {
 }
 
 for (const variant of variants) {
-	const basePath = variant.basePath;
+	const basePath = process.env.LAUNCHER_BASE_PATH?.replace(/\/$/, '') || variant.basePath;
 	const canonicalBasePath = variant.basePath;
 	const root = resolve(variant.directory);
 	expect(piktaliFallbackChunk?.isDynamicEntry === true, 'Piktali fallback should remain a lazy client chunk');

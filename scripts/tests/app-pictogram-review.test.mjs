@@ -13,6 +13,7 @@ const trafficLightsSource = fs.readFileSync(new URL('../../src/lib/components/tr
 const vehiclesSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/Vehicles.svelte', import.meta.url), 'utf8');
 const crosswalkSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/Crosswalk.svelte', import.meta.url), 'utf8');
 const reflectorsSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/Reflectors.svelte', import.meta.url), 'utf8');
+const trafficActivityGridSource = fs.readFileSync(new URL('../../src/lib/components/traffic-safety/ActivityGrid.svelte', import.meta.url), 'utf8');
 const trafficPictogramsSource = fs.readFileSync(new URL('../../src/lib/piktali/pictograms.ts', import.meta.url), 'utf8');
 const serviceWorkerSource = fs.readFileSync(new URL('../../src/service-worker.ts', import.meta.url), 'utf8');
 
@@ -74,6 +75,29 @@ test('Safe Places uses matching bundled Piktali scene pictograms instead of emoj
   }
 
   assert.match(safePlacesSource, /<img[\s\S]*?src=\{scenarioPictogram\(scenarios\[currentScenario\]\)\}/);
+});
+
+test('Traffic Safety activity cards use pictograms matching their labels', () => {
+  const mapping = trafficActivityGridSource.match(/const piktaliSymbols: Record<string, string> = \{([\s\S]*?)\n  \};/);
+  assert.ok(mapping, 'activity pictogram mapping exists');
+  const entries = Object.fromEntries(
+    [...mapping[1].matchAll(/['"]?([\w-]+)['"]?: '([^']+)'/g)].map(([, activity, symbol]) => [activity, symbol])
+  );
+  assert.deepEqual(entries, {
+    'traffic-lights': 'trafficlight',
+    crosswalk: 'crosswalk',
+    'road-signs': 'danger',
+    'safe-places': 'safeplace',
+    reflectors: 'reflector',
+    vehicles: 'car'
+  });
+
+  for (const symbol of Object.values(entries)) {
+    const escaped = symbol.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const file = trafficPictogramsSource.match(new RegExp(`(?:^|\\s)${escaped}: '([^']+)'`, 'm'))?.[1];
+    assert.ok(file, `${symbol} resolves to an image file`);
+    assert.ok(fs.existsSync(new URL(`../../static/piktali-pictograms/${file}`, import.meta.url)), `${symbol} image exists`);
+  }
 });
 
 test('Traffic Safety actions, vehicles and clothing use verified Piktali pictograms', () => {

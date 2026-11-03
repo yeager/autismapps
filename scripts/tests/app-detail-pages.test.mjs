@@ -11,7 +11,7 @@ test('all registered apps have matching localized detail pages and same-host lau
 		assert.equal(ids.has(app.id), false, `duplicate id ${app.id}`);
 		ids.add(app.id);
 		const html = renderPage(app);
-		assert.match(html, new RegExp(`href="\\.\\./launcher/apps/${app.id}/"`));
+		assert.match(html, new RegExp(`href="https://autismappar\\.se/launcher-sv/apps/${app.id}/"`));
 		assert.match(html, new RegExp(`href="https://autismappar\\.se/apps/${app.id}\\.html"`));
 		assert.match(html, new RegExp(`href="https://autismapps\\.online/apps/${app.id}\\.html"`));
 		assert.match(html, /href="\.\.\/dataskydd\.html"/);
@@ -26,10 +26,10 @@ test('all registered apps have matching localized detail pages and same-host lau
 	assert.equal(ids.size, 72);
 });
 
-test('generated detail pages use relative launcher and icon URLs that preserve deployment base paths', () => {
+test('generated detail pages link to the Swedish launcher base and use relative page assets', () => {
 	const app = ALL_APPS.find(({ id }) => id === 'board-builder');
 	const html = renderPage(app);
-	assert.match(html, /href="\.\.\/launcher\/apps\/board-builder\/"/);
+	assert.match(html, /href="https:\/\/autismappar\.se\/launcher-sv\/apps\/board-builder\/"/);
 	assert.match(html, /src="\.\.\/icons\/board-builder\.svg"/);
 	assert.match(html, /href="\.\.\/"/);
 });
@@ -37,8 +37,8 @@ test('generated detail pages use relative launcher and icon URLs that preserve d
 test('legacy speech and language aliases open the existing speech category in either locale', () => {
 	for (const alias of ['verbal-dyspraxi', 'sprakstorning']) {
 		const html = renderLegacyCategoryAlias(alias);
-		assert.match(html, /http-equiv="refresh" content="0;url=\/launcher\/\?category=speech"/);
-		assert.match(html, /href="\/launcher\/\?category=speech"/);
+		assert.match(html, /http-equiv="refresh" content="0;url=\/launcher-sv\/\?category=speech"/);
+		assert.match(html, /href="\/launcher-sv\/\?category=speech"/);
 		assert.doesNotMatch(html, new RegExp(`/launcher/apps/${alias}`));
 		assert.match(html, /data-sv="Tal- och språkstöd — Autismappar" data-en="Speech and language support — Autismapps"/);
 		const [, inlineScript] = html.match(/<script>\s*([\s\S]*?)\s*<\/script>/) ?? [];

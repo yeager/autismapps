@@ -9,4 +9,4 @@ The root `index.php` selects the language-specific file. Keep both copies in syn
 
 Legacy pages link to `/instruktioner.html` and `/material.html`. Keep the root aliases with these landing pages so those old links continue to reach the localized launcher pages.
 
-The shared root rewrite configuration is tracked in `.htaccess`. Upload it as `public_html/.htaccess` when changed. It routes Swedish app detail URLs to the matching prerendered page under `launcher-sv/`; the English hostname continues to use `launcher/`.
+The shared root rewrite configuration is tracked in `.htaccess`. Upload it as `public_html/.htaccess` when changed. On `autismappar.se`, legacy `/launcher/…` URLs redirect to the Swedish build at `/launcher-sv/…`, so the URL base matches the prerendered SvelteKit files. `autismapps.online` continues to use `/launcher/`.

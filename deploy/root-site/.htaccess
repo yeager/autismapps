@@ -47,36 +47,8 @@ RewriteCond %{HTTP_HOST} ^(www\.)?autismapps\.online$ [NC]
 RewriteRule ^$ index-en.html [L]
 RewriteRule ^$ index.html [L]
 
-# Canonicalize the launcher URL before the hosting proxy adds a slash to its HTTP redirect.
-RewriteCond %{HTTP_HOST} ^(www\.)?autismapps\.online$ [NC]
-RewriteRule ^launcher$ https://autismapps.online/launcher/ [R=301,L]
+# Redirect Swedish legacy launcher URLs to the Swedish build's own base path.
+# An internal rewrite served HTML built for /launcher-sv at a /launcher URL,
+# which made SvelteKit fail during hydration on the old public links.
 RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
-RewriteRule ^launcher$ https://autismappar.se/launcher/ [R=301,L]
-
-# Serve the extensionless route directly for any local alias.
-RewriteRule ^launcher$ /launcher/index.html [L]
-
-# Serve the domain-specific launcher files directly from /launcher/.
-# App cards link to /launcher/apps/<slug>/ on both domains. Route these
-# pre-rendered Swedish pages to the Swedish tree on .se; the English domain
-# continues to use the shared /launcher/ tree.
-RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
-RewriteCond %{REQUEST_URI} ^/launcher/apps/([A-Za-z0-9-]+)/?$
-RewriteCond %{DOCUMENT_ROOT}/launcher-sv/apps/%1/index.html -f
-RewriteRule ^launcher/apps/[A-Za-z0-9-]+/?$ launcher-sv/apps/%1/index.html [END]
-
-# Serve Swedish pre-rendered pages and unique resources on .se; common files stay in /launcher.
-RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
-RewriteRule ^launcher/$ launcher-sv/index.html [L]
-RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
-RewriteCond %{DOCUMENT_ROOT}/launcher-sv/$1 -f
-RewriteRule ^launcher/(.*)$ launcher-sv/$1 [L]
-RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
-RewriteCond %{DOCUMENT_ROOT}/launcher-sv/$1/index.html -f
-RewriteRule ^launcher/(.*)/$ launcher-sv/$1/index.html [L]
-
-# SPA fallback for /launcher/ routes
-RewriteCond %{REQUEST_URI} ^/launcher/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^launcher/(.*)$ /launcher/fallback.html [L]
+RewriteRule ^launcher/?(.*)$ https://autismappar.se/launcher-sv/$1 [R=302,L,NE]

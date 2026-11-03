@@ -120,6 +120,6 @@ for (const alias of ['verbal-dyspraxi', 'sprakstorning']) {
 
 const launcherHtaccess = readFileSync(new URL('../deploy/launcher.htaccess', import.meta.url), 'utf8');
 const sharedAssetFallback = process.env.BASE_PATH === '/launcher-sv'
-	? '\n# Share versioned static media and catalogs with the canonical launcher tree.\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\nRewriteCond %{REQUEST_URI} !^/launcher-sv/apps/\nRewriteRule ^(.*)$ /launcher/$1 [END]\n'
+	? '\n# Share versioned static media and catalogs with the canonical launcher tree.\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\nRewriteCond %{REQUEST_URI} !^/launcher-sv/apps/\nRewriteRule ^(.*)$ https://autismapps.online/launcher/$1 [R=302,L,NE]\n'
 	: '';
 writeFileSync(join(outputDirectory, '.htaccess'), `${launcherHtaccess}${sharedAssetFallback}`);

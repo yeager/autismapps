@@ -17,3 +17,15 @@ test('legacy root aliases redirect to existing localized launcher routes', () =>
 		assert.ok(readFileSync(new URL(`../../${alias.sourceRoute}`, import.meta.url), 'utf8').length > 0, `${alias.route} should exist in the launcher source`);
 	}
 });
+
+test('Swedish legacy launcher URLs redirect to the Swedish build base path', () => {
+	const rules = readFileSync(new URL('../../deploy/root-site/.htaccess', import.meta.url), 'utf8');
+	assert.match(rules, /RewriteCond %\{HTTP_HOST\} \^\(www\\\.\)\?autismappar\\\.se\$ \[NC\]/);
+	assert.match(rules, /RewriteRule \^launcher\/\?\(\.\*\)\$ https:\/\/autismappar\.se\/launcher-sv\/\$1 \[R=302,L,NE\]/);
+	assert.doesNotMatch(rules, /RewriteRule \^launcher\/\(\.\*\)\$ launcher-sv\/\$1/);
+});
+
+test('missing assets in the Swedish launcher resolve on the canonical non-Swedish host', () => {
+	const build = readFileSync(new URL('../../scripts/build-launcher.mjs', import.meta.url), 'utf8');
+	assert.match(build, /RewriteRule \^\(\.\*\)\$ https:\/\/autismapps\.online\/launcher\/\$1 \[R=302,L,NE\]/);
+});

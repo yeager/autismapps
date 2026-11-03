@@ -46,7 +46,7 @@ export function renderPage(app) {
 	const iconPath = app.icon.replace(/^\//, '../');
 	if (!iconPath.startsWith('../icons/')) throw new Error(`Unexpected app icon path for ${app.id}: ${app.icon}`);
 	if (!fs.existsSync(path.join(STATIC_DIR, app.icon.slice(1)))) throw new Error(`Missing app icon for ${app.id}: ${app.icon}`);
-	const launchPath = `../launcher/apps/${app.id}/`;
+	const launchPath = `https://autismappar.se/launcher-sv/apps/${app.id}/`;
 	const canonical = `https://autismappar.se/apps/${app.id}.html`;
 	const englishCanonical = `https://autismapps.online/apps/${app.id}.html`;
 	const svTitle = `${svName} — Autismappar`;
@@ -137,6 +137,8 @@ export function renderPage(app) {
 		(() => {
 			const host = location.hostname.toLowerCase();
 			const locale = host === 'autismappar.se' || host === 'www.autismappar.se' ? 'sv' : 'en';
+			const launcherBase = locale === 'sv' ? 'https://autismappar.se/launcher-sv' : 'https://autismapps.online/launcher';
+			document.querySelector('.primary').href = launcherBase + '/apps/${app.id}/';
 			document.documentElement.lang = locale;
 			for (const node of document.querySelectorAll('[data-sv][data-en]')) {
 				if (node instanceof HTMLMetaElement) node.content = node.dataset[locale] || node.content;
@@ -169,14 +171,18 @@ export function renderLegacyCategoryAlias(id) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="refresh" content="0;url=/launcher/?category=speech">
+	<meta http-equiv="refresh" content="0;url=/launcher-sv/?category=speech">
 	<title data-sv="Tal- och språkstöd — Autismappar" data-en="Speech and language support — Autismapps">Tal- och språkstöd — Autismappar</title>
 </head>
 <body>
-	<p><a href="/launcher/?category=speech" data-sv="Öppna tal- och språkstöd" data-en="Open speech and language support">Öppna tal- och språkstöd</a></p>
+	<p><a href="/launcher-sv/?category=speech" data-sv="Öppna tal- och språkstöd" data-en="Open speech and language support">Öppna tal- och språkstöd</a></p>
 	<script>
 		const isSwedish = /(^|\\.)autismappar\\.se$/.test(location.hostname.toLowerCase());
 		const locale = isSwedish ? 'sv' : 'en';
+		const target = document.querySelector('a');
+		target.href = (isSwedish ? '/launcher-sv/' : 'https://autismapps.online/launcher/') + '?category=speech';
+		const redirect = document.querySelector('meta[http-equiv="refresh"]');
+		if (redirect) redirect.content = '0;url=' + target.href;
 		document.documentElement.lang = locale;
 		for (const element of document.querySelectorAll('[data-sv][data-en]')) {
 			element.textContent = element.dataset[locale];

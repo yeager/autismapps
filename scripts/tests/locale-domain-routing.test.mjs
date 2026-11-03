@@ -96,9 +96,21 @@ test('www aliases redirect to the canonical production host', () => {
 test('Swedish app cards resolve to Swedish prerendered pages on the shared Loopia root', () => {
 	const rootHtaccess = readFileSync(new URL('../../deploy/root-site/.htaccess', import.meta.url), 'utf8');
 	const swedishHomepage = readFileSync(new URL('../../deploy/root-site/index.html', import.meta.url), 'utf8');
+	const appDetailGenerator = readFileSync(new URL('../../scripts/generate-app-detail-pages.mjs', import.meta.url), 'utf8');
 	assert.ok(rootHtaccess.includes('RewriteCond %{REQUEST_URI} ^/launcher/apps/([A-Za-z0-9-]+)/?$'));
 	assert.ok(rootHtaccess.includes('RewriteCond %{DOCUMENT_ROOT}/launcher-sv/apps/%1/index.html -f'));
 	assert.ok(rootHtaccess.includes('RewriteRule ^launcher/apps/[A-Za-z0-9-]+/?$ launcher-sv/apps/%1/index.html [END]'));
 	assert.equal((swedishHomepage.match(/href="\/launcher-sv\/apps\/[a-z0-9-]+"/g) || []).length, 72);
 	assert.doesNotMatch(swedishHomepage, /href="\/launcher\/apps\//);
+	assert.match(swedishHomepage, /href="\/launcher-sv\/"/);
+	assert.match(appDetailGenerator, /locale === 'sv' \? 'https:\/\/autismappar\.se\/launcher-sv' : 'https:\/\/autismapps\.online\/launcher'/);
+});
+
+test('Swedish launcher is built under its own base path', () => {
+	const buildScript = readFileSync(new URL('../../scripts/build-launcher-domains.mjs', import.meta.url), 'utf8');
+	const launcherBuildScript = readFileSync(new URL('../../scripts/build-launcher.mjs', import.meta.url), 'utf8');
+	assert.match(buildScript, /locale === 'sv' \? '\/launcher-sv' : '\/launcher'/);
+	assert.match(launcherBuildScript, /process\.env\.BASE_PATH = process\.env\.BASE_PATH \|\|/);
+	assert.match(launcherBuildScript, /RewriteCond %\{REQUEST_FILENAME\} !-f/);
+	assert.match(launcherBuildScript, /RewriteRule \^\(\.\*\)\$ \/launcher\/\$1 \[END\]/);
 });

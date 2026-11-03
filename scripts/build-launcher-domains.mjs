@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const buildScript = fileURLToPath(new URL('./build-launcher.mjs', import.meta.url));
-const basePath = process.env.LAUNCHER_BASE_PATH || '/launcher';
+const sharedBasePath = process.env.LAUNCHER_BASE_PATH;
 
 for (const { locale, outputDirectory } of [
 	{ locale: 'en', outputDirectory: 'build' },
@@ -13,7 +13,8 @@ for (const { locale, outputDirectory } of [
 		stdio: 'inherit',
 		env: {
 			...process.env,
-			BASE_PATH: basePath,
+			BASE_PATH: sharedBasePath || (locale === 'sv' ? '/launcher-sv' : '/launcher'),
+			CANONICAL_BASE_PATH: sharedBasePath || (locale === 'sv' ? '/launcher-sv' : '/launcher'),
 			BUILD_OUTPUT_DIR: outputDirectory,
 			CI: 'true',
 			VITE_PRERENDER_LOCALE: locale

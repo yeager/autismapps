@@ -5,11 +5,9 @@ import { SWEDISH_LOOKUP_REVISION } from '../src/lib/arasaac/sv-lookup-url.js';
 import { PIKTALI_MANIFEST_REVISION } from '../src/lib/piktali/manifest-url.js';
 import { ICON_REVISION } from '../src/lib/pwa/icon-revision.js';
 
-const basePath = (process.env.LAUNCHER_BASE_PATH || '/launcher').replace(/\/$/, '');
-const canonicalBasePath = (process.env.CANONICAL_BASE_PATH || '/launcher').replace(/\/$/, '');
 const variants = [
-	{ code: 'en', directory: 'build', host: 'autismapps.online', brand: 'Autismapps', marker: 'All tools' },
-	{ code: 'sv', directory: 'build-sv', host: 'autismappar.se', brand: 'Autismappar', marker: 'Alla verktyg' }
+	{ code: 'en', directory: 'build', host: 'autismapps.online', brand: 'Autismapps', marker: 'All tools', basePath: '/launcher' },
+	{ code: 'sv', directory: 'build-sv', host: 'autismappar.se', brand: 'Autismappar', marker: 'Alla verktyg', basePath: '/launcher-sv' }
 ];
 const appRoutes = readdirSync('src/routes/apps', { withFileTypes: true })
 	.filter((entry) => entry.isDirectory())
@@ -43,6 +41,8 @@ function attr(html, pattern) {
 }
 
 for (const variant of variants) {
+	const basePath = variant.basePath;
+	const canonicalBasePath = variant.basePath;
 	const root = resolve(variant.directory);
 	expect(piktaliFallbackChunk?.isDynamicEntry === true, 'Piktali fallback should remain a lazy client chunk');
 	expect(existsSync(join(root, piktaliFallbackChunk.file)), `${variant.directory}: missing lazy Piktali fallback chunk`);

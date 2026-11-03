@@ -14,13 +14,13 @@
   ],
   "icons": [
     {
-      "src": "./icons/app-icon-192-v20261103.png",
+      "src": "./icons/app-icon-192-v20261103b.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icons/app-icon-512-v20261103.png",
+      "src": "./icons/app-icon-512-v20261103b.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"

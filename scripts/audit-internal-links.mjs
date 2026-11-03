@@ -2,7 +2,6 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
 
-const basePath = (process.env.LAUNCHER_BASE_PATH || '/launcher').replace(/\/$/, '');
 const variants = (process.env.LINK_AUDIT_VARIANTS || 'build,build-sv')
 	.split(',')
 	.map((variant) => variant.trim())
@@ -40,7 +39,7 @@ function idsIn(html) {
 	return new Set([...html.matchAll(/\bid\s*=\s*(["'])(.*?)\1/g)].map((match) => match[2]));
 }
 
-function outputFileForPath(root, pathname, context) {
+function outputFileForPath(root, pathname, context, basePath) {
 	if (!pathname.startsWith(`${basePath}/`) && pathname !== basePath) return null;
 	const relativePath = decode(pathname.slice(basePath.length).replace(/^\//, ''), context);
 	let output = resolve(root, relativePath || '.');
@@ -61,6 +60,7 @@ function outputFileForPath(root, pathname, context) {
 }
 
 for (const variant of variants) {
+	const basePath = variant === 'build-sv' ? '/launcher-sv' : '/launcher';
 	const root = resolve(variant);
 	const files = collectHtmlFiles(root);
 	const idsByFile = new Map(files.map((file) => [file, idsIn(readFileSync(file, 'utf8'))]));
@@ -89,7 +89,7 @@ for (const variant of variants) {
 				continue;
 			}
 			if (url.origin !== 'https://local.invalid' && !isSiteHostname(url.hostname)) continue;
-			const target = outputFileForPath(root, url.pathname, `${relative(root, sourceFile)} -> ${href}`);
+			const target = outputFileForPath(root, url.pathname, `${relative(root, sourceFile)} -> ${href}`, basePath);
 			if (!target) continue;
 			checked++;
 			if (!existsSync(target)) {

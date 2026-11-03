@@ -1,5 +1,5 @@
-// Build one localized static launcher tree for the public /launcher/ URL.
-process.env.BASE_PATH = process.env.LAUNCHER_BASE_PATH || '/launcher';
+// Build one localized static launcher tree at its configured base path.
+process.env.BASE_PATH = process.env.BASE_PATH || process.env.LAUNCHER_BASE_PATH || '/launcher';
 process.env.CI = 'true';
 
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
@@ -55,7 +55,7 @@ addDirectoryIndexes(outputDirectory);
 const brand = prerenderLocale === 'sv' ? 'Autismappar' : 'Autismapps';
 const canonicalHost = prerenderLocale === 'sv' ? 'https://autismappar.se' : 'https://autismapps.online';
 const basePath = process.env.BASE_PATH.replace(/\/$/, '');
-const canonicalBasePath = (process.env.CANONICAL_BASE_PATH || '/launcher').replace(/\/$/, '');
+const canonicalBasePath = (process.env.CANONICAL_BASE_PATH || process.env.BASE_PATH).replace(/\/$/, '');
 function localizeDocumentMetadata(directory) {
 	for (const entry of readdirSync(directory, { withFileTypes: true })) {
 		const path = join(directory, entry.name);
@@ -118,7 +118,8 @@ for (const alias of ['verbal-dyspraxi', 'sprakstorning']) {
 	);
 }
 
-copyFileSync(
-	new URL('../deploy/launcher.htaccess', import.meta.url),
-	join(outputDirectory, '.htaccess')
-);
+const launcherHtaccess = readFileSync(new URL('../deploy/launcher.htaccess', import.meta.url), 'utf8');
+const sharedAssetFallback = process.env.BASE_PATH === '/launcher-sv'
+	? '\n# Share versioned static media and catalogs with the canonical launcher tree.\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\nRewriteCond %{REQUEST_URI} !^/launcher-sv/apps/\nRewriteRule ^(.*)$ /launcher/$1 [END]\n'
+	: '';
+writeFileSync(join(outputDirectory, '.htaccess'), `${launcherHtaccess}${sharedAssetFallback}`);

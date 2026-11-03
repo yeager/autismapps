@@ -4,9 +4,11 @@ Allow: /
 # Sitemap
 Sitemap: https://autismappar.se/sitemap.xml
 
-# Allow indexing of main app
+# Allow localized app launchers on the matching domains
 Allow: /launcher/
 Allow: /launcher/apps/
+Allow: /launcher-sv/
+Allow: /launcher-sv/apps/
 
 # Allow static resources
 Allow: /bildstod/
@@ -14,8 +16,8 @@ Allow: /skriv/
 
 # Disallow admin/settings pages
 Disallow: /launcher/settings
+Disallow: /launcher-sv/settings
 
 # Block common bot directories
 Disallow: /_app/
 Disallow: /static/
-Disallow: /build/

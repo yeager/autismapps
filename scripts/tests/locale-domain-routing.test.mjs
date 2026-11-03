@@ -6,25 +6,43 @@ import { getLocaleDomainRedirect, requestedLocaleFromParam, savedLocaleOverride 
 test('choosing Swedish from the English site preserves route, query, and hash on the Swedish domain', () => {
 	assert.equal(
 		getLocaleDomainRedirect('sv', 'https://autismapps.online/launcher/settings/?category=visual#language'),
-		'https://autismappar.se/launcher/settings/?category=visual&locale=sv#language'
+		'https://autismappar.se/launcher-sv/settings/?category=visual&locale=sv#language'
 	);
 });
 
 test('choosing a domain language replaces an older explicit locale override', () => {
 	assert.equal(
 		getLocaleDomainRedirect('sv', 'https://autismapps.online/launcher/settings/?category=visual&locale=pt-BR#language'),
-		'https://autismappar.se/launcher/settings/?category=visual&locale=sv#language'
+		'https://autismappar.se/launcher-sv/settings/?category=visual&locale=sv#language'
 	);
 	assert.equal(
-		getLocaleDomainRedirect('en', 'https://autismappar.se/launcher/apps/traffic-safety/?locale=pt_BR'),
+		getLocaleDomainRedirect('en', 'https://autismappar.se/launcher-sv/apps/traffic-safety/?locale=pt_BR'),
 		'https://autismapps.online/launcher/apps/traffic-safety/?locale=en'
 	);
 });
 
 test('choosing English from the Swedish site preserves the current app route on the English domain', () => {
 	assert.equal(
-		getLocaleDomainRedirect('en', 'https://autismappar.se/launcher/apps/traffic-safety/'),
+		getLocaleDomainRedirect('en', 'https://autismappar.se/launcher-sv/apps/traffic-safety/'),
 		'https://autismapps.online/launcher/apps/traffic-safety/?locale=en'
+	);
+});
+
+test('choosing Portuguese from the Swedish launcher switches to the English launcher base', () => {
+	assert.equal(
+		getLocaleDomainRedirect('pt_BR', 'https://autismappar.se/launcher-sv/?category=visual#language'),
+		'https://autismapps.online/launcher/?category=visual&locale=pt_BR#language'
+	);
+	assert.equal(
+		getLocaleDomainRedirect('pt_BR', 'https://autismappar.se/launcher-sv/apps/traffic-safety/?view=quiz'),
+		'https://autismapps.online/launcher/apps/traffic-safety/?view=quiz&locale=pt_BR'
+	);
+});
+
+test('choosing Swedish from the English launcher switches to the Swedish launcher base', () => {
+	assert.equal(
+		getLocaleDomainRedirect('sv', 'https://autismapps.online/launcher/apps/traffic-safety/?view=quiz'),
+		'https://autismappar.se/launcher-sv/apps/traffic-safety/?view=quiz&locale=sv'
 	);
 });
 
@@ -45,7 +63,7 @@ test('redirect carries the chosen domain language over a saved language on the t
 
 test('Portuguese always uses the non-Swedish domain and preserves the selected route', () => {
 	assert.equal(
-		getLocaleDomainRedirect('pt_BR', 'https://autismappar.se/launcher/settings/?category=visual#language'),
+		getLocaleDomainRedirect('pt_BR', 'https://autismappar.se/launcher-sv/settings/?category=visual#language'),
 		'https://autismapps.online/launcher/settings/?category=visual&locale=pt_BR#language'
 	);
 	assert.equal(getLocaleDomainRedirect('pt_BR', 'https://autismapps.online/launcher/settings/'), null);
@@ -66,14 +84,25 @@ test('the public homepage Portuguese links point directly to autismapps.online',
 });
 
 test('same-domain language selections do not navigate', () => {
-	assert.equal(getLocaleDomainRedirect('sv', 'https://autismappar.se/launcher/settings/'), null);
+	assert.equal(getLocaleDomainRedirect('sv', 'https://autismappar.se/launcher-sv/settings/'), null);
 	assert.equal(getLocaleDomainRedirect('en', 'https://autismapps.online/launcher/settings/'), null);
+});
+
+test('a launcher path is corrected when the host and launcher base do not match', () => {
+	assert.equal(
+		getLocaleDomainRedirect('pt_BR', 'https://autismapps.online/launcher-sv/?locale=sv'),
+		'https://autismapps.online/launcher/?locale=pt_BR'
+	);
+	assert.equal(
+		getLocaleDomainRedirect('sv', 'https://autismappar.se/launcher/apps/board-builder/'),
+		'https://autismappar.se/launcher-sv/apps/board-builder/?locale=sv'
+	);
 });
 
 test('same-domain language selections replace a stale explicit locale override', () => {
 	assert.equal(
 		getLocaleDomainRedirect('sv', 'https://autismappar.se/launcher/settings/?locale=pt-BR&category=visual'),
-		'https://autismappar.se/launcher/settings/?locale=sv&category=visual'
+		'https://autismappar.se/launcher-sv/settings/?locale=sv&category=visual'
 	);
 	assert.equal(
 		getLocaleDomainRedirect('en', 'https://autismapps.online/launcher/?locale=pt_BR'),

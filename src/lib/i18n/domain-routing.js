@@ -28,10 +28,15 @@ export function getLocaleDomainRedirect(locale, currentUrl) {
 	if (!isProductionDomain) return null;
 
 	const hadLocaleOverride = url.searchParams.has('locale');
-	if (hostname === targetHost && !hadLocaleOverride) return null;
+	const targetLauncherBase = locale === 'sv' ? '/launcher-sv' : '/launcher';
+	const launcherPath = url.pathname.replace(/^\/launcher(?:-sv)?(?=\/|$)/, targetLauncherBase);
+	const launcherPathChanged = launcherPath !== url.pathname;
+	const localeOverrideMatches = url.searchParams.get('locale') === locale;
+	if (hostname === targetHost && !launcherPathChanged && (!hadLocaleOverride || localeOverrideMatches)) return null;
 
 	url.protocol = 'https:';
 	url.host = targetHost;
+	url.pathname = launcherPath;
 	// Carry the user's explicit choice across origins. Each domain has its own
 	// localStorage, which may contain a different previously selected language.
 	url.searchParams.set('locale', locale);

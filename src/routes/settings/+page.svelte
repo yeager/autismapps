@@ -2,7 +2,7 @@
   import { t, locale, setLocale, LOCALES, getLocaleDef } from '$lib/i18n';
   import { getLocaleDomainRedirect } from '$lib/i18n/domain-routing.js';
   import { flagSvg } from '$lib/flags';
-  import { speak, preloadVoice, getStoredVoices, removeVoice, getEngine, voiceStoreFor, ttsStatus } from '$lib/tts';
+  import { speak, preloadVoice, getStoredVoices, removeVoice, voiceStoreFor, ttsStatus } from '$lib/tts';
   import { voicesForLang, type VoiceOption } from '$lib/tts/voices';
   import {
     theme, textSize, ttsSpeed, phoneticEmphasis,
@@ -42,13 +42,12 @@
   }
 
   let storedVoices = $state<string[]>([]);
-  let ttsEngine = $state('');
+  const ttsEngine = $derived($ttsStatus.engine);
   let downloadingVoice = $state('');
 
   $effect(() => {
     if (browser) {
       getStoredVoices().then(v => storedVoices = v);
-      ttsEngine = getEngine();
     }
   });
 

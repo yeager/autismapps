@@ -1,11 +1,11 @@
 {
-  "name": "NPF-appar",
-  "short_name": "NPF-appar",
-  "description": "Communication & Learning Tools \u2014 a PWA launcher for accessibility apps",
+  "name": "Autismapps",
+  "short_name": "Autismapps",
+  "description": "Visual tools for communication, routines, time and emotions.",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#FAFBFC",
-  "theme_color": "#4F46E5",
+  "background_color": "#F8F8F4",
+  "theme_color": "#315A49",
   "orientation": "any",
   "categories": [
     "education",
@@ -14,9 +14,15 @@
   ],
   "icons": [
     {
-      "src": "./favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "./icons/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any"
     }
   ],

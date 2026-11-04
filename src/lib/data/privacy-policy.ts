@@ -70,6 +70,7 @@ export const PRIVACY_POLICIES: Record<string, PrivacyPolicy> = {
         bullets: [
           'Language and settings are stored in your browser’s localStorage.',
           'Schedules, choices, and some material you create are stored by each tool in localStorage or IndexedDB.',
+          'Photos, labels, and voice recordings added in Board Builder are saved with the board on your device. The microphone is used only when you start a recording.',
           'The service worker may cache app files so installed web apps can work offline.'
         ],
         paragraphs: [
@@ -144,6 +145,7 @@ export const PRIVACY_POLICIES: Record<string, PrivacyPolicy> = {
         bullets: [
           'Språk och inställningar sparas i webbläsarens localStorage.',
           'Scheman, val och en del eget material sparas av respektive verktyg i localStorage eller IndexedDB.',
+          'Foton, etiketter och ljudinspelningar som du lägger till i Brädbyggaren sparas tillsammans med brädet på din enhet. Mikrofonen används bara när du startar en inspelning.',
           'Service worker kan spara appfiler lokalt så att installerade webbappar fungerar offline.'
         ],
         paragraphs: [
@@ -218,6 +220,7 @@ export const PRIVACY_POLICIES: Record<string, PrivacyPolicy> = {
         bullets: [
           'O idioma e as configurações ficam no localStorage do navegador.',
           'Rotinas, escolhas e alguns materiais criados por você ficam no localStorage ou no IndexedDB de cada ferramenta.',
+          'Fotos, rótulos e gravações de voz adicionados no Criador de Pranchas ficam salvos junto com o quadro neste dispositivo. O microfone só é usado quando você inicia uma gravação.',
           'O service worker pode armazenar arquivos do app em cache para que os aplicativos web instalados funcionem offline.'
         ],
         paragraphs: [

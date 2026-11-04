@@ -18,6 +18,23 @@
   const SUBJECT_KEYS = ['I', 'you', 'he', 'she', 'we', 'they', 'mom', 'dad', 'teacher', 'friend'];
   const VERB_KEYS = ['want', 'eat', 'drink', 'go', 'play', 'read', 'like', 'see', 'hear', 'give', 'make', 'have'];
   const OBJECT_KEYS = ['water', 'food', 'ball', 'book', 'car', 'apple', 'milk', 'cookie', 'home', 'school', 'music', 'puzzle'];
+  const PHRASE_BANK_LABELS = {
+    sv: {
+      customPlaceholder: 'Skriv en egen fras', addCustom: 'Lägg till',
+      favoritesEmpty: 'Spara en egen fras eller bygg en mening och tryck på stjärnan.',
+      speakFavorite: 'Läs upp fras', removeFavorite: 'Ta bort fras'
+    },
+    en: {
+      customPlaceholder: 'Write your own phrase', addCustom: 'Add phrase',
+      favoritesEmpty: 'Save your own phrase or build a sentence and tap the star.',
+      speakFavorite: 'Speak phrase', removeFavorite: 'Remove phrase'
+    },
+    pt_BR: {
+      customPlaceholder: 'Escreva sua própria frase', addCustom: 'Adicionar frase',
+      favoritesEmpty: 'Salve uma frase ou monte uma frase e toque na estrela.',
+      speakFavorite: 'Falar frase', removeFavorite: 'Remover frase'
+    }
+  } as const;
 
   let subjects = $state<PictoWord[]>([]);
   let verbs = $state<PictoWord[]>([]);
@@ -37,6 +54,7 @@
   const sentence = $derived(
     [selectedSubject?.word, selectedVerb?.word, selectedObject?.word].filter(Boolean).join(' ')
   );
+  const phraseBankLabels = $derived(PHRASE_BANK_LABELS[$locale as keyof typeof PHRASE_BANK_LABELS] ?? PHRASE_BANK_LABELS.en);
 
   const phraseBankKey = $derived(`autismapps:phrase-bank:v1:${$activeProfileId ?? 'default'}:${$locale}`);
 
@@ -230,22 +248,22 @@
     <div class="favorites-heading">
       <h2 id="phrase-bank-title">⭐ {$t('phrase.favorites')}</h2>
       <form class="custom-phrase-form" onsubmit={(event) => { event.preventDefault(); addCustomPhrase(); }}>
-        <label class="sr-only" for="custom-phrase">{$t('phrase.custom_placeholder')}</label>
-        <input id="custom-phrase" bind:value={customPhrase} maxlength="120" placeholder={$t('phrase.custom_placeholder')} />
-        <button type="submit" disabled={!customPhrase.trim()}>{$t('phrase.add_custom')}</button>
+        <label class="sr-only" for="custom-phrase">{phraseBankLabels.customPlaceholder}</label>
+        <input id="custom-phrase" bind:value={customPhrase} maxlength="120" placeholder={phraseBankLabels.customPlaceholder} />
+        <button type="submit" disabled={!customPhrase.trim()}>{phraseBankLabels.addCustom}</button>
       </form>
     </div>
     {#if favorites.length > 0}
       <div class="fav-list">
         {#each favorites as fav (fav)}
           <div class="fav-item">
-            <button class="fav-chip" onclick={() => speakFav(fav)} aria-label={`${$t('phrase.speak_favorite')}: ${fav}`}>🔊 {fav}</button>
-            <button class="remove-favorite" onclick={() => removeFavorite(fav)} aria-label={`${$t('phrase.remove_favorite')}: ${fav}`}>×</button>
+            <button class="fav-chip" onclick={() => speakFav(fav)} aria-label={`${phraseBankLabels.speakFavorite}: ${fav}`}>🔊 {fav}</button>
+            <button class="remove-favorite" onclick={() => removeFavorite(fav)} aria-label={`${phraseBankLabels.removeFavorite}: ${fav}`}>×</button>
           </div>
         {/each}
       </div>
     {:else}
-      <p class="favorites-empty">{$t('phrase.favorites_empty')}</p>
+      <p class="favorites-empty">{phraseBankLabels.favoritesEmpty}</p>
     {/if}
   </section>
 

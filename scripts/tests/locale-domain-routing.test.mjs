@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { getLocaleDomainRedirect, requestedLocaleFromParam, savedLocaleOverride } from '../../src/lib/i18n/domain-routing.js';
+import { ALL_APPS } from '../../src/lib/apps.ts';
 
 test('choosing Swedish from the English site preserves route, query, and hash on the Swedish domain', () => {
 	assert.equal(
@@ -86,7 +87,7 @@ test('the public homepage Portuguese links point directly to autismapps.online',
 test('English homepage launcher links keep English selected from a saved Portuguese session', () => {
 	const html = readFileSync(new URL('../../deploy/root-site/index-en.html', import.meta.url), 'utf8');
 	const links = [...html.matchAll(/<a href="([^"]+)" class="app-card"/g)].map((match) => match[1]);
-	assert.equal(links.length, 72);
+	assert.equal(links.length, ALL_APPS.length);
 	assert.ok(links.every((href) => /^\/launcher\/apps\/[a-z0-9-]+\?locale=en$/.test(href)));
 	const launcherLinks = [...html.matchAll(/<a\b[^>]*href="([^"]+)"/g)]
 		.map((match) => match[1])
@@ -142,7 +143,7 @@ test('Swedish app cards use the Swedish build and old generic launcher URLs redi
 	assert.ok(rootHtaccess.includes('RewriteRule ^launcher/?(.*)$ https://autismappar.se/launcher-sv/$1 [R=302,L,NE]'));
 	assert.ok(launcherHtaccess.includes('RewriteCond %{REQUEST_URI} ^/launcher(?:/|$) [NC]'));
 	assert.ok(launcherHtaccess.includes('RewriteRule ^(.*)$ https://autismappar.se/launcher-sv/$1 [R=302,L,NE]'));
-	assert.equal((swedishHomepage.match(/href="\/launcher-sv\/apps\/[a-z0-9-]+"/g) || []).length, 72);
+	assert.equal((swedishHomepage.match(/href="\/launcher-sv\/apps\/[a-z0-9-]+"/g) || []).length, ALL_APPS.length);
 	assert.doesNotMatch(swedishHomepage, /href="\/launcher\/apps\//);
 	assert.match(swedishHomepage, /href="\/launcher-sv\/"/);
 	assert.match(appDetailGenerator, /locale === 'sv' \? 'https:\/\/autismappar\.se\/launcher-sv' : 'https:\/\/autismapps\.online\/launcher'/);

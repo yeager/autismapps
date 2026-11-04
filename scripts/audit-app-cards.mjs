@@ -17,6 +17,8 @@ function normalizeText(value) {
 		.replace(/&amp;/g, '&')
 		.replace(/&quot;/g, '"')
 		.replace(/&#39;/g, "'")
+		.replace(/&#x27;/gi, "'")
+		.replace(/&apos;/gi, "'")
 		.replace(/&lt;/g, '<')
 		.replace(/&gt;/g, '>')
 		.replace(/\s+/g, ' ')
@@ -74,10 +76,68 @@ for (const app of ALL_APPS) {
 	}
 }
 
+for (const rootCatalog of [
+	{ code: 'sv', file: 'deploy/root-site/index.html', routePrefix: '/launcher-sv/apps/' },
+	{ code: 'en', file: 'deploy/root-site/index-en.html', routePrefix: '/launcher/apps/' }
+]) {
+	if (!existsSync(rootCatalog.file)) {
+		errors.push(`${rootCatalog.code}: root catalogue is missing at ${rootCatalog.file}`);
+		continue;
+	}
+
+	const html = readFileSync(rootCatalog.file, 'utf8');
+	const cards = [...html.matchAll(/<a\b[^>]*class="app-card"[^>]*>[\s\S]*?<\/a>/g)].map(([card]) => {
+		const href = card.match(/\bhref="([^"]+)"/)?.[1] ?? '';
+		const id = href.match(/\/apps\/([a-z0-9-]+)(?:\?|$)/)?.[1] ?? '';
+		const title = card.match(/<h3\b[^>]*>[\s\S]*?<span\b[^>]*\bdata-sv="([^"]*)"[^>]*\bdata-en="([^"]*)"[^>]*>/i);
+		const description = card.match(/<p\b[^>]*\bdata-sv="([^"]*)"[^>]*\bdata-en="([^"]*)"[^>]*>/i);
+		const category = card.match(/\bdata-cat="([^"]+)"/)?.[1] ?? '';
+		const englishSearch = card.match(/\bdata-en-search="([^"]*)"/)?.[1] ?? '';
+		return { id, href, title: title?.slice(1) ?? [], description: description?.slice(1) ?? [], category, englishSearch };
+	});
+
+	if (cards.length !== ALL_APPS.length) {
+		errors.push(`${rootCatalog.code}: root catalogue has ${cards.length} cards for ${ALL_APPS.length} registered apps`);
+	}
+
+	const rootIds = new Set();
+	for (const card of cards) {
+		if (!card.id) {
+			errors.push(`${rootCatalog.code}: root catalogue card has no app route (${card.href || 'missing href'})`);
+			continue;
+		}
+		if (rootIds.has(card.id)) errors.push(`${rootCatalog.code}: duplicate root catalogue card ${card.id}`);
+		rootIds.add(card.id);
+		const app = ALL_APPS.find(({ id }) => id === card.id);
+		if (!app) {
+			errors.push(`${rootCatalog.code}: root catalogue links to unknown app ${card.id}`);
+			continue;
+		}
+
+		const expectedHref = `${rootCatalog.routePrefix}${app.id}${rootCatalog.code === 'en' ? '?locale=en' : ''}`;
+		if (card.href !== expectedHref) errors.push(`${rootCatalog.code}: ${app.id} links to ${card.href}, expected ${expectedHref}`);
+		if (card.category !== app.category) errors.push(`${rootCatalog.code}: ${app.id} uses category ${card.category}, expected ${app.category}`);
+		if (card.title.length !== 2 || normalizeText(card.title[0]) !== normalizeText(locales.find(({ code }) => code === 'sv').messages[app.name]) || normalizeText(card.title[1]) !== normalizeText(locales.find(({ code }) => code === 'en').messages[app.name])) {
+			errors.push(`${rootCatalog.code}: ${app.id} root catalogue title does not match the localized app registry`);
+		}
+		if (card.description.length !== 2 || normalizeText(card.description[0]) !== normalizeText(locales.find(({ code }) => code === 'sv').messages[app.description]) || normalizeText(card.description[1]) !== normalizeText(locales.find(({ code }) => code === 'en').messages[app.description])) {
+			errors.push(`${rootCatalog.code}: ${app.id} root catalogue description does not match the localized app registry`);
+		}
+		const englishMessages = locales.find(({ code }) => code === 'en').messages;
+		if (!normalizeText(card.englishSearch).includes(normalizeText(englishMessages[app.name])) || !normalizeText(card.englishSearch).includes(normalizeText(englishMessages[app.description]))) {
+			errors.push(`${rootCatalog.code}: ${app.id} root catalogue search text is missing English app text`);
+		}
+	}
+
+	for (const app of ALL_APPS) {
+		if (!rootIds.has(app.id)) errors.push(`${rootCatalog.code}: root catalogue is missing ${app.id}`);
+	}
+}
+
 if (errors.length) {
 	console.error(`App card audit found ${errors.length} problem(s):`);
 	for (const error of errors) console.error(`- ${error}`);
 	process.exitCode = 1;
 } else {
-	console.log(`Verified ${ALL_APPS.length} app cards: unique ids/routes, matching route slugs, source pages, localized names and descriptions, matching English/Swedish route headings, and icons in both builds.`);
+	console.log(`Verified ${ALL_APPS.length} launcher cards and both root-site catalogues: unique ids/routes, matching source pages, localized names and descriptions, correct root links/categories/search text, and icons in both builds.`);
 }

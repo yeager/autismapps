@@ -1,6 +1,6 @@
 # Autismappar 🧩
 
-**SvelteKit PWA with 72 AAC and learning tools for children with neurodevelopmental conditions (NPF), intellectual disabilities (IF) and verbal dyspraxia**
+**SvelteKit PWA with 73 AAC and learning tools for children with neurodevelopmental conditions (NPF), intellectual disabilities (IF) and verbal dyspraxia**
 
 🌐 **Live:** [yeager.github.io/autismapps](https://yeager.github.io/autismapps/)  
 🇸🇪 **Swedish name:** Autismappar (NPF-appar)
@@ -25,7 +25,7 @@ A free, open-source collection of evidence-based apps designed for children with
 
 ## Featured tools
 
-The launcher currently contains **72 tools** across eight categories. The lists below highlight core workflows; the live catalogue in the app registry is the source of truth for the complete set.
+The launcher currently contains **73 tools** across eight categories. The lists below highlight core workflows; the live catalogue in the app registry is the source of truth for the complete set.
 
 ### Communication (AAC)
 | App | Description |
@@ -133,7 +133,7 @@ The Loopia launcher uses path-versioned Piktali image URLs and the generated `.h
 
 Generate the bilingual legacy app-detail pages used at `/apps/<id>.html` on Loopia:
 ```bash
-npm run build:loopia-app-pages # 72 pages in build-loopia-root/apps/
+npm run build:loopia-app-pages # 73 pages in build-loopia-root/apps/
 ```
 These pages use the app registry and Swedish/English message catalogs as their source, select the brand from the hostname, and link to the matching app through a relative same-domain launcher path. Both public hostnames use the shared Loopia document root `autismappar.se/public_html/`.
 

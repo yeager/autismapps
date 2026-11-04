@@ -135,9 +135,24 @@
   }
 
   async function exportData() {
-    const boards = await db.boards.toArray();
-    const schedules = await db.schedules.toArray();
-    const data = JSON.stringify({ boards, schedules }, null, 2);
+    const [boards, schedules, settings, profiles, appProgress, goldStars, achievements, rewardGoals, diplomas] = await Promise.all([
+      db.boards.toArray(), db.schedules.toArray(), db.settings.toArray(), db.profiles.toArray(),
+      db.appProgress.toArray(), db.goldStars.toArray(), db.achievements.toArray(),
+      db.rewardGoals.toArray(), db.diplomas.toArray()
+    ]);
+    const localPreferences: Record<string, string> = {};
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && /^(a11y-|locale$|userName$|active-profile-id$|rewards-settings)/.test(key)) {
+        const value = localStorage.getItem(key);
+        if (value !== null) localPreferences[key] = value;
+      }
+    }
+    const data = JSON.stringify({
+      format: 'autismapps-backup', version: 2, exportedAt: new Date().toISOString(),
+      boards, schedules, settings, profiles, appProgress, goldStars, achievements, rewardGoals, diplomas,
+      localPreferences
+    }, null, 2);
     const blob = new Blob([data], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -156,22 +171,43 @@
       if (!file) return;
       const text = await file.text();
       try {
-        const data = JSON.parse(text);
-        if (data.boards) {
-          for (const b of data.boards) {
-            delete b.id;
-            await db.boards.add(b);
-          }
+        const data: Record<string, unknown> = JSON.parse(text);
+        if (!data || typeof data !== 'object' || Array.isArray(data) || !['autismapps-backup', undefined].includes(data.format as string | undefined)) {
+          throw new Error('Unsupported backup format');
         }
-        if (data.schedules) {
-          for (const s of data.schedules) {
-            delete s.id;
-            await db.schedules.add(s);
+        const tables = ['boards', 'schedules', 'settings', 'profiles', 'appProgress', 'goldStars', 'achievements', 'rewardGoals', 'diplomas'] as const;
+        const rowsByTable = new Map<string, Record<string, unknown>[]>();
+        for (const name of tables) {
+          const rows = data[name];
+          if (rows === undefined) continue;
+          if (!Array.isArray(rows)) throw new Error(`Invalid ${name} data`);
+          const validatedRows: Record<string, unknown>[] = [];
+          for (const row of rows) {
+            if (!row || typeof row !== 'object' || Array.isArray(row)) throw new Error(`Invalid ${name} row`);
+            const record = { ...(row as Record<string, unknown>) };
+            delete record.id;
+            validatedRows.push(record);
+          }
+          rowsByTable.set(name, validatedRows);
+        }
+        const preferences = data.localPreferences;
+        if (preferences !== undefined && (!preferences || typeof preferences !== 'object' || Array.isArray(preferences))) throw new Error('Invalid preferences');
+        await db.transaction('rw', tables.map((name) => db.table(name)), async () => {
+          for (const [name, rows] of rowsByTable) {
+            const table = db.table(name);
+            for (const row of rows) await table.add(row);
+          }
+        });
+        if (preferences !== undefined) {
+          for (const [key, value] of Object.entries(preferences as Record<string, unknown>)) {
+            if (/^(a11y-|locale$|userName$|active-profile-id$|rewards-settings)/.test(key) && typeof value === 'string') {
+              localStorage.setItem(key, value);
+            }
           }
         }
         speak($t('settings.import_data'));
       } catch {
-        alert('Invalid file');
+        alert('Filen kunde inte importeras. Kontrollera att det är en giltig Autismappar-säkerhetskopia.');
       }
     };
     input.click();

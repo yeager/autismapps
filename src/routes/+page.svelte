@@ -20,7 +20,11 @@
 
   const categories = Object.entries(CATEGORY_META) as [AppCategory, typeof CATEGORY_META[AppCategory]][];
   const languages = READY_LOCALES;
-  const featuredIds = new Set(['talk-board', 'picture-schedule', 'visual-timer', 'calm-room', 'emotion-map', 'word-builder', 'day-planner', 'chooser']);
+  const featuredIds = new Set([
+    'talk-board', 'comm-book', 'phrase-builder', 'picture-schedule', 'visual-timer',
+    'transition-helper', 'social-stories', 'calm-room', 'emotion-map', 'word-builder',
+    'day-planner', 'chooser'
+  ]);
   const currentFlag = $derived(getLocaleDef($locale).flag);
   // toLocaleLowerCase needs a BCP-47 tag ('pt_BR' throws a RangeError)
   const bcp47 = $derived(getLocaleDef($locale).bcp47);

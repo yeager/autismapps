@@ -2,10 +2,12 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import WelcomeDialog from '$lib/components/WelcomeDialog.svelte';
-  import { t } from '$lib/i18n';
+  import { t, locale } from '$lib/i18n';
+  import { browser } from '$app/environment';
   import { speak } from '$lib/tts';
   import { searchPictograms } from '$lib/arasaac';
   import { awardStar, GoldStarBurst } from '$lib/rewards';
+  import { activeProfileId } from '$lib/stores/profile';
 
   interface PictoWord { word: string; url: string; id: number; }
 
@@ -26,12 +28,43 @@
   let selectedVerb = $state<PictoWord | null>(null);
   let selectedObject = $state<PictoWord | null>(null);
   let favorites = $state<string[]>([]);
+  let customPhrase = $state('');
+  let favoritesProfileKey = $state('');
+  let favoritesReady = $state(false);
   let showStar = $state(false);
   let lastCompleteSentence = $state('');
 
   const sentence = $derived(
     [selectedSubject?.word, selectedVerb?.word, selectedObject?.word].filter(Boolean).join(' ')
   );
+
+  const phraseBankKey = $derived(`autismapps:phrase-bank:v1:${$activeProfileId ?? 'default'}:${$locale}`);
+
+  $effect(() => {
+    if (!browser) return;
+    const key = phraseBankKey;
+    favoritesReady = false;
+    try {
+      const stored: unknown = JSON.parse(localStorage.getItem(key) || '[]');
+      favorites = Array.isArray(stored)
+        ? stored.filter((phrase): phrase is string => typeof phrase === 'string' && phrase.trim().length > 0).slice(0, 100)
+        : [];
+    } catch {
+      favorites = [];
+    }
+    favoritesProfileKey = key;
+    favoritesReady = true;
+  });
+
+  $effect(() => {
+    if (browser && favoritesReady && favoritesProfileKey === phraseBankKey) {
+      try {
+        localStorage.setItem(favoritesProfileKey, JSON.stringify(favorites));
+      } catch {
+        // Keep the phrase bank usable for the current visit if storage is unavailable.
+      }
+    }
+  });
 
   $effect(() => { loadAll(); });
 
@@ -63,12 +96,27 @@
   }
 
   function saveFavorite() {
-    if (sentence && !favorites.includes(sentence)) {
-      favorites = [...favorites, sentence];
-    }
+    addFavorite(sentence);
   }
 
   function speakFav(fav: string) { speak(fav); }
+
+  function addCustomPhrase() {
+    const phrase = customPhrase.trim().replace(/\s+/g, ' ').slice(0, 120);
+    if (!phrase) return;
+    addFavorite(phrase);
+    customPhrase = '';
+  }
+
+  function addFavorite(phrase: string) {
+    const normalized = phrase.trim().replace(/\s+/g, ' ');
+    if (!normalized || favorites.some((favorite) => favorite.toLocaleLowerCase() === normalized.toLocaleLowerCase())) return;
+    favorites = [...favorites, normalized].slice(-100);
+  }
+
+  function removeFavorite(phrase: string) {
+    favorites = favorites.filter((favorite) => favorite !== phrase);
+  }
 
   function clearSelection() {
     selectedSubject = null;
@@ -178,16 +226,28 @@
   {/if}
 
   <!-- Favorites -->
-  {#if favorites.length > 0}
-    <div class="favorites">
-      <h3>⭐ {$t('phrase.favorites')}</h3>
+  <section class="favorites" aria-labelledby="phrase-bank-title">
+    <div class="favorites-heading">
+      <h2 id="phrase-bank-title">⭐ {$t('phrase.favorites')}</h2>
+      <form class="custom-phrase-form" onsubmit={(event) => { event.preventDefault(); addCustomPhrase(); }}>
+        <label class="sr-only" for="custom-phrase">{$t('phrase.custom_placeholder')}</label>
+        <input id="custom-phrase" bind:value={customPhrase} maxlength="120" placeholder={$t('phrase.custom_placeholder')} />
+        <button type="submit" disabled={!customPhrase.trim()}>{$t('phrase.add_custom')}</button>
+      </form>
+    </div>
+    {#if favorites.length > 0}
       <div class="fav-list">
-        {#each favorites as fav}
-          <button class="fav-chip" onclick={() => speakFav(fav)}>{fav}</button>
+        {#each favorites as fav (fav)}
+          <div class="fav-item">
+            <button class="fav-chip" onclick={() => speakFav(fav)} aria-label={`${$t('phrase.speak_favorite')}: ${fav}`}>🔊 {fav}</button>
+            <button class="remove-favorite" onclick={() => removeFavorite(fav)} aria-label={`${$t('phrase.remove_favorite')}: ${fav}`}>×</button>
+          </div>
         {/each}
       </div>
-    </div>
-  {/if}
+    {:else}
+      <p class="favorites-empty">{$t('phrase.favorites_empty')}</p>
+    {/if}
+  </section>
 
   <footer class="credit">
     {$t('app.credit.pictograms')}: <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a> — CC BY-NC-SA 3.0
@@ -234,14 +294,29 @@
   .col-item.active { background: color-mix(in srgb, var(--col) 15%, transparent); border-color: var(--col); }
   .col-item img { border-radius: 4px; flex-shrink: 0; }
 
-  .favorites { padding: 12px 16px; border-top: 1px solid var(--border); }
-  .favorites h3 { font-size: 0.9em; margin-bottom: 8px; }
+  .favorites { padding: 14px 16px; border-top: 1px solid var(--border); }
+  .favorites-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 10px; }
+  .favorites h2 { font-size: 1em; margin: 0; }
+  .custom-phrase-form { display: flex; gap: 8px; min-width: min(100%, 440px); }
+  .custom-phrase-form input { min-width: 0; flex: 1; padding: 9px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg); color: var(--text); font: inherit; }
+  .custom-phrase-form button { padding: 8px 12px; border: 1px solid var(--accent); border-radius: var(--radius-sm); background: var(--accent); color: white; font: inherit; font-weight: 650; }
+  .custom-phrase-form button:disabled { opacity: .5; }
   .fav-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .fav-item { display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: 999px; background: var(--bg-card); overflow: hidden; }
   .fav-chip {
-    padding: 6px 14px; background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: 100px; font-size: 0.85em; font-weight: 500; transition: background 0.15s;
+    min-height: 42px; padding: 6px 12px; background: transparent; border: 0;
+    font-size: 0.85em; font-weight: 500; transition: background 0.15s;
   }
   .fav-chip:hover { background: var(--bg-hover); }
+  .remove-favorite { width: 38px; min-height: 42px; border: 0; border-left: 1px solid var(--border); background: transparent; color: var(--text-muted); font: inherit; font-size: 1.2em; }
+  .remove-favorite:hover { color: var(--text); background: var(--bg-hover); }
+  .favorites-empty { margin: 0; color: var(--text-muted); font-size: .9em; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 620px) {
+    .favorites-heading { align-items: stretch; flex-direction: column; }
+    .custom-phrase-form { min-width: 0; }
+  }
 
   .loading { flex: 1; display: flex; align-items: center; justify-content: center; }
   .spinner { width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: #3498DB; border-radius: 50%; animation: spin 0.8s linear infinite; }

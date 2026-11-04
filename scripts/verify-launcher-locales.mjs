@@ -6,8 +6,8 @@ import { PIKTALI_MANIFEST_REVISION } from '../src/lib/piktali/manifest-url.js';
 import { ICON_REVISION } from '../src/lib/pwa/icon-revision.js';
 
 const variants = [
-	{ code: 'en', directory: 'build', host: 'autismapps.online', brand: 'Autismapps', marker: 'All tools', basePath: '/launcher' },
-	{ code: 'sv', directory: 'build-sv', host: 'autismappar.se', brand: 'Autismappar', marker: 'Alla verktyg', basePath: '/launcher-sv' }
+	{ code: 'en', directory: 'build', host: 'autismapps.online', brand: 'Autismapps', marker: 'All tools', basePath: '/launcher', socialImage: 'og-image-en.png' },
+	{ code: 'sv', directory: 'build-sv', host: 'autismappar.se', brand: 'Autismappar', marker: 'Alla verktyg', basePath: '/launcher-sv', socialImage: 'og-image.png' }
 ];
 const appRoutes = readdirSync('src/routes/apps', { withFileTypes: true })
 	.filter((entry) => entry.isDirectory())
@@ -74,6 +74,10 @@ for (const variant of variants) {
 	expect(home.includes(variant.marker), `${variant.directory}: missing localized home marker`);
 	expect(home.includes(`href="https://${variant.host}${canonicalBasePath}/"`), `${variant.directory}: wrong home canonical host`);
 	expect(home.includes(`content="${variant.brand}"`), `${variant.directory}: wrong site brand metadata`);
+	const socialImageUrl = `https://${variant.host}/images/${variant.socialImage}`;
+	expect(home.includes(`property="og:image" content="${socialImageUrl}"`), `${variant.directory}: wrong Open Graph image`);
+	expect(home.includes(`name="twitter:image" content="${socialImageUrl}"`), `${variant.directory}: wrong Twitter image`);
+	expect(existsSync(join('deploy', 'root-site', 'images', variant.socialImage)), `Missing source social image ${variant.socialImage}`);
 	const manifestName = `manifest-${variant.code}-v${ICON_REVISION}.json`;
 	expect(home.includes(`${basePath}/${manifestName}`), `${variant.directory}: wrong language manifest`);
 	const manifestPath = join(root, manifestName);
@@ -107,6 +111,8 @@ for (const variant of variants) {
 		expect(html.includes(`<html lang="${variant.code}"`), `${variant.directory}/${slug}: wrong lang`);
 		expect(html.includes(`href="https://${variant.host}${canonicalBasePath}/apps/${slug}/"`), `${variant.directory}/${slug}: wrong canonical`);
 		expect(html.includes(`content="${variant.brand}"`), `${variant.directory}/${slug}: wrong brand metadata`);
+		expect(html.includes(`property="og:image" content="${socialImageUrl}"`), `${variant.directory}/${slug}: wrong Open Graph image`);
+		expect(html.includes(`name="twitter:image" content="${socialImageUrl}"`), `${variant.directory}/${slug}: wrong Twitter image`);
 
 		const assets = [
 			...html.matchAll(/(?:src|href)="([^"#?]+\.(?:js|css|wasm))"/g)

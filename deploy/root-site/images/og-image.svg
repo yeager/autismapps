@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f6f5f0"/>
+<circle cx="1060" cy="90" r="250" fill="#e7ebdf"/>
+<circle cx="104" cy="598" r="210" fill="#e4eee4"/>
+<rect x="710" y="93" width="348" height="440" rx="28" fill="#fff" stroke="#e5e8e1" stroke-width="2" transform="rotate(4 884 313)"/>
+<rect x="747" y="127" width="275" height="62" rx="14" fill="#eff3eb" transform="rotate(4 884 158)"/>
+<text x="779" y="168" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#192421">Min förmiddag</text>
+<g font-family="Arial,sans-serif" font-size="25" font-weight="600" fill="#33433a">
+<rect x="749" y="218" width="286" height="63" rx="13" fill="#fae6d4"/><text x="768" y="258">☀️</text><text x="818" y="258" font-size="20">Klä på mig</text>
+<rect x="749" y="296" width="286" height="63" rx="13" fill="#e5e2f5"/><text x="768" y="336">🪥</text><text x="818" y="336" font-size="20">Borsta tänderna</text>
+<rect x="749" y="374" width="286" height="63" rx="13" fill="#e2eee2"/><text x="768" y="414">🥣</text><text x="818" y="414" font-size="20">Äta frukost</text>
+<rect x="749" y="452" width="286" height="52" rx="13" fill="#e0edf0"/><text x="768" y="488">🎒</text><text x="818" y="488" font-size="20">Gå till skolan</text>
+</g>
+<rect x="97" y="112" width="62" height="62" rx="19" fill="#386c55"/>
+<path d="m128 126 8 15 17 3-12 12 3 17-16-8-15 8 3-17-12-12 17-3z" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+<text x="184" y="155" font-family="Arial,sans-serif" font-size="35" font-weight="700" fill="#192421">autismappar</text>
+<text x="100" y="280" font-family="Arial,sans-serif" font-size="61" font-weight="700" letter-spacing="-2" fill="#192421">Stöd som passar</text>
+<text x="100" y="352" font-family="Arial,sans-serif" font-size="61" font-weight="700" letter-spacing="-2" fill="#386c55">just din vardag.</text>
+<text x="103" y="421" font-family="Arial,sans-serif" font-size="25" fill="#66736c">Gratis verktyg för kommunikation, struktur</text>
+<text x="103" y="458" font-family="Arial,sans-serif" font-size="25" fill="#66736c">och lärande. Hemma och i skolan.</text>
+<rect x="102" y="506" width="248" height="54" rx="27" fill="#386c55"/><text x="132" y="541" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#fff">autismappar.se</text>
+</svg>

@@ -54,6 +54,7 @@ addDirectoryIndexes(outputDirectory);
 // Make server-rendered document metadata agree with the language variant.
 const brand = prerenderLocale === 'sv' ? 'Autismappar' : 'Autismapps';
 const canonicalHost = prerenderLocale === 'sv' ? 'https://autismappar.se' : 'https://autismapps.online';
+const socialImage = `${canonicalHost}/images/${prerenderLocale === 'sv' ? 'og-image.png' : 'og-image-en.png'}`;
 const basePath = process.env.BASE_PATH.replace(/\/$/, '');
 const canonicalBasePath = (process.env.CANONICAL_BASE_PATH || process.env.BASE_PATH).replace(/\/$/, '');
 function localizeDocumentMetadata(directory) {
@@ -75,8 +76,8 @@ function localizeDocumentMetadata(directory) {
 			.replace(/(<link rel="manifest" href=")[^"]*/, `$1${basePath}/manifest-${prerenderLocale}-v${ICON_REVISION}.json`)
 			.replace(/(<meta property="og:locale" content=")[^"]*/, `$1${prerenderLocale === 'sv' ? 'sv_SE' : 'en_US'}`)
 			.replace(/(<meta property="og:site_name" content=")[^"]*/, `$1${brand}`)
-			.replace(/(<meta property="og:image" content=")[^"]*/, `$1${canonicalHost}/images/og-image.png`)
-			.replace(/(<meta name="twitter:image" content=")[^"]*/, `$1${canonicalHost}/images/og-image.png`)
+			.replace(/(<meta property="og:image" content=")[^"]*/, `$1${socialImage}`)
+			.replace(/(<meta name="twitter:image" content=")[^"]*/, `$1${socialImage}`)
 			.replace(/(<meta name="apple-mobile-web-app-title" content=")[^"]*/, `$1${brand}`)
 			.replace(/(<link rel="canonical" href=")[^"]*/, `$1${canonical}`)
 			.replace(/(<meta property="og:url" content=")[^"]*/, `$1${canonical}`);

@@ -12,13 +12,13 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="sv_SE">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://autismapps.online/images/og-image.png">
+  <meta name="twitter:image" content="https://autismapps.online/images/og-image-en.png">
   <meta property="og:description" content="Free digital tools for communication, routines and learning. For families, schools and support professionals.">
   <meta name="twitter:title" content="Autismapps — tools for everyday life">
   <meta name="twitter:description" content="Free digital tools for communication, routines and learning. For families, schools and support professionals.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://autismapps.online/">
-  <meta property="og:image" content="https://autismapps.online/images/og-image.png">
+  <meta property="og:image" content="https://autismapps.online/images/og-image-en.png">
   <link rel="canonical" href="https://autismapps.online/">
   <link rel="alternate" hreflang="sv" href="https://autismappar.se/">
   <link rel="alternate" hreflang="en" href="https://autismapps.online/">
@@ -456,6 +456,7 @@ function setPageMetadata(next){
   const description=english
     ?'Free digital tools for communication, routines and learning. Made with care for different ways of thinking and communicating.'
     :'Upptäck kostnadsfria digitala verktyg för kommunikation, struktur och lärande. Skapade med omtanke för olika sätt att fungera.';
+  const socialImage=english?'https://autismapps.online/images/og-image-en.png':'https://autismappar.se/images/og-image.png';
   const socialDescription=english
     ?'Free digital tools for communication, routines and learning. For families, schools and support professionals.'
     :'Gratis digitala verktyg för kommunikation, struktur och lärande. För familjer, skolor och stödpersoner.';
@@ -466,6 +467,8 @@ function setPageMetadata(next){
   document.querySelector('meta[property="og:locale"]').content=english?'en_US':'sv_SE';
   document.querySelector('meta[property="og:locale:alternate"]').content=english?'sv_SE':'en_US';
   document.querySelector('meta[property="og:description"]').content=socialDescription;
+  document.querySelector('meta[property="og:image"]').content=socialImage;
+  document.querySelector('meta[name="twitter:image"]').content=socialImage;
   document.querySelector('meta[property="og:url"]').content=domain+'/';
   document.querySelector('meta[name="twitter:title"]').content=title;
   document.querySelector('meta[name="twitter:description"]').content=socialDescription;

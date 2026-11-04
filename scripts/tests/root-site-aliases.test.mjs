@@ -29,6 +29,10 @@ test('duplicate launcher prefixes redirect to the matching language launcher', (
 	const rules = readFileSync(new URL('../../deploy/root-site/.htaccess', import.meta.url), 'utf8');
 	assert.match(rules, /RewriteRule \^launcher\/launcher\/\?\(\.\*\)\$ https:\/\/autismappar\.se\/launcher-sv\/\$1 \[R=301,L,NE\]/);
 	assert.match(rules, /RewriteRule \^launcher\/launcher\/\?\(\.\*\)\$ https:\/\/autismapps\.online\/launcher\/\$1 \[R=301,L,NE\]/);
+	const launcherRules = readFileSync(new URL('../../deploy/launcher.htaccess', import.meta.url), 'utf8');
+	assert.match(launcherRules, /RewriteCond %\{REQUEST_URI\} \^\/launcher\/launcher\(\?:\/\|\$\) \[NC\]/);
+	assert.match(launcherRules, /RewriteRule \^launcher\/\?\(\.\*\)\$ https:\/\/autismappar\.se\/launcher-sv\/\$1 \[R=301,L,NE\]/);
+	assert.match(launcherRules, /RewriteRule \^launcher\/\?\(\.\*\)\$ https:\/\/autismapps\.online\/launcher\/\$1 \[R=301,L,NE\]/);
 });
 
 test('missing assets in the Swedish launcher resolve on the canonical non-Swedish host', () => {

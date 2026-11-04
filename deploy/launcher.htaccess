@@ -12,6 +12,13 @@ RewriteEngine On
 # This directory has its own rewrite rules, so the public_html rule does not
 # reliably reach launcher routes. Keep Swedish legacy URLs on the localized
 # build's base path before directory and asset handling.
+RewriteCond %{REQUEST_URI} ^/launcher/launcher(?:/|$) [NC]
+RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
+RewriteRule ^launcher/?(.*)$ https://autismappar.se/launcher-sv/$1 [R=301,L,NE]
+RewriteCond %{REQUEST_URI} ^/launcher/launcher(?:/|$) [NC]
+RewriteCond %{HTTP_HOST} ^(www\.)?autismapps\.online$ [NC]
+RewriteRule ^launcher/?(.*)$ https://autismapps.online/launcher/$1 [R=301,L,NE]
+
 RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
 RewriteCond %{REQUEST_URI} ^/launcher(?:/|$) [NC]
 RewriteRule ^(.*)$ https://autismappar.se/launcher-sv/$1 [R=302,L,NE]

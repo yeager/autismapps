@@ -16,6 +16,17 @@
 
   const LANGUAGES = LOCALES;
 
+  const LOCAL_DATA_KEYS = new Set([
+    'locale', 'userName', 'userAvatar', 'active-profile-id', 'sentence-strips', 'symbol-texts',
+    'fine-motor-progress', 'seq-trainer-progress', 'mit-progress', 'category-sort-custom',
+    'comm-book-pages', 'comm-book-taps', 'th-saved-transitions', 'communication-profile-v1',
+    'communication-visit-v1'
+  ]);
+
+  function isBackupLocalStorageKey(key: string): boolean {
+    return LOCAL_DATA_KEYS.has(key) || /^(a11y-|rewards-settings|tts-voice-|autismapps:phrase-bank:|planning-trainer|sensory-profile)/.test(key);
+  }
+
   const TEXT_SIZES: { value: TextSize; key: string }[] = [
     { value: 'normal', key: 'settings.text_size.normal' },
     { value: 'large', key: 'settings.text_size.large' },
@@ -143,7 +154,7 @@
     const localPreferences: Record<string, string> = {};
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
-      if (key && /^(a11y-|locale$|userName$|active-profile-id$|rewards-settings)/.test(key)) {
+      if (key && isBackupLocalStorageKey(key)) {
         const value = localStorage.getItem(key);
         if (value !== null) localPreferences[key] = value;
       }
@@ -200,7 +211,7 @@
         });
         if (preferences !== undefined) {
           for (const [key, value] of Object.entries(preferences as Record<string, unknown>)) {
-            if (/^(a11y-|locale$|userName$|active-profile-id$|rewards-settings)/.test(key) && typeof value === 'string') {
+            if (isBackupLocalStorageKey(key) && typeof value === 'string') {
               localStorage.setItem(key, value);
             }
           }

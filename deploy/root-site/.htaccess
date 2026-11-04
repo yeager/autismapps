@@ -8,10 +8,10 @@
     ExpiresByType application/font-woff2 "access plus 1 year"
 </IfModule>
 
-# Revalidate HTML documents and service-worker scripts so hosts and browsers
-# do not keep serving stale site content. Fingerprinted static assets stay cached.
+# Revalidate HTML documents, robots.txt, and service-worker scripts so hosts and
+# browsers do not keep serving stale site content. Fingerprinted assets stay cached.
 <IfModule mod_headers.c>
-    <FilesMatch "^(service-worker\.js|.*\.html?|lang\.js)$">
+    <FilesMatch "^(service-worker\\.js|.*\\.html?|lang\\.js|robots\\.txt)$">
         Header set Cache-Control "no-cache, no-store, must-revalidate"
         Header set Pragma "no-cache"
         Header set Expires "0"
@@ -30,25 +30,25 @@
 RewriteEngine On
 
 # Block version-control metadata at every path depth.
-RewriteRule (^|/)\.(?:git|svn|hg)(?:/|$) - [F,L,NC]
-RewriteCond %{THE_REQUEST} \s/+index\.php(?:[?\s]) [NC]
-RewriteRule ^index\.php$ / [R=301,L]
+RewriteRule (^|/)\\.(?:git|svn|hg)(?:/|$) - [F,L,NC]
+RewriteCond %{THE_REQUEST} \\s/+index\\.php(?:[?\\s]) [NC]
+RewriteRule ^index\\.php$ / [R=301,L]
 
-RewriteCond %{THE_REQUEST} /index-en\.html [NC]
-RewriteRule ^index-en\.html$ https://autismapps.online/ [R=301,L]
+RewriteCond %{THE_REQUEST} /index-en\\.html [NC]
+RewriteRule ^index-en\\.html$ https://autismapps.online/ [R=301,L]
 
-RewriteCond %{THE_REQUEST} /index\.html [NC]
-RewriteCond %{HTTP_HOST} ^(www\.)?autismapps\.online$ [NC]
-RewriteRule ^index\.html$ https://autismapps.online/ [R=301,L]
-RewriteCond %{THE_REQUEST} /index\.html [NC]
-RewriteRule ^index\.html$ https://autismappar.se/ [R=301,L]
+RewriteCond %{THE_REQUEST} /index\\.html [NC]
+RewriteCond %{HTTP_HOST} ^(www\\.)?autismapps\\.online$ [NC]
+RewriteRule ^index\\.html$ https://autismapps.online/ [R=301,L]
+RewriteCond %{THE_REQUEST} /index\\.html [NC]
+RewriteRule ^index\\.html$ https://autismappar.se/ [R=301,L]
 
-RewriteCond %{HTTP_HOST} ^(www\.)?autismapps\.online$ [NC]
+RewriteCond %{HTTP_HOST} ^(www\\.)?autismapps\\.online$ [NC]
 RewriteRule ^$ index-en.html [L]
 RewriteRule ^$ index.html [L]
 
 # Redirect Swedish legacy launcher URLs to the Swedish build's own base path.
 # An internal rewrite served HTML built for /launcher-sv at a /launcher URL,
 # which made SvelteKit fail during hydration on the old public links.
-RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
+RewriteCond %{HTTP_HOST} ^(www\\.)?autismappar\\.se$ [NC]
 RewriteRule ^launcher/?(.*)$ https://autismappar.se/launcher-sv/$1 [R=302,L,NE]

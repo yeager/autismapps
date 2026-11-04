@@ -11,6 +11,7 @@
     "build:launcher": "node scripts/build-launcher.mjs",
     "build:launcher:domains": "node scripts/build-launcher-domains.mjs",
     "verify:launcher:locales": "node scripts/verify-launcher-locales.mjs",
+    "audit:live-launcher-assets": "node scripts/audit-live-launcher-assets.mjs",
     "audit:links": "node scripts/audit-internal-links.mjs",
     "audit:app-cards": "node --experimental-strip-types scripts/audit-app-cards.mjs",
     "audit:pictograms": "python3 scripts/validate-piktali-svg.py && node scripts/audit-pictograms.mjs",

@@ -30,6 +30,9 @@
   let showTemplates = $state(false);
   let editingLabel = $state<number | null>(null);
   let editLabelText = $state('');
+  let photoLabel = $state('');
+  let photoError = $state('');
+  let photoInput: HTMLInputElement;
 
   const GRID_OPTIONS = [3, 4, 5, 6];
   const COLORS = ['#E67E22', '#3498DB', '#27AE60', '#9B59B6', '#F1C40F', '#E74C3C', '#1ABC9C', '#E91E63'];
@@ -149,6 +152,59 @@
 
   function clearCell(index: number) {
     cells[index] = { index, label: '', isEmpty: true };
+  }
+
+  async function addPersonalPhoto(event: Event) {
+    const input = event.currentTarget as HTMLInputElement;
+    const file = input.files?.[0];
+    input.value = '';
+    photoError = '';
+    if (!file) return;
+    if (file.size > 12 * 1024 * 1024) {
+      photoError = $t('board.photo_too_large');
+      return;
+    }
+
+    try {
+      const imageUrl = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onerror = () => reject(new Error('Could not read image'));
+        reader.onload = () => {
+          const image = new Image();
+          image.onerror = () => reject(new Error('Could not decode image'));
+          image.onload = () => {
+            const scale = Math.min(1, 640 / Math.max(image.naturalWidth, image.naturalHeight));
+            const canvas = document.createElement('canvas');
+            canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+            canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+            const context = canvas.getContext('2d');
+            if (!context) return reject(new Error('Canvas is unavailable'));
+            context.drawImage(image, 0, 0, canvas.width, canvas.height);
+            resolve(canvas.toDataURL('image/jpeg', 0.82));
+          };
+          image.src = String(reader.result);
+        };
+        reader.readAsDataURL(file);
+      });
+
+      const index = selectedCellIndex ?? cells.findIndex((cell) => cell.isEmpty);
+      if (index < 0) {
+        photoError = $t('board.no_empty_cells');
+        return;
+      }
+      const fallbackLabel = file.name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').trim();
+      cells[index] = {
+        index,
+        pictogramUrl: imageUrl,
+        label: photoLabel.trim() || fallbackLabel || $t('board.personal_photo'),
+        isEmpty: false
+      };
+      selectedCellIndex = cells.findIndex((cell, cellIndex) => cellIndex > index && cell.isEmpty);
+      photoLabel = '';
+      document.getElementById('picto-search')?.blur();
+    } catch {
+      photoError = $t('board.photo_read_error');
+    }
   }
 
   function startEditLabel(index: number) {
@@ -368,6 +424,24 @@
         </div>
       </div>
 
+      <div class="field personal-photo-field">
+        <label for="personal-photo-label">{$t('board.photo_label')}</label>
+        <div class="photo-add-row">
+          <input id="personal-photo-label" bind:value={photoLabel} placeholder={$t('board.photo_label_placeholder')} />
+          <button class="btn photo-add" onclick={() => photoInput?.click()}>📷 {$t('board.add_photo')}</button>
+        </div>
+        <input
+          bind:this={photoInput}
+          class="visually-hidden"
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+          aria-label={$t('board.add_photo')}
+          onchange={addPersonalPhoto}
+        />
+        <p class="photo-privacy">{$t('board.photo_privacy')}</p>
+        {#if photoError}<p class="photo-error" role="alert">{photoError}</p>{/if}
+      </div>
+
       <!-- Search results -->
       {#if searchResults.length > 0}
         <div class="picto-results">
@@ -508,6 +582,13 @@
     font-size: 1.4em;
     font-weight: 700;
   }
+
+  .photo-add-row { display: flex; gap: 8px; align-items: stretch; }
+  .photo-add-row input { min-width: 0; flex: 1; }
+  .photo-add { white-space: nowrap; }
+  .photo-privacy, .photo-error { margin: 0; color: var(--text-secondary); font-size: .82rem; }
+  .photo-error { color: #a23535; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
   .field {
     display: flex;

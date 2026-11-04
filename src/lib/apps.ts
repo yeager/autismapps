@@ -112,6 +112,7 @@ const APP_LIST: AppDef[] = [
   { id: 'planning-trainer', name: 'app.planning_trainer', description: 'app.planning_trainer.desc', category: 'daily', icon: '/icons/planning-trainer.svg', route: '/apps/planning-trainer', ready: true },
   { id: 'fine-motor', name: 'app.fine_motor', description: 'app.fine_motor.desc', category: 'play', icon: '/icons/fine-motor.svg', route: '/apps/fine-motor', ready: true },
   { id: 'traffic-safety', name: 'app.traffic_safety', description: 'app.traffic_safety.desc', category: 'daily', icon: '/icons/traffic-safety.svg', route: '/apps/traffic-safety', ready: true },
+  { id: 'communication-profile', name: 'app.communication_profile', description: 'app.communication_profile.desc', category: 'communication', icon: '/icons/communication-profile.svg', route: '/apps/communication-profile', ready: true },
 ];
 
 export const ALL_APPS: AppDef[] = APP_LIST.map((app) =>

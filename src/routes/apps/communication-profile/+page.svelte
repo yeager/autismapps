@@ -117,10 +117,10 @@
   }
 
   const visitSteps = $derived([
-    $t(`communicationProfile.visit.${visit.kind}.1`),
-    $t(`communicationProfile.visit.${visit.kind}.2`),
-    $t(`communicationProfile.visit.${visit.kind}.3`),
-    $t(`communicationProfile.visit.${visit.kind}.4`)
+    $t('communicationProfile.visit.step.1'),
+    $t('communicationProfile.visit.step.2'),
+    $t('communicationProfile.visit.step.3'),
+    $t('communicationProfile.visit.step.4')
   ]);
 </script>
 

@@ -88,15 +88,22 @@
       cellAudioError = $t('board.audio_unsupported');
       return;
     }
+    recordingCellIndex = index;
+    recordingLocale = language;
+    activeRecordingDone = new Promise((resolve) => { resolveActiveRecording = resolve; });
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      if (!cellEditorDialog.open || recordingCellIndex !== index) {
+        stream.getTracks().forEach((track) => track.stop());
+        recordingCellIndex = null;
+        recordingLocale = '';
+        resolveActiveRecording();
+        return;
+      }
       activeStream = stream;
       const recorder = new MediaRecorder(stream);
       activeRecorder = recorder;
       audioChunks = [];
-      recordingCellIndex = index;
-      recordingLocale = language;
-      activeRecordingDone = new Promise((resolve) => { resolveActiveRecording = resolve; });
       recorder.ondataavailable = (event) => {
         if (event.data.size > 0) audioChunks.push(event.data);
       };

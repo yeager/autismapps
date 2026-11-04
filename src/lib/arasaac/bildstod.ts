@@ -5,6 +5,7 @@
  */
 
 import { createJsonCache } from './cache';
+import { localizedBildstodKeyword } from './bildstod-keyword.js';
 
 const DEFAULT_BILDSTOD_BASE = 'https://autismappar.se/bildstod/bildstod-service';
 
@@ -147,7 +148,7 @@ export async function searchBildstod(
     if (score > 0) {
       results.push({
         id: p.id >= 900000 ? p.id : p.id + 900000, // Offset only if not already offset
-        keyword: matchedKeyword,
+        keyword: localizedBildstodKeyword(p, lang, matchedKeyword),
         url: `${bildstodBase}/${p.files.png_500}`,
         slug: p.slug,
         source: 'bildstod' as const,

@@ -9,19 +9,20 @@ const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => new URL(
 test('the sitemap lists canonical launcher URLs for each language domain', () => {
 	const swedish = urls.filter((url) => url.hostname === 'autismappar.se');
 	const english = urls.filter((url) => url.hostname === 'autismapps.online');
-	assert.equal(swedish.length, 150);
-	assert.equal(english.length, 150);
+	const expectedApps = ALL_APPS.length;
+	assert.equal(swedish.length, 6 + expectedApps * 2);
+	assert.equal(english.length, 6 + expectedApps * 2);
 	assert.ok(swedish.some((url) => url.pathname === '/launcher-sv/'));
 	assert.ok(swedish.some((url) => url.pathname === '/launcher-sv/about/'));
 	assert.ok(swedish.some((url) => url.pathname === '/launcher-sv/settings/'));
 	assert.equal(swedish.filter((url) => url.pathname.startsWith('/launcher/')).length, 0);
-	assert.equal(swedish.filter((url) => url.pathname.startsWith('/launcher-sv/apps/')).length, 72);
+	assert.equal(swedish.filter((url) => url.pathname.startsWith('/launcher-sv/apps/')).length, expectedApps);
 	assert.ok(english.some((url) => url.pathname === '/launcher/'));
 	assert.ok(english.some((url) => url.pathname === '/launcher/about/'));
 	assert.ok(english.some((url) => url.pathname === '/launcher/settings/'));
-	assert.equal(english.filter((url) => url.pathname.startsWith('/launcher/apps/')).length, 72);
-	assert.equal(swedish.filter((url) => /^\/apps\/[a-z0-9-]+\.html$/.test(url.pathname)).length, 72);
-	assert.equal(english.filter((url) => /^\/apps\/[a-z0-9-]+\.html$/.test(url.pathname)).length, 72);
+	assert.equal(english.filter((url) => url.pathname.startsWith('/launcher/apps/')).length, expectedApps);
+	assert.equal(swedish.filter((url) => /^\/apps\/[a-z0-9-]+\.html$/.test(url.pathname)).length, expectedApps);
+	assert.equal(english.filter((url) => /^\/apps\/[a-z0-9-]+\.html$/.test(url.pathname)).length, expectedApps);
 	for (const app of ALL_APPS) {
 		assert.ok(swedish.some((url) => url.pathname === `/apps/${app.id}.html`), `Swedish sitemap is missing ${app.id}`);
 		assert.ok(english.some((url) => url.pathname === `/apps/${app.id}.html`), `English sitemap is missing ${app.id}`);

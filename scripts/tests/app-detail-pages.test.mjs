@@ -23,7 +23,7 @@ test('all registered apps have matching localized detail pages and same-host lau
 		assert.doesNotThrow(() => new Function(inlineScript), `${app.id} locale script parses`);
 		assert.ok(fs.existsSync(new URL(`../../static/${app.icon.slice(1)}`, import.meta.url)), `${app.id} icon exists`);
 	}
-	assert.equal(ids.size, 72);
+	assert.equal(ids.size, ALL_APPS.length);
 });
 
 test('generated detail pages link to the Swedish launcher base and use relative page assets', () => {

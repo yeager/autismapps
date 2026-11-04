@@ -3938,5 +3938,21 @@
   "board.photo_too_large": "The image is larger than 12 MB. Choose a smaller image.",
   "board.no_empty_cells": "The board is full. Select a cell first or make room.",
   "board.photo_read_error": "Could not read the image. Try a JPG, PNG, or WebP file.",
-  "board.personal_photo": "Personal photo"
+  "board.personal_photo": "Personal photo",
+  "board.cell_editor": "Edit cell",
+  "board.close_editor": "Close editor",
+  "board.cell_editor_help": "Add a label in Swedish, English, and Portuguese. You can also record a phrase in each language.",
+  "board.audio_group": "speech",
+  "board.audio_record": "Record speech",
+  "board.audio_record_again": "Record again",
+  "board.audio_stop": "Stop",
+  "board.audio_play": "Play",
+  "board.audio_delete": "Delete recording",
+  "board.audio_privacy": "Audio is saved with the board on this device. Recording stops after 15 seconds.",
+  "board.audio_recording": "Recording …",
+  "board.audio_unsupported": "Audio recording is not supported in this browser.",
+  "board.audio_permission_error": "Microphone access was denied. Allow microphone access to record.",
+  "board.audio_record_error": "The recording could not be saved.",
+  "board.audio_too_large": "The recording is too large. Record a shorter phrase.",
+  "board.audio_saving": "Saving recording …"
 }

@@ -20,6 +20,8 @@ export interface BoardCell {
   pictogramId?: number;
   pictogramUrl?: string;
   label: string;
+  labels?: Partial<Record<'sv' | 'en' | 'pt_BR', string>>;
+  audioByLocale?: Partial<Record<'sv' | 'en' | 'pt_BR', string>>;
   color?: string;
   isEmpty: boolean;
 }

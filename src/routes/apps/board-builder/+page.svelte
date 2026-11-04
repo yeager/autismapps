@@ -28,14 +28,135 @@
   let savedBoards = $state<Board[]>([]);
   let showMyBoards = $state(false);
   let showTemplates = $state(false);
-  let editingLabel = $state<number | null>(null);
-  let editLabelText = $state('');
   let photoLabel = $state('');
   let photoError = $state('');
   let photoInput: HTMLInputElement;
+  let cellEditorDialog: HTMLDialogElement;
+  let cellAudioError = $state('');
+  let recordingCellIndex = $state<number | null>(null);
+  let recordingLocale = $state('');
+  let audioSaving = $state(false);
+  let activeRecorder: MediaRecorder | null = null;
+  let activeStream: MediaStream | null = null;
+  let audioChunks: BlobPart[] = [];
+  let recordingTimeout: ReturnType<typeof setTimeout> | undefined;
+  let playingRecording: HTMLAudioElement | null = null;
+  let activeRecordingDone: Promise<void> = Promise.resolve();
+  let resolveActiveRecording: () => void = () => {};
 
   const GRID_OPTIONS = [3, 4, 5, 6];
   const COLORS = ['#E67E22', '#3498DB', '#27AE60', '#9B59B6', '#F1C40F', '#E74C3C', '#1ABC9C', '#E91E63'];
+  const BOARD_LANGUAGES = [
+    { code: 'sv' as const, label: 'Svenska' },
+    { code: 'en' as const, label: 'English' },
+    { code: 'pt_BR' as const, label: 'Português (BR)' }
+  ];
+
+  function cellLabel(cell: BoardCell, language = get(locale)): string {
+    return cell.labels?.[language as 'sv' | 'en' | 'pt_BR']?.trim() || cell.label;
+  }
+
+  function cellEditLabel(cell: BoardCell, language: 'sv' | 'en' | 'pt_BR'): string {
+    return cell.labels?.[language]?.trim() || (language === get(locale) ? cell.label : '');
+  }
+
+  function setCellLabel(index: number, language: 'sv' | 'en' | 'pt_BR', value: string) {
+    const cell = cells[index];
+    cell.labels = { ...cell.labels, [language]: value };
+    if (language === get(locale) || (!cell.label && value.trim())) cell.label = value;
+  }
+
+  async function playCellAudio(index: number, language = get(locale)) {
+    const cell = cells[index];
+    const recording = cell.audioByLocale?.[language as 'sv' | 'en' | 'pt_BR'];
+    if (!recording) {
+      await speak(cellLabel(cell, language));
+      return;
+    }
+    playingRecording?.pause();
+    playingRecording = new Audio(recording);
+    try {
+      await playingRecording.play();
+    } catch {
+      await speak(cellLabel(cell, language));
+    }
+  }
+
+  async function startCellRecording(index: number, language: 'sv' | 'en' | 'pt_BR') {
+    cellAudioError = '';
+    if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
+      cellAudioError = $t('board.audio_unsupported');
+      return;
+    }
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      activeStream = stream;
+      const recorder = new MediaRecorder(stream);
+      activeRecorder = recorder;
+      audioChunks = [];
+      recordingCellIndex = index;
+      recordingLocale = language;
+      activeRecordingDone = new Promise((resolve) => { resolveActiveRecording = resolve; });
+      recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) audioChunks.push(event.data);
+      };
+      recorder.onstop = () => {
+        const blob = new Blob(audioChunks, { type: recorder.mimeType || 'audio/webm' });
+        if (blob.size > 1_000_000) {
+          cellAudioError = $t('board.audio_too_large');
+          resolveActiveRecording();
+        } else if (blob.size > 0) {
+          audioSaving = true;
+          const reader = new FileReader();
+          reader.onload = () => {
+            const cell = cells[index];
+            cell.audioByLocale = { ...cell.audioByLocale, [language]: String(reader.result) };
+            audioSaving = false;
+            resolveActiveRecording();
+          };
+          reader.onerror = () => {
+            cellAudioError = $t('board.audio_record_error');
+            audioSaving = false;
+            resolveActiveRecording();
+          };
+          reader.readAsDataURL(blob);
+        } else resolveActiveRecording();
+        stream.getTracks().forEach((track) => track.stop());
+        if (activeRecorder === recorder) activeRecorder = null;
+        if (activeStream === stream) activeStream = null;
+        recordingCellIndex = null;
+        recordingLocale = '';
+        if (recordingTimeout) clearTimeout(recordingTimeout);
+        recordingTimeout = undefined;
+      };
+      recorder.start();
+      recordingTimeout = setTimeout(() => stopCellRecording(), 15_000);
+    } catch (error) {
+      cellAudioError = error instanceof Error && error.name === 'NotAllowedError'
+        ? $t('board.audio_permission_error')
+        : $t('board.audio_record_error');
+      activeStream?.getTracks().forEach((track) => track.stop());
+      activeStream = null;
+      activeRecorder = null;
+      recordingCellIndex = null;
+      recordingLocale = '';
+      resolveActiveRecording();
+    }
+  }
+
+  async function stopCellRecording() {
+    if (recordingTimeout) clearTimeout(recordingTimeout);
+    recordingTimeout = undefined;
+    if (activeRecorder?.state === 'recording') activeRecorder.stop();
+    await activeRecordingDone;
+  }
+
+  function removeCellRecording(index: number, language: 'sv' | 'en' | 'pt_BR') {
+    const cell = cells[index];
+    const audioByLocale = { ...cell.audioByLocale };
+    delete audioByLocale[language];
+    cell.audioByLocale = audioByLocale;
+  }
 
   function createEmptyCells(size: number): BoardCell[] {
     return Array.from({ length: size * size }, (_, i) => ({
@@ -123,8 +244,14 @@
   function selectCell(index: number) {
     selectedCellIndex = index;
     if (!cells[index].isEmpty) {
-      speak(cells[index].label);
+      void playCellAudio(index);
     }
+  }
+
+  function openCellEditor(index: number) {
+    selectedCellIndex = index;
+    cellAudioError = '';
+    cellEditorDialog?.showModal();
   }
 
   function addPictogramToCell(picto: PictogramSearchResult) {
@@ -140,6 +267,7 @@
       pictogramId: picto.id,
       pictogramUrl: bw ? picto.urlBW : picto.url,
       label: picto.keyword,
+      labels: { [get(locale) as 'sv' | 'en' | 'pt_BR']: picto.keyword },
       isEmpty: false
     };
     speak(picto.keyword);
@@ -197,6 +325,7 @@
         index,
         pictogramUrl: imageUrl,
         label: photoLabel.trim() || fallbackLabel || $t('board.personal_photo'),
+        labels: { [get(locale) as 'sv' | 'en' | 'pt_BR']: photoLabel.trim() || fallbackLabel || $t('board.personal_photo') },
         isEmpty: false
       };
       selectedCellIndex = cells.findIndex((cell, cellIndex) => cellIndex > index && cell.isEmpty);
@@ -207,19 +336,8 @@
     }
   }
 
-  function startEditLabel(index: number) {
-    editingLabel = index;
-    editLabelText = cells[index].label;
-  }
-
-  function finishEditLabel() {
-    if (editingLabel !== null) {
-      cells[editingLabel].label = editLabelText;
-      editingLabel = null;
-    }
-  }
-
   async function save() {
+    await stopCellRecording();
     const board: Board = {
       name: boardName || $t('board.untitled'),
       category: 'custom',
@@ -319,6 +437,7 @@
           pictogramId: results[0].id,
           pictogramUrl: bw ? results[0].urlBW : results[0].url,
           label: $t(`bb.${item.key}`),
+          labels: { [get(locale) as 'sv' | 'en' | 'pt_BR']: $t(`bb.${item.key}`) },
           isEmpty: false
         };
       }
@@ -348,6 +467,9 @@
       viewport?.removeEventListener('scroll', updateHeight);
       if (previousHeight) style.setProperty('--board-visible-height', previousHeight);
       else style.removeProperty('--board-visible-height');
+      if (activeRecorder?.state === 'recording') activeRecorder.stop();
+      activeStream?.getTracks().forEach((track) => track.stop());
+      playingRecording?.pause();
     };
   });
 </script>
@@ -517,24 +639,18 @@
           class:selected={selectedCellIndex === i}
           class:empty={cell.isEmpty}
           onclick={() => selectCell(i)}
-          ondblclick={() => !cell.isEmpty && startEditLabel(i)}
-          aria-label={cell.isEmpty ? $t('board.tap_to_add') : cell.label}
+          aria-label={cell.isEmpty ? $t('board.tap_to_add') : cellLabel(cell)}
         >
           {#if !cell.isEmpty && cell.pictogramUrl}
-            <img src={cell.pictogramUrl} alt={cell.label} loading="lazy" />
+            <img src={cell.pictogramUrl} alt={cellLabel(cell)} loading="lazy" />
           {/if}
-          {#if editingLabel === i}
-            <input
-              class="label-edit"
-              type="text"
-              bind:value={editLabelText}
-              onblur={finishEditLabel}
-              onkeydown={(e) => { if (e.key === 'Enter') finishEditLabel(); }}
-            />
-          {:else if !cell.isEmpty}
-            <span class="cell-label">{cell.label}</span>
+          {#if !cell.isEmpty}
+            <span class="cell-label">{cellLabel(cell)}</span>
           {:else}
             <span class="cell-placeholder">+</span>
+          {/if}
+          {#if selectedCellIndex === i && !cell.isEmpty}
+            <span class="cell-edit" role="button" tabindex="0" onclick={(event) => { event.stopPropagation(); openCellEditor(i); }} onkeydown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); openCellEditor(i); } }} aria-label={$t('board.cell_editor')}>✎</span>
           {/if}
           {#if !cell.isEmpty}
             <span
@@ -551,6 +667,43 @@
     </div>
   </div>
 </div>
+
+<dialog class="cell-editor-dialog" bind:this={cellEditorDialog} aria-labelledby="cell-editor-heading" onclose={() => { if (recordingCellIndex !== null) void stopCellRecording(); }}>
+  {#if selectedCellIndex !== null && !cells[selectedCellIndex].isEmpty}
+    <div class="cell-editor-header">
+      <div><h2 id="cell-editor-heading">{$t('board.cell_editor')}</h2><p>{cellLabel(cells[selectedCellIndex])}</p></div>
+      <button class="audio-control" onclick={() => cellEditorDialog.close()} aria-label={$t('board.close_editor')}>✕</button>
+    </div>
+    <p class="photo-privacy">{$t('board.cell_editor_help')}</p>
+    {#each BOARD_LANGUAGES as language (language.code)}
+      <div class="language-edit-row">
+        <label class="field language-label">
+          <span>{language.label}</span>
+          <input
+            value={cellEditLabel(cells[selectedCellIndex], language.code)}
+            oninput={(event) => setCellLabel(selectedCellIndex!, language.code, (event.currentTarget as HTMLInputElement).value)}
+          />
+        </label>
+        <div class="audio-actions" aria-label={`${language.label} — ${$t('board.audio_group')}`}>
+          {#if recordingCellIndex === selectedCellIndex && recordingLocale === language.code}
+            <button class="audio-control recording" onclick={stopCellRecording}>■ {$t('board.audio_stop')}</button>
+          {:else}
+            <button class="audio-control" onclick={() => startCellRecording(selectedCellIndex!, language.code)} disabled={recordingCellIndex !== null}>
+              ⏺ {$t(cells[selectedCellIndex].audioByLocale?.[language.code] ? 'board.audio_record_again' : 'board.audio_record')}
+            </button>
+          {/if}
+          {#if cells[selectedCellIndex].audioByLocale?.[language.code]}
+            <button class="audio-control" onclick={() => playCellAudio(selectedCellIndex!, language.code)}>▶ {$t('board.audio_play')}</button>
+            <button class="audio-control audio-delete" onclick={() => removeCellRecording(selectedCellIndex!, language.code)} aria-label={`${$t('board.audio_delete')} — ${language.label}`}>✕</button>
+          {/if}
+        </div>
+      </div>
+    {/each}
+    <p class="photo-privacy">🎙️ {$t('board.audio_privacy')}</p>
+    {#if recordingCellIndex === selectedCellIndex || audioSaving}<p class="photo-privacy recording-status" role="status">{$t(audioSaving ? 'board.audio_saving' : 'board.audio_recording')}</p>{/if}
+    {#if cellAudioError}<p class="photo-error" role="alert">{cellAudioError}</p>{/if}
+  {/if}
+</dialog>
 
 {#if toast}
   <div class="toast" role="status" aria-live="polite">✅ {toast}</div>
@@ -589,6 +742,32 @@
   .photo-privacy, .photo-error { margin: 0; color: var(--text-secondary); font-size: .82rem; }
   .photo-error { color: #a23535; }
   .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+  .cell-editor-dialog {
+    width: min(560px, calc(100vw - 24px));
+    max-height: min(86dvh, 760px);
+    overflow: auto;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    color: var(--text);
+    background: var(--bg-card);
+    box-shadow: 0 20px 70px #0004;
+  }
+  .cell-editor-dialog::backdrop { background: #13231dcc; }
+  .cell-editor-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+  .cell-editor-header h2 { margin: 0; font-size: 1.25rem; }
+  .cell-editor-header p { margin: 4px 0 0; color: var(--text-secondary); }
+  .cell-editor-dialog > .photo-privacy { margin: 8px 0 14px; }
+  .language-edit-row { display: grid; gap: 6px; padding: 12px 0; border-top: 1px solid var(--border); }
+  .language-label { gap: 4px; font-weight: 700; }
+  .language-label input { min-width: 0; min-height: 44px; }
+  .audio-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+  .audio-control { min-height: 42px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px; color: var(--text); background: var(--bg); font: inherit; cursor: pointer; }
+  .audio-control:disabled { opacity: .55; cursor: wait; }
+  .audio-control.recording { color: white; background: #a23535; border-color: #a23535; }
+  .audio-control.audio-delete { color: #8a3434; }
+  .recording-status { color: #a23535; font-weight: 700; }
 
   .field {
     display: flex;
@@ -899,6 +1078,21 @@
     align-items: center;
     justify-content: center;
   }
+  .cell-edit {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: var(--accent);
+    font-size: .85em;
+    z-index: 1;
+  }
   .board-cell:hover .cell-clear {
     display: flex;
   }
@@ -1117,17 +1311,6 @@
       width: min(100%, calc(100dvh - var(--header-h) - 24px), calc(100vw - 420px));
       max-width: min(600px, calc(100dvh - var(--header-h) - 24px), calc(100vw - 420px));
     }
-  }
-
-  .label-edit {
-    width: 90%;
-    padding: 2px 4px;
-    border: 1px solid var(--accent);
-    border-radius: 4px;
-    text-align: center;
-    font-size: 0.75em;
-    background: var(--bg);
-    color: var(--text);
   }
 
   /* Print styles */

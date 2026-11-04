@@ -3938,5 +3938,21 @@
   "board.photo_too_large": "A imagem tem mais de 12 MB. Escolha uma imagem menor.",
   "board.no_empty_cells": "O quadro está cheio. Selecione uma célula ou libere espaço.",
   "board.photo_read_error": "Não foi possível ler a imagem. Tente um arquivo JPG, PNG ou WebP.",
-  "board.personal_photo": "Foto pessoal"
+  "board.personal_photo": "Foto pessoal",
+  "board.cell_editor": "Editar célula",
+  "board.close_editor": "Fechar edição",
+  "board.cell_editor_help": "Adicione um rótulo em sueco, inglês e português. Você também pode gravar uma frase em cada idioma.",
+  "board.audio_group": "fala",
+  "board.audio_record": "Gravar fala",
+  "board.audio_record_again": "Gravar novamente",
+  "board.audio_stop": "Parar",
+  "board.audio_play": "Ouvir",
+  "board.audio_delete": "Excluir gravação",
+  "board.audio_privacy": "O áudio é salvo junto com o quadro neste dispositivo. A gravação para após 15 segundos.",
+  "board.audio_recording": "Gravando …",
+  "board.audio_unsupported": "Este navegador não oferece suporte à gravação de áudio.",
+  "board.audio_permission_error": "O acesso ao microfone foi negado. Permita o uso do microfone para gravar.",
+  "board.audio_record_error": "Não foi possível salvar a gravação.",
+  "board.audio_too_large": "A gravação ficou muito grande. Grave uma frase mais curta.",
+  "board.audio_saving": "Salvando gravação …"
 }

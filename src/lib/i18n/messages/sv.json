@@ -3938,5 +3938,21 @@
   "board.photo_too_large": "Bilden är större än 12 MB. Välj en mindre bild.",
   "board.no_empty_cells": "Brädan är full. Välj en ruta först eller gör plats.",
   "board.photo_read_error": "Bilden kunde inte läsas. Prova en JPG-, PNG- eller WebP-fil.",
-  "board.personal_photo": "Eget foto"
+  "board.personal_photo": "Eget foto",
+  "board.cell_editor": "Redigera ruta",
+  "board.close_editor": "Stäng redigering",
+  "board.cell_editor_help": "Skriv en egen etikett på svenska, engelska och portugisiska. Spela in en fras på varje språk om du vill.",
+  "board.audio_group": "tal",
+  "board.audio_record": "Spela in tal",
+  "board.audio_record_again": "Spela in igen",
+  "board.audio_stop": "Stoppa",
+  "board.audio_play": "Lyssna",
+  "board.audio_delete": "Ta bort ljud",
+  "board.audio_privacy": "Ljudet sparas tillsammans med brädet på den här enheten. Inspelningen stoppas efter 15 sekunder.",
+  "board.audio_recording": "Spelar in …",
+  "board.audio_unsupported": "Ljudinspelning stöds inte i den här webbläsaren.",
+  "board.audio_permission_error": "Mikrofonåtkomst nekades. Tillåt mikrofonen för att spela in.",
+  "board.audio_record_error": "Inspelningen kunde inte sparas.",
+  "board.audio_too_large": "Ljudfilen blev för stor. Spela in en kortare fras.",
+  "board.audio_saving": "Sparar inspelningen …"
 }

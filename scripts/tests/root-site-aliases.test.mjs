@@ -25,6 +25,12 @@ test('Swedish legacy launcher URLs redirect to the Swedish build base path', () 
 	assert.doesNotMatch(rules, /RewriteRule \^launcher\/\(\.\*\)\$ launcher-sv\/\$1/);
 });
 
+test('duplicate launcher prefixes redirect to the matching language launcher', () => {
+	const rules = readFileSync(new URL('../../deploy/root-site/.htaccess', import.meta.url), 'utf8');
+	assert.match(rules, /RewriteRule \^launcher\/launcher\/\?\(\.\*\)\$ https:\/\/autismappar\.se\/launcher-sv\/\$1 \[R=301,L,NE\]/);
+	assert.match(rules, /RewriteRule \^launcher\/launcher\/\?\(\.\*\)\$ https:\/\/autismapps\.online\/launcher\/\$1 \[R=301,L,NE\]/);
+});
+
 test('missing assets in the Swedish launcher resolve on the canonical non-Swedish host', () => {
 	const build = readFileSync(new URL('../../scripts/build-launcher.mjs', import.meta.url), 'utf8');
 	assert.match(build, /RewriteRule \^\(\.\*\)\$ https:\/\/autismapps\.online\/launcher\/\$1 \[R=302,L,NE\]/);

@@ -51,4 +51,9 @@ RewriteRule ^$ index.html [L]
 # An internal rewrite served HTML built for /launcher-sv at a /launcher URL,
 # which made SvelteKit fail during hydration on the old public links.
 RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
+RewriteRule ^launcher/launcher/?(.*)$ https://autismappar.se/launcher-sv/$1 [R=301,L,NE]
+RewriteCond %{HTTP_HOST} ^(www\.)?autismapps\.online$ [NC]
+RewriteRule ^launcher/launcher/?(.*)$ https://autismapps.online/launcher/$1 [R=301,L,NE]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?autismappar\.se$ [NC]
 RewriteRule ^launcher/?(.*)$ https://autismappar.se/launcher-sv/$1 [R=302,L,NE]

@@ -3,6 +3,7 @@ Allow: /
 
 # Sitemap
 Sitemap: https://autismappar.se/sitemap.xml
+Sitemap: https://autismapps.online/sitemap.xml
 
 # Allow localized app launchers on the matching domains
 Allow: /launcher/

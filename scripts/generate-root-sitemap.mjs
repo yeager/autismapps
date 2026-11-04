@@ -17,7 +17,10 @@ const mainPages = [
 const urls = [
 	...domains.flatMap(({ origin, launcherBase }) => [
 		...mainPages.map(({ path, launcher, priority }) => ({ loc: `${origin}${launcher ? launcherBase : ''}${path}`, priority })),
-		...ALL_APPS.map((app) => ({ loc: `${origin}${launcherBase}${app.route.replace(/\/$/, '')}/`, priority: '0.8' }))
+		...ALL_APPS.flatMap((app) => [
+			{ loc: `${origin}${launcherBase}${app.route.replace(/\/$/, '')}/`, priority: '0.8' },
+			{ loc: `${origin}/apps/${app.id}.html`, priority: '0.7' }
+		])
 	])
 ];
 

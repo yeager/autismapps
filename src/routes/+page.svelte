@@ -403,11 +403,11 @@
     .category-list { gap: 7px; margin-right: -18px; padding: 17px 18px 20px 0; }
     .category-chip { min-height: 36px; padding: 0 10px; font-size: .74rem; }
     .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-    .app-card { min-height: 82px; gap: 9px; padding: 11px 10px; border-radius: 12px; }
+    .app-card { min-height: 90px; gap: 9px; padding: 11px 10px; border-radius: 12px; }
     .card-icon { width: 41px; height: 41px; flex-basis: 41px; border-radius: 11px; }
     .card-icon img { width: 32px; height: 32px; }
-    .card-name { font-size: .77rem; }
-    .card-desc { font-size: .65rem; }
+    .card-name { font-size: .88rem; }
+    .card-desc { font-size: .75rem; }
     .card-arrow { display: none; }
     .site-footer { min-height: 65px; gap: 12px; padding: 10px 18px; font-size: .66rem; }
     .footer-brand { font-size: .69rem; }
@@ -417,7 +417,9 @@
     .nav-links { gap: 10px; }
     .nav-link { font-size: .7rem; white-space: nowrap; }
     .nav-icon-button { width: 32px; }
-    .app-card { min-height: 77px; gap: 7px; padding: 9px 8px; }
+    .app-card { min-height: 86px; gap: 7px; padding: 9px 8px; }
+    .card-name { font-size: .84rem; }
+    .card-desc { font-size: .75rem; }
     .card-icon { width: 36px; height: 36px; flex-basis: 36px; }
     .card-icon img { width: 29px; height: 29px; }
     .site-footer > a:last-child { display: none; }
